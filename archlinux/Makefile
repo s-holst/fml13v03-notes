@@ -21,6 +21,10 @@ fml13v03_linux:
 
 vmlinuz: fml13v03_linux
 	make -C fml13v03_linux fml13v03_defconfig
+	sed -i 's/# CONFIG_SECURITY_LANDLOCK is not set/CONFIG_SECURITY_LANDLOCK=y/' fml13v03_linux/.config
+	sed -i 's/# CONFIG_SECURITY_YAMA is not set/CONFIG_SECURITY_YAMA=y/' fml13v03_linux/.config
+	#sed -i 's/# CONFIG_SECURITY_LOCKDOWN_LSM is not set/CONFIG_SECURITY_LOCKDOWN_LSM=y/' fml13v03_linux/.config
+	make -C fml13v03_linux oldconfig
 	make -C fml13v03_linux -j ${NPROC}
 	cp -a fml13v03_linux/arch/riscv/boot/Image.gz vmlinuz
 

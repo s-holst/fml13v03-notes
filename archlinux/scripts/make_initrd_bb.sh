@@ -54,9 +54,13 @@ mount \$RWFLAG \$ROOT /mnt
 mount -n -o move /sys /mnt/sys
 mount -n -o move /proc /mnt/proc
 mount -n -o move /tmp /mnt/tmp
-mount -t devtmpfs devtmpfs /mnt/dev
+mount -t devtmpfs -o nosuid,mode=0755 udev /mnt/dev
 
-exec run-init "/mnt" "\${INIT}" "\$@" <"/mnt/dev/console" >"/mnt/dev/console" 2>&1
+#mount -n -o move /dev /mnt/dev
+#rm -fr /dev
+#ln -s /mnt/dev /dev
+
+exec run-init "/mnt" "\${INIT}" "\$@" <"/dev/console" >"/dev/console" 2>&1
 #setsid cttyhack sh
 
 EOF

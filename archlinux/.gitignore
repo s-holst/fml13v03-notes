@@ -1,0 +1,10 @@
+/boot.ext4
+/root.ext4
+/vmlinuz
+/dtb
+/initrd
+/archriscv-latest.tar.zst
+/fml13v03_linux
+/busybox
+/tmp
+/modules

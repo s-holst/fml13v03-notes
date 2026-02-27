@@ -63,7 +63,7 @@ echo "[*] Copying firmware"
 sudo cp -a firmware "${MOUNT_DIR}/lib"
 sudo chown -R root:root "${MOUNT_DIR}/lib/firmware"
 
-echo "[*] Configuring timezone, fstab, hostname, nameserver, disable ipv6"
+echo "[*] Configuring timezone, fstab, hostname, nameserver, disable ipv6, backlisted modules, locale.gen"
 sudo chroot "${MOUNT_DIR}" sh -c "ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime"
 sudo sh -c "echo Asia/Tokyo >$MOUNT_DIR/etc/timezone"
 sudo chroot "${MOUNT_DIR}" /bin/sh << EOF
@@ -77,6 +77,8 @@ echo "127.0.1.1 arch" >> /etc/hosts
 echo "nameserver 8.8.8.8 >> /etc/resolv.conf
 echo "net.ipv6.conf.all.disable_ipv6=1" > /etc/sysctl.d/90-disable-ipv6.conf
 echo "net.ipv6.conf.default.disable_ipv6=1" >> /etc/sysctl.d/90-disable-ipv6.conf
+echo "blacklist evbug" >>/etc/modprobe.d/blacklist.conf
+sed -i "s/#en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen
 exit
 EOF
 

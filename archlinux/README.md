@@ -21,6 +21,12 @@ Things to do on first boot
 
 Set a reasonable date for certificate validation `date -s 2026/2/26`
 
+`locale-gen`
+
+`depmod`
+
+reboot
+
 Set up wired network manually (no wifi without wpa_supplicant):
 ```
 ip addr add 192.168.0.33/24 dev enu1u3
@@ -32,13 +38,11 @@ ip route add default via 192.168.0.1 dev enu1u3
 System update and install essentials:
 ```
 pacman -Syu
-pacman -S less vim networkmanager chrony
+pacman -S less vim networkmanager chrony apparmor openssh parted
 ```
 
-Enable wifi:
+Configure wifi:
 ```
-depmod
-modprobe iwlwifi
 systemctl start NetworkManager
 systemctl enable NetworkManager
 nmtui
@@ -48,4 +52,18 @@ Enable NTP client:
 ```
 systemctl start chronyd.service
 systemctl enable chronyd.service
+```
+
+Enable SSH:
+```
+systemctl start sshd
+systemctl enable sshd
+```
+
+Resize root partition to fill the flash drive:
+```
+parted /dev/sda resizepart 2 100%
+partprobe /dev/sda
+cat /sys/block/sda/sda2/size
+resize2fs /dev/sda2
 ```
