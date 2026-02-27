@@ -210,3 +210,4 @@ __marimo__/
 .claude
 *nogit*
 archlinux/disk.img
+/kernel

@@ -63,18 +63,13 @@ sudo mkdir -p "${MOUNT_DIR}/extlinux"
 sudo sh <<ENDSH
 cat >"${MOUNT_DIR}/extlinux/extlinux.conf" <<EOF
 ## /boot/extlinux/extlinux.conf
-default l0
-menu title U-Boot menu
-prompt 2
+default arch
 timeout 50
-
-label l0
-        menu label Linux
-        linux /vmlinuz
-        initrd /initrd
-        fdt /dtb
-
-        append root=UUID=${ROOT_UUID} console=tty0 rootfstype=ext4 rootwait rw selinux=0 LANG=en_US.UTF-8 audit=0
+label arch
+    linux /vmlinuz
+    initrd /initrd
+    fdt /dtb
+    append root=UUID=${ROOT_UUID} console=tty0 rootfstype=ext4 rootwait rw selinux=0 LANG=en_US.UTF-8 audit=0
 EOF
 ENDSH
 

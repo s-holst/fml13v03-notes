@@ -24,6 +24,8 @@ Contents
 ========
 
 1. [Firmware and Bootchain](firmware/README.md)
+2. [ArchLinux Bootstrapping](archlinux/README.md)
+3. [Summary of Vendor Changes in Kernel](CustomKernel.md)
 
 Links
 =====
