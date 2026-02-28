@@ -31,3 +31,6 @@ Links
 =====
 
 - https://github.com/ganboing/EIC770x-Docs
+- https://github.com/DC-DeepComputing
+- https://github.com/eswincomputing
+

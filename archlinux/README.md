@@ -52,6 +52,7 @@ Enable NTP client:
 ```
 systemctl start chronyd.service
 systemctl enable chronyd.service
+systemctl enable chrony-wait.service  # so that systemd-timers start after syncing the clock
 ```
 
 Enable SSH:
