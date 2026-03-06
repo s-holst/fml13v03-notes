@@ -10,7 +10,7 @@
     <dt>Base Offset:</dt><dd class="address">0x0</dd>
     <dt>Size:</dt><dd class="address">0x60000000</dd>
     
-    <dt>Source:</dt><dd><a href="https://github.com/s-holst/fml13v03-notes/blob/main/EIC7702X/scpu.rdl#L368" target="_blank">scpu.rdl</a></dd>
+    <dt>Source:</dt><dd><a href="https://github.com/s-holst/fml13v03-notes/blob/main/EIC7702X/scpu.rdl#L398" target="_blank">scpu.rdl</a></dd>
     
 </dl>
 <h2>Description</h2>
@@ -50,7 +50,7 @@
     <tr id="plic">
         <td class="address">0x0C000000</td>
         <td><a href="?p=scpu_memory.plic" data-id="5" onclick="onClickNodeLink(event); return(false)">plic</a></td>
-        <td>-</td>
+        <td>SCPU security peripherals (0x21Bxxxxx = SCPU view; MCPU alias at 0x51Bxxxxx)</td>
         <td>
             <a class="headerlink" href="#plic" title="Permalink to this row"></a>
         </td>
@@ -64,7 +64,7 @@
     <tr id="spacc">
         <td class="address">0x21900000</td>
         <td><a href="?p=scpu_memory.spacc" data-id="7" onclick="onClickNodeLink(event); return(false)">spacc</a></td>
-        <td>-</td>
+        <td>Synopsys DesignWare Security Protocol Accelerator (AES, SM4)</td>
         <td>
             <a class="headerlink" href="#spacc" title="Permalink to this row"></a>
         </td>
@@ -78,7 +78,7 @@
     <tr id="pka">
         <td class="address">0x21B00000</td>
         <td><a href="?p=scpu_memory.pka" data-id="9" onclick="onClickNodeLink(event); return(false)">pka</a></td>
-        <td>-</td>
+        <td>Synopsys DesignWare Public Key Accelerator (RSA, ECDSA)</td>
         <td>
             <a class="headerlink" href="#pka" title="Permalink to this row"></a>
         </td>
@@ -92,7 +92,7 @@
     <tr id="pka_sram">
         <td class="address">0x21B04000</td>
         <td><a href="?p=scpu_memory.pka_sram" data-id="11" onclick="onClickNodeLink(event); return(false)">pka_sram</a></td>
-        <td>-</td>
+        <td>PKA instruction SRAM</td>
         <td>
             <a class="headerlink" href="#pka_sram" title="Permalink to this row"></a>
         </td>
@@ -100,7 +100,7 @@
     <tr id="trng">
         <td class="address">0x21B08000</td>
         <td><a href="?p=scpu_memory.trng" data-id="12" onclick="onClickNodeLink(event); return(false)">trng</a></td>
-        <td>-</td>
+        <td>Synopsys DesignWare True Random Number Generator</td>
         <td>
             <a class="headerlink" href="#trng" title="Permalink to this row"></a>
         </td>
@@ -128,7 +128,7 @@
     <tr id="otp_shadow">
         <td class="address">0x21B48000</td>
         <td><a href="?p=scpu_memory.otp_shadow" data-id="25" onclick="onClickNodeLink(event); return(false)">otp_shadow</a></td>
-        <td>-</td>
+        <td>OTP shadow / secure identity registers (~0x190 bytes)</td>
         <td>
             <a class="headerlink" href="#otp_shadow" title="Permalink to this row"></a>
         </td>
@@ -142,7 +142,7 @@
     <tr id="pmp0">
         <td class="address">0x21B80000</td>
         <td><a href="?p=scpu_memory.pmp0" data-id="28" onclick="onClickNodeLink(event); return(false)">pmp0</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp0" title="Permalink to this row"></a>
         </td>
@@ -156,7 +156,7 @@
     <tr id="pmp1">
         <td class="address">0x21B88000</td>
         <td><a href="?p=scpu_memory.pmp1" data-id="30" onclick="onClickNodeLink(event); return(false)">pmp1</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp1" title="Permalink to this row"></a>
         </td>
@@ -170,7 +170,7 @@
     <tr id="pmp2">
         <td class="address">0x21B90000</td>
         <td><a href="?p=scpu_memory.pmp2" data-id="32" onclick="onClickNodeLink(event); return(false)">pmp2</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp2" title="Permalink to this row"></a>
         </td>
@@ -184,7 +184,7 @@
     <tr id="pmp3">
         <td class="address">0x21B98000</td>
         <td><a href="?p=scpu_memory.pmp3" data-id="34" onclick="onClickNodeLink(event); return(false)">pmp3</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp3" title="Permalink to this row"></a>
         </td>
@@ -198,7 +198,7 @@
     <tr id="pmp4">
         <td class="address">0x21BA0000</td>
         <td><a href="?p=scpu_memory.pmp4" data-id="36" onclick="onClickNodeLink(event); return(false)">pmp4</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp4" title="Permalink to this row"></a>
         </td>
@@ -212,7 +212,7 @@
     <tr id="pmp5">
         <td class="address">0x21BB0000</td>
         <td><a href="?p=scpu_memory.pmp5" data-id="38" onclick="onClickNodeLink(event); return(false)">pmp5</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp5" title="Permalink to this row"></a>
         </td>
@@ -226,7 +226,7 @@
     <tr id="pmp6">
         <td class="address">0x21BB8000</td>
         <td><a href="?p=scpu_memory.pmp6" data-id="40" onclick="onClickNodeLink(event); return(false)">pmp6</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp6" title="Permalink to this row"></a>
         </td>
@@ -240,7 +240,7 @@
     <tr id="pmp7">
         <td class="address">0x21BC0000</td>
         <td><a href="?p=scpu_memory.pmp7" data-id="42" onclick="onClickNodeLink(event); return(false)">pmp7</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp7" title="Permalink to this row"></a>
         </td>
@@ -254,7 +254,7 @@
     <tr id="pmp8">
         <td class="address">0x21BC8000</td>
         <td><a href="?p=scpu_memory.pmp8" data-id="44" onclick="onClickNodeLink(event); return(false)">pmp8</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp8" title="Permalink to this row"></a>
         </td>
@@ -268,7 +268,7 @@
     <tr id="pmp9">
         <td class="address">0x21BD0000</td>
         <td><a href="?p=scpu_memory.pmp9" data-id="46" onclick="onClickNodeLink(event); return(false)">pmp9</a></td>
-        <td>-</td>
+        <td>Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)</td>
         <td>
             <a class="headerlink" href="#pmp9" title="Permalink to this row"></a>
         </td>
@@ -282,7 +282,7 @@
     <tr id="sram_tim">
         <td class="address">0x30000000</td>
         <td><a href="?p=scpu_memory.sram_tim" data-id="48" onclick="onClickNodeLink(event); return(false)">sram_tim</a></td>
-        <td>-</td>
+        <td>SCPU TIM SRAM</td>
         <td>
             <a class="headerlink" href="#sram_tim" title="Permalink to this row"></a>
         </td>
@@ -296,7 +296,7 @@
     <tr id="pcie_ctrl">
         <td class="address">0x50000000</td>
         <td><a href="?p=scpu_memory.pcie_ctrl" data-id="49" onclick="onClickNodeLink(event); return(false)">pcie_ctrl</a></td>
-        <td>-</td>
+        <td>PCIe wrapper config space</td>
         <td>
             <a class="headerlink" href="#pcie_ctrl" title="Permalink to this row"></a>
         </td>
@@ -310,7 +310,7 @@
     <tr id="vdec">
         <td class="address">0x50100000</td>
         <td><a href="?p=scpu_memory.vdec" data-id="51" onclick="onClickNodeLink(event); return(false)">vdec</a></td>
-        <td>-</td>
+        <td>Video Decoder</td>
         <td>
             <a class="headerlink" href="#vdec" title="Permalink to this row"></a>
         </td>
@@ -324,7 +324,7 @@
     <tr id="venc">
         <td class="address">0x50110000</td>
         <td><a href="?p=scpu_memory.venc" data-id="53" onclick="onClickNodeLink(event); return(false)">venc</a></td>
-        <td>-</td>
+        <td>Video Encoder</td>
         <td>
             <a class="headerlink" href="#venc" title="Permalink to this row"></a>
         </td>
@@ -338,7 +338,7 @@
     <tr id="jdec">
         <td class="address">0x50120000</td>
         <td><a href="?p=scpu_memory.jdec" data-id="55" onclick="onClickNodeLink(event); return(false)">jdec</a></td>
-        <td>-</td>
+        <td>JPEG Decoder</td>
         <td>
             <a class="headerlink" href="#jdec" title="Permalink to this row"></a>
         </td>
@@ -352,7 +352,7 @@
     <tr id="jenc">
         <td class="address">0x50130000</td>
         <td><a href="?p=scpu_memory.jenc" data-id="57" onclick="onClickNodeLink(event); return(false)">jenc</a></td>
-        <td>-</td>
+        <td>JPEG Encoder</td>
         <td>
             <a class="headerlink" href="#jenc" title="Permalink to this row"></a>
         </td>
@@ -366,7 +366,7 @@
     <tr id="g2d0">
         <td class="address">0x50140000</td>
         <td><a href="?p=scpu_memory.g2d0" data-id="59" onclick="onClickNodeLink(event); return(false)">g2d0</a></td>
-        <td>-</td>
+        <td>gc820 2D GPU core 0</td>
         <td>
             <a class="headerlink" href="#g2d0" title="Permalink to this row"></a>
         </td>
@@ -380,7 +380,7 @@
     <tr id="g2d1">
         <td class="address">0x50180000</td>
         <td><a href="?p=scpu_memory.g2d1" data-id="61" onclick="onClickNodeLink(event); return(false)">g2d1</a></td>
-        <td>-</td>
+        <td>gc820 2D GPU core 1</td>
         <td>
             <a class="headerlink" href="#g2d1" title="Permalink to this row"></a>
         </td>
@@ -394,7 +394,7 @@
     <tr id="vc_csr">
         <td class="address">0x501C0000</td>
         <td><a href="?p=scpu_memory.vc_csr" data-id="63" onclick="onClickNodeLink(event); return(false)">vc_csr</a></td>
-        <td>-</td>
+        <td>Video Codec CSR</td>
         <td>
             <a class="headerlink" href="#vc_csr" title="Permalink to this row"></a>
         </td>
@@ -408,7 +408,7 @@
     <tr id="i2s0">
         <td class="address">0x50200000</td>
         <td><a href="?p=scpu_memory.i2s0" data-id="65" onclick="onClickNodeLink(event); return(false)">i2s0</a></td>
-        <td>-</td>
+        <td>I2S0</td>
         <td>
             <a class="headerlink" href="#i2s0" title="Permalink to this row"></a>
         </td>
@@ -422,7 +422,7 @@
     <tr id="i2s1">
         <td class="address">0x50210000</td>
         <td><a href="?p=scpu_memory.i2s1" data-id="67" onclick="onClickNodeLink(event); return(false)">i2s1</a></td>
-        <td>-</td>
+        <td>I2S1</td>
         <td>
             <a class="headerlink" href="#i2s1" title="Permalink to this row"></a>
         </td>
@@ -436,7 +436,7 @@
     <tr id="i2s2">
         <td class="address">0x50220000</td>
         <td><a href="?p=scpu_memory.i2s2" data-id="69" onclick="onClickNodeLink(event); return(false)">i2s2</a></td>
-        <td>-</td>
+        <td>I2S2</td>
         <td>
             <a class="headerlink" href="#i2s2" title="Permalink to this row"></a>
         </td>
@@ -450,7 +450,7 @@
     <tr id="dsi">
         <td class="address">0x50270000</td>
         <td><a href="?p=scpu_memory.dsi" data-id="71" onclick="onClickNodeLink(event); return(false)">dsi</a></td>
-        <td>-</td>
+        <td>Synopsys DW DSI controller</td>
         <td>
             <a class="headerlink" href="#dsi" title="Permalink to this row"></a>
         </td>
@@ -464,7 +464,7 @@
     <tr id="vo_csr">
         <td class="address">0x50280000</td>
         <td><a href="?p=scpu_memory.vo_csr" data-id="73" onclick="onClickNodeLink(event); return(false)">vo_csr</a></td>
-        <td>-</td>
+        <td>VO CSR</td>
         <td>
             <a class="headerlink" href="#vo_csr" title="Permalink to this row"></a>
         </td>
@@ -478,7 +478,7 @@
     <tr id="hdmi_hdcp">
         <td class="address">0x50290000</td>
         <td><a href="?p=scpu_memory.hdmi_hdcp" data-id="75" onclick="onClickNodeLink(event); return(false)">hdmi_hdcp</a></td>
-        <td>-</td>
+        <td>Synopsys DW HDMI HDCP2</td>
         <td>
             <a class="headerlink" href="#hdmi_hdcp" title="Permalink to this row"></a>
         </td>
@@ -492,7 +492,7 @@
     <tr id="hdmi">
         <td class="address">0x502A0000</td>
         <td><a href="?p=scpu_memory.hdmi" data-id="77" onclick="onClickNodeLink(event); return(false)">hdmi</a></td>
-        <td>-</td>
+        <td>Synopsys DW HDMI</td>
         <td>
             <a class="headerlink" href="#hdmi" title="Permalink to this row"></a>
         </td>
@@ -506,7 +506,7 @@
     <tr id="dc">
         <td class="address">0x502C0000</td>
         <td><a href="?p=scpu_memory.dc" data-id="79" onclick="onClickNodeLink(event); return(false)">dc</a></td>
-        <td>-</td>
+        <td>Display controller (DC8200)</td>
         <td>
             <a class="headerlink" href="#dc" title="Permalink to this row"></a>
         </td>
@@ -520,7 +520,7 @@
     <tr id="gmac0">
         <td class="address">0x50400000</td>
         <td><a href="?p=scpu_memory.gmac0" data-id="81" onclick="onClickNodeLink(event); return(false)">gmac0</a></td>
-        <td>-</td>
+        <td>GMAC0</td>
         <td>
             <a class="headerlink" href="#gmac0" title="Permalink to this row"></a>
         </td>
@@ -534,7 +534,7 @@
     <tr id="gmac1">
         <td class="address">0x50410000</td>
         <td><a href="?p=scpu_memory.gmac1" data-id="83" onclick="onClickNodeLink(event); return(false)">gmac1</a></td>
-        <td>-</td>
+        <td>GMAC1</td>
         <td>
             <a class="headerlink" href="#gmac1" title="Permalink to this row"></a>
         </td>
@@ -548,7 +548,7 @@
     <tr id="sata">
         <td class="address">0x50420000</td>
         <td><a href="?p=scpu_memory.sata" data-id="85" onclick="onClickNodeLink(event); return(false)">sata</a></td>
-        <td>-</td>
+        <td>SATA</td>
         <td>
             <a class="headerlink" href="#sata" title="Permalink to this row"></a>
         </td>
@@ -562,7 +562,7 @@
     <tr id="dma0">
         <td class="address">0x50430000</td>
         <td><a href="?p=scpu_memory.dma0" data-id="87" onclick="onClickNodeLink(event); return(false)">dma0</a></td>
-        <td>-</td>
+        <td>DMA0 controller</td>
         <td>
             <a class="headerlink" href="#dma0" title="Permalink to this row"></a>
         </td>
@@ -576,7 +576,7 @@
     <tr id="hsp_csr">
         <td class="address">0x50440000</td>
         <td><a href="?p=scpu_memory.hsp_csr" data-id="89" onclick="onClickNodeLink(event); return(false)">hsp_csr</a></td>
-        <td>-</td>
+        <td>High-Speed Peripheral subsystem SP CSR [boot-path only]</td>
         <td>
             <a class="headerlink" href="#hsp_csr" title="Permalink to this row"></a>
         </td>
@@ -590,7 +590,7 @@
     <tr id="sdhci">
         <td class="address">0x50450000</td>
         <td><a href="?p=scpu_memory.sdhci" data-id="91" onclick="onClickNodeLink(event); return(false)">sdhci</a></td>
-        <td>-</td>
+        <td>SDHCI eMMC controller [boot-path only]</td>
         <td>
             <a class="headerlink" href="#sdhci" title="Permalink to this row"></a>
         </td>
@@ -604,7 +604,7 @@
     <tr id="sdio0">
         <td class="address">0x50460000</td>
         <td><a href="?p=scpu_memory.sdio0" data-id="93" onclick="onClickNodeLink(event); return(false)">sdio0</a></td>
-        <td>-</td>
+        <td>SDIO0</td>
         <td>
             <a class="headerlink" href="#sdio0" title="Permalink to this row"></a>
         </td>
@@ -618,7 +618,7 @@
     <tr id="sdio1">
         <td class="address">0x50470000</td>
         <td><a href="?p=scpu_memory.sdio1" data-id="95" onclick="onClickNodeLink(event); return(false)">sdio1</a></td>
-        <td>-</td>
+        <td>SDIO1</td>
         <td>
             <a class="headerlink" href="#sdio1" title="Permalink to this row"></a>
         </td>
@@ -632,7 +632,7 @@
     <tr id="usbdrd0">
         <td class="address">0x50480000</td>
         <td><a href="?p=scpu_memory.usbdrd0" data-id="97" onclick="onClickNodeLink(event); return(false)">usbdrd0</a></td>
-        <td>-</td>
+        <td>USB 3.0 DRD controller [boot-path only]</td>
         <td>
             <a class="headerlink" href="#usbdrd0" title="Permalink to this row"></a>
         </td>
@@ -646,7 +646,7 @@
     <tr id="usbdrd1">
         <td class="address">0x50490000</td>
         <td><a href="?p=scpu_memory.usbdrd1" data-id="99" onclick="onClickNodeLink(event); return(false)">usbdrd1</a></td>
-        <td>-</td>
+        <td>USB 3.0 DRD controller [boot-path only]</td>
         <td>
             <a class="headerlink" href="#usbdrd1" title="Permalink to this row"></a>
         </td>
@@ -660,7 +660,7 @@
     <tr id="wdt0">
         <td class="address">0x50800000</td>
         <td><a href="?p=scpu_memory.wdt0" data-id="101" onclick="onClickNodeLink(event); return(false)">wdt0</a></td>
-        <td>-</td>
+        <td>Watchdog 0</td>
         <td>
             <a class="headerlink" href="#wdt0" title="Permalink to this row"></a>
         </td>
@@ -674,7 +674,7 @@
     <tr id="wdt1">
         <td class="address">0x50804000</td>
         <td><a href="?p=scpu_memory.wdt1" data-id="103" onclick="onClickNodeLink(event); return(false)">wdt1</a></td>
-        <td>-</td>
+        <td>Watchdog 1</td>
         <td>
             <a class="headerlink" href="#wdt1" title="Permalink to this row"></a>
         </td>
@@ -688,7 +688,7 @@
     <tr id="wdt2">
         <td class="address">0x50808000</td>
         <td><a href="?p=scpu_memory.wdt2" data-id="105" onclick="onClickNodeLink(event); return(false)">wdt2</a></td>
-        <td>-</td>
+        <td>Watchdog 2</td>
         <td>
             <a class="headerlink" href="#wdt2" title="Permalink to this row"></a>
         </td>
@@ -702,7 +702,7 @@
     <tr id="wdt3">
         <td class="address">0x5080C000</td>
         <td><a href="?p=scpu_memory.wdt3" data-id="107" onclick="onClickNodeLink(event); return(false)">wdt3</a></td>
-        <td>-</td>
+        <td>Watchdog 3</td>
         <td>
             <a class="headerlink" href="#wdt3" title="Permalink to this row"></a>
         </td>
@@ -716,7 +716,7 @@
     <tr id="spi0">
         <td class="address">0x50810000</td>
         <td><a href="?p=scpu_memory.spi0" data-id="109" onclick="onClickNodeLink(event); return(false)">spi0</a></td>
-        <td>-</td>
+        <td>SPI0</td>
         <td>
             <a class="headerlink" href="#spi0" title="Permalink to this row"></a>
         </td>
@@ -730,7 +730,7 @@
     <tr id="spi1">
         <td class="address">0x50814000</td>
         <td><a href="?p=scpu_memory.spi1" data-id="111" onclick="onClickNodeLink(event); return(false)">spi1</a></td>
-        <td>-</td>
+        <td>SPI1</td>
         <td>
             <a class="headerlink" href="#spi1" title="Permalink to this row"></a>
         </td>
@@ -744,7 +744,7 @@
     <tr id="pwm">
         <td class="address">0x50818000</td>
         <td><a href="?p=scpu_memory.pwm" data-id="113" onclick="onClickNodeLink(event); return(false)">pwm</a></td>
-        <td>-</td>
+        <td>PWM</td>
         <td>
             <a class="headerlink" href="#pwm" title="Permalink to this row"></a>
         </td>
@@ -758,7 +758,7 @@
     <tr id="uart0">
         <td class="address">0x50900000</td>
         <td><a href="?p=scpu_memory.uart0" data-id="115" onclick="onClickNodeLink(event); return(false)">uart0</a></td>
-        <td>-</td>
+        <td>DW APB UART0, primary boot console</td>
         <td>
             <a class="headerlink" href="#uart0" title="Permalink to this row"></a>
         </td>
@@ -772,7 +772,7 @@
     <tr id="uart1">
         <td class="address">0x50910000</td>
         <td><a href="?p=scpu_memory.uart1" data-id="117" onclick="onClickNodeLink(event); return(false)">uart1</a></td>
-        <td>-</td>
+        <td>UART1 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#uart1" title="Permalink to this row"></a>
         </td>
@@ -786,7 +786,7 @@
     <tr id="uart2">
         <td class="address">0x50920000</td>
         <td><a href="?p=scpu_memory.uart2" data-id="119" onclick="onClickNodeLink(event); return(false)">uart2</a></td>
-        <td>-</td>
+        <td>UART2</td>
         <td>
             <a class="headerlink" href="#uart2" title="Permalink to this row"></a>
         </td>
@@ -800,7 +800,7 @@
     <tr id="uart3">
         <td class="address">0x50930000</td>
         <td><a href="?p=scpu_memory.uart3" data-id="121" onclick="onClickNodeLink(event); return(false)">uart3</a></td>
-        <td>-</td>
+        <td>UART3</td>
         <td>
             <a class="headerlink" href="#uart3" title="Permalink to this row"></a>
         </td>
@@ -814,7 +814,7 @@
     <tr id="uart4">
         <td class="address">0x50940000</td>
         <td><a href="?p=scpu_memory.uart4" data-id="123" onclick="onClickNodeLink(event); return(false)">uart4</a></td>
-        <td>-</td>
+        <td>UART4</td>
         <td>
             <a class="headerlink" href="#uart4" title="Permalink to this row"></a>
         </td>
@@ -828,7 +828,7 @@
     <tr id="i2c0">
         <td class="address">0x50950000</td>
         <td><a href="?p=scpu_memory.i2c0" data-id="125" onclick="onClickNodeLink(event); return(false)">i2c0</a></td>
-        <td>-</td>
+        <td>I2C0</td>
         <td>
             <a class="headerlink" href="#i2c0" title="Permalink to this row"></a>
         </td>
@@ -842,7 +842,7 @@
     <tr id="i2c1">
         <td class="address">0x50960000</td>
         <td><a href="?p=scpu_memory.i2c1" data-id="127" onclick="onClickNodeLink(event); return(false)">i2c1</a></td>
-        <td>-</td>
+        <td>I2C1</td>
         <td>
             <a class="headerlink" href="#i2c1" title="Permalink to this row"></a>
         </td>
@@ -856,7 +856,7 @@
     <tr id="i2c2">
         <td class="address">0x50970000</td>
         <td><a href="?p=scpu_memory.i2c2" data-id="129" onclick="onClickNodeLink(event); return(false)">i2c2</a></td>
-        <td>-</td>
+        <td>I2C2</td>
         <td>
             <a class="headerlink" href="#i2c2" title="Permalink to this row"></a>
         </td>
@@ -870,7 +870,7 @@
     <tr id="i2c3">
         <td class="address">0x50980000</td>
         <td><a href="?p=scpu_memory.i2c3" data-id="131" onclick="onClickNodeLink(event); return(false)">i2c3</a></td>
-        <td>-</td>
+        <td>I2C3</td>
         <td>
             <a class="headerlink" href="#i2c3" title="Permalink to this row"></a>
         </td>
@@ -884,7 +884,7 @@
     <tr id="i2c4">
         <td class="address">0x50990000</td>
         <td><a href="?p=scpu_memory.i2c4" data-id="133" onclick="onClickNodeLink(event); return(false)">i2c4</a></td>
-        <td>-</td>
+        <td>I2C4</td>
         <td>
             <a class="headerlink" href="#i2c4" title="Permalink to this row"></a>
         </td>
@@ -898,7 +898,7 @@
     <tr id="i2c5">
         <td class="address">0x509A0000</td>
         <td><a href="?p=scpu_memory.i2c5" data-id="135" onclick="onClickNodeLink(event); return(false)">i2c5</a></td>
-        <td>-</td>
+        <td>I2C5</td>
         <td>
             <a class="headerlink" href="#i2c5" title="Permalink to this row"></a>
         </td>
@@ -912,7 +912,7 @@
     <tr id="i2c6">
         <td class="address">0x509B0000</td>
         <td><a href="?p=scpu_memory.i2c6" data-id="137" onclick="onClickNodeLink(event); return(false)">i2c6</a></td>
-        <td>-</td>
+        <td>I2C6</td>
         <td>
             <a class="headerlink" href="#i2c6" title="Permalink to this row"></a>
         </td>
@@ -926,7 +926,7 @@
     <tr id="i2c7">
         <td class="address">0x509C0000</td>
         <td><a href="?p=scpu_memory.i2c7" data-id="139" onclick="onClickNodeLink(event); return(false)">i2c7</a></td>
-        <td>-</td>
+        <td>I2C7</td>
         <td>
             <a class="headerlink" href="#i2c7" title="Permalink to this row"></a>
         </td>
@@ -940,7 +940,7 @@
     <tr id="i2c8">
         <td class="address">0x509D0000</td>
         <td><a href="?p=scpu_memory.i2c8" data-id="141" onclick="onClickNodeLink(event); return(false)">i2c8</a></td>
-        <td>-</td>
+        <td>I2C8</td>
         <td>
             <a class="headerlink" href="#i2c8" title="Permalink to this row"></a>
         </td>
@@ -954,7 +954,7 @@
     <tr id="i2c9">
         <td class="address">0x509E0000</td>
         <td><a href="?p=scpu_memory.i2c9" data-id="143" onclick="onClickNodeLink(event); return(false)">i2c9</a></td>
-        <td>-</td>
+        <td>I2C9</td>
         <td>
             <a class="headerlink" href="#i2c9" title="Permalink to this row"></a>
         </td>
@@ -968,7 +968,7 @@
     <tr id="mbox">
         <td class="address">0x50A00000</td>
         <td><a href="?p=scpu_memory.mbox" data-id="145" onclick="onClickNodeLink(event); return(false)">mbox</a></td>
-        <td>-</td>
+        <td>U84→SCPU mailbox [boot-path only]</td>
         <td>
             <a class="headerlink" href="#mbox" title="Permalink to this row"></a>
         </td>
@@ -982,7 +982,7 @@
     <tr id="mbox_scpu_to_u84">
         <td class="address">0x50A10000</td>
         <td><a href="?p=scpu_memory.mbox_scpu_to_u84" data-id="147" onclick="onClickNodeLink(event); return(false)">mbox_scpu_to_u84</a></td>
-        <td>-</td>
+        <td>SCPU → U84</td>
         <td>
             <a class="headerlink" href="#mbox_scpu_to_u84" title="Permalink to this row"></a>
         </td>
@@ -996,7 +996,7 @@
     <tr id="mbox_u84_to_lcpu">
         <td class="address">0x50A20000</td>
         <td><a href="?p=scpu_memory.mbox_u84_to_lcpu" data-id="149" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_lcpu</a></td>
-        <td>-</td>
+        <td>U84 → LCPU</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_lcpu" title="Permalink to this row"></a>
         </td>
@@ -1010,7 +1010,7 @@
     <tr id="mbox_lcpu_to_u84">
         <td class="address">0x50A30000</td>
         <td><a href="?p=scpu_memory.mbox_lcpu_to_u84" data-id="151" onclick="onClickNodeLink(event); return(false)">mbox_lcpu_to_u84</a></td>
-        <td>-</td>
+        <td>LCPU → U84</td>
         <td>
             <a class="headerlink" href="#mbox_lcpu_to_u84" title="Permalink to this row"></a>
         </td>
@@ -1024,7 +1024,7 @@
     <tr id="mbox_u84_to_npu0">
         <td class="address">0x50A40000</td>
         <td><a href="?p=scpu_memory.mbox_u84_to_npu0" data-id="153" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_npu0</a></td>
-        <td>-</td>
+        <td>U84 → NPU0</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_npu0" title="Permalink to this row"></a>
         </td>
@@ -1038,7 +1038,7 @@
     <tr id="mbox_npu0_to_u84">
         <td class="address">0x50A50000</td>
         <td><a href="?p=scpu_memory.mbox_npu0_to_u84" data-id="155" onclick="onClickNodeLink(event); return(false)">mbox_npu0_to_u84</a></td>
-        <td>-</td>
+        <td>NPU0 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_npu0_to_u84" title="Permalink to this row"></a>
         </td>
@@ -1052,7 +1052,7 @@
     <tr id="mbox_u84_to_npu1">
         <td class="address">0x50A60000</td>
         <td><a href="?p=scpu_memory.mbox_u84_to_npu1" data-id="157" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_npu1</a></td>
-        <td>-</td>
+        <td>U84 → NPU1</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_npu1" title="Permalink to this row"></a>
         </td>
@@ -1066,7 +1066,7 @@
     <tr id="mbox_npu1_to_u84">
         <td class="address">0x50A70000</td>
         <td><a href="?p=scpu_memory.mbox_npu1_to_u84" data-id="159" onclick="onClickNodeLink(event); return(false)">mbox_npu1_to_u84</a></td>
-        <td>-</td>
+        <td>NPU1 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_npu1_to_u84" title="Permalink to this row"></a>
         </td>
@@ -1080,7 +1080,7 @@
     <tr id="mbox_u84_to_dsp0">
         <td class="address">0x50A80000</td>
         <td><a href="?p=scpu_memory.mbox_u84_to_dsp0" data-id="161" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp0</a></td>
-        <td>-</td>
+        <td>U84 → DSP0</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_dsp0" title="Permalink to this row"></a>
         </td>
@@ -1094,7 +1094,7 @@
     <tr id="mbox_dsp0_to_u84">
         <td class="address">0x50A90000</td>
         <td><a href="?p=scpu_memory.mbox_dsp0_to_u84" data-id="163" onclick="onClickNodeLink(event); return(false)">mbox_dsp0_to_u84</a></td>
-        <td>-</td>
+        <td>DSP0 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_dsp0_to_u84" title="Permalink to this row"></a>
         </td>
@@ -1108,7 +1108,7 @@
     <tr id="mbox_u84_to_dsp1">
         <td class="address">0x50AA0000</td>
         <td><a href="?p=scpu_memory.mbox_u84_to_dsp1" data-id="165" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp1</a></td>
-        <td>-</td>
+        <td>U84 → DSP1</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_dsp1" title="Permalink to this row"></a>
         </td>
@@ -1122,7 +1122,7 @@
     <tr id="mbox_dsp1_to_u84">
         <td class="address">0x50AB0000</td>
         <td><a href="?p=scpu_memory.mbox_dsp1_to_u84" data-id="167" onclick="onClickNodeLink(event); return(false)">mbox_dsp1_to_u84</a></td>
-        <td>-</td>
+        <td>DSP1 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_dsp1_to_u84" title="Permalink to this row"></a>
         </td>
@@ -1136,7 +1136,7 @@
     <tr id="mbox_u84_to_dsp2">
         <td class="address">0x50AC0000</td>
         <td><a href="?p=scpu_memory.mbox_u84_to_dsp2" data-id="169" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp2</a></td>
-        <td>-</td>
+        <td>U84 → DSP2</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_dsp2" title="Permalink to this row"></a>
         </td>
@@ -1150,7 +1150,7 @@
     <tr id="mbox_dsp2_to_u84">
         <td class="address">0x50AD0000</td>
         <td><a href="?p=scpu_memory.mbox_dsp2_to_u84" data-id="171" onclick="onClickNodeLink(event); return(false)">mbox_dsp2_to_u84</a></td>
-        <td>-</td>
+        <td>DSP2 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_dsp2_to_u84" title="Permalink to this row"></a>
         </td>
@@ -1164,7 +1164,7 @@
     <tr id="mbox_u84_to_dsp3">
         <td class="address">0x50AE0000</td>
         <td><a href="?p=scpu_memory.mbox_u84_to_dsp3" data-id="173" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp3</a></td>
-        <td>-</td>
+        <td>U84 → DSP3</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_dsp3" title="Permalink to this row"></a>
         </td>
@@ -1178,7 +1178,7 @@
     <tr id="mbox_dsp3_to_u84">
         <td class="address">0x50AF0000</td>
         <td><a href="?p=scpu_memory.mbox_dsp3_to_u84" data-id="175" onclick="onClickNodeLink(event); return(false)">mbox_dsp3_to_u84</a></td>
-        <td>-</td>
+        <td>DSP3 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_dsp3_to_u84" title="Permalink to this row"></a>
         </td>
@@ -1192,7 +1192,7 @@
     <tr id="pvt0">
         <td class="address">0x50B00000</td>
         <td><a href="?p=scpu_memory.pvt0" data-id="177" onclick="onClickNodeLink(event); return(false)">pvt0</a></td>
-        <td>-</td>
+        <td>PVT (Process-Voltage-Temperature) monitor</td>
         <td>
             <a class="headerlink" href="#pvt0" title="Permalink to this row"></a>
         </td>
@@ -1206,7 +1206,7 @@
     <tr id="fan">
         <td class="address">0x50B50000</td>
         <td><a href="?p=scpu_memory.fan" data-id="179" onclick="onClickNodeLink(event); return(false)">fan</a></td>
-        <td>-</td>
+        <td>Fan control</td>
         <td>
             <a class="headerlink" href="#fan" title="Permalink to this row"></a>
         </td>
@@ -1220,7 +1220,7 @@
     <tr id="smmu">
         <td class="address">0x50C00000</td>
         <td><a href="?p=scpu_memory.smmu" data-id="181" onclick="onClickNodeLink(event); return(false)">smmu</a></td>
-        <td>-</td>
+        <td>SMMU</td>
         <td>
             <a class="headerlink" href="#smmu" title="Permalink to this row"></a>
         </td>
@@ -1234,7 +1234,7 @@
     <tr id="isp0">
         <td class="address">0x51000000</td>
         <td><a href="?p=scpu_memory.isp0" data-id="183" onclick="onClickNodeLink(event); return(false)">isp0</a></td>
-        <td>-</td>
+        <td>ISP0</td>
         <td>
             <a class="headerlink" href="#isp0" title="Permalink to this row"></a>
         </td>
@@ -1248,7 +1248,7 @@
     <tr id="isp1">
         <td class="address">0x51010000</td>
         <td><a href="?p=scpu_memory.isp1" data-id="185" onclick="onClickNodeLink(event); return(false)">isp1</a></td>
-        <td>-</td>
+        <td>ISP1</td>
         <td>
             <a class="headerlink" href="#isp1" title="Permalink to this row"></a>
         </td>
@@ -1262,7 +1262,7 @@
     <tr id="dewrap">
         <td class="address">0x51020000</td>
         <td><a href="?p=scpu_memory.dewrap" data-id="187" onclick="onClickNodeLink(event); return(false)">dewrap</a></td>
-        <td>-</td>
+        <td>Dewarp/lens-correction engine</td>
         <td>
             <a class="headerlink" href="#dewrap" title="Permalink to this row"></a>
         </td>
@@ -1276,7 +1276,7 @@
     <tr id="vi_csr">
         <td class="address">0x51030000</td>
         <td><a href="?p=scpu_memory.vi_csr" data-id="189" onclick="onClickNodeLink(event); return(false)">vi_csr</a></td>
-        <td>-</td>
+        <td>VI Top CSR</td>
         <td>
             <a class="headerlink" href="#vi_csr" title="Permalink to this row"></a>
         </td>
@@ -1290,7 +1290,7 @@
     <tr id="csi2_0">
         <td class="address">0x51050000</td>
         <td><a href="?p=scpu_memory.csi2_0" data-id="191" onclick="onClickNodeLink(event); return(false)">csi2_0</a></td>
-        <td>-</td>
+        <td>MIPI CSI-2 receiver 0</td>
         <td>
             <a class="headerlink" href="#csi2_0" title="Permalink to this row"></a>
         </td>
@@ -1304,7 +1304,7 @@
     <tr id="csi2_1">
         <td class="address">0x51060000</td>
         <td><a href="?p=scpu_memory.csi2_1" data-id="193" onclick="onClickNodeLink(event); return(false)">csi2_1</a></td>
-        <td>-</td>
+        <td>MIPI CSI-2 receiver 1</td>
         <td>
             <a class="headerlink" href="#csi2_1" title="Permalink to this row"></a>
         </td>
@@ -1318,7 +1318,7 @@
     <tr id="csi2_2">
         <td class="address">0x51070000</td>
         <td><a href="?p=scpu_memory.csi2_2" data-id="195" onclick="onClickNodeLink(event); return(false)">csi2_2</a></td>
-        <td>-</td>
+        <td>MIPI CSI-2 receiver 2</td>
         <td>
             <a class="headerlink" href="#csi2_2" title="Permalink to this row"></a>
         </td>
@@ -1332,7 +1332,7 @@
     <tr id="csi2_3">
         <td class="address">0x51080000</td>
         <td><a href="?p=scpu_memory.csi2_3" data-id="197" onclick="onClickNodeLink(event); return(false)">csi2_3</a></td>
-        <td>-</td>
+        <td>MIPI CSI-2 receiver 3</td>
         <td>
             <a class="headerlink" href="#csi2_3" title="Permalink to this row"></a>
         </td>
@@ -1346,7 +1346,7 @@
     <tr id="csi2_4">
         <td class="address">0x51090000</td>
         <td><a href="?p=scpu_memory.csi2_4" data-id="199" onclick="onClickNodeLink(event); return(false)">csi2_4</a></td>
-        <td>-</td>
+        <td>MIPI CSI-2 receiver 4</td>
         <td>
             <a class="headerlink" href="#csi2_4" title="Permalink to this row"></a>
         </td>
@@ -1360,7 +1360,7 @@
     <tr id="csi2_5">
         <td class="address">0x510A0000</td>
         <td><a href="?p=scpu_memory.csi2_5" data-id="201" onclick="onClickNodeLink(event); return(false)">csi2_5</a></td>
-        <td>-</td>
+        <td>MIPI CSI-2 receiver 5</td>
         <td>
             <a class="headerlink" href="#csi2_5" title="Permalink to this row"></a>
         </td>
@@ -1374,7 +1374,7 @@
     <tr id="dphy0">
         <td class="address">0x510C0000</td>
         <td><a href="?p=scpu_memory.dphy0" data-id="203" onclick="onClickNodeLink(event); return(false)">dphy0</a></td>
-        <td>-</td>
+        <td>MIPI D-PHY 0</td>
         <td>
             <a class="headerlink" href="#dphy0" title="Permalink to this row"></a>
         </td>
@@ -1388,7 +1388,7 @@
     <tr id="dphy1">
         <td class="address">0x510E0000</td>
         <td><a href="?p=scpu_memory.dphy1" data-id="205" onclick="onClickNodeLink(event); return(false)">dphy1</a></td>
-        <td>-</td>
+        <td>MIPI D-PHY 1</td>
         <td>
             <a class="headerlink" href="#dphy1" title="Permalink to this row"></a>
         </td>
@@ -1402,7 +1402,7 @@
     <tr id="dphy2">
         <td class="address">0x51100000</td>
         <td><a href="?p=scpu_memory.dphy2" data-id="207" onclick="onClickNodeLink(event); return(false)">dphy2</a></td>
-        <td>-</td>
+        <td>MIPI D-PHY 2</td>
         <td>
             <a class="headerlink" href="#dphy2" title="Permalink to this row"></a>
         </td>
@@ -1416,7 +1416,7 @@
     <tr id="dphy3">
         <td class="address">0x51120000</td>
         <td><a href="?p=scpu_memory.dphy3" data-id="209" onclick="onClickNodeLink(event); return(false)">dphy3</a></td>
-        <td>-</td>
+        <td>MIPI D-PHY 3</td>
         <td>
             <a class="headerlink" href="#dphy3" title="Permalink to this row"></a>
         </td>
@@ -1430,7 +1430,7 @@
     <tr id="dphy4">
         <td class="address">0x51140000</td>
         <td><a href="?p=scpu_memory.dphy4" data-id="211" onclick="onClickNodeLink(event); return(false)">dphy4</a></td>
-        <td>-</td>
+        <td>MIPI D-PHY 4</td>
         <td>
             <a class="headerlink" href="#dphy4" title="Permalink to this row"></a>
         </td>
@@ -1444,7 +1444,7 @@
     <tr id="dphy5">
         <td class="address">0x51160000</td>
         <td><a href="?p=scpu_memory.dphy5" data-id="213" onclick="onClickNodeLink(event); return(false)">dphy5</a></td>
-        <td>-</td>
+        <td>MIPI D-PHY 5</td>
         <td>
             <a class="headerlink" href="#dphy5" title="Permalink to this row"></a>
         </td>
@@ -1458,7 +1458,7 @@
     <tr id="gpu">
         <td class="address">0x51400000</td>
         <td><a href="?p=scpu_memory.gpu" data-id="215" onclick="onClickNodeLink(event); return(false)">gpu</a></td>
-        <td>-</td>
+        <td>GPU (P550 / SiFive Intelligence X280)</td>
         <td>
             <a class="headerlink" href="#gpu" title="Permalink to this row"></a>
         </td>
@@ -1472,7 +1472,7 @@
     <tr id="pinctrl">
         <td class="address">0x51600000</td>
         <td><a href="?p=scpu_memory.pinctrl" data-id="217" onclick="onClickNodeLink(event); return(false)">pinctrl</a></td>
-        <td>-</td>
+        <td>Pin controller [boot-path only]</td>
         <td>
             <a class="headerlink" href="#pinctrl" title="Permalink to this row"></a>
         </td>
@@ -1486,7 +1486,7 @@
     <tr id="bootspi">
         <td class="address">0x51800000</td>
         <td><a href="?p=scpu_memory.bootspi" data-id="219" onclick="onClickNodeLink(event); return(false)">bootspi</a></td>
-        <td>-</td>
+        <td>SPI flash controller [boot-path only]</td>
         <td>
             <a class="headerlink" href="#bootspi" title="Permalink to this row"></a>
         </td>
@@ -1500,7 +1500,7 @@
     <tr id="pmu">
         <td class="address">0x51808000</td>
         <td><a href="?p=scpu_memory.pmu" data-id="221" onclick="onClickNodeLink(event); return(false)">pmu</a></td>
-        <td>-</td>
+        <td>PMU</td>
         <td>
             <a class="headerlink" href="#pmu" title="Permalink to this row"></a>
         </td>
@@ -1514,7 +1514,7 @@
     <tr id="syscon">
         <td class="address">0x51810000</td>
         <td><a href="?p=scpu_memory.syscon" data-id="223" onclick="onClickNodeLink(event); return(false)">syscon</a></td>
-        <td>-</td>
+        <td>SYSCON</td>
         <td>
             <a class="headerlink" href="#syscon" title="Permalink to this row"></a>
         </td>
@@ -1528,7 +1528,7 @@
     <tr id="rtc">
         <td class="address">0x51818000</td>
         <td><a href="?p=scpu_memory.rtc" data-id="289" onclick="onClickNodeLink(event); return(false)">rtc</a></td>
-        <td>-</td>
+        <td>RTC</td>
         <td>
             <a class="headerlink" href="#rtc" title="Permalink to this row"></a>
         </td>
@@ -1542,7 +1542,7 @@
     <tr id="aon_crg">
         <td class="address">0x51820000</td>
         <td><a href="?p=scpu_memory.aon_crg" data-id="291" onclick="onClickNodeLink(event); return(false)">aon_crg</a></td>
-        <td>-</td>
+        <td>? AON domain [boot-path only], likely AONCRG or PMCRG</td>
         <td>
             <a class="headerlink" href="#aon_crg" title="Permalink to this row"></a>
         </td>
@@ -1556,7 +1556,7 @@
     <tr id="syscrg">
         <td class="address">0x51828000</td>
         <td><a href="?p=scpu_memory.syscrg" data-id="293" onclick="onClickNodeLink(event); return(false)">syscrg</a></td>
-        <td>-</td>
+        <td>SYSCRG</td>
         <td>
             <a class="headerlink" href="#syscrg" title="Permalink to this row"></a>
         </td>
@@ -1570,7 +1570,7 @@
     <tr id="i2c_aon0">
         <td class="address">0x51830000</td>
         <td><a href="?p=scpu_memory.i2c_aon0" data-id="476" onclick="onClickNodeLink(event); return(false)">i2c_aon0</a></td>
-        <td>-</td>
+        <td>AON I2C0</td>
         <td>
             <a class="headerlink" href="#i2c_aon0" title="Permalink to this row"></a>
         </td>
@@ -1584,7 +1584,7 @@
     <tr id="i2c_aon1">
         <td class="address">0x51838000</td>
         <td><a href="?p=scpu_memory.i2c_aon1" data-id="478" onclick="onClickNodeLink(event); return(false)">i2c_aon1</a></td>
-        <td>-</td>
+        <td>AON I2C1</td>
         <td>
             <a class="headerlink" href="#i2c_aon1" title="Permalink to this row"></a>
         </td>
@@ -1598,7 +1598,7 @@
     <tr id="timer0">
         <td class="address">0x51840000</td>
         <td><a href="?p=scpu_memory.timer0" data-id="480" onclick="onClickNodeLink(event); return(false)">timer0</a></td>
-        <td>-</td>
+        <td>TIMER0 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#timer0" title="Permalink to this row"></a>
         </td>
@@ -1612,7 +1612,7 @@
     <tr id="timer1">
         <td class="address">0x51848000</td>
         <td><a href="?p=scpu_memory.timer1" data-id="482" onclick="onClickNodeLink(event); return(false)">timer1</a></td>
-        <td>-</td>
+        <td>TIMER1</td>
         <td>
             <a class="headerlink" href="#timer1" title="Permalink to this row"></a>
         </td>
@@ -1626,7 +1626,7 @@
     <tr id="timer2">
         <td class="address">0x51850000</td>
         <td><a href="?p=scpu_memory.timer2" data-id="484" onclick="onClickNodeLink(event); return(false)">timer2</a></td>
-        <td>-</td>
+        <td>TIMER2</td>
         <td>
             <a class="headerlink" href="#timer2" title="Permalink to this row"></a>
         </td>
@@ -1640,7 +1640,7 @@
     <tr id="timer3">
         <td class="address">0x51858000</td>
         <td><a href="?p=scpu_memory.timer3" data-id="486" onclick="onClickNodeLink(event); return(false)">timer3</a></td>
-        <td>-</td>
+        <td>TIMER3</td>
         <td>
             <a class="headerlink" href="#timer3" title="Permalink to this row"></a>
         </td>
@@ -1654,7 +1654,7 @@
     <tr id="scpu_per">
         <td class="address">0x51900000</td>
         <td><a href="?p=scpu_memory.scpu_per" data-id="488" onclick="onClickNodeLink(event); return(false)">scpu_per</a></td>
-        <td>-</td>
+        <td>? may be SPAcc MCPU-alias or second instance [boot-path only]</td>
         <td>
             <a class="headerlink" href="#scpu_per" title="Permalink to this row"></a>
         </td>
@@ -1668,7 +1668,7 @@
     <tr id="coda_llc">
         <td class="address">0x51C00000</td>
         <td><a href="?p=scpu_memory.coda_llc" data-id="490" onclick="onClickNodeLink(event); return(false)">coda_llc</a></td>
-        <td>-</td>
+        <td>CodaCache LLC controller (NPU LLC)</td>
         <td>
             <a class="headerlink" href="#coda_llc" title="Permalink to this row"></a>
         </td>
@@ -1682,7 +1682,7 @@
     <tr id="coda_dma0">
         <td class="address">0x51D88000</td>
         <td><a href="?p=scpu_memory.coda_dma0" data-id="494" onclick="onClickNodeLink(event); return(false)">coda_dma0</a></td>
-        <td>-</td>
+        <td>NPU LLC0 DW AXI DMA</td>
         <td>
             <a class="headerlink" href="#coda_dma0" title="Permalink to this row"></a>
         </td>
@@ -1696,7 +1696,7 @@
     <tr id="coda_dma1">
         <td class="address">0x51D89000</td>
         <td><a href="?p=scpu_memory.coda_dma1" data-id="497" onclick="onClickNodeLink(event); return(false)">coda_dma1</a></td>
-        <td>-</td>
+        <td>NPU LLC1 DW AXI DMA</td>
         <td>
             <a class="headerlink" href="#coda_dma1" title="Permalink to this row"></a>
         </td>
@@ -1710,7 +1710,7 @@
     <tr id="noc">
         <td class="address">0x52000000</td>
         <td><a href="?p=scpu_memory.noc" data-id="500" onclick="onClickNodeLink(event); return(false)">noc</a></td>
-        <td>-</td>
+        <td>System NoC configuration space (packet/trans probes, QoS settings, filters)</td>
         <td>
             <a class="headerlink" href="#noc" title="Permalink to this row"></a>
         </td>
@@ -1724,7 +1724,7 @@
     <tr id="d2d">
         <td class="address">0x52100000</td>
         <td><a href="?p=scpu_memory.d2d" data-id="502" onclick="onClickNodeLink(event); return(false)">d2d</a></td>
-        <td>-</td>
+        <td>Die-to-Die subsystem [boot-path only]</td>
         <td>
             <a class="headerlink" href="#d2d" title="Permalink to this row"></a>
         </td>
@@ -1738,7 +1738,7 @@
     <tr id="dsp_subsys">
         <td class="address">0x52200000</td>
         <td><a href="?p=scpu_memory.dsp_subsys" data-id="506" onclick="onClickNodeLink(event); return(false)">dsp_subsys</a></td>
-        <td>-</td>
+        <td>DSP subsystem (es-dsp-subsys)</td>
         <td>
             <a class="headerlink" href="#dsp_subsys" title="Permalink to this row"></a>
         </td>
@@ -1752,7 +1752,7 @@
     <tr id="ddrctl0">
         <td class="address">0x52300000</td>
         <td><a href="?p=scpu_memory.ddrctl0" data-id="508" onclick="onClickNodeLink(event); return(false)">ddrctl0</a></td>
-        <td>-</td>
+        <td>DDR Controller 0 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#ddrctl0" title="Permalink to this row"></a>
         </td>
@@ -1766,7 +1766,7 @@
     <tr id="ddrctl1">
         <td class="address">0x52380000</td>
         <td><a href="?p=scpu_memory.ddrctl1" data-id="510" onclick="onClickNodeLink(event); return(false)">ddrctl1</a></td>
-        <td>-</td>
+        <td>DDR Controller 1 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#ddrctl1" title="Permalink to this row"></a>
         </td>
@@ -1780,7 +1780,7 @@
     <tr id="ddrphy0">
         <td class="address">0x53000000</td>
         <td><a href="?p=scpu_memory.ddrphy0" data-id="512" onclick="onClickNodeLink(event); return(false)">ddrphy0</a></td>
-        <td>-</td>
+        <td>DDR PHY 0 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#ddrphy0" title="Permalink to this row"></a>
         </td>
@@ -1794,7 +1794,7 @@
     <tr id="ddrphy1">
         <td class="address">0x53800000</td>
         <td><a href="?p=scpu_memory.ddrphy1" data-id="514" onclick="onClickNodeLink(event); return(false)">ddrphy1</a></td>
-        <td>-</td>
+        <td>DDR PHY 1 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#ddrphy1" title="Permalink to this row"></a>
         </td>
@@ -1808,7 +1808,7 @@
     <tr id="pcie_ip">
         <td class="address">0x54000000</td>
         <td><a href="?p=scpu_memory.pcie_ip" data-id="516" onclick="onClickNodeLink(event); return(false)">pcie_ip</a></td>
-        <td>-</td>
+        <td>PCIe IP DBI config space</td>
         <td>
             <a class="headerlink" href="#pcie_ip" title="Permalink to this row"></a>
         </td>
@@ -1822,7 +1822,7 @@
     <tr id="masked_rom">
         <td class="address">0x58000000</td>
         <td><a href="?p=scpu_memory.masked_rom" data-id="518" onclick="onClickNodeLink(event); return(false)">masked_rom</a></td>
-        <td>-</td>
+        <td>SCPU masked ROM</td>
         <td>
             <a class="headerlink" href="#masked_rom" title="Permalink to this row"></a>
         </td>
@@ -1836,7 +1836,7 @@
     <tr id="scpu_tim_remap">
         <td class="address">0x58500000</td>
         <td><a href="?p=scpu_memory.scpu_tim_remap" data-id="519" onclick="onClickNodeLink(event); return(false)">scpu_tim_remap</a></td>
-        <td>-</td>
+        <td>SCPU TIM remap alias</td>
         <td>
             <a class="headerlink" href="#scpu_tim_remap" title="Permalink to this row"></a>
         </td>
@@ -1850,7 +1850,7 @@
     <tr id="aon_tim">
         <td class="address">0x58800000</td>
         <td><a href="?p=scpu_memory.aon_tim" data-id="520" onclick="onClickNodeLink(event); return(false)">aon_tim</a></td>
-        <td>-</td>
+        <td>AON Timer SRAM window (size TBD)</td>
         <td>
             <a class="headerlink" href="#aon_tim" title="Permalink to this row"></a>
         </td>
@@ -1864,7 +1864,7 @@
     <tr id="coda_cache">
         <td class="address">0x59000000</td>
         <td><a href="?p=scpu_memory.coda_cache" data-id="521" onclick="onClickNodeLink(event); return(false)">coda_cache</a></td>
-        <td>-</td>
+        <td>CodaCache0 SPRAM boot load target</td>
         <td>
             <a class="headerlink" href="#coda_cache" title="Permalink to this row"></a>
         </td>
@@ -1878,7 +1878,7 @@
     <tr id="coda1_cache">
         <td class="address">0x5A000000</td>
         <td><a href="?p=scpu_memory.coda1_cache" data-id="522" onclick="onClickNodeLink(event); return(false)">coda1_cache</a></td>
-        <td>-</td>
+        <td>CodaCache1 SPRAM (NPU)</td>
         <td>
             <a class="headerlink" href="#coda1_cache" title="Permalink to this row"></a>
         </td>
@@ -1892,7 +1892,7 @@
     <tr id="dsp_sram">
         <td class="address">0x5B000000</td>
         <td><a href="?p=scpu_memory.dsp_sram" data-id="523" onclick="onClickNodeLink(event); return(false)">dsp_sram</a></td>
-        <td>-</td>
+        <td>DSP SRAM (size TBD)</td>
         <td>
             <a class="headerlink" href="#dsp_sram" title="Permalink to this row"></a>
         </td>
@@ -1906,7 +1906,7 @@
     <tr id="nor_flash">
         <td class="address">0x5C000000</td>
         <td><a href="?p=scpu_memory.nor_flash" data-id="524" onclick="onClickNodeLink(event); return(false)">nor_flash</a></td>
-        <td>-</td>
+        <td>SPI NOR XIP window</td>
         <td>
             <a class="headerlink" href="#nor_flash" title="Permalink to this row"></a>
         </td>
