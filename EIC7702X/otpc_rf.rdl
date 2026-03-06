@@ -1,0 +1,102 @@
+regfile otp_rf {
+    name = "OTPC";
+    desc = "OTP Controller — programs and reads the one-time-programmable fuse array.
+            Base: 0x21B40000 (SCPU view) / 0x51B40000 (MCPU alias).
+            Source: fml13v03_u-boot/include/eswin/es_otp_map.h.
+            Offsets 0x00–0x13 are undocumented; first known register is at 0x14.
+            Trigger reads by writing rd_addr_size then the magic word 0x6ACCACC6 to cmd_word.
+            Trigger writes by writing wr_data_mask then 0x9ACCACC9 to cmd_word.
+            Trigger pgm-lock by writing 0x10C610C6 to cmd_word.";
+
+    default sw = rw;
+    default hw = r;
+
+    reg {
+        name = "OTP read base address, byte count, and XOR mode";
+        field {name = "enable 4-bit→1-bit XOR error correction on read";} rd_4bitxor1bit_en[24:24] = 1'b0;
+        field {name = "number of bytes to read (max 128)";} rd_length[23:16]         = 8'h0;
+        field {name = "OTP byte address of first byte to read";} rd_base_addr[15:0]       = 16'h0;
+    } rd_addr_size @ 0x14;
+
+    reg {
+        name = "OTP read packet FIFO — read once per byte until rd_last asserts";
+        default sw = r;
+        field {name = "1 = rd_data contains valid data";} rd_valid[12:12] = 1'b0;
+        field {name = "1 = this is the last byte of the requested burst";} rd_last[8:8]    = 1'b0;
+        field {name = "read data byte";} rd_data[7:0]    = 8'h0;
+    } rd_packet @ 0x18;
+
+    reg {
+        name = "OTP operation status flags (sticky; clear with clear_status_int)";
+        default sw = r;
+        field {name = "read-done";} rdone_st[10:10]   = 1'b0;
+        field {name = "program-lock done";} pgmlock_st[9:9]   = 1'b0;
+        field {name = "write-done";} wrdone_st[8:8]    = 1'b0;
+        field {name = "write-fail bits (one per failed bit-cell attempt)";} wrfail_st[7:0]    = 8'h0;
+    } op_status @ 0x1c;
+
+    reg {
+        name = "Clear op_status sticky flags — write 1 to each bit to clear";
+        field {sw = w; name = "clear pgmlock_st";} clr_pgmlock[3:3] = 1'b0;
+        field {sw = w; name = "clear wrfail_st";} clr_wrfail[2:2]  = 1'b0;
+        field {sw = w; name = "clear wrdone_st";} clr_wrdone[1:1]  = 1'b0;
+        field {sw = w; name = "clear rdone_st";} clr_rdone[0:0]   = 1'b0;
+    } clear_status_int @ 0x20;
+
+    reg {
+        name = "OTPC global control — enables, interrupt masks, DUT/JTAG access";
+        field {name = "enable program-fail interrupt";} progfail_int_en[9:9]    = 1'b0;
+        field {name = "allow JTAG-to-APB OTP access";} jtag2apb_acc[8:8]       = 1'b0;
+        field {name = "clear DUT state";} clear_dut[7:7]          = 1'b0;
+        field {name = "enable pgm-lock-done interrupt";} pgmlock_done_inten[6:6] = 1'b0;
+        field {name = "enable read-done interrupt";} rdone_int_en[5:5]       = 1'b0;
+        field {name = "enable write-done interrupt";} wrdone_int_en[4:4]      = 1'b0;
+        field {name = "flush internal read buffer";} clean_readbuf[3:3]      = 1'b0;
+        field {name = "enable program-lock mode";} pgmlock_en[2:2]         = 1'b0;
+        field {name = "initialize OTP IP (pulse high to start)";} init_otp[0:0]           = 1'b0;
+    } glb_ctrl @ 0x30;
+
+    reg {
+        name = "Command word";
+        desc = "Write magic value to trigger: 0x6ACCACC6=read, 0x9ACCACC9=write, 0x10C610C6=program-lock";
+        field {sw = w;} cmd_word[31:0] = 32'h0;
+    } cmd_word @ 0x34;
+
+    reg {
+        name = "OTP IP status flags";
+        default sw = r;
+        field {name = "IP initialization complete";} otp_init_done[3:3] = 1'b0;
+        field {name = "individual bit-cell locked";} otp_bit_lock[2:2]  = 1'b0;
+        field {name = "entire array program-locked";} otp_pgm_lock[1:1]  = 1'b0;
+        field {name = "operation in progress";} otp_busy[0:0]      = 1'b0;
+    } status @ 0x38;
+
+    reg {
+        name = "Chip control — OTP values latched at power-on reset";
+        default sw = r;
+        field {name = "JTAG-to-APB access disable (2-bit)";} otp_jtag2apb_disable[21:20] = 2'b0;
+        field {name = "OTP pad access disable";} otp_padacc_disable[19:19]   = 1'b0;
+        field {name = "SCPU JTAG disable";} scpu_jtag_disable[18:18]    = 1'b0;
+        field {name = "chip is in secure boot mode";} secure_mode[17:17]          = 1'b0;
+        field {name = "POR OTP shadow read complete";} por_otprd_done[16:16]       = 1'b0;
+        field {name = "ordinal of this die in a multi-die package";} die_ordinal[15:8]           = 8'h0;
+        field {name = "total number of dies";} die_num[7:0]                = 8'h0;
+    } chip_ctrl @ 0x3c;
+
+    reg {
+        name = "NP pulse count configuration for OTP programming";
+        field {name = "capacitor D0 charge mode";} cap_d0_mode[12:12] = 1'b0;
+        field {name = "NP2 pulse count (default 2)";} np2_num[9:4]       = 6'h02;
+        field {name = "NP1 pulse count";} np1_num[1:0]       = 2'h0;
+    } np_pulse_num @ 0x40;
+
+    reg {
+        name = "OTP write data, bit-enable mask, and target address";
+        field {name = "OTP byte address to write";} wr_addr[31:16]  = 16'h0;
+        field {name = "bit-enable mask (1 = allow programming that bit)";} wr_biten[15:8]  = 8'h0;
+        field {name = "data byte to write";} wr_data[7:0]    = 8'h0;
+    } wr_data_mask @ 0x44;
+
+}; // otp_rf
+
+

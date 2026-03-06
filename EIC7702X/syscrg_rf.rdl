@@ -1,8 +1,6 @@
-// Range: 0x5182_8000 ~ 0x5182_FFFF (32K)
-// Source: EIC7700X SoC Technical Reference Manual, Section 3.2
-
 regfile syscrg_rf {
-    desc = "EIC7700X SCU Clock and Reset Control (SYSCRG)";
+    name = "SYSCRG";
+    desc = "System Clock and Reset Control. Source: TRM Section 3.2.";
     default hw = r;
 
     //=========================================================================
@@ -10,26 +8,26 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "SPLL0 configuration register 0";
+        name = "SPLL0 configuration register 0";
         default sw = rw;
-        field {} spll0_fbdiv[31:20]  = 266; // feedback divider
-        field {} spll0_refdiv[17:12] = 1;   // reference divider
-        field {} spll0_dsmen[9:9]    = 1;   // 0=integer, 1=fractional
-        field {} spll0_dacen[8:8]    = 1;   // fractional noise DAC enable
+        field {name = "feedback divider";} spll0_fbdiv[31:20]  = 266;
+        field {name = "reference divider";} spll0_refdiv[17:12] = 1;
+        field {name = "0=integer, 1=fractional";} spll0_dsmen[9:9]    = 1;
+        field {name = "fractional noise DAC enable";} spll0_dacen[8:8]    = 1;
         field {} spll0_byp[4:4]      = 0;
-        field {} spll0_frefcmlen[1:1]  = 0;   // reference clock select (do not change)
+        field {name = "reference clock select (do not change)";} spll0_frefcmlen[1:1]  = 0;
         field {} spll0_en[0:0]         = 1;
     } spll0_cfg_0 @ 0x0000;
 
     reg {
-        desc = "SPLL0 configuration register 1";
+        name = "SPLL0 configuration register 1";
         default sw = rw;
-        field {} spll0_frac[27:4]   = 11184810; // fractional divider
-        field {} spll0_fouten[3:0]  = 4'b1110;  // output enable per port
+        field {name = "fractional divider";} spll0_frac[27:4]   = 11184810;
+        field {name = "output enable per port";} spll0_fouten[3:0]  = 4'b1110;
     } spll0_cfg_1 @ 0x0004;
 
     reg {
-        desc = "SPLL0 configuration register 2";
+        name = "SPLL0 configuration register 2";
         default sw = rw;
         field {} spll0_fout2_clken[31:31] = 1;
         field {} spll0_postdiv3_b[30:28]  = 0;
@@ -44,9 +42,9 @@ regfile syscrg_rf {
     } spll0_cfg_2 @ 0x0008;
 
     reg {
-        desc = "SPLL0 deskew calibration";
+        name = "SPLL0 deskew calibration";
         default sw = rw;
-        field {sw = r;} spll0_dskewcalout[31:20] = 0; // RO: calibration output
+        field {sw = r; name = "RO: calibration output";} spll0_dskewcalout[31:20] = 0;
         field {} spll0_dskewcalin[19:8]  = 0;
         field {} spll0_dskewcalcnt[6:4]  = 0;
         field {} spll0_dskewcalbyp[2:2]  = 0;
@@ -55,14 +53,14 @@ regfile syscrg_rf {
     } spll0_dskewcal @ 0x000C;
 
     reg {
-        desc = "SPLL0 spread-spectrum control";
+        name = "SPLL0 spread-spectrum control";
         default sw = rw;
-        field {} spll0_ssc_spread[16:12] = 0; // 1=0.1% .. 31=3.1%
-        field {} spll0_ssc_div[9:4]      = 0; // fmod=ssclk/(128*ssc_div)
-        field {} spll0_ssc_dnspread[3:3] = 0; // 0=center-spread, 1=down-spread
-        field {} spll0_ssc_disable[2:2]  = 1; // 0=spread, 1=bypass
-        field {} spll0_ssc_resetptr[1:1] = 1; // active-high reset wave table pointer
-        field {} spll0_ssc_reset[0:0]    = 1; // 0=operating, 1=reset modulator
+        field {name = "1=0.1% .. 31=3.1%";} spll0_ssc_spread[16:12] = 0;
+        field {name = "fmod=ssclk/(128*ssc_div)";} spll0_ssc_div[9:4]      = 0;
+        field {name = "0=center-spread, 1=down-spread";} spll0_ssc_dnspread[3:3] = 0;
+        field {name = "0=spread, 1=bypass";} spll0_ssc_disable[2:2]  = 1;
+        field {name = "active-high reset wave table pointer";} spll0_ssc_resetptr[1:1] = 1;
+        field {name = "0=operating, 1=reset modulator";} spll0_ssc_reset[0:0]    = 1;
     } spll0_ssc @ 0x0010;
 
     //=========================================================================
@@ -70,10 +68,10 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "SPLL1 configuration register 0";
+        name = "SPLL1 configuration register 0";
         default sw = rw;
-        field {} spll1_fbdiv[31:20]   = 12'd250;
-        field {} spll1_refdiv[17:12]  = 6'd1;
+        field {} spll1_fbdiv[31:20]   = 250;
+        field {} spll1_refdiv[17:12]  = 1;
         field {} spll1_dsmen[9:9]     = 1'b0;
         field {} spll1_dacen[8:8]     = 1'b0;
         field {} spll1_byp[7:4]       = 4'h0;
@@ -82,44 +80,44 @@ regfile syscrg_rf {
     } spll1_cfg_0 @ 0x0014;
 
     reg {
-        desc = "SPLL1 configuration register 1";
+        name = "SPLL1 configuration register 1";
         default sw = rw;
-        field {} spll1_frac[27:4]   = 24'd0;
+        field {} spll1_frac[27:4]   = 0;
         field {} spll1_fouten[3:0]  = 4'b1110;
     } spll1_cfg_1 @ 0x0018;
 
     reg {
-        desc = "SPLL1 configuration register 2";
+        name = "SPLL1 configuration register 2";
         default sw = rw;
-        field {} spll1_postdiv3_b[30:28]  = 3'd0;
-        field {} spll1_postdiv3_a[26:24]  = 3'd5;
-        field {} spll1_postdiv2_b[22:20]  = 3'd0;
-        field {} spll1_postdiv2_a[18:16]  = 3'd4;
-        field {} spll1_postdiv1_b[14:12]  = 3'd0;
-        field {} spll1_postdiv1_a[10:8]   = 3'd0;
-        field {} spll1_postdiv0_b[6:4]    = 3'd0;
-        field {} spll1_postdiv0_a[3:1]    = 3'd0;
+        field {} spll1_postdiv3_b[30:28]  = 0;
+        field {} spll1_postdiv3_a[26:24]  = 5;
+        field {} spll1_postdiv2_b[22:20]  = 0;
+        field {} spll1_postdiv2_a[18:16]  = 4;
+        field {} spll1_postdiv1_b[14:12]  = 0;
+        field {} spll1_postdiv1_a[10:8]   = 0;
+        field {} spll1_postdiv0_b[6:4]    = 0;
+        field {} spll1_postdiv0_a[3:1]    = 0;
         field {} spll1_postdiv0_pre[0:0]  = 1'b0;
     } spll1_cfg_2 @ 0x001C;
 
     reg {
-        desc = "SPLL1 deskew calibration";
+        name = "SPLL1 deskew calibration";
         default sw = rw;
-        field {sw = r;} spll1_dskewcalout[31:20] = 12'd0; // RO
-        field {} spll1_dskewcalin[19:8]  = 12'd0;
-        field {} spll1_dskewcalcnt[6:4]  = 3'd0;
+        field {sw = r; name = "RO";} spll1_dskewcalout[31:20] = 0;
+        field {} spll1_dskewcalin[19:8]  = 0;
+        field {} spll1_dskewcalcnt[6:4]  = 0;
         field {} spll1_dskewcalbyp[2:2]  = 1'b0;
         field {} spll1_dskewfastcal[1:1] = 1'b0;
         field {} spll1_dskewcalen[0:0]   = 1'b0;
     } spll1_dskewcal @ 0x0020;
 
     reg {
-        desc = "SPLL1 spread-spectrum control";
+        name = "SPLL1 spread-spectrum control";
         default sw = rw;
-        field {} spll1_ssc_spread[16:12] = 5'd0; // 1=0.1% .. 31=3.1%
-        field {} spll1_ssc_div[9:4]      = 6'd0; // fmod=ssclk/(128*ssc_div)
-        field {} spll1_ssc_dnspread[3:3] = 1'b0; // 0=center, 1=down
-        field {} spll1_ssc_disable[2:2]  = 1'b1; // 0=spread, 1=bypass
+        field {name = "1=0.1% .. 31=3.1%";} spll1_ssc_spread[16:12] = 0;
+        field {name = "fmod=ssclk/(128*ssc_div)";} spll1_ssc_div[9:4]      = 0;
+        field {name = "0=center, 1=down";} spll1_ssc_dnspread[3:3] = 1'b0;
+        field {name = "0=spread, 1=bypass";} spll1_ssc_disable[2:2]  = 1'b1;
         field {} spll1_ssc_resetptr[1:1] = 1'b1;
         field {} spll1_ssc_reset[0:0]    = 1'b1;
     } spll1_ssc @ 0x0024;
@@ -129,10 +127,10 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "SPLL2 configuration register 0";
+        name = "SPLL2 configuration register 0";
         default sw = rw;
-        field {} spll2_fbdiv[31:20]   = 12'd346;
-        field {} spll2_refdiv[17:12]  = 6'd1;
+        field {} spll2_fbdiv[31:20]   = 346;
+        field {} spll2_refdiv[17:12]  = 1;
         field {} spll2_dsmen[9:9]     = 1'b1;
         field {} spll2_dacen[8:8]     = 1'b1;
         field {} spll2_byp[7:4]       = 4'h0;
@@ -141,44 +139,44 @@ regfile syscrg_rf {
     } spll2_cfg_0 @ 0x0028;
 
     reg {
-        desc = "SPLL2 configuration register 1";
+        name = "SPLL2 configuration register 1";
         default sw = rw;
-        field {} spll2_frac[27:4]   = 24'd11184810;
+        field {} spll2_frac[27:4]   = 11184810;
         field {} spll2_fouten[3:0]  = 4'b1110;
     } spll2_cfg_1 @ 0x002C;
 
     reg {
-        desc = "SPLL2 configuration register 2";
+        name = "SPLL2 configuration register 2";
         default sw = rw;
-        field {} spll2_postdiv3_b[30:28]  = 3'd0;
-        field {} spll2_postdiv3_a[26:24]  = 3'd4;
-        field {} spll2_postdiv2_b[22:20]  = 3'd0;
-        field {} spll2_postdiv2_a[18:16]  = 3'd1;
-        field {} spll2_postdiv1_b[14:12]  = 3'd0;
-        field {} spll2_postdiv1_a[10:8]   = 3'd0;
-        field {} spll2_postdiv0_b[6:4]    = 3'd0;
-        field {} spll2_postdiv0_a[3:1]    = 3'd0;
+        field {} spll2_postdiv3_b[30:28]  = 0;
+        field {} spll2_postdiv3_a[26:24]  = 4;
+        field {} spll2_postdiv2_b[22:20]  = 0;
+        field {} spll2_postdiv2_a[18:16]  = 1;
+        field {} spll2_postdiv1_b[14:12]  = 0;
+        field {} spll2_postdiv1_a[10:8]   = 0;
+        field {} spll2_postdiv0_b[6:4]    = 0;
+        field {} spll2_postdiv0_a[3:1]    = 0;
         field {} spll2_postdiv0_pre[0:0]  = 1'b0;
     } spll2_cfg_2 @ 0x0030;
 
     reg {
-        desc = "SPLL2 deskew calibration";
+        name = "SPLL2 deskew calibration";
         default sw = rw;
-        field {sw = r;} spll2_dskewcalout[31:20] = 12'd0; // RO
-        field {} spll2_dskewcalin[19:8]  = 12'd0;
-        field {} spll2_dskewcalcnt[6:4]  = 3'd0;
+        field {sw = r; name = "RO";} spll2_dskewcalout[31:20] = 0;
+        field {} spll2_dskewcalin[19:8]  = 0;
+        field {} spll2_dskewcalcnt[6:4]  = 0;
         field {} spll2_dskewcalbyp[2:2]  = 1'b0;
         field {} spll2_dskewfastcal[1:1] = 1'b0;
         field {} spll2_dskewcalen[0:0]   = 1'b0;
     } spll2_dskewcal @ 0x0034;
 
     reg {
-        desc = "SPLL2 spread-spectrum control";
+        name = "SPLL2 spread-spectrum control";
         default sw = rw;
-        field {} spll2_ssc_spread[16:12] = 5'd0; // 1=0.1% .. 31=3.1%
-        field {} spll2_ssc_div[9:4]      = 6'd0; // fmod=ssclk/(128*ssc_div)
-        field {} spll2_ssc_dnspread[3:3] = 1'b0; // 0=center, 1=down
-        field {} spll2_ssc_disable[2:2]  = 1'b1; // 0=spread, 1=bypass
+        field {name = "1=0.1% .. 31=3.1%";} spll2_ssc_spread[16:12] = 0;
+        field {name = "fmod=ssclk/(128*ssc_div)";} spll2_ssc_div[9:4]      = 0;
+        field {name = "0=center, 1=down";} spll2_ssc_dnspread[3:3] = 1'b0;
+        field {name = "0=spread, 1=bypass";} spll2_ssc_disable[2:2]  = 1'b1;
         field {} spll2_ssc_resetptr[1:1] = 1'b1;
         field {} spll2_ssc_reset[0:0]    = 1'b1;
     } spll2_ssc @ 0x0038;
@@ -188,10 +186,10 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "VPLL configuration register 0";
+        name = "VPLL configuration register 0";
         default sw = rw;
-        field {} vpll_fbdiv[31:20]   = 12'd198;
-        field {} vpll_refdiv[17:12]  = 6'd1;
+        field {} vpll_fbdiv[31:20]   = 198;
+        field {} vpll_refdiv[17:12]  = 1;
         field {} vpll_dsmen[9:9]     = 1'b0;
         field {} vpll_dacen[8:8]     = 1'b0;
         field {} vpll_byp[7:4]       = 4'h0;
@@ -200,44 +198,44 @@ regfile syscrg_rf {
     } vpll_cfg_0 @ 0x003C;
 
     reg {
-        desc = "VPLL configuration register 1";
+        name = "VPLL configuration register 1";
         default sw = rw;
-        field {} vpll_frac[27:4]   = 24'd0;
+        field {} vpll_frac[27:4]   = 0;
         field {} vpll_fouten[3:0]  = 4'b1110;
     } vpll_cfg_1 @ 0x0040;
 
     reg {
-        desc = "VPLL configuration register 2";
+        name = "VPLL configuration register 2";
         default sw = rw;
-        field {} vpll_postdiv3_b[30:28]  = 3'd3;
-        field {} vpll_postdiv3_a[26:24]  = 3'd5;
-        field {} vpll_postdiv2_b[22:20]  = 3'd0;
-        field {} vpll_postdiv2_a[18:16]  = 3'd1;
-        field {} vpll_postdiv1_b[14:12]  = 3'd0;
-        field {} vpll_postdiv1_a[10:8]   = 3'd0;
-        field {} vpll_postdiv0_b[6:4]    = 3'd0;
-        field {} vpll_postdiv0_a[3:1]    = 3'd0;
+        field {} vpll_postdiv3_b[30:28]  = 3;
+        field {} vpll_postdiv3_a[26:24]  = 5;
+        field {} vpll_postdiv2_b[22:20]  = 0;
+        field {} vpll_postdiv2_a[18:16]  = 1;
+        field {} vpll_postdiv1_b[14:12]  = 0;
+        field {} vpll_postdiv1_a[10:8]   = 0;
+        field {} vpll_postdiv0_b[6:4]    = 0;
+        field {} vpll_postdiv0_a[3:1]    = 0;
         field {} vpll_postdiv0_pre[0:0]  = 1'b0;
     } vpll_cfg_2 @ 0x0044;
 
     reg {
-        desc = "VPLL deskew calibration";
+        name = "VPLL deskew calibration";
         default sw = rw;
-        field {sw = r;} vpll_dskewcalout[31:20] = 12'd0; // RO
-        field {} vpll_dskewcalin[19:8]  = 12'd0;
-        field {} vpll_dskewcalcnt[6:4]  = 3'd0;
+        field {sw = r; name = "RO";} vpll_dskewcalout[31:20] = 0;
+        field {} vpll_dskewcalin[19:8]  = 0;
+        field {} vpll_dskewcalcnt[6:4]  = 0;
         field {} vpll_dskewcalbyp[2:2]  = 1'b0;
         field {} vpll_dskewfastcal[1:1] = 1'b0;
         field {} vpll_dskewcalen[0:0]   = 1'b0;
     } vpll_dskewcal @ 0x0048;
 
     reg {
-        desc = "VPLL spread-spectrum control";
+        name = "VPLL spread-spectrum control";
         default sw = rw;
-        field {} vpll_ssc_spread[16:12] = 5'd0; // 1=0.1% .. 31=3.1%
-        field {} vpll_ssc_div[9:4]      = 6'd0; // fmod=ssclk/(128*ssc_div)
-        field {} vpll_ssc_dnspread[3:3] = 1'b0; // 0=center, 1=down
-        field {} vpll_ssc_disable[2:2]  = 1'b1; // 0=spread, 1=bypass
+        field {name = "1=0.1% .. 31=3.1%";} vpll_ssc_spread[16:12] = 0;
+        field {name = "fmod=ssclk/(128*ssc_div)";} vpll_ssc_div[9:4]      = 0;
+        field {name = "0=center, 1=down";} vpll_ssc_dnspread[3:3] = 1'b0;
+        field {name = "0=spread, 1=bypass";} vpll_ssc_disable[2:2]  = 1'b1;
         field {} vpll_ssc_resetptr[1:1] = 1'b1;
         field {} vpll_ssc_reset[0:0]    = 1'b1;
     } vpll_ssc @ 0x004C;
@@ -247,10 +245,10 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "APLL configuration register 0";
+        name = "APLL configuration register 0";
         default sw = rw;
-        field {} apll_fbdiv[31:20]   = 12'd163;
-        field {} apll_refdiv[17:12]  = 6'd1;
+        field {} apll_fbdiv[31:20]   = 163;
+        field {} apll_refdiv[17:12]  = 1;
         field {} apll_dsmen[9:9]     = 1'b1;
         field {} apll_dacen[8:8]     = 1'b1;
         field {} apll_byp[7:4]       = 4'h0;
@@ -259,44 +257,44 @@ regfile syscrg_rf {
     } apll_cfg_0 @ 0x0050;
 
     reg {
-        desc = "APLL configuration register 1";
+        name = "APLL configuration register 1";
         default sw = rw;
-        field {} apll_frac[27:4]   = 24'd14092861;
+        field {} apll_frac[27:4]   = 14092861;
         field {} apll_fouten[3:0]  = 4'b0010;
     } apll_cfg_1 @ 0x0054;
 
     reg {
-        desc = "APLL configuration register 2";
+        name = "APLL configuration register 2";
         default sw = rw;
-        field {} apll_postdiv3_b[30:28]  = 3'd3;
-        field {} apll_postdiv3_a[26:24]  = 3'd4;
-        field {} apll_postdiv2_b[22:20]  = 3'd0;
-        field {} apll_postdiv2_a[18:16]  = 3'd0;
-        field {} apll_postdiv1_b[14:12]  = 3'd0;
-        field {} apll_postdiv1_a[10:8]   = 3'd0;
-        field {} apll_postdiv0_b[6:4]    = 3'd0;
-        field {} apll_postdiv0_a[3:1]    = 3'd0;
+        field {} apll_postdiv3_b[30:28]  = 3;
+        field {} apll_postdiv3_a[26:24]  = 4;
+        field {} apll_postdiv2_b[22:20]  = 0;
+        field {} apll_postdiv2_a[18:16]  = 0;
+        field {} apll_postdiv1_b[14:12]  = 0;
+        field {} apll_postdiv1_a[10:8]   = 0;
+        field {} apll_postdiv0_b[6:4]    = 0;
+        field {} apll_postdiv0_a[3:1]    = 0;
         field {} apll_postdiv0_pre[0:0]  = 1'b0;
     } apll_cfg_2 @ 0x0058;
 
     reg {
-        desc = "APLL deskew calibration";
+        name = "APLL deskew calibration";
         default sw = rw;
-        field {sw = r;} apll_dskewcalout[31:20] = 12'd0; // RO
-        field {} apll_dskewcalin[19:8]  = 12'd0;
-        field {} apll_dskewcalcnt[6:4]  = 3'd0;
+        field {sw = r; name = "RO";} apll_dskewcalout[31:20] = 0;
+        field {} apll_dskewcalin[19:8]  = 0;
+        field {} apll_dskewcalcnt[6:4]  = 0;
         field {} apll_dskewcalbyp[2:2]  = 1'b0;
         field {} apll_dskewfastcal[1:1] = 1'b0;
         field {} apll_dskewcalen[0:0]   = 1'b0;
     } apll_dskewcal @ 0x005C;
 
     reg {
-        desc = "APLL spread-spectrum control";
+        name = "APLL spread-spectrum control";
         default sw = rw;
-        field {} apll_ssc_spread[16:12] = 5'd0; // 1=0.1% .. 31=3.1%
-        field {} apll_ssc_div[9:4]      = 6'd0; // fmod=ssclk/(128*ssc_div)
-        field {} apll_ssc_dnspread[3:3] = 1'b0; // 0=center, 1=down
-        field {} apll_ssc_disable[2:2]  = 1'b1; // 0=spread, 1=bypass
+        field {name = "1=0.1% .. 31=3.1%";} apll_ssc_spread[16:12] = 0;
+        field {name = "fmod=ssclk/(128*ssc_div)";} apll_ssc_div[9:4]      = 0;
+        field {name = "0=center, 1=down";} apll_ssc_dnspread[3:3] = 1'b0;
+        field {name = "0=spread, 1=bypass";} apll_ssc_disable[2:2]  = 1'b1;
         field {} apll_ssc_resetptr[1:1] = 1'b1;
         field {} apll_ssc_reset[0:0]    = 1'b1;
     } apll_ssc @ 0x0060;
@@ -306,10 +304,10 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "MCPUT_PLL configuration register 0";
+        name = "MCPUT_PLL configuration register 0";
         default sw = rw;
-        field {} mcput_pll_fbdiv[31:20]    = 12'd266;
-        field {} mcput_pll_refdiv[17:12]   = 6'd1;
+        field {} mcput_pll_fbdiv[31:20]    = 266;
+        field {} mcput_pll_refdiv[17:12]   = 1;
         field {} mcput_pll_dsmen[9:9]      = 1'b1;
         field {} mcput_pll_dacen[8:8]      = 1'b1;
         field {} mcput_pll_byp[7:4]        = 4'h0;
@@ -318,44 +316,44 @@ regfile syscrg_rf {
     } mcput_pll_cfg_0 @ 0x0064;
 
     reg {
-        desc = "MCPUT_PLL configuration register 1";
+        name = "MCPUT_PLL configuration register 1";
         default sw = rw;
-        field {} mcput_pll_frac[27:4]   = 24'd11184810;
+        field {} mcput_pll_frac[27:4]   = 11184810;
         field {} mcput_pll_fouten[3:0]  = 4'b1010;
     } mcput_pll_cfg_1 @ 0x0068;
 
     reg {
-        desc = "MCPUT_PLL configuration register 2";
+        name = "MCPUT_PLL configuration register 2";
         default sw = rw;
-        field {} mcput_pll_postdiv3_b[30:28]   = 3'd3;
-        field {} mcput_pll_postdiv3_a[26:24]   = 3'd7;
-        field {} mcput_pll_postdiv2_b[22:20]   = 3'd0;
-        field {} mcput_pll_postdiv2_a[18:16]   = 3'd1;
-        field {} mcput_pll_postdiv1_b[14:12]   = 3'd0;
-        field {} mcput_pll_postdiv1_a[10:8]    = 3'd0;
-        field {} mcput_pll_postdiv0_b[6:4]     = 3'd1;
-        field {} mcput_pll_postdiv0_a[3:1]     = 3'd7;
+        field {} mcput_pll_postdiv3_b[30:28]   = 3;
+        field {} mcput_pll_postdiv3_a[26:24]   = 7;
+        field {} mcput_pll_postdiv2_b[22:20]   = 0;
+        field {} mcput_pll_postdiv2_a[18:16]   = 1;
+        field {} mcput_pll_postdiv1_b[14:12]   = 0;
+        field {} mcput_pll_postdiv1_a[10:8]    = 0;
+        field {} mcput_pll_postdiv0_b[6:4]     = 1;
+        field {} mcput_pll_postdiv0_a[3:1]     = 7;
         field {} mcput_pll_postdiv0_pre[0:0]   = 1'b0;
     } mcput_pll_cfg_2 @ 0x006C;
 
     reg {
-        desc = "MCPUT_PLL deskew calibration";
+        name = "MCPUT_PLL deskew calibration";
         default sw = rw;
-        field {sw = r;} mcput_pll_dskewcalout[31:20] = 12'd0; // RO
-        field {} mcput_pll_dskewcalin[19:8]  = 12'd0;
-        field {} mcput_pll_dskewcalcnt[6:4]  = 3'd0;
+        field {sw = r; name = "RO";} mcput_pll_dskewcalout[31:20] = 0;
+        field {} mcput_pll_dskewcalin[19:8]  = 0;
+        field {} mcput_pll_dskewcalcnt[6:4]  = 0;
         field {} mcput_pll_dskewcalbyp[2:2]  = 1'b0;
         field {} mcput_pll_dskewfastcal[1:1] = 1'b0;
         field {} mcput_pll_dskewcalen[0:0]   = 1'b0;
     } mcput_pll_dskewcal @ 0x0070;
 
     reg {
-        desc = "MCPUT_PLL spread-spectrum control";
+        name = "MCPUT_PLL spread-spectrum control";
         default sw = rw;
-        field {} mcput_pll_ssc_spread[16:12] = 5'd0; // 1=0.1% .. 31=3.1%
-        field {} mcput_pll_ssc_div[9:4]      = 6'd0; // fmod=ssclk/(128*ssc_div)
-        field {} mcput_pll_ssc_dnspread[3:3] = 1'b0; // 0=center, 1=down
-        field {} mcput_pll_ssc_disable[2:2]  = 1'b1; // 0=spread, 1=bypass
+        field {name = "1=0.1% .. 31=3.1%";} mcput_pll_ssc_spread[16:12] = 0;
+        field {name = "fmod=ssclk/(128*ssc_div)";} mcput_pll_ssc_div[9:4]      = 0;
+        field {name = "0=center, 1=down";} mcput_pll_ssc_dnspread[3:3] = 1'b0;
+        field {name = "0=spread, 1=bypass";} mcput_pll_ssc_disable[2:2]  = 1'b1;
         field {} mcput_pll_ssc_resetptr[1:1] = 1'b1;
         field {} mcput_pll_ssc_reset[0:0]    = 1'b1;
     } mcput_pll_ssc @ 0x0074;
@@ -365,10 +363,10 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "DDRT_PLL configuration register 0";
+        name = "DDRT_PLL configuration register 0";
         default sw = rw;
-        field {} ddrt_pll_fbdiv[31:20]    = 12'd177; // 1066MHz:177, 800MHz:133, 533MHz:88
-        field {} ddrt_pll_refdiv[17:12]   = 6'd1;
+        field {name = "1066MHz:177, 800MHz:133, 533MHz:88";} ddrt_pll_fbdiv[31:20]    = 177;
+        field {} ddrt_pll_refdiv[17:12]   = 1;
         field {} ddrt_pll_dsmen[9:9]      = 1'b1;
         field {} ddrt_pll_dacen[8:8]      = 1'b1;
         field {} ddrt_pll_byp[7:4]        = 4'h0;
@@ -377,44 +375,44 @@ regfile syscrg_rf {
     } ddrt_pll_cfg_0 @ 0x0078;
 
     reg {
-        desc = "DDRT_PLL configuration register 1";
+        name = "DDRT_PLL configuration register 1";
         default sw = rw;
-        field {} ddrt_pll_frac[27:4]   = 24'd11184810; // 1066:11184810, 800:5592405, 533:13981013
+        field {name = "1066:11184810, 800:5592405, 533:13981013";} ddrt_pll_frac[27:4]   = 11184810;
         field {} ddrt_pll_fouten[3:0]  = 4'b0010;
     } ddrt_pll_cfg_1 @ 0x007C;
 
     reg {
-        desc = "DDRT_PLL configuration register 2";
+        name = "DDRT_PLL configuration register 2";
         default sw = rw;
-        field {} ddrt_pll_postdiv3_b[30:28]   = 3'd0;
-        field {} ddrt_pll_postdiv3_a[26:24]   = 3'd7;
-        field {} ddrt_pll_postdiv2_b[22:20]   = 3'd0;
-        field {} ddrt_pll_postdiv2_a[18:16]   = 3'd3;
-        field {} ddrt_pll_postdiv1_b[14:12]   = 3'd0;
-        field {} ddrt_pll_postdiv1_a[10:8]    = 3'd1;
-        field {} ddrt_pll_postdiv0_b[6:4]     = 3'd0;
-        field {} ddrt_pll_postdiv0_a[3:1]     = 3'd0;
+        field {} ddrt_pll_postdiv3_b[30:28]   = 0;
+        field {} ddrt_pll_postdiv3_a[26:24]   = 7;
+        field {} ddrt_pll_postdiv2_b[22:20]   = 0;
+        field {} ddrt_pll_postdiv2_a[18:16]   = 3;
+        field {} ddrt_pll_postdiv1_b[14:12]   = 0;
+        field {} ddrt_pll_postdiv1_a[10:8]    = 1;
+        field {} ddrt_pll_postdiv0_b[6:4]     = 0;
+        field {} ddrt_pll_postdiv0_a[3:1]     = 0;
         field {} ddrt_pll_postdiv0_pre[0:0]   = 1'b0;
     } ddrt_pll_cfg_2 @ 0x0080;
 
     reg {
-        desc = "DDRT_PLL deskew calibration";
+        name = "DDRT_PLL deskew calibration";
         default sw = rw;
-        field {sw = r;} ddrt_pll_dskewcalout[31:20] = 12'd0; // RO
-        field {} ddrt_pll_dskewcalin[19:8]  = 12'd0;
-        field {} ddrt_pll_dskewcalcnt[6:4]  = 3'd0;
+        field {sw = r; name = "RO";} ddrt_pll_dskewcalout[31:20] = 0;
+        field {} ddrt_pll_dskewcalin[19:8]  = 0;
+        field {} ddrt_pll_dskewcalcnt[6:4]  = 0;
         field {} ddrt_pll_dskewcalbyp[2:2]  = 1'b0;
         field {} ddrt_pll_dskewfastcal[1:1] = 1'b0;
         field {} ddrt_pll_dskewcalen[0:0]   = 1'b0;
     } ddrt_pll_dskewcal @ 0x0084;
 
     reg {
-        desc = "DDRT_PLL spread-spectrum control";
+        name = "DDRT_PLL spread-spectrum control";
         default sw = rw;
-        field {} ddrt_pll_ssc_spread[16:12] = 5'd0; // 1=0.1% .. 31=3.1%
-        field {} ddrt_pll_ssc_div[9:4]      = 6'd0; // fmod=ssclk/(128*ssc_div)
-        field {} ddrt_pll_ssc_dnspread[3:3] = 1'b0; // 0=center, 1=down
-        field {} ddrt_pll_ssc_disable[2:2]  = 1'b1; // 0=spread, 1=bypass
+        field {name = "1=0.1% .. 31=3.1%";} ddrt_pll_ssc_spread[16:12] = 0;
+        field {name = "fmod=ssclk/(128*ssc_div)";} ddrt_pll_ssc_div[9:4]      = 0;
+        field {name = "0=center, 1=down";} ddrt_pll_ssc_dnspread[3:3] = 1'b0;
+        field {name = "0=spread, 1=bypass";} ddrt_pll_ssc_disable[2:2]  = 1'b1;
         field {} ddrt_pll_ssc_resetptr[1:1] = 1'b1;
         field {} ddrt_pll_ssc_reset[0:0]    = 1'b1;
     } ddrt_pll_ssc @ 0x0088;
@@ -424,7 +422,7 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "PLL lock and deskew-calibration lock status";
+        name = "PLL lock and deskew-calibration lock status";
         default sw = r;
         default hw = r;
         field {} d2d_pll_dskewcalock[23:23]   = 1'b0;
@@ -450,10 +448,10 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "D2D_PLL configuration register 0";
+        name = "D2D_PLL configuration register 0";
         default sw = rw;
-        field {} d2d_pll_fbdiv[31:20]    = 12'd250;
-        field {} d2d_pll_refdiv[17:12]   = 6'd1;
+        field {} d2d_pll_fbdiv[31:20]    = 250;
+        field {} d2d_pll_refdiv[17:12]   = 1;
         field {} d2d_pll_dsmen[9:9]      = 1'b0;
         field {} d2d_pll_dacen[8:8]      = 1'b0;
         field {} d2d_pll_byp[7:4]        = 4'h0;
@@ -462,44 +460,44 @@ regfile syscrg_rf {
     } d2d_pll_cfg_0 @ 0x00B0;
 
     reg {
-        desc = "D2D_PLL configuration register 1";
+        name = "D2D_PLL configuration register 1";
         default sw = rw;
-        field {} d2d_pll_frac[27:4]   = 24'd0;
+        field {} d2d_pll_frac[27:4]   = 0;
         field {} d2d_pll_fouten[3:0]  = 4'b0010;
     } d2d_pll_cfg_1 @ 0x00B4;
 
     reg {
-        desc = "D2D_PLL configuration register 2";
+        name = "D2D_PLL configuration register 2";
         default sw = rw;
-        field {} d2d_pll_postdiv3_b[30:28]   = 3'd0;
-        field {} d2d_pll_postdiv3_a[26:24]   = 3'd0;
-        field {} d2d_pll_postdiv2_b[22:20]   = 3'd0;
-        field {} d2d_pll_postdiv2_a[18:16]   = 3'd1;
-        field {} d2d_pll_postdiv1_b[14:12]   = 3'd0;
-        field {} d2d_pll_postdiv1_a[10:8]    = 3'd0;
-        field {} d2d_pll_postdiv0_b[6:4]     = 3'd0;
-        field {} d2d_pll_postdiv0_a[3:1]     = 3'd3;
+        field {} d2d_pll_postdiv3_b[30:28]   = 0;
+        field {} d2d_pll_postdiv3_a[26:24]   = 0;
+        field {} d2d_pll_postdiv2_b[22:20]   = 0;
+        field {} d2d_pll_postdiv2_a[18:16]   = 1;
+        field {} d2d_pll_postdiv1_b[14:12]   = 0;
+        field {} d2d_pll_postdiv1_a[10:8]    = 0;
+        field {} d2d_pll_postdiv0_b[6:4]     = 0;
+        field {} d2d_pll_postdiv0_a[3:1]     = 3;
         field {} d2d_pll_postdiv0_pre[0:0]   = 1'b1;
     } d2d_pll_cfg_2 @ 0x00B8;
 
     reg {
-        desc = "D2D_PLL deskew calibration";
+        name = "D2D_PLL deskew calibration";
         default sw = rw;
-        field {sw = r;} d2d_pll_dskewcalout[31:20] = 12'd0; // RO
-        field {} d2d_pll_dskewcalin[19:8]  = 12'd0;
-        field {} d2d_pll_dskewcalcnt[6:4]  = 3'd0;
+        field {sw = r; name = "RO";} d2d_pll_dskewcalout[31:20] = 0;
+        field {} d2d_pll_dskewcalin[19:8]  = 0;
+        field {} d2d_pll_dskewcalcnt[6:4]  = 0;
         field {} d2d_pll_dskewcalbyp[2:2]  = 1'b0;
         field {} d2d_pll_dskewfastcal[1:1] = 1'b0;
         field {} d2d_pll_dskewcalen[0:0]   = 1'b0;
     } d2d_pll_dskewcal @ 0x00BC;
 
     reg {
-        desc = "D2D_PLL spread-spectrum control";
+        name = "D2D_PLL spread-spectrum control";
         default sw = rw;
-        field {} d2d_pll_ssc_spread[16:12] = 5'd0; // 1=0.1% .. 31=3.1%
-        field {} d2d_pll_ssc_div[9:4]      = 6'd0; // fmod=ssclk/(128*ssc_div)
-        field {} d2d_pll_ssc_dnspread[3:3] = 1'b0; // 0=center, 1=down
-        field {} d2d_pll_ssc_disable[2:2]  = 1'b1; // 0=spread, 1=bypass
+        field {name = "1=0.1% .. 31=3.1%";} d2d_pll_ssc_spread[16:12] = 0;
+        field {name = "fmod=ssclk/(128*ssc_div)";} d2d_pll_ssc_div[9:4]      = 0;
+        field {name = "0=center, 1=down";} d2d_pll_ssc_dnspread[3:3] = 1'b0;
+        field {name = "0=spread, 1=bypass";} d2d_pll_ssc_disable[2:2]  = 1'b1;
         field {} d2d_pll_ssc_resetptr[1:1] = 1'b1;
         field {} d2d_pll_ssc_reset[0:0]    = 1'b1;
     } d2d_pll_ssc @ 0x00C0;
@@ -509,230 +507,230 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "NOC clock control";
+        name = "NOC clock control";
         default sw = rw;
-        field {} noc_nsp_clken[31:31]    = 1'b1; // noc_nsp_clk gate enable
-        field {} noc_wdref_clken[30:30]  = 1'b1; // noc_wd_refclk gate enable
-        field {} rnoc_nsp_clken[29:29]   = 1'b1; // rnoc_nsp_clk gate enable
-        field {} noc_wdref_divsor[19:4]  = 16'd1; // 0,1=no div; n=n div
-        field {} nocnsp_divsor[2:0]      = 3'd2;  // 0,1,2=2 div; n=n div
+        field {name = "noc_nsp_clk gate enable";} noc_nsp_clken[31:31]    = 1'b1;
+        field {name = "noc_wd_refclk gate enable";} noc_wdref_clken[30:30]  = 1'b1;
+        field {name = "rnoc_nsp_clk gate enable";} rnoc_nsp_clken[29:29]   = 1'b1;
+        field {name = "0,1=no div; n=n div";} noc_wdref_divsor[19:4]  = 1;
+        field {name = "0,1,2=2 div; n=n div";} nocnsp_divsor[2:0]      = 2;
     } noc_clk_ctrl @ 0x0100;
 
     reg {
-        desc = "Boot SPI interface clock control";
+        name = "Boot SPI interface clock control";
         default sw = rw;
         field {} bootspi_clken[31:31]   = 1'b1;
-        field {} bootspi_divsor[9:4]    = 6'd20;  // boot SPI interface clock divisor
-        field {} bootspi_clk_sel[0:0]   = 1'b1;   // 1=XTAL 24M, 0=internal 50M
+        field {name = "boot SPI interface clock divisor";} bootspi_divsor[9:4]    = 20;
+        field {name = "1=XTAL 24M, 0=internal 50M";} bootspi_clk_sel[0:0]   = 1'b1;
     } bootspi_clk_ctrl @ 0x0104;
 
     reg {
-        desc = "Boot SPI config clock control";
+        name = "Boot SPI config clock control";
         default sw = rw;
         field {} bootspi_cfg_clken[31:31] = 1'b1;
     } bootspi_cfgclk_ctrl @ 0x0108;
 
     reg {
-        desc = "SCPU core clock control";
+        name = "SCPU core clock control";
         default sw = rw;
         field {} scpu_core_clken[31:31]  = 1'b1;
-        field {} scpu_core_divsor[7:4]   = 4'd2;
-        field {} scpu_core_clksel[0:0]   = 1'b1; // 1=XTAL24M, 0=internal 400M
+        field {} scpu_core_divsor[7:4]   = 2;
+        field {name = "1=XTAL24M, 0=internal 400M";} scpu_core_clksel[0:0]   = 1'b1;
     } scpu_coreclk_ctrl @ 0x010C;
 
     reg {
-        desc = "SCPU bus clock control";
+        name = "SCPU bus clock control";
         default sw = rw;
         field {} scpu_bus_clken[31:31]  = 1'b1;
-        field {} scpu_bus_clksel[16:16] = 1'b0; // reserved, always 2:1 ratio
+        field {name = "reserved, always 2:1 ratio";} scpu_bus_clksel[16:16] = 1'b0;
     } scpu_busclk_ctrl @ 0x0110;
 
     reg {
-        desc = "LPCPU core clock control";
+        name = "LPCPU core clock control";
         default sw = rw;
         field {} lpcpu_core_clken[31:31]  = 1'b1;
-        field {} lpcpu_core_divsor[7:4]   = 4'd2;
-        field {} lpcpu_core_clksel[0:0]   = 1'b1; // 1=XTAL24M, 0=internal 400M
+        field {} lpcpu_core_divsor[7:4]   = 2;
+        field {name = "1=XTAL24M, 0=internal 400M";} lpcpu_core_clksel[0:0]   = 1'b1;
     } lpcpu_coreclk_ctrl @ 0x0114;
 
     reg {
-        desc = "LPCPU bus clock control";
+        name = "LPCPU bus clock control";
         default sw = rw;
         field {} lpcpu_bus_clken[31:31]  = 1'b1;
-        field {} lpcpu_bus_clksel[16:16] = 1'b0; // reserved
+        field {name = "reserved";} lpcpu_bus_clksel[16:16] = 1'b0;
     } lpcpu_busclk_ctrl @ 0x0118;
 
     reg {
-        desc = "TCU AXI clock control";
+        name = "TCU AXI clock control";
         default sw = rw;
         field {} tcu_aclk_clken[31:31] = 1'b1;
     } tcu_aclk_ctrl @ 0x011C;
 
     reg {
-        desc = "TCU config clock control";
+        name = "TCU config clock control";
         default sw = rw;
         field {} tcu_cfg_clken[31:31] = 1'b1;
     } tcu_cfg_ctrl @ 0x0120;
 
     reg {
-        desc = "DDR0 clock control";
+        name = "DDR0 clock control";
         default sw = rw;
-        field {} ddr_aclk_divsor[23:20]      = 4'd2;
-        field {} ddr_aclksrc_sel[16:16]      = 1'b1; // 0=spll2_fout1(1040M), 1=spll0_fout1(800M)
-        field {} ddr_cfg_clken[9:9]          = 1'b1; // ddrt_cfg_clk gate
-        field {} ddr0_aclk_clken[8:4]        = 5'h1f; // ddrt0_pN_aclk N=0..4
-        field {} ddrt_pll_bypass_en[3:3]     = 1'b0; // DDR PHY PLL bypass, active high
-        field {} ddrt_core_clk_div_sel[2:2]  = 1'b0; // bypass mode: 0=div4, 1=div8
+        field {} ddr_aclk_divsor[23:20]      = 2;
+        field {name = "0=spll2_fout1(1040M), 1=spll0_fout1(800M)";} ddr_aclksrc_sel[16:16]      = 1'b1;
+        field {name = "ddrt_cfg_clk gate";} ddr_cfg_clken[9:9]          = 1'b1;
+        field {name = "ddrt0_pN_aclk N=0..4";} ddr0_aclk_clken[8:4]        = 5'h1f;
+        field {name = "DDR PHY PLL bypass, active high";} ddrt_pll_bypass_en[3:3]     = 1'b0;
+        field {name = "bypass mode: 0=div4, 1=div8";} ddrt_core_clk_div_sel[2:2]  = 1'b0;
         field {} ddrt_rx_test_clk_en[1:1]    = 1'b1;
-        field {} ddr0_trace_clken[0:0]        = 1'b1; // ddrt0_trace_aclk
+        field {name = "ddrt0_trace_aclk";} ddr0_trace_clken[0:0]        = 1'b1;
     } ddr0_clk_ctrl @ 0x0124;
 
     reg {
-        desc = "DDR1 clock control";
+        name = "DDR1 clock control";
         default sw = rw;
-        field {} ddr1_aclk_clken[8:4]  = 5'h1f; // ddrt1_pN_aclk N=0..4
-        field {} ddr1_trace_clken[0:0]  = 1'b1;  // ddrt1_trace_aclk
+        field {name = "ddrt1_pN_aclk N=0..4";} ddr1_aclk_clken[8:4]  = 5'h1f;
+        field {name = "ddrt1_trace_aclk";} ddr1_trace_clken[0:0]  = 1'b1;
     } ddr1_clk_ctrl @ 0x0128;
 
     reg {
-        desc = "GPU AXI clock control";
+        name = "GPU AXI clock control";
         default sw = rw;
         field {} gpu_aclk_clken[31:31]  = 1'b0;
-        field {} gpu_aclk_divsor[7:4]   = 4'd2;
+        field {} gpu_aclk_divsor[7:4]   = 2;
     } gpu_aclk_ctrl @ 0x012C;
 
     reg {
-        desc = "GPU config clock control";
+        name = "GPU config clock control";
         default sw = rw;
         field {} gpu_cfg_clken[31:31] = 1'b0;
     } gpu_cfg_ctrl @ 0x0130;
 
     reg {
-        desc = "GPU gray clock control";
+        name = "GPU gray clock control";
         default sw = rw;
         field {} gpu_gray_clken[31:31] = 1'b0;
     } gpu_gray_ctrl @ 0x0134;
 
     reg {
-        desc = "DSP AXI clock control";
+        name = "DSP AXI clock control";
         default sw = rw;
         field {} dsp_aclk_clken[31:31]  = 1'b0;
-        field {} dsp_aclk_divsor[7:4]   = 4'd2;
-        field {} dsp_aclksrc_sel[0:0]   = 1'b0; // 0=spll2_fout1(1040M), 1=spll0_fout1(800M)
+        field {} dsp_aclk_divsor[7:4]   = 2;
+        field {name = "0=spll2_fout1(1040M), 1=spll0_fout1(800M)";} dsp_aclksrc_sel[0:0]   = 1'b0;
     } dsp_aclk_ctrl @ 0x0138;
 
     reg {
-        desc = "DSP config clock control";
+        name = "DSP config clock control";
         default sw = rw;
         field {} dsp_cfg_clken[31:31]    = 1'b0;
-        field {} scu_dspt_div_en[26:23]  = 4'd0; // not used
-        field {} scu_dspt_div_sel[22:19] = 4'd0; // divisor per DSP core
+        field {name = "not used";} scu_dspt_div_en[26:23]  = 0;
+        field {name = "divisor per DSP core";} scu_dspt_div_sel[22:19] = 0;
     } dsp_cfg_ctrl @ 0x013C;
 
     reg {
-        desc = "D2D AXI clock control";
+        name = "D2D AXI clock control";
         default sw = rw;
         field {} d2d_aclk_clken[31:31]  = 1'b0;
-        field {} d2d_aclk_divsor[7:4]   = 4'd2;
-        field {} d2d_aclksrc_sel[0:0]   = 1'b0; // 0=spll2_fout1(1040M), 1=spll0_fout1(800M)
+        field {} d2d_aclk_divsor[7:4]   = 2;
+        field {name = "0=spll2_fout1(1040M), 1=spll0_fout1(800M)";} d2d_aclksrc_sel[0:0]   = 1'b0;
     } d2d_aclk_ctrl @ 0x0140;
 
     reg {
-        desc = "D2D config clock control";
+        name = "D2D config clock control";
         default sw = rw;
         field {} d2d_cfg_clken[0:0] = 1'b0;
     } d2d_clk_ctrl @ 0x0144;
 
     reg {
-        desc = "HSP AXI clock control";
+        name = "HSP AXI clock control";
         default sw = rw;
         field {} hsp_aclk_clken[31:31]           = 1'b1;
-        field {} hsp_aclk_divsor[7:4]            = 4'd2;
+        field {} hsp_aclk_divsor[7:4]            = 2;
         field {} scu_hsp_dma0_clk_test_en[1:1]   = 1'b0;
         field {} scu_hsp_dma0_clk_en[0:0]        = 1'b0;
     } hsp_aclk_ctrl @ 0x0148;
 
     reg {
-        desc = "HSP config clock control";
+        name = "HSP config clock control";
         default sw = rw;
         field {} hsp_cfg_clken[31:31]   = 1'b1;
         field {} scu_hsp_pclk_en[30:30] = 1'b0;
     } hsp_cfg_ctrl @ 0x014C;
 
     reg {
-        desc = "SATA RBC clock control (not used)";
+        name = "SATA RBC clock control (not used)";
         default sw = rw;
-        field {} sata_rbc_divsor[5:3]  = 3'd1; // not used
-        field {} sata_rbc_clken[0:0]   = 1'b1; // not used
+        field {name = "not used";} sata_rbc_divsor[5:3]  = 1;
+        field {name = "not used";} sata_rbc_clken[0:0]   = 1'b1;
     } sata_rbc_ctrl @ 0x0150;
 
     reg {
-        desc = "SATA OOB / PHY ref clock control";
+        name = "SATA OOB / PHY ref clock control";
         default sw = rw;
-        field {} sata_oob_clken[31:31]          = 1'b1; // gates oob, pmalive, phy_ref
-        field {} hsp_sata_phy_bak_sel[9:9]      = 1'b0; // 0=PLL clk, 1=50M bak
-        field {} sata_oob_divsor[8:4]           = 5'd6; // not used
-        field {} sata_phy_ref_clk_divsor[3:0]   = 4'd6;
+        field {name = "gates oob, pmalive, phy_ref";} sata_oob_clken[31:31]          = 1'b1;
+        field {name = "0=PLL clk, 1=50M bak";} hsp_sata_phy_bak_sel[9:9]      = 1'b0;
+        field {name = "not used";} sata_oob_divsor[8:4]           = 6;
+        field {} sata_phy_ref_clk_divsor[3:0]   = 6;
     } sata_oob_ctrl @ 0x0154;
 
     reg {
-        desc = "Ethernet 0 clock control";
+        name = "Ethernet 0 clock control";
         default sw = rw;
-        field {} rmii0_ref_clken[31:31]      = 1'b1; // hsp_rmii0_ref_clk gate
-        field {} eth0_divsor[10:4]           = 7'd2; // hsp_eth0_core_clk divisor
-        field {} hsp_rmii_ref_bak_sel[2:2]   = 1'b0; // 0=PLL, 1=50M bak
-        field {} hsp_eth_core_bak_sel[1:1]   = 1'b0; // 0=PLL, 1=50M bak
+        field {name = "hsp_rmii0_ref_clk gate";} rmii0_ref_clken[31:31]      = 1'b1;
+        field {name = "hsp_eth0_core_clk divisor";} eth0_divsor[10:4]           = 2;
+        field {name = "0=PLL, 1=50M bak";} hsp_rmii_ref_bak_sel[2:2]   = 1'b0;
+        field {name = "0=PLL, 1=50M bak";} hsp_eth_core_bak_sel[1:1]   = 1'b0;
         field {} hsp_eth0_clk_en[0:0]        = 1'b0;
     } eth0_ctrl @ 0x0158;
 
     reg {
-        desc = "Ethernet 1 clock control";
+        name = "Ethernet 1 clock control";
         default sw = rw;
-        field {} rmii1_ref_clken[31:31]  = 1'b1; // hsp_rmii1_ref_clk gate
-        field {} eth1_divsor[10:4]       = 7'd2; // hsp_eth1_core_clk divisor
+        field {name = "hsp_rmii1_ref_clk gate";} rmii1_ref_clken[31:31]  = 1'b1;
+        field {name = "hsp_eth1_core_clk divisor";} eth1_divsor[10:4]       = 2;
         field {} hsp_eth1_clk_en[0:0]   = 1'b0;
     } eth1_ctrl @ 0x015C;
 
     reg {
-        desc = "MSHC0 core clock control";
+        name = "MSHC0 core clock control";
         default sw = rw;
         field {} mshc0_coreclk_en[16:16]  = 1'b0;
-        field {} mshcore0_divsor[15:4]    = 12'd2;
-        field {} mshc0_coreclk_sel[0:0]   = 1'b0; // 0=spll0_fout3(200M), 1=spll2_fout3(208M)
+        field {} mshcore0_divsor[15:4]    = 2;
+        field {name = "0=spll0_fout3(200M), 1=spll2_fout3(208M)";} mshc0_coreclk_sel[0:0]   = 1'b0;
     } mshc0_coreclk_ctrl @ 0x0160;
 
     reg {
-        desc = "MSHC1 core clock control";
+        name = "MSHC1 core clock control";
         default sw = rw;
         field {} mshc1_coreclk_en[16:16]  = 1'b0;
-        field {} mshcore1_divsor[15:4]    = 12'd2;
-        field {} mshc1_coreclk_sel[0:0]   = 1'b0; // 0=spll0_fout3(200M), 1=spll2_fout3(208M)
+        field {} mshcore1_divsor[15:4]    = 2;
+        field {name = "0=spll0_fout3(200M), 1=spll2_fout3(208M)";} mshc1_coreclk_sel[0:0]   = 1'b0;
     } mshc1_coreclk_ctrl @ 0x0164;
 
     reg {
-        desc = "MSHC2 core clock control";
+        name = "MSHC2 core clock control";
         default sw = rw;
         field {} mshc2_coreclk_en[16:16]  = 1'b0;
-        field {} mshcore2_divsor[15:4]    = 12'd2;
-        field {} mshc2_coreclk_sel[0:0]   = 1'b0; // 0=spll0_fout3(200M), 1=spll2_fout3(208M)
+        field {} mshcore2_divsor[15:4]    = 2;
+        field {name = "0=spll0_fout3(200M), 1=spll2_fout3(208M)";} mshc2_coreclk_sel[0:0]   = 1'b0;
     } mshc2_coreclk_ctrl @ 0x0168;
 
     reg {
-        desc = "MSHC/USB slow clock (all reserved)";
+        name = "MSHC/USB slow clock (all reserved)";
         default sw = r;
         default hw = r;
         field {} reserved;
     } mshc_usb_slwclk @ 0x016C;
 
     reg {
-        desc = "PCIe AXI clock control";
+        name = "PCIe AXI clock control";
         default sw = rw;
         field {} pcie_aclk_clken[31:31]  = 1'b1;
-        field {} pcie_aclk_divsor[7:4]   = 4'd2;
+        field {} pcie_aclk_divsor[7:4]   = 2;
     } pcie_aclk_ctrl @ 0x0170;
 
     reg {
-        desc = "PCIe config / auxiliary / CR clock control";
+        name = "PCIe config / auxiliary / CR clock control";
         default sw = rw;
         field {} pcie_cfg_clken[31:31]  = 1'b1;
         field {} pciet_aux_clken[1:1]   = 1'b0;
@@ -740,148 +738,148 @@ regfile syscrg_rf {
     } pcie_cfg_ctrl @ 0x0174;
 
     reg {
-        desc = "NPU AXI and config clock control";
+        name = "NPU AXI and config clock control";
         default sw = rw;
         field {} npu_aclk_clken[31:31]  = 1'b0;
         field {} npu_cfg_clken[30:30]   = 1'b0;
-        field {} npu_aclk_divsor[7:4]   = 4'd2;
-        field {} npu_aclksrc_sel[0:0]   = 1'b0; // reserved
+        field {} npu_aclk_divsor[7:4]   = 2;
+        field {name = "reserved";} npu_aclksrc_sel[0:0]   = 1'b0;
     } npu_aclk_ctrl @ 0x0178;
 
     reg {
-        desc = "NPU LLC clock control";
+        name = "NPU LLC clock control";
         default sw = rw;
         field {} npu_llc_clken[31:31]      = 1'b0;
-        field {} npu_llcsrc1_divsor[11:8]  = 4'd2; // clk_npu_llc_src1
-        field {} npu_llcsrc0_divsor[7:4]   = 4'd2; // clk_npu_llc_src0
-        field {} npu_llclk_sel[1:0]        = 2'd2; // 0=spll0_fout11(800M), 1=spll2_fout1(1040M), 2=vpll_fout1(1188M)
+        field {name = "clk_npu_llc_src1";} npu_llcsrc1_divsor[11:8]  = 2;
+        field {name = "clk_npu_llc_src0";} npu_llcsrc0_divsor[7:4]   = 2;
+        field {name = "0=spll0_fout11(800M), 1=spll2_fout1(1040M), 2=vpll_fout1(1188M)";} npu_llclk_sel[1:0]        = 2;
     } npu_llc_ctrl @ 0x017C;
 
     reg {
-        desc = "NPU core and E31 clock control";
+        name = "NPU core and E31 clock control";
         default sw = rw;
         field {} npu_core_clken[31:31]     = 1'b0;
-        field {} e31_core_clken[30:30]     = 1'b0; // not used
-        field {} npu_e31clk_divsor[15:12]  = 4'd2; // not used
-        field {} npu_e31clk_sel[9:8]       = 2'd1; // not used; 0=spll1_fout1, 1=vpll_fout1, 2=spll2_fout2
-        field {} npu_coreclk_divsor[7:4]   = 4'd2;
-        field {} npu_coreclk_sel[1:0]      = 2'd0; // 0=spll1_fout1(1500M), 1=vpll_fout1(1188M), 2=spll2_fout2(1040M)
+        field {name = "not used";} e31_core_clken[30:30]     = 1'b0;
+        field {name = "not used";} npu_e31clk_divsor[15:12]  = 2;
+        field {name = "not used; 0=spll1_fout1, 1=vpll_fout1, 2=spll2_fout2";} npu_e31clk_sel[9:8]       = 1;
+        field {} npu_coreclk_divsor[7:4]   = 2;
+        field {name = "0=spll1_fout1(1500M), 1=vpll_fout1(1188M), 2=spll2_fout2(1040M)";} npu_coreclk_sel[1:0]      = 0;
     } npu_core_ctrl @ 0x0180;
 
     reg {
-        desc = "VI digital write clock control";
+        name = "VI digital write clock control";
         default sw = rw;
         field {} vi_dw_clken[31:31]     = 1'b0;
-        field {} vi_dw_divsor[7:4]      = 4'd2;
-        field {} vi_dwclksrc_sel[0:0]   = 1'b0; // 0=vpll_fout1(594M), 1=spll0_fout1(800M)
+        field {} vi_dw_divsor[7:4]      = 2;
+        field {name = "0=vpll_fout1(594M), 1=spll0_fout1(800M)";} vi_dwclksrc_sel[0:0]   = 1'b0;
     } vi_dwclk_ctrl @ 0x0184;
 
     reg {
-        desc = "VI AXI and config clock control";
+        name = "VI AXI and config clock control";
         default sw = rw;
         field {} vi_aclk_clken[31:31]  = 1'b0;
         field {} vi_cfg_clken[30:30]   = 1'b0;
-        field {} vi_aclk_divsor[7:4]   = 4'd2;
-        field {} vi_aclksrc_sel[0:0]   = 1'b0; // 0=spll0_fout1(800M), 1=spll2_fout1(1040M)
+        field {} vi_aclk_divsor[7:4]   = 2;
+        field {name = "0=spll0_fout1(800M), 1=spll2_fout1(1040M)";} vi_aclksrc_sel[0:0]   = 1'b0;
     } vi_aclk_ctrl @ 0x0188;
 
     reg {
-        desc = "VI digital ISP clock control";
+        name = "VI digital ISP clock control";
         default sw = rw;
         field {} vi_dig_isp_clken[31:31]    = 1'b0;
-        field {} vi_dig_isp_divsor[7:4]     = 4'd2;
-        field {} vi_dig_isp_src_sel[0:0]    = 1'b0; // 0=vpll_fout1(594M), 1=spll0_fout1(800M)
+        field {} vi_dig_isp_divsor[7:4]     = 2;
+        field {name = "0=vpll_fout1(594M), 1=spll0_fout1(800M)";} vi_dig_isp_src_sel[0:0]    = 1'b0;
     } vi_dig_isp_clk_ctrl @ 0x018C;
 
     reg {
-        desc = "VI DVP clock control";
+        name = "VI DVP clock control";
         default sw = rw;
         field {} vi_dvp_clken[31:31]    = 1'b0;
-        field {} vi_dvp_divsor[7:4]     = 4'd2;
-        field {} vi_dvp_src_sel[0:0]    = 1'b0; // 0=vpll_fout1(594M), 1=spll0_fout1(800M)
+        field {} vi_dvp_divsor[7:4]     = 2;
+        field {name = "0=vpll_fout1(594M), 1=spll0_fout1(800M)";} vi_dvp_src_sel[0:0]    = 1'b0;
     } vi_dvp_clk_ctrl @ 0x0190;
 
     // VI shutter clock registers share the same layout; instantiated for channels 0–5
     reg vi_shutter_r {
-        desc = "VI shutter / reference clock control";
+        name = "VI shutter / reference clock control";
         default sw = rw;
         field {} vi_shutter_clken[31:31]  = 1'b0;
-        field {} vi_shutter_divsor[10:4]  = 7'd8;
+        field {} vi_shutter_divsor[10:4]  = 8;
     };
 
     reg {
-        desc = "VI PHY clock control";
+        name = "VI PHY clock control";
         default sw = rw;
-        field {} vi_phycfg_clken[1:1] = 1'b0; // vi_phy_cfg_clk
-        field {} vi_txesc_clken[0:0]  = 1'b0; // vi_phy_txclkesc
+        field {name = "vi_phy_cfg_clk";} vi_phycfg_clken[1:1] = 1'b0;
+        field {name = "vi_phy_txclkesc";} vi_txesc_clken[0:0]  = 1'b0;
     } vi_phy_clkctrl @ 0x01AC;
 
     reg {
-        desc = "VO AXI and config clock control";
+        name = "VO AXI and config clock control";
         default sw = rw;
         field {} vo_aclk_clken[31:31]  = 1'b1;
         field {} vo_cfg_clken[30:30]   = 1'b1;
-        field {} vo_aclk_divsor[7:4]   = 4'd2;
-        field {} vo_aclksrc_sel[0:0]   = 1'b0; // 0=spll0_fout1(800M), 1=spll2_fout1(1040M)
+        field {} vo_aclk_divsor[7:4]   = 2;
+        field {name = "0=spll0_fout1(800M), 1=spll2_fout1(1040M)";} vo_aclksrc_sel[0:0]   = 1'b0;
     } vo_aclk_ctrl @ 0x01B0;
 
     reg {
-        desc = "VO HDMI IES master clock control";
+        name = "VO HDMI IES master clock control";
         default sw = rw;
         field {} vo_iesmclk_clken[31:31]  = 1'b0;
-        field {} vo_iesmclk_divsor[7:4]   = 4'd2;
+        field {} vo_iesmclk_divsor[7:4]   = 2;
     } vo_iesmclk_ctrl @ 0x01B4;
 
     reg {
-        desc = "VO pixel clock control";
+        name = "VO pixel clock control";
         default sw = rw;
         field {} vo_pixel_clken[31:31]  = 1'b1;
-        field {} vo_pixel_divsor[9:4]   = 6'd2;
-        field {} vo_pixelsrc_sel[0:0]   = 1'b0; // 0=vpll_fout1(594M), 1=spll2_fout2(520M)
+        field {} vo_pixel_divsor[9:4]   = 2;
+        field {name = "0=vpll_fout1(594M), 1=spll2_fout2(520M)";} vo_pixelsrc_sel[0:0]   = 1'b0;
     } vo_pixel_ctrl @ 0x01B8;
 
     reg {
-        desc = "VO I2S master clock control";
+        name = "VO I2S master clock control";
         default sw = rw;
         field {} vo_mclk_clken[31:31]  = 1'b0;
-        field {} vo_mclk_divsor[11:4]  = 8'd10;
-        field {} vo_mclk_sel[0:0]      = 1'b0; // 0=internal mclk, 1=external mclk
+        field {} vo_mclk_divsor[11:4]  = 10;
+        field {name = "0=internal mclk, 1=external mclk";} vo_mclk_sel[0:0]      = 1'b0;
     } vo_mclk_ctrl @ 0x01BC;
 
     reg {
-        desc = "VO PHY / CEC clock control";
+        name = "VO PHY / CEC clock control";
         default sw = rw;
-        field {} vo_cec_clk_divsor[31:16] = 16'd18128; // must yield 32.760K~32.769K
-        field {} vo_cec_sel[2:2]          = 1'b0; // not used
-        field {} vo_cr_clken[1:1]         = 1'b0; // vo_cr_clk gate
-        field {} vo_txesc_clken[0:0]      = 1'b0; // vo_phy_txclkesc gate
+        field {name = "must yield 32.760K~32.769K";} vo_cec_clk_divsor[31:16] = 18128;
+        field {name = "not used";} vo_cec_sel[2:2]          = 1'b0;
+        field {name = "vo_cr_clk gate";} vo_cr_clken[1:1]         = 1'b0;
+        field {name = "vo_phy_txclkesc gate";} vo_txesc_clken[0:0]      = 1'b0;
     } vo_phy_clkctrl @ 0x01C0;
 
     reg {
-        desc = "VC AXI clock control";
+        name = "VC AXI clock control";
         default sw = rw;
         field {} vc_aclk_clken[31:31]   = 1'b0;
-        field {} vc_aclk_divsor[7:4]    = 4'd2;
-        field {} vcaclk_root_sel[0:0]   = 1'b1; // 0=spll0_fout1(800M), 1=spll2_fout1(1040M)
+        field {} vc_aclk_divsor[7:4]    = 2;
+        field {name = "0=spll0_fout1(800M), 1=spll2_fout1(1040M)";} vcaclk_root_sel[0:0]   = 1'b1;
     } vc_aclk_ctrl @ 0x01C4;
 
     reg {
-        desc = "VC decoder root clock select";
+        name = "VC decoder root clock select";
         default sw = rw;
-        field {} vcdec_root_sel[0:0] = 1'b0; // 0=spll0_fout1(800M), 1=spll2_fout1(1040M)
+        field {name = "0=spll0_fout1(800M), 1=spll2_fout1(1040M)";} vcdec_root_sel[0:0] = 1'b0;
     } vcdec_rootclk_ctrl @ 0x01C8;
 
     reg {
-        desc = "G2D AXI / core / APB clock control";
+        name = "G2D AXI / core / APB clock control";
         default sw = rw;
-        field {} g2d_aclken[31:31]      = 1'b0; // g2d_aclk
-        field {} g2d_clken[30:30]       = 1'b0; // g2d_clk
+        field {name = "g2d_aclk";} g2d_aclken[31:31]      = 1'b0;
+        field {name = "g2d_clk";} g2d_clken[30:30]       = 1'b0;
         field {} scu_g2d_pclk_en[28:28] = 1'b0;
-        field {} g2d_divsor[7:4]        = 4'd2; // clk_g2d_st1
+        field {name = "clk_g2d_st1";} g2d_divsor[7:4]        = 2;
     } g2d_ctrl @ 0x01CC;
 
     reg {
-        desc = "VC sub-block APB clock enable";
+        name = "VC sub-block APB clock enable";
         default sw = rw;
         field {} scu_vc_ve_pclk_en[5:5]  = 1'b0;
         field {} scu_vc_vd_pclk_en[4:4]  = 1'b0;
@@ -892,89 +890,89 @@ regfile syscrg_rf {
     } vc_clken_ctrl @ 0x01D0;
 
     reg {
-        desc = "JPEG encoder clock control";
+        name = "JPEG encoder clock control";
         default sw = rw;
         field {} je_clken[31:31]       = 1'b0;
-        field {} je_aclk_divsor[7:4]   = 4'd2;
+        field {} je_aclk_divsor[7:4]   = 2;
     } je_clk_ctrl @ 0x01D4;
 
     reg {
-        desc = "JPEG decoder clock control";
+        name = "JPEG decoder clock control";
         default sw = rw;
         field {} jd_clken[31:31]       = 1'b0;
-        field {} jd_aclk_divsor[7:4]   = 4'd2;
+        field {} jd_aclk_divsor[7:4]   = 2;
     } jd_clk_ctrl @ 0x01D8;
 
     reg {
-        desc = "Video decoder clock control";
+        name = "Video decoder clock control";
         default sw = rw;
         field {} vd_clken[31:31]       = 1'b0;
-        field {} vd_aclk_divsor[7:4]   = 4'd2;
+        field {} vd_aclk_divsor[7:4]   = 2;
     } vd_clk_ctrl @ 0x01DC;
 
     reg {
-        desc = "Video encoder clock control";
+        name = "Video encoder clock control";
         default sw = rw;
         field {} ve_clken[31:31]       = 1'b0;
-        field {} ve_aclk_divsor[7:4]   = 4'd3;
+        field {} ve_aclk_divsor[7:4]   = 3;
     } ve_clk_ctrl @ 0x01E0;
 
     reg {
-        desc = "AON DMA AXI and config clock control";
+        name = "AON DMA AXI and config clock control";
         default sw = rw;
-        field {} aondma_axi_clken[31:31]  = 1'b1; // aondma_aclk
-        field {} aondma_cfg_clken[30:30]  = 1'b1; // clk_aondma_cfg
-        field {} aon_aclk_clken[29:29]    = 1'b1; // aon_aclk
-        field {} aondma_divsor[7:4]       = 4'd2; // clk_aondma_axi_st3
-        field {} aondma_axi_clksel[0:0]   = 1'b1; // 0=internal(800M), 1=XTAL24M
+        field {name = "aondma_aclk";} aondma_axi_clken[31:31]  = 1'b1;
+        field {name = "clk_aondma_cfg";} aondma_cfg_clken[30:30]  = 1'b1;
+        field {name = "aon_aclk";} aon_aclk_clken[29:29]    = 1'b1;
+        field {name = "clk_aondma_axi_st3";} aondma_divsor[7:4]       = 2;
+        field {name = "0=internal(800M), 1=XTAL24M";} aondma_axi_clksel[0:0]   = 1'b1;
     } aon_dma_clk_ctrl @ 0x01E4;
 
     reg {
-        desc = "Timer clock enable";
+        name = "Timer clock enable";
         default sw = rw;
-        field {} timer3_clk8_clken[8:8]  = 1'b1;    // counter7 from vpll_fout3(49.5MHz)→90KHz AVC
-        field {} timer_pclk_clken[7:4]   = 4'b1111; // timer_pclk[3:0]
-        field {} timer_clk_clken[3:0]    = 4'b1111; // timer_clk[3:0]
+        field {name = "counter7 from vpll_fout3(49.5MHz)→90KHz AVC";} timer3_clk8_clken[8:8]  = 1'b1;
+        field {name = "timer_pclk[3:0]";} timer_pclk_clken[7:4]   = 4'b1111;
+        field {name = "timer_clk[3:0]";} timer_clk_clken[3:0]    = 4'b1111;
     } timer_clk_ctrl @ 0x01E8;
 
     reg {
-        desc = "RTC clock control";
+        name = "RTC clock control";
         default sw = rw;
-        field {} aon_rtc_divsor[31:21]   = 11'd64; // AON RTC IP divisor
-        field {} rtc_toggle_divsor[20:16] = 5'd24;  // CPU RTC toggle divisor → 1MHz
+        field {name = "AON RTC IP divisor";} aon_rtc_divsor[31:21]   = 64;
+        field {name = "CPU RTC toggle divisor → 1MHz";} rtc_toggle_divsor[20:16] = 24;
         field {} rtc_cfg_clken[2:2]      = 1'b1;
         field {} rtc_clken[1:1]          = 1'b1;
-        field {} rtc_clk_sel[0:0]        = 1'b0;  // not used
+        field {name = "not used";} rtc_clk_sel[0:0]        = 1'b0;
     } rtc_clk_ctrl @ 0x01EC;
 
     reg {
-        desc = "PKA clock control";
+        name = "PKA clock control";
         default sw = rw;
         field {} pka_clken[31:31] = 1'b1;
     } pka_clk_ctrl @ 0x01F0;
 
     reg {
-        desc = "SPAcc and crypto clock control";
+        name = "SPAcc and crypto clock control";
         default sw = rw;
         field {} spacc_clken[31:31]   = 1'b1;
         field {} crypto_clken[30:30]  = 1'b1;
-        field {} crypto_divsor[7:4]   = 4'd4;
+        field {} crypto_divsor[7:4]   = 4;
     } spacc_clk_ctrl @ 0x01F4;
 
     reg {
-        desc = "TRNG clock control";
+        name = "TRNG clock control";
         default sw = rw;
         field {} trng_clken[31:31] = 1'b1;
     } trng_clk_ctrl @ 0x01F8;
 
     reg {
-        desc = "OTP clock control";
+        name = "OTP clock control";
         default sw = rw;
         field {} otp_clken[31:31] = 1'b1;
     } otp_clk_ctrl @ 0x01FC;
 
     reg {
-        desc = "LSP peripheral clock enables (bank 0)";
+        name = "LSP peripheral clock enables (bank 0)";
         default sw = rw;
         field {} scu_lsp_wdt_pclk_en[31:28]   = 4'b1111;
         field {} scu_lsp_ssi_pclk_en[27:26]   = 2'b11;
@@ -986,44 +984,44 @@ regfile syscrg_rf {
     } lsp_clk_en0 @ 0x0200;
 
     reg {
-        desc = "LSP peripheral clock enables (bank 1)";
+        name = "LSP peripheral clock enables (bank 1)";
         default sw = rw;
-        field {} pvt_clken[17:16]              = 2'b11;     // [0]=lsp pvt, [1]=ddr pvt
+        field {name = "[0]=lsp pvt, [1]=ddr pvt";} pvt_clken[17:16]              = 2'b11;
         field {} scu_lsp_mbox_pclk_en[15:0]   = 16'hffff;
     } lsp_clk_en1 @ 0x0204;
 
     reg {
-        desc = "U84 (big-core cluster) clock control";
+        name = "U84 (big-core cluster) clock control";
         default sw = rw;
         field {} u84_core_clk_en[31:28]      = 4'b1111;
         field {} u84_trace_clk_en[27:24]     = 4'b1111;
         field {} u84_trace_com_clk_en[23:23] = 1'b1;
-        field {} u84_busclk_ratio_sel[20:20] = 1'b0; // 0=core:bus=2:1, 1=1:1
-        field {} u84_core_clk_sel[1:0]       = 2'd2; // 0=cpu_pll_fout2, 1=core_lp(400M), 2=XTAL24M
+        field {name = "0=core:bus=2:1, 1=1:1";} u84_busclk_ratio_sel[20:20] = 1'b0;
+        field {name = "0=cpu_pll_fout2, 1=core_lp(400M), 2=XTAL24M";} u84_core_clk_sel[1:0]       = 2;
     } u84_clk_ctrl @ 0x0208;
 
     reg {
-        desc = "System config bus clock control";
+        name = "System config bus clock control";
         default sw = rw;
-        field {} syscfg_divsor[6:4]   = 3'd2;   // clk_sys_cfg
-        field {} syscfg_clk_sel[0:0]  = 1'b1;  // 0=spll0_fout3(200M), 1=XTAL24M
+        field {name = "clk_sys_cfg";} syscfg_divsor[6:4]   = 2;
+        field {name = "0=spll0_fout3(200M), 1=XTAL24M";} syscfg_clk_sel[0:0]  = 1'b1;
     } syscfg_clk_ctrl @ 0x020C;
 
     reg {
-        desc = "I2C0 (i2c10) clock control";
+        name = "I2C0 (i2c10) clock control";
         default sw = rw;
         field {} i2c10_pclken[31:31] = 1'b1;
     } i2c0_clk_ctrl @ 0x0210;
 
     reg {
-        desc = "I2C1 (i2c11) clock control";
+        name = "I2C1 (i2c11) clock control";
         default sw = rw;
         field {} i2c11_pclken[31:31] = 1'b1;
     } i2c1_clk_ctrl @ 0x0214;
 
     // gap 0x0218–0x027C undocumented
     reg {
-        desc = "DFT test clock enables";
+        name = "DFT test clock enables";
         default sw = rw;
         field {} pcie_dft1000m_clken[26:26] = 1'b0;
         field {} pcie_dft500m_clken[25:25]  = 1'b0;
@@ -1048,51 +1046,49 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "System software reset trigger — write 0x1AC0FFE6 to reset";
+        name = "System software reset trigger — write 0x1AC0FFE6 to reset";
         default sw = rw;
         default hw = r;
         field {} sw_sysrst_value[31:0] = 32'b0;
     } sys_swrst_value @ 0x0300;
 
     reg {
-        desc = "Clear reset source status";
+        name = "Clear reset source status";
         default hw = r;
-        field {sw = w;} clr_rstsrc_status[0:0] = 1'b0; // WO, active-high clear
+        field {sw = w; name = "WO, active-high clear";} clr_rstsrc_status[0:0] = 1'b0;
     } clr_rst_status @ 0x0304;
 
     reg {
-        desc = "Die identity and reset source status";
+        name = "Die identity and reset source status";
         default sw = r;
         default hw = r;
-        field {} die_num[23:16]             = 8'b0; // quantity of DIEs in package
-        field {} die_ordinal[15:8]          = 8'b0; // ordinal of this die
-        field {} chip_rstsrc_status[7:0]    = 8'b0;
-        // [0]=internal POR, [1]=ext die POR, [2]=key reset, [3]=WDT,
-        // [4]=SW reset, [5]=ext die reset from die0, [6]=u84 debug_ndreset, [7]=scpu debug_ndreset
+        field {name = "quantity of DIEs in package";} die_num[23:16]             = 8'b0;
+        field {name = "ordinal of this die";} die_ordinal[15:8]          = 8'b0;
+        field {name = "chip reset source status"; desc = "[0]=internal POR, [1]=ext die POR, [2]=key reset, [3]=WDT, [4]=SW reset, [5]=ext die reset from die0, [6]=u84 debug_ndreset, [7]=scpu debug_ndreset";} chip_rstsrc_status[7:0] = 8'b0;
     } die_status @ 0x0308;
 
     reg {
-        desc = "Clear boot flag (allows CPU re-boot from software)";
+        name = "Clear boot flag (allows CPU re-boot from software)";
         default hw = r;
-        field {sw = w;} clr_boot_flag[0:0] = 1'b0; // WO
+        field {sw = w; name = "WO";} clr_boot_flag[0:0] = 1'b0;
     } clr_boot_info @ 0x030C;
 
     reg {
-        desc = "SCPU reset vector (valid when booting from U84)";
+        name = "SCPU reset vector (valid when booting from U84)";
         default sw = rw;
         default hw = r;
         field {} scpu_reset_vector[31:0] = 32'b0;
     } scpu_boot_address @ 0x0310;
 
     reg {
-        desc = "LPCPU boot address";
+        name = "LPCPU boot address";
         default sw = rw;
         default hw = r;
         field {} lpcpu_reset_vector[31:0] = 32'b0;
     } lpcpu_boot_address @ 0x0314;
 
     reg {
-        desc = "NPU E31 boot address (reserved)";
+        name = "NPU E31 boot address (reserved)";
         default sw = r;
         default hw = r;
         field {} reserved;
@@ -1100,14 +1096,14 @@ regfile syscrg_rf {
 
     // U84 boot address registers — 4 cores, hi/lo pairs
     reg u84_boot_addr_hi_r {
-        desc = "U84 reset vector [40:32] (valid when booting from SCPU)";
+        name = "U84 reset vector [40:32] (valid when booting from SCPU)";
         default sw = rw;
         default hw = r;
         field {} u84_reset_vector_hi[8:0] = 9'b0;
     };
 
     reg u84_boot_addr_low_r {
-        desc = "U84 reset vector [31:0] (valid when booting from SCPU)";
+        name = "U84 reset vector [31:0] (valid when booting from SCPU)";
         default sw = rw;
         default hw = r;
         field {} u84_reset_vector_low[31:0] = 32'h80000000;
@@ -1123,17 +1119,17 @@ regfile syscrg_rf {
     u84_boot_addr_low_r u84_boot_address3_low @ 0x0338;
 
     reg {
-        desc = "Boot selection pin status";
+        name = "Boot selection pin status";
         default sw = r;
         default hw = r;
         field {} boot_sel_status[3:0] = 4'b0;
     } boot_sel_stat @ 0x033C;
 
     reg {
-        desc = "Boot SPI controller mode select";
+        name = "Boot SPI controller mode select";
         default sw = rw;
         default hw = r;
-        field {sw = r;} spi_boot_mode[0:0] = 1'b0; // 0=enable SPI ctrl boot, 1=disable
+        field {sw = r; name = "0=enable SPI ctrl boot, 1=disable";} spi_boot_mode[0:0] = 1'b0;
     } boot_spi_cfg @ 0x0340;
 
     //=========================================================================
@@ -1141,7 +1137,7 @@ regfile syscrg_rf {
     //=========================================================================
 
     reg {
-        desc = "SNOC / RNOC / NOC software reset control";
+        name = "SNOC / RNOC / NOC software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_snoc_aon_arst_n[16:16]      = 1'b1;
@@ -1151,7 +1147,7 @@ regfile syscrg_rf {
         field {} sw_snoc_ddrc1_p1_arst_n[12:12] = 1'b1;
         field {} sw_snoc_ddrc1_p2_arst_n[11:11] = 1'b1;
         field {} sw_snoc_dspt_arst_n[10:10]     = 1'b1;
-        field {} sw_snoc_jtag_prst_n[9:9]       = 1'b1; // not used
+        field {name = "not used";} sw_snoc_jtag_prst_n[9:9]       = 1'b1;
         field {} sw_snoc_npu_arst_n[8:8]        = 1'b1;
         field {} sw_snoc_pciet_prst_n[7:7]      = 1'b1;
         field {} sw_snoc_pciet_xmrst_n[6:6]     = 1'b1;
@@ -1159,12 +1155,12 @@ regfile syscrg_rf {
         field {} sw_snoc_u84_arst_n[4:4]        = 1'b1;
         field {} sw_snoc_tcu_arst_n[3:3]        = 1'b1;
         field {} sw_rnoc_nsp_rstn[2:2]          = 1'b1;
-        field {} sw_noc_cfg_rstn[1:1]           = 1'b1; // not used
+        field {name = "not used";} sw_noc_cfg_rstn[1:1]           = 1'b1;
         field {} sw_noc_nsp_rstn[0:0]           = 1'b1;
     } snoc_rst_ctrl @ 0x0400;
 
     reg {
-        desc = "GPU software reset control";
+        name = "GPU software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_gpu_spu_rstn[4:4]   = 1'b0;
@@ -1175,20 +1171,20 @@ regfile syscrg_rf {
     } gpu_rst_ctrl @ 0x0404;
 
     reg {
-        desc = "DSP software reset control";
+        name = "DSP software reset control";
         default sw = rw;
         default hw = r;
-        field {} sw_dsp_div_rstn[7:4]  = 4'b0; // divisor reset
-        field {} sw_dsp_div4_rstn[2:2] = 1'b0; // APB slave + DSP CSR per core
+        field {name = "divisor reset";} sw_dsp_div_rstn[7:4]  = 4'b0;
+        field {name = "APB slave + DSP CSR per core";} sw_dsp_div4_rstn[2:2] = 1'b0;
         field {} sw_dsp_cfg_rstn[1:1]  = 1'b0;
         field {} sw_dsp_axi_rstn[0:0]  = 1'b0;
     } dsp_rst_ctrl @ 0x0408;
 
     reg {
-        desc = "D2D software reset control";
+        name = "D2D software reset control";
         default sw = rw;
         default hw = r;
-        field {} sw_d2d_subsys_rst_n[7:7]  = 1'b1; // reset D2D subsystem
+        field {name = "reset D2D subsystem";} sw_d2d_subsys_rst_n[7:7]  = 1'b1;
         field {} sw_d2d_core_rst_n[6:6]    = 1'b0;
         field {} sw_d2d_tx_rst_n[5:5]      = 1'b0;
         field {} sw_d2d_rx_rst_n[4:4]      = 1'b0;
@@ -1199,22 +1195,22 @@ regfile syscrg_rf {
     } d2d_rst_ctrl @ 0x040C;
 
     reg {
-        desc = "DDR controller software reset control";
+        name = "DDR controller software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_ddr_prstn[26:26]          = 1'b0;
-        field {} sw_ddr0_pmp_soft_rstn[24:24] = 1'b0; // not used
+        field {name = "not used";} sw_ddr0_pmp_soft_rstn[24:24] = 1'b0;
         field {} sw_ddr_core_rstn[23:23]      = 1'b0;
         field {} sw_ddr0_trace_arstn[22:22]   = 1'b0;
         field {} sw_ddr_cfg_rstn[21:21]       = 1'b0;
         field {} sw_ddr0_p_arstn[20:16]       = 5'b0;
-        field {} sw_ddr1_pmp_soft_rstn[8:8]   = 1'b0; // not used
+        field {name = "not used";} sw_ddr1_pmp_soft_rstn[8:8]   = 1'b0;
         field {} sw_ddr1_trace_arstn[6:6]     = 1'b0;
         field {} sw_ddr1_p_arstn[4:0]         = 5'b0;
     } ddr_rst_ctrl @ 0x0410;
 
     reg {
-        desc = "TCU / TBU software reset control";
+        name = "TCU / TBU software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_tcu_cfg_rstn[1:1] = 1'b1;
@@ -1222,12 +1218,12 @@ regfile syscrg_rf {
     } tcu_rst_ctrl @ 0x0414;
 
     reg {
-        desc = "NPU software reset control";
+        name = "NPU software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_npu_llc_rstn[6:6]     = 1'b0;
-        field {} sw_npu_e31dbg_rstn[5:5]  = 1'b0; // reserved
-        field {} sw_npu_e31bus_rstn[4:4]  = 1'b0; // reserved
+        field {name = "reserved";} sw_npu_e31dbg_rstn[5:5]  = 1'b0;
+        field {name = "reserved";} sw_npu_e31bus_rstn[4:4]  = 1'b0;
         field {} sw_npu_e31core_rstn[3:3] = 1'b0;
         field {} sw_npu_core_rstn[2:2]    = 1'b0;
         field {} sw_npu_cfg_rstn[1:1]     = 1'b0;
@@ -1235,7 +1231,7 @@ regfile syscrg_rf {
     } npu_rst_ctrl @ 0x0418;
 
     reg {
-        desc = "HSP / DMA / USB / SATA / MSHC software reset control";
+        name = "HSP / DMA / USB / SATA / MSHC software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_hsp_sata_arstn[27:27]    = 1'b0;
@@ -1253,19 +1249,19 @@ regfile syscrg_rf {
         field {} sw_usb0_vaux_rstn[15:15]    = 1'b0;
         field {} sw_hsp_dma0_rstn[14:14]     = 1'b0;
         field {} sw_dma0_rst_n[13:13]        = 1'b0;
-        field {} sw_sata_rbc_rstn[12:12]     = 1'b0; // not used
+        field {name = "not used";} sw_sata_rbc_rstn[12:12]     = 1'b0;
         field {} sw_sata_pmalive_rstn[11:11] = 1'b0;
         field {} sw_sata_oob_rstn[10:10]     = 1'b0;
-        field {} sw_sata_asic0_rstn[9:9]     = 1'b0; // not used
+        field {name = "not used";} sw_sata_asic0_rstn[9:9]     = 1'b0;
         field {} sw_mshc_txrx_rstn[8:6]      = 3'b0;
         field {} sw_mshc_phy_rstn[5:3]       = 3'b0;
         field {} sw_hsp_por_rstn[2:2]        = 1'b0;
         field {} sw_hsp_cfg_rstn[1:1]        = 1'b0;
-        field {} sw_hsp_axi_rstn[0:0]        = 1'b0; // HSP xbar AXI reset
+        field {name = "HSP xbar AXI reset";} sw_hsp_axi_rstn[0:0]        = 1'b0;
     } hspdma_rst_ctrl @ 0x041C;
 
     reg {
-        desc = "PCIe software reset control";
+        name = "PCIe software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_pcie_perst_n[2:2]      = 1'b0;
@@ -1274,35 +1270,35 @@ regfile syscrg_rf {
     } pcie_rst_ctrl @ 0x0420;
 
     reg {
-        desc = "LSP I2C software reset control";
+        name = "LSP I2C software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_i2c_rst_n[9:0] = 10'b0;
     } i2c_rst_ctrl @ 0x0424;
 
     reg {
-        desc = "Fan controller software reset control";
+        name = "Fan controller software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_fan_rst_n[0:0] = 1'b1;
     } fan_rst_ctrl @ 0x0428;
 
     reg {
-        desc = "PVT monitor software reset control";
+        name = "PVT monitor software reset control";
         default sw = rw;
         default hw = r;
-        field {} sw_pvt_rst_n[1:0] = 2'b11; // [0]=LSP PVT, [1]=DDR PVT
+        field {name = "[0]=LSP PVT, [1]=DDR PVT";} sw_pvt_rst_n[1:0] = 2'b11;
     } pvt_rst_ctrl @ 0x042C;
 
     reg {
-        desc = "Mailbox software reset control";
+        name = "Mailbox software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_mbox_rst_n[15:0] = 16'hffff;
     } mbox_rst_ctrl @ 0x0430;
 
     reg {
-        desc = "UART software reset control";
+        name = "UART software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_uart_rst_n[4:0] = 5'b11111;
@@ -1311,35 +1307,35 @@ regfile syscrg_rf {
     // 0x0438 undocumented
 
     reg {
-        desc = "LSP timer software reset control";
+        name = "LSP timer software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_timer_rst_n[0:0] = 1'b1;
     } timer_rst_ctrl @ 0x043C;
 
     reg {
-        desc = "SSI (SPI) software reset control";
+        name = "SSI (SPI) software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_ssi_rst_n[1:0] = 2'b11;
     } ssi_rst_ctrl @ 0x0440;
 
     reg {
-        desc = "Watchdog software reset control";
+        name = "Watchdog software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_wdt_rst_n[3:0] = 4'b1111;
     } wdt_rst_ctrl @ 0x0444;
 
     reg {
-        desc = "LSP config bus software reset";
+        name = "LSP config bus software reset";
         default sw = rw;
         default hw = r;
         field {} sw_lsp_cfg_rstn[0:0] = 1'b1;
     } lsp_cfgrst_ctrl @ 0x0448;
 
     reg {
-        desc = "U84 cluster software reset control";
+        name = "U84 cluster software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_u84_trace_rstn[11:8]   = 4'b0;
@@ -1350,7 +1346,7 @@ regfile syscrg_rf {
     } u84_rst_ctrl @ 0x044C;
 
     reg {
-        desc = "SCPU software reset control";
+        name = "SCPU software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_scpu_dbg_rstn[2:2]  = 1'b0;
@@ -1359,7 +1355,7 @@ regfile syscrg_rf {
     } scpu_rst_ctrl @ 0x0450;
 
     reg {
-        desc = "LPCPU software reset control";
+        name = "LPCPU software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_lpcpu_dbg_rstn[2:2]  = 1'b0;
@@ -1368,7 +1364,7 @@ regfile syscrg_rf {
     } lpcpu_rst_ctrl @ 0x0454;
 
     reg {
-        desc = "VC subsystem software reset control";
+        name = "VC subsystem software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_vc_moncfg_rstn[2:2] = 1'b0;
@@ -1378,7 +1374,7 @@ regfile syscrg_rf {
 
     // Minimal 2-field reset register reused for JD / JE / VD / VE
     reg axi_cfg_rst_r {
-        desc = "AXI + config software reset";
+        name = "AXI + config software reset";
         default sw = rw;
         default hw = r;
         field {} sw_axi_rstn[1:1] = 1'b0;
@@ -1391,7 +1387,7 @@ regfile syscrg_rf {
     axi_cfg_rst_r ve_rst_ctrl @ 0x0468;
 
     reg {
-        desc = "G2D software reset control";
+        name = "G2D software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_g2d_axi_rstn[2:2]  = 1'b0;
@@ -1400,7 +1396,7 @@ regfile syscrg_rf {
     } g2d_rst_ctrl @ 0x046C;
 
     reg {
-        desc = "VI subsystem software reset control";
+        name = "VI subsystem software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_vi_dwe_rstn[2:2] = 1'b0;
@@ -1409,33 +1405,33 @@ regfile syscrg_rf {
     } vi_rst_ctrl @ 0x0470;
 
     // Single-bit reset registers (one active field at bit 0)
-    reg single_rst_r {
-        desc = "Single-signal software reset (active-low, default asserted)";
+    reg single_rst_r #(string NAME= "Single-signal software reset (active-low, default asserted)") {
+        name = NAME;
         default sw = rw;
         default hw = r;
         field {} sw_rstn[0:0] = 1'b0;
     };
 
-    reg single_rst1_r {
-        desc = "Single-signal software reset (active-low, default deasserted)";
+    reg single_rst1_r #(string NAME= "Single-signal software reset (active-low, default deasserted)") {
+        name = NAME;
         default sw = rw;
         default hw = r;
         field {} sw_rstn[0:0] = 1'b1;
     };
 
-    single_rst_r dvp_rst_ctrl  @ 0x0474; // sw_vi_dvp_rstn,  default 0
-    single_rst_r isp0_rst_ctrl @ 0x0478; // sw_vi_isp0_rstn, default 0
-    single_rst_r isp1_rst_ctrl @ 0x047C; // sw_vi_isp1_rstn, default 0
+    single_rst_r #(.NAME("sw_vi_dvp_rstn,  default 0")) dvp_rst_ctrl  @ 0x0474 ;
+    single_rst_r #(.NAME("sw_vi_isp0_rstn,  default 0")) isp0_rst_ctrl @ 0x0478 ;
+    single_rst_r #(.NAME("sw_vi_isp1_rstn,  default 0")) isp1_rst_ctrl @ 0x047C ;
 
     reg {
-        desc = "VI shutter software reset control";
+        name = "VI shutter software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_vi_shutter_rstn[5:0] = 6'b0;
     } shutter_rst_ctrl @ 0x0480;
 
     reg {
-        desc = "VO / HDMI PHY software reset control";
+        name = "VO / HDMI PHY software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_vo_hdmi_rstn[5:5]      = 1'b0;
@@ -1446,7 +1442,7 @@ regfile syscrg_rf {
     } vo_phyrst_ctrl @ 0x0484;
 
     reg {
-        desc = "VO I2S software reset control";
+        name = "VO I2S software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_vo_i2s_prstn[1:1] = 1'b0;
@@ -1454,7 +1450,7 @@ regfile syscrg_rf {
     } vo_i2srst_ctrl @ 0x0488;
 
     reg {
-        desc = "VO display controller software reset control";
+        name = "VO display controller software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_vo_dc_prstn[3:3] = 1'b0;
@@ -1464,34 +1460,34 @@ regfile syscrg_rf {
     } vo_rst_ctrl @ 0x048C;
 
     reg {
-        desc = "Boot SPI software reset control";
+        name = "Boot SPI software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_bootspi_rstn[1:1]  = 1'b1;
         field {} sw_bootspi_hrstn[0:0] = 1'b1;
     } bootspi_rst_ctrl @ 0x0490;
 
-    single_rst1_r i2c1_rst_ctrl @ 0x0494; // sw_i2c1_prstn, default 1
-    single_rst1_r i2c0_rst_ctrl @ 0x0498; // sw_i2c0_prstn, default 1
+    single_rst1_r #(.NAME("sw_i2c1_prstn, default 1")) i2c1_rst_ctrl @ 0x0494;
+    single_rst1_r #(.NAME("sw_i2c0_prstn, default 1")) i2c0_rst_ctrl @ 0x0498;
 
     reg {
-        desc = "DMA1 software reset control";
+        name = "DMA1 software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_dma1_hrstn[1:1] = 1'b1;
         field {} sw_dma1_arstn[0:0] = 1'b1;
     } dma1_rst_ctrl @ 0x049C;
 
-    single_rst1_r fprt_rst_ctrl   @ 0x04A0; // sw_fp_prt_hrstn, default 1
-    single_rst1_r hblock_rst_ctrl @ 0x04A4; // sw_hblock_hrstn, default 1
-    single_rst1_r secsr_rst_ctrl  @ 0x04A8; // sw_secsr_hrstn, default 1
-    single_rst1_r otp_rst_ctrl    @ 0x04AC; // sw_otp_prstn,   default 1 (reserved per TRM)
-    single_rst1_r pka_rst_ctrl    @ 0x04B0; // sw_pka_hrstn,   default 1
-    single_rst1_r spacc_rst_ctrl  @ 0x04B4; // sw_spacc_rstn,  default 1
-    single_rst1_r trng_rst_ctrl   @ 0x04B8; // sw_trng_hrstn,  default 1
+    single_rst1_r #(.NAME("sw_fp_prt_hrstn, default 1"))                   fprt_rst_ctrl   @ 0x04A0;
+    single_rst1_r #(.NAME("sw_hblock_hrstn, default 1"))                   hblock_rst_ctrl @ 0x04A4;
+    single_rst1_r #(.NAME("sw_secsr_hrstn, default 1"))                    secsr_rst_ctrl  @ 0x04A8;
+    single_rst1_r #(.NAME("sw_otp_prstn,   default 1 (reserved per TRM)")) otp_rst_ctrl    @ 0x04AC;
+    single_rst1_r #(.NAME("sw_pka_hrstn,   default 1"))                    pka_rst_ctrl    @ 0x04B0;
+    single_rst1_r #(.NAME("sw_spacc_rstn,  default 1"))                    spacc_rst_ctrl  @ 0x04B4;
+    single_rst1_r #(.NAME("sw_trng_hrstn,  default 1"))                    trng_rst_ctrl   @ 0x04B8;
 
     reg {
-        desc = "Timer0 software reset control";
+        name = "Timer0 software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_timer0_prstn[8:8] = 1'b1;
@@ -1499,7 +1495,7 @@ regfile syscrg_rf {
     } timer0_rst_ctrl @ 0x04C0;
 
     reg timer_n_rst_ctrl_r {
-        desc = "Timer N software reset control";
+        name = "Timer N software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_timer_prstn[8:8] = 1'b0;
@@ -1510,10 +1506,10 @@ regfile syscrg_rf {
     timer_n_rst_ctrl_r timer2_rst_ctrl @ 0x04C8;
     timer_n_rst_ctrl_r timer3_rst_ctrl @ 0x04CC;
 
-    single_rst1_r rtc_rst_ctrl @ 0x04D0; // sw_rtc_rstn, default 1
+    single_rst1_r #(.NAME("sw_rtc_rstn, default 1")) rtc_rst_ctrl @ 0x04D0;
 
     reg {
-        desc = "MNOC software reset control";
+        name = "MNOC software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_mnoc_ddrc0_p3_arst_n[6:6]  = 1'b1;
@@ -1526,7 +1522,7 @@ regfile syscrg_rf {
     } mnoc_rst_ctrl @ 0x04D4;
 
     reg {
-        desc = "RNOC software reset control";
+        name = "RNOC software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_rnoc_ddrc0_p4_arst_n[5:5]  = 1'b1;
@@ -1538,7 +1534,7 @@ regfile syscrg_rf {
     } rnoc_rst_ctrl @ 0x04D8;
 
     reg {
-        desc = "CNOC per-domain config software reset control";
+        name = "CNOC per-domain config software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_cnoc_aon_cfg_rst_n[15:15]   = 1'b1;
@@ -1560,7 +1556,7 @@ regfile syscrg_rf {
     } cnoc_rst_ctrl @ 0x04DC;
 
     reg {
-        desc = "LNOC software reset control";
+        name = "LNOC software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_lnoc_ddrc0_p0_arst_n[3:3] = 1'b1;
@@ -1570,7 +1566,7 @@ regfile syscrg_rf {
     } lnoc_rst_ctrl @ 0x04E0;
 
     reg {
-        desc = "Top-level pipeline cell software reset control";
+        name = "Top-level pipeline cell software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_vc2mnoc_pipe_rst_n[24:24]       = 1'b1;
@@ -1601,7 +1597,7 @@ regfile syscrg_rf {
     } pipe_rst_ctrl @ 0x04E4;
 
     reg {
-        desc = "Top-level TBU software reset control";
+        name = "Top-level TBU software reset control";
         default sw = rw;
         default hw = r;
         field {} sw_tbu_vi_axi_rst_n[3:3]     = 1'b1;
@@ -1611,18 +1607,18 @@ regfile syscrg_rf {
     } tbu_rst_ctrl @ 0x04E8;
 
     reg {
-        desc = "D2D subsystem reset status from opposite die";
+        name = "D2D subsystem reset status from opposite die";
         default sw = r;
         default hw = r;
         field {} ext_d2d_subsys_rstn_status[0:0] = 1'b1;
     } reset_status @ 0x04EC;
 
     reg {
-        desc = "Test/SPI-slave software reset control";
+        name = "Test/SPI-slave software reset control";
         default sw = rw;
         default hw = r;
-        field {} sw_spi_slv_rstn[1:1] = 1'b1; // SPI slave SPI-clk domain reset
-        field {} sw_testmux_rstn[0:0] = 1'b1; // testmux reset
+        field {name = "SPI slave SPI-clk domain reset";} sw_spi_slv_rstn[1:1] = 1'b1;
+        field {name = "testmux reset";} sw_testmux_rstn[0:0] = 1'b1;
     } test_rst_ctrl @ 0x04F0;
 
 };
