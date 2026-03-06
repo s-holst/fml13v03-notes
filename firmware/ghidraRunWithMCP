@@ -1,0 +1,359 @@
+#!/usr/bin/env python3
+"""
+ghidraRunWithMCP — Ghidra GUI + MCP server
+
+Tested with Ghidra 12.0.3
+
+Test in browser: npx @modelcontextprotocol/inspector
+Add to claude code: claude mcp add ghidra --transport http http://localhost:8000/mcp
+"""
+
+# ---------------------------------------------------------------------------
+# macOS: re-exec through Python.app for proper GUI/event-loop access.
+# ---------------------------------------------------------------------------
+
+import os
+import platform
+import sys
+
+def _macos_reexec():
+    if platform.system() != "Darwin":
+        return
+    if os.environ.get("_GMCP_REEXEC"):
+        return
+    from pathlib import Path
+    app_python = Path(sys.base_exec_prefix) / "Resources/Python.app/Contents/MacOS/Python"
+    if not app_python.exists():
+        return
+    env = dict(os.environ)
+    env["_GMCP_REEXEC"] = "1"
+    os.posix_spawn(str(app_python), [sys.executable, os.path.abspath(__file__)], env,
+                   file_actions=[(os.POSIX_SPAWN_CLOSE, 0), (os.POSIX_SPAWN_CLOSE, 1)])
+    sys.exit(0)
+
+_macos_reexec()
+
+# ---------------------------------------------------------------------------
+# Imports
+# ---------------------------------------------------------------------------
+
+import threading
+from pyghidra.__main__ import main
+from fastmcp import FastMCP
+from fastmcp.server.middleware import Middleware
+
+# Cannot import Ghidra internals until JVM is fully initialized.
+# Import on first MCP request - assuming user waits with requests
+# until after Ghidra has fully launched.
+class DeferredImports(Middleware):
+    async def on_request(self, context, call_next):
+        global DecompInterface, SourceType, CodeUnit, GhidraClass, HighFunctionDBUtil, FlatProgramAPI, TaskMonitor, AppInfo
+        from ghidra.app.decompiler import DecompInterface
+        from ghidra.program.model.symbol import SourceType
+        from ghidra.program.model.listing import CodeUnit, GhidraClass
+        from ghidra.program.model.pcode import HighFunctionDBUtil
+        from ghidra.program.flatapi import FlatProgramAPI
+        from ghidra.util.task import TaskMonitor
+        from ghidra.framework.main import AppInfo
+        return await call_next(context)
+
+mcp = FastMCP("ghidra")
+mcp.add_middleware(DeferredImports())
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _state():
+    for tool in AppInfo.getActiveProject().getToolServices().getRunningTools():
+        for plugin in tool.getManagedPlugins():
+            if plugin.name == 'PyGhidraPlugin':
+                return plugin.script.getState()
+
+def _prog(): return _state().getCurrentProgram()
+def _addr(a): return _prog().getAddressFactory().getAddress(a)
+
+
+def _tx(name, fn):
+    p = _prog()
+    tid = p.startTransaction(name)
+    ok = False
+    try: fn(); ok = True
+    finally: p.endTransaction(tid, ok)
+
+
+def _decompile(f):
+    ifc = DecompInterface()
+    ifc.openProgram(_prog())
+    return ifc.decompileFunction(f, 10, TaskMonitor.DUMMY)
+
+
+def _func_at(address):
+    return _prog().getFunctionManager().getFunctionAt(_addr(address))
+
+
+def _paginate(it, offset, limit):
+    return list(it)[offset:offset + limit]
+
+
+# ---------------------------------------------------------------------------
+# Tools — Listing / enumeration
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def list_functions(offset: int = 0, limit: int = 100) -> str:
+    """List all functions with pagination."""
+    fns = _paginate(_prog().getFunctionManager().getFunctions(True), offset, limit)
+    return '\n'.join(f'{f.getName()} @ {f.getEntryPoint()}' for f in fns)
+
+
+@mcp.tool()
+def search_functions(query: str, offset: int = 0, limit: int = 50) -> str:
+    """Search functions by name substring (case-insensitive)."""
+    q = query.lower()
+    fns = [f for f in _prog().getFunctionManager().getFunctions(True) if q in f.getName().lower()]
+    return '\n'.join(f'{f.getName()} @ {f.getEntryPoint()}' for f in fns[offset:offset + limit])
+
+
+@mcp.tool()
+def list_classes(offset: int = 0, limit: int = 100) -> str:
+    """List all class namespaces (GhidraClass instances)."""
+    seen, result = set(), []
+    for s in _prog().getSymbolTable().getAllSymbols(True):
+        ns = s.getParentNamespace()
+        if isinstance(ns, GhidraClass) and ns.getName() not in seen:
+            seen.add(ns.getName()); result.append(f'{ns.getName()}')
+    return '\n'.join(result[offset:offset + limit])
+
+
+@mcp.tool()
+def list_namespaces(offset: int = 0, limit: int = 100) -> str:
+    """List all non-global namespaces."""
+    seen, result = set(), []
+    for s in _prog().getSymbolTable().getAllSymbols(True):
+        ns = s.getParentNamespace()
+        if ns and not ns.isGlobal() and ns.getName() not in seen:
+            seen.add(ns.getName()); result.append(ns.getName())
+    return '\n'.join(result[offset:offset + limit])
+
+
+@mcp.tool()
+def list_segments(offset: int = 0, limit: int = 100) -> str:
+    """List memory segments/blocks with address ranges."""
+    blocks = _paginate(_prog().getMemory().getBlocks(), offset, limit)
+    return '\n'.join(f'{b.getName()}: {b.getStart()} - {b.getEnd()} ({b.getSize()} bytes)' for b in blocks)
+
+
+@mcp.tool()
+def list_imports(offset: int = 0, limit: int = 100) -> str:
+    """List imported (external) symbols."""
+    syms = _paginate(_prog().getSymbolTable().getExternalSymbols(), offset, limit)
+    return '\n'.join(f'{s.getName()} @ {s.getAddress()}' for s in syms)
+
+
+@mcp.tool()
+def list_exports(offset: int = 0, limit: int = 100) -> str:
+    """List exported entry points."""
+    syms = [s for s in _prog().getSymbolTable().getAllSymbols(True) if s.isExternalEntryPoint()]
+    return '\n'.join(f'{s.getName()} @ {s.getAddress()}' for s in syms[offset:offset + limit])
+
+
+@mcp.tool()
+def list_data(offset: int = 0, limit: int = 100) -> str:
+    """List defined data objects with address and type."""
+    data = _paginate(_prog().getListing().getDefinedData(True), offset, limit)
+    return '\n'.join(f'{d.getLabel() or "?"} @ {d.getAddress()}: {d.getDataType().getName()}' for d in data)
+
+
+@mcp.tool()
+def list_strings(offset: int = 0, limit: int = 100, filter: str = "") -> str:
+    """List defined string data, optionally filtered by substring."""
+    result = []
+    for d in _prog().getListing().getDefinedData(True):
+        if 'string' in d.getDataType().getName().lower():
+            val = str(d.getValue())
+            if filter.lower() in val.lower():
+                result.append(f'{d.getAddress()}: {val!r}')
+    return '\n'.join(result[offset:offset + limit])
+
+
+# ---------------------------------------------------------------------------
+# Tools — Navigation
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def get_current_address() -> str:
+    """Get the currently selected address in the Ghidra GUI."""
+    return str(_state().getCurrentAddress())
+
+
+@mcp.tool()
+def get_current_function() -> str:
+    """Get the function containing the currently selected address."""
+    f = _prog().getFunctionManager().getFunctionContaining(_state().getCurrentAddress())
+    return f'{f.getName()} @ {f.getEntryPoint()}\n{f.getSignature()}' if f else "no function at current address"
+
+
+@mcp.tool()
+def get_function_by_address(address: str) -> str:
+    """Get function details at a given address."""
+    f = _func_at(address)
+    if not f: return "no function at address"
+    return f'Name: {f.getName()}\nEntry: {f.getEntryPoint()}\nSignature: {f.getSignature()}\nSize: {f.getBody().getNumAddresses()} bytes'
+
+
+# ---------------------------------------------------------------------------
+# Tools — Analysis
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def decompile_function(name: str) -> str:
+    """Decompile a function by name, returning C pseudocode."""
+    for f in _prog().getFunctionManager().getFunctions(True):
+        if f.getName() == name:
+            return _decompile(f).getDecompiledFunction().getC()
+    return "function not found"
+
+
+@mcp.tool()
+def decompile_function_at(address: str) -> str:
+    """Decompile a function at the given address, returning C pseudocode."""
+    f = _func_at(address)
+    if not f: return "no function at address"
+    return _decompile(f).getDecompiledFunction().getC()
+
+
+@mcp.tool()
+def disassemble_function(address: str) -> str:
+    """Get assembly listing for a function at the given address."""
+    f = _func_at(address)
+    if not f: return "no function at address"
+    instrs = _prog().getListing().getInstructions(f.getBody(), True)
+    return '\n'.join(f'{i.getAddress()}: {i}' for i in instrs)
+
+
+# ---------------------------------------------------------------------------
+# Tools — Cross-references
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def xrefs_to(address: str, offset: int = 0, limit: int = 50) -> str:
+    """List cross-references pointing TO an address."""
+    refs = _paginate(_prog().getReferenceManager().getReferencesTo(_addr(address)), offset, limit)
+    return '\n'.join(f'{r.getFromAddress()} -> {r.getToAddress()} [{r.getReferenceType()}]' for r in refs)
+
+
+@mcp.tool()
+def xrefs_from(address: str, offset: int = 0, limit: int = 50) -> str:
+    """List cross-references FROM an address."""
+    refs = _paginate(_prog().getReferenceManager().getReferencesFrom(_addr(address)), offset, limit)
+    return '\n'.join(f'{r.getFromAddress()} -> {r.getToAddress()} [{r.getReferenceType()}]' for r in refs)
+
+
+@mcp.tool()
+def function_xrefs(name: str, offset: int = 0, limit: int = 50) -> str:
+    """List all cross-references to a named function's entry point."""
+    for f in _prog().getFunctionManager().getFunctions(True):
+        if f.getName() == name:
+            refs = _paginate(_prog().getReferenceManager().getReferencesTo(f.getEntryPoint()), offset, limit)
+            return '\n'.join(f'{r.getFromAddress()} -> {r.getToAddress()} [{r.getReferenceType()}]' for r in refs)
+    return "function not found"
+
+
+# ---------------------------------------------------------------------------
+# Tools — Mutations
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def rename_function(address: str, new_name: str) -> str:
+    """Rename a function at the given address."""
+    f = _func_at(address)
+    if not f: return "no function at address"
+    _tx("rename_function", lambda: f.setName(new_name, SourceType.USER_DEFINED))
+    return f"renamed to {new_name!r}"
+
+
+@mcp.tool()
+def rename_data(address: str, new_name: str) -> str:
+    """Rename a data label at the given address."""
+    _tx("rename_data", lambda: _prog().getSymbolTable().createLabel(_addr(address), new_name, SourceType.USER_DEFINED))
+    return f"renamed to {new_name!r}"
+
+
+@mcp.tool()
+def rename_variable(function_address: str, old_name: str, new_name: str) -> str:
+    """Rename a local variable within a decompiled function."""
+    f = _func_at(function_address)
+    if not f: return "no function at address"
+    hf = _decompile(f).getHighFunction()
+    sym = next((s for s in hf.getLocalSymbolMap().getSymbols() if s.getName() == old_name), None)
+    if not sym: return f"variable {old_name!r} not found"
+    _tx("rename_variable", lambda: HighFunctionDBUtil.updateDBVariable(sym, new_name, None, SourceType.USER_DEFINED))
+    return f"renamed {old_name!r} -> {new_name!r}"
+
+
+@mcp.tool()
+def set_decompiler_comment(address: str, comment: str) -> str:
+    """Set a pre-comment at an address (visible in decompiler view)."""
+    _tx("set_pre_comment", lambda: _prog().getListing().setComment(_addr(address), CodeUnit.PRE_COMMENT, comment))
+    return "comment set"
+
+
+@mcp.tool()
+def set_disassembly_comment(address: str, comment: str) -> str:
+    """Set an end-of-line comment at an address (visible in disassembly view)."""
+    _tx("set_eol_comment", lambda: _prog().getListing().setComment(_addr(address), CodeUnit.EOL_COMMENT, comment))
+    return "comment set"
+
+
+@mcp.tool()
+def set_function_prototype(function_address: str, prototype: str) -> str:
+    """Apply a C function signature string to a function (e.g. 'int foo(int a, char *b)')."""
+    from ghidra.app.cmd.function import ApplyFunctionSignatureCmd
+    from ghidra.app.util.cparser.C import CParserUtils
+    f = _func_at(function_address)
+    if not f: return "no function at address"
+    sig = CParserUtils.parseSignature(_state().getTool(), _prog(), prototype, False)
+    if not sig: return "failed to parse prototype"
+    def do():
+        cmd = ApplyFunctionSignatureCmd(f.getEntryPoint(), sig, SourceType.USER_DEFINED)
+        cmd.applyTo(_prog(), TaskMonitor.DUMMY)
+    _tx("set_prototype", do)
+    return "prototype applied"
+
+
+@mcp.tool()
+def set_local_variable_type_foo(function_address: str, variable_name: str, new_type: str) -> str:
+    """Change the data type of a local variable in a decompiled function."""
+    f = _func_at(function_address)
+    if not f: return "no function at address"
+    hf = _decompile(f).getHighFunction()
+    sym = next((s for s in hf.getLocalSymbolMap().getSymbols() if s.getName() == variable_name), None)
+    if not sym: return f"variable {variable_name!r} not found"
+    dts = []
+    _prog().getDataTypeManager().findDataTypes(new_type, dts)
+    if not dts: return f"data type {new_type!r} not found"
+    _tx("set_var_type", lambda: HighFunctionDBUtil.updateDBVariable(sym, None, dts[0], SourceType.USER_DEFINED))
+    return f"type set to {new_type!r}"
+
+
+# ---------------------------------------------------------------------------
+# Resource — raw memory access
+# ---------------------------------------------------------------------------
+
+@mcp.resource("mem://{address}/{length}")
+def read_memory(address: str, length: str) -> bytes:
+    """Read raw bytes from program memory. address is interpreted as hex. length may be decimal or hex (e.g. 0x100)."""
+    return bytes([x&0xff for x in FlatProgramAPI(_prog()).getBytes(_addr(address), int(length, 0))])
+
+
+if __name__ == '__main__':
+    threading.Thread(
+        target=lambda: mcp.run(transport='streamable-http'),
+        daemon=True,
+        name="mcp-server",
+    ).start()
+
+    if sys.argv[0].endswith('.exe'): sys.argv[0] = sys.argv[0][:-4]
+    sys.argv.append('-g')  # start gui
+    sys.exit(main())

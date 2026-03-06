@@ -1,0 +1,718 @@
+// EIC7700X SYSCON — System Control Registers
+// Address space: 0x5181_0000 ~ 0x5181_7FFF (32 KB)
+// Source: TRM Part 1, Table 3-3
+
+regfile syscon_rf {
+    desc = "System Control Registers (SYSCON); base 0x5181_0000";
+    default sw = rw;
+    default hw = r;
+
+    //=========================================================================
+    // AXI QoS / dynamic CSR control  (0x0000–0x0008)
+    //=========================================================================
+
+    reg {
+        desc = "MCPU dynamic CSR enable";
+        field {} mcpu_sp0_dynm_csr_en[3:3] = 1'b0;
+        field {} mcpu_sp1_dynm_csr_en[2:2] = 1'b0;
+        field {} mcpu_mp_dynm_csr_en[1:1]  = 1'b0;
+        field {} mcpu_d2d_dynm_csr_en[0:0] = 1'b0;
+    } dynm_csr_en @ 0x0000;
+
+    reg {
+        desc = "MCPU dynamic CSR grant status (RO)";
+        default sw = r;
+        field {} mcpu_sp0_dynm_csr_gnt[3:3] = 1'b0;
+        field {} mcpu_sp1_dynm_csr_gnt[2:2] = 1'b0;
+        field {} mcpu_mp_dynm_csr_gnt[1:1]  = 1'b0;
+        field {} mcpu_d2d_dynm_csr_gnt[0:0] = 1'b0;
+    } dynm_csr_gnt @ 0x0004;
+
+    reg {
+        desc = "MCPU / D2D AXI QoS control";
+        field {} scu_cpu_sp1_arqos[31:28] = 4'h0;
+        field {} scu_cpu_sp1_awqos[27:24] = 4'h0;
+        field {} scu_cpu_sp0_arqos[23:20] = 4'h0;
+        field {} scu_cpu_sp0_awqos[19:16] = 4'h0;
+        field {} scu_cpu_mp_arqos[15:12]  = 4'h0;
+        field {} scu_cpu_mp_awqos[11:8]   = 4'h0;
+        field {} scu_d2d_arqos[7:4]       = 4'h0; // not used
+        field {} scu_d2d_awqos[3:0]       = 4'h0; // not used
+    } cpu_qos @ 0x0008;
+
+    //=========================================================================
+    // NOC watchdog enable  (0x0324–0x0328)
+    //=========================================================================
+
+    reg {
+        desc = "NOC watchdog enable — SNOC/MNOC/RNOC/LNOC ports";
+        field {} rnoc_ddrt1_p4_wd_en[16:16]  = 1'b0;
+        field {} rnoc_ddrt0_p4_wd_en[15:15]  = 1'b0;
+        field {} mnoc_ddrt1_p3_wd_en[14:14]  = 1'b0;
+        field {} mnoc_ddrt0_p3_wd_en[13:13]  = 1'b0;
+        field {} snoc_pciet_wd_en[12:12]     = 1'b0;
+        field {} snoc_npu_wd_en[11:11]       = 1'b0;
+        // [10] reserved
+        field {} snoc_dspt_wd_en[9:9]        = 1'b0;
+        field {} snoc_ddrt1_p2_wd_en[8:8]    = 1'b0;
+        field {} snoc_ddrt1_p1_wd_en[7:7]    = 1'b0;
+        field {} snoc_ddrt0_p2_wd_en[6:6]    = 1'b0;
+        field {} snoc_ddrt0_p1_wd_en[5:5]    = 1'b0;
+        // [4] reserved
+        field {} snoc_aon_wd_en[3:3]         = 1'b0;
+        field {} lnoc_ddrt1_p0_wd_en[2:2]    = 1'b0;
+        field {} lnoc_ddrt0_p0_wd_en[1:1]    = 1'b0;
+        field {} scu_npu_noc_interlv_en[0:0] = 1'b0; // NPU NOC interleave enable
+    } noc_cfg0 @ 0x0324;
+
+    reg {
+        desc = "NOC watchdog enable — CNOC ports";
+        field {} cnoc_vo_wd_en[20:20]         = 1'b0;
+        field {} cnoc_vi_wd_en[19:19]         = 1'b0;
+        field {} cnoc_vc_wd_en[18:18]         = 1'b0;
+        field {} cnoc_tcu_wd_en[17:17]        = 1'b0;
+        field {} cnoc_pciet_x_wd_en[16:16]    = 1'b0;
+        field {} cnoc_pciet_p_wd_en[15:15]    = 1'b0;
+        field {} cnoc_npu_wd_en[14:14]        = 1'b0;
+        field {} cnoc_mcput_d2d_wd_en[13:13]  = 1'b0;
+        field {} cnoc_lsp_apb6_wd_en[12:12]   = 1'b0;
+        field {} cnoc_lsp_apb4_wd_en[11:11]   = 1'b0;
+        field {} cnoc_lsp_apb3_wd_en[10:10]   = 1'b0;
+        field {} cnoc_lsp_apb2_wd_en[9:9]     = 1'b0;
+        field {} cnoc_hsp_wd_en[8:8]          = 1'b0;
+        field {} cnoc_gpu_wd_en[7:7]          = 1'b0;
+        field {} cnoc_dspt_wd_en[6:6]         = 1'b0;
+        field {} cnoc_ddrt1_phy_wd_en[5:5]    = 1'b0;
+        field {} cnoc_ddrt1_ctrl_wd_en[4:4]   = 1'b0;
+        field {} cnoc_ddrt0_phy_wd_en[3:3]    = 1'b0;
+        field {} cnoc_ddrt0_ctrl_wd_en[2:2]   = 1'b0;
+        field {} cnoc_aon_wd_en[1:1]          = 1'b0;
+        field {} clmm_wd_en[0:0]              = 1'b0;
+    } noc_cfg1 @ 0x0328;
+
+    //=========================================================================
+    // DSP / MCPU / LPCPU / SCPU / JTAG configuration  (0x0330–0x03bc)
+    //=========================================================================
+
+    reg {
+        desc = "DSP configuration (ARM CoreSight signals; not used in practice)";
+        field {} scu_dspt_tmod[17:17]  = 1'b0; // not used
+        field {} scu_dspt_vdd[16:16]   = 1'b0; // not used
+        field {} scu_dspt_dbgen[15:12] = 4'd0;  // ARM CoreSight, not used
+        field {} scu_dspt_niden[11:8]  = 4'd0;  // ARM CoreSight, not used
+        field {} scu_dspt_spiden[7:4]  = 4'd0;  // ARM CoreSight, not used
+        field {} scu_dspt_spniden[3:0] = 4'd0;  // ARM CoreSight, not used
+    } dsp_cfg @ 0x0330;
+
+    reg {
+        desc = "MCPU system JTAG ID and debug reset enable";
+        field {} mcput_debug_ndreset_en[31:31]           = 1'b1; // enables whole-chip reset on debug_ndreset assertion
+        field {} mcput_debug_systemjtag_mfr_id[30:20]    = 11'h489;
+        field {} mcput_debug_systemjtag_part_number[19:4] = 16'd0;
+        field {} mcput_debug_systemjtag_version[3:0]     = 4'd0;
+    } mcput_cfg8 @ 0x0354;
+
+    reg {
+        desc = "LPCPU JTAG ID";
+        field {} lpcpu_jtag_mfr_id[30:20]    = 11'h489;
+        field {} lpcpu_jtag_part_number[19:4] = 16'd1;
+        field {} lpcpu_jtag_version[3:0]      = 4'h0;
+    } lpcpu_cfg0 @ 0x0368;
+
+    reg {
+        desc = "SCPU JTAG ID";
+        field {} scpu_jtag_mfr_id[30:20]    = 11'h489;
+        field {} scpu_jtag_part_number[19:4] = 16'd2;
+        field {} scpu_jtag_version[3:0]      = 4'h0;
+    } scpu_cfg @ 0x036c;
+
+    reg {
+        desc = "LSP peripheral DMA channel selection (0=DMA0, 1=DMA1)";
+        field {} scu_lsp_i2c1_dma_sel[7:7]  = 1'b0;
+        field {} scu_lsp_i2c0_dma_sel[6:6]  = 1'b0;
+        field {} scu_lsp_uart0_dma_sel[5:5] = 1'b0;
+        field {} scu_lsp_ssi1_dma_sel[4:4]  = 1'b0;
+        field {} scu_lsp_ssi0_dma_sel[3:3]  = 1'b0;
+        field {} scu_vo_i2s2_dma_sel[2:2]   = 1'b0;
+        field {} scu_vo_i2s1_dma_sel[1:1]   = 1'b0;
+        field {} scu_vo_i2s0_dma_sel[0:0]   = 1'b0;
+    } dma_cfg @ 0x0370;
+
+    reg {
+        desc = "PCIe ATS / NW misc info configuration";
+        field {} scu_pciet_app_flr_pf_done[6:6]     = 1'b0;
+        field {} scu_pciet_slv_awmisc_info_nw[5:5]  = 1'b0;
+        field {} scu_pciet_slv_awmisc_info_ats[4:3] = 2'b0;
+        field {} scu_pciet_slv_armisc_info_nw[2:2]  = 1'b0;
+        field {} scu_pciet_slv_armisc_info_ats[1:0] = 2'b0;
+    } pcie_cfg @ 0x03b8;
+
+    reg {
+        desc = "JTAG chain bypass control (1=bypassed/excluded from chain)";
+        field {} scpu_jtag_bypass[5:5]   = 1'b0; // not used
+        field {} vq7_jtag_bypass[4:4]    = 1'b0; // VQ7 DSP
+        field {} npue21_jtag_bypass[2:2] = 1'b1; // NPU E21, default bypassed
+        field {} u84_jtag_bypass[1:1]    = 1'b0;
+        field {} lpcpu_jtag_bypass[0:0]  = 1'b1; // LPCPU E21, default bypassed
+    } jtag_chain_ctrl @ 0x03bc;
+
+    //=========================================================================
+    // AON interrupt mux  (0x03c0)
+    //=========================================================================
+
+    reg {
+        desc = "AON peripheral interrupt destination (0=U84, 1=LPCPU, 2/3=SCPU where applicable)";
+        field {} aon_i2c0_int_sel[16:16]  = 1'b1;   // 0=U84, 1=LPCPU
+        field {} aon_i2c1_int_sel[15:15]  = 1'b1;   // 0=U84, 1=LPCPU
+        field {} aon_rtc_int_sel[14:13]   = 2'b01;  // 0=U84, 1=LPCPU, 2=SCPU
+        field {} aon_gpio_int_sel[12:12]  = 1'b1;   // 0=U84, 1=LPCPU
+        field {} aon_spi_int_sel[11:10]   = 2'b0;   // 0=U84, 1=LPCPU, 2/3=SCPU
+        field {} aon_dma_int_sel[9:9]     = 1'b0;   // 0=U84, 1=LPCPU
+        field {} ddr_mpmp_int_sel[8:8]    = 1'b1;   // 0=U84, 1=SCPU
+        field {} aon_timer0_int_sel[7:6]  = 2'b00;  // 0=U84, 1=LPCPU, 2/3=SCPU
+        field {} aon_timer1_int_sel[5:4]  = 2'b00;
+        field {} aon_timer2_int_sel[3:2]  = 2'b01;
+        field {} aon_timer3_int_sel[1:0]  = 2'b10;
+    } aon_int_mux @ 0x03c0;
+
+    //=========================================================================
+    // DDR NOC low-power Q-channel control/status  (0x03cc)
+    //=========================================================================
+
+    reg {
+        desc = "NOC→DDR port low-power Q-channel (csysreq RW, csysack/cactive RO)";
+        field {sw = r;} rnoc_ddrt1_p4_cactive[30:30]  = 1'b0;
+        field {sw = r;} rnoc_ddrt1_p4_csysack[29:29]  = 1'b0;
+        field {}        rnoc_ddrt1_p4_csysreq[28:28]  = 1'b1;
+        field {sw = r;} mnoc_ddrt1_p3_cactive[27:27]  = 1'b0;
+        field {sw = r;} mnoc_ddrt1_p3_csysack[26:26]  = 1'b0;
+        field {}        mnoc_ddrt1_p3_csysreq[25:25]  = 1'b1;
+        field {sw = r;} snoc_ddrt1_p2_cactive[24:24]  = 1'b0;
+        field {sw = r;} snoc_ddrt1_p2_csysack[23:23]  = 1'b0;
+        field {}        snoc_ddrt1_p2_csysreq[22:22]  = 1'b1;
+        field {sw = r;} snoc_ddrt1_p1_cactive[21:21]  = 1'b0;
+        field {sw = r;} snoc_ddrt1_p1_csysack[20:20]  = 1'b0;
+        field {}        snoc_ddrt1_p1_csysreq[19:19]  = 1'b1;
+        field {sw = r;} snoc_ddrt1_p0_cactive[18:18]  = 1'b0;
+        field {sw = r;} snoc_ddrt1_p0_csysack[17:17]  = 1'b0;
+        field {}        snoc_ddrt1_p0_csysreq[16:16]  = 1'b1;
+        // [15] reserved
+        field {sw = r;} rnoc_ddrt0_p4_cactive[14:14]  = 1'b0;
+        field {sw = r;} rnoc_ddrt0_p4_csysack[13:13]  = 1'b0;
+        field {}        rnoc_ddrt0_p4_csysreq[12:12]  = 1'b1;
+        field {sw = r;} mnoc_ddrt0_p3_cactive[11:11]  = 1'b0;
+        field {sw = r;} mnoc_ddrt0_p3_csysack[10:10]  = 1'b0;
+        field {}        mnoc_ddrt0_p3_csysreq[9:9]    = 1'b1;
+        field {sw = r;} snoc_ddrt0_p2_cactive[8:8]    = 1'b0;
+        field {sw = r;} snoc_ddrt0_p2_csysack[7:7]    = 1'b0;
+        field {}        snoc_ddrt0_p2_csysreq[6:6]    = 1'b1;
+        field {sw = r;} snoc_ddrt0_p1_cactive[5:5]    = 1'b0;
+        field {sw = r;} snoc_ddrt0_p1_csysack[4:4]    = 1'b0;
+        field {}        snoc_ddrt0_p1_csysreq[3:3]    = 1'b1;
+        field {sw = r;} snoc_ddrt0_p0_cactive[2:2]    = 1'b0;
+        field {sw = r;} snoc_ddrt0_p0_csysack[1:1]    = 1'b0;
+        field {}        snoc_ddrt0_p0_csysreq[0:0]    = 1'b1;
+    } noc_ddrt_lowpower @ 0x03cc;
+
+    //=========================================================================
+    // TBU / TCU / VC-TLB Q-channel control/status  (0x03d0–0x03f8)
+    //=========================================================================
+
+    reg {
+        desc = "NPU TBU Q-channel power-down and clock-gate control/status";
+        field {}        scu_npu_tbu_qreqn_pd[15:15]    = 1'b1;
+        field {sw = r;} scu_npu_tbu_qacceptn_pd[14:14] = 1'b0;
+        field {sw = r;} scu_npu_tbu_qdeny_pd[13:13]    = 1'b0;
+        field {sw = r;} scu_npu_tbu_qactive_pd[12:12]  = 1'b0;
+        field {}        scu_npu_tbu_qreqn_cg[11:11]    = 1'b1;
+        field {sw = r;} scu_npu_tbu_qacceptn_cg[10:10] = 1'b0;
+        field {sw = r;} scu_npu_tbu_qdeny_cg[9:9]      = 1'b0;
+        field {sw = r;} scu_npu_tbu_qactive_cg[8:8]    = 1'b0;
+    } npu_tbu_power @ 0x03d0;
+
+    reg {
+        desc = "VC codec TLB Q-channel control/status (VD/VE/JD/JE)";
+        // vc_vd [31:24]
+        field {}        vc_vd_tlb_qreqn_pd[31:31]    = 1'b1;
+        field {sw = r;} vc_vd_tlb_qacceptn_pd[30:30] = 1'b0;
+        field {sw = r;} vc_vd_tlb_qdeny_pd[29:29]    = 1'b0;
+        field {sw = r;} vc_vd_tlb_qactive_pd[28:28]  = 1'b0;
+        field {}        vc_vd_tlb_qreqn_cg[27:27]    = 1'b1;
+        field {sw = r;} vc_vd_tlb_qacceptn_cg[26:26] = 1'b0;
+        field {sw = r;} vc_vd_tlb_qdeny_cg[25:25]    = 1'b0;
+        field {sw = r;} vc_vd_tlb_qactive_cg[24:24]  = 1'b0;
+        // vc_ve [23:16]
+        field {}        vc_ve_tlb_qreqn_pd[23:23]    = 1'b1;
+        field {sw = r;} vc_ve_tlb_qacceptn_pd[22:22] = 1'b0;
+        field {sw = r;} vc_ve_tlb_qdeny_pd[21:21]    = 1'b0;
+        field {sw = r;} vc_ve_tlb_qactive_pd[20:20]  = 1'b0;
+        field {}        vc_ve_tlb_qreqn_cg[19:19]    = 1'b1;
+        field {sw = r;} vc_ve_tlb_qacceptn_cg[18:18] = 1'b0;
+        field {sw = r;} vc_ve_tlb_qdeny_cg[17:17]    = 1'b0;
+        field {sw = r;} vc_ve_tlb_qactive_cg[16:16]  = 1'b0;
+        // vc_jd [15:8]
+        field {}        vc_jd_tlb_qreqn_pd[15:15]    = 1'b1;
+        field {sw = r;} vc_jd_tlb_qacceptn_pd[14:14] = 1'b0;
+        field {sw = r;} vc_jd_tlb_qdeny_pd[13:13]    = 1'b0;
+        field {sw = r;} vc_jd_tlb_qactive_pd[12:12]  = 1'b0;
+        field {}        vc_jd_tlb_qreqn_cg[11:11]    = 1'b1;
+        field {sw = r;} vc_jd_tlb_qacceptn_cg[10:10] = 1'b0;
+        field {sw = r;} vc_jd_tlb_qdeny_cg[9:9]      = 1'b0;
+        field {sw = r;} vc_jd_tlb_qactive_cg[8:8]    = 1'b0;
+        // vc_je [7:0]
+        field {}        vc_je_tlb_qreqn_pd[7:7]      = 1'b1;
+        field {sw = r;} vc_je_tlb_qacceptn_pd[6:6]   = 1'b0;
+        field {sw = r;} vc_je_tlb_qdeny_pd[5:5]      = 1'b0;
+        field {sw = r;} vc_je_tlb_qactive_pd[4:4]    = 1'b0;
+        field {}        vc_je_tlb_qreqn_cg[3:3]      = 1'b1;
+        field {sw = r;} vc_je_tlb_qacceptn_cg[2:2]   = 1'b0;
+        field {sw = r;} vc_je_tlb_qdeny_cg[1:1]      = 1'b0;
+        field {sw = r;} vc_je_tlb_qactive_cg[0:0]    = 1'b0;
+    } vc_tlb_qchanel @ 0x03d4;
+
+    reg {
+        desc = "TBU 0/2/3/4 Q-channel control/status (qactive defaults 1 = on)";
+        // tbu4 [31:24]
+        field {}        tbu4_qreqn_pd[31:31]    = 1'b1;
+        field {sw = r;} tbu4_qacceptn_pd[30:30] = 1'b0;
+        field {sw = r;} tbu4_qdeny_pd[29:29]    = 1'b0;
+        field {sw = r;} tbu4_qactive_pd[28:28]  = 1'b1;
+        field {}        tbu4_qreqn_cg[27:27]    = 1'b1;
+        field {sw = r;} tbu4_qacceptn_cg[26:26] = 1'b0;
+        field {sw = r;} tbu4_qdeny_cg[25:25]    = 1'b0;
+        field {sw = r;} tbu4_qactive_cg[24:24]  = 1'b1;
+        // tbu3 [23:16]
+        field {}        tbu3_qreqn_pd[23:23]    = 1'b1;
+        field {sw = r;} tbu3_qacceptn_pd[22:22] = 1'b0;
+        field {sw = r;} tbu3_qdeny_pd[21:21]    = 1'b0;
+        field {sw = r;} tbu3_qactive_pd[20:20]  = 1'b1;
+        field {}        tbu3_qreqn_cg[19:19]    = 1'b1;
+        field {sw = r;} tbu3_qacceptn_cg[18:18] = 1'b0;
+        field {sw = r;} tbu3_qdeny_cg[17:17]    = 1'b0;
+        field {sw = r;} tbu3_qactive_cg[16:16]  = 1'b1;
+        // tbu2 [15:8]
+        field {}        tbu2_qreqn_pd[15:15]    = 1'b1;
+        field {sw = r;} tbu2_qacceptn_pd[14:14] = 1'b0;
+        field {sw = r;} tbu2_qdeny_pd[13:13]    = 1'b0;
+        field {sw = r;} tbu2_qactive_pd[12:12]  = 1'b1;
+        field {}        tbu2_qreqn_cg[11:11]    = 1'b1;
+        field {sw = r;} tbu2_qacceptn_cg[10:10] = 1'b0;
+        field {sw = r;} tbu2_qdeny_cg[9:9]      = 1'b0;
+        field {sw = r;} tbu2_qactive_cg[8:8]    = 1'b1;
+        // tbu0 [7:0]
+        field {}        tbu0_qreqn_pd[7:7]      = 1'b1;
+        field {sw = r;} tbu0_qacceptn_pd[6:6]   = 1'b0;
+        field {sw = r;} tbu0_qdeny_pd[5:5]      = 1'b0;
+        field {sw = r;} tbu0_qactive_pd[4:4]    = 1'b1;
+        field {}        tbu0_qreqn_cg[3:3]      = 1'b1;
+        field {sw = r;} tbu0_qacceptn_cg[2:2]   = 1'b0;
+        field {sw = r;} tbu0_qdeny_cg[1:1]      = 1'b0;
+        field {sw = r;} tbu0_qactive_cg[0:0]    = 1'b1;
+    } tbu0234_qchanel @ 0x03d8;
+
+    reg {
+        desc = "TCU Q-channel control/status (tbu7 bits undocumented in TRM)";
+        // tcu [7:0]; note: qreqn minimum value is 1 in hardware
+        field {}        tcu_qreqn_pd[7:7]    = 1'b1;
+        field {sw = r;} tcu_qacceptn_pd[6:6] = 1'b0;
+        field {sw = r;} tcu_qdeny_pd[5:5]    = 1'b0;
+        field {sw = r;} tcu_qactive_pd[4:4]  = 1'b1;
+        field {}        tcu_qreqn_cg[3:3]    = 1'b1;
+        field {sw = r;} tcu_qacceptn_cg[2:2] = 1'b0;
+        field {sw = r;} tcu_qdeny_cg[1:1]    = 1'b0;
+        field {sw = r;} tcu_qactive_cg[0:0]  = 1'b1;
+    } tbu7_tcu_qchannel @ 0x03dc;
+
+    reg {
+        desc = "DDR trace trigger/finish control";
+        field {}        ddrt0_scu_trace_trigger[3:3] = 1'b0;
+        field {sw = r;} ddrt0_scu_trace_finish[2:2]  = 1'b0;
+        field {}        ddrt1_scu_trace_trigger[1:1] = 1'b0;
+        field {sw = r;} ddrt1_scu_trace_finish[0:0]  = 1'b0;
+    } ddrt_trace_ctrl @ 0x03f0;
+
+    reg {
+        desc = "DDR controller AXI low-power Q-channel (csysreq RW, rest RO)";
+        field {sw = r;} ddrt1_csysdeny[7:7] = 1'b0;
+        field {sw = r;} ddrt1_cactive[6:6]  = 1'b0;
+        field {sw = r;} ddrt1_csysack[5:5]  = 1'b0;
+        field {}        ddrt1_csysreq[4:4]  = 1'b1;
+        field {sw = r;} ddrt0_csysdeny[3:3] = 1'b0;
+        field {sw = r;} ddrt0_cactive[2:2]  = 1'b0;
+        field {sw = r;} ddrt0_csysack[1:1]  = 1'b0;
+        field {}        ddrt0_csysreq[0:0]  = 1'b1;
+    } ddrt01_axi_lp @ 0x03f4;
+
+    reg {
+        desc = "DSP TBU Q-channel control/status (dsp0/dsp1; [31:16] undocumented in TRM)";
+        // dsp1 [15:8]
+        field {}        dsp1_tbu_qreqn_pd[15:15]    = 1'b1;
+        field {sw = r;} dsp1_tbu_qacceptn_pd[14:14] = 1'b0;
+        field {sw = r;} dsp1_tbu_qdeny_pd[13:13]    = 1'b0;
+        field {sw = r;} dsp1_tbu_qactive_pd[12:12]  = 1'b1;
+        field {}        dsp1_tbu_qreqn_cg[11:11]    = 1'b1;
+        field {sw = r;} dsp1_tbu_qacceptn_cg[10:10] = 1'b0;
+        field {sw = r;} dsp1_tbu_qdeny_cg[9:9]      = 1'b0;
+        field {sw = r;} dsp1_tbu_qactive_cg[8:8]    = 1'b1;
+        // dsp0 [7:0]
+        field {}        dsp0_tbu_qreqn_pd[7:7]      = 1'b1;
+        field {sw = r;} dsp0_tbu_qacceptn_pd[6:6]   = 1'b0;
+        field {sw = r;} dsp0_tbu_qdeny_pd[5:5]      = 1'b0;
+        field {sw = r;} dsp0_tbu_qactive_pd[4:4]    = 1'b1;
+        field {}        dsp0_tbu_qreqn_cg[3:3]      = 1'b1;
+        field {sw = r;} dsp0_tbu_qacceptn_cg[2:2]   = 1'b0;
+        field {sw = r;} dsp0_tbu_qdeny_cg[1:1]      = 1'b0;
+        field {sw = r;} dsp0_tbu_qactive_cg[0:0]    = 1'b1;
+    } dsp_tbu_lp @ 0x03f8;
+
+    //=========================================================================
+    // MMU interrupt clear  (0x03fc)
+    //=========================================================================
+
+    reg {
+        desc = "MMU interrupt clear (write-1-to-pulse); bit mapping: [0]=tbu0 RAS, [1]=tbu0 PMU, [2]=tbu2 RAS, [3]=tbu2 PMU, [4]=tbu3 RAS, [5]=tbu3 PMU, [6]=tbu4 RAS, [7]=tbu4 PMU, [8-16]=TCU events (U84 irq 350-358)";
+        field {sw = w;} mmu_int_clear[16:0] = 17'b0; // W1P
+    } mmu_clear_int @ 0x03fc;
+
+    //=========================================================================
+    // AON timer pause / audio  (0x0400–0x0404)
+    //=========================================================================
+
+    reg {
+        desc = "AON timer pause control";
+        field {} timer3_pause[31:24] = 8'b0;
+        field {} timer2_pause[23:16] = 8'b0;
+        field {} timer1_pause[15:8]  = 8'b0;
+        field {} timer0_pause[7:0]   = 8'b0;
+    } aon_timer_pause @ 0x0400;
+
+    reg {
+        desc = "I2S MCLK output enable";
+        field {} audio_mclk_oe[0:0] = 1'b1; // high active
+    } audio_mclk_oectrl @ 0x0404;
+
+    //=========================================================================
+    // Status registers  (0x0600–0x0698)
+    //=========================================================================
+
+    reg {
+        desc = "HSP DMA AHB bus status (RO)";
+        default sw = r;
+        field {} hsp_scu_dw_ahb_hmaster_data[8:5] = 4'h0;
+        field {} hsp_scu_dw_ahb_hmster[4:1]       = 4'h0;
+        field {} hsp_scu_dw_ahb_hmasterlock[0:0]  = 1'h0;
+    } hsp_status @ 0x0600;
+
+    reg {
+        desc = "VC subsystem idle status (RO)";
+        default sw = r;
+        field {} vc_scu_ve_idle[0:0] = 1'b0;
+    } vc_status @ 0x0604;
+
+    reg {
+        desc = "MCPU cluster status (RO)";
+        default sw = r;
+        field {} mcput_debug_ndreset[16:16]      = 1'b0;
+        field {} mcput_cease_from_tile_0[15:15]  = 1'b0;
+        field {} mcput_cease_from_tile_1[14:14]  = 1'b0;
+        field {} mcput_cease_from_tile_2[13:13]  = 1'b0;
+        field {} mcput_cease_from_tile_3[12:12]  = 1'b0;
+        field {} mcput_halt_from_tile_0[11:11]   = 1'b0;
+        field {} mcput_halt_from_tile_1[10:10]   = 1'b0;
+        field {} mcput_halt_from_tile_2[9:9]     = 1'b0;
+        field {} mcput_halt_from_tile_3[8:8]     = 1'b0;
+        field {} mcput_wfi_from_tile_0[7:7]      = 1'b0;
+        field {} mcput_wfi_from_tile_1[6:6]      = 1'b0;
+        field {} mcput_wfi_from_tile_2[5:5]      = 1'b0;
+        field {} mcput_wfi_from_tile_3[4:4]      = 1'b0;
+        field {} mcput_debug_from_tile_0[3:3]    = 1'b0;
+        field {} mcput_debug_from_tile_1[2:2]    = 1'b0;
+        field {} mcput_debug_from_tile_2[1:1]    = 1'b0;
+        field {} mcput_debug_from_tile_3[0:0]    = 1'b0;
+    } mcpu_status @ 0x0608;
+
+    reg {
+        desc = "Security subsystem status (RO)";
+        default sw = r;
+        field {} scpu_jtag_locken[2:2] = 1'b0;
+        field {} sec_otp_done[1:1]     = 1'b0;
+        field {} sec_security_en[0:0]  = 1'b0; // 0=non-security mode, 1=security mode
+    } sec_status @ 0x060c;
+
+    reg {
+        desc = "LPCPU cluster status and debug-reset enable";
+        field {}        lpcpu_debug_ndreset_en[5:5]  = 1'b0; // enables whole-chip reset on debug_ndreset
+        field {sw = r;} lpcpu_debug_ndreset[4:4]     = 1'b0;
+        field {sw = r;} lpcpu_halt_from_tile_0[3:3]  = 1'b0;
+        field {sw = r;} lpcpu_wfi_from_tile_0[2:2]   = 1'b0;
+        field {sw = r;} lpcpu_cease_from_tile_0[1:1] = 1'b0;
+        field {sw = r;} lpcpu_debug_from_tile_0[0:0] = 1'b0;
+    } lpcpu_status @ 0x0614;
+
+    reg {
+        desc = "SCPU cluster status and debug-reset enable";
+        field {}        scpu_debug_ndreset_en[5:5]  = 1'b1; // enables whole-chip reset on debug_ndreset
+        field {sw = r;} scpu_debug_ndreset[4:4]     = 1'b0;
+        field {sw = r;} scpu_halt_from_tile_0[3:3]  = 1'b0;
+        field {sw = r;} scpu_wfi_from_tile_0[2:2]   = 1'b0;
+        field {sw = r;} scpu_cease_from_tile_0[1:1] = 1'b0;
+        field {sw = r;} scpu_debug_from_tile_0[0:0] = 1'b0;
+    } scpu_status @ 0x0618;
+
+    reg {
+        desc = "AON peripheral enable status (RO)";
+        default sw = r;
+        field {} rtc_en[2:2]  = 1'h0;
+        field {} i2c1_en[1:1] = 1'h0;
+        field {} i2c0_en[0:0] = 1'h0;
+    } aon_peri_status @ 0x061c;
+
+    reg {
+        desc = "Die identity and strap status (RO)";
+        default sw = r;
+        field {} por_waitime_sel[21:20]         = 2'd0;
+        field {} die_mode_strapped[19:19]       = 1'b0;
+        field {} ddr_refclk_sel_strapped[18:18] = 1'b0;
+        field {} otp_progmode_strapped[17:17]   = 1'b0;
+        field {} repair_rd_done[16:16]          = 1'b1;
+        field {} die_num[15:8]                  = 8'b0;
+        field {} scu_die_id[7:0]                = 8'b0;
+    } die_status @ 0x0620;
+
+    reg {
+        desc = "LSP timer enable status (RO)";
+        default sw = r;
+        field {} lsp_scu_timer_en[3:0] = 4'b0;
+    } lsp_status @ 0x0624;
+
+    reg {
+        desc = "PCIe ATS / NW misc info status (RO)";
+        default sw = r;
+        field {} pciet_scu_flr_pf_active[6:6]        = 1'h0;
+        field {} pciet_scu_mstr_awmisc_info_nw[5:5]  = 1'h0;
+        field {} pciet_scu_mstr_awmisc_info_ats[4:3] = 2'h0;
+        field {} pciet_scu_mstr_armisc_info_nw[2:2]  = 1'h0;
+        field {} pciet_scu_mstr_armisc_info_ats[1:0] = 2'h0;
+    } pcie_status @ 0x0628;
+
+    reg {
+        desc = "USB current power state and power-switch control";
+        field {sw = r;} usb0_current_pwrstate_u2pmu[20:19] = 2'b0;
+        field {sw = r;} usb0_pmegen_u2pmu[18:18]           = 1'b0;
+        field {sw = r;} usb0_constate_u2pmu[17:17]         = 1'b0;
+        field {sw = r;} usb0_current_pwrstate_u3pmu[16:15] = 2'b0;
+        field {sw = r;} usb0_pmegen_u3pmu[14:14]           = 1'b0;
+        field {sw = r;} usb0_constate_u3pmu[13:13]         = 1'b0;
+        field {}        usb0_pwrsw_ctrl[12:12]              = 1'b0;
+        field {sw = r;} usb1_current_pwrstate_u2pmu[8:7]   = 2'b0;
+        field {sw = r;} usb1_pmegen_u2pmu[6:6]             = 1'b0;
+        field {sw = r;} usb1_constate_u2pmu[5:5]           = 1'b0;
+        field {sw = r;} usb1_current_pwrstate_u3pmu[4:3]   = 2'b0;
+        field {sw = r;} usb1_pmegen_u3pmu[2:2]             = 1'b0;
+        field {sw = r;} usb1_constate_u3pmu[1:1]           = 1'b0;
+        field {}        usb1_pwrsw_ctrl[0:0]                = 1'b0;
+    } usb_curpwr_state @ 0x062c;
+
+    reg {
+        desc = "USB0 U2 PMU debug bits [31:0] (RO)";
+        default sw = r;
+        field {} usb0_debug_u2pmu_0to31[31:0] = 32'b0;
+    } usb0_debug_u2pmu_low @ 0x0630;
+
+    reg {
+        desc = "USB0 U2 PMU debug bits [63:32] (RO)";
+        default sw = r;
+        field {} usb0_debug_u2pmu_32to63[31:0] = 32'b0;
+    } usb0_debug_u2pmu_med @ 0x0634;
+
+    reg {
+        desc = "USB0 U2 PMU debug bits [67:64] (RO)";
+        default sw = r;
+        field {} usb0_debug_u2pmu_64to67[3:0] = 4'b0;
+    } usb0_debug_u2pmu_hi @ 0x0638;
+
+    reg {
+        desc = "USB0 U3 PMU debug bits [31:0] (RO)";
+        default sw = r;
+        field {} usb0_debug_u3pmu_0to31[31:0] = 32'b0;
+    } usb0_debug_u3pmu_low @ 0x063c;
+
+    reg {
+        desc = "USB0 U3 PMU debug bits [38:32] (RO)";
+        default sw = r;
+        field {} usb0_debug_u3pmu_32to38[6:0] = 7'b0;
+    } usb0_debug_u3pmu_hi @ 0x0640;
+
+    reg {
+        desc = "USB0 PMU configuration strap";
+        field {} usb0_pmu_cfgstrap[29:0] = 30'b0;
+    } usb0_pmu_config @ 0x0644;
+
+    reg {
+        desc = "USB1 U2 PMU debug bits [31:0] (RO)";
+        default sw = r;
+        field {} usb1_debug_u2pmu_0to31[31:0] = 32'b0;
+    } usb1_debug_u2pmu_low @ 0x0648;
+
+    reg {
+        desc = "USB1 U2 PMU debug bits [63:32] (RO)";
+        default sw = r;
+        field {} usb1_debug_u2pmu_32to63[31:0] = 32'b0;
+    } usb1_debug_u2pmu_med @ 0x064c;
+
+    reg {
+        desc = "USB1 U2 PMU debug bits [67:64] (RO)";
+        default sw = r;
+        field {} usb1_debug_u2pmu_64to67[3:0] = 4'b0;
+    } usb1_debug_u2pmu_hi @ 0x0650;
+
+    reg {
+        desc = "USB1 U3 PMU debug bits [31:0] (RO)";
+        default sw = r;
+        field {} usb1_debug_u3pmu_0to31[31:0] = 32'b0;
+    } usb1_debug_u3pmu_low @ 0x0654;
+
+    reg {
+        desc = "USB1 U3 PMU debug bits [38:32] (RO)";
+        default sw = r;
+        field {} usb1_debug_u3pmu_32to38[6:0] = 7'b0;
+    } usb1_debug_u3pmu_hi @ 0x0658;
+
+    reg {
+        desc = "USB1 PMU configuration strap";
+        field {} usb1_pmu_cfgstrap[29:0] = 30'b0;
+    } usb1_pmu_config @ 0x065c;
+
+    reg {
+        desc = "AON timer enabled status (RO; bits = per-channel enable mask)";
+        default sw = r;
+        field {} timer0_en[31:24] = 8'b0;
+        field {} timer1_en[23:16] = 8'b0;
+        field {} timer2_en[15:8]  = 8'b0;
+        field {} timer3_en[7:0]   = 8'b0;
+    } aon_timers_en @ 0x0660;
+
+    // Boot progress codes written by SCPU ROM at each boot stage
+    // (TRM labels these "not used"; ROM uses them for stage tracking)
+    reg { field {} test_reg0[31:0] = 32'b0; } test_reg_0 @ 0x0668;
+    reg { field {} test_reg1[31:0] = 32'b0; } test_reg_1 @ 0x066c;
+    reg { field {} test_reg2[31:0] = 32'b0; } test_reg_2 @ 0x0670;
+    reg { field {} test_reg3[31:0] = 32'b0; } test_reg_3 @ 0x0674;
+
+    reg {
+        desc = "AON analog IP test mux control";
+        field {} aon_test_mux_div_en[31:16] = 16'b0; // enable test mux clock divider (bit16=test_out0 … bit31=test_out15)
+        field {} aon_test_mux_sel[15:0]     = 16'b0;
+    } anaip_debug_ctrl @ 0x0678;
+
+    reg {
+        desc = "AON I2C0 debug bus status (RO)";
+        default sw = r;
+        field {} aon_i2c0_debug_s_gen[21:21]       = 1'b0;
+        field {} aon_i2c0_debug_p_gen[20:20]       = 1'b0;
+        field {} aon_i2c0_debug_data[19:19]        = 1'b0;
+        field {} aon_i2c0_debug_addr[18:18]        = 1'b0;
+        field {} aon_i2c0_debug_rd[17:17]          = 1'b0;
+        field {} aon_i2c0_debug_wr[16:16]          = 1'b0;
+        field {} aon_i2c0_debug_hs[15:15]          = 1'b0;
+        field {} aon_i2c0_debug_master_act[14:14]  = 1'b0;
+        field {} aon_i2c0_debug_slave_act[13:13]   = 1'b0;
+        field {} aon_i2c0_debug_addr_10bit[12:12]  = 1'b0;
+        field {} aon_i2c0_debug_mst_cstate[8:4]    = 5'd0;
+        field {} aon_i2c0_debug_slv_cstate[3:0]    = 4'b0;
+    } aon_i2c0_status @ 0x067c;
+
+    reg {
+        desc = "AON I2C1 debug bus status (RO)";
+        default sw = r;
+        field {} aon_i2c1_debug_s_gen[21:21]       = 1'b0;
+        field {} aon_i2c1_debug_p_gen[20:20]       = 1'b0;
+        field {} aon_i2c1_debug_data[19:19]        = 1'b0;
+        field {} aon_i2c1_debug_addr[18:18]        = 1'b0;
+        field {} aon_i2c1_debug_rd[17:17]          = 1'b0;
+        field {} aon_i2c1_debug_wr[16:16]          = 1'b0;
+        field {} aon_i2c1_debug_hs[15:15]          = 1'b0;
+        field {} aon_i2c1_debug_master_act[14:14]  = 1'b0;
+        field {} aon_i2c1_debug_slave_act[13:13]   = 1'b0;
+        field {} aon_i2c1_debug_addr_10bit[12:12]  = 1'b0;
+        field {} aon_i2c1_debug_mst_cstate[8:4]    = 5'b0;
+        field {} aon_i2c1_debug_slv_cstate[3:0]    = 4'b0;
+    } aon_i2c1_status @ 0x0680;
+
+    reg {
+        desc = "D2D serdes status and control"; // note: TRM spells this 'd2d_stauts'
+        field {sw = r;} d2d_status_misc[31:8]       = 24'd0; // [0]=srds_cpu_sys_halt
+        field {sw = r;} d2d_serdes_status_i[4:4]    = 1'b0;  // tx phy ready from other die
+        field {}        d2d_serdes_status_o[0:0]     = 1'b0;  // tx phy ready output to other die
+    } d2d_stauts @ 0x0694;
+
+    reg {
+        desc = "D2D subsystem control";
+        field {} d2d_ctrl_misc[31:0] = 32'd0;
+    } d2d_ctrl @ 0x0698;
+
+    //=========================================================================
+    // Per-master QoS and MMU SID configuration  (0x1000–0x4004)
+    //=========================================================================
+
+    reg {
+        desc = "SCPU AXI QoS";
+        field {} scu_scpu_sp1_arqos[15:12] = 4'h0;
+        field {} scu_scpu_sp1_awqos[11:8]  = 4'h0;
+        field {} scu_scpu_sp0_arqos[7:4]   = 4'h0;
+        field {} scu_scpu_sp0_awqos[3:0]   = 4'h0;
+    } scpu_qos @ 0x1000;
+
+    reg {
+        desc = "SCPU MMU stream ID";
+        field {} scu_aon_scpu_awmmusid[31:24]   = 8'b0;
+        field {} scu_aon_scpu_awmmussid[23:16]  = 8'b0;
+        field {} scu_aon_scpu_armmusid[15:8]    = 8'b0;
+        field {} scu_aon_scpu_armmussid[7:0]    = 8'b0;
+    } scpu_sid @ 0x1004;
+
+    reg {
+        desc = "LPCPU AXI QoS";
+        field {} scu_lpcpu_sp1_arqos[15:12] = 4'h0;
+        field {} scu_lpcpu_sp1_awqos[11:8]  = 4'h0;
+        field {} scu_lpcpu_sp0_arqos[7:4]   = 4'h0;
+        field {} scu_lpcpu_sp0_awqos[3:0]   = 4'h0;
+    } lpcpu_qos @ 0x2000;
+
+    reg {
+        desc = "LPCPU MMU stream ID";
+        field {} scu_aon_lpcpu_awmmusid[31:24]  = 8'b0;
+        field {} scu_aon_lpcpu_awmmussid[23:16] = 8'b0;
+        field {} scu_aon_lpcpu_armmusid[15:8]   = 8'b0;
+        field {} scu_aon_lpcpu_armmussid[7:0]   = 8'b0;
+    } lpcpu_sid @ 0x2004;
+
+    reg {
+        desc = "DMA1 AXI QoS";
+        field {} scu_dma1_arqos[7:4] = 4'h0;
+        field {} scu_dma1_awqos[3:0] = 4'h0;
+    } dma1_qos @ 0x3000;
+
+    reg {
+        desc = "DMA1 MMU stream ID";
+        field {} scu_aon_dma1_awmmusid[31:24]  = 8'b0;
+        field {} scu_aon_dma1_awmmussid[23:16] = 8'b0;
+        field {} scu_aon_dma1_armmusid[15:8]   = 8'b0;
+        field {} scu_aon_dma1_armmussid[7:0]   = 8'b0;
+    } dma1_sid @ 0x3004;
+
+    reg {
+        desc = "Security subsystem (SPAcc/PKA/TRNG) AXI QoS";
+        field {} scu_sec_arqos[7:4] = 4'h0;
+        field {} scu_sec_awqos[3:0] = 4'h0;
+    } sec_qos @ 0x4000;
+
+    reg {
+        desc = "Security subsystem MMU stream ID";
+        field {} scu_aon_crypt_awmmusid[31:24]  = 8'b0;
+        field {} scu_aon_crypt_awmmussid[23:16] = 8'b0;
+        field {} scu_aon_crypt_armmusid[15:8]   = 8'b0;
+        field {} scu_aon_crypt_armmussid[7:0]   = 8'b0;
+    } sec_sid @ 0x4004;
+
+}; // syscon_rf

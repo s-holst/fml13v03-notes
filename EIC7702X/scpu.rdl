@@ -1,0 +1,564 @@
+`include "syscrg_rf.rdl"
+`include "syscon_rf.rdl"
+`include "otp_rf.rdl"
+
+regfile clint_rf {
+    reg {
+        field {} data[31:0];
+    } msip @ 0;
+    reg {
+        regwidth=64;
+        field {} data[63:0];
+    } mtimecmp @ 0x4000;
+    reg {
+        regwidth=64;
+        field {} data[63:0];
+    } mtime @ 0xbff8;
+};
+
+regfile plic_rf {
+    reg {
+        field {} data[31:0];
+    } TODO @ 0;
+};
+
+
+regfile bootspi_rf {
+    reg {
+        field {} data[31:0];
+    } TODO @ 0;
+};
+
+
+regfile spacc_rf {
+    // Synopsys DesignWare Security Protocol Accelerator (AES, SM4)
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile pka_rf {
+    // Synopsys DesignWare Public Key Accelerator (RSA, ECDSA)
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile trng_rf {
+    // Synopsys DesignWare True Random Number Generator
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile otp_shadow_rf {
+    // OTP shadow / secure identity registers (~0x190 bytes)
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+    reg {
+        field {} vendor_id[31:0]; // ESWIN vendor ID string written at boot step 4
+    } vendor_id @ 0x170;
+};
+
+regfile pmp_rf {
+    // Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile hsp_csr_rf {
+    // High-Speed Peripheral subsystem SP CSR [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile sdhci_rf {
+    // SDHCI eMMC controller [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile usbdrd_rf {
+    // USB 3.0 DRD controller [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile uart_rf {
+    // Synopsys DW APB UART, 16550-compatible
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile mbox_rf {
+    // U84 (MCPU) → SCPU mailbox [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile pinctrl_rf {
+    // Pin controller [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+
+regfile timer_rf {
+    // Timer [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile coda_llc_rf {
+    // CodaCache LLC controller (NPU LLC); reconfigured to SPRAM during boot
+    // See coda_llc_spram_init() / FUN_ram_58007ce8
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+    reg {
+        field {} busy[0:0]; // 1=busy, 0=ready
+    } status @ 0x100;
+    reg {
+        field {} op[31:0]; // 0xffff=init valid entries, 0x10000=TagArray
+    } ccucmwvr @ 0x118;
+};
+
+regfile dw_axidma_rf {
+    // DW AXI DMA channel control (NPU LLC DMA)
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+    reg {
+        field {} ch1_ctl[31:0];
+    } ch1_ctl @ 0x118;
+};
+
+regfile d2d_rf {
+    // Die-to-Die subsystem [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+    reg {
+        field {} data[31:0];
+    } firmware1[0x4000] @ 0x50000;
+    reg {
+        field {} data[31:0];
+    } firmware2[0x4000] @ 0x60000;
+};
+
+regfile ddrctl_rf {
+    // DDR controller [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile ddrphy_rf {
+    // DDR PHY [boot-path only]
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile unknown_rf {
+    reg {
+        field {} TODO[31:0];
+    } TODO @ 0;
+};
+
+regfile pcie_ctrl_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile pcie_ip_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile vdec_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile venc_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile jdec_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile jenc_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile g2d_rf {
+    // Vivante gc820 2D GPU core
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile vc_csr_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile i2s_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile dsi_rf {
+    // Synopsys DW DSI controller
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile vo_csr_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile hdmi_hdcp_rf {
+    // Synopsys DW HDMI HDCP2
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile hdmi_rf {
+    // Synopsys DW HDMI
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile dc_rf {
+    // Display controller (DC8200)
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile gmac_rf {
+    // Ethernet MAC (GMAC)
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile sata_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile dma_rf {
+    // DMA0 controller
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile sdio_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile wdt_rf {
+    // Watchdog timer
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile spi_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile pwm_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile i2c_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile pmu_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile rtc_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile pvt_rf {
+    // PVT (Process-Voltage-Temperature) monitor
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile fan_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile smmu_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile isp_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile dewrap_rf {
+    // Dewarp/lens-correction engine
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile vi_csr_rf {
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile csi2_rf {
+    // MIPI CSI-2 receiver
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile dphy_rf {
+    // MIPI D-PHY
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile gpu_rf {
+    // GPU (P550 / SiFive Intelligence X280)
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile noc_rf {
+    // System NoC configuration space (packet/trans probes, QoS settings, filters)
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+regfile dsp_sub_rf {
+    // DSP subsystem (es-dsp-subsys)
+    reg { field {} TODO[31:0]; } TODO @ 0;
+};
+
+mem aon_tim_m {
+    mementries = 0x2000; // 32 KB — AON Timer SRAM window (size TBD)
+    memwidth = 32;
+};
+
+mem dsp_sram_m {
+    mementries = 0x10000; // 256 KB — DSP SRAM (size TBD)
+    memwidth = 32;
+};
+
+mem pka_sram_m {
+    mementries = 0x1000; // 16 KB — PKA instruction SRAM
+    memwidth = 32;
+};
+
+mem sram_m {
+    mementries = 0x2000; // 32 KB — SCPU TIM SRAM
+    memwidth = 32;
+};
+
+mem mrom_m {
+    mementries = 0x8000; // 128 KB — SCPU masked ROM
+    memwidth = 32;
+};
+
+mem coda_m {
+    mementries = 0x100000; // 4 MB — CodaCache SPRAM (boot load target)
+    memwidth = 32;
+};
+
+mem nor_flash_m {
+    mementries = 0x1000000; // 64 MB — SPI NOR XIP window
+    memwidth = 32;
+};
+
+addrmap scpu_memory {
+    name = "SCPU Memory";
+    desc = "Memory map of the SCPU within the EIC770x SoC";
+
+    clint_rf   clint   @ 0x02000000;
+    plic_rf    plic    @ 0x0c000000;
+
+    // SCPU security peripherals (0x21Bxxxxx = SCPU view; MCPU alias at 0x51Bxxxxx)
+    spacc_rf      spacc      @ 0x21900000;
+    pka_rf        pka        @ 0x21b00000;
+    external pka_sram_m pka_sram @ 0x21b04000; // PKA instruction SRAM
+    trng_rf       trng       @ 0x21b08000;
+    otp_rf        otp        @ 0x21b40000;
+    otp_shadow_rf otp_shadow @ 0x21b48000;
+    // PMP units 0–4 (group 1) and 5–9 (group 2; gap at 0x21ba8000)
+    pmp_rf pmp0 @ 0x21b80000;
+    pmp_rf pmp1 @ 0x21b88000;
+    pmp_rf pmp2 @ 0x21b90000;
+    pmp_rf pmp3 @ 0x21b98000;
+    pmp_rf pmp4 @ 0x21ba0000;
+    pmp_rf pmp5 @ 0x21bb0000;
+    pmp_rf pmp6 @ 0x21bb8000;
+    pmp_rf pmp7 @ 0x21bc0000;
+    pmp_rf pmp8 @ 0x21bc8000;
+    pmp_rf pmp9 @ 0x21bd0000;
+
+    external sram_m sram_tim @ 0x30000000;
+
+    hsp_csr_rf hsp_csr  @ 0x50440000; // HSP SP CSR [boot-path only]
+    sdhci_rf   sdhci    @ 0x50450000; // SDHCI eMMC [boot-path only]
+    usbdrd_rf  usbdrd0  @ 0x50480000; // USB 3.0 DRD [boot-path only]
+    usbdrd_rf  usbdrd1  @ 0x50490000; // USB 3.0 DRD [boot-path only]
+    uart_rf    uart0    @ 0x50900000; // DW APB UART0, primary boot console
+    uart_rf    uart1    @ 0x50910000; // UART1 [boot-path only]
+    mbox_rf    mbox     @ 0x50a00000; // U84→SCPU mailbox [boot-path only]
+    pinctrl_rf pinctrl  @ 0x51600000; // PINCTRL [boot-path only]
+
+    bootspi_rf  bootspi  @ 0x51800000; // SPI flash controller [boot-path only]
+    syscon_rf   syscon   @ 0x51810000; // SYSCON; boot progress at +0x668
+    unknown_rf  aon_crg  @ 0x51820000; // ? AON domain [boot-path only], likely AONCRG or PMCRG
+    syscrg_rf   syscrg   @ 0x51828000;
+    timer_rf    timer0   @ 0x51840000; // TIMER0 [boot-path only]
+    unknown_rf  scpu_per @ 0x51900000; // ? may be SPAcc MCPU-alias or second instance [boot-path only]
+
+    coda_llc_rf  coda_llc  @ 0x51c00000; // NPU LLC controller / SPRAM init
+    dw_axidma_rf coda_dma0 @ 0x51d88000; // NPU LLC0 DW AXI DMA
+    dw_axidma_rf coda_dma1 @ 0x51d89000; // NPU LLC1 DW AXI DMA
+
+    d2d_rf    d2d     @ 0x52100000; // Die-to-Die [boot-path only]
+    ddrctl_rf ddrctl0 @ 0x52300000; // DDR Controller 0 [boot-path only]
+    ddrctl_rf ddrctl1 @ 0x52380000; // DDR Controller 1 [boot-path only]
+    ddrphy_rf ddrphy0 @ 0x53000000; // DDR PHY 0 [boot-path only]
+    ddrphy_rf ddrphy1 @ 0x53800000; // DDR PHY 1 [boot-path only]
+
+    pcie_ctrl_rf pcie_ctrl @ 0x50000000; // PCIe wrapper config space
+
+    // Video Codec block (0x50100000–0x501c0000)
+    vdec_rf  vdec   @ 0x50100000; // Video Decoder
+    venc_rf  venc   @ 0x50110000; // Video Encoder
+    jdec_rf  jdec   @ 0x50120000; // JPEG Decoder
+    jenc_rf  jenc   @ 0x50130000; // JPEG Encoder
+    g2d_rf   g2d0   @ 0x50140000; // gc820 2D GPU core 0
+    g2d_rf   g2d1   @ 0x50180000; // gc820 2D GPU core 1
+    vc_csr_rf vc_csr @ 0x501c0000; // Video Codec CSR
+
+    // Video Output block (0x50200000–0x502d0000)
+    i2s_rf      i2s0      @ 0x50200000; // I2S0
+    i2s_rf      i2s1      @ 0x50210000; // I2S1
+    i2s_rf      i2s2      @ 0x50220000; // I2S2
+    dsi_rf      dsi       @ 0x50270000; // DW DSI controller
+    vo_csr_rf   vo_csr    @ 0x50280000; // VO CSR
+    hdmi_hdcp_rf hdmi_hdcp @ 0x50290000; // DW HDMI HDCP2
+    hdmi_rf     hdmi      @ 0x502a0000; // DW HDMI
+    dc_rf       dc        @ 0x502c0000; // Display controller (DC8200)
+
+    // High Speed peripherals (0x50400000–0x50500000)
+    gmac_rf gmac0 @ 0x50400000; // GMAC0
+    gmac_rf gmac1 @ 0x50410000; // GMAC1
+    sata_rf sata  @ 0x50420000; // SATA
+    dma_rf  dma0  @ 0x50430000; // DMA0
+    // hsp_csr/sdhci/usbdrd0-1 already instantiated above
+    sdio_rf sdio0 @ 0x50460000; // SDIO0
+    sdio_rf sdio1 @ 0x50470000; // SDIO1
+
+    // Low Speed peripherals apb2 (0x50800000–0x50900000)
+    wdt_rf wdt0 @ 0x50800000; // Watchdog 0
+    wdt_rf wdt1 @ 0x50804000; // Watchdog 1
+    wdt_rf wdt2 @ 0x50808000; // Watchdog 2
+    wdt_rf wdt3 @ 0x5080c000; // Watchdog 3
+    spi_rf spi0 @ 0x50810000; // SPI0
+    spi_rf spi1 @ 0x50814000; // SPI1
+    pwm_rf pwm  @ 0x50818000; // PWM
+
+    // Low Speed peripherals apb3 (0x50900000–0x50a00000)
+    // uart0/1 already instantiated above
+    uart_rf uart2 @ 0x50920000; // UART2
+    uart_rf uart3 @ 0x50930000; // UART3
+    uart_rf uart4 @ 0x50940000; // UART4
+    i2c_rf  i2c0  @ 0x50950000; // I2C0
+    i2c_rf  i2c1  @ 0x50960000; // I2C1
+    i2c_rf  i2c2  @ 0x50970000; // I2C2
+    i2c_rf  i2c3  @ 0x50980000; // I2C3
+    i2c_rf  i2c4  @ 0x50990000; // I2C4
+    i2c_rf  i2c5  @ 0x509a0000; // I2C5
+    i2c_rf  i2c6  @ 0x509b0000; // I2C6
+    i2c_rf  i2c7  @ 0x509c0000; // I2C7
+    i2c_rf  i2c8  @ 0x509d0000; // I2C8
+    i2c_rf  i2c9  @ 0x509e0000; // I2C9
+
+    // Low Speed peripherals apb4 (0x50a00000–0x50b00000) — mailboxes
+    // mbox (U84→SCPU) already instantiated above at 0x50a00000
+    mbox_rf mbox_scpu_to_u84  @ 0x50a10000; // SCPU → U84
+    mbox_rf mbox_u84_to_lcpu  @ 0x50a20000; // U84 → LCPU
+    mbox_rf mbox_lcpu_to_u84  @ 0x50a30000; // LCPU → U84
+    mbox_rf mbox_u84_to_npu0  @ 0x50a40000; // U84 → NPU0
+    mbox_rf mbox_npu0_to_u84  @ 0x50a50000; // NPU0 → U84
+    mbox_rf mbox_u84_to_npu1  @ 0x50a60000; // U84 → NPU1
+    mbox_rf mbox_npu1_to_u84  @ 0x50a70000; // NPU1 → U84
+    mbox_rf mbox_u84_to_dsp0  @ 0x50a80000; // U84 → DSP0
+    mbox_rf mbox_dsp0_to_u84  @ 0x50a90000; // DSP0 → U84
+    mbox_rf mbox_u84_to_dsp1  @ 0x50aa0000; // U84 → DSP1
+    mbox_rf mbox_dsp1_to_u84  @ 0x50ab0000; // DSP1 → U84
+    mbox_rf mbox_u84_to_dsp2  @ 0x50ac0000; // U84 → DSP2
+    mbox_rf mbox_dsp2_to_u84  @ 0x50ad0000; // DSP2 → U84
+    mbox_rf mbox_u84_to_dsp3  @ 0x50ae0000; // U84 → DSP3
+    mbox_rf mbox_dsp3_to_u84  @ 0x50af0000; // DSP3 → U84
+
+    // Low Speed peripherals apb6 (0x50b00000–0x50c00000)
+    pvt_rf pvt0 @ 0x50b00000; // PVT0 (Process-Voltage-Temperature)
+    fan_rf fan  @ 0x50b50000; // Fan control
+
+    // SMMU (0x50c00000–0x51000000)
+    smmu_rf smmu @ 0x50c00000; // SMMU
+
+    // Video Input block (0x51000000–0x51200000)
+    isp_rf    isp0    @ 0x51000000; // ISP0
+    isp_rf    isp1    @ 0x51010000; // ISP1
+    dewrap_rf dewrap  @ 0x51020000; // Dewarp/lens-correction
+    vi_csr_rf vi_csr  @ 0x51030000; // VI Top CSR
+    csi2_rf   csi2_0  @ 0x51050000; // MIPI CSI-2 receiver 0
+    csi2_rf   csi2_1  @ 0x51060000; // MIPI CSI-2 receiver 1
+    csi2_rf   csi2_2  @ 0x51070000; // MIPI CSI-2 receiver 2
+    csi2_rf   csi2_3  @ 0x51080000; // MIPI CSI-2 receiver 3
+    csi2_rf   csi2_4  @ 0x51090000; // MIPI CSI-2 receiver 4
+    csi2_rf   csi2_5  @ 0x510a0000; // MIPI CSI-2 receiver 5
+    dphy_rf   dphy0   @ 0x510c0000; // MIPI D-PHY 0
+    dphy_rf   dphy1   @ 0x510e0000; // MIPI D-PHY 1
+    dphy_rf   dphy2   @ 0x51100000; // MIPI D-PHY 2
+    dphy_rf   dphy3   @ 0x51120000; // MIPI D-PHY 3
+    dphy_rf   dphy4   @ 0x51140000; // MIPI D-PHY 4
+    dphy_rf   dphy5   @ 0x51160000; // MIPI D-PHY 5
+
+    // GPU (0x51400000–0x51600000)
+    gpu_rf gpu @ 0x51400000; // GPU (P550 / SiFive Intelligence X280)
+
+    // pinctrl already instantiated above at 0x51600000
+
+    // AON additions (0x51808000–0x51858000)
+    pmu_rf pmu        @ 0x51808000; // PMU
+    // syscon already at 0x51810000
+    rtc_rf rtc        @ 0x51818000; // RTC
+    // aon_crg/syscrg already instantiated above
+    i2c_rf i2c_aon0   @ 0x51830000; // AON I2C0
+    i2c_rf i2c_aon1   @ 0x51838000; // AON I2C1
+    // timer0 already at 0x51840000
+    timer_rf timer1   @ 0x51848000; // TIMER1
+    timer_rf timer2   @ 0x51850000; // TIMER2
+    timer_rf timer3   @ 0x51858000; // TIMER3
+
+    // security peripherals at 0x51Bxxxxx already instantiated above (SCPU-view)
+    // scpu_per at 0x51900000 already instantiated above
+
+    // coda_llc/coda_dma already instantiated above
+
+    // NoC configuration space (0x52000000–0x52100000)
+    noc_rf noc @ 0x52000000; // System NoC (probes, QoS, filters)
+
+    // d2d already at 0x52100000
+
+    // DSP subsystem (0x52200000–0x52300000)
+    dsp_sub_rf dsp_subsys @ 0x52200000; // DSP subsystem (es-dsp-subsys)
+
+    // ddrctl0/1 already at 0x52300000/0x52380000
+    // ddrphy0/1 already at 0x53000000/0x53800000
+
+    // PCIe IP DBI registers (0x54000000–0x58000000)
+    pcie_ip_rf pcie_ip @ 0x54000000; // PCIe IP DBI config space
+
+    external mrom_m     masked_rom    @ 0x58000000;
+    external sram_m     scpu_tim_remap @ 0x58500000; // SCPU TIM remap alias
+    external aon_tim_m  aon_tim        @ 0x58800000; // AON Timer SRAM window
+    external coda_m     coda_cache     @ 0x59000000; // CodaCache0 SPRAM boot load target
+    external coda_m     coda1_cache    @ 0x5a000000; // CodaCache1 SPRAM (NPU)
+    external dsp_sram_m dsp_sram       @ 0x5b000000; // DSP SRAM
+    external nor_flash_m nor_flash     @ 0x5c000000; // SPI NOR XIP window
+
+}; // scpu_memory
