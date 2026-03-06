@@ -47,14 +47,14 @@ from fastmcp.server.middleware import Middleware
 # until after Ghidra has fully launched.
 class DeferredImports(Middleware):
     async def on_request(self, context, call_next):
-        global DecompInterface, SourceType, CodeUnit, GhidraClass, HighFunctionDBUtil, FlatProgramAPI, TaskMonitor, AppInfo
+        global DecompInterface, SourceType, CodeUnit, GhidraClass, HighFunctionDBUtil, FlatProgramAPI, TaskMonitor
         from ghidra.app.decompiler import DecompInterface
         from ghidra.program.model.symbol import SourceType
         from ghidra.program.model.listing import CodeUnit, GhidraClass
         from ghidra.program.model.pcode import HighFunctionDBUtil
         from ghidra.program.flatapi import FlatProgramAPI
         from ghidra.util.task import TaskMonitor
-        from ghidra.framework.main import AppInfo
+
         return await call_next(context)
 
 mcp = FastMCP("ghidra")
@@ -65,6 +65,7 @@ mcp.add_middleware(DeferredImports())
 # ---------------------------------------------------------------------------
 
 def _state():
+    from ghidra.framework.main import AppInfo
     for tool in AppInfo.getActiveProject().getToolServices().getRunningTools():
         for plugin in tool.getManagedPlugins():
             if plugin.name == 'PyGhidraPlugin':
@@ -79,7 +80,8 @@ def _tx(name, fn):
     tid = p.startTransaction(name)
     ok = False
     try: fn(); ok = True
-    finally: p.endTransaction(tid, ok)
+    finally: ok = p.endTransaction(tid, ok)
+    return ok
 
 
 def _decompile(f):
@@ -116,46 +118,19 @@ def search_functions(query: str, offset: int = 0, limit: int = 50) -> str:
 
 
 @mcp.tool()
-def list_classes(offset: int = 0, limit: int = 100) -> str:
-    """List all class namespaces (GhidraClass instances)."""
-    seen, result = set(), []
-    for s in _prog().getSymbolTable().getAllSymbols(True):
-        ns = s.getParentNamespace()
-        if isinstance(ns, GhidraClass) and ns.getName() not in seen:
-            seen.add(ns.getName()); result.append(f'{ns.getName()}')
-    return '\n'.join(result[offset:offset + limit])
-
-
-@mcp.tool()
-def list_namespaces(offset: int = 0, limit: int = 100) -> str:
-    """List all non-global namespaces."""
-    seen, result = set(), []
-    for s in _prog().getSymbolTable().getAllSymbols(True):
-        ns = s.getParentNamespace()
-        if ns and not ns.isGlobal() and ns.getName() not in seen:
-            seen.add(ns.getName()); result.append(ns.getName())
-    return '\n'.join(result[offset:offset + limit])
-
-
-@mcp.tool()
-def list_segments(offset: int = 0, limit: int = 100) -> str:
-    """List memory segments/blocks with address ranges."""
+def list_memory_blocks(offset: int = 0, limit: int = 100) -> str:
+    """List memory blocks (segments) with address ranges."""
     blocks = _paginate(_prog().getMemory().getBlocks(), offset, limit)
     return '\n'.join(f'{b.getName()}: {b.getStart()} - {b.getEnd()} ({b.getSize()} bytes)' for b in blocks)
 
 
 @mcp.tool()
-def list_imports(offset: int = 0, limit: int = 100) -> str:
-    """List imported (external) symbols."""
-    syms = _paginate(_prog().getSymbolTable().getExternalSymbols(), offset, limit)
+def list_symbol_labels_in_range(start_address: str, end_address: str ) -> str:
+    """List symbol labels in given address range. addresses are interpreted as hex."""
+    from ghidra.program.model.address import AddressRangeImpl
+    arange = AddressRangeImpl(_addr(start_address), _addr(end_address))
+    syms = [s for s in _prog().getSymbolTable().getAllSymbols(True) if arange.contains(s.getAddress())]
     return '\n'.join(f'{s.getName()} @ {s.getAddress()}' for s in syms)
-
-
-@mcp.tool()
-def list_exports(offset: int = 0, limit: int = 100) -> str:
-    """List exported entry points."""
-    syms = [s for s in _prog().getSymbolTable().getAllSymbols(True) if s.isExternalEntryPoint()]
-    return '\n'.join(f'{s.getName()} @ {s.getAddress()}' for s in syms[offset:offset + limit])
 
 
 @mcp.tool()
@@ -274,10 +249,14 @@ def rename_function(address: str, new_name: str) -> str:
 
 
 @mcp.tool()
-def rename_data(address: str, new_name: str) -> str:
-    """Rename a data label at the given address."""
-    _tx("rename_data", lambda: _prog().getSymbolTable().createLabel(_addr(address), new_name, SourceType.USER_DEFINED))
-    return f"renamed to {new_name!r}"
+def create_or_rename_symbol_label_at(address: str, new_name: str) -> str:
+    """Create or rename a data label / symbol at the given address. address is specified in hex."""
+    existing = _prog().getSymbolTable().getPrimarySymbol(_addr(address))
+    if existing is not None:
+        _tx("set_symbol_name", lambda: existing.setName(new_name, SourceType.USER_DEFINED))
+        return f"renamed to {new_name!r}"
+    _tx("create_symbol", lambda: _prog().getSymbolTable().createLabel(_addr(address), new_name, SourceType.USER_DEFINED))
+    return "symbol created."
 
 
 @mcp.tool()
@@ -323,7 +302,7 @@ def set_function_prototype(function_address: str, prototype: str) -> str:
 
 
 @mcp.tool()
-def set_local_variable_type_foo(function_address: str, variable_name: str, new_type: str) -> str:
+def set_local_variable_type(function_address: str, variable_name: str, new_type: str) -> str:
     """Change the data type of a local variable in a decompiled function."""
     f = _func_at(function_address)
     if not f: return "no function at address"
@@ -336,6 +315,65 @@ def set_local_variable_type_foo(function_address: str, variable_name: str, new_t
     _tx("set_var_type", lambda: HighFunctionDBUtil.updateDBVariable(sym, None, dts[0], SourceType.USER_DEFINED))
     return f"type set to {new_type!r}"
 
+@mcp.tool()
+def create_new_memory_block(name: str, base_address: str, size_in_bytes: str) -> str:
+    """Create a new block of memory. address is interpreted as hex. size_in_bytes may be decimal or hex (e.g. 0x100).
+    new memory block must not overlap with any existing block"""
+    ok = _tx("create_mem_block", lambda: FlatProgramAPI(_prog()).createMemoryBlock(name, _addr(base_address), None, int(size_in_bytes, 0), False))
+    return "memory block created" if ok else "error."
+
+@mcp.tool()
+def split_memory_block(address_to_split_at: str) -> str:
+    """Split a block of memory at given address. address is interpreted as hex."""
+    mem =  _prog().getMemory()
+    block = mem.getBlock(_addr(address_to_split_at))
+    if block is None: raise ValueError("error: no memory block at address")
+    ok = _tx("split_mem_block", lambda: mem.split(block, _addr(address_to_split_at)))
+    return "memory block splitted" if ok else "error."
+
+@mcp.tool()
+def join_memory_blocks(base_address_of_second_block: str) -> str:
+    """Join two blocks of memory at given address. address is interpreted as hex.
+    The first block must end just before given address, and the second memory block must start at given address.
+    Both block must be contiguous in the address space."""
+    mem =  _prog().getMemory()
+    block1 = mem.getBlock(_addr(base_address_of_second_block).subtract(1))
+    block2 = mem.getBlock(_addr(base_address_of_second_block))
+    if block1 is None:
+        raise ValueError("error: no first block right before given address")
+    if block2 is None:
+        raise ValueError("error: no second block at given address")
+
+    ok = _tx("join_mem_block", lambda: mem.join(block1, block2))
+    return "memory blocks joined" if ok else "error."
+
+@mcp.tool()
+def set_memory_block_name(address: str, name: str) -> str:
+    """Set the name of the memory block containing given address. address is interpreted as hex."""
+    mem =  _prog().getMemory()
+    block = mem.getBlock(_addr(address))
+    if block is None: raise ValueError("error: no memory block at address")
+    ok = _tx("join_mem_block", lambda: block.setName(name))
+    return "memory block renamed" if ok else "error."
+
+@mcp.tool()
+def move_memory_block(address: str, new_base_address: str) -> str:
+    """Moves the block of memory containing given address too the new base address. addresses is interpreted as hex."""
+    mem =  _prog().getMemory()
+    block = mem.getBlock(_addr(address))
+    if block is None: raise ValueError("error: no memory block at address")
+    ok = _tx("move_mem_block", lambda: mem.moveBlock(block, _addr(new_base_address), TaskMonitor.DUMMY))
+    return "memory block moved" if ok else "error."
+
+@mcp.tool()
+def delete_memory_block(address: str) -> str:
+    """Deletes the block of memory containing given address. address is interpreted as hex.
+    All symbols, labels, and data defined within the memory block are also permanently deleted."""
+    mem =  _prog().getMemory()
+    block = mem.getBlock(_addr(address))
+    if block is None: raise ValueError("error: no memory block at address")
+    ok = _tx("create_mem_block", lambda: mem.removeBlock(block, TaskMonitor.DUMMY))
+    return "memory block deleted" if ok else "error."
 
 # ---------------------------------------------------------------------------
 # Resource — raw memory access
