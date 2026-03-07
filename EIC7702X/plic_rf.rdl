@@ -1,0 +1,53 @@
+
+regfile plic_rf {
+    name = "PLIC";
+    desc = "Platform-Level Interrupt Controller. SiFive E31 PLIC supporting 127 global
+    interrupt sources with 7 priority levels.
+    Single hart (Hart 0), M-Mode only. Complies with the RISC-V Privileged Architecture spec.
+    Only aligned 32-bit accesses are supported.
+    Interrupt source 0 is unused; usable IDs are 1-127.";
+
+    reg {
+        name = "Interrupt Source Priority";
+        desc = "Sets the priority level for a global interrupt source.
+        Priority 0 disables the interrupt. Priorities 1-7 are active, with 7 being highest.
+        Source 0 (priority[0] @ 0x0000) is unused and hardwired to 0.";
+        field {} reserved[31:3] = 0;
+        field { name = "Priority"; desc = "Interrupt priority level (0=disabled, 1=lowest, 7=highest)"; } priority[2:0];
+    } priority[128] @ 0x0000;
+
+    reg {
+        name = "Interrupt Pending";
+        desc = "Read-only bitmap of pending interrupts. Bit N of register K represents
+        interrupt source ID (K*32 + N). Bit 0 of pending[0] is hardwired to 0 (ID 0 unused).
+        A pending bit is set when an interrupt is asserted and cleared on claim.";
+        field { sw = r; hw = w; name = "Pending"; } pending[31:0];
+    } pending[4] @ 0x1000;
+
+    reg {
+        name = "Interrupt Enable";
+        desc = "Enable bits for global interrupts routed to Hart 0 M-Mode.
+        Bit N of register K enables interrupt source ID (K*32 + N).
+        Bit 0 of enable[0] is hardwired to 0 (ID 0 unused).";
+        field { name = "Enable"; } enable[31:0];
+    } enable[4] @ 0x2000;
+
+    reg {
+        name = "Priority Threshold";
+        desc = "Masks all PLIC interrupts whose priority is less than or equal to this threshold.
+        A value of 0 permits all non-zero-priority interrupts; a value of 7 masks all interrupts.";
+        field {} reserved[31:3] = 0;
+        field { name = "Threshold"; desc = "Priority threshold (0=all enabled, 7=all masked)"; } threshold[2:0];
+    } threshold @ 0x200000;
+
+    reg {
+        name = "Interrupt Claim/Complete";
+        desc = "Read: returns the ID of the highest-priority pending interrupt enabled for
+        Hart 0 M-Mode (0 if none pending). The corresponding pending bit is cleared on read.
+        Write: signals completion of the interrupt handler for the written interrupt ID.";
+        field { sw = rw; hw = rw;
+                name = "Interrupt ID";
+                desc = "Read: ID of highest pending interrupt (0=none). Write: complete interrupt with given ID."; }
+              interrupt_id[31:0];
+    } claim_complete @ 0x200004;
+};

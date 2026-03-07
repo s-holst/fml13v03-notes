@@ -1,0 +1,23 @@
+regfile clint_rf {
+    name = "CLINT";
+    desc = "Core Local Interruptor. Generates machine software and machine timer interrupts for Hart 0.
+    The E31 Core Complex CLINT complies with The RISC-V ISM, Volume II: Privileged Architecture, Version 1.10.";
+    reg {
+        name = "Machine Software Interrupt Pending";
+        desc = "Writing 1 to bit 0 asserts the machine software interrupt for Hart 0. Writing 0 clears it.";
+        field {} reserved[31:1] = 0;
+        field {} msip[0:0];
+    } msip @ 0;
+    reg {
+        name = "Machine Timer Compare";
+        desc = "64-bit timer compare value for Hart 0. A machine timer interrupt is asserted when mtime >= mtimecmp.";
+        regwidth=64;
+        field {} mtimecmp[63:0];
+    } mtimecmp @ 0x4000;
+    reg {
+        name = "Machine Timer";
+        desc = "64-bit real-time counter, incremented at a platform-defined constant frequency. Shared across all harts.";
+        regwidth=64;
+        field {} mtime[63:0];
+    } mtime @ 0xbff8;
+};

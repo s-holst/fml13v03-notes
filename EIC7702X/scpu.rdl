@@ -1,27 +1,9 @@
 `include "syscrg_rf.rdl"
 `include "syscon_rf.rdl"
 `include "otpc_rf.rdl"
-
-regfile clint_rf {
-    reg {
-        field {} data[31:0];
-    } msip @ 0;
-    reg {
-        regwidth=64;
-        field {} data[63:0];
-    } mtimecmp @ 0x4000;
-    reg {
-        regwidth=64;
-        field {} data[63:0];
-    } mtime @ 0xbff8;
-};
-
-regfile plic_rf {
-    name = "SCPU security peripherals (0x21Bxxxxx = SCPU view; MCPU alias at 0x51Bxxxxx)";
-    reg {
-        field {} data[31:0];
-    } TODO @ 0;
-};
+`include "coda_llc_rf.rdl"
+`include "plic_rf.rdl"
+`include "clint_rf.rdl"
 
 
 regfile bootspi_rf {
@@ -120,19 +102,6 @@ regfile timer_rf #(string NAME = "Timer [boot-path only]") {
     } TODO @ 0;
 };
 
-regfile coda_llc_rf {
-    name = "CodaCache LLC controller (NPU LLC)";
-    desc = "Reconfigured to SPRAM during boot; see coda_llc_spram_init() / FUN_ram_58007ce8";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-    reg {
-        field {name = "1=busy, 0=ready";} busy[0:0];
-    } status @ 0x100;
-    reg {
-        field {name = "0xffff=init valid entries, 0x10000=TagArray";} op[31:0];
-    } ccucmwvr @ 0x118;
-};
 
 regfile dw_axidma_rf #(string NAME = "DW AXI DMA channel control (NPU LLC DMA)") {
     name = NAME;
@@ -396,8 +365,10 @@ mem nor_flash_m {
 };
 
 addrmap scpu_memory {
-    name = "SCPU Memory";
-    desc = "Memory map of the SCPU within the EIC770x SoC";
+    name = "SCPU Address Space";
+    desc = "The Security-CPU (SCPU) within each die of the EIC7702X is a SiFive E31 Core Complex.
+    It is responsible for early boot and security services.
+    It is the first CPU to start executing code at power-on, bootstrapping the SoC.";
 
     clint_rf   clint   @ 0x02000000;
     plic_rf    plic    @ 0x0c000000;
@@ -436,9 +407,9 @@ addrmap scpu_memory {
     timer_rf #(.NAME("TIMER0 [boot-path only]")) timer0   @ 0x51840000;
     unknown_rf #(.NAME("? may be SPAcc MCPU-alias or second instance [boot-path only]")) scpu_per @ 0x51900000;
 
-    coda_llc_rf  coda_llc  @ 0x51c00000;
-    dw_axidma_rf #(.NAME("NPU LLC0 DW AXI DMA")) coda_dma0 @ 0x51d88000;
-    dw_axidma_rf #(.NAME("NPU LLC1 DW AXI DMA")) coda_dma1 @ 0x51d89000;
+    //coda_llc_rf  coda_llc  @ 0x51c00000;
+    coda_llc_rf #(.SUFFIX("0")) coda_llc0 @ 0x51d88000;
+    coda_llc_rf #(.SUFFIX("1")) coda_llc1 @ 0x51d89000;
 
     d2d_rf    d2d     @ 0x52100000;
     ddrctl_rf #(.NAME("DDR Controller 0 [boot-path only]")) ddrctl0 @ 0x52300000;

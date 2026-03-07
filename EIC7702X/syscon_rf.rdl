@@ -1,6 +1,6 @@
 regfile syscon_rf {
     name = "SYSCON";
-    desc = "EIC7700X System Control Registers; base 0x5181_0000–0x5181_7FFF (32 KB). Source: TRM Part 1, Table 3-3.";
+    desc = "System Control Registers. Source: TRM Part 1, Table 3-3.";
     default sw = rw;
     default hw = r;
 

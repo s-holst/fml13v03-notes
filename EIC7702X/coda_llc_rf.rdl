@@ -1,0 +1,56 @@
+
+
+regfile coda_llc_rf #(string SUFFIX = "") {
+    name = {"CodaCache LLC Controller ", SUFFIX};
+    desc = "Controls the operation of a shared 4MiB 16-way set-associative L3 cache.
+    Cache line size is 64 bytes.
+    Cache is composed of 4 banks.
+    During boot, the cache memory is configured to be used as Scratchpad RAM (SPRAM).";
+
+    reg { field {} data[31:0]; } ccutcr    @ 0x0000;
+    reg { field {} data[31:0]; } ccutar    @ 0x0004;
+
+    reg { field {} data[31:0]; } ccuctcr   @ 0x0010;
+    reg { field {} data[31:0]; } ccuctar   @ 0x0014;
+    reg { field {} data[31:0]; } ccucaor   @ 0x0018;
+
+    reg { name="SPRAM control register 0"; field {} ways_for_spram[31:16]; field {} enable[0:0]; } ccuspcr0  @ 0x0020;
+    reg { name="SPRAM control register 1"; field {} data[31:0]; } ccuspcr1  @ 0x0024;
+    reg { name="SPRAM base address (lower word)"; field {} data[31:0]; } ccuspbr0  @ 0x0028;
+    reg { name="SPRAM base address (upper word)"; field {} data[31:0]; } ccuspbr1  @ 0x002C;
+
+    reg { field {} data[31:0]; } ccuwpcr0x @ 0x0040;
+    reg { field {} data[31:0]; } ccuwpcr1x @ 0x0044;
+
+    reg { name="Command Control Register";
+        enum commands {
+            reset_entries = 0;
+            initialize_table = 0x10000;
+        };
+        field {encode=commands;} command[31:0];
+    } ccucmcr   @ 0x0100;
+    reg { name="Command Activity Register"; field {sw=r; name="1=active";} active[0:0]; } ccucmar   @ 0x0104;
+    reg { field {} data[31:0]; } ccucmlr0  @ 0x0108;
+    reg { field {} data[31:0]; } ccucmlr1  @ 0x010C;
+    reg { field {} data[31:0]; } ccucmlr2  @ 0x0110;
+    reg { field {} data[31:0]; } ccucmdr   @ 0x0114;
+    reg { name="Associativity (number of cache lines per set)"; field {} data[31:0]; } ccucmwvr  @ 0x0118;
+
+    reg { field {} data[31:0]; } ccucecr   @ 0x0140;
+    reg { field {} data[31:0]; } ccucesr   @ 0x0144;
+    reg { field {} data[31:0]; } ccucesar  @ 0x0148;
+    reg { field {} data[31:0]; } ccucelr0  @ 0x014C;
+    reg { field {} data[31:0]; } ccucelr1  @ 0x0150;
+    reg { field {} data[31:0]; } ccuuedr   @ 0x0154;
+    reg { field {} data[31:0]; } ccuueir   @ 0x0158;
+    reg { field {} data[31:0]; } ccuuesr   @ 0x015C;
+    reg { field {} data[31:0]; } ccuuesar  @ 0x0160;
+    reg { field {} data[31:0]; } ccuuelr0  @ 0x0164;
+    reg { field {} data[31:0]; } ccuuelr1  @ 0x0168;
+
+    reg { field {} data[31:0]; } ccuidr    @ 0x01C0;
+    reg { field {} data[31:0]; } ccucrtr   @ 0x01C4;
+    reg { field {} data[31:0]; } ccuesr    @ 0x01C8;
+    reg { field {} data[31:0]; } ccuemr    @ 0x01CC;
+    reg { field {} data[31:0]; } ccuear    @ 0x01D0;
+};
