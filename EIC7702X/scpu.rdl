@@ -4,6 +4,7 @@
 `include "coda_llc_rf.rdl"
 `include "plic_rf.rdl"
 `include "clint_rf.rdl"
+`include "uart_rf.rdl"
 
 
 regfile bootspi_rf {
@@ -15,41 +16,31 @@ regfile bootspi_rf {
 
 
 regfile spacc_rf {
-    name = "Synopsys DesignWare Security Protocol Accelerator (AES, SM4)";
+    name = "SPAcc - Synopsys DW Security Protocol Accelerator";
     reg {
         field {} TODO[31:0];
     } TODO @ 0;
 };
 
 regfile pka_rf {
-    name = "Synopsys DesignWare Public Key Accelerator (RSA, ECDSA)";
+    name = "PKA - Synopsys DW Public Key Accelerator";
     reg {
         field {} TODO[31:0];
     } TODO @ 0;
 };
 
 regfile trng_rf {
-    name = "Synopsys DesignWare True Random Number Generator";
+    name = "TRNG - Synopsys DW True Random Number Generator";
     reg {
         field {} TODO[31:0];
     } TODO @ 0;
 };
 
-regfile otp_shadow_rf {
-    name = "OTP shadow / secure identity registers (~0x190 bytes)";
+regfile pmp_rf #(string SUFFIX="") {
+    name = {"PMP - Synopsys DW Physical Memory Protection ", SUFFIX};
     reg {
         field {} TODO[31:0];
-    } TODO @ 0;
-    reg {
-        field {name = "ESWIN vendor ID string written at boot step 4";} vendor_id[31:0];
-    } vendor_id @ 0x170;
-};
-
-regfile pmp_rf {
-    name = "Physical Memory Protection unit (Synopsys DesignWare; FUN_ram_58007ed4)";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
+    } TODO[0x2000] @ 0;
 };
 
 regfile hsp_csr_rf {
@@ -68,13 +59,6 @@ regfile sdhci_rf {
 
 regfile usbdrd_rf {
     name = "USB 3.0 DRD controller [boot-path only]";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile uart_rf #(string NAME = "Synopsys DW APB UART, 16550-compatible") {
-    name = NAME;
     reg {
         field {} TODO[31:0];
     } TODO @ 0;
@@ -340,12 +324,6 @@ mem pka_sram_m {
     memwidth = 32;
 };
 
-mem sram_m #(string NAME = "SCPU TIM SRAM") {
-    name = NAME;
-    mementries = 0x2000;
-    memwidth = 32;
-};
-
 mem mrom_m {
     name = "SCPU masked ROM";
     mementries = 0x8000;
@@ -370,33 +348,44 @@ addrmap scpu_memory {
     It is responsible for early boot and security services.
     It is the first CPU to start executing code at power-on, bootstrapping the SoC.";
 
+    external mem {
+        name="ITIM - E31 Instruction Tightly Integrated Memory";
+        desc="8 KiB of instruction cache memory backed on-demand scratch pad memory.
+        Allocates automatically on first write in this region.
+        Deallocated by writing 0 to itim_dealloc.";
+        memwidth=32;
+        mementries=0x800;
+    } itim @ 0x01800000;
+    reg { name="ITIM Deallocation Trigger"; field {} itim_dealloc[31:0]; } itim_dealloc @ 0x01802000;
     clint_rf   clint   @ 0x02000000;
     plic_rf    plic    @ 0x0c000000;
     spacc_rf      spacc      @ 0x21900000;
     pka_rf        pka        @ 0x21b00000;
     external pka_sram_m pka_sram @ 0x21b04000;
     trng_rf       trng       @ 0x21b08000;
-    otp_rf        otp        @ 0x21b40000;
-    otp_shadow_rf otp_shadow @ 0x21b48000;
-    pmp_rf pmp0 @ 0x21b80000;
-    pmp_rf pmp1 @ 0x21b88000;
-    pmp_rf pmp2 @ 0x21b90000;
-    pmp_rf pmp3 @ 0x21b98000;
-    pmp_rf pmp4 @ 0x21ba0000;
-    pmp_rf pmp5 @ 0x21bb0000;
-    pmp_rf pmp6 @ 0x21bb8000;
-    pmp_rf pmp7 @ 0x21bc0000;
-    pmp_rf pmp8 @ 0x21bc8000;
-    pmp_rf pmp9 @ 0x21bd0000;
+    otpc_rf        otpc      @ 0x21b40000;
 
-    external sram_m sram_tim @ 0x30000000;
+    external mem {
+        name = "OTP shadow / secure identity registers (~0x190 bytes)";
+        desc="ESWIN vendor ID string written at 0x170 at boot step 4";
+        memwidth=32;
+        mementries=100;
+    } otp @ 0x21b48000;
+    pmp_rf #(.SUFFIX("Banks 0-4")) pmp_0_4[5] @ 0x21b80000;
+    pmp_rf #(.SUFFIX("Banks 5-9")) pmp_5_9[5] @ 0x21bb0000;
+
+    external mem {
+        name = "SPRAM - available at power-up.";
+        mementries = 0x2000;
+        memwidth = 32;
+    } spram @ 0x30000000;
 
     hsp_csr_rf hsp_csr  @ 0x50440000;
     sdhci_rf   sdhci    @ 0x50450000;
     usbdrd_rf  usbdrd0  @ 0x50480000;
     usbdrd_rf  usbdrd1  @ 0x50490000;
-    uart_rf #(.NAME("DW APB UART0, primary boot console")) uart0    @ 0x50900000;
-    uart_rf #(.NAME("UART1 [boot-path only]")) uart1    @ 0x50910000;
+    uart_rf #(.SUFFIX("0 - Primary boot console")) uart0    @ 0x50900000;
+    uart_rf #(.SUFFIX("1 - [boot-path only]")) uart1    @ 0x50910000;
     mbox_rf #(.NAME("U84→SCPU mailbox [boot-path only]")) mbox     @ 0x50a00000;
     pinctrl_rf pinctrl  @ 0x51600000;
 
@@ -458,9 +447,9 @@ addrmap scpu_memory {
 
     // Low Speed peripherals apb3 (0x50900000–0x50a00000)
     // uart0/1 already instantiated above
-    uart_rf #(.NAME("UART2")) uart2 @ 0x50920000;
-    uart_rf #(.NAME("UART3")) uart3 @ 0x50930000;
-    uart_rf #(.NAME("UART4")) uart4 @ 0x50940000;
+    uart_rf #(.SUFFIX("2")) uart2 @ 0x50920000;
+    uart_rf #(.SUFFIX("3")) uart3 @ 0x50930000;
+    uart_rf #(.SUFFIX("4")) uart4 @ 0x50940000;
     i2c_rf #(.NAME("I2C0")) i2c0  @ 0x50950000;
     i2c_rf #(.NAME("I2C1")) i2c1  @ 0x50960000;
     i2c_rf #(.NAME("I2C2")) i2c2  @ 0x50970000;
@@ -552,11 +541,19 @@ addrmap scpu_memory {
     pcie_ip_rf pcie_ip @ 0x54000000;
 
     external mrom_m     masked_rom    @ 0x58000000;
-    external sram_m #(.NAME("SCPU TIM remap alias")) scpu_tim_remap @ 0x58500000;
+    //external sram_m #(.NAME("SCPU TIM remap alias")) scpu_tim_remap @ 0x58500000;
     external aon_tim_m  aon_tim        @ 0x58800000;
     external coda_m #(.NAME("CodaCache0 SPRAM boot load target")) coda_cache     @ 0x59000000;
     external coda_m #(.NAME("CodaCache1 SPRAM (NPU)")) coda1_cache    @ 0x5a000000;
     external dsp_sram_m dsp_sram       @ 0x5b000000;
     external nor_flash_m nor_flash     @ 0x5c000000;
+
+    external mem {
+        name="DTIM - E31 Data Tightly Integrated Memory";
+        desc="64 KiB of data memory that provides deterministic access times.
+        Used as data scratch-pad, also executable.";
+        memwidth=32;
+        mementries=0x4000;
+    } dtim @ 0x80000000;
 
 }; // scpu_memory

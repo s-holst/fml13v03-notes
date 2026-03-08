@@ -1,0 +1,348 @@
+
+regfile uart_rf #(string SUFFIX="") {
+    name = {"Synopsys DW UART ", SUFFIX};
+    desc = "DesignWare DW_apb_uart. 16550-compatible UART with APB bus interface.
+    Registers are on 32-bit boundaries. Registers at 0x00, 0x04, and 0x08 are aliased:
+    at 0x00 reads access RBR, writes access THR, and DLAB=1 (LCR[7]) accesses DLL;
+    at 0x04 DLAB=0 accesses IER, DLAB=1 accesses DLH;
+    at 0x08 reads access IIR, writes access FCR.";
+
+    reg {
+        name = "Receive Buffer / Transmit Holding / Divisor Latch Low";
+        desc = "DLAB=0, read: Receive Buffer Register (RBR) - received data byte.
+        DLAB=0, write: Transmit Holding Register (THR) - data byte to transmit.
+        DLAB=1: Divisor Latch Low (DLL) - lower 8 bits of baud rate divisor.
+        Baud rate = serial_clock_freq / (16 * {DLH,DLL}).";
+        field {} reserved[31:8] = 0;
+        field { name = "DATA"; } data[7:0];
+    } rbr @ 0x00;
+
+    reg {
+        name = "Interrupt Enable / Divisor Latch High";
+        desc = "DLAB=0: Interrupt Enable Register (IER). DLAB=1: Divisor Latch High (DLH),
+        upper 8 bits of baud rate divisor. DLL=DLH=0 disables the baud clock.";
+        field {} reserved[31:8] = 0;
+        field { name = "PTIME";
+                desc = "Programmable THRE Interrupt Mode Enable (IER[7]). 0=disabled, 1=enabled."; } ptime[7:7] = 0;
+        field {} reserved2[6:4] = 0;
+        field { name = "EDSSI";
+                desc = "Enable Modem Status Interrupt. 0=disabled, 1=enabled."; } edssi[3:3] = 0;
+        field { name = "ELSI";
+                desc = "Enable Receiver Line Status Interrupt (highest priority). 0=disabled, 1=enabled."; } elsi[2:2] = 0;
+        field { name = "ETBEI";
+                desc = "Enable Transmit Holding Register Empty Interrupt. 0=disabled, 1=enabled."; } etbei[1:1] = 0;
+        field { name = "ERBFI";
+                desc = "Enable Received Data Available Interrupt (and Character Timeout in FIFO mode). 0=disabled, 1=enabled."; } erbfi[0:0] = 0;
+    } ier @ 0x04;
+
+    reg {
+        name = "Interrupt Identity / FIFO Control";
+        desc = "Read: Interrupt Identity Register (IIR) - identifies highest-priority pending interrupt.
+        Write: FIFO Control Register (FCR) - controls FIFO operation (write-only).";
+        field {} reserved[31:8] = 0;
+        field { sw = r; name = "FIFOSE";
+                desc = "FIFOs Enabled status (IIR[7:6]). 00=disabled, 11=enabled."; } fifose[7:6] = 0;
+        field {} reserved2[5:4] = 0;
+        field { sw = r; name = "IID";
+                desc = "Interrupt ID (IIR[3:0]): 0001=none, 0110=line status, 0100=data available,
+                1100=char timeout, 0010=THR empty, 0000=modem status, 0111=busy detect."; } iid[3:0] = 1;
+    } iir @ 0x08;
+
+    reg {
+        name = "Line Control";
+        desc = "Controls UART frame format and baud rate access. Write only when not busy (USR[0]=0).";
+        field {} reserved[31:8] = 0;
+        field { name = "DLAB";
+                desc = "Divisor Latch Access Bit. Set to 1 to access DLL/DLH baud rate divisors."; } dlab[7:7] = 0;
+        field { name = "BC";
+                desc = "Break Control. Forces serial output (sout) low to generate a break condition."; } bc[6:6] = 0;
+        field {} reserved2[5:5] = 0;
+        field { name = "EPS";
+                desc = "Even Parity Select. 0=odd parity, 1=even parity (when PEN=1)."; } eps[4:4] = 0;
+        field { name = "PEN";
+                desc = "Parity Enable. 0=parity disabled, 1=parity enabled."; } pen[3:3] = 0;
+        field { name = "STOP";
+                desc = "Stop Bits. 0=1 stop bit, 1=1.5 stop bits (DLS=00) or 2 stop bits (DLS!=00)."; } stop[2:2] = 0;
+        field { name = "DLS";
+                desc = "Data Length Select. 00=5 bits, 01=6 bits, 10=7 bits, 11=8 bits."; } dls[1:0] = 0;
+    } lcr @ 0x0C;
+
+    reg {
+        name = "Modem Control";
+        desc = "Controls modem handshaking signals and loopback/IrDA mode.";
+        field {} reserved[31:7] = 0;
+        field { name = "SIRE";
+                desc = "SIR Mode Enable. 0=IrDA disabled, 1=IrDA SIR mode enabled (when SIR_MODE configured)."; } sire[6:6] = 0;
+        field { name = "AFCE";
+                desc = "Auto Flow Control Enable. 0=disabled, 1=enabled (when AFCE_MODE configured)."; } afce[5:5] = 0;
+        field { name = "LB";
+                desc = "Loopback Bit. Enables diagnostic loopback mode; modem control inputs are disconnected."; } lb[4:4] = 0;
+        field { name = "OUT2";
+                desc = "User-designated Output2. Value is inverted on out2_n pin. 0=de-asserted, 1=asserted."; } out2[3:3] = 0;
+        field { name = "OUT1";
+                desc = "User-designated Output1. Value is inverted on out1_n pin. 0=de-asserted, 1=asserted."; } out1[2:2] = 0;
+        field { name = "RTS";
+                desc = "Request to Send. Controls rts_n output. 0=de-asserted, 1=asserted."; } rts[1:1] = 0;
+        field { name = "DTR";
+                desc = "Data Terminal Ready. Value is inverted on dtr_n pin. 0=de-asserted, 1=asserted."; } dtr[0:0] = 0;
+    } mcr @ 0x10;
+
+    reg {
+        name = "Line Status";
+        desc = "Read-only register reflecting the status of the receiver and transmitter.";
+        field {} reserved[31:8] = 0;
+        field { sw = r; name = "RFE";
+                desc = "Receiver FIFO Error. At least one parity/framing error or break in RX FIFO."; } rfe[7:7] = 0;
+        field { sw = r; name = "TEMT";
+                desc = "Transmitter Empty. Both the transmit FIFO/THR and the shift register are empty."; } temt[6:6] = 1;
+        field { sw = r; name = "THRE";
+                desc = "Transmit Holding Register Empty. THR or TX FIFO is empty; data can be written."; } thre[5:5] = 1;
+        field { sw = r; name = "BI";
+                desc = "Break Interrupt. Serial input held low longer than one character time."; } bi[4:4] = 0;
+        field { sw = r; name = "FE";
+                desc = "Framing Error. No valid STOP bit detected in received data."; } fe[3:3] = 0;
+        field { sw = r; name = "PE";
+                desc = "Parity Error. Parity mismatch detected in received character (when PEN=1)."; } pe[2:2] = 0;
+        field { sw = r; name = "OE";
+                desc = "Overrun Error. New data arrived before previous data was read."; } oe[1:1] = 0;
+        field { sw = r; name = "DR";
+                desc = "Data Ready. RBR or RX FIFO contains at least one character."; } dr[0:0] = 0;
+    } lsr @ 0x14;
+
+    reg {
+        name = "Modem Status";
+        desc = "Read-only register reflecting modem control input states and changes since last read.";
+        field {} reserved[31:8] = 0;
+        field { sw = r; name = "DCD";
+                desc = "Data Carrier Detect. Complement of dcd_n input. 1=dcd_n asserted."; } dcd[7:7] = 0;
+        field { sw = r; name = "RI";
+                desc = "Ring Indicator. Complement of ri_n input. 1=ri_n asserted."; } ri[6:6] = 0;
+        field { sw = r; name = "DSR";
+                desc = "Data Set Ready. Complement of dsr_n input. 1=dsr_n asserted."; } dsr[5:5] = 0;
+        field { sw = r; name = "CTS";
+                desc = "Clear to Send. Complement of cts_n input. 1=cts_n asserted."; } cts[4:4] = 0;
+        field { sw = r; name = "DDCD";
+                desc = "Delta Data Carrier Detect. dcd_n has changed since last MSR read."; } ddcd[3:3] = 0;
+        field { sw = r; name = "TERI";
+                desc = "Trailing Edge Ring Indicator. ri_n transitioned active-to-inactive since last MSR read."; } teri[2:2] = 0;
+        field { sw = r; name = "DDSR";
+                desc = "Delta Data Set Ready. dsr_n has changed since last MSR read."; } ddsr[1:1] = 0;
+        field { sw = r; name = "DCTS";
+                desc = "Delta Clear to Send. cts_n has changed since last MSR read."; } dcts[0:0] = 0;
+    } msr @ 0x18;
+
+    reg {
+        name = "Scratchpad";
+        desc = "General-purpose 8-bit scratchpad register with no defined hardware function.";
+        field {} reserved[31:8] = 0;
+        field { name = "SCR"; } scr[7:0] = 0;
+    } scr @ 0x1C;
+
+    reg {
+        name = "Low Power Divisor Latch Low";
+        desc = "Lower 8 bits of the 16-bit Low Power baud rate divisor for IrDA SIR low-power mode.
+        Must give a baud rate of 115.2 kHz. Only accessible when DLAB=1 and not busy.
+        Only present when SIR_LP_RX is configured.";
+        field {} reserved[31:8] = 0;
+        field { name = "LPDLL"; } lpdll[7:0] = 0;
+    } lpdll @ 0x20;
+
+    reg {
+        name = "Low Power Divisor Latch High";
+        desc = "Upper 8 bits of the 16-bit Low Power baud rate divisor for IrDA SIR low-power mode.
+        Only accessible when DLAB=1 and not busy. Only present when SIR_LP_RX is configured.";
+        field {} reserved[31:8] = 0;
+        field { name = "LPDLH"; } lpdlh[7:0] = 0;
+    } lpdlh @ 0x24;
+
+    reg {
+        name = "Shadow Receive Buffer / Shadow Transmit Holding";
+        desc = "Shadow registers for burst RBR reads (SRBR) and burst THR writes (STHR).
+        Sixteen 32-bit locations at 0x30-0x6C. Only present when SHADOW is configured.
+        Read accesses RBR head; write transmits data.";
+        field {} reserved[31:8] = 0;
+        field { name = "DATA"; } data[7:0] = 0;
+    } srbr[16] @ 0x30;
+
+    reg {
+        name = "FIFO Access";
+        desc = "Enables FIFO access test mode so the master can write the RX FIFO and read the TX FIFO.
+        Enabling or disabling this mode resets both FIFOs. Only valid when FIFO_ACCESS is configured.";
+        field {} reserved[31:1] = 0;
+        field { name = "FAR";
+                desc = "FIFO Access Mode Enable. 0=disabled, 1=enabled."; } far[0:0] = 0;
+    } far @ 0x70;
+
+    reg {
+        name = "Transmit FIFO Read";
+        desc = "Reads the top entry of the TX FIFO (or THR if FIFOs disabled) in FIFO access test mode.
+        Only valid when FIFO_ACCESS is configured and FAR[0]=1.";
+        field {} reserved[31:8] = 0;
+        field { sw = r; name = "TFR"; } tfr[7:0] = 0;
+    } tfr @ 0x74;
+
+    reg {
+        name = "Receive FIFO Write";
+        desc = "Writes data into the RX FIFO (or RBR if FIFOs disabled) in FIFO access test mode.
+        Only valid when FIFO_ACCESS is configured and FAR[0]=1.";
+        field {} reserved[31:10] = 0;
+        field { sw = w; name = "RFFE";
+                desc = "Receive FIFO Framing Error - inject framing error into RX FIFO."; } rffe[9:9] = 0;
+        field { sw = w; name = "RFPE";
+                desc = "Receive FIFO Parity Error - inject parity error into RX FIFO."; } rfpe[8:8] = 0;
+        field { sw = w; name = "RFWD";
+                desc = "Receive FIFO Write Data - data byte to push into RX FIFO."; } rfwd[7:0] = 0;
+    } rfw @ 0x78;
+
+    reg {
+        name = "UART Status";
+        desc = "Read-only register indicating the operational state of the UART and FIFO fill levels.";
+        field {} reserved[31:5] = 0;
+        field { sw = r; name = "RFF";
+                desc = "Receive FIFO Full. 1=RX FIFO completely full."; } rff[4:4] = 0;
+        field { sw = r; name = "RFNE";
+                desc = "Receive FIFO Not Empty. 1=RX FIFO contains at least one entry."; } rfne[3:3] = 0;
+        field { sw = r; name = "TFE";
+                desc = "Transmit FIFO Empty. 1=TX FIFO completely empty."; } tfe[2:2] = 1;
+        field { sw = r; name = "TFNF";
+                desc = "Transmit FIFO Not Full. 1=TX FIFO is not full."; } tfnf[1:1] = 1;
+        field { sw = r; name = "BUSY";
+                desc = "UART Busy. 1=serial transfer in progress."; } busy[0:0] = 0;
+    } usr @ 0x7C;
+
+    reg {
+        name = "Transmit FIFO Level";
+        desc = "Number of entries currently in the TX FIFO. Width is FIFO_ADDR_WIDTH+1 bits.
+        Only valid when FIFO_STAT is configured.";
+        field { sw = r; name = "TFL"; } tfl[31:0] = 0;
+    } tfl @ 0x80;
+
+    reg {
+        name = "Receive FIFO Level";
+        desc = "Number of entries currently in the RX FIFO. Width is FIFO_ADDR_WIDTH+1 bits.
+        Only valid when FIFO_STAT is configured.";
+        field { sw = r; name = "RFL"; } rfl[31:0] = 0;
+    } rfl @ 0x84;
+
+    reg {
+        name = "Software Reset";
+        desc = "Write-only shadow register providing independent resets without modifying FCR.
+        All bits are self-clearing. Only present when SHADOW is configured.";
+        field {} reserved[31:3] = 0;
+        field { sw = w; name = "XFR";
+                desc = "XMIT FIFO Reset. Shadow of FCR[2]. Resets the TX FIFO control logic."; } xfr[2:2] = 0;
+        field { sw = w; name = "RFR";
+                desc = "RCVR FIFO Reset. Shadow of FCR[1]. Resets the RX FIFO control logic."; } rfr[1:1] = 0;
+        field { sw = w; name = "UR";
+                desc = "UART Reset. Asynchronously resets the entire UART."; } ur[0:0] = 0;
+    } srr @ 0x88;
+
+    reg {
+        name = "Shadow Request to Send";
+        desc = "Shadow of MCR[1] (RTS) allowing direct RTS control without read-modify-write on MCR.
+        Only present when SHADOW is configured.";
+        field {} reserved[31:1] = 0;
+        field { name = "SRTS";
+                desc = "Shadow RTS. Controls rts_n output. 0=de-asserted, 1=asserted."; } srts[0:0] = 0;
+    } srts @ 0x8C;
+
+    reg {
+        name = "Shadow Break Control";
+        desc = "Shadow of LCR[6] (BC) allowing direct break control without read-modify-write on LCR.
+        Only present when SHADOW is configured.";
+        field {} reserved[31:1] = 0;
+        field { name = "SBCR";
+                desc = "Shadow Break Control. Forces sout low to generate a break. 0=normal, 1=break."; } sbcr[0:0] = 0;
+    } sbcr @ 0x90;
+
+    reg {
+        name = "Shadow DMA Mode";
+        desc = "Shadow of FCR[3] (DMAM) allowing DMA mode change without rewriting FCR.
+        Only present when FIFO_MODE and SHADOW are configured.";
+        field {} reserved[31:1] = 0;
+        field { name = "SDMAM";
+                desc = "Shadow DMA Mode. 0=DMA mode 0, 1=DMA mode 1."; } sdmam[0:0] = 0;
+    } sdmam @ 0x94;
+
+    reg {
+        name = "Shadow FIFO Enable";
+        desc = "Shadow of FCR[0] (FIFOE) allowing FIFO enable/disable without rewriting FCR.
+        Only present when FIFO_MODE and SHADOW are configured.";
+        field {} reserved[31:1] = 0;
+        field { name = "SFE";
+                desc = "Shadow FIFO Enable. Enables TX and RX FIFOs. 0=disabled, 1=enabled."; } sfe[0:0] = 0;
+    } sfe @ 0x98;
+
+    reg {
+        name = "Shadow RCVR Trigger";
+        desc = "Shadow of FCR[7:6] (RT) allowing RX FIFO trigger level change without rewriting FCR.
+        Only present when FIFO_MODE and SHADOW are configured.";
+        field {} reserved[31:2] = 0;
+        field { name = "SRT";
+                desc = "Shadow RCVR Trigger. RX FIFO trigger level for interrupt and DMA.
+                00=1 char, 01=FIFO 1/4 full, 10=FIFO 1/2 full, 11=FIFO 2 less than full."; } srt[1:0] = 0;
+    } srt @ 0x9C;
+
+    reg {
+        name = "Shadow TX Empty Trigger";
+        desc = "Shadow of FCR[5:4] (TET) allowing TX FIFO empty threshold change without rewriting FCR.
+        Only present when FIFO_MODE, THRE_MODE_USER, and SHADOW are configured.";
+        field {} reserved[31:2] = 0;
+        field { name = "STET";
+                desc = "Shadow TX Empty Trigger. TX FIFO empty threshold for THRE interrupt.
+                00=FIFO empty, 01=2 chars in FIFO, 10=FIFO 1/4 full, 11=FIFO 1/2 full."; } stet[1:0] = 0;
+    } stet @ 0xA0;
+
+    reg {
+        name = "Halt TX";
+        desc = "Halts transmission to allow the TX FIFO to be filled in test mode.
+        Has no effect when FIFOs are not enabled.";
+        field {} reserved[31:1] = 0;
+        field { name = "HTX";
+                desc = "Halt TX. 0=normal operation, 1=transmission halted."; } htx[0:0] = 0;
+    } htx @ 0xA4;
+
+    reg {
+        name = "DMA Software Acknowledge";
+        desc = "Write-only, self-clearing. De-asserts all DMA request signals on error/channel-disable.
+        Only valid when DMA_EXTRA is configured.";
+        field {} reserved[31:1] = 0;
+        field { sw = w; name = "DMASA";
+                desc = "DMA Software Acknowledge. Self-clearing; de-asserts TX/RX DMA request signals."; } dmasa[0:0] = 0;
+    } dmasa @ 0xA8;
+
+    reg {
+        name = "Component Parameter";
+        desc = "Read-only register encoding the hardware configuration parameters of this UART instance.
+        Only present when UART_ADD_ENCODED_PARAMS is configured.";
+        field {} reserved[31:24] = 0;
+        field { sw = r; name = "FIFO_MODE";
+                desc = "FIFO depth. 0x00=0, 0x01=16, 0x02=32, ..., 0x80=2048."; } fifo_mode[23:16] = 0;
+        field {} reserved2[15:14] = 0;
+        field { sw = r; name = "DMA_EXTRA";    desc = "DMA extra handshaking signals present."; } dma_extra[13:13] = 0;
+        field { sw = r; name = "UART_ADD_ENCODED_PARAMS"; desc = "Encoded parameter register present."; } uart_add_encoded_params[12:12] = 0;
+        field { sw = r; name = "SHADOW";       desc = "Shadow registers present."; } shadow[11:11] = 0;
+        field { sw = r; name = "FIFO_STAT";    desc = "FIFO status registers present."; } fifo_stat[10:10] = 0;
+        field { sw = r; name = "FIFO_ACCESS";  desc = "FIFO access test mode present."; } fifo_access[9:9] = 0;
+        field { sw = r; name = "ADDITIONAL_FEAT"; desc = "Additional features present (UCV, CTR registers)."; } additional_feat[8:8] = 0;
+        field { sw = r; name = "SIR_LP_MODE"; desc = "IrDA SIR low-power mode present."; } sir_lp_mode[7:7] = 0;
+        field { sw = r; name = "SIR_MODE";    desc = "IrDA SIR mode present."; } sir_mode[6:6] = 0;
+        field { sw = r; name = "THRE_MODE";   desc = "Programmable THRE interrupt mode present."; } thre_mode[5:5] = 0;
+        field { sw = r; name = "AFCE_MODE";   desc = "Auto flow control mode present."; } afce_mode[4:4] = 0;
+        field {} reserved3[3:2] = 0;
+        field { sw = r; name = "APB_DATA_WIDTH";
+                desc = "APB data bus width. 00=8 bits, 01=16 bits, 10=32 bits."; } apb_data_width[1:0] = 0;
+    } cpr @ 0xF4;
+
+    reg {
+        name = "UART Component Version";
+        desc = "ASCII-encoded component version string. Only present when ADDITIONAL_FEAT is configured.";
+        field { sw = r; name = "UCV"; } ucv[31:0] = 0;
+    } ucv @ 0xF8;
+
+    reg {
+        name = "Component Type";
+        desc = "Peripheral identification code. Reset value 0x44570110. Only present when ADDITIONAL_FEAT is configured.";
+        field { sw = r; name = "CTR"; } ctr[31:0] = 32'h44570110;
+    } ctr @ 0xFC;
+};

@@ -580,10 +580,10 @@ regfile syscon_rf {
         field {} timer3_en[7:0]   = 8'b0;
     } aon_timers_en @ 0x0660;
 
-    reg { name = "SCPU ROM boot progress code 0"; field {} test_reg0[31:0] = 32'b0; } test_reg_0 @ 0x0668;
-    reg { name = "SCPU ROM boot progress code 1"; field {} test_reg1[31:0] = 32'b0; } test_reg_1 @ 0x066c;
-    reg { name = "SCPU ROM boot progress code 2"; field {} test_reg2[31:0] = 32'b0; } test_reg_2 @ 0x0670;
-    reg { name = "SCPU ROM boot progress code 3"; field {} test_reg3[31:0] = 32'b0; } test_reg_3 @ 0x0674;
+    reg { name = "Debug scratch pad registers (ROM boot progress)"; field {} test_reg[31:0] = 32'b0; } test_reg[4] @ 0x0668;
+    //reg { name = "SCPU ROM boot progress code 1"; field {} test_reg1[31:0] = 32'b0; } test_reg_1 @ 0x066c;
+    //reg { name = "SCPU ROM boot progress code 2"; field {} test_reg2[31:0] = 32'b0; } test_reg_2 @ 0x0670;
+    //reg { name = "SCPU ROM boot progress code 3"; field {} test_reg3[31:0] = 32'b0; } test_reg_3 @ 0x0674;
 
     reg {
         name = "AON analog IP test mux control";
