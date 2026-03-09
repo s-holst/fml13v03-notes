@@ -5,14 +5,7 @@
 `include "plic_rf.rdl"
 `include "clint_rf.rdl"
 `include "uart_rf.rdl"
-
-
-regfile bootspi_rf {
-    name = "SPI flash controller [boot-path only]";
-    reg {
-        field {} data[31:0];
-    } TODO @ 0;
-};
+`include "bootspi_rf.rdl"
 
 
 regfile spacc_rf {
@@ -338,6 +331,7 @@ mem coda_m #(string NAME = "CodaCache SPRAM (boot load target)") {
 
 mem nor_flash_m {
     name = "SPI NOR XIP window";
+    desc = "Response data from commands to bootspi appears here.";
     mementries = 0x1000000;
     memwidth = 32;
 };

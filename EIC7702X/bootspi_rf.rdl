@@ -1,0 +1,49 @@
+
+regfile bootspi_rf {
+    name = "Boot SPI Controller";
+    desc = "SPI flash controller used for boot. Controls bus mode, flash commands, DMA,
+    interrupts, and timing parameters for flash operations.";
+
+    reg { name = "Write Status Register Time";       field {} data[31:0]; } write_status_reg_time  @ 0x00;
+    reg { name = "SPI Bus Mode";                     field {} data[31:0]; } spi_bus_mode            @ 0x04;
+    reg { name = "Erase Counter Tap";                field {} data[31:0]; } erase_counter_tap       @ 0x08;
+    reg { name = "DMA Enable / HCLK Status";         field {} data[31:0]; } dma_en_hclk_status      @ 0x0C;
+    reg { name = "Fast Read Control";                field {} data[31:0]; } fast_read_control        @ 0x10;
+    reg { name = "Length in Bytes for Operation";    field {} data[31:0]; } length        @ 0x14;
+    reg { name = "SPI Flash Command";
+        field {} reserved[31:18];
+        field {} opcode[17:6];
+        field {} dma_mode[5:5];
+        enum cmd_type {
+            SPIC_CMD_TYPE_SPI_PROGRAM = 0;
+            SPIC_CMD_TYPE_WRITE_STATUS_REGISTER;
+            SPIC_CMD_TYPE_READ_STATUS_REGISTER;
+            SPIC_CMD_TYPE_SECTOR_ERASE;
+            SPIC_CMD_TYPE_BLOCK_ERASE_TYPE1;
+            SPIC_CMD_TYPE_BLOCK_ERASE_TYPE2;
+            SPIC_CMD_TYPE_CHIP_ERASE;
+            SPIC_CMD_TYPE_POWER_DOWN;
+            SPIC_CMD_TYPE_RELEASE_POWER_DOWM;
+            SPIC_CMD_TYPE_ENTER_OR_EXIT_32BIT_MODE;
+            SPIC_CMD_TYPE_READ_SECURITY_REG;
+            SPIC_CMD_TYPE_ERASE_SECURITY_REG;
+            SPIC_CMD_TYPE_WRITE_SECURITY_REG;
+            SPIC_CMD_TYPE_READ_DATA;
+            SPIC_CMD_TYPE_READ_MANUFACTURED_ID;
+            SPIC_CMD_TYPE_READ_JEDEC_ID;
+        };
+        field {encode=cmd_type;} cmd_type[4:1];
+        field {} valid[0:0];
+        
+    } spi_flash_command        @ 0x18;
+    reg { name = "Interrupt Control";                field {} data[31:0]; } interrupt_control        @ 0x1C;
+    reg { name = "DMA Request Tap";                  field {} data[31:0]; } dma_request_tap         @ 0x20;
+    reg { name = "Base Address for Operation";       field {} data[31:0]; } address    @ 0x24;
+    reg { name = "Page Program Time";                field {} data[31:0]; } page_program_time        @ 0x28;
+    reg { name = "Sector Erase Time";                field {} data[31:0]; } sector_erase_time        @ 0x2C;
+    reg { name = "Small Block Erase Time";           field {} data[31:0]; } small_block_erase_time  @ 0x30;
+    reg { name = "Large Block Erase Time";           field {} data[31:0]; } large_block_erase_time  @ 0x34;
+    reg { name = "Chip Erase Time";                  field {} data[31:0]; } chip_erase_time         @ 0x38;
+    reg { name = "Chip Deselect Time";               field {} data[31:0]; } chip_deselect_time      @ 0x3C;
+    reg { name = "Power Down Time";                  field {} data[31:0]; } power_down_time         @ 0x40;
+};

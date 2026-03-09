@@ -10,9 +10,9 @@ Architecture Overview:
   - 16M SPI-Flash that contains boot chain until u-boot
 
 At power-on, SCPU starts executing code from masked ROM at `0x58000000`.
-Both dies contain the same ROM. It has been dumped [here](EIC770x_rom.bin)
+Both dies contain the same ROM. It has been dumped [here](EIC7702X_rom.bin)
 using [eswin_ipc_tool.py](eswin_ipc_tool.py) on the booted system under linux.
-An initial analysis of the ROM contents is [here](EIC770x_rom.md).
+An initial analysis of the ROM contents is [here](EIC7702X_rom.md).
 
 The SCPU in each die loads binary images from SPI-Flash and executes them.
 

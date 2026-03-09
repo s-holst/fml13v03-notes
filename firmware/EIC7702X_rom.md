@@ -3,16 +3,21 @@ SCPU Boot ROM Analysis (WIP)
 
 **Attention: Used Ghidra + Claude - Some information below might be BS.**
 
-This is the **masked ROM executed by the SCPU** (a SiFive E31 RV32 core) on the EIC7702 SoC. Its sole job is to load, authenticate, and launch the next stage of the boot chain. It is the hardware root of trust — it cannot be modified, and it runs before any software-controlled memory is trusted.
+This is the unmodifiable **masked ROM executed by the SCPU** (a SiFive E31 RV32 core) on the EIC7702X SoC.
+This rom appears at `0x5800_0000` in SCPU address space.
+Its sole job is to load, authenticate, and launch the next stage of the boot chain.
+It supports a secure and non-secure mode.
+In secure mode it is the hardware root of trust - it runs before any software-controlled memory is trusted.
+In non-secure mode (default on fml13v03), next-stage bootloader code does not require valid signatures to run.
 
 ## Capabilities
 
 **Multi-source boot**
-Supports four boot device sources, selected by SYSCRG `+0x33c` bits [1:0]:
-- `0` — SPI NOR flash (XIP from `0x5C00_0000`)
-- `1` — eMMC (SDHCI controller)
-- `2` — USB (mass storage gadget, DRD controller)
-- `3` — UART download (serial transfer to SCPU)
+Supports four boot device sources, configured by boot select pins (dip-switches on the fml13v03 mainboard):
+- `0b00` — UART download (serial transfer via UART0)
+- `0b01` — eMMC (SDHCI controller)
+- `0b10` - SPI NOR flash (bootspi) - **default on fml13v03**
+- `0b11` — USB (mass storage gadget, DRD controller)
 
 **Cryptographic engine support**
 - **SPAcc**: hardware AES and SM4 decryption of the bootchain image
@@ -22,11 +27,11 @@ Supports four boot device sources, selected by SYSCRG `+0x33c` bits [1:0]:
 
 **OTP-based key management**
 Reads the following from OTP at boot:
+- Security enable bits (which algorithms are active)
+- Die variant, die number, die ordinal, program lock status
 - Encryption IV and boot image key
 - RSA public key, ECDSA/ECC public key
 - M2M key, HDCP key, debug password, SCPU firmware key
-- Security enable bits (which algorithms are active)
-- Die variant, die number, die ordinal, program lock status
 
 **Hardware memory protection**
 Configures 10 PMP (Physical Memory Protection) units in two groups (`0x21B8_0000`–`0x21BA_0000`, `0x21BB_0000`–`0x21BD_0000`), enforcing access control on the SCPU's memory space before launching untrusted code.
@@ -36,7 +41,6 @@ Detects at runtime whether the SoC is the die-1 or die-2 of a dual-die package. 
 
 **CodaCache SPRAM**
 Reconfigures the NPU LLC (`0x51C0_0000`) from cache mode into SPRAM (scratch-pad RAM) mode, providing ~4 MB of fast working memory at `0x5900_0000` to hold the loaded bootchain.
-
 
 SCPU Memory Map
 ---------------
@@ -94,50 +98,13 @@ SCPU Memory Map
   | `0x5C00_0000`  | `0x4000000` | **NOR Flash XIP** — SPI NOR direct-map window; bootchain read from here           | `memory-map-soc.md`; `rom_decompiled.c:1292–1296` |
 
 
-
-0x58000000: ROM
----------------
-
-- Entry point
-- sets mtvec, stack, hart check
-- C-runtime init
-
-0x30000000: SRAM
-----------------
-
-- .data copy from ROM (0x5801a5b8 → 0x30000000, ~0x888 bytes)
-- working memory / BSS
-
-
-0x51d88000 and 0x51d89000: coda_llc_spram control
--------------------------------------------------
-
-some kind of coda cache controller / cfg
-
-```
-+0x100[0] 1=busy, 0=ready
-+0x118 = 0xffff: operation: Init valid entries
-+0x118 = 0x10000: operation: TagArray
-
-tag array init:
-+0x28 = 0;
-+0x2c = 0;
-+0x20 = 0xf0000;
-+0x24 = 0x3fff;
-+0x20 = [+0x20] | 1
-+0x10 = 3;
-+0x154 = 3;
-+0x18 = 4;
-+0x140 = 0x23;
-```
-
-
 Boot Flow
 ---------
 
 1. **Hardware bring-up**
+   - Entry point `0x58000000`
    - Hart 0 takes over; hart 1+ spin-wait
-   - `.bss` zeroed, `.data` copied from ROM into SCPU SRAM (`0x3000_0000`)
+   - `.bss` zeroed, `.data` copied from ROM into SCPU SRAM (`0x580_1a5b8` → `0x3000_0000` ~0x888 bytes)
    - GP set to `0x3000_1058`, heap initialised at `0x3000_5220`
 
 2. **Clock init** (`FUN_ram_58008dbe`)
