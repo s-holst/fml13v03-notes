@@ -1,0 +1,156 @@
+
+regfile gpio_rf {
+    name = "GPIO";
+    desc = "General Purpose I/O controller. APB slave with 4 ports (A/B/C/D) mapping to
+    112 independently configurable GPIO signals. Port A supports configurable interrupt
+    generation with optional debounce. Ports B/C/D are output-data and direction only.";
+
+    reg {
+        name = "Port A Data";
+        desc = "Output values for Port A pins. Each bit drives the corresponding I/O pin when
+        the direction (DDR) is set to Output and the port is in Software mode.
+        Reads back the last value written.";
+        field { name = "DR"; } dr[31:0] = 0;
+    } swporta_dr @ 0x00;
+
+    reg {
+        name = "Port A Data Direction";
+        desc = "Direction control for Port A pins. 0=Input, 1=Output.
+        Default direction is configurable via GPIO_DFLT_DIR_A parameter.";
+        field { name = "DDR"; desc = "0=Input, 1=Output"; } ddr[31:0] = 0;
+    } swporta_ddr @ 0x04;
+
+    reg {
+        name = "Interrupt Enable";
+        desc = "Enables interrupt generation on Port A pins. A pin must be configured as Input
+        (DDR=0) and in Software mode for interrupts to fire.
+        0=GPIO mode, 1=Interrupt enabled.";
+        field { name = "INTEN"; desc = "0=GPIO, 1=interrupt enabled"; } inten[31:0] = 0;
+    } inten @ 0x30;
+
+    reg {
+        name = "Interrupt Mask";
+        desc = "Masks interrupt generation from Port A to the interrupt controller.
+        0=interrupt unmasked (passes through), 1=interrupt masked (blocked).";
+        field { name = "INTMASK"; desc = "0=unmasked, 1=masked"; } intmask[31:0] = 0;
+    } intmask @ 0x34;
+
+    reg {
+        name = "Interrupt Type";
+        desc = "Selects level or edge sensitivity for each Port A interrupt source.
+        0=level-sensitive, 1=edge-sensitive.";
+        field { name = "INTTYPE"; desc = "0=level-sensitive, 1=edge-sensitive"; } inttype[31:0] = 0;
+    } inttype_level @ 0x38;
+
+    reg {
+        name = "Interrupt Polarity";
+        desc = "Selects active polarity for each Port A interrupt source.
+        For level interrupts: 0=active-low, 1=active-high.
+        For edge interrupts: 0=falling-edge, 1=rising-edge.";
+        field { name = "INTPOL"; desc = "0=active-low/falling, 1=active-high/rising"; } intpol[31:0] = 0;
+    } int_polarity @ 0x3C;
+
+    reg {
+        name = "Interrupt Status";
+        desc = "Masked interrupt status for Port A (post-mask). Read-only.
+        0=inactive, 1=active interrupt pending.";
+        field { sw = r; hw = w; name = "INTSTATUS"; } intstatus[31:0] = 0;
+    } intstatus @ 0x40;
+
+    reg {
+        name = "Raw Interrupt Status";
+        desc = "Raw interrupt status for Port A before masking is applied. Read-only.
+        0=inactive, 1=active interrupt pending.";
+        field { sw = r; hw = w; name = "RAW_INTSTATUS"; } raw_intstatus[31:0] = 0;
+    } raw_intstatus @ 0x44;
+
+    reg {
+        name = "Debounce Enable";
+        desc = "Enables debounce logic per Port A pin. A signal must remain stable for two
+        debounce-clock cycles to be recognized. 0=no debounce, 1=debounce enabled.";
+        field { name = "DEBOUNCE"; desc = "0=disabled, 1=enabled"; } debounce[31:0] = 0;
+    } debounce @ 0x48;
+
+    reg {
+        name = "Port A End of Interrupt";
+        desc = "Write-only. Clears edge-triggered interrupts on Port A.
+        Write 1 to a bit to clear the corresponding edge interrupt.
+        0=no effect, 1=clear interrupt.";
+        field { sw = w; hw = r; name = "EOI"; desc = "Write 1 to clear edge interrupt"; } eoi[31:0] = 0;
+    } porta_eoi @ 0x4C;
+
+    reg {
+        name = "External Port A";
+        desc = "Read-only. Always reflects the current logic level on the Port A external pins,
+        regardless of direction or software output value.";
+        field { sw = r; hw = w; name = "EXT_PORTA"; } ext_porta[31:0] = 0;
+    } ext_porta @ 0x50;
+
+    reg {
+        name = "Level-Sensitive Synchronization";
+        desc = "When bit 0 is set, all level-sensitive interrupts are synchronized to pclk_intr.
+        0=no synchronization (default), 1=synchronize to pclk_intr.";
+        field {} reserved[31:1] = 0;
+        field { name = "LS_SYNC"; desc = "0=no sync, 1=sync to pclk_intr"; } ls_sync[0:0] = 0;
+    } ls_sync @ 0x60;
+
+    reg {
+        name = "GPIO ID Code";
+        desc = "User-specified identification code, readable by software for chip identification.";
+        field { sw = r; name = "ID_CODE"; } id_code[31:0] = 0;
+    } id_code @ 0x64;
+
+    reg {
+        name = "GPIO Component Version";
+        desc = "ASCII-encoded component version string (e.g. 0x3231342A = version 2.14*).";
+        field { sw = r; name = "VER_ID_CODE"; } ver_id_code[31:0] = 32'h3231342a;
+    } ver_id_code @ 0x6C;
+
+    reg {
+        name = "GPIO Configuration Register 2";
+        desc = "Read-only encoded port width parameters. Present only when GPIO_ADD_ENCODED_PARAMS=True.";
+        field {} reserved[31:20] = 0;
+        field { sw = r; name = "PWIDTH_D"; desc = "Port D width minus 1 (GPIO_PWIDTH_D-1)."; } pwidth_d[19:15] = 7;
+        field { sw = r; name = "PWIDTH_C"; desc = "Port C width minus 1 (GPIO_PWIDTH_C-1)."; } pwidth_c[14:10] = 7;
+        field { sw = r; name = "PWIDTH_B"; desc = "Port B width minus 1 (GPIO_PWIDTH_B-1)."; } pwidth_b[9:5] = 7;
+        field { sw = r; name = "PWIDTH_A"; desc = "Port A width minus 1 (GPIO_PWIDTH_A-1)."; } pwidth_a[4:0] = 5'h1f;
+    } config_reg2 @ 0x70;
+
+    reg {
+        name = "GPIO Configuration Register 1";
+        desc = "Read-only encoded hardware configuration parameters. Present only when GPIO_ADD_ENCODED_PARAMS=True.";
+        field {} reserved[31:22] = 0;
+        field { sw = r; name = "INTERRUPT_BOTH_EDGE_TYPE";
+                desc = "0=rising or falling edge only, 1=both edges generate interrupt."; } int_both_edge[21:21] = 0;
+        field { sw = r; name = "ENCODED_ID_WIDTH";
+                desc = "GPIO ID width (GPIO_ID_WIDTH parameter value)."; } id_width[20:16] = 5'h1f;
+        field { sw = r; name = "GPIO_ID";
+                desc = "0=GPIO_ID not included, 1=GPIO_ID included."; } gpio_id[15:15] = 1;
+        field { sw = r; name = "ADD_ENCODED_PARAMS";
+                desc = "0=encoded parameters not present, 1=encoded parameters present."; } add_encoded_params[14:14] = 1;
+        field { sw = r; name = "DEBOUNCE";
+                desc = "0=debounce not included, 1=debounce included."; } debounce_cfg[13:13] = 1;
+        field { sw = r; name = "PORTA_INTR";
+                desc = "0=Port A not an interrupt source, 1=Port A used as interrupt source."; } porta_intr[12:12] = 1;
+        field { sw = r; name = "HW_PORTD";
+                desc = "0=Port D auxiliary hardware signals excluded, 1=included."; } hw_portd[11:11] = 0;
+        field { sw = r; name = "HW_PORTC";
+                desc = "0=Port C auxiliary hardware signals excluded, 1=included."; } hw_portc[10:10] = 0;
+        field { sw = r; name = "HW_PORTB";
+                desc = "0=Port B auxiliary hardware signals excluded, 1=included."; } hw_portb[9:9] = 0;
+        field { sw = r; name = "HW_PORTA";
+                desc = "0=Port A auxiliary hardware signals excluded, 1=included."; } hw_porta[8:8] = 0;
+        field { sw = r; name = "PORTD_SINGLE_CTL";
+                desc = "0=Port D multi-source control, 1=Port D single-source control."; } portd_single_ctl[7:7] = 1;
+        field { sw = r; name = "PORTC_SINGLE_CTL";
+                desc = "0=Port C multi-source control, 1=Port C single-source control."; } portc_single_ctl[6:6] = 1;
+        field { sw = r; name = "PORTB_SINGLE_CTL";
+                desc = "0=Port B multi-source control, 1=Port B single-source control."; } portb_single_ctl[5:5] = 1;
+        field { sw = r; name = "PORTA_SINGLE_CTL";
+                desc = "0=Port A multi-source control, 1=Port A single-source control."; } porta_single_ctl[4:4] = 1;
+        field { sw = r; name = "NUM_PORTS";
+                desc = "Number of ports: 0=1 port, 1=2, 2=3, 3=4."; } num_ports[3:2] = 0;
+        field { sw = r; name = "APB_DATA_WIDTH";
+                desc = "APB data bus width: 0=8-bit, 1=16-bit, 2=32-bit."; } apb_data_width[1:0] = 2;
+    } config_reg1 @ 0x74;
+};

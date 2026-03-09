@@ -6,6 +6,7 @@
 `include "clint_rf.rdl"
 `include "uart_rf.rdl"
 `include "bootspi_rf.rdl"
+`include "gpio_rf.rdl"
 
 
 regfile spacc_rf {
@@ -59,13 +60,6 @@ regfile usbdrd_rf {
 
 regfile mbox_rf #(string NAME = "U84 (MCPU) → SCPU mailbox [boot-path only]") {
     name = NAME;
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile pinctrl_rf {
-    name = "Pin controller [boot-path only]";
     reg {
         field {} TODO[31:0];
     } TODO @ 0;
@@ -369,8 +363,8 @@ addrmap scpu_memory {
     pmp_rf #(.SUFFIX("Banks 5-9")) pmp_5_9[5] @ 0x21bb0000;
 
     external mem {
-        name = "SPRAM - available at power-up.";
-        mementries = 0x2000;
+        name = "SPRAM - available at power-up. Size unconfirmed.";
+        mementries = 0x4000;
         memwidth = 32;
     } spram @ 0x30000000;
 
@@ -381,7 +375,7 @@ addrmap scpu_memory {
     uart_rf #(.SUFFIX("0 - Primary boot console")) uart0    @ 0x50900000;
     uart_rf #(.SUFFIX("1 - [boot-path only]")) uart1    @ 0x50910000;
     mbox_rf #(.NAME("U84→SCPU mailbox [boot-path only]")) mbox     @ 0x50a00000;
-    pinctrl_rf pinctrl  @ 0x51600000;
+    gpio_rf    gpio     @ 0x51600000;
 
     bootspi_rf  bootspi  @ 0x51800000;
     syscon_rf   syscon   @ 0x51810000;
