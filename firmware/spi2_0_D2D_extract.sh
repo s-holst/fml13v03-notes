@@ -1,20 +1,28 @@
 #!/bin/sh
 
-# --- Extract raw blobs ---
+# --- Extract sub images ---
 dd if=spi2_0_D2D.bin skip=$((0x1a40)) count=$((0x9640)) bs=1 of=spi2_0_D2D_serdes_text.bin
 dd if=spi2_0_D2D.bin skip=$((0xb0c0)) count=$((0x1540)) bs=1 of=spi2_0_D2D_serdes_data.bin
-dd if=spi2_0_D2D.bin skip=$((0xd500)) count=$((0xd300)) bs=1 of=spi2_0_D2D_npu_nim.bin
-dd if=spi2_0_D2D_npu_nim.bin skip=$((92)) count=$((5880-92)) bs=1 of=spi2_0_D2D_npu_nim1.elf
-dd if=spi2_0_D2D_npu_nim.bin skip=$((5880)) count=$((33512-5880)) bs=1 of=spi2_0_D2D_npu_nim2.elf
-dd if=spi2_0_D2D_npu_nim.bin skip=$((33512)) bs=1 of=spi2_0_D2D_npu_nim3.elf
 
-dd if=spi2_0_D2D.bin skip=$((0x1a840)) count=$((0x54140)) bs=1 of=spi2_0_D2D_pmix_fw.bin
+# Die-1 NPU
 
-dd if=spi2_0_D2D.bin skip=$((0x6e9c0)) count=$((0x35540)) bs=1 of=spi2_0_D2D_pmix_fw2.bin
-dd if=spi2_0_D2D_pmix_fw2.bin skip=104 count=$((5892-104)) bs=1 of=spi2_0_D2D_pmix_fw2_1.elf
-dd if=spi2_0_D2D_pmix_fw2.bin skip=5892 count=$((33524-5892)) bs=1 of=spi2_0_D2D_pmix_fw2_2.elf
-dd if=spi2_0_D2D_pmix_fw2.bin skip=33524 bs=1 of=spi2_0_D2D_pmix_fw2_3.elf
+#dd if=spi2_0_D2D.bin skip=$((0xd500)) count=$((0xd300)) bs=1 of=spi2_0_D2D_npu1.bin
+dd if=spi2_0_D2D.bin skip=$((0x0D55C)) count=$((5788)) bs=1 of=spi2_0_D2D_0D55C.elf
+dd if=spi2_0_D2D.bin skip=$((0x0EBF8)) count=$((27632)) bs=1 of=spi2_0_D2D_0EBF8.elf
+dd if=spi2_0_D2D.bin skip=$((0x157E8)) count=$((18000)) bs=1 of=spi2_0_D2D_157E8.elf
 
+# Sweep Firmware
+
+dd if=spi2_0_D2D.bin skip=$((0x1a840)) count=$((0x54140)) bs=1 of=spi2_0_D2D_pmix.bin
+
+# These are also Die-1 NPU, not die2!
+
+#dd if=spi2_0_D2D.bin skip=$((0x6e9c0)) count=$((0x35540)) bs=1 of=spi2_0_D2D_npu2.bin
+dd if=spi2_0_D2D.bin skip=$((0x6EA28)) count=$((5788)) bs=1 of=spi2_0_D2D_6EA28.elf
+dd if=spi2_0_D2D.bin skip=$((0x700C4)) count=$((27632)) bs=1 of=spi2_0_D2D_700C4.elf
+dd if=spi2_0_D2D.bin skip=$((0x76CB4)) count=$((18000)) bs=1 of=spi2_0_D2D_76CB4.elf
+
+exit 0
 
 # Extract and disassemble ARC EM SerDes firmware from spi2_0_D2D.bin
 #

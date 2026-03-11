@@ -7,6 +7,8 @@
 `include "uart_rf.rdl"
 `include "bootspi_rf.rdl"
 `include "gpio_rf.rdl"
+`include "pwm_rf.rdl"
+`include "pvt_rf.rdl"
 
 
 regfile spacc_rf {
@@ -199,7 +201,7 @@ regfile sata_rf {
 };
 
 regfile dma_rf {
-    name = "DMA0 controller";
+    name = "DMA controller";
     reg { field {} TODO[31:0]; } TODO @ 0;
 };
 
@@ -218,10 +220,6 @@ regfile spi_rf #(string NAME = "") {
     reg { field {} TODO[31:0]; } TODO @ 0;
 };
 
-regfile pwm_rf {
-    name = "PWM";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
 
 regfile i2c_rf #(string NAME = "") {
     name = NAME;
@@ -238,10 +236,6 @@ regfile rtc_rf {
     reg { field {} TODO[31:0]; } TODO @ 0;
 };
 
-regfile pvt_rf {
-    name = "PVT (Process-Voltage-Temperature) monitor";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
 
 regfile fan_rf {
     name = "Fan control";
@@ -287,6 +281,7 @@ regfile noc_rf {
     name = "System NoC configuration space (packet/trans probes, QoS settings, filters)";
     reg { field {} TODO[31:0]; } TODO @ 0;
 };
+
 
 regfile dsp_sub_rf {
     name = "DSP subsystem (es-dsp-subsys)";
@@ -508,6 +503,8 @@ addrmap scpu_memory {
     timer_rf #(.NAME("TIMER1")) timer1   @ 0x51848000;
     timer_rf #(.NAME("TIMER2")) timer2   @ 0x51850000;
     timer_rf #(.NAME("TIMER3")) timer3   @ 0x51858000;
+
+    dma_rf dma1 @ 0x518c0000;
 
     // security peripherals at 0x51Bxxxxx already instantiated above (SCPU-view)
     // scpu_per at 0x51900000 already instantiated above

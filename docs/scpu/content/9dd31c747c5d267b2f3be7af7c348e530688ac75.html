@@ -8,7 +8,7 @@
     <dt>Absolute Address:</dt><dd id="_AbsAddr" class="address"></dd>
     <div id="_AbsAddrDetails"></div>
     <dt>Base Offset:</dt><dd class="address">0x51600000</dd>
-    <dt>Size:</dt><dd class="address">0x78</dd>
+    <dt>Size:</dt><dd class="address">0x2d8</dd>
     
     <dt>Source:</dt><dd><a href="https://github.com/s-holst/fml13v03-notes/blob/main/EIC7702X/gpio_rf.rdl#L2" target="_blank">gpio_rf.rdl</a></dd>
     
@@ -17,7 +17,7 @@
 <div id="_Content.desc">
 <p>General Purpose I/O controller. APB slave with 4 ports (A/B/C/D) mapping to
 112 independently configurable GPIO signals. Port A supports configurable interrupt
-generation with optional debounce. Ports B/C/D are output-data and direction only.</p>
+generation with optional debounce.</p>
 </div>
 
 <h2>Contents</h2>
@@ -30,149 +30,247 @@ generation with optional debounce. Ports B/C/D are output-data and direction onl
         <th></th>
     </tr>
     <tr id="swporta_dr">
-        <td class="address">0x00</td>
-        <td><a href="?p=scpu_memory.gpio.swporta_dr" data-id="346" onclick="onClickNodeLink(event); return(false)">swporta_dr</a></td>
+        <td class="address">0x000</td>
+        <td><a href="?p=scpu_memory.gpio.swporta_dr" data-id="352" onclick="onClickNodeLink(event); return(false)">swporta_dr</a></td>
         <td>Port A Data</td>
         <td>
             <a class="headerlink" href="#swporta_dr" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="swporta_ddr">
-        <td class="address">0x04</td>
-        <td><a href="?p=scpu_memory.gpio.swporta_ddr" data-id="347" onclick="onClickNodeLink(event); return(false)">swporta_ddr</a></td>
+        <td class="address">0x004</td>
+        <td><a href="?p=scpu_memory.gpio.swporta_ddr" data-id="353" onclick="onClickNodeLink(event); return(false)">swporta_ddr</a></td>
         <td>Port A Data Direction</td>
         <td>
             <a class="headerlink" href="#swporta_ddr" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr class="reserved-addr">
-    <td class="address">0x08</td>
+    <td class="address">0x008</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+</tr>
+    <tr id="swportb_dr">
+        <td class="address">0x00C</td>
+        <td><a href="?p=scpu_memory.gpio.swportb_dr" data-id="354" onclick="onClickNodeLink(event); return(false)">swportb_dr</a></td>
+        <td>Port B Data</td>
+        <td>
+            <a class="headerlink" href="#swportb_dr" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr id="swportb_ddr">
+        <td class="address">0x010</td>
+        <td><a href="?p=scpu_memory.gpio.swportb_ddr" data-id="355" onclick="onClickNodeLink(event); return(false)">swportb_ddr</a></td>
+        <td>Port B Data Direction</td>
+        <td>
+            <a class="headerlink" href="#swportb_ddr" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr class="reserved-addr">
+    <td class="address">0x014</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+</tr>
+    <tr id="swportc_dr">
+        <td class="address">0x018</td>
+        <td><a href="?p=scpu_memory.gpio.swportc_dr" data-id="356" onclick="onClickNodeLink(event); return(false)">swportc_dr</a></td>
+        <td>Port C Data</td>
+        <td>
+            <a class="headerlink" href="#swportc_dr" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr id="swportc_ddr">
+        <td class="address">0x01C</td>
+        <td><a href="?p=scpu_memory.gpio.swportc_ddr" data-id="357" onclick="onClickNodeLink(event); return(false)">swportc_ddr</a></td>
+        <td>Port C Data Direction</td>
+        <td>
+            <a class="headerlink" href="#swportc_ddr" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr class="reserved-addr">
+    <td class="address">0x020</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+</tr>
+    <tr id="swportd_dr">
+        <td class="address">0x024</td>
+        <td><a href="?p=scpu_memory.gpio.swportd_dr" data-id="358" onclick="onClickNodeLink(event); return(false)">swportd_dr</a></td>
+        <td>Port D Data</td>
+        <td>
+            <a class="headerlink" href="#swportd_dr" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr id="swportd_ddr">
+        <td class="address">0x028</td>
+        <td><a href="?p=scpu_memory.gpio.swportd_ddr" data-id="359" onclick="onClickNodeLink(event); return(false)">swportd_ddr</a></td>
+        <td>Port D Data Direction</td>
+        <td>
+            <a class="headerlink" href="#swportd_ddr" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr class="reserved-addr">
+    <td class="address">0x02C</td>
     <td>-</td>
     <td>-</td>
     <td></td>
 </tr>
     <tr id="inten">
-        <td class="address">0x30</td>
-        <td><a href="?p=scpu_memory.gpio.inten" data-id="348" onclick="onClickNodeLink(event); return(false)">inten</a></td>
+        <td class="address">0x030</td>
+        <td><a href="?p=scpu_memory.gpio.inten" data-id="360" onclick="onClickNodeLink(event); return(false)">inten</a></td>
         <td>Interrupt Enable</td>
         <td>
             <a class="headerlink" href="#inten" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="intmask">
-        <td class="address">0x34</td>
-        <td><a href="?p=scpu_memory.gpio.intmask" data-id="349" onclick="onClickNodeLink(event); return(false)">intmask</a></td>
+        <td class="address">0x034</td>
+        <td><a href="?p=scpu_memory.gpio.intmask" data-id="361" onclick="onClickNodeLink(event); return(false)">intmask</a></td>
         <td>Interrupt Mask</td>
         <td>
             <a class="headerlink" href="#intmask" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="inttype_level">
-        <td class="address">0x38</td>
-        <td><a href="?p=scpu_memory.gpio.inttype_level" data-id="350" onclick="onClickNodeLink(event); return(false)">inttype_level</a></td>
+        <td class="address">0x038</td>
+        <td><a href="?p=scpu_memory.gpio.inttype_level" data-id="362" onclick="onClickNodeLink(event); return(false)">inttype_level</a></td>
         <td>Interrupt Type</td>
         <td>
             <a class="headerlink" href="#inttype_level" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="int_polarity">
-        <td class="address">0x3C</td>
-        <td><a href="?p=scpu_memory.gpio.int_polarity" data-id="351" onclick="onClickNodeLink(event); return(false)">int_polarity</a></td>
+        <td class="address">0x03C</td>
+        <td><a href="?p=scpu_memory.gpio.int_polarity" data-id="363" onclick="onClickNodeLink(event); return(false)">int_polarity</a></td>
         <td>Interrupt Polarity</td>
         <td>
             <a class="headerlink" href="#int_polarity" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="intstatus">
-        <td class="address">0x40</td>
-        <td><a href="?p=scpu_memory.gpio.intstatus" data-id="352" onclick="onClickNodeLink(event); return(false)">intstatus</a></td>
+        <td class="address">0x040</td>
+        <td><a href="?p=scpu_memory.gpio.intstatus" data-id="364" onclick="onClickNodeLink(event); return(false)">intstatus</a></td>
         <td>Interrupt Status</td>
         <td>
             <a class="headerlink" href="#intstatus" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="raw_intstatus">
-        <td class="address">0x44</td>
-        <td><a href="?p=scpu_memory.gpio.raw_intstatus" data-id="353" onclick="onClickNodeLink(event); return(false)">raw_intstatus</a></td>
+        <td class="address">0x044</td>
+        <td><a href="?p=scpu_memory.gpio.raw_intstatus" data-id="365" onclick="onClickNodeLink(event); return(false)">raw_intstatus</a></td>
         <td>Raw Interrupt Status</td>
         <td>
             <a class="headerlink" href="#raw_intstatus" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="debounce">
-        <td class="address">0x48</td>
-        <td><a href="?p=scpu_memory.gpio.debounce" data-id="354" onclick="onClickNodeLink(event); return(false)">debounce</a></td>
+        <td class="address">0x048</td>
+        <td><a href="?p=scpu_memory.gpio.debounce" data-id="366" onclick="onClickNodeLink(event); return(false)">debounce</a></td>
         <td>Debounce Enable</td>
         <td>
             <a class="headerlink" href="#debounce" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="porta_eoi">
-        <td class="address">0x4C</td>
-        <td><a href="?p=scpu_memory.gpio.porta_eoi" data-id="355" onclick="onClickNodeLink(event); return(false)">porta_eoi</a></td>
+        <td class="address">0x04C</td>
+        <td><a href="?p=scpu_memory.gpio.porta_eoi" data-id="367" onclick="onClickNodeLink(event); return(false)">porta_eoi</a></td>
         <td>Port A End of Interrupt</td>
         <td>
             <a class="headerlink" href="#porta_eoi" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="ext_porta">
-        <td class="address">0x50</td>
-        <td><a href="?p=scpu_memory.gpio.ext_porta" data-id="356" onclick="onClickNodeLink(event); return(false)">ext_porta</a></td>
+        <td class="address">0x050</td>
+        <td><a href="?p=scpu_memory.gpio.ext_porta" data-id="368" onclick="onClickNodeLink(event); return(false)">ext_porta</a></td>
         <td>External Port A</td>
         <td>
             <a class="headerlink" href="#ext_porta" title="Permalink to this row"></a>
         </td>
     </tr>
-    <tr class="reserved-addr">
-    <td class="address">0x54</td>
-    <td>-</td>
-    <td>-</td>
-    <td></td>
-</tr>
+    <tr id="ext_portb">
+        <td class="address">0x054</td>
+        <td><a href="?p=scpu_memory.gpio.ext_portb" data-id="369" onclick="onClickNodeLink(event); return(false)">ext_portb</a></td>
+        <td>External Port B</td>
+        <td>
+            <a class="headerlink" href="#ext_portb" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr id="ext_portc">
+        <td class="address">0x058</td>
+        <td><a href="?p=scpu_memory.gpio.ext_portc" data-id="370" onclick="onClickNodeLink(event); return(false)">ext_portc</a></td>
+        <td>External Port C</td>
+        <td>
+            <a class="headerlink" href="#ext_portc" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr id="ext_portd">
+        <td class="address">0x05C</td>
+        <td><a href="?p=scpu_memory.gpio.ext_portd" data-id="371" onclick="onClickNodeLink(event); return(false)">ext_portd</a></td>
+        <td>External Port D</td>
+        <td>
+            <a class="headerlink" href="#ext_portd" title="Permalink to this row"></a>
+        </td>
+    </tr>
     <tr id="ls_sync">
-        <td class="address">0x60</td>
-        <td><a href="?p=scpu_memory.gpio.ls_sync" data-id="357" onclick="onClickNodeLink(event); return(false)">ls_sync</a></td>
+        <td class="address">0x060</td>
+        <td><a href="?p=scpu_memory.gpio.ls_sync" data-id="372" onclick="onClickNodeLink(event); return(false)">ls_sync</a></td>
         <td>Level-Sensitive Synchronization</td>
         <td>
             <a class="headerlink" href="#ls_sync" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="id_code">
-        <td class="address">0x64</td>
-        <td><a href="?p=scpu_memory.gpio.id_code" data-id="358" onclick="onClickNodeLink(event); return(false)">id_code</a></td>
+        <td class="address">0x064</td>
+        <td><a href="?p=scpu_memory.gpio.id_code" data-id="373" onclick="onClickNodeLink(event); return(false)">id_code</a></td>
         <td>GPIO ID Code</td>
         <td>
             <a class="headerlink" href="#id_code" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr class="reserved-addr">
-    <td class="address">0x68</td>
+    <td class="address">0x068</td>
     <td>-</td>
     <td>-</td>
     <td></td>
 </tr>
     <tr id="ver_id_code">
-        <td class="address">0x6C</td>
-        <td><a href="?p=scpu_memory.gpio.ver_id_code" data-id="359" onclick="onClickNodeLink(event); return(false)">ver_id_code</a></td>
+        <td class="address">0x06C</td>
+        <td><a href="?p=scpu_memory.gpio.ver_id_code" data-id="374" onclick="onClickNodeLink(event); return(false)">ver_id_code</a></td>
         <td>GPIO Component Version</td>
         <td>
             <a class="headerlink" href="#ver_id_code" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="config_reg2">
-        <td class="address">0x70</td>
-        <td><a href="?p=scpu_memory.gpio.config_reg2" data-id="360" onclick="onClickNodeLink(event); return(false)">config_reg2</a></td>
+        <td class="address">0x070</td>
+        <td><a href="?p=scpu_memory.gpio.config_reg2" data-id="375" onclick="onClickNodeLink(event); return(false)">config_reg2</a></td>
         <td>GPIO Configuration Register 2</td>
         <td>
             <a class="headerlink" href="#config_reg2" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr id="config_reg1">
-        <td class="address">0x74</td>
-        <td><a href="?p=scpu_memory.gpio.config_reg1" data-id="361" onclick="onClickNodeLink(event); return(false)">config_reg1</a></td>
+        <td class="address">0x074</td>
+        <td><a href="?p=scpu_memory.gpio.config_reg1" data-id="376" onclick="onClickNodeLink(event); return(false)">config_reg1</a></td>
         <td>GPIO Configuration Register 1</td>
         <td>
             <a class="headerlink" href="#config_reg1" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr class="reserved-addr">
+    <td class="address">0x078</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+</tr>
+    <tr id="modsel_a">
+        <td class="address">0x0D8</td>
+        <td><a href="?p=scpu_memory.gpio.modsel_a" data-id="377" onclick="onClickNodeLink(event); return(false)">modsel_a[128]</a></td>
+        <td>Mode Select / Routing?</td>
+        <td>
+            <a class="headerlink" href="#modsel_a" title="Permalink to this row"></a>
         </td>
     </tr>
 </table>

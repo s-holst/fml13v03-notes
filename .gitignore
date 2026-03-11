@@ -210,3 +210,6 @@ __marimo__/
 .claude
 *nogit*
 archlinux/disk.img
+firmware/*.elf
+firmware/*_serdes_*.bin
+firmware/*pmix.bin

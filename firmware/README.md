@@ -2,9 +2,9 @@ Firmware and Bootchain
 ======================
 
 Architecture Overview:
-- Dual-Die Package: die0, die1
+- Dual-Die Package: die-1, die-2
 - Each Die has:
-  - 4-core main CPU (RV64)
+  - 4-core main CPU (SiFive U84, RV64)
   - secure boot co-processor SCPU (SiFive E31 RV32) with masked ROM
   - low-power co-processor LPCPU (SiFive E31 RV32)
   - 16M SPI-Flash that contains boot chain until u-boot (bootspi)
@@ -23,8 +23,8 @@ bootspi
 -------
 
 SPI-Flash dump in linux:
-- `mtd_debug read /dev/mtd/by-name/spi2.0 0 16777216 /root/spi2_0.bin` (die 0)
-- `mtd_debug read /dev/mtd/by-name/spi3.0 0 16777216 /root/spi3_0.bin` (die 1)
+- `mtd_debug read /dev/mtd/by-name/spi2.0 0 16777216 /root/spi2_0.bin` (die-1)
+- `mtd_debug read /dev/mtd/by-name/spi3.0 0 16777216 /root/spi3_0.bin` (die-2)
 
 Boot chain format (in SPI-Flash and compiled binaries):
 - Eswin propriatory format (magic: ESWB)
@@ -33,9 +33,9 @@ Boot chain format (in SPI-Flash and compiled binaries):
 - Payloads have 256 byte headers. magic: 0xBB455357 with load and link address, etc.
 - Eswin's u-boot fork can also burn new images to SPI-Flash (es_bootloader.c).
 - Offsets in SPI-Flash are different from compiled bootchain blobs (re-arranged by es_bootloader.c. Offsets there don't match dumped SPI-Flash)
-- Separate images for die0 and die1, only die0 has opensbi and u-boot
+- Separate images for die-1 and die-2, only die-1 has opensbi and u-boot
 
-SPI may have additional reserved regions to save env, pmix tables
+bootspi has additional reserved regions to save env, pmix tables
 
 Extract the sub-images with this [tool](eswb_extract.py).
 
@@ -208,29 +208,138 @@ header.num_entries = 3
 bootspi - FIRMWARE
 ------------------
 
+Die-1 firmware:
+
 Simple firmware for initial setup.
 Loaded into SCPU-private SPRAM at `0x30008000`.
-- Checks DIE ordinal. firmware for die1 and die2 are different.
+- Checks die ordinal. firmware for die-1 and die-2 are different.
 - Generates first UART output "gpio init!".
 - USB power setup
 - PLL setup for U84
-- PWM setup
-
+- PWM (fan?) setup
 
 bootspi - DDR
 -------------
 
+This section is identical for die-1 and die-2.
+
+Firmware mainly responsible for DDR memory setup and link training.
+Loaded into CodaCache at `0x59000000`.
+Main contents:
+- DDR setup, testing and link training (re-training is triggered by "R" or "r" via UART0)
+- Display first splash screen (Framework x Deepcomputing)
+- Includes zlib for gunzipping the included splash BMP image
+- Includes SPI subsystem for data loading/storing (DDR calibation data?)
+- Fan/thermal management
+- Routines for NPU control/setup, ELF/NIM loader. NIM = NPU Image? Propriatory format.
+- 6 ELF sub-images - three for each NPU:
+  - at `0x5909005C` and `0x590A005C`: e31_boot.S: simple trampoline loaded at `0x80000000`, calls `0x01800000`.
+  - at `0x590916F8`: entry `0x01800000`. An NPU task handler loop for RDMA ops - Die1
+  - at `0x590982E8`: entry `0x01800000`. An NPU task handler loop for Conv ops - Die1
+  - at `0x590A16F8`: entry `0x01800000`. An NPU task handler loop for RDMA ops - Die2
+  - at `0x590A82E8`: entry `0x01800000`. An NPU task handler loop for Conv ops - Die2
+
+
 bootspi - D2D
 -------------
+
+Die-1 firmware:
+
+Firmware responsible for D2D serdes setup and link training.
+
+- Routines for NPU control/setup, ELF/NIM loader. NIM = NPU Image? Propriatory format.
+- Same NPU firmware (6 ELFs) as in DDR. However, D2D only contains NPU die-1 firmware. Instead of die-2 images, die-1 images were used.
+
+- ARC firmware (Serdes Phy?)
+
+- **D2D Sweep Firmware** "d2d_pmix_fw" 344384 bytes at 0x1a840. Only loaded and executed when sweep (PMIX calibration) is deemed necessary.
+
+
+bootspi - D2D - Sweep Firmware
+------------------------------
+
+
+Its primary job is SerDes PHY calibration and runtime management for the die-to-die (D2D) high-speed interconnect, alongside thermal control and NPU lifecycle management.
+It is loaded into SRAM at 0x59200000 and runs on a 4-hart embedded RISC-V cluster (U84).
+
+Multi-threaded firmware:
+- **Hart 0** Main: peripheral init, bootspi init, UART debug CLI
+- **Hart 1** SerDes command executor — IPC-driven BER tests, PMIX calibration, CCA
+- **Hart 2** Thermal PID controller, runs every 2 ms
+- **Hart 3** I²C peripheral handler loop
+
+**Features**
+
+SerDes / D2D PHY calibration
+- Full PHY initialization: clock mode, TX/RX firmware adaptation, pipe TX, PHY status sync
+- PMIX (Phase Mixer) sweep across 8 lanes — per-lane Phase0/Phase90 calibration
+- EQ (equalization) coefficient sweep and programming
+- BER (Bit Error Rate) measurement and threshold testing (standard + noise-floor)
+- Eye scan and oscilloscope-style firmware scope sweep
+- CCA (channel calibration assist) loops
+- Reinit from saved EQ parameters
+
+PMIX table management
+- Temperature-indexed calibration table: ADC → millidegrees conversion
+- Linear regression fit to calibration data
+- Phase center-finding via sweep
+- Table sorting, deduplication, smoothing
+- Merge with and persist to SPI flash (dual-bank with CRC32 verify)
+- Restore PMIX calibration from flash at boot
+
+Thermal management
+- PVT (process-voltage-temperature) sensor read
+- PID controller on hart 2
+- High-temperature threshold interrupt (set_therm_high_threshold)
+- Die temperature printing via UART
+
+NPU lifecycle
+- ELF/NIM image validation and loading into SPRAM
+- DMA reset, SPRAM initialization
+- Multi-core NPU start, firmware boot, inference run entry
+
+IPC subsystem
+- Shared-memory IPC between harts via MMIO (ipc_shmem_*)
+- Bitbang byte/word exchange protocol (ipc_recv_byte_bitbang, ipc_xchg_byte_bitbang)
+- Status bit get/set, CPU run-flag synchronization
+- Hart IPI dispatch (hart_send_ipi)
+
+I²C
+- Two independent I²C master driver implementations (likely for different bus speeds/controllers)
+- Block read/write, register-level read/write, multi-message sequence transfer
+- External PLL configuration over I²C at boot (with retry logic)
+- Flash read via I²C (i2c_read_from_flash)
+
+UART debug CLI (hart 0, interactive)
+- Commands: help, reg_read, reg_write, pmix_scan, verf_test, rterm_test, sweep
+- Two UART driver implementations (different controller instances)
+- Printf-capable output with full format support
+
+PWM — duty cycle control, IPC-forwarded to SerDes block
+
+CRC32 — used to validate PMIX flash banks
+
+**Libraries**
+
+- **newlib** Complete reentrant stdio (vfprintf_r, fflush_r, sinit_check, _reent struct), strtod, sscanf, sprintf, file pool, FILE struct layout. libc string/math: memchr, memmove, strcpy, strncmp, strncpy, strlen, frexp
+- **Doug Lea's dlmalloc** Full dlmalloc/dlfree/dlrealloc with wilderness chunk and bin indexing
+- **David M. Gay's dtoa.c** Complete bignum library: Balloc/Bfree, s2b, b2d, d2b, ulp, diff, cmp, lshift, multadd, ratio, pow10, any_on
+- **GCC soft-float runtime** Full IEEE 754 fp80 (80-bit extended) and fp128 (quad-precision) arithmetic: mul, add, div, compare, pack/unpack, round - likely from libgcc or a custom soft-float layer. High-precision unused. Likely included via string formatting dependency.
+- **Linux syscall ABI** brk (214), read (63), write (64), fstat (80), close (57), kill (62), exit_group (93) — the firmware runs under a Linux-compatible syscall interface, or newlib stubs were compiled against it
+
+
+compiled with -fstack-protector: __stack_chk_fail and canary checks throughout.
+
 
 bootspi - BOOTLOADER
 --------------------
 
-
+TODO
 
 bootspi - BOOTLOADER - OpenSBI
 ------------------------------
 
+TODO
 
 inits PMU, IRQ, IPI, Timer, Console, comms with STM32 on UART2 for power off / cold/warm reboot
 

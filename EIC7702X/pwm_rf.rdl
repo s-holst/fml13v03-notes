@@ -1,0 +1,13 @@
+regfile pwm_rf {
+    name = "PWM";
+    reg { field {} data[31:0]; } timer0_load_count @ 0;
+    reg {
+        field {} reserved[31:5];
+        field {} timer_on100pwm_en[4:4];
+        field {} timer_pwm[3:3];
+        field {} timer_int_mask[2:2];
+        field {} timer_mode[1:1];
+        field {} timer_enable[0:0];
+    } timer0_ctrl @ 0x8;
+    reg { field {} data[31:0]; } timer0_load_count2 @ 0xb0;
+};

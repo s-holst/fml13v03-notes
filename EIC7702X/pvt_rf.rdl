@@ -1,0 +1,54 @@
+
+regfile pvt_rf {
+    name = "PVT Sensor";
+    desc = "Process/Voltage/Temperature sensor. Supports temperature mode and voltage mode.
+    Operating voltage: 0.8V digital, 1.8V analog.
+    Temperature range: -40C to 125C; accuracy +-1C trimmed, +-6C untrimmed.
+    Voltage accuracy: +-3% (3-sigma).
+    Sample rate: 3000 samples/sec.
+    Usage: set REG_PVT_MODE, set REG_PVT_ENA=1, wait for interrupt, read REG_PVT_DATA,
+    write REG_PVT_INT=2 to clear.";
+
+    reg {
+        name = "PVT Trim";
+        desc = "Trimming control signals for gain and offset calibration.";
+        field {} reserved2[31:14] = 0;
+        field { name = "cfg_trimo"; desc = "PVT offset trim control signal."; } cfg_trimo[13:8] = 0;
+        field {} reserved1[7:5] = 0;
+        field { name = "cfg_trimg"; desc = "PVT gain trim control signal."; } cfg_trimg[4:0] = 0;
+    } pvt_trim @ 0x04;
+
+    reg {
+        name = "PVT Mode";
+        desc = "Selects measurement mode. Temperature: cfg_mode=3'b000. Voltage: cfg_mode=3'b100.";
+        field {} reserved[31:3] = 0;
+        field { name = "cfg_mode";
+                desc = "Measurement mode select. 3'b000=temperature, 3'b100=voltage."; } cfg_mode[2:0] = 0;
+    } pvt_mode @ 0x08;
+
+    reg {
+        name = "PVT Enable";
+        desc = "Enables the PVT sensor. Write 1 to start a measurement.";
+        field {} reserved[31:1] = 0;
+        field { name = "pvt_enable"; desc = "PVT enable. 1=enabled."; } pvt_enable[0:0] = 0;
+    } pvt_ena @ 0x0C;
+
+    reg {
+        name = "PVT Interrupt";
+        desc = "Interrupt status and clear. pvt_core_intr is set when output data is valid.
+        Write 2 (pvt_int_clr=1) to clear the interrupt and de-assert pvt_enable.";
+        field {} reserved[31:2] = 0;
+        field { sw = w; hw = r; name = "pvt_int_clr";
+                desc = "Write 1 to clear interrupt and de-assert pvt_enable."; } pvt_int_clr[1:1] = 0;
+        field { sw = r; hw = w; name = "pvt_core_intr";
+                desc = "PVT interrupt. Set to 1 when output data is valid."; } pvt_core_intr[0:0] = 0;
+    } pvt_int @ 0x10;
+
+    reg {
+        name = "PVT Data";
+        desc = "Read-only register containing the latest PVT measurement result.";
+        field {} reserved[31:10] = 0;
+        field { sw = r; hw = w; name = "data_out_pclk";
+                desc = "10-bit PVT measurement output, valid when pvt_core_intr=1."; } data_out_pclk[9:0] = 0;
+    } pvt_data @ 0x14;
+};

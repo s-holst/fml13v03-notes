@@ -3,7 +3,7 @@ regfile gpio_rf {
     name = "GPIO";
     desc = "General Purpose I/O controller. APB slave with 4 ports (A/B/C/D) mapping to
     112 independently configurable GPIO signals. Port A supports configurable interrupt
-    generation with optional debounce. Ports B/C/D are output-data and direction only.";
+    generation with optional debounce.";
 
     reg {
         name = "Port A Data";
@@ -19,6 +19,51 @@ regfile gpio_rf {
         Default direction is configurable via GPIO_DFLT_DIR_A parameter.";
         field { name = "DDR"; desc = "0=Input, 1=Output"; } ddr[31:0] = 0;
     } swporta_ddr @ 0x04;
+
+    reg {
+        name = "Port B Data";
+        desc = "Output values for Port B pins. Each bit drives the corresponding I/O pin when
+        the direction (DDR) is set to Output and the port is in Software mode.
+        Reads back the last value written.";
+        field { name = "DR"; } dr[31:0] = 0;
+    } swportb_dr @ 0x0c;
+
+    reg {
+        name = "Port B Data Direction";
+        desc = "Direction control for Port B pins. 0=Input, 1=Output.
+        Default direction is configurable via GPIO_DFLT_DIR_B parameter.";
+        field { name = "DDR"; desc = "0=Input, 1=Output"; } ddr[31:0] = 0;
+    } swportb_ddr @ 0x10;
+
+    reg {
+        name = "Port C Data";
+        desc = "Output values for Port C pins. Each bit drives the corresponding I/O pin when
+        the direction (DDR) is set to Output and the port is in Software mode.
+        Reads back the last value written.";
+        field { name = "DR"; } dr[31:0] = 0;
+    } swportc_dr @ 0x18;
+
+    reg {
+        name = "Port C Data Direction";
+        desc = "Direction control for Port C pins. 0=Input, 1=Output.
+        Default direction is configurable via GPIO_DFLT_DIR_C parameter.";
+        field { name = "DDR"; desc = "0=Input, 1=Output"; } ddr[31:0] = 0;
+    } swportc_ddr @ 0x1c;
+
+    reg {
+        name = "Port D Data";
+        desc = "Output values for Port D pins. Each bit drives the corresponding I/O pin when
+        the direction (DDR) is set to Output and the port is in Software mode.
+        Reads back the last value written.";
+        field { name = "DR"; } dr[31:0] = 0;
+    } swportd_dr @ 0x24;
+
+    reg {
+        name = "Port D Data Direction";
+        desc = "Direction control for Port D pins. 0=Input, 1=Output.
+        Default direction is configurable via GPIO_DFLT_DIR_D parameter.";
+        field { name = "DDR"; desc = "0=Input, 1=Output"; } ddr[31:0] = 0;
+    } swportd_ddr @ 0x28;
 
     reg {
         name = "Interrupt Enable";
@@ -83,8 +128,29 @@ regfile gpio_rf {
         name = "External Port A";
         desc = "Read-only. Always reflects the current logic level on the Port A external pins,
         regardless of direction or software output value.";
-        field { sw = r; hw = w; name = "EXT_PORTA"; } ext_porta[31:0] = 0;
+        field { sw = r; hw = w; } ext_porta[31:0] = 0;
     } ext_porta @ 0x50;
+
+    reg {
+        name = "External Port B";
+        desc = "Read-only. Always reflects the current logic level on the Port B external pins,
+        regardless of direction or software output value.";
+        field { sw = r; hw = w; } ext_portb[31:0] = 0;
+    } ext_portb @ 0x54;
+
+    reg {
+        name = "External Port C";
+        desc = "Read-only. Always reflects the current logic level on the Port C external pins,
+        regardless of direction or software output value.";
+        field { sw = r; hw = w; } ext_portc[31:0] = 0;
+    } ext_portc @ 0x58;
+
+    reg {
+        name = "External Port D";
+        desc = "Read-only. Always reflects the current logic level on the Port D external pins,
+        regardless of direction or software output value.";
+        field { sw = r; hw = w; } ext_portd[31:0] = 0;
+    } ext_portd @ 0x5c;
 
     reg {
         name = "Level-Sensitive Synchronization";
@@ -153,4 +219,9 @@ regfile gpio_rf {
         field { sw = r; name = "APB_DATA_WIDTH";
                 desc = "APB data bus width: 0=8-bit, 1=16-bit, 2=32-bit."; } apb_data_width[1:0] = 2;
     } config_reg1 @ 0x74;
+
+    reg {
+        name="Mode Select / Routing?";
+        field {} data[31:0];
+    } modsel_a [128] @ 0xd8;
 };

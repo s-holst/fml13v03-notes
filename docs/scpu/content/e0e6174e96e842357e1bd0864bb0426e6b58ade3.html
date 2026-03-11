@@ -10,7 +10,7 @@
     <dt>Base Offset:</dt><dd class="address">0x0</dd>
     <dt>Size:</dt><dd class="address">0x80010000</dd>
     
-    <dt>Source:</dt><dd><a href="https://github.com/s-holst/fml13v03-notes/blob/main/EIC7702X/scpu.rdl#L333" target="_blank">scpu.rdl</a></dd>
+    <dt>Source:</dt><dd><a href="https://github.com/s-holst/fml13v03-notes/blob/main/EIC7702X/scpu.rdl#L328" target="_blank">scpu.rdl</a></dd>
     
 </dl>
 <h2>Description</h2>
@@ -474,7 +474,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
     <tr id="dma0">
         <td class="address">0x50430000</td>
         <td><a href="?p=scpu_memory.dma0" data-id="75" onclick="onClickNodeLink(event); return(false)">dma0</a></td>
-        <td>DMA0 controller</td>
+        <td>DMA controller</td>
         <td>
             <a class="headerlink" href="#dma0" title="Permalink to this row"></a>
         </td>
@@ -662,14 +662,14 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
         </td>
     </tr>
     <tr class="reserved-addr">
-    <td class="address">0x50818004</td>
+    <td class="address">0x508180B4</td>
     <td>-</td>
     <td>-</td>
     <td></td>
 </tr>
     <tr id="uart0">
         <td class="address">0x50900000</td>
-        <td><a href="?p=scpu_memory.uart0" data-id="103" onclick="onClickNodeLink(event); return(false)">uart0</a></td>
+        <td><a href="?p=scpu_memory.uart0" data-id="105" onclick="onClickNodeLink(event); return(false)">uart0</a></td>
         <td>Synopsys DW UART 0 - Primary boot console</td>
         <td>
             <a class="headerlink" href="#uart0" title="Permalink to this row"></a>
@@ -683,7 +683,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="uart1">
         <td class="address">0x50910000</td>
-        <td><a href="?p=scpu_memory.uart1" data-id="133" onclick="onClickNodeLink(event); return(false)">uart1</a></td>
+        <td><a href="?p=scpu_memory.uart1" data-id="135" onclick="onClickNodeLink(event); return(false)">uart1</a></td>
         <td>Synopsys DW UART 1 - [boot-path only]</td>
         <td>
             <a class="headerlink" href="#uart1" title="Permalink to this row"></a>
@@ -697,7 +697,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="uart2">
         <td class="address">0x50920000</td>
-        <td><a href="?p=scpu_memory.uart2" data-id="163" onclick="onClickNodeLink(event); return(false)">uart2</a></td>
+        <td><a href="?p=scpu_memory.uart2" data-id="165" onclick="onClickNodeLink(event); return(false)">uart2</a></td>
         <td>Synopsys DW UART 2</td>
         <td>
             <a class="headerlink" href="#uart2" title="Permalink to this row"></a>
@@ -711,7 +711,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="uart3">
         <td class="address">0x50930000</td>
-        <td><a href="?p=scpu_memory.uart3" data-id="193" onclick="onClickNodeLink(event); return(false)">uart3</a></td>
+        <td><a href="?p=scpu_memory.uart3" data-id="195" onclick="onClickNodeLink(event); return(false)">uart3</a></td>
         <td>Synopsys DW UART 3</td>
         <td>
             <a class="headerlink" href="#uart3" title="Permalink to this row"></a>
@@ -725,7 +725,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="uart4">
         <td class="address">0x50940000</td>
-        <td><a href="?p=scpu_memory.uart4" data-id="223" onclick="onClickNodeLink(event); return(false)">uart4</a></td>
+        <td><a href="?p=scpu_memory.uart4" data-id="225" onclick="onClickNodeLink(event); return(false)">uart4</a></td>
         <td>Synopsys DW UART 4</td>
         <td>
             <a class="headerlink" href="#uart4" title="Permalink to this row"></a>
@@ -739,7 +739,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c0">
         <td class="address">0x50950000</td>
-        <td><a href="?p=scpu_memory.i2c0" data-id="253" onclick="onClickNodeLink(event); return(false)">i2c0</a></td>
+        <td><a href="?p=scpu_memory.i2c0" data-id="255" onclick="onClickNodeLink(event); return(false)">i2c0</a></td>
         <td>I2C0</td>
         <td>
             <a class="headerlink" href="#i2c0" title="Permalink to this row"></a>
@@ -753,7 +753,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c1">
         <td class="address">0x50960000</td>
-        <td><a href="?p=scpu_memory.i2c1" data-id="255" onclick="onClickNodeLink(event); return(false)">i2c1</a></td>
+        <td><a href="?p=scpu_memory.i2c1" data-id="257" onclick="onClickNodeLink(event); return(false)">i2c1</a></td>
         <td>I2C1</td>
         <td>
             <a class="headerlink" href="#i2c1" title="Permalink to this row"></a>
@@ -767,7 +767,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c2">
         <td class="address">0x50970000</td>
-        <td><a href="?p=scpu_memory.i2c2" data-id="257" onclick="onClickNodeLink(event); return(false)">i2c2</a></td>
+        <td><a href="?p=scpu_memory.i2c2" data-id="259" onclick="onClickNodeLink(event); return(false)">i2c2</a></td>
         <td>I2C2</td>
         <td>
             <a class="headerlink" href="#i2c2" title="Permalink to this row"></a>
@@ -781,7 +781,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c3">
         <td class="address">0x50980000</td>
-        <td><a href="?p=scpu_memory.i2c3" data-id="259" onclick="onClickNodeLink(event); return(false)">i2c3</a></td>
+        <td><a href="?p=scpu_memory.i2c3" data-id="261" onclick="onClickNodeLink(event); return(false)">i2c3</a></td>
         <td>I2C3</td>
         <td>
             <a class="headerlink" href="#i2c3" title="Permalink to this row"></a>
@@ -795,7 +795,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c4">
         <td class="address">0x50990000</td>
-        <td><a href="?p=scpu_memory.i2c4" data-id="261" onclick="onClickNodeLink(event); return(false)">i2c4</a></td>
+        <td><a href="?p=scpu_memory.i2c4" data-id="263" onclick="onClickNodeLink(event); return(false)">i2c4</a></td>
         <td>I2C4</td>
         <td>
             <a class="headerlink" href="#i2c4" title="Permalink to this row"></a>
@@ -809,7 +809,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c5">
         <td class="address">0x509A0000</td>
-        <td><a href="?p=scpu_memory.i2c5" data-id="263" onclick="onClickNodeLink(event); return(false)">i2c5</a></td>
+        <td><a href="?p=scpu_memory.i2c5" data-id="265" onclick="onClickNodeLink(event); return(false)">i2c5</a></td>
         <td>I2C5</td>
         <td>
             <a class="headerlink" href="#i2c5" title="Permalink to this row"></a>
@@ -823,7 +823,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c6">
         <td class="address">0x509B0000</td>
-        <td><a href="?p=scpu_memory.i2c6" data-id="265" onclick="onClickNodeLink(event); return(false)">i2c6</a></td>
+        <td><a href="?p=scpu_memory.i2c6" data-id="267" onclick="onClickNodeLink(event); return(false)">i2c6</a></td>
         <td>I2C6</td>
         <td>
             <a class="headerlink" href="#i2c6" title="Permalink to this row"></a>
@@ -837,7 +837,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c7">
         <td class="address">0x509C0000</td>
-        <td><a href="?p=scpu_memory.i2c7" data-id="267" onclick="onClickNodeLink(event); return(false)">i2c7</a></td>
+        <td><a href="?p=scpu_memory.i2c7" data-id="269" onclick="onClickNodeLink(event); return(false)">i2c7</a></td>
         <td>I2C7</td>
         <td>
             <a class="headerlink" href="#i2c7" title="Permalink to this row"></a>
@@ -851,7 +851,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c8">
         <td class="address">0x509D0000</td>
-        <td><a href="?p=scpu_memory.i2c8" data-id="269" onclick="onClickNodeLink(event); return(false)">i2c8</a></td>
+        <td><a href="?p=scpu_memory.i2c8" data-id="271" onclick="onClickNodeLink(event); return(false)">i2c8</a></td>
         <td>I2C8</td>
         <td>
             <a class="headerlink" href="#i2c8" title="Permalink to this row"></a>
@@ -865,7 +865,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c9">
         <td class="address">0x509E0000</td>
-        <td><a href="?p=scpu_memory.i2c9" data-id="271" onclick="onClickNodeLink(event); return(false)">i2c9</a></td>
+        <td><a href="?p=scpu_memory.i2c9" data-id="273" onclick="onClickNodeLink(event); return(false)">i2c9</a></td>
         <td>I2C9</td>
         <td>
             <a class="headerlink" href="#i2c9" title="Permalink to this row"></a>
@@ -879,7 +879,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox">
         <td class="address">0x50A00000</td>
-        <td><a href="?p=scpu_memory.mbox" data-id="273" onclick="onClickNodeLink(event); return(false)">mbox</a></td>
+        <td><a href="?p=scpu_memory.mbox" data-id="275" onclick="onClickNodeLink(event); return(false)">mbox</a></td>
         <td>U84→SCPU mailbox [boot-path only]</td>
         <td>
             <a class="headerlink" href="#mbox" title="Permalink to this row"></a>
@@ -893,7 +893,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_scpu_to_u84">
         <td class="address">0x50A10000</td>
-        <td><a href="?p=scpu_memory.mbox_scpu_to_u84" data-id="275" onclick="onClickNodeLink(event); return(false)">mbox_scpu_to_u84</a></td>
+        <td><a href="?p=scpu_memory.mbox_scpu_to_u84" data-id="277" onclick="onClickNodeLink(event); return(false)">mbox_scpu_to_u84</a></td>
         <td>SCPU → U84</td>
         <td>
             <a class="headerlink" href="#mbox_scpu_to_u84" title="Permalink to this row"></a>
@@ -907,7 +907,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_u84_to_lcpu">
         <td class="address">0x50A20000</td>
-        <td><a href="?p=scpu_memory.mbox_u84_to_lcpu" data-id="277" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_lcpu</a></td>
+        <td><a href="?p=scpu_memory.mbox_u84_to_lcpu" data-id="279" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_lcpu</a></td>
         <td>U84 → LCPU</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_lcpu" title="Permalink to this row"></a>
@@ -921,7 +921,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_lcpu_to_u84">
         <td class="address">0x50A30000</td>
-        <td><a href="?p=scpu_memory.mbox_lcpu_to_u84" data-id="279" onclick="onClickNodeLink(event); return(false)">mbox_lcpu_to_u84</a></td>
+        <td><a href="?p=scpu_memory.mbox_lcpu_to_u84" data-id="281" onclick="onClickNodeLink(event); return(false)">mbox_lcpu_to_u84</a></td>
         <td>LCPU → U84</td>
         <td>
             <a class="headerlink" href="#mbox_lcpu_to_u84" title="Permalink to this row"></a>
@@ -935,7 +935,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_u84_to_npu0">
         <td class="address">0x50A40000</td>
-        <td><a href="?p=scpu_memory.mbox_u84_to_npu0" data-id="281" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_npu0</a></td>
+        <td><a href="?p=scpu_memory.mbox_u84_to_npu0" data-id="283" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_npu0</a></td>
         <td>U84 → NPU0</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_npu0" title="Permalink to this row"></a>
@@ -949,7 +949,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_npu0_to_u84">
         <td class="address">0x50A50000</td>
-        <td><a href="?p=scpu_memory.mbox_npu0_to_u84" data-id="283" onclick="onClickNodeLink(event); return(false)">mbox_npu0_to_u84</a></td>
+        <td><a href="?p=scpu_memory.mbox_npu0_to_u84" data-id="285" onclick="onClickNodeLink(event); return(false)">mbox_npu0_to_u84</a></td>
         <td>NPU0 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_npu0_to_u84" title="Permalink to this row"></a>
@@ -963,7 +963,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_u84_to_npu1">
         <td class="address">0x50A60000</td>
-        <td><a href="?p=scpu_memory.mbox_u84_to_npu1" data-id="285" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_npu1</a></td>
+        <td><a href="?p=scpu_memory.mbox_u84_to_npu1" data-id="287" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_npu1</a></td>
         <td>U84 → NPU1</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_npu1" title="Permalink to this row"></a>
@@ -977,7 +977,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_npu1_to_u84">
         <td class="address">0x50A70000</td>
-        <td><a href="?p=scpu_memory.mbox_npu1_to_u84" data-id="287" onclick="onClickNodeLink(event); return(false)">mbox_npu1_to_u84</a></td>
+        <td><a href="?p=scpu_memory.mbox_npu1_to_u84" data-id="289" onclick="onClickNodeLink(event); return(false)">mbox_npu1_to_u84</a></td>
         <td>NPU1 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_npu1_to_u84" title="Permalink to this row"></a>
@@ -991,7 +991,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_u84_to_dsp0">
         <td class="address">0x50A80000</td>
-        <td><a href="?p=scpu_memory.mbox_u84_to_dsp0" data-id="289" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp0</a></td>
+        <td><a href="?p=scpu_memory.mbox_u84_to_dsp0" data-id="291" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp0</a></td>
         <td>U84 → DSP0</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_dsp0" title="Permalink to this row"></a>
@@ -1005,7 +1005,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_dsp0_to_u84">
         <td class="address">0x50A90000</td>
-        <td><a href="?p=scpu_memory.mbox_dsp0_to_u84" data-id="291" onclick="onClickNodeLink(event); return(false)">mbox_dsp0_to_u84</a></td>
+        <td><a href="?p=scpu_memory.mbox_dsp0_to_u84" data-id="293" onclick="onClickNodeLink(event); return(false)">mbox_dsp0_to_u84</a></td>
         <td>DSP0 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_dsp0_to_u84" title="Permalink to this row"></a>
@@ -1019,7 +1019,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_u84_to_dsp1">
         <td class="address">0x50AA0000</td>
-        <td><a href="?p=scpu_memory.mbox_u84_to_dsp1" data-id="293" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp1</a></td>
+        <td><a href="?p=scpu_memory.mbox_u84_to_dsp1" data-id="295" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp1</a></td>
         <td>U84 → DSP1</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_dsp1" title="Permalink to this row"></a>
@@ -1033,7 +1033,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_dsp1_to_u84">
         <td class="address">0x50AB0000</td>
-        <td><a href="?p=scpu_memory.mbox_dsp1_to_u84" data-id="295" onclick="onClickNodeLink(event); return(false)">mbox_dsp1_to_u84</a></td>
+        <td><a href="?p=scpu_memory.mbox_dsp1_to_u84" data-id="297" onclick="onClickNodeLink(event); return(false)">mbox_dsp1_to_u84</a></td>
         <td>DSP1 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_dsp1_to_u84" title="Permalink to this row"></a>
@@ -1047,7 +1047,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_u84_to_dsp2">
         <td class="address">0x50AC0000</td>
-        <td><a href="?p=scpu_memory.mbox_u84_to_dsp2" data-id="297" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp2</a></td>
+        <td><a href="?p=scpu_memory.mbox_u84_to_dsp2" data-id="299" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp2</a></td>
         <td>U84 → DSP2</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_dsp2" title="Permalink to this row"></a>
@@ -1061,7 +1061,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_dsp2_to_u84">
         <td class="address">0x50AD0000</td>
-        <td><a href="?p=scpu_memory.mbox_dsp2_to_u84" data-id="299" onclick="onClickNodeLink(event); return(false)">mbox_dsp2_to_u84</a></td>
+        <td><a href="?p=scpu_memory.mbox_dsp2_to_u84" data-id="301" onclick="onClickNodeLink(event); return(false)">mbox_dsp2_to_u84</a></td>
         <td>DSP2 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_dsp2_to_u84" title="Permalink to this row"></a>
@@ -1075,7 +1075,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_u84_to_dsp3">
         <td class="address">0x50AE0000</td>
-        <td><a href="?p=scpu_memory.mbox_u84_to_dsp3" data-id="301" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp3</a></td>
+        <td><a href="?p=scpu_memory.mbox_u84_to_dsp3" data-id="303" onclick="onClickNodeLink(event); return(false)">mbox_u84_to_dsp3</a></td>
         <td>U84 → DSP3</td>
         <td>
             <a class="headerlink" href="#mbox_u84_to_dsp3" title="Permalink to this row"></a>
@@ -1089,7 +1089,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="mbox_dsp3_to_u84">
         <td class="address">0x50AF0000</td>
-        <td><a href="?p=scpu_memory.mbox_dsp3_to_u84" data-id="303" onclick="onClickNodeLink(event); return(false)">mbox_dsp3_to_u84</a></td>
+        <td><a href="?p=scpu_memory.mbox_dsp3_to_u84" data-id="305" onclick="onClickNodeLink(event); return(false)">mbox_dsp3_to_u84</a></td>
         <td>DSP3 → U84</td>
         <td>
             <a class="headerlink" href="#mbox_dsp3_to_u84" title="Permalink to this row"></a>
@@ -1103,21 +1103,21 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="pvt0">
         <td class="address">0x50B00000</td>
-        <td><a href="?p=scpu_memory.pvt0" data-id="305" onclick="onClickNodeLink(event); return(false)">pvt0</a></td>
-        <td>PVT (Process-Voltage-Temperature) monitor</td>
+        <td><a href="?p=scpu_memory.pvt0" data-id="307" onclick="onClickNodeLink(event); return(false)">pvt0</a></td>
+        <td>PVT Sensor</td>
         <td>
             <a class="headerlink" href="#pvt0" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr class="reserved-addr">
-    <td class="address">0x50B00004</td>
+    <td class="address">0x50B00018</td>
     <td>-</td>
     <td>-</td>
     <td></td>
 </tr>
     <tr id="fan">
         <td class="address">0x50B50000</td>
-        <td><a href="?p=scpu_memory.fan" data-id="307" onclick="onClickNodeLink(event); return(false)">fan</a></td>
+        <td><a href="?p=scpu_memory.fan" data-id="313" onclick="onClickNodeLink(event); return(false)">fan</a></td>
         <td>Fan control</td>
         <td>
             <a class="headerlink" href="#fan" title="Permalink to this row"></a>
@@ -1131,7 +1131,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="smmu">
         <td class="address">0x50C00000</td>
-        <td><a href="?p=scpu_memory.smmu" data-id="309" onclick="onClickNodeLink(event); return(false)">smmu</a></td>
+        <td><a href="?p=scpu_memory.smmu" data-id="315" onclick="onClickNodeLink(event); return(false)">smmu</a></td>
         <td>SMMU</td>
         <td>
             <a class="headerlink" href="#smmu" title="Permalink to this row"></a>
@@ -1145,7 +1145,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="isp0">
         <td class="address">0x51000000</td>
-        <td><a href="?p=scpu_memory.isp0" data-id="311" onclick="onClickNodeLink(event); return(false)">isp0</a></td>
+        <td><a href="?p=scpu_memory.isp0" data-id="317" onclick="onClickNodeLink(event); return(false)">isp0</a></td>
         <td>ISP0</td>
         <td>
             <a class="headerlink" href="#isp0" title="Permalink to this row"></a>
@@ -1159,7 +1159,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="isp1">
         <td class="address">0x51010000</td>
-        <td><a href="?p=scpu_memory.isp1" data-id="313" onclick="onClickNodeLink(event); return(false)">isp1</a></td>
+        <td><a href="?p=scpu_memory.isp1" data-id="319" onclick="onClickNodeLink(event); return(false)">isp1</a></td>
         <td>ISP1</td>
         <td>
             <a class="headerlink" href="#isp1" title="Permalink to this row"></a>
@@ -1173,7 +1173,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dewrap">
         <td class="address">0x51020000</td>
-        <td><a href="?p=scpu_memory.dewrap" data-id="315" onclick="onClickNodeLink(event); return(false)">dewrap</a></td>
+        <td><a href="?p=scpu_memory.dewrap" data-id="321" onclick="onClickNodeLink(event); return(false)">dewrap</a></td>
         <td>Dewarp/lens-correction engine</td>
         <td>
             <a class="headerlink" href="#dewrap" title="Permalink to this row"></a>
@@ -1187,7 +1187,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="vi_csr">
         <td class="address">0x51030000</td>
-        <td><a href="?p=scpu_memory.vi_csr" data-id="317" onclick="onClickNodeLink(event); return(false)">vi_csr</a></td>
+        <td><a href="?p=scpu_memory.vi_csr" data-id="323" onclick="onClickNodeLink(event); return(false)">vi_csr</a></td>
         <td>VI Top CSR</td>
         <td>
             <a class="headerlink" href="#vi_csr" title="Permalink to this row"></a>
@@ -1201,7 +1201,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="csi2_0">
         <td class="address">0x51050000</td>
-        <td><a href="?p=scpu_memory.csi2_0" data-id="319" onclick="onClickNodeLink(event); return(false)">csi2_0</a></td>
+        <td><a href="?p=scpu_memory.csi2_0" data-id="325" onclick="onClickNodeLink(event); return(false)">csi2_0</a></td>
         <td>MIPI CSI-2 receiver 0</td>
         <td>
             <a class="headerlink" href="#csi2_0" title="Permalink to this row"></a>
@@ -1215,7 +1215,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="csi2_1">
         <td class="address">0x51060000</td>
-        <td><a href="?p=scpu_memory.csi2_1" data-id="321" onclick="onClickNodeLink(event); return(false)">csi2_1</a></td>
+        <td><a href="?p=scpu_memory.csi2_1" data-id="327" onclick="onClickNodeLink(event); return(false)">csi2_1</a></td>
         <td>MIPI CSI-2 receiver 1</td>
         <td>
             <a class="headerlink" href="#csi2_1" title="Permalink to this row"></a>
@@ -1229,7 +1229,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="csi2_2">
         <td class="address">0x51070000</td>
-        <td><a href="?p=scpu_memory.csi2_2" data-id="323" onclick="onClickNodeLink(event); return(false)">csi2_2</a></td>
+        <td><a href="?p=scpu_memory.csi2_2" data-id="329" onclick="onClickNodeLink(event); return(false)">csi2_2</a></td>
         <td>MIPI CSI-2 receiver 2</td>
         <td>
             <a class="headerlink" href="#csi2_2" title="Permalink to this row"></a>
@@ -1243,7 +1243,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="csi2_3">
         <td class="address">0x51080000</td>
-        <td><a href="?p=scpu_memory.csi2_3" data-id="325" onclick="onClickNodeLink(event); return(false)">csi2_3</a></td>
+        <td><a href="?p=scpu_memory.csi2_3" data-id="331" onclick="onClickNodeLink(event); return(false)">csi2_3</a></td>
         <td>MIPI CSI-2 receiver 3</td>
         <td>
             <a class="headerlink" href="#csi2_3" title="Permalink to this row"></a>
@@ -1257,7 +1257,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="csi2_4">
         <td class="address">0x51090000</td>
-        <td><a href="?p=scpu_memory.csi2_4" data-id="327" onclick="onClickNodeLink(event); return(false)">csi2_4</a></td>
+        <td><a href="?p=scpu_memory.csi2_4" data-id="333" onclick="onClickNodeLink(event); return(false)">csi2_4</a></td>
         <td>MIPI CSI-2 receiver 4</td>
         <td>
             <a class="headerlink" href="#csi2_4" title="Permalink to this row"></a>
@@ -1271,7 +1271,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="csi2_5">
         <td class="address">0x510A0000</td>
-        <td><a href="?p=scpu_memory.csi2_5" data-id="329" onclick="onClickNodeLink(event); return(false)">csi2_5</a></td>
+        <td><a href="?p=scpu_memory.csi2_5" data-id="335" onclick="onClickNodeLink(event); return(false)">csi2_5</a></td>
         <td>MIPI CSI-2 receiver 5</td>
         <td>
             <a class="headerlink" href="#csi2_5" title="Permalink to this row"></a>
@@ -1285,7 +1285,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dphy0">
         <td class="address">0x510C0000</td>
-        <td><a href="?p=scpu_memory.dphy0" data-id="331" onclick="onClickNodeLink(event); return(false)">dphy0</a></td>
+        <td><a href="?p=scpu_memory.dphy0" data-id="337" onclick="onClickNodeLink(event); return(false)">dphy0</a></td>
         <td>MIPI D-PHY 0</td>
         <td>
             <a class="headerlink" href="#dphy0" title="Permalink to this row"></a>
@@ -1299,7 +1299,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dphy1">
         <td class="address">0x510E0000</td>
-        <td><a href="?p=scpu_memory.dphy1" data-id="333" onclick="onClickNodeLink(event); return(false)">dphy1</a></td>
+        <td><a href="?p=scpu_memory.dphy1" data-id="339" onclick="onClickNodeLink(event); return(false)">dphy1</a></td>
         <td>MIPI D-PHY 1</td>
         <td>
             <a class="headerlink" href="#dphy1" title="Permalink to this row"></a>
@@ -1313,7 +1313,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dphy2">
         <td class="address">0x51100000</td>
-        <td><a href="?p=scpu_memory.dphy2" data-id="335" onclick="onClickNodeLink(event); return(false)">dphy2</a></td>
+        <td><a href="?p=scpu_memory.dphy2" data-id="341" onclick="onClickNodeLink(event); return(false)">dphy2</a></td>
         <td>MIPI D-PHY 2</td>
         <td>
             <a class="headerlink" href="#dphy2" title="Permalink to this row"></a>
@@ -1327,7 +1327,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dphy3">
         <td class="address">0x51120000</td>
-        <td><a href="?p=scpu_memory.dphy3" data-id="337" onclick="onClickNodeLink(event); return(false)">dphy3</a></td>
+        <td><a href="?p=scpu_memory.dphy3" data-id="343" onclick="onClickNodeLink(event); return(false)">dphy3</a></td>
         <td>MIPI D-PHY 3</td>
         <td>
             <a class="headerlink" href="#dphy3" title="Permalink to this row"></a>
@@ -1341,7 +1341,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dphy4">
         <td class="address">0x51140000</td>
-        <td><a href="?p=scpu_memory.dphy4" data-id="339" onclick="onClickNodeLink(event); return(false)">dphy4</a></td>
+        <td><a href="?p=scpu_memory.dphy4" data-id="345" onclick="onClickNodeLink(event); return(false)">dphy4</a></td>
         <td>MIPI D-PHY 4</td>
         <td>
             <a class="headerlink" href="#dphy4" title="Permalink to this row"></a>
@@ -1355,7 +1355,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dphy5">
         <td class="address">0x51160000</td>
-        <td><a href="?p=scpu_memory.dphy5" data-id="341" onclick="onClickNodeLink(event); return(false)">dphy5</a></td>
+        <td><a href="?p=scpu_memory.dphy5" data-id="347" onclick="onClickNodeLink(event); return(false)">dphy5</a></td>
         <td>MIPI D-PHY 5</td>
         <td>
             <a class="headerlink" href="#dphy5" title="Permalink to this row"></a>
@@ -1369,7 +1369,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="gpu">
         <td class="address">0x51400000</td>
-        <td><a href="?p=scpu_memory.gpu" data-id="343" onclick="onClickNodeLink(event); return(false)">gpu</a></td>
+        <td><a href="?p=scpu_memory.gpu" data-id="349" onclick="onClickNodeLink(event); return(false)">gpu</a></td>
         <td>GPU (P550 / SiFive Intelligence X280)</td>
         <td>
             <a class="headerlink" href="#gpu" title="Permalink to this row"></a>
@@ -1383,21 +1383,21 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="gpio">
         <td class="address">0x51600000</td>
-        <td><a href="?p=scpu_memory.gpio" data-id="345" onclick="onClickNodeLink(event); return(false)">gpio</a></td>
+        <td><a href="?p=scpu_memory.gpio" data-id="351" onclick="onClickNodeLink(event); return(false)">gpio</a></td>
         <td>GPIO</td>
         <td>
             <a class="headerlink" href="#gpio" title="Permalink to this row"></a>
         </td>
     </tr>
     <tr class="reserved-addr">
-    <td class="address">0x51600078</td>
+    <td class="address">0x516002D8</td>
     <td>-</td>
     <td>-</td>
     <td></td>
 </tr>
     <tr id="bootspi">
         <td class="address">0x51800000</td>
-        <td><a href="?p=scpu_memory.bootspi" data-id="362" onclick="onClickNodeLink(event); return(false)">bootspi</a></td>
+        <td><a href="?p=scpu_memory.bootspi" data-id="378" onclick="onClickNodeLink(event); return(false)">bootspi</a></td>
         <td>Boot SPI Controller</td>
         <td>
             <a class="headerlink" href="#bootspi" title="Permalink to this row"></a>
@@ -1411,7 +1411,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="pmu">
         <td class="address">0x51808000</td>
-        <td><a href="?p=scpu_memory.pmu" data-id="380" onclick="onClickNodeLink(event); return(false)">pmu</a></td>
+        <td><a href="?p=scpu_memory.pmu" data-id="396" onclick="onClickNodeLink(event); return(false)">pmu</a></td>
         <td>PMU</td>
         <td>
             <a class="headerlink" href="#pmu" title="Permalink to this row"></a>
@@ -1425,7 +1425,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="syscon">
         <td class="address">0x51810000</td>
-        <td><a href="?p=scpu_memory.syscon" data-id="382" onclick="onClickNodeLink(event); return(false)">syscon</a></td>
+        <td><a href="?p=scpu_memory.syscon" data-id="398" onclick="onClickNodeLink(event); return(false)">syscon</a></td>
         <td>SYSCON</td>
         <td>
             <a class="headerlink" href="#syscon" title="Permalink to this row"></a>
@@ -1439,7 +1439,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="rtc">
         <td class="address">0x51818000</td>
-        <td><a href="?p=scpu_memory.rtc" data-id="445" onclick="onClickNodeLink(event); return(false)">rtc</a></td>
+        <td><a href="?p=scpu_memory.rtc" data-id="461" onclick="onClickNodeLink(event); return(false)">rtc</a></td>
         <td>RTC</td>
         <td>
             <a class="headerlink" href="#rtc" title="Permalink to this row"></a>
@@ -1453,7 +1453,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="aon_crg">
         <td class="address">0x51820000</td>
-        <td><a href="?p=scpu_memory.aon_crg" data-id="447" onclick="onClickNodeLink(event); return(false)">aon_crg</a></td>
+        <td><a href="?p=scpu_memory.aon_crg" data-id="463" onclick="onClickNodeLink(event); return(false)">aon_crg</a></td>
         <td>? AON domain [boot-path only], likely AONCRG or PMCRG</td>
         <td>
             <a class="headerlink" href="#aon_crg" title="Permalink to this row"></a>
@@ -1467,7 +1467,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="syscrg">
         <td class="address">0x51828000</td>
-        <td><a href="?p=scpu_memory.syscrg" data-id="449" onclick="onClickNodeLink(event); return(false)">syscrg</a></td>
+        <td><a href="?p=scpu_memory.syscrg" data-id="465" onclick="onClickNodeLink(event); return(false)">syscrg</a></td>
         <td>SYSCRG</td>
         <td>
             <a class="headerlink" href="#syscrg" title="Permalink to this row"></a>
@@ -1481,7 +1481,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c_aon0">
         <td class="address">0x51830000</td>
-        <td><a href="?p=scpu_memory.i2c_aon0" data-id="632" onclick="onClickNodeLink(event); return(false)">i2c_aon0</a></td>
+        <td><a href="?p=scpu_memory.i2c_aon0" data-id="648" onclick="onClickNodeLink(event); return(false)">i2c_aon0</a></td>
         <td>AON I2C0</td>
         <td>
             <a class="headerlink" href="#i2c_aon0" title="Permalink to this row"></a>
@@ -1495,7 +1495,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="i2c_aon1">
         <td class="address">0x51838000</td>
-        <td><a href="?p=scpu_memory.i2c_aon1" data-id="634" onclick="onClickNodeLink(event); return(false)">i2c_aon1</a></td>
+        <td><a href="?p=scpu_memory.i2c_aon1" data-id="650" onclick="onClickNodeLink(event); return(false)">i2c_aon1</a></td>
         <td>AON I2C1</td>
         <td>
             <a class="headerlink" href="#i2c_aon1" title="Permalink to this row"></a>
@@ -1509,7 +1509,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="timer0">
         <td class="address">0x51840000</td>
-        <td><a href="?p=scpu_memory.timer0" data-id="636" onclick="onClickNodeLink(event); return(false)">timer0</a></td>
+        <td><a href="?p=scpu_memory.timer0" data-id="652" onclick="onClickNodeLink(event); return(false)">timer0</a></td>
         <td>TIMER0 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#timer0" title="Permalink to this row"></a>
@@ -1523,7 +1523,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="timer1">
         <td class="address">0x51848000</td>
-        <td><a href="?p=scpu_memory.timer1" data-id="638" onclick="onClickNodeLink(event); return(false)">timer1</a></td>
+        <td><a href="?p=scpu_memory.timer1" data-id="654" onclick="onClickNodeLink(event); return(false)">timer1</a></td>
         <td>TIMER1</td>
         <td>
             <a class="headerlink" href="#timer1" title="Permalink to this row"></a>
@@ -1537,7 +1537,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="timer2">
         <td class="address">0x51850000</td>
-        <td><a href="?p=scpu_memory.timer2" data-id="640" onclick="onClickNodeLink(event); return(false)">timer2</a></td>
+        <td><a href="?p=scpu_memory.timer2" data-id="656" onclick="onClickNodeLink(event); return(false)">timer2</a></td>
         <td>TIMER2</td>
         <td>
             <a class="headerlink" href="#timer2" title="Permalink to this row"></a>
@@ -1551,7 +1551,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="timer3">
         <td class="address">0x51858000</td>
-        <td><a href="?p=scpu_memory.timer3" data-id="642" onclick="onClickNodeLink(event); return(false)">timer3</a></td>
+        <td><a href="?p=scpu_memory.timer3" data-id="658" onclick="onClickNodeLink(event); return(false)">timer3</a></td>
         <td>TIMER3</td>
         <td>
             <a class="headerlink" href="#timer3" title="Permalink to this row"></a>
@@ -1563,9 +1563,23 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
     <td>-</td>
     <td></td>
 </tr>
+    <tr id="dma1">
+        <td class="address">0x518C0000</td>
+        <td><a href="?p=scpu_memory.dma1" data-id="660" onclick="onClickNodeLink(event); return(false)">dma1</a></td>
+        <td>DMA controller</td>
+        <td>
+            <a class="headerlink" href="#dma1" title="Permalink to this row"></a>
+        </td>
+    </tr>
+    <tr class="reserved-addr">
+    <td class="address">0x518C0004</td>
+    <td>-</td>
+    <td>-</td>
+    <td></td>
+</tr>
     <tr id="scpu_per">
         <td class="address">0x51900000</td>
-        <td><a href="?p=scpu_memory.scpu_per" data-id="644" onclick="onClickNodeLink(event); return(false)">scpu_per</a></td>
+        <td><a href="?p=scpu_memory.scpu_per" data-id="662" onclick="onClickNodeLink(event); return(false)">scpu_per</a></td>
         <td>? may be SPAcc MCPU-alias or second instance [boot-path only]</td>
         <td>
             <a class="headerlink" href="#scpu_per" title="Permalink to this row"></a>
@@ -1579,7 +1593,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="coda_llc0">
         <td class="address">0x51D88000</td>
-        <td><a href="?p=scpu_memory.coda_llc0" data-id="646" onclick="onClickNodeLink(event); return(false)">coda_llc0</a></td>
+        <td><a href="?p=scpu_memory.coda_llc0" data-id="664" onclick="onClickNodeLink(event); return(false)">coda_llc0</a></td>
         <td>CodaCache LLC Controller 0</td>
         <td>
             <a class="headerlink" href="#coda_llc0" title="Permalink to this row"></a>
@@ -1593,7 +1607,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="coda_llc1">
         <td class="address">0x51D89000</td>
-        <td><a href="?p=scpu_memory.coda_llc1" data-id="681" onclick="onClickNodeLink(event); return(false)">coda_llc1</a></td>
+        <td><a href="?p=scpu_memory.coda_llc1" data-id="699" onclick="onClickNodeLink(event); return(false)">coda_llc1</a></td>
         <td>CodaCache LLC Controller 1</td>
         <td>
             <a class="headerlink" href="#coda_llc1" title="Permalink to this row"></a>
@@ -1607,7 +1621,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="noc">
         <td class="address">0x52000000</td>
-        <td><a href="?p=scpu_memory.noc" data-id="716" onclick="onClickNodeLink(event); return(false)">noc</a></td>
+        <td><a href="?p=scpu_memory.noc" data-id="734" onclick="onClickNodeLink(event); return(false)">noc</a></td>
         <td>System NoC configuration space (packet/trans probes, QoS settings, filters)</td>
         <td>
             <a class="headerlink" href="#noc" title="Permalink to this row"></a>
@@ -1621,7 +1635,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="d2d">
         <td class="address">0x52100000</td>
-        <td><a href="?p=scpu_memory.d2d" data-id="718" onclick="onClickNodeLink(event); return(false)">d2d</a></td>
+        <td><a href="?p=scpu_memory.d2d" data-id="736" onclick="onClickNodeLink(event); return(false)">d2d</a></td>
         <td>Die-to-Die subsystem [boot-path only]</td>
         <td>
             <a class="headerlink" href="#d2d" title="Permalink to this row"></a>
@@ -1635,7 +1649,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dsp_subsys">
         <td class="address">0x52200000</td>
-        <td><a href="?p=scpu_memory.dsp_subsys" data-id="722" onclick="onClickNodeLink(event); return(false)">dsp_subsys</a></td>
+        <td><a href="?p=scpu_memory.dsp_subsys" data-id="740" onclick="onClickNodeLink(event); return(false)">dsp_subsys</a></td>
         <td>DSP subsystem (es-dsp-subsys)</td>
         <td>
             <a class="headerlink" href="#dsp_subsys" title="Permalink to this row"></a>
@@ -1649,7 +1663,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="ddrctl0">
         <td class="address">0x52300000</td>
-        <td><a href="?p=scpu_memory.ddrctl0" data-id="724" onclick="onClickNodeLink(event); return(false)">ddrctl0</a></td>
+        <td><a href="?p=scpu_memory.ddrctl0" data-id="742" onclick="onClickNodeLink(event); return(false)">ddrctl0</a></td>
         <td>DDR Controller 0 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#ddrctl0" title="Permalink to this row"></a>
@@ -1663,7 +1677,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="ddrctl1">
         <td class="address">0x52380000</td>
-        <td><a href="?p=scpu_memory.ddrctl1" data-id="726" onclick="onClickNodeLink(event); return(false)">ddrctl1</a></td>
+        <td><a href="?p=scpu_memory.ddrctl1" data-id="744" onclick="onClickNodeLink(event); return(false)">ddrctl1</a></td>
         <td>DDR Controller 1 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#ddrctl1" title="Permalink to this row"></a>
@@ -1677,7 +1691,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="ddrphy0">
         <td class="address">0x53000000</td>
-        <td><a href="?p=scpu_memory.ddrphy0" data-id="728" onclick="onClickNodeLink(event); return(false)">ddrphy0</a></td>
+        <td><a href="?p=scpu_memory.ddrphy0" data-id="746" onclick="onClickNodeLink(event); return(false)">ddrphy0</a></td>
         <td>DDR PHY 0 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#ddrphy0" title="Permalink to this row"></a>
@@ -1691,7 +1705,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="ddrphy1">
         <td class="address">0x53800000</td>
-        <td><a href="?p=scpu_memory.ddrphy1" data-id="730" onclick="onClickNodeLink(event); return(false)">ddrphy1</a></td>
+        <td><a href="?p=scpu_memory.ddrphy1" data-id="748" onclick="onClickNodeLink(event); return(false)">ddrphy1</a></td>
         <td>DDR PHY 1 [boot-path only]</td>
         <td>
             <a class="headerlink" href="#ddrphy1" title="Permalink to this row"></a>
@@ -1705,7 +1719,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="pcie_ip">
         <td class="address">0x54000000</td>
-        <td><a href="?p=scpu_memory.pcie_ip" data-id="732" onclick="onClickNodeLink(event); return(false)">pcie_ip</a></td>
+        <td><a href="?p=scpu_memory.pcie_ip" data-id="750" onclick="onClickNodeLink(event); return(false)">pcie_ip</a></td>
         <td>PCIe IP DBI config space</td>
         <td>
             <a class="headerlink" href="#pcie_ip" title="Permalink to this row"></a>
@@ -1719,7 +1733,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="masked_rom">
         <td class="address">0x58000000</td>
-        <td><a href="?p=scpu_memory.masked_rom" data-id="734" onclick="onClickNodeLink(event); return(false)">masked_rom</a></td>
+        <td><a href="?p=scpu_memory.masked_rom" data-id="752" onclick="onClickNodeLink(event); return(false)">masked_rom</a></td>
         <td>SCPU masked ROM</td>
         <td>
             <a class="headerlink" href="#masked_rom" title="Permalink to this row"></a>
@@ -1733,7 +1747,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="aon_tim">
         <td class="address">0x58800000</td>
-        <td><a href="?p=scpu_memory.aon_tim" data-id="735" onclick="onClickNodeLink(event); return(false)">aon_tim</a></td>
+        <td><a href="?p=scpu_memory.aon_tim" data-id="753" onclick="onClickNodeLink(event); return(false)">aon_tim</a></td>
         <td>AON Timer SRAM window (size TBD)</td>
         <td>
             <a class="headerlink" href="#aon_tim" title="Permalink to this row"></a>
@@ -1747,7 +1761,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="coda_cache">
         <td class="address">0x59000000</td>
-        <td><a href="?p=scpu_memory.coda_cache" data-id="736" onclick="onClickNodeLink(event); return(false)">coda_cache</a></td>
+        <td><a href="?p=scpu_memory.coda_cache" data-id="754" onclick="onClickNodeLink(event); return(false)">coda_cache</a></td>
         <td>CodaCache0 SPRAM boot load target</td>
         <td>
             <a class="headerlink" href="#coda_cache" title="Permalink to this row"></a>
@@ -1761,7 +1775,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="coda1_cache">
         <td class="address">0x5A000000</td>
-        <td><a href="?p=scpu_memory.coda1_cache" data-id="737" onclick="onClickNodeLink(event); return(false)">coda1_cache</a></td>
+        <td><a href="?p=scpu_memory.coda1_cache" data-id="755" onclick="onClickNodeLink(event); return(false)">coda1_cache</a></td>
         <td>CodaCache1 SPRAM (NPU)</td>
         <td>
             <a class="headerlink" href="#coda1_cache" title="Permalink to this row"></a>
@@ -1775,7 +1789,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dsp_sram">
         <td class="address">0x5B000000</td>
-        <td><a href="?p=scpu_memory.dsp_sram" data-id="738" onclick="onClickNodeLink(event); return(false)">dsp_sram</a></td>
+        <td><a href="?p=scpu_memory.dsp_sram" data-id="756" onclick="onClickNodeLink(event); return(false)">dsp_sram</a></td>
         <td>DSP SRAM (size TBD)</td>
         <td>
             <a class="headerlink" href="#dsp_sram" title="Permalink to this row"></a>
@@ -1789,7 +1803,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="nor_flash">
         <td class="address">0x5C000000</td>
-        <td><a href="?p=scpu_memory.nor_flash" data-id="739" onclick="onClickNodeLink(event); return(false)">nor_flash</a></td>
+        <td><a href="?p=scpu_memory.nor_flash" data-id="757" onclick="onClickNodeLink(event); return(false)">nor_flash</a></td>
         <td>SPI NOR XIP window</td>
         <td>
             <a class="headerlink" href="#nor_flash" title="Permalink to this row"></a>
@@ -1803,7 +1817,7 @@ It is the first CPU to start executing code at power-on, bootstrapping the SoC.<
 </tr>
     <tr id="dtim">
         <td class="address">0x80000000</td>
-        <td><a href="?p=scpu_memory.dtim" data-id="740" onclick="onClickNodeLink(event); return(false)">dtim</a></td>
+        <td><a href="?p=scpu_memory.dtim" data-id="758" onclick="onClickNodeLink(event); return(false)">dtim</a></td>
         <td>DTIM - E31 Data Tightly Integrated Memory</td>
         <td>
             <a class="headerlink" href="#dtim" title="Permalink to this row"></a>
