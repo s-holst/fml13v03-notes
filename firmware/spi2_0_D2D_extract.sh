@@ -22,6 +22,9 @@ dd if=spi2_0_D2D.bin skip=$((0x6EA28)) count=$((5788)) bs=1 of=spi2_0_D2D_6EA28.
 dd if=spi2_0_D2D.bin skip=$((0x700C4)) count=$((27632)) bs=1 of=spi2_0_D2D_700C4.elf
 dd if=spi2_0_D2D.bin skip=$((0x76CB4)) count=$((18000)) bs=1 of=spi2_0_D2D_76CB4.elf
 
+dd bs=1 if=spi2_0_D2D.bin skip=$((0xa3f80)) count=$((0x9338)) of=spi2_0_D2D_A3F80_lpcpu.bin
+# until '0xad2b8'
+
 exit 0
 
 # Extract and disassemble ARC EM SerDes firmware from spi2_0_D2D.bin

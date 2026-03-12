@@ -213,3 +213,4 @@ archlinux/disk.img
 firmware/*.elf
 firmware/*_serdes_*.bin
 firmware/*pmix.bin
+firmware/*lpcpu.bin

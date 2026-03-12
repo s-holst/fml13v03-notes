@@ -11,71 +11,6 @@
 `include "pvt_rf.rdl"
 
 
-regfile spacc_rf {
-    name = "SPAcc - Synopsys DW Security Protocol Accelerator";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile pka_rf {
-    name = "PKA - Synopsys DW Public Key Accelerator";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile trng_rf {
-    name = "TRNG - Synopsys DW True Random Number Generator";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile pmp_rf #(string SUFFIX="") {
-    name = {"PMP - Synopsys DW Physical Memory Protection ", SUFFIX};
-    reg {
-        field {} TODO[31:0];
-    } TODO[0x2000] @ 0;
-};
-
-regfile hsp_csr_rf {
-    name = "High-Speed Peripheral subsystem SP CSR [boot-path only]";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile sdhci_rf {
-    name = "SDHCI eMMC controller [boot-path only]";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile usbdrd_rf {
-    name = "USB 3.0 DRD controller [boot-path only]";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile mbox_rf #(string NAME = "U84 (MCPU) → SCPU mailbox [boot-path only]") {
-    name = NAME;
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-
-regfile timer_rf #(string NAME = "Timer [boot-path only]") {
-    name = NAME;
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-
 regfile dw_axidma_rf #(string NAME = "DW AXI DMA channel control (NPU LLC DMA)") {
     name = NAME;
     reg {
@@ -86,250 +21,13 @@ regfile dw_axidma_rf #(string NAME = "DW AXI DMA channel control (NPU LLC DMA)")
     } ch1_ctl @ 0x118;
 };
 
-regfile d2d_rf {
-    name = "Die-to-Die subsystem [boot-path only]";
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-    reg {
-        field {} data[31:0];
-    } firmware1[0x4000] @ 0x50000;
-    reg {
-        field {} data[31:0];
-    } firmware2[0x4000] @ 0x60000;
-};
-
-regfile ddrctl_rf #(string NAME = "DDR controller [boot-path only]") {
-    name = NAME;
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile ddrphy_rf #(string NAME = "DDR PHY [boot-path only]") {
-    name = NAME;
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile unknown_rf #(string NAME = "") {
-    name = NAME;
-    reg {
-        field {} TODO[31:0];
-    } TODO @ 0;
-};
-
-regfile pcie_ctrl_rf {
-    name = "PCIe wrapper config space";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile pcie_ip_rf {
-    name = "PCIe IP DBI config space";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile vdec_rf {
-    name = "Video Decoder";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile venc_rf {
-    name = "Video Encoder";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile jdec_rf {
-    name = "JPEG Decoder";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile jenc_rf {
-    name = "JPEG Encoder";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile g2d_rf #(string NAME = "Vivante gc820 2D GPU core") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile vc_csr_rf {
-    name = "Video Codec CSR";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile i2s_rf #(string NAME = "") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile dsi_rf {
-    name = "Synopsys DW DSI controller";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile vo_csr_rf {
-    name = "VO CSR";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile hdmi_hdcp_rf {
-    name = "Synopsys DW HDMI HDCP2";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile hdmi_rf {
-    name = "Synopsys DW HDMI";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile dc_rf {
-    name = "Display controller (DC8200)";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile gmac_rf #(string NAME = "Ethernet MAC (GMAC)") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile sata_rf {
-    name = "SATA";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile dma_rf {
-    name = "DMA controller";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile sdio_rf #(string NAME = "") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile wdt_rf #(string NAME = "Watchdog timer") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile spi_rf #(string NAME = "") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-
-regfile i2c_rf #(string NAME = "") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile pmu_rf {
-    name = "PMU";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile rtc_rf {
-    name = "RTC";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-
-regfile fan_rf {
-    name = "Fan control";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile smmu_rf {
-    name = "SMMU";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile isp_rf #(string NAME = "") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile dewrap_rf {
-    name = "Dewarp/lens-correction engine";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile vi_csr_rf {
-    name = "VI Top CSR";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile csi2_rf #(string NAME = "MIPI CSI-2 receiver") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile dphy_rf #(string NAME = "MIPI D-PHY") {
-    name = NAME;
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile gpu_rf {
-    name = "GPU (P550 / SiFive Intelligence X280)";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-regfile noc_rf {
-    name = "System NoC configuration space (packet/trans probes, QoS settings, filters)";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-
-regfile dsp_sub_rf {
-    name = "DSP subsystem (es-dsp-subsys)";
-    reg { field {} TODO[31:0]; } TODO @ 0;
-};
-
-mem aon_tim_m {
-    name = "AON Timer SRAM window (size TBD)";
-    mementries = 0x2000;
-    memwidth = 32;
-};
-
-mem dsp_sram_m {
-    name = "DSP SRAM (size TBD)";
-    mementries = 0x10000;
-    memwidth = 32;
-};
-
-mem pka_sram_m {
-    name = "PKA instruction SRAM";
-    mementries = 0x1000;
-    memwidth = 32;
-};
-
-mem mrom_m {
-    name = "SCPU masked ROM";
-    mementries = 0x8000;
-    memwidth = 32;
-};
-
-mem coda_m #(string NAME = "CodaCache SPRAM (boot load target)") {
-    name = NAME;
-    mementries = 0x100000;
-    memwidth = 32;
-};
-
-mem nor_flash_m {
-    name = "SPI NOR XIP window";
-    desc = "Response data from commands to bootspi appears here.";
-    mementries = 0x1000000;
-    memwidth = 32;
-};
-
 addrmap scpu_memory {
-    name = "SCPU Address Space";
+    name = "SCPU Physical Address Space";
     desc = "The Security-CPU (SCPU) within each die of the EIC7702X is a SiFive E31 Core Complex.
     It is responsible for early boot and security services.
     It is the first CPU to start executing code at power-on, bootstrapping the SoC.";
+
+    // base peripherals
 
     external mem {
         name="ITIM - E31 Instruction Tightly Integrated Memory";
@@ -339,13 +37,50 @@ addrmap scpu_memory {
         memwidth=32;
         mementries=0x800;
     } itim @ 0x01800000;
-    reg { name="ITIM Deallocation Trigger"; field {} itim_dealloc[31:0]; } itim_dealloc @ 0x01802000;
+
+    reg {
+        name="ITIM Deallocation Trigger";
+        field {} itim_dealloc[31:0];
+    } itim_dealloc @ 0x01802000;
+
     clint_rf   clint   @ 0x02000000;
     plic_rf    plic    @ 0x0c000000;
-    spacc_rf      spacc      @ 0x21900000;
-    pka_rf        pka        @ 0x21b00000;
-    external pka_sram_m pka_sram @ 0x21b04000;
-    trng_rf       trng       @ 0x21b08000;
+
+    // Peripheral Port
+
+    // - SCPU security peripherals (0x21Bxxxxx) appear at MCPU address space 0x51Bxxxxx.
+
+    // MCPU @ `0x5190_0000`
+    regfile spacc_rf {
+        name = "SPAcc - Synopsys DW Security Protocol Accelerator";
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    } spacc @ 0x21900000;
+
+    // MCPU @ `0x51B0_0000`
+    regfile pka_rf {
+        name = "PKA - Synopsys DW Public Key Accelerator";
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    } pka @ 0x21b00000;
+
+    // MCPU @ `0x51B0_4000`
+    external mem {
+        name = "PKA instruction SRAM";
+        mementries = 0x1000;
+        memwidth = 32;
+    } pka_sram @ 0x21b04000;
+
+    // MCPU @ `0x51B0_8000`
+    regfile {
+        name = "TRNG - Synopsys DW True Random Number Generator";
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    } trng @ 0x21b08000;
+
     otpc_rf        otpc      @ 0x21b40000;
 
     external mem {
@@ -354,85 +89,178 @@ addrmap scpu_memory {
         memwidth=32;
         mementries=100;
     } otp @ 0x21b48000;
+
+    regfile pmp_rf #(string SUFFIX="") {
+        name = {"PMP - Synopsys DW Physical Memory Protection ", SUFFIX};
+        reg {
+            field {} TODO[31:0];
+        } TODO[0x2000] @ 0;
+    };
     pmp_rf #(.SUFFIX("Banks 0-4")) pmp_0_4[5] @ 0x21b80000;
     pmp_rf #(.SUFFIX("Banks 5-9")) pmp_5_9[5] @ 0x21bb0000;
 
+    // | `0x2850_0000`  | —         | **? (die-variant CodaCache window base)** — `0x4850_0000` for die-2             | `FUN_ram_58016e9e` (`_DAT_ram_300008bc`); purpose unconfirmed |
+
+
+    // aliased at `0x5850_0000` in SoC global map
     external mem {
         name = "SPRAM - available at power-up. Size unconfirmed.";
         mementries = 0x4000;
         memwidth = 32;
     } spram @ 0x30000000;
 
-    hsp_csr_rf hsp_csr  @ 0x50440000;
-    sdhci_rf   sdhci    @ 0x50450000;
-    usbdrd_rf  usbdrd0  @ 0x50480000;
-    usbdrd_rf  usbdrd1  @ 0x50490000;
-    uart_rf #(.SUFFIX("0 - Primary boot console")) uart0    @ 0x50900000;
-    uart_rf #(.SUFFIX("1 - [boot-path only]")) uart1    @ 0x50910000;
-    mbox_rf #(.NAME("U84→SCPU mailbox [boot-path only]")) mbox     @ 0x50a00000;
-    gpio_rf    gpio     @ 0x51600000;
+    // System Port
 
-    bootspi_rf  bootspi  @ 0x51800000;
-    syscon_rf   syscon   @ 0x51810000;
-    unknown_rf #(.NAME("? AON domain [boot-path only], likely AONCRG or PMCRG")) aon_crg  @ 0x51820000;
-    syscrg_rf   syscrg   @ 0x51828000;
-    timer_rf #(.NAME("TIMER0 [boot-path only]")) timer0   @ 0x51840000;
-    unknown_rf #(.NAME("? may be SPAcc MCPU-alias or second instance [boot-path only]")) scpu_per @ 0x51900000;
-
-    //coda_llc_rf  coda_llc  @ 0x51c00000;
-    coda_llc_rf #(.SUFFIX("0")) coda_llc0 @ 0x51d88000;
-    coda_llc_rf #(.SUFFIX("1")) coda_llc1 @ 0x51d89000;
-
-    d2d_rf    d2d     @ 0x52100000;
-    ddrctl_rf #(.NAME("DDR Controller 0 [boot-path only]")) ddrctl0 @ 0x52300000;
-    ddrctl_rf #(.NAME("DDR Controller 1 [boot-path only]")) ddrctl1 @ 0x52380000;
-    ddrphy_rf #(.NAME("DDR PHY 0 [boot-path only]")) ddrphy0 @ 0x53000000;
-    ddrphy_rf #(.NAME("DDR PHY 1 [boot-path only]")) ddrphy1 @ 0x53800000;
-
-    pcie_ctrl_rf pcie_ctrl @ 0x50000000;
+    regfile  {
+        name = "PCIe wrapper config space";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } pcie_ctrl @ 0x50000000;
 
     // Video Codec block (0x50100000–0x501c0000)
-    vdec_rf  vdec   @ 0x50100000;
-    venc_rf  venc   @ 0x50110000;
-    jdec_rf  jdec   @ 0x50120000;
-    jenc_rf  jenc   @ 0x50130000;
+    regfile {
+        name = "Video Decoder";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    }  vdec   @ 0x50100000;
+    
+    regfile {
+        name = "Video Encoder";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    }  venc   @ 0x50110000;
+
+    regfile {
+        name = "JPEG Decoder";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } jdec   @ 0x50120000;
+
+    regfile {
+        name = "JPEG Encoder";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } jenc   @ 0x50130000;
+
+    regfile g2d_rf #(string NAME = "Vivante gc820 2D GPU core") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     g2d_rf #(.NAME("gc820 2D GPU core 0")) g2d0   @ 0x50140000;
     g2d_rf #(.NAME("gc820 2D GPU core 1")) g2d1   @ 0x50180000;
-    vc_csr_rf vc_csr @ 0x501c0000;
+
+    regfile {
+        name = "Video Codec CSR";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } vc_csr @ 0x501c0000;
 
     // Video Output block (0x50200000–0x502d0000)
+    regfile i2s_rf #(string NAME = "") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     i2s_rf #(.NAME("I2S0")) i2s0      @ 0x50200000;
     i2s_rf #(.NAME("I2S1")) i2s1      @ 0x50210000;
     i2s_rf #(.NAME("I2S2")) i2s2      @ 0x50220000;
-    dsi_rf      dsi       @ 0x50270000;
-    vo_csr_rf   vo_csr    @ 0x50280000;
-    hdmi_hdcp_rf hdmi_hdcp @ 0x50290000;
-    hdmi_rf     hdmi      @ 0x502a0000;
-    dc_rf       dc        @ 0x502c0000;
+
+    regfile {
+        name = "Synopsys DW DSI controller";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } dsi @ 0x50270000;
+
+
+    regfile {
+        name = "VO CSR";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } vo_csr    @ 0x50280000;
+
+    regfile {
+        name = "Synopsys DW HDMI HDCP2";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } hdmi_hdcp @ 0x50290000;
+
+    regfile {
+        name = "Synopsys DW HDMI";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } hdmi      @ 0x502a0000;
+
+    regfile {
+        name = "Display controller (DC8200)";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } dc        @ 0x502c0000;
 
     // High Speed peripherals (0x50400000–0x50500000)
+    regfile gmac_rf #(string NAME = "Ethernet MAC (GMAC)") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     gmac_rf #(.NAME("GMAC0")) gmac0 @ 0x50400000;
     gmac_rf #(.NAME("GMAC1")) gmac1 @ 0x50410000;
-    sata_rf sata  @ 0x50420000;
-    dma_rf  dma0  @ 0x50430000;
+
+    regfile {
+        name = "SATA";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } sata  @ 0x50420000;
+
+    regfile {
+        name = "High-Speed Peripheral subsystem SP CSR";
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    } hsp_csr  @ 0x50440000;
+
+    regfile {
+        name = "SDHCI eMMC controller [boot-path only]";
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    } sdhci @ 0x50450000;
+
     // hsp_csr/sdhci/usbdrd0-1 already instantiated above
+    regfile sdio_rf #(string NAME = "") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     sdio_rf #(.NAME("SDIO0")) sdio0 @ 0x50460000;
     sdio_rf #(.NAME("SDIO1")) sdio1 @ 0x50470000;
 
+    regfile usbdrd_rf {
+        name = "USB 3.0 DRD controller [boot-path only]";
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    };
+    usbdrd_rf  usbdrd0  @ 0x50480000;
+    usbdrd_rf  usbdrd1  @ 0x50490000;
+
+
+
+
     // Low Speed peripherals apb2 (0x50800000–0x50900000)
+    regfile wdt_rf #(string NAME = "Watchdog timer") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     wdt_rf #(.NAME("Watchdog 0")) wdt0 @ 0x50800000;
     wdt_rf #(.NAME("Watchdog 1")) wdt1 @ 0x50804000;
     wdt_rf #(.NAME("Watchdog 2")) wdt2 @ 0x50808000;
     wdt_rf #(.NAME("Watchdog 3")) wdt3 @ 0x5080c000;
+
+    regfile spi_rf #(string NAME = "") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     spi_rf #(.NAME("SPI0")) spi0 @ 0x50810000;
     spi_rf #(.NAME("SPI1")) spi1 @ 0x50814000;
+
     pwm_rf pwm  @ 0x50818000;
 
     // Low Speed peripherals apb3 (0x50900000–0x50a00000)
-    // uart0/1 already instantiated above
+    uart_rf #(.SUFFIX("0 - boot console")) uart0 @ 0x50900000;
+    uart_rf #(.SUFFIX("1")) uart1 @ 0x50910000; // UART download boot path? 
     uart_rf #(.SUFFIX("2")) uart2 @ 0x50920000;
     uart_rf #(.SUFFIX("3")) uart3 @ 0x50930000;
     uart_rf #(.SUFFIX("4")) uart4 @ 0x50940000;
+
+    regfile i2c_rf #(string NAME = "") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     i2c_rf #(.NAME("I2C0")) i2c0  @ 0x50950000;
     i2c_rf #(.NAME("I2C1")) i2c1  @ 0x50960000;
     i2c_rf #(.NAME("I2C2")) i2c2  @ 0x50970000;
@@ -444,8 +272,15 @@ addrmap scpu_memory {
     i2c_rf #(.NAME("I2C8")) i2c8  @ 0x509d0000;
     i2c_rf #(.NAME("I2C9")) i2c9  @ 0x509e0000;
 
+
     // Low Speed peripherals apb4 (0x50a00000–0x50b00000) — mailboxes
-    // mbox (U84→SCPU) already instantiated above at 0x50a00000
+    regfile mbox_rf #(string NAME = "mailbox") {
+        name = NAME;
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    };
+    mbox_rf #(.NAME("U84 → SCPU")) mbox_u84_to_scpu  @ 0x50a00000;
     mbox_rf #(.NAME("SCPU → U84")) mbox_scpu_to_u84  @ 0x50a10000;
     mbox_rf #(.NAME("U84 → LCPU")) mbox_u84_to_lcpu  @ 0x50a20000;
     mbox_rf #(.NAME("LCPU → U84")) mbox_lcpu_to_u84  @ 0x50a30000;
@@ -464,22 +299,52 @@ addrmap scpu_memory {
 
     // Low Speed peripherals apb6 (0x50b00000–0x50c00000)
     pvt_rf pvt0 @ 0x50b00000;
-    fan_rf fan  @ 0x50b50000;
+
+    regfile {
+        name = "Fan control";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } fan  @ 0x50b50000;
 
     // SMMU (0x50c00000–0x51000000)
-    smmu_rf smmu @ 0x50c00000;
+    regfile {
+        name = "SMMU";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } smmu @ 0x50c00000;
+
 
     // Video Input block (0x51000000–0x51200000)
+    regfile isp_rf #(string NAME = "") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     isp_rf #(.NAME("ISP0")) isp0    @ 0x51000000;
     isp_rf #(.NAME("ISP1")) isp1    @ 0x51010000;
-    dewrap_rf dewrap  @ 0x51020000;
-    vi_csr_rf vi_csr  @ 0x51030000;
+
+    regfile {
+        name = "Dewarp/lens-correction engine";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } dewrap  @ 0x51020000;
+
+    regfile {
+        name = "VI Top CSR";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } vi_csr  @ 0x51030000;
+
+    regfile csi2_rf #(string NAME = "MIPI CSI-2 receiver") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     csi2_rf #(.NAME("MIPI CSI-2 receiver 0")) csi2_0  @ 0x51050000;
     csi2_rf #(.NAME("MIPI CSI-2 receiver 1")) csi2_1  @ 0x51060000;
     csi2_rf #(.NAME("MIPI CSI-2 receiver 2")) csi2_2  @ 0x51070000;
     csi2_rf #(.NAME("MIPI CSI-2 receiver 3")) csi2_3  @ 0x51080000;
     csi2_rf #(.NAME("MIPI CSI-2 receiver 4")) csi2_4  @ 0x51090000;
     csi2_rf #(.NAME("MIPI CSI-2 receiver 5")) csi2_5  @ 0x510a0000;
+
+    regfile dphy_rf #(string NAME = "MIPI D-PHY") {
+        name = NAME;
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
     dphy_rf #(.NAME("MIPI D-PHY 0")) dphy0   @ 0x510c0000;
     dphy_rf #(.NAME("MIPI D-PHY 1")) dphy1   @ 0x510e0000;
     dphy_rf #(.NAME("MIPI D-PHY 2")) dphy2   @ 0x51100000;
@@ -487,51 +352,183 @@ addrmap scpu_memory {
     dphy_rf #(.NAME("MIPI D-PHY 4")) dphy4   @ 0x51140000;
     dphy_rf #(.NAME("MIPI D-PHY 5")) dphy5   @ 0x51160000;
 
+
+
+
+
+    regfile dma_rf {
+        name = "DMA controller";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    };
+    dma_rf dma0 @ 0x50430000;
+    dma_rf dma1 @ 0x518c0000;
+
+
+
+
+
+
     // GPU (0x51400000–0x51600000)
-    gpu_rf gpu @ 0x51400000;
+    regfile gpu_rf {
+        name = "GPU (P550 / SiFive Intelligence X280)";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } gpu @ 0x51400000;
 
-    // pinctrl already instantiated above at 0x51600000
 
-    // AON additions (0x51808000–0x51858000)
-    pmu_rf pmu        @ 0x51808000;
-    // syscon already at 0x51810000
-    rtc_rf rtc        @ 0x51818000;
-    // aon_crg/syscrg already instantiated above
+    gpio_rf     gpio     @ 0x51600000;
+    bootspi_rf  bootspi  @ 0x51800000;
+
+    regfile {
+        name = "PMU";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } pmu        @ 0x51808000;
+
+    syscon_rf   syscon   @ 0x51810000;
+
+    regfile rtc_rf {
+        name = "RTC";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } rtc        @ 0x51818000;
+
+    regfile unknown_rf #(string NAME = "") {
+        name = NAME;
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    };
+    unknown_rf #(.NAME("? AON domain [boot-path only], likely AONCRG or PMCRG")) aon_crg  @ 0x51820000;
+
+    syscrg_rf   syscrg   @ 0x51828000;
+
     i2c_rf #(.NAME("AON I2C0")) i2c_aon0   @ 0x51830000;
     i2c_rf #(.NAME("AON I2C1")) i2c_aon1   @ 0x51838000;
-    // timer0 already at 0x51840000
+
+    regfile timer_rf #(string NAME = "Timer") {
+        name = NAME;
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    };
+    timer_rf #(.NAME("TIMER0")) timer0   @ 0x51840000;
     timer_rf #(.NAME("TIMER1")) timer1   @ 0x51848000;
     timer_rf #(.NAME("TIMER2")) timer2   @ 0x51850000;
     timer_rf #(.NAME("TIMER3")) timer3   @ 0x51858000;
 
-    dma_rf dma1 @ 0x518c0000;
 
-    // security peripherals at 0x51Bxxxxx already instantiated above (SCPU-view)
-    // scpu_per at 0x51900000 already instantiated above
+    //unknown_rf #(.NAME("? may be SPAcc MCPU-alias or second instance [boot-path only]")) scpu_per @ 0x51900000;
 
-    // coda_llc/coda_dma already instantiated above
+    //`0x51C0_0000`  | `0x200000`| **CodaCache LLC** — NPU LLC controller, initialised as SPRAM during boot           | TRM Part 1; 
+    //coda_llc_rf  coda_llc  @ 0x51c00000;
+    coda_llc_rf #(.SUFFIX("0")) coda_llc0 @ 0x51d88000;
+    coda_llc_rf #(.SUFFIX("1")) coda_llc1 @ 0x51d89000;
+
 
     // NoC configuration space (0x52000000–0x52100000)
-    noc_rf noc @ 0x52000000;
+    regfile {
+        name = "System NoC configuration space (packet/trans probes, QoS settings, filters)";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } noc @ 0x52000000;
 
-    // d2d already at 0x52100000
+
+    regfile {
+        name = "Die-to-Die subsystem";
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+        reg {
+            field {} data[31:0];
+        } firmware1[0x4000] @ 0x50000;
+        reg {
+            field {} data[31:0];
+        } firmware2[0x4000] @ 0x60000;
+    } d2d @ 0x52100000;
+
 
     // DSP subsystem (0x52200000–0x52300000)
-    dsp_sub_rf dsp_subsys @ 0x52200000;
+    regfile {
+        name = "DSP subsystem (es-dsp-subsys)";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } dsp_subsys @ 0x52200000;
 
-    // ddrctl0/1 already at 0x52300000/0x52380000
-    // ddrphy0/1 already at 0x53000000/0x53800000
 
-    // PCIe IP DBI registers (0x54000000–0x58000000)
-    pcie_ip_rf pcie_ip @ 0x54000000;
+    regfile ddrctl_rf #(string NAME = "DDR controller [boot-path only]") {
+        name = NAME;
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    };
+    ddrctl_rf #(.NAME("DDR Controller 0 [boot-path only]")) ddrctl0 @ 0x52300000;
+    ddrctl_rf #(.NAME("DDR Controller 1 [boot-path only]")) ddrctl1 @ 0x52380000;
 
-    external mrom_m     masked_rom    @ 0x58000000;
-    //external sram_m #(.NAME("SCPU TIM remap alias")) scpu_tim_remap @ 0x58500000;
-    external aon_tim_m  aon_tim        @ 0x58800000;
-    external coda_m #(.NAME("CodaCache0 SPRAM boot load target")) coda_cache     @ 0x59000000;
-    external coda_m #(.NAME("CodaCache1 SPRAM (NPU)")) coda1_cache    @ 0x5a000000;
-    external dsp_sram_m dsp_sram       @ 0x5b000000;
-    external nor_flash_m nor_flash     @ 0x5c000000;
+    regfile ddrphy_rf #(string NAME = "DDR PHY [boot-path only]") {
+        name = NAME;
+        reg {
+            field {} TODO[31:0];
+        } TODO @ 0;
+    };
+    ddrphy_rf #(.NAME("DDR PHY 0 [boot-path only]")) ddrphy0 @ 0x53000000;
+    ddrphy_rf #(.NAME("DDR PHY 1 [boot-path only]")) ddrphy1 @ 0x53800000;
+
+
+    regfile {
+        name = "PCIe IP DBI config space (0x54000000–0x58000000)";
+        reg { field {} TODO[31:0]; } TODO @ 0;
+    } pcie_ip @ 0x54000000;
+
+    external mem {
+        name = "SCPU masked ROM";
+        mementries = 0x8000;
+        memwidth = 32;
+    } masked_rom @ 0x58000000;
+
+    external mem {
+        name = "View of SCPU TIM (64KiB?)";
+        mementries = 0x10000;
+        memwidth = 32;
+    } scpu_tim_view @ 0x58400000;
+
+    external mem {
+        name = "View of SCPU TIM 0x30000000 (64KiB)";
+        mementries = 0x10000;
+        memwidth = 32;
+    } scpu_tim3x_view @ 0x58500000;
+
+    external mem {
+        name = "View of AON/LPCPU TIM 0x01800000. (8 MiB?) ";
+        mementries = 0x200000;
+        memwidth = 32;
+    } lpcpu_tim @ 0x58800000;
+
+    //external mem {
+    //    name = "View of AON/LPCPU TIM 0x30000000(?). (size TBD) ";
+    //    mementries = 0x10000;
+    //    memwidth = 32;
+    //} lpcpu_tim3x_view   @ 0x58900000;
+
+    external mem {
+        name = "View of NPU SPRAM (16 MiB?)";
+        mementries = 0x400000;
+        memwidth = 32;
+    } npu_spram @ 0x59000000;
+
+    external mem {
+        name = "View of NPU TIM (16 MiB?)";
+        mementries = 0x400000;
+        memwidth = 32;
+    } npu_tim @ 0x5a000000;
+
+    external mem {
+        name = "View of DSP SRAM (16 MiB?)";
+        mementries = 0x400000;
+        memwidth = 32;
+    } dsp_sram @ 0x5b000000;
+
+    external mem {
+        name = "SPI NOR XIP window";
+        desc = "Response data from commands to bootspi appears here.";
+        mementries = 0x1000000;
+        memwidth = 32;
+    } nor_flash @ 0x5c000000;
 
     external mem {
         name="DTIM - E31 Data Tightly Integrated Memory";

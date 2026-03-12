@@ -4,20 +4,117 @@ Firmware and Bootchain
 Architecture Overview:
 - Dual-Die Package: die-1, die-2
 - Each Die has:
-  - 4-core main CPU (SiFive U84, RV64)
+  - 4-core main CPU (SiFive U84 RV64)
   - secure boot co-processor SCPU (SiFive E31 RV32) with masked ROM
   - low-power co-processor LPCPU (SiFive E31 RV32)
-  - 16M SPI-Flash that contains boot chain until u-boot (bootspi)
+  - an NPU with SiFive E21(?) RV32 controller
+  - separate bootspi: 16M on-board SPI-Flash that contains boot chain until u-boot, env, and calibration data
 
 Masked ROM
 ----------
 
-At power-on, SCPU starts executing code from masked ROM at `0x58000000`.
+This is the unmodifiable **masked ROM executed by the SCPU** (a SiFive E31 RV32 core) on the EIC7702X SoC.
+This rom appears at `0x5800_0000` in SCPU address space (invisible to MCPU).
+At power-on, SCPU starts executing code from this masked ROM.
 Both dies contain the same ROM. It has been dumped [here](EIC7702X_rom.bin)
 using [eswin_ipc_tool.py](eswin_ipc_tool.py) on the booted system under linux.
-An initial analysis of the ROM contents is [here](EIC7702X_rom.md).
 
-The SCPU in each die loads binary images from SPI-Flash (bootspi) and executes them.
+Its sole job is to load, authenticate, and launch the next stage of the boot chain.
+It supports a secure and non-secure mode.
+In secure mode it is the hardware root of trust - it runs before any software-controlled memory is trusted.
+In non-secure mode (default on fml13v03), next-stage bootloader code does not require valid signatures to run.
+
+**Multi-source boot**
+Supports four boot device sources, configured by boot select pins (dip-switches on the fml13v03 mainboard):
+- `0b00` — UART download (serial transfer via UART0)
+- `0b01` — eMMC (SDHCI controller)
+- `0b10` - SPI NOR flash (bootspi) - **default on fml13v03**
+- `0b11` — USB (mass storage gadget, DRD controller)
+
+The ROM uses a **completely hardware-accelerated cryptographic stack**:
+- **SPAcc**: hardware AES and SM4 decryption of the bootchain image
+- **PKA**: RSA and ECDSA signature verification
+- **TRNG + DRBG**: seeds a NIST-compliant deterministic RNG used during crypto operations
+- All three are Synopsys DesignWare IP blocks
+
+**OTP-based key management**
+Reads the following from OTP at boot:
+- Security enable bits (which algorithms are active)
+- Die variant, die number, die ordinal, program lock status
+- Encryption IV and boot image key
+- RSA public key, ECDSA/ECC public key
+- M2M key, HDCP key, debug password, SCPU firmware key
+
+**Boot progress codes** written to SYSCON `+0x668`–`+0x674` at each stage allow external hardware or MCPU to observe where the SCPU is in the boot sequence.
+
+**Failure is non-recoverable** by design: the ROM has no retry logic for crypto failures, only an infinite error loop, enforcing the hardware root-of-trust model.
+
+**Boot Flow**
+
+1. **Hardware bring-up**
+   - Entry point `0x58000000`
+   - Hart 0 takes over; hart 1+ spin-wait
+   - `.bss` zeroed, `.data` copied from ROM into SCPU SRAM (`0x580_1a5b8` → `0x3000_0000` ~0x888 bytes)
+   - GP set to `0x3000_1058`, heap initialised at `0x3000_5220`
+
+2. **Clock init**
+   - Read SYSCRG `pll_status` (`+0xa4`) & `0x3f`
+   - If all 6 PLLs locked: switch SCPU clock to PLL via SYSCRG `+0x20c`, `+0x10c`, `+0x160`
+   - If PLLs not locked: remain on bypass clock
+   - Init UART0 at 115200 baud; print `"pll failed."` if PLLs did not lock
+
+3. **Die variant detection**
+   - Read OTP `0x21b4_003c`: security mode, die number, die ordinal
+   - Builds MMIO pointer table
+   - die-1: peripheral base `0x4000_0000`, CodaCache at `0x5900_0000`
+   - die-2: peripheral base `0x6000_0000`, CodaCache at `0x7900_0000`
+
+4. **CodaCache LLC → SPRAM** (`coda_llc_spram_init`)
+   - LLC0 at `0x51D8_8000`, LLC1 at `0x51D8_9000`
+   - Clear valid entries, configure CCUCMWVR (`+0x118`)
+   - Switch to SPRAM mode; (scratch-pad RAM) mode, providing ~4 MB of fast working memory at `0x5900_0000` to hold the loaded bootchain.
+
+5. **OTP / Secure Identity provisioning** (`FUN_ram_5800c05a`) — boot step 4
+   - Write ESWIN vendor ID string to OTP shadow at `0x21B4_8000 +0x170`
+   - Enable/mark OTP rows via stride-8 control registers
+
+6. **PMP init** (`FUN_ram_58007ed4(1, 3, 1)`) — boot step 5
+   - Unlock and reset all 10 PMP units across two groups
+   - Configure memory protection regions and access permissions
+
+7. **Crypto peripheral init** (`FUN_ram_58016ffe`)
+   - SPAcc init at `0x2190_0000` (`spacc_config_init`) — boot step 6
+   - PKA init at `0x21B0_0000`, load curve params from ROM `0x5800_1d14` — boot step 7
+   - TRNG init at `0x21B0_8000`, 256-byte entropy pool at SRAM `0x3000_3140` — boot step 8
+
+8. **Security material loaded from OTP** (`FUN_ram_58016c3c` / `FUN_ram_580086ac`)
+   - Read function list, security list, device/market IDs
+   - Read chip ID string into SRAM `0x3000_020c`
+   - Read RSA public key into `0x3000_3034`; read ECC public key, IV, boot key
+   - Verify device ID and market ID against OTP
+
+9. **Boot device selection** (`FUN_ram_58016e56`)
+   - Read SYSCRG `+0x33c` bits [1:0] into boot context `+0x4`
+   - Print `"bootsel[N]"`
+   - If NOR flash (bootsel = 0): send XON (`0x11`) over UART
+
+10. **Bootchain load & verify** (`FUN_ram_58007c40`)
+    - NOR flash: read from `0x5C00_0000` (SPI XIP)
+    - eMMC: SDHCI driver, read by block
+    - USB: USB mass storage gadget (DRD controller)
+    - UART: serial download, print `"Downloading..."` / `"failed!"`
+    - In secure mode: for all sources: decrypt with SPAcc (AES or SM4), verify signature with PKA (RSA or ECDSA)
+    - Keys and IV sourced from OTP
+    - On success: verified image resides in CodaCache SPRAM
+
+11. **Launch** (`FUN_ram_58018a3a`)
+    - Clean up heap, release crypto context
+    - Jump to verified bootchain entry point in CodaCache SPRAM
+    - On any failure: print `"bootstrap is failed: N (0xN)"` and loop forever; write boot step code `10000` to SYSCON `+0x668`
+
+By default, SCPU in each die loads binary images from SPI-Flash (bootspi) and executes them.
+
+Several images are loaded and executed one-by-one, opensbi/u-boot is the final image.
 
 bootspi
 -------
@@ -35,7 +132,7 @@ Boot chain format (in SPI-Flash and compiled binaries):
 - Offsets in SPI-Flash are different from compiled bootchain blobs (re-arranged by es_bootloader.c. Offsets there don't match dumped SPI-Flash)
 - Separate images for die-1 and die-2, only die-1 has opensbi and u-boot
 
-bootspi has additional reserved regions to save env, pmix tables
+bootspi has additional reserved regions to save u-boot environment and d2d serdes pmix tables.
 
 Extract the sub-images with this [tool](eswb_extract.py).
 
@@ -232,7 +329,7 @@ Main contents:
 - Includes SPI subsystem for data loading/storing (DDR calibation data?)
 - Fan/thermal management
 - Routines for NPU control/setup, ELF/NIM loader. NIM = NPU Image? Propriatory format.
-- 6 ELF sub-images - three for each NPU:
+- 6 ELF sub-images - three for each NPU (identical to those in linux/vendor/eswin/firmware):
   - at `0x5909005C` and `0x590A005C`: e31_boot.S: simple trampoline loaded at `0x80000000`, calls `0x01800000`.
   - at `0x590916F8`: entry `0x01800000`. An NPU task handler loop for RDMA ops - Die1
   - at `0x590982E8`: entry `0x01800000`. An NPU task handler loop for Conv ops - Die1
@@ -250,14 +347,14 @@ Firmware responsible for D2D serdes setup and link training.
 - Routines for NPU control/setup, ELF/NIM loader. NIM = NPU Image? Propriatory format.
 - Same NPU firmware (6 ELFs) as in DDR. However, D2D only contains NPU die-1 firmware. Instead of die-2 images, die-1 images were used.
 
-- ARC firmware (Serdes Phy?)
+- contains ARC EM SerDes firmware image.
 
 - **D2D Sweep Firmware** "d2d_pmix_fw" 344384 bytes at 0x1a840. Only loaded and executed when sweep (PMIX calibration) is deemed necessary.
 
+- Boots a firmware image on LPCPU (power and d2d link management)
 
 bootspi - D2D - Sweep Firmware
 ------------------------------
-
 
 Its primary job is SerDes PHY calibration and runtime management for the die-to-die (D2D) high-speed interconnect, alongside thermal control and NPU lifecycle management.
 It is loaded into SRAM at 0x59200000 and runs on a 4-hart embedded RISC-V cluster (U84).
@@ -267,8 +364,6 @@ Multi-threaded firmware:
 - **Hart 1** SerDes command executor — IPC-driven BER tests, PMIX calibration, CCA
 - **Hart 2** Thermal PID controller, runs every 2 ms
 - **Hart 3** I²C peripheral handler loop
-
-**Features**
 
 SerDes / D2D PHY calibration
 - Full PHY initialization: clock mode, TX/RX firmware adaptation, pipe TX, PHY status sync
