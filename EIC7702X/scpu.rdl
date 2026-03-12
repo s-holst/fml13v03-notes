@@ -360,8 +360,8 @@ addrmap scpu_memory {
         name = "DMA controller";
         reg { field {} TODO[31:0]; } TODO @ 0;
     };
-    dma_rf dma0 @ 0x50430000;
-    dma_rf dma1 @ 0x518c0000;
+    dma_rf dma_hsp @ 0x50430000;
+    dma_rf dma_aon @ 0x518c0000;
 
 
 
@@ -417,8 +417,34 @@ addrmap scpu_memory {
 
     //unknown_rf #(.NAME("? may be SPAcc MCPU-alias or second instance [boot-path only]")) scpu_per @ 0x51900000;
 
-    //`0x51C0_0000`  | `0x200000`| **CodaCache LLC** — NPU LLC controller, initialised as SPRAM during boot           | TRM Part 1; 
-    //coda_llc_rf  coda_llc  @ 0x51c00000;
+    regfile {
+        name = "NPU";
+        desc = "NPU appears to have 10 E31 cores.";
+        reg {field {} data[9:0];} reset_mask1 @ 0x180000;
+        reg {field {} data[9:0];} reset_mask2 @ 0x180008;
+        reg {field {} data[9:0];} reset_mask3 @ 0x18000c;
+        reg {field {} data[0:0];} start_cores @ 0x180020;
+        reg {field {} data[31:0];} coreid_0   @ 0x180108;
+        reg {field {} data[31:0];} entry_0    @ 0x18010c;
+        reg {field {} data[31:0];} coreid_1   @ 0x180120;
+        reg {field {} data[31:0];} entry_1    @ 0x180124;
+        reg {field {} data[31:0];} coreid_2   @ 0x180138;
+        reg {field {} data[31:0];} entry_2    @ 0x18013c;
+        reg {field {} data[31:0];} coreid_3   @ 0x180150;
+        reg {field {} data[31:0];} entry_3    @ 0x180154;
+        reg {field {} data[31:0];} coreid_4   @ 0x180168;
+        reg {field {} data[31:0];} entry_4    @ 0x18016c;
+        reg {field {} data[31:0];} coreid_5   @ 0x180180;
+        reg {field {} data[31:0];} entry_5    @ 0x180184;
+        reg {field {} data[31:0];} coreid_6   @ 0x180198;
+        reg {field {} data[31:0];} entry_6    @ 0x18019c;
+        reg {field {} data[31:0];} coreid_7   @ 0x1801b0;
+        reg {field {} data[31:0];} entry_7    @ 0x1801b4;
+        reg {field {} data[31:0];} coreid_8   @ 0x1801c8;
+        reg {field {} data[31:0];} entry_8    @ 0x1801cc;
+        reg {field {} data[31:0];} coreid_9   @ 0x1801e0;
+        reg {field {} data[31:0];} entry_9    @ 0x1801e4;
+    } npu  @ 0x51c00000;
     coda_llc_rf #(.SUFFIX("0")) coda_llc0 @ 0x51d88000;
     coda_llc_rf #(.SUFFIX("1")) coda_llc1 @ 0x51d89000;
 
@@ -441,6 +467,10 @@ addrmap scpu_memory {
         reg {
             field {} data[31:0];
         } firmware2[0x4000] @ 0x60000;
+        reg {
+            field {} data[31:0];
+        } serdes_phy_regs @ 0x6f000;
+        
     } d2d @ 0x52100000;
 
 
@@ -511,10 +541,42 @@ addrmap scpu_memory {
         memwidth = 32;
     } npu_spram @ 0x59000000;
 
-    external mem {
-        name = "View of NPU TIM (16 MiB?)";
-        mementries = 0x400000;
-        memwidth = 32;
+
+    addrmap npu_tim_map {
+        name = "View of NPU TIM of 10 cores";
+        desc = "NPU firmware is loaded into these memories before starting the cores.
+        A bit-mask in the NIM file format determines which ELFs are loaded into which core.";
+        mem npu_itim_m {
+            name = "View of core-local address 0x0180_0000 (32 KiB)";
+            mementries = 0x2000;
+            memwidth = 32;
+        };
+
+        mem npu_dtim_m {
+            name = "View of core-local address 0x3000_0000 (32 KiB)";
+            mementries = 0x2000;
+            memwidth = 32;
+        };
+        external npu_itim_m npu_itim_core0 @ 0x000000;
+        external npu_dtim_m npu_dtim_core0 @ 0x010000;
+        external npu_itim_m npu_itim_core1 @ 0x100000;
+        external npu_dtim_m npu_dtim_core1 @ 0x110000;
+        external npu_itim_m npu_itim_core2 @ 0x200000;
+        external npu_dtim_m npu_dtim_core2 @ 0x210000;
+        external npu_itim_m npu_itim_core3 @ 0x300000;
+        external npu_dtim_m npu_dtim_core3 @ 0x310000;
+        external npu_itim_m npu_itim_core4 @ 0x400000;
+        external npu_dtim_m npu_dtim_core4 @ 0x410000;
+        external npu_itim_m npu_itim_core5 @ 0x500000;
+        external npu_dtim_m npu_dtim_core5 @ 0x510000;
+        external npu_itim_m npu_itim_core6 @ 0x600000;
+        external npu_dtim_m npu_dtim_core6 @ 0x610000;
+        external npu_itim_m npu_itim_core7 @ 0x700000;
+        external npu_dtim_m npu_dtim_core7 @ 0x710000;
+        external npu_itim_m npu_itim_core8 @ 0x800000;
+        external npu_dtim_m npu_dtim_core8 @ 0x810000;
+        external npu_itim_m npu_itim_core9 @ 0x900000;
+        external npu_dtim_m npu_dtim_core9 @ 0x910000;
     } npu_tim @ 0x5a000000;
 
     external mem {

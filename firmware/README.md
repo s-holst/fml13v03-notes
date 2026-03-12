@@ -331,10 +331,10 @@ Main contents:
 - Routines for NPU control/setup, ELF/NIM loader. NIM = NPU Image? Propriatory format.
 - 6 ELF sub-images - three for each NPU (identical to those in linux/vendor/eswin/firmware):
   - at `0x5909005C` and `0x590A005C`: e31_boot.S: simple trampoline loaded at `0x80000000`, calls `0x01800000`.
-  - at `0x590916F8`: entry `0x01800000`. An NPU task handler loop for RDMA ops - Die1
-  - at `0x590982E8`: entry `0x01800000`. An NPU task handler loop for Conv ops - Die1
-  - at `0x590A16F8`: entry `0x01800000`. An NPU task handler loop for RDMA ops - Die2
-  - at `0x590A82E8`: entry `0x01800000`. An NPU task handler loop for Conv ops - Die2
+  - at `0x590916F8`: entry `0x01800000`. An NPU task handler loop for RDMA ops - Die-1
+  - at `0x590982E8`: entry `0x01800000`. An NPU task handler loop for Conv ops - Die-1
+  - at `0x590A16F8`: entry `0x01800000`. An NPU task handler loop for RDMA ops - Die-2
+  - at `0x590A82E8`: entry `0x01800000`. An NPU task handler loop for Conv ops - Die-2
 
 
 bootspi - D2D
@@ -343,15 +343,53 @@ bootspi - D2D
 Die-1 firmware:
 
 Firmware responsible for D2D serdes setup and link training.
+- Implements a **bit-banged byte exchange** over GPIO — used to synchronize each stage of the SerDes bringup (sweep mode selection, BER test results, link lock status) between the two dies without any hardware mailbox
+- Uses `d2d_status` (`syscon+0x694`) for synchronization
+- Temperature-indexed PMIX table. **magic** `0x504D4958` ("PMIX"), **version** `4`, **CRC32** checksum. Look up the nearest calibration entry, and fits polynomial coefficients (Phase0/90/180/270) via `pmix_compute_fitted_values()`
+- Writes fitted PMIX values to the SerDes via `pmix_write_cmd_register()` and `pmix_apply_to_serdes()`
+- If no valid PMIX data found for current temperature, falls back to a full sweep
 
-- Routines for NPU control/setup, ELF/NIM loader. NIM = NPU Image? Propriatory format.
-- Same NPU firmware (6 ELFs) as in DDR. However, D2D only contains NPU die-1 firmware. Instead of die-2 images, die-1 images were used.
+**PMIX Parameter Sweep**
+- Runs **D2D Sweep Firmware** on U84 "d2d_pmix_fw" 344384 bytes text at 0x1a840. 218432 bytes data at 0x6e9c0.
+- Only loaded and executed when sweep (PMIX calibration) is deemed necessary. Also contains die-1 NPU firmware (same as in DDR).
+- Supports three sweep modes: **NORMAL**, **SMOOTH**, **TEST** — selectable at runtime over UART, synchronized to partner die via GPIO
 
-- contains ARC EM SerDes firmware image.
+**Thermal Management (`thermal_control_loop`, `fan_set_pwm`, `fan_detect_polarity_and_zero_rpm`)**
+- Reads temperature from a **PVT (Process/Voltage/Temperature) sensor** via its ADC register interface at `pvt_ptr` (`0x50B00000` / `0x70B00000`)
+- Converts raw ADC counts to millidegrees via a lookup table + linear interpolation (`adc_to_millidegrees`)
+- Controls a **PWM fan**: reads RPM via tachometer, auto-detects polarity inversion, auto-detects zero-RPM support
+- Uses NPU tasks for die-heating. Contains NPU die-1 firmware (same as in DDR).
+- **Thermal loop logic:**
+  - Temperature < target → fan off; optionally dispatch NPU compute tasks to generate heat (warm-up)
+  - Temperature > cool threshold → fan on
+  - Temperature ≥ heat threshold → fan off + NPU load generation
+  - On exit: fan on, NPU tasks queued
 
-- **D2D Sweep Firmware** "d2d_pmix_fw" 344384 bytes at 0x1a840. Only loaded and executed when sweep (PMIX calibration) is deemed necessary.
 
-- Boots a firmware image on LPCPU (power and d2d link management)
+**D2D SerDes Link Bringup (`d2d_link_init`)**
+
+Multi-phase initialization with retry logic and dual-die synchronization at each stage:
+
+| Phase | Function | What it does |
+|---|---|---|
+| 1 | `configure_serdes_mode` | Set Interlaken clock source (high/low speed), deassert resets |
+| 2 | `load_serdes_fw_images` | Load ARC EM SerDes firmware **`serdes_fw_image1`** (38 KB) + **`serdes_fw_image2`** (5 KB) to SerDes SPRAM |
+| 3 | `d2d_serdes_cpu_run_and_sync` | Start SerDes embedded CPU, sync with partner die |
+| 4 | `d2d_pipe_check_and_sync` | Wait for Pipe TX ready on both dies |
+| 5 | `d2d_phy_check_and_sync` | Wait for PHY ready on both dies |
+| 6 | `d2d_spare_tx_fw_adaptation_and_sync` | Run TX firmware adaptation (spare lane training) |
+| 7 | `d2d_spare_rx_fw_adaptation_and_sync` | Run RX firmware adaptation |
+| 8 | `d2d_ber_test_and_sync` | Run BER test, compare pass/fail with partner; retry full init on failure |
+| 9 | `d2d_lock_and_sync` | Final lock; wait for both dies to confirm |
+
+Retries the entire sequence up to N times before giving up.
+
+**LPCPU Boot (`lpcpu_boot_with_trampoline`) for power and d2d link management**
+- Copies a 64-byte trampoline stub to `0xDFFE0000`
+- Sets LPCPU boot address register to `0xDFFE0000`, asserts/deasserts LPCPU reset
+- After 5 ms, copies embedded **`lcpu_firmware`** blob (37 KB) to `0x58800000`
+- Copies PMIX calibration buffer (15 KB) to `0x58900000` — making it available to the LPCPU
+- Copies the sweep mode byte to `0x5880DFC0` as a shared configuration word
 
 bootspi - D2D - Sweep Firmware
 ------------------------------
