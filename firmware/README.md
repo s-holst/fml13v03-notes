@@ -324,7 +324,7 @@ Firmware mainly responsible for DDR memory setup and link training.
 Loaded into CodaCache at `0x59000000`.
 Main contents:
 - DDR setup, testing and link training (re-training is triggered by "R" or "r" via UART0)
-- Display first splash screen (Framework x Deepcomputing)
+- Display first splash screen (framework x DeepComputing)
 - Includes zlib for gunzipping the included splash BMP image
 - Includes SPI subsystem for data loading/storing (DDR calibation data?)
 - Fan/thermal management
@@ -390,6 +390,16 @@ Retries the entire sequence up to N times before giving up.
 - After 5 ms, copies embedded **`lcpu_firmware`** blob (37 KB) to `0x58800000`
 - Copies PMIX calibration buffer (15 KB) to `0x58900000` — making it available to the LPCPU
 - Copies the sweep mode byte to `0x5880DFC0` as a shared configuration word
+
+bootspi - D2D - ARC SerDes firmware
+-----------------------------------
+
+- Text image **`serdes_fw_image1`** (38 KB) copied to `0x52150000`
+- Data image **`serdes_fw_image2`** (5 KB) copied to `0x52160000`
+- Synopsys ARC compact (ARCompact) ISA used in ARC EM core embedded in Synopsys SerDes PHY IP
+- Vector table (0x000–0x03F): 16 entries × 4 bytes
+  - 0 0x00000064: Reset handler (_start)
+  - 1–15 0x000001e8: Default exception/IRQ stub (all unhandled)
 
 bootspi - D2D - Sweep Firmware
 ------------------------------

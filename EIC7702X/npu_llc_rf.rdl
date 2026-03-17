@@ -1,11 +1,11 @@
 
 
-regfile coda_llc_rf #(string SUFFIX = "") {
-    name = {"CodaCache LLC Controller ", SUFFIX};
+regfile npu_llc_rf #(string SUFFIX = "") {
+    name = {"NPU LLC Controller ", SUFFIX};
     desc = "Controls the operation of a shared 4MiB 16-way set-associative L3 cache.
     Cache line size is 64 bytes.
     Cache is composed of 4 banks.
-    During boot, the cache memory is configured to be used as Scratchpad RAM (SPRAM).";
+    During boot, the cache memory is configured to be used as Scratchpad RAM (SPRAM, CodaCache).";
 
     reg { field {} data[31:0]; } ccutcr    @ 0x0000;
     reg { field {} data[31:0]; } ccutar    @ 0x0004;

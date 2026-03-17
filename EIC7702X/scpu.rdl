@@ -1,7 +1,7 @@
 `include "syscrg_rf.rdl"
 `include "syscon_rf.rdl"
 `include "otpc_rf.rdl"
-`include "coda_llc_rf.rdl"
+`include "npu_llc_rf.rdl"
 `include "plic_rf.rdl"
 `include "clint_rf.rdl"
 `include "uart_rf.rdl"
@@ -417,36 +417,161 @@ addrmap scpu_memory {
 
     //unknown_rf #(.NAME("? may be SPAcc MCPU-alias or second instance [boot-path only]")) scpu_per @ 0x51900000;
 
-    regfile {
-        name = "NPU";
-        desc = "NPU appears to have 10 E31 cores.";
-        reg {field {} data[9:0];} reset_mask1 @ 0x180000;
-        reg {field {} data[9:0];} reset_mask2 @ 0x180008;
-        reg {field {} data[9:0];} reset_mask3 @ 0x18000c;
-        reg {field {} data[0:0];} start_cores @ 0x180020;
-        reg {field {} data[31:0];} coreid_0   @ 0x180108;
-        reg {field {} data[31:0];} entry_0    @ 0x18010c;
-        reg {field {} data[31:0];} coreid_1   @ 0x180120;
-        reg {field {} data[31:0];} entry_1    @ 0x180124;
-        reg {field {} data[31:0];} coreid_2   @ 0x180138;
-        reg {field {} data[31:0];} entry_2    @ 0x18013c;
-        reg {field {} data[31:0];} coreid_3   @ 0x180150;
-        reg {field {} data[31:0];} entry_3    @ 0x180154;
-        reg {field {} data[31:0];} coreid_4   @ 0x180168;
-        reg {field {} data[31:0];} entry_4    @ 0x18016c;
-        reg {field {} data[31:0];} coreid_5   @ 0x180180;
-        reg {field {} data[31:0];} entry_5    @ 0x180184;
-        reg {field {} data[31:0];} coreid_6   @ 0x180198;
-        reg {field {} data[31:0];} entry_6    @ 0x18019c;
-        reg {field {} data[31:0];} coreid_7   @ 0x1801b0;
-        reg {field {} data[31:0];} entry_7    @ 0x1801b4;
-        reg {field {} data[31:0];} coreid_8   @ 0x1801c8;
-        reg {field {} data[31:0];} entry_8    @ 0x1801cc;
-        reg {field {} data[31:0];} coreid_9   @ 0x1801e0;
-        reg {field {} data[31:0];} entry_9    @ 0x1801e4;
+    addrmap {
+        name = "NPU System";
+        desc = "NPU System at NPU_SYS_BASE_ADDR.
+        Contains several modules: NPU_MODULE_STRIDE=0x1000.
+        appears to have 10 E31 or E21 cores.";
+
+        regfile {
+            name="PEC S register space";
+            reg {field {} data[31:0];} TODO;
+        } pec_s @ 0x0;
+
+        regfile {
+            name="PEC D register space";
+            reg {field {} data[31:0];} TODO;
+        } pec_d @ 0x001000;
+
+        regfile {
+            name="RDMA S register space";
+            reg {field {} data[31:0];} TODO;
+        } rdma_s @ 0x112000;
+
+        regfile {
+            name="RDMA D register space";
+            reg {field {} data[31:0];} TODO;
+        } rdma_d @ 0x113000;
+
+        regfile {
+            name="RDMA Wrapper S register space";
+            reg {field {} data[31:0];} TODO;
+        } rdma_wrapper0_s @ 0x128000;
+
+        regfile {
+            name="RDMA Wrapper D register space";
+            reg {field {} data[31:0];} TODO;
+        } rdma_wrapper0_d @ 0x129000;
+
+        regfile {
+            name="Pre-DRP Reshaper S";
+            reg {field {} data[31:0];} TODO;
+        } pre_drp_reshape_s @ 0x130000;
+
+        regfile {
+            name="Pre-DRP Reshaper D";
+            reg {field {} data[31:0];} TODO;
+        } pre_drp_reshape_d @ 0x131000;
+
+        regfile {
+            name="Pre-DRP WR0 S";
+            reg {field {} data[31:0];} TODO;
+        } pre_drp_wr0_s @ 0x132000;
+
+        regfile {
+            name="Pre-DRP WR0 D";
+            reg {field {} data[31:0];} TODO;
+        } pre_drp_wr0_d @ 0x133000;
+
+        regfile {
+            name="Post-DRP0 / Post-DRP SDP S";
+            reg {field {} data[31:0];} TODO;
+        } post_drp0_s @ 0x13a000;
+
+        regfile {
+            name="Post-DRP0 / Post-DRP SDP D";
+            reg {field {} data[31:0];} TODO;
+        } post_drp0_d @ 0x13b000;
+
+        regfile {
+            name="Post-DRP PDP S";
+            reg {field {} data[31:0];} TODO;
+        } post_drp_pdp_s @ 0x13c000;
+
+        regfile {
+            name="Post-DRP PDP D";
+            reg {field {} data[31:0];} TODO;
+        } post_drp_pdp_d @ 0x13d000;
+
+        regfile {
+            name="CTRL (E21) control register space";
+            reg {field {} data[9:0];} reset_mask1 @ 0x00;
+            reg {field {} data[9:0];} reset_mask2 @ 0x08;
+            reg {field {} data[9:0];} reset_mask3 @ 0x0c;
+            reg {field {} data[0:0];} start_cores @ 0x20;
+
+            reg {field {} data[31:0];} core0_r0 @ 0x024;
+            reg {field {} data[31:0];} core0_r1 @ 0x028;
+            reg {field {} data[31:0];} core0_r2 @ 0x02c;
+            reg {field {} data[31:0];} core0_r3 @ 0x030;
+            reg {field {} data[31:0];} core0_r4 @ 0x034;
+            reg {field {} data[31:0];} core0_r5 @ 0x038;
+
+            reg {field {} data[31:0];} core1_r0 @ 0x03c;
+            reg {field {} data[31:0];} core1_r1 @ 0x040;
+            reg {field {} data[31:0];} core1_r2 @ 0x044;
+            reg {field {} data[31:0];} core1_r3 @ 0x048;
+            reg {field {} data[31:0];} core1_r4 @ 0x04c;
+            reg {field {} data[31:0];} core1_r5 @ 0x050;
+
+            reg {field {} data[31:0];} core2_r0 @ 0x054;
+            reg {field {} data[31:0];} core2_r1 @ 0x058;
+            reg {field {} data[31:0];} core2_r2 @ 0x05c;
+            reg {field {} data[31:0];} core2_r3 @ 0x060;
+            reg {field {} data[31:0];} core2_r4 @ 0x064;
+            reg {field {} data[31:0];} core2_r5 @ 0x068;
+
+            reg {field {} data[31:0];} coreid_0   @ 0x108;
+            reg {field {} data[31:0];} entry_0    @ 0x10c;
+            reg {field {} data[31:0];} coreid_1   @ 0x120;
+            reg {field {} data[31:0];} entry_1    @ 0x124;
+            reg {field {} data[31:0];} coreid_2   @ 0x138;
+            reg {field {} data[31:0];} entry_2    @ 0x13c;
+            reg {field {} data[31:0];} coreid_3   @ 0x150;
+            reg {field {} data[31:0];} entry_3    @ 0x154;
+            reg {field {} data[31:0];} coreid_4   @ 0x168;
+            reg {field {} data[31:0];} entry_4    @ 0x16c;
+            reg {field {} data[31:0];} coreid_5   @ 0x180;
+            reg {field {} data[31:0];} entry_5    @ 0x184;
+            reg {field {} data[31:0];} coreid_6   @ 0x198;
+            reg {field {} data[31:0];} entry_6    @ 0x19c;
+            reg {field {} data[31:0];} coreid_7   @ 0x1b0;
+            reg {field {} data[31:0];} entry_7    @ 0x1b4;
+            reg {field {} data[31:0];} coreid_8   @ 0x1c8;
+            reg {field {} data[31:0];} entry_8    @ 0x1cc;
+            reg {field {} data[31:0];} coreid_9   @ 0x1e0;
+            reg {field {} data[31:0];} entry_9    @ 0x1e4;
+        } ctrl @ 0x180000;
+
+        regfile {
+            name="CDMA - configuration DMA register space";
+            reg {field {} data[31:0];} TODO;
+        } cdma @ 0x181000;
+
+        npu_llc_rf #(.SUFFIX("0")) coda_llc0 @ 0x188000;
+        npu_llc_rf #(.SUFFIX("1")) coda_llc1 @ 0x189000;
+
+        regfile {
+            name="MAC (Top0) S";
+            reg {field {} data[31:0];} TODO;
+        } mac_s @ 0x190000;
+
+        regfile {
+            name="MAC (Top0) D";
+            reg {field {} data[31:0];} TODO;
+        } mac_d @ 0x191000;
+
+        regfile {
+            name="Top S";
+            reg {field {} data[31:0];} TODO;
+        } top_s @ 0x198000;
+
+        regfile {
+            name="Top D";
+            reg {field {} data[31:0];} TODO;
+        } top_d @ 0x199000;
+
     } npu  @ 0x51c00000;
-    coda_llc_rf #(.SUFFIX("0")) coda_llc0 @ 0x51d88000;
-    coda_llc_rf #(.SUFFIX("1")) coda_llc1 @ 0x51d89000;
 
 
     // NoC configuration space (0x52000000–0x52100000)
@@ -466,11 +591,11 @@ addrmap scpu_memory {
         } firmware1[0x4000] @ 0x50000;
         reg {
             field {} data[31:0];
-        } firmware2[0x4000] @ 0x60000;
+        } firmware2[0x3000] @ 0x60000;
         reg {
             field {} data[31:0];
         } serdes_phy_regs @ 0x6f000;
-        
+
     } d2d @ 0x52100000;
 
 

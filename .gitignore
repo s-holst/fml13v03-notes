@@ -212,5 +212,6 @@ __marimo__/
 archlinux/disk.img
 firmware/*.elf
 firmware/*_serdes_*.bin
+firmware/*_u84_*.bin
 firmware/*pmix.bin
 firmware/*lpcpu.bin

@@ -37,7 +37,7 @@ modules: vmlinuz
 	INSTALL_HDR_PATH=../modules/usr make -C fml13v03_linux headers_install
 
 busybox:
-	git clone https://git.busybox.net/busybox	
+	git clone https://git.busybox.net/busybox
 
 busybox/busybox: busybox
 	make -C busybox defconfig
