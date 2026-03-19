@@ -1,6 +1,6 @@
 # Linux 6.6.92 fml13v03 Changes Summary
 
-Below is an LLM-generated summary of the vendor changes made in the fml13v03-6.6.92 branch of [fml13v03_linux](https://github.com/DC-DeepComputing/fml13v03_linux.git).
+A LLM-generated summary of the vendor changes made in the fml13v03-6.6.92 branch of [fml13v03_linux](https://github.com/DC-DeepComputing/fml13v03_linux.git).
 
 ## Target Platform
 
