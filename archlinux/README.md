@@ -86,6 +86,8 @@ useradd -m roma
 passwd roma
 ```
 
+For multi-thread package building, set `MAKEFLAGS="-j8"` in `/etc/makepkg.conf`.
+
 
 Things that work out-of-the-box:
 - Fn-Space toggles through keyboard backlight brightnesses: low, mid, bright, off
@@ -241,4 +243,79 @@ warning on headphone disconnect:
 [  482.533892] [<ffffffff81050796>] ret_from_fork+0xe/0x18
 [  482.533901] ---[ end trace 0000000000000000 ]---
 [  543.903918] ------------[ cut here ]------------
+```
+
+
+ArchLinux Cross-Compiling RISC-V Packages on MacOS or Linux
+-----------------------------------------------------------
+
+Tested with arch latest in [OrbStack](https://orbstack.dev/download) on MacOS.
+Any modern linux should also be suitable as host machine.
+
+Taken mostly from [https://github.com/felixonmars/archriscv-packages/wiki/Setup-Arch-Linux-RISC-V-Development-Environment]
+
+### Host Preparation
+
+add to `/etc/pacman.conf`:
+```
+[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch
+```
+
+```
+sudo pacman -Sy
+sudo pacman -S archlinuxcn-keyring
+sudo pacman -S qemu-user-static qemu-user-static-binfmt
+
+# Add the credential (C) flag for proper suid in containers (required for sudo inside containers):
+
+sudo bash
+cd /proc/sys/fs/binfmt_misc
+echo '-1' > qemu-riscv64
+echo ':qemu-riscv64:M::\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xf3\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-riscv64-static:PCF' > register
+exit
+
+curl -O https://archriscv.felixc.at/images/archriscv-latest.tar.zst
+mkdir archriscv
+sudo bsdtar -xf archriscv-latest.tar.zst -C archriscv
+```
+
+### Container Start and Setup
+
+Default `/tmp` is only 2G, too small for some linker runs.
+Disable the use of tmpfs for `/tmp` by defining `SYSTEMD_NSPAWN_TMPFS_TMP=0`.
+
+```
+sudo SYSTEMD_NSPAWN_TMPFS_TMP=0 systemd-nspawn -a -U -D ./archriscv
+
+# within container, first-boot setup:
+
+sed -i 's/^#DisableSandbox/DisableSandbox/' /etc/pacman.conf
+sed -i 's/^#MAKEFLAGS="-j[0-9]*"/MAKEFLAGS="-j8"/' /etc/makepkg.conf
+pacman -Syu
+pacman -S base-devel vim git cmake setconf
+useradd -m -G wheel user
+sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
+echo 'export EDITOR=vim' >> ~/.bashrc && source ~/.bashrc
+exec su - user
+echo 'export EDITOR=vim' >> ~/.bashrc && source ~/.bashrc
+```
+
+### Fix for no prompt / 'not a tty' / termios2 Issue
+
+After system upgrade in the container, the upgraded glibc might use termios2
+ioctls on /dev/pts/0 that are not supported by qemu-user yet. 
+A [fix has been added to qemu](https://gitlab.com/qemu-project/qemu/-/work_items/3065)
+but it is not working for riscv64 as of 10.2.2.
+A hotfix is using a LD_PRELOAD shim that implements the essential glibc calls with old termios ioctls.
+
+- Copy `fix_tty.c` to the container
+- Compile it within the container `gcc -shared -fPIC -ldl -Werror -o /fix_tty.so fix_tty.c`
+- Add the line `export LD_PRELOAD=/fix_tty.so` to `/etc/profile`
+- Start containers with `sudo SYSTEMD_NSPAWN_TMPFS_TMP=0 systemd-nspawn --setenv=LD_PRELOAD=/fix_tty.so -a -U -D ./archriscv`
+
+
+Snapshots:
+```
+sudo bsdtar --zstd -cf archriscv-`date "+%Y-%m-%d-%H-%M-%S"`.tar.zst -C archriscv .
 ```
