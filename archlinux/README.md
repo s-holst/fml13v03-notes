@@ -86,6 +86,48 @@ useradd -m roma
 passwd roma
 ```
 
+load eswin modules:
+```
+cat >/etc/modules-load.d/eswin.conf <<EOF
+es_vdec
+es_venc
+es_hae
+es_dewarp
+es_media_ext_drv
+eic7700_dsp
+eic7700_npu
+EOF
+```
+
+eswin log config. (Required!):
+```
+cat >/etc/es_syslog.conf <<EOF
+#module log level configuration
+#module id level(user)
+VB       1        3
+SYS      2        3
+VDEC     3        3
+VPS      4        3
+VENC     5        3
+VO       6        3
+VI       7        3
+AIO      8        3
+AI       9        3
+AO       10       3
+AENC     11       3
+ADEC     12       3
+USER     13       3
+GDC      14       3
+NPU      15       3
+DSP      16       3
+BMS      17       3
+NUMA     18       3
+CIPHER   19       3
+AK       20       3
+EOF
+```
+Max log level is 5.
+
 For multi-thread package building, set `MAKEFLAGS="-j8"` in `/etc/makepkg.conf`.
 
 
