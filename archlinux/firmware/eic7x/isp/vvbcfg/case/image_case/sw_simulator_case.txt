@@ -1,0 +1,5 @@
+vvbcfg/case/image_case/os08a20_linear_raw16.raw
+vvbcfg/case/image_case/os08a20_linear_raw16.raw
+vvbcfg/case/image_case/os08a20_linear_raw16.raw
+vvbcfg/case/image_case/os08a20_linear_raw16.raw
+vvbcfg/case/image_case/os08a20_linear_raw16.raw

@@ -1,0 +1,53 @@
+{
+    "root" : [
+        {
+            "classname" : "Awbv2",
+            "enable" : false,
+            "illuorder" : "A, D50, D65, D75, TL84, F12, CWF",
+            "indoor" : [1, 1, 1, 1, 1, 1, 1],
+            "outdoor" : [1, 1, 1, 1, 1, 1, 1],
+            "transition" : [1, 1, 1, 1, 1, 1, 1],
+            "overExposureWeight" : [0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.8, 0.6, 0.4, 0.2],
+            "avg" : 0.01
+        },
+        {
+            "classname" : "CcWhitePixels",
+            "enable" : 0,
+            "damping" : 0.5
+        },
+        {
+            "classname" : "LscWhitePixels",
+            "enable" : 0,
+            "damping" : 0.5
+        },
+        {
+            "classname" : "ABls",
+            "forcecreate" : true,
+            "enable" :  true,
+            "tables" : [
+                {
+                    "hdr" : false,
+                    "gains" : [1, 5, 10, 15, 20],
+                    "bls": [
+                        [0, 0, 0, 0],
+                        [60, 60, 60, 60],
+                        [120, 120, 120, 120],
+                        [240, 240, 240, 240],
+                        [480, 480, 480, 480]
+                      ]
+                },
+                {
+                    "hdr" : true,
+                    "gains" : [1, 128, 200, 240, 400],
+                    "bls": [
+                        [240, 240, 240, 240],
+                        [240, 240, 240, 240],
+                        [240, 240, 240, 240],
+                        [240, 240, 240, 240],
+                        [240, 240, 240, 240]
+                      ]
+                }
+            ]
+        }
+    ]
+}

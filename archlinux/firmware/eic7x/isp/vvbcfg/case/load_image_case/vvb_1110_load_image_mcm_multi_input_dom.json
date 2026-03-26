@@ -1,0 +1,89 @@
+{
+	"totalInstance": 2,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "User",      "//": "Invalid, Sensor, Image, User, Max",
+		"inputInfo":
+		{
+			"loopCnt" : 1,
+			"width" : 1920,
+			"height": 1080,
+			"layout": "RGGB",
+			"format": "RAW12_MODE1",
+			"fileName": "vvbcfg/load_image/Cfg/10.1_Modular_DPF_On_cfg.json",
+			"PicName"  : "vvbcfg/case/load_image_case/cfg/load_image_case_lists0.txt"
+		},
+		"workMode": 2,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,            "//": "1:CAMDEV_MCM_PORT_0, 2:CAMDEV_MCM_PORT_1, ...",
+			"mcmOp": 1,             "//": "1:CAMDEV_MCM_OP_SW, 2:CAMDEV_MCM_OP_HW"
+		},
+		"streamDuration": 0, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"pathWidth": 1920,
+			"pathHeight": 1080,
+			"format": "YUV422SP"
+		},
+		{
+			"pathName": "READ",
+			"pathEnable": 1,
+			"bufferNumber":4,
+			"pathWidth": 1920,
+			"pathHeight": 1080,
+			"format": "RAW12_MODE1"
+		}
+		]
+	},
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "User",      "//": "Invalid, Sensor, Image, User, Max",
+		"inputInfo":
+		{
+			"loopCnt" : 1,
+			"width" : 1920,
+			"height": 1080,
+			"layout": "RGGB",
+			"format": "RAW12_MODE1",
+			"fileName": "vvbcfg/load_image/Cfg/11.1_Modular_3DNR_On_cfg.json",
+			"PicName"  : "vvbcfg/case/load_image_case/cfg/load_image_case_lists1.txt"
+		},
+		"workMode": 2,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 2,            "//": "1:CAMDEV_MCM_PORT_0, 2:CAMDEV_MCM_PORT_1, ...",
+			"mcmOp": 1,             "//": "1:CAMDEV_MCM_OP_SW, 2:CAMDEV_MCM_OP_HW"
+		},
+		"streamDuration": 0, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"pathWidth": 1920,
+			"pathHeight": 1080,
+			"format": "YUV422SP"
+		},
+		{
+			"pathName": "READ",
+			"pathEnable": 1,
+			"bufferNumber":4,
+			"pathWidth": 1920,
+			"pathHeight": 1080,
+			"format": "RAW12_MODE1"
+		}
+		]
+	}
+	]
+}

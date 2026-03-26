@@ -1,0 +1,47 @@
+{
+	"totalInstance": 1,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "User",      "//": "Invalid, Sensor, Image, User, Max",
+		"inputInfo":
+		{
+			"loopCnt" : 1,
+			"width" : 3840,
+			"height": 2160,
+			"layout": "BGGR",
+			"format": "2DOL",
+			"fileName": "vvbcfg/load_image/Cfg/16.1_Modular_HDR_On_cfg.json",
+			"PicName"  : "vvbcfg/case/load_image_case/cfg/load_image_case_lists0.txt"
+		},
+		"workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+		},
+		"streamDuration": 0, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"pathWidth": 3840,
+			"pathHeight": 2160,
+			"format": "YUV422SP"
+		},
+		{
+			"pathName": "RETIMING",
+			"pathEnable": 1,
+			"bufferNumber":4,
+			"pathWidth": 3840,
+			"pathHeight": 2160,
+			"format": "2DOL",
+			"stitchMode": 6
+		}
+		]
+	}
+	]
+}

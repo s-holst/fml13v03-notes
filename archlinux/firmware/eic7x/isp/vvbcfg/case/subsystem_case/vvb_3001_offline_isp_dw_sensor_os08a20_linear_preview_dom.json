@@ -1,0 +1,88 @@
+{
+	"totalInstance": 1,
+	"useSubSystem": 1,
+	"instanceCfg": [
+	{
+        "hpId": 0,
+        "instanceEnable": 1,
+        "bufferType": "userptr",
+        "inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+        "workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+        "modeInfo":
+        {
+            "portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+        },
+        "streamDuration": 10, "//": "Second",
+
+        "pathCfg":[
+        {
+            "pathName": "MP",
+            "pathEnable": 1,
+            "bufferNumber": 6,
+            "format": "YUV422SP"
+        }
+        ],
+
+        "sensorInfo":
+        {
+            "sensorName": "os08a20",
+            "calibrationName": "OS08a20.json",
+            "modeIndex": 0,
+            "resolutionWidth": 1920,
+            "resolutionHeight": 1080,
+            "fps": 10
+        },
+        
+		"dewarpInfo":
+		{
+			"enable": 1,
+			"map":{
+				"dewarpMode" : "LENS_CORRECTION",
+				"mapSelect" : "16x16",
+				"tempWidth": 1920,
+				"tempHeight": 1080
+			},
+			"cameraMatrix" :
+			[
+				1129.8071142640906,
+				0.0,
+				983.63311572710620,
+				0.0,
+				1129.8071142640906,
+				524.58274374675830,
+				0.0,
+				0.0,
+				1
+			],
+			"distortionCoeff" :
+			[
+				-0.41220463678141450,
+				0.19903852189682711,
+				0.00011238496162600249,
+				-0.00022867419317093744,
+				-0.050430372226485137,
+				0.0,
+				0.0,
+				0.0
+			],
+			"hflip" : false,
+			"vflip" : false,
+			"bypass": true,
+			"inputEnable" : 1,
+			"inputHeight" : 1080,
+			"inputWidth" : 1920,
+			"inputFormat" : 0,
+			"inputPath": 0,  "//": "path 0~1",
+			"inBit": 0,     "//": "0: 8 bit   1: 10 bit word align",
+			"outputEnable" : 1,
+			"outputWidth": 1920,
+			"outputHeight": 1080,
+			"outputNumber": 6,
+			"outputFormat": 0,
+			"outputPath": 2, "//": "path 2~8",
+			"outBit": 0,   "//": "0: 8 bit   1: 10 bit word align",
+			"scaleFactor": 4096
+		}
+	}
+	]
+}

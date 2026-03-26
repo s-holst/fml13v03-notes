@@ -1,0 +1,1 @@
+vvbcfg/case/image_case/raw12_1080p_BGGR_RGBIR.raw

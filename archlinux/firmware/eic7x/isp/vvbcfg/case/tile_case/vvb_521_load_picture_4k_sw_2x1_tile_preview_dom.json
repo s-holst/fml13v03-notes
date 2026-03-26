@@ -1,0 +1,56 @@
+{
+    "totalInstance": 1,
+    "instanceCfg": [
+    {
+        "hpId": 0,
+        "instanceEnable": 1,
+        "bufferType": "userptr",
+        "inputType": "User",      "//": "Invalid, Sensor, Image, User, Max",
+        "inputInfo":
+        {
+            "loopCnt" : 1,
+            "frameNum": 1,
+            "PicName"  : "vvbcfg/case/image_case/picture_3840x2160_case.txt",
+            "width"    : 3840,
+            "height"   : 2160,
+            "format"   : "RAW16",
+            "layout"   : "BGGR",
+            "calibrationName": "OS08a20_4k.json"
+        },
+        "workMode": 3,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+        "modeInfo":
+        {
+            "tileMode": 1,       "//": " 0: GENERAL 1: SW_TILE  2: HW_TILE ",
+            "tileJointMode": 1,  "//": "1: 2x1, 2: 4x3  3: User"
+        },
+        "streamDuration": 1,   "//": "Second",
+
+        "pathCfg":[
+        {
+            "pathName": "MP",
+            "pathEnable": 1,
+            "bufferNumber": 6,
+            "format": "YUV422SP"
+        },
+        {
+            "pathName": "READ",
+            "pathEnable": 1,
+            "bufferNumber":4,
+            "format": "RAW16"
+        }
+        ],
+        "awbInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode only"
+        },
+        "aeInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1
+        }
+    }
+    ]
+}

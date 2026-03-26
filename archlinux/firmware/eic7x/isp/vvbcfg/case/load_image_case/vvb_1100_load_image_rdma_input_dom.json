@@ -1,0 +1,46 @@
+{
+	"totalInstance": 1,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "User",      "//": "Invalid, Sensor, Image, User, Max",
+		"inputInfo":
+		{
+			"loopCnt" : 1,
+			"width" : 2592,
+			"height": 1536,
+			"layout": "RGGB",
+			"format": "RAW12_MODE1",
+			"fileName": "vvbcfg/load_image/Cfg/1.1_Modular_Demosaic_cfg.json",
+			"PicName"  : "vvbcfg/case/load_image_case/cfg/load_image_case_lists0.txt"
+		},
+		"workMode": 3,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"reserved":0
+		},
+		"streamDuration": 0, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"pathWidth": 2592,
+			"pathHeight": 1536,
+			"format": "YUV422SP"
+		},
+		{
+			"pathName": "READ",
+			"pathEnable": 1,
+			"bufferNumber":4,
+			"pathWidth": 2592,
+			"pathHeight": 1536,
+			"format": "RAW12_MODE1"
+		}
+		]
+	}
+	]
+}

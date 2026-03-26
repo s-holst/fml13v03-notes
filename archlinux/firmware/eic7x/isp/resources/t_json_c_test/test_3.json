@@ -1,0 +1,30 @@
+{
+  "digital": 1, // comment
+  "digital2": 1.0, // comment
+  "string": "aaaa",// comment
+  "boolean": true, // comment
+  "array": [
+    1 /* comment 2*/,
+    2 /* comment 2*/
+  ],
+  "object": {
+    "digital": 2,
+    "digital2": 2.0,
+    "string": "bbbb",
+    "boolean": false,
+    "array": [
+      3,
+      4
+    ],
+    "object2": {
+      "digital": 3,
+      "digital2": 3.0,
+      "string": "cccc",
+      "boolean": true,
+      "array": [
+        5,
+        6
+      ]
+    }
+  }
+}

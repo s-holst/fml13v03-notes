@@ -1,0 +1,52 @@
+{
+    "ARCH" : "META_DATA",
+    "root" : [
+        {
+            "driver" : [
+                {
+                    "class" : "Bls",
+                    "bls" : [ 240, 240, 240, 240]
+                },
+                {
+                    "class" : "CManualWb",
+                    "enable" : true,
+                    "gain" : [ 2.0510000000000002, 1.0620000000000001, 1.0620000000000001, 1.7070000000000001 ]
+                },
+                {
+                    "class" : "CDgain",
+                    "digital_gain_b" : 1.0,
+                    "digital_gain_gb" : 1.0,
+                    "digital_gain_gr" : 1.0,
+                    "digital_gain_r" : 1.0,
+                    "enable" : true
+                },
+                {
+                    "auto_table" : "3aconfig_meta_test.json",
+                    "awb_enable" : true,
+                    "awb_meas_bit" : 24,
+                    "cac_enable" : false,
+                    "cc_enable" : true,
+					"cproc_enable": true,
+                    "class" : "C3Av2Interface",
+                    "enable" : true,
+                    "integration_time" : 0.01,
+                    "lsc_enable" : true,
+                    "lsc_version" : 3,
+                    "sensor_gain" : 16.0,
+                    "xml" : "OS08a20_0928.xml"
+                } ],
+			"nr_reloc" : true,
+            "input" :
+            {
+                "bayer_pattern" : "RGGB",
+                "bit" : 12,
+                "frames" : 20,
+                "height" : 1080,
+                "path" : [ "vvbcfg/load_image/Raw/1.4_3DNR/1.4.2_3DNR/f%d.raw", "%d.raw", "%d.raw" ],
+                "metadata_info" : "vvbcfg/load_image/meta_data/meta_test.json",
+                "start_frame" : 0,
+                "width" : 1920
+            },
+            "nr_reloc" : true
+        } ]
+}

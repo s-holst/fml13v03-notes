@@ -1,0 +1,47 @@
+{
+	"totalInstance": 1,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+		"workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+		},
+		"streamDuration": 10, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"format": "YUV422SP"
+		}
+		],
+
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "sensorInfo":
+		{
+			"sensorName": "imx681",
+			"calibrationName": "IMX681_2016x1512.json",
+			"modeIndex": 1,
+			"resolutionWidth": 2016,
+			"resolutionHeight": 1512,
+			"illumType": "D50",
+			"fps": 0,	"//": "0: Default"
+		},
+		"lscInfo":
+		{
+			"enable": 0
+		}
+	}
+	]
+}

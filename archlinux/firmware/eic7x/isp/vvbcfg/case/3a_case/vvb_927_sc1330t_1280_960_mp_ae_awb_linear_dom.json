@@ -1,0 +1,63 @@
+{
+    
+    "totalInstance": 1,
+    "instanceCfg": [
+    {
+        "hpId": 0,
+        "instanceEnable": 1,
+        "bufferType": "userptr",
+        "inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+        "workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+        "modeInfo":
+        {
+            "portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+        },
+        "streamDuration": 30, "//": "Second",
+
+        "pathCfg":[
+        {
+            "pathName": "MP",
+            "pathEnable": 1,
+            "bufferNumber": 6,
+            "format": "YUV422SP"
+        }
+        ],
+
+        "sensorInfo":
+        {
+            "sensorName": "sc1330t",
+            "calibrationName": "SC1330T_1280_960.json",
+            "modeIndex": 0,
+            "resolutionWidth": 1280,
+            "resolutionHeight": 960,
+            "illumType": "D50",
+            "fps": 10,	"//": "0: Default"
+        },
+        
+        "aeInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "awbInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "ccmInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        }
+    }
+    ]
+}

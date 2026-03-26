@@ -1,0 +1,55 @@
+{
+	"totalInstance": 1,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+		"workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+		},
+		"streamDuration": 30, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"format": "YUV422SP"
+		}
+		],
+
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "sensorInfo":
+		{
+			"sensorName": "ox08b40",
+			"calibrationName": "OX08b40_1080p.json",
+			"simulatorName": "vvbcfg/project_json_file/manual_X8B_native4dol_ext.json",
+			"modeIndex": 0,
+			"resolutionWidth": 1920,
+			"resolutionHeight": 1080,
+			"fps": 15,	"//": "0: Default"
+		},
+		"blsInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 0
+		},
+		"wbInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 0
+		}
+	}
+	]
+}

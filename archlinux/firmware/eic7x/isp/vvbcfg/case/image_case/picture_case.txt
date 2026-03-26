@@ -1,0 +1,12 @@
+vvbcfg/case/image_case/raw12_1080p_BGGR1.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR0.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR1.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR0.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR0.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR0.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR1.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR1.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR1.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR0.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR0.bin
+vvbcfg/case/image_case/raw12_1080p_BGGR0.bin

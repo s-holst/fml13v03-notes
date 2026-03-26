@@ -1,0 +1,56 @@
+{
+    "totalInstance": 1,
+    "instanceCfg": [
+    {
+        "hpId": 0,
+        "instanceEnable": 1,
+        "bufferType": "userptr",
+        "inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+        "workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+        "modeInfo":
+        {
+            "portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3",
+            "tileMode": 2,       "//": " 0: GENERAL 1: SW_TILE  2: HW_TILE ",
+            "tileJointMode": 1,  "//": "1: 2x1, 2: 4x3  3: User"
+        },
+        "streamDuration": 30,   "//": "Second",
+
+        "pathCfg":[
+        {
+            "pathName": "MP",
+            "pathEnable": 1,
+            "bufferNumber": 6,
+            "format": "YUV422SP"
+        }
+        ],
+
+        "dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "sensorInfo":
+        {
+            "sensorName": "os08a20",
+            "calibrationName": "OS08a20_4k.json",
+            "modeIndex": 2,
+            "resolutionWidth": 3840,
+            "resolutionHeight": 2160,
+            "fps": 10
+        },
+        "awbInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1
+        },
+        "aeInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1
+        }
+    }
+    ]
+}

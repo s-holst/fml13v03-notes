@@ -1,0 +1,117 @@
+{
+	"totalInstance": 2,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+		"workMode": 2,              "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,            "//": "1:CAMDEV_MCM_PORT_0, 2:CAMDEV_MCM_PORT_1, ...",
+			"mcmOp": 1,             "//": "1:CAMDEV_MCM_OP_SW, 2:CAMDEV_MCM_OP_HW"
+		},
+		"streamDuration": 30,       "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"format": "YUV422SP"
+		},
+		{
+			"pathName": "READ",
+			"pathEnable": 1,
+			"bufferNumber": 4,
+			"format": "RAW12_MODE1"
+		}
+		],
+
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "sensorInfo":
+		{
+			"sensorName": "os08a20",
+			"calibrationName": "OS08a20.json",
+			"modeIndex": 6,
+			"resolutionWidth": 1920,
+			"resolutionHeight": 1080,
+			"fps": 2
+		},
+		"wbInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 0
+		},
+		"aeInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 1
+		}
+	},
+    {
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+		"workMode": 2,              "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 2,            "//": "1:CAMDEV_MCM_PORT_0, 2:CAMDEV_MCM_PORT_1, ...",
+			"mcmOp": 1,             "//": "1:CAMDEV_MCM_OP_SW, 2:CAMDEV_MCM_OP_HW"
+		},
+		"streamDuration": 30,       "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"format": "YUV420SP"
+		},
+		{
+			"pathName": "READ",
+			"pathEnable": 1,
+			"bufferNumber": 4,
+			"format": "RAW12_MODE1"
+		}
+		],
+
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "sensorInfo":
+		{
+			"sensorName": "os08a20",
+			"calibrationName": "OS08a20.json",
+			"modeIndex": 6,
+			"resolutionWidth": 1920,
+			"resolutionHeight": 1080,
+			"fps": 2
+		},
+		"wbInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 0
+		},
+		"aeInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 1
+		}
+	}
+	]
+}

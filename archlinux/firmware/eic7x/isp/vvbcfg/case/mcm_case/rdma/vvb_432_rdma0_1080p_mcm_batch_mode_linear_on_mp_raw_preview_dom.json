@@ -1,0 +1,60 @@
+{
+	"totalInstance": 1,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "User",      "//": "Invalid, Sensor, User, TPG, Max",
+		"inputInfo":
+		{
+			"loopCnt" : 1,
+			"frameNum": 32,
+			"PicName"  : "vvbcfg/case/image_case/picture_case_s4.txt",
+			"width"    : 640,
+			"height"   : 480,
+			"format"   : "RAW16",
+			"layout"   : "BGGR"
+		},
+		"workMode": 4,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode  4:Batch_mode",
+		"modeInfo":
+		{
+			"portId": 1,            "//": "1:CAMDEV_MCM_PORT_0, 2:CAMDEV_MCM_PORT_1, ...",
+			"batchNumber": 32           
+		},
+		"streamDuration": 0, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 96,
+			"pathWidth": 640,
+			"pathHeight": 480,
+			"format": "RAW12"
+		},
+		{
+			"pathName": "READ",
+			"pathEnable": 1,
+			"bufferNumber":96,
+            "pathWidth": 640,
+			"pathHeight": 480,
+			"format": "RAW16"
+		}
+		],
+
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+		"wbInfo":
+		{
+			"enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+		}
+	}
+	]
+}

@@ -1,0 +1,1451 @@
+<?xml version="1.0" ?>
+<matfile>
+   <header type="struct" size="[1 1]">
+      <creation_date index="1" type="char" size="[1 11]">
+         08-Sep-2023
+      </creation_date>
+      <creator index="1" type="char" size="[1 3]">
+         VSI
+      </creator>
+      <sensor_name index="1" type="char" size="[1 7]">
+         Sensors
+      </sensor_name>
+      <sample_name index="1" type="char" size="[1 41]">
+         calibration_raw_OV2778XML_1920x1080_33x33
+      </sample_name>
+      <generator_version index="1" type="char" size="[1 6]">
+         v2.1.4
+      </generator_version>
+      <resolution index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 9]">
+               1920x1080
+            </name>
+            <id index="1" type="char" size="[1 10]">
+               0x00000001
+            </id>
+            <width index="1" type="double" size="[1 1]">
+               [ 1920]
+            </width>
+            <height index="1" type="double" size="[1 1]">
+               [ 1080]
+            </height>
+            <framerate index="1" type="cell" size="[1 3]">
+               <cell index="1" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 6]">
+                     FPS_15
+                  </name>
+                  <fps index="1" type="double" size="[1 1]">
+                     [ 14.9916]
+                  </fps>
+               </cell>
+               <cell index="2" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 6]">
+                     FPS_10
+                  </name>
+                  <fps index="1" type="double" size="[1 1]">
+                     [ 9.9944]
+                  </fps>
+               </cell>
+               <cell index="3" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 6]">
+                     FPS_05
+                  </name>
+                  <fps index="1" type="double" size="[1 1]">
+                     [ 4.9972]
+                  </fps>
+               </cell>
+            </framerate>
+         </cell>
+      </resolution>
+   </header>
+   <sensor type="struct" size="[1 1]">
+      <AWB index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <globals index="1" type="cell" size="[1 1]">
+               <cell index="1" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 9]">
+                     1920x1080
+                  </name>
+                  <resolution index="1" type="char" size="[1 9]">
+                     1920x1080
+                  </resolution>
+                  <SVDMeanValue index="1" type="double" size="[1 3]">
+                     [0.366349 0.418819 0.21483]
+                  </SVDMeanValue>
+                  <PCAMatrix index="1" type="double" size="[3 2]">
+                     [-0.742309 0.0766499 0.665659 0.340065 -0.812891 0.47283]
+                  </PCAMatrix>
+                  <CenterLine index="1" type="double" size="[1 3]">
+                     [-0.768469 -0.639887 -2.4876]
+                  </CenterLine>
+                  <afRg2 index="1" type="double" size="[1 16]">
+                     [0.941391 1.1652 1.23319 1.29102 1.32432 1.37611 1.43075 1.54091 1.64527 1.76295 1.84774 1.90339 1.9948 2.08193 2.15833 2.25]
+                  </afRg2>
+                  <afMaxDist2 index="1" type="double" size="[1 16]">
+                     [0.218787 0.137395 0.120737 0.124282 0.181537 0.231497 0.271049 0.204821 0.127702 0.0650955 0.0352388 0.0399427 0.0802638 0.168873 0.275827 0.38849]
+                  </afMaxDist2>
+                  <afRg1 index="1" type="double" size="[1 16]">
+                     [0.925003 1.08811 1.2416 1.31799 1.39438 1.47078 1.54717 1.62357 1.69996 1.77635 1.85275 1.92914 2.00554 2.08193 2.15833 2.25]
+                  </afRg1>
+                  <afMaxDist1 index="1" type="double" size="[1 16]">
+                     [-0.0305435 0.0308114 0.0993942 0.135272 0.167646 0.197311 0.222978 0.2432 0.256746 0.260123 0.247407 0.206703 0.130672 0.0311272 -0.075827 -0.18849]
+                  </afMaxDist1>
+                  <afGlobalFade2 index="1" type="double" size="[1 16]">
+                     [0.8 0.898315 0.996629 1.09494 1.19326 1.2936 1.35847 1.3862 1.49197 1.63962 1.78032 1.88146 1.97978 2.07809 2.1764 2.2747]
+                  </afGlobalFade2>
+                  <afGlobalGainDistance2 index="1" type="double" size="[1 16]">
+                     [0.439129 0.381543 0.326811 0.273598 0.223894 0.213127 0.256132 0.365912 0.343951 0.185347 0.0609402 0.0639758 0.139932 0.263705 0.401868 0.54808]
+                  </afGlobalGainDistance2>
+                  <afGlobalFade1 index="1" type="double" size="[1 16]">
+                     [0.8 0.898315 0.996629 1.09494 1.19326 1.29157 1.38989 1.4882 1.58652 1.68483 1.78315 1.88146 1.97978 2.07809 2.1764 2.2747]
+                  </afGlobalFade1>
+                  <afGlobalGainDistance1 index="1" type="double" size="[1 16]">
+                     [-0.0391293 0.0184565 0.0731893 0.126402 0.176106 0.22331 0.26623 0.303425 0.334165 0.354641 0.359751 0.336024 0.260068 0.136295 -0.00186779 -0.14808]
+                  </afGlobalGainDistance1>
+                  <fRgProjIndoorMin index="1" type="double" size="[1 1]">
+                     [ 0.95]
+                  </fRgProjIndoorMin>
+                  <fRgProjMax index="1" type="double" size="[1 1]">
+                     [ 2.2]
+                  </fRgProjMax>
+                  <fRgProjMaxSky index="1" type="double" size="[1 1]">
+                     [ 2.25]
+                  </fRgProjMaxSky>
+                  <fRgProjOutdoorMin index="1" type="double" size="[1 1]">
+                     [ 1.65]
+                  </fRgProjOutdoorMin>
+                  <awb_clip_outdoor index="1" type="char" size="[1 3]">
+                     D50
+                  </awb_clip_outdoor>
+                  <K_Factor index="1" type="double" size="[1 1]">
+                     [ 6.5849]
+                  </K_Factor>
+                  <afFade2 index="1" type="double" size="[1 6]">
+                     [0.75 1.28836 1.77672 2.164 2.6 3.0618]
+                  </afFade2>
+                  <afCbMinRegionMax index="1" type="double" size="[1 6]">
+                     [114 114 105 95 95 90]
+                  </afCbMinRegionMax>
+                  <afCrMinRegionMax index="1" type="double" size="[1 6]">
+                     [83 83 110 120 122 128]
+                  </afCrMinRegionMax>
+                  <afMaxCSumRegionMax index="1" type="double" size="[1 6]">
+                     [28 27 18 16 9 9]
+                  </afMaxCSumRegionMax>
+                  <afCbMinRegionMin index="1" type="double" size="[1 6]">
+                     [123 123 123 123 123 120]
+                  </afCbMinRegionMin>
+                  <afCrMinRegionMin index="1" type="double" size="[1 6]">
+                     [123 123 123 123 123 126]
+                  </afCrMinRegionMin>
+                  <afMaxCSumRegionMin index="1" type="double" size="[1 6]">
+                     [5 5 5 5 5 5]
+                  </afMaxCSumRegionMin>
+                  <RegionSize index="1" type="double" size="[1 1]">
+                     [ 1]
+                  </RegionSize>
+                  <RegionSizeInc index="1" type="double" size="[1 1]">
+                     [ 0.8]
+                  </RegionSizeInc>
+                  <RegionSizeDec index="1" type="double" size="[1 1]">
+                     [ 0.05]
+                  </RegionSizeDec>
+                  <IIR index="1" type="struct" size="[1 1]">
+                     <DampCoefAdd index="1" type="double" size="[1 1]">
+                        [ 0.05]
+                     </DampCoefAdd>
+                     <DampCoefSub index="1" type="double" size="[1 1]">
+                        [ 0.05]
+                     </DampCoefSub>
+                     <DampFilterThreshold index="1" type="double" size="[1 1]">
+                        [ 0.4]
+                     </DampFilterThreshold>
+                     <DampingCoefMin index="1" type="double" size="[1 1]">
+                        [ 0.5]
+                     </DampingCoefMin>
+                     <DampingCoefMax index="1" type="double" size="[1 1]">
+                        [ 0.9]
+                     </DampingCoefMax>
+                     <DampingCoefInit index="1" type="double" size="[1 1]">
+                        [ 0.5]
+                     </DampingCoefInit>
+                     <ExpPriorFilterSizeMax index="1" type="double" size="[1 1]">
+                        [ 50]
+                     </ExpPriorFilterSizeMax>
+                     <ExpPriorFilterSizeMin index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </ExpPriorFilterSizeMin>
+                     <ExpPriorMiddle index="1" type="double" size="[1 1]">
+                        [ 0.5]
+                     </ExpPriorMiddle>
+                  </IIR>
+               </cell>
+            </globals>
+            <illumination index="1" type="cell" size="[1 6]">
+               <cell index="1" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 1]">
+                     A
+                  </name>
+                  <doorType index="1" type="char" size="[1 6]">
+                     Indoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [2412.49 3119.66 3119.66 6010.0246]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 347.4857]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [0.9 0.95]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [-0.0501317 -0.041438]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 9]">
+                           1920x1080
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 15]">
+                           1920x1080_A_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [2.37686 1 1 1.7026]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 5]">
+                        A_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="2" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 3]">
+                     D50
+                  </name>
+                  <doorType index="1" type="char" size="[1 7]">
+                     Outdoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [426.341 347.391 347.391 2017.6848]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 136.8678]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.11298 -0.057001]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 9]">
+                           1920x1080
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 17]">
+                           1920x1080_D50_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [2.37686 1 1 1.7026]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 7]">
+                        D50_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="3" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 3]">
+                     D65
+                  </name>
+                  <doorType index="1" type="char" size="[1 7]">
+                     Outdoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [324.004 42.6006 42.6006 1536.8233]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 112.1023]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.164804 -0.043711]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 9]">
+                           1920x1080
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 17]">
+                           1920x1080_D65_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [2.37686 1 1 1.7026]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 7]">
+                        D65_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="4" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 3]">
+                     D75
+                  </name>
+                  <doorType index="1" type="char" size="[1 7]">
+                     Outdoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [313.776 -50.1802 -50.1802 1401.4587]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 105.2382]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.192479 -0.041438]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 9]">
+                           1920x1080
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 17]">
+                           1920x1080_D75_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [2.37686 1 1 1.7026]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 7]">
+                        D75_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="5" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 8]">
+                     F2 (CWF)
+                  </name>
+                  <doorType index="1" type="char" size="[1 6]">
+                     Indoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [457.532 -66.9783 -66.9783 1424.4981]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 128.0448]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.0537155 -0.081122]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 9]">
+                           1920x1080
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 16]">
+                           1920x1080_F2_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [2.37686 1 1 1.7026]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 6]">
+                        F2_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="6" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 10]">
+                     F11 (TL84)
+                  </name>
+                  <doorType index="1" type="char" size="[1 6]">
+                     Indoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [434.527 195.728 195.728 1405.573]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 120.4173]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.0441405 -0.065533]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 9]">
+                           1920x1080
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 17]">
+                           1920x1080_F11_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [2.37686 1 1 1.7026]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 7]">
+                        F11_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+            </illumination>
+         </cell>
+      </AWB>
+      <LSC index="1" type="cell" size="[1 6]">
+         <cell index="1" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 15]">
+               1920x1080_A_100
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <illumination index="1" type="char" size="[1 1]">
+               A
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 32]">
+               [28 38 44 48 54 55 58 57 58 61 59 60 63 65 66 70 73 72 71 72 71 69 66 68 67 63 65 62 61 61 53 42]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 32]">
+               [20 25 25 26 28 29 29 30 30 32 33 33 34 35 35 37 37 35 38 37 37 37 38 38 38 39 38 39 37 38 37 36]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [4095 3267 2490 2140 1854 1692 1518 1330 1175 1090 1056 1055 1036 1078 1136 1168 1212 1226 1214 1186 1134 1074 1081 1093 1136 1239 1360 1477 1551 1632 1745 2102 3013 3799 2959 2394 2064 1835 1667 1489 1312 1171 1081 1061 1044 1046 1064 1117 1161 1186 1212 1205 1181 1141 1090 1076 1098 1147 1262 1373 1471 1530 1576 1766 1921 2580 3219 2649 2256 1976 1815 1626 1461 1295 1163 1081 1059 1034 1029 1053 1091 1136 1172 1183 1187 1172 1134 1094 1088 1113 1175 1252 1366 1434 1487 1524 1606 1881 2256 2835 2480 2150 1942 1758 1588 1438 1296 1164 1096 1059 1035 1034 1046 1097 1131 1156 1175 1176 1157 1130 1118 1111 1135 1193 1272 1359 1429 1473 1498 1582 1734 2054 2597 2362 2062 1890 1732 1569 1433 1285 1166 1098 1089 1024 1040 1051 1086 1119 1146 1167 1168 1159 1136 1127 1127 1154 1201 1277 1346 1413 1449 1471 1552 1675 1932 2449 2201 1996 1848 1694 1543 1411 1295 1181 1122 1064 1039 1041 1064 1083 1117 1145 1152 1160 1150 1141 1130 1142 1174 1226 1278 1355 1391 1452 1458 1524 1611 1808 2296 2138 1953 1803 1652 1517 1411 1292 1199 1141 1083 1058 1053 1058 1092 1111 1142 1150 1159 1150 1141 1147 1159 1184 1229 1283 1346 1389 1427 1440 1491 1561 1724 2225 2032 1896 1731 1629 1492 1398 1296 1207 1152 1093 1077 1064 1088 1091 1113 1138 1139 1151 1142 1145 1149 1164 1201 1227 1281 1334 1372 1404 1423 1468 1541 1642 2091 1979 1819 1708 1575 1479 1395 1291 1214 1170 1110 1089 1076 1086 1096 1112 1129 1132 1140 1141 1146 1159 1171 1201 1238 1280 1319 1357 1382 1422 1452 1492 1598 2033 1919 1764 1659 1555 1465 1359 1304 1219 1180 1129 1117 1099 1093 1105 1106 1117 1128 1136 1133 1143 1159 1173 1206 1247 1272 1301 1339 1366 1396 1454 1476 1580 1957 1860 1722 1602 1515 1434 1357 1293 1226 1181 1142 1115 1103 1102 1106 1107 1112 1122 1134 1136 1139 1157 1186 1206 1232 1264 1302 1317 1358 1376 1429 1464 1550 1919 1818 1680 1580 1495 1408 1356 1282 1234 1187 1154 1120 1114 1111 1103 1106 1107 1116 1128 1123 1137 1157 1174 1200 1229 1263 1288 1316 1329 1378 1400 1443 1526 1879 1784 1663 1547 1481 1401 1347 1291 1243 1208 1164 1135 1129 1105 1112 1107 1103 1110 1109 1123 1131 1152 1176 1197 1226 1248 1280 1301 1337 1353 1397 1462 1510 1823 1719 1612 1522 1444 1392 1326 1293 1242 1199 1161 1144 1123 1116 1103 1087 1096 1089 1104 1112 1123 1135 1153 1189 1211 1239 1263 1287 1316 1330 1383 1421 1493 1825 1691 1598 1506 1427 1370 1327 1280 1245 1204 1180 1150 1127 1117 1101 1093 1078 1087 1089 1094 1116 1132 1152 1171 1203 1227 1252 1274 1301 1325 1379 1431 1475 1747 1685 1585 1488 1415 1365 1321 1278 1235 1211 1175 1149 1134 1109 1095 1094 1073 1071 1070 1097 1106 1124 1149 1170 1187 1219 1242 1269 1294 1311 1356 1415 1481 1754 1669 1549 1475 1411 1361 1316 1272 1250 1209 1183 1149 1131 1116 1100 1081 1076 1057 1071 1078 1103 1124 1148 1167 1187 1212 1230 1267 1281 1307 1370 1409 1480 1748 1643 1547 1463 1401 1343 1309 1274 1234 1215 1172 1168 1133 1109 1099 1073 1065 1055 1057 1078 1097 1115 1138 1154 1190 1202 1233 1256 1279 1313 1361 1414 1436 1745 1631 1533 1457 1393 1349 1306 1271 1239 1211 1179 1150 1131 1119 1117 1073 1055 1050 1056 1071 1079 1112 1126 1153 1173 1198 1223 1249 1264 1302 1370 1394 1449 1717 1621 1521 1445 1387 1333 1292 1257 1230 1198 1177 1157 1125 1108 1119 1073 1053 1043 1044 1061 1085 1101 1126 1142 1173 1187 1213 1237 1278 1311 1365 1395 1430 1713 1636 1535 1443 1387 1338 1297 1263 1233 1208 1176 1158 1131 1113 1100 1062 1055 1043 1049 1066 1082 1103 1123 1147 1164 1188 1220 1239 1261 1312 1367 1390 1435 1730 1637 1532 1445 1382 1339 1294 1262 1239 1206 1180 1152 1129 1110 1089 1081 1057 1047 1046 1067 1085 1101 1116 1138 1157 1184 1211 1239 1267 1303 1349 1389 1416 1722 1641 1538 1445 1394 1332 1294 1256 1231 1204 1178 1156 1135 1112 1091 1067 1055 1054 1055 1059 1077 1091 1116 1132 1159 1173 1202 1224 1262 1287 1326 1365 1424 1750 1652 1542 1466 1391 1336 1296 1254 1232 1202 1176 1147 1132 1115 1096 1078 1059 1050 1053 1067 1075 1091 1105 1126 1149 1164 1197 1219 1246 1281 1304 1371 1420 1751 1682 1559 1484 1406 1348 1293 1267 1229 1199 1180 1159 1137 1114 1090 1081 1066 1062 1062 1067 1078 1091 1109 1121 1142 1162 1184 1214 1232 1263 1303 1351 1410 1775 1682 1569 1489 1418 1340 1308 1273 1242 1218 1184 1152 1144 1121 1101 1088 1069 1065 1062 1065 1081 1094 1106 1120 1144 1158 1177 1195 1231 1235 1283 1341 1412 1797 1720 1597 1492 1424 1365 1314 1269 1241 1217 1184 1166 1142 1121 1102 1089 1075 1077 1062 1072 1080 1085 1097 1117 1129 1158 1171 1186 1211 1222 1265 1325 1386 1876 1727 1605 1529 1427 1375 1313 1275 1243 1215 1184 1168 1144 1120 1101 1094 1075 1066 1072 1067 1077 1086 1095 1116 1117 1143 1158 1176 1192 1207 1232 1283 1369 1871 1753 1655 1531 1449 1382 1332 1281 1249 1212 1185 1165 1137 1129 1116 1096 1084 1075 1071 1075 1080 1085 1091 1103 1112 1131 1158 1163 1183 1201 1231 1280 1334 1941 1820 1674 1555 1478 1405 1342 1289 1253 1218 1201 1164 1158 1135 1117 1099 1088 1081 1080 1082 1081 1088 1096 1108 1117 1126 1146 1162 1175 1197 1225 1276 1341 2019 1870 1718 1596 1493 1423 1362 1303 1260 1236 1194 1174 1152 1135 1117 1106 1098 1098 1083 1091 1087 1089 1098 1108 1109 1124 1147 1167 1178 1206 1230 1277 1354 2107 1928 1756 1617 1531 1433 1370 1321 1268 1242 1208 1190 1158 1135 1127 1107 1107 1091 1091 1091 1089 1086 1099 1100 1109 1118 1141 1158 1188 1208 1240 1287 1356 2156 2010 1811 1662 1550 1463 1385 1331 1284 1244 1221 1182 1166 1152 1119 1126 1094 1100 1096 1096 1098 1098 1096 1115 1108 1119 1151 1162 1187 1210 1238 1306 1419]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [4095 3143 2401 2069 1827 1633 1480 1294 1166 1068 1048 1039 1030 1069 1120 1159 1198 1216 1210 1181 1137 1086 1075 1083 1134 1233 1349 1452 1519 1602 1714 2065 2984 3653 2849 2303 2013 1791 1612 1452 1282 1155 1068 1052 1045 1033 1061 1109 1151 1185 1202 1201 1176 1136 1095 1078 1100 1148 1247 1349 1446 1500 1545 1735 1888 2564 3051 2553 2191 1941 1753 1587 1431 1270 1151 1075 1052 1032 1031 1056 1096 1139 1168 1190 1185 1170 1133 1099 1093 1118 1169 1253 1350 1424 1466 1520 1582 1852 2216 2736 2387 2103 1881 1719 1563 1410 1277 1147 1084 1058 1035 1033 1051 1096 1130 1161 1179 1174 1162 1140 1116 1116 1141 1190 1265 1347 1410 1448 1484 1574 1719 2028 2519 2253 2017 1835 1691 1538 1403 1273 1153 1100 1070 1024 1046 1056 1092 1121 1154 1168 1174 1159 1144 1132 1130 1153 1203 1268 1342 1396 1425 1459 1526 1655 1885 2328 2146 1942 1790 1654 1511 1387 1268 1174 1114 1058 1045 1044 1067 1091 1119 1149 1162 1163 1156 1145 1139 1148 1180 1219 1276 1339 1380 1425 1438 1500 1597 1765 2226 2054 1891 1748 1614 1487 1389 1268 1190 1134 1080 1057 1057 1065 1095 1121 1140 1156 1161 1155 1153 1149 1160 1189 1233 1281 1332 1374 1410 1423 1479 1555 1675 2112 1980 1822 1703 1580 1470 1370 1280 1194 1145 1094 1072 1068 1086 1096 1117 1136 1148 1154 1147 1151 1156 1169 1199 1234 1281 1318 1355 1381 1408 1451 1514 1617 2031 1911 1767 1653 1545 1444 1359 1276 1199 1154 1103 1091 1078 1089 1099 1112 1131 1135 1146 1145 1149 1160 1176 1201 1233 1271 1306 1336 1366 1400 1440 1484 1559 1965 1845 1718 1615 1517 1423 1347 1275 1207 1165 1126 1106 1089 1096 1103 1106 1119 1128 1141 1141 1145 1163 1180 1205 1237 1264 1294 1322 1344 1380 1421 1459 1540 1895 1798 1678 1569 1483 1405 1335 1277 1215 1168 1140 1113 1104 1099 1103 1111 1116 1124 1132 1137 1146 1159 1180 1202 1228 1259 1282 1308 1332 1362 1411 1449 1508 1853 1747 1634 1540 1460 1387 1331 1272 1222 1183 1152 1120 1112 1108 1104 1108 1114 1115 1127 1131 1140 1157 1174 1197 1223 1252 1274 1297 1318 1350 1391 1440 1498 1800 1713 1607 1508 1438 1375 1328 1280 1232 1192 1157 1131 1123 1111 1108 1103 1106 1110 1112 1123 1134 1153 1170 1194 1219 1241 1264 1286 1309 1340 1380 1429 1483 1764 1667 1574 1488 1418 1365 1309 1273 1230 1193 1161 1139 1117 1111 1107 1095 1093 1093 1102 1113 1125 1138 1159 1181 1208 1227 1252 1272 1294 1321 1367 1413 1466 1730 1645 1552 1462 1400 1348 1305 1267 1234 1196 1168 1141 1123 1113 1100 1089 1085 1085 1090 1099 1116 1132 1149 1171 1198 1218 1239 1263 1287 1307 1355 1409 1446 1704 1624 1533 1446 1390 1340 1304 1270 1231 1198 1170 1146 1129 1109 1099 1085 1077 1072 1077 1092 1110 1129 1146 1167 1189 1212 1233 1256 1276 1301 1348 1400 1441 1684 1607 1517 1439 1378 1339 1295 1266 1237 1201 1179 1151 1133 1117 1096 1080 1070 1064 1071 1086 1104 1126 1142 1161 1186 1205 1227 1251 1267 1297 1347 1394 1433 1670 1587 1503 1428 1373 1326 1293 1263 1231 1204 1172 1156 1134 1113 1101 1076 1062 1057 1064 1079 1098 1122 1138 1156 1182 1201 1221 1244 1260 1290 1345 1389 1423 1665 1579 1496 1420 1367 1323 1288 1259 1229 1201 1175 1150 1130 1115 1126 1071 1055 1057 1056 1072 1091 1112 1128 1152 1170 1192 1212 1237 1256 1287 1337 1380 1412 1655 1578 1488 1416 1360 1316 1284 1254 1227 1199 1172 1154 1128 1110 1129 1073 1055 1052 1053 1069 1090 1108 1127 1140 1165 1188 1209 1230 1254 1289 1342 1375 1397 1662 1582 1494 1416 1361 1320 1287 1256 1229 1203 1175 1156 1130 1115 1107 1071 1058 1050 1055 1071 1088 1107 1125 1142 1162 1187 1210 1231 1254 1292 1338 1372 1400 1665 1587 1503 1426 1364 1324 1283 1255 1232 1206 1182 1156 1136 1114 1096 1078 1060 1053 1058 1075 1091 1107 1123 1140 1160 1182 1206 1230 1253 1290 1330 1367 1408 1676 1589 1507 1430 1365 1321 1282 1251 1227 1201 1179 1154 1136 1119 1098 1079 1060 1059 1061 1070 1087 1102 1119 1134 1155 1174 1199 1222 1247 1280 1315 1359 1400 1682 1610 1508 1445 1370 1322 1284 1253 1227 1200 1177 1154 1135 1116 1100 1083 1067 1063 1062 1074 1083 1100 1112 1130 1148 1166 1191 1214 1238 1266 1303 1357 1395 1703 1628 1528 1451 1380 1327 1288 1258 1229 1203 1181 1161 1139 1121 1104 1087 1074 1070 1069 1077 1088 1099 1115 1128 1145 1162 1184 1209 1229 1255 1296 1352 1394 1738 1644 1546 1461 1395 1337 1299 1263 1235 1210 1184 1166 1147 1129 1110 1097 1081 1076 1073 1083 1089 1103 1112 1130 1144 1160 1179 1196 1221 1242 1283 1340 1394 1755 1672 1565 1477 1404 1348 1304 1269 1237 1212 1190 1169 1149 1132 1114 1102 1089 1083 1081 1082 1094 1099 1111 1127 1140 1156 1170 1189 1206 1227 1265 1314 1375 1790 1691 1584 1492 1413 1353 1308 1268 1237 1215 1188 1167 1151 1134 1116 1103 1090 1084 1082 1084 1093 1096 1105 1121 1127 1145 1162 1175 1189 1208 1242 1286 1349 1830 1727 1609 1515 1429 1368 1317 1277 1240 1217 1191 1172 1154 1137 1122 1107 1094 1089 1088 1089 1093 1098 1104 1113 1125 1139 1152 1169 1181 1201 1235 1272 1331 1896 1769 1648 1538 1455 1384 1334 1286 1251 1222 1198 1177 1160 1144 1126 1116 1102 1097 1095 1097 1100 1103 1107 1114 1122 1132 1152 1161 1178 1200 1230 1277 1328 1976 1826 1686 1575 1480 1408 1346 1298 1261 1236 1206 1185 1165 1146 1134 1118 1118 1108 1100 1102 1102 1102 1108 1115 1119 1134 1146 1164 1182 1206 1235 1285 1335 2042 1885 1730 1598 1504 1419 1361 1305 1269 1238 1210 1187 1167 1144 1133 1120 1116 1108 1105 1104 1104 1102 1108 1108 1115 1126 1144 1160 1182 1215 1238 1289 1353 2125 1949 1772 1641 1517 1441 1368 1314 1274 1236 1211 1192 1168 1150 1134 1123 1114 1109 1111 1106 1103 1104 1102 1108 1112 1123 1139 1158 1184 1206 1241 1299 1385]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [4095 3190 2413 2076 1830 1634 1484 1296 1165 1068 1046 1038 1029 1070 1118 1160 1197 1217 1209 1179 1136 1085 1077 1081 1133 1228 1347 1450 1518 1602 1711 2058 2964 3722 2883 2315 2020 1793 1616 1456 1284 1158 1068 1051 1045 1034 1060 1109 1150 1185 1202 1200 1175 1137 1094 1076 1099 1144 1244 1347 1443 1499 1545 1733 1883 2557 3084 2575 2198 1946 1755 1589 1434 1272 1152 1073 1052 1030 1029 1055 1095 1137 1167 1189 1185 1169 1131 1098 1092 1116 1167 1250 1346 1424 1464 1520 1582 1847 2210 2757 2399 2110 1884 1721 1565 1413 1279 1148 1086 1058 1033 1032 1050 1094 1130 1160 1179 1174 1162 1139 1115 1113 1138 1189 1263 1344 1407 1447 1484 1572 1716 2024 2535 2261 2023 1839 1694 1540 1405 1276 1154 1098 1069 1024 1044 1054 1091 1119 1153 1167 1172 1159 1144 1130 1129 1150 1200 1268 1338 1396 1424 1457 1525 1653 1879 2339 2157 1948 1793 1655 1514 1388 1269 1173 1113 1059 1043 1042 1067 1089 1118 1148 1162 1162 1155 1145 1138 1146 1177 1218 1275 1337 1377 1425 1436 1498 1594 1764 2227 2060 1893 1750 1615 1488 1390 1270 1189 1134 1078 1056 1056 1064 1094 1119 1139 1154 1160 1154 1151 1148 1158 1188 1230 1279 1330 1373 1409 1424 1476 1554 1672 2119 1985 1828 1704 1582 1471 1371 1280 1193 1144 1093 1072 1065 1084 1094 1117 1136 1146 1153 1147 1152 1155 1168 1196 1231 1279 1316 1353 1380 1407 1450 1511 1615 2034 1916 1770 1656 1547 1444 1360 1276 1199 1155 1103 1090 1078 1088 1098 1110 1130 1136 1145 1145 1147 1159 1174 1200 1232 1271 1304 1336 1363 1398 1439 1481 1557 1967 1850 1720 1616 1518 1425 1348 1277 1208 1163 1125 1104 1088 1094 1103 1105 1118 1127 1141 1140 1145 1162 1178 1203 1235 1263 1292 1321 1343 1379 1420 1457 1535 1898 1800 1679 1572 1484 1406 1336 1276 1216 1168 1138 1112 1102 1099 1102 1110 1116 1122 1132 1135 1143 1157 1179 1200 1228 1257 1281 1307 1331 1359 1408 1446 1505 1858 1750 1636 1540 1461 1386 1332 1271 1220 1182 1151 1120 1112 1107 1104 1108 1112 1115 1126 1130 1139 1156 1173 1195 1222 1251 1271 1296 1317 1349 1390 1438 1493 1799 1716 1607 1511 1438 1376 1328 1280 1231 1192 1156 1131 1121 1112 1106 1102 1105 1109 1112 1122 1133 1152 1168 1194 1219 1240 1263 1285 1308 1339 1377 1428 1481 1766 1670 1575 1489 1419 1366 1309 1272 1231 1193 1160 1139 1117 1111 1106 1095 1092 1093 1101 1112 1125 1137 1158 1179 1207 1227 1251 1271 1293 1320 1365 1411 1465 1730 1646 1552 1462 1400 1347 1305 1266 1232 1195 1168 1140 1122 1112 1100 1089 1083 1084 1089 1098 1115 1132 1148 1170 1197 1216 1237 1261 1286 1305 1354 1406 1444 1704 1626 1535 1447 1390 1340 1302 1269 1231 1197 1169 1145 1129 1110 1099 1085 1077 1071 1076 1091 1109 1128 1144 1167 1187 1211 1232 1254 1275 1300 1345 1399 1438 1685 1609 1518 1440 1377 1338 1296 1266 1236 1202 1178 1150 1132 1117 1096 1080 1069 1063 1071 1085 1104 1125 1141 1161 1184 1204 1226 1249 1266 1294 1345 1390 1433 1671 1589 1504 1427 1372 1325 1292 1262 1231 1203 1172 1156 1133 1112 1100 1075 1062 1057 1063 1079 1097 1120 1136 1155 1181 1200 1220 1243 1259 1290 1342 1388 1421 1664 1582 1497 1420 1368 1323 1287 1259 1227 1200 1174 1150 1129 1114 1124 1071 1054 1058 1055 1071 1090 1112 1126 1151 1169 1190 1210 1237 1255 1285 1336 1379 1411 1658 1578 1489 1417 1360 1316 1283 1254 1227 1198 1171 1153 1128 1109 1128 1073 1054 1051 1052 1069 1088 1107 1125 1139 1163 1187 1208 1229 1252 1288 1339 1375 1397 1661 1582 1494 1416 1359 1319 1286 1256 1228 1203 1174 1155 1129 1115 1108 1071 1057 1049 1055 1069 1088 1106 1122 1141 1161 1186 1208 1230 1252 1290 1338 1370 1396 1670 1587 1504 1424 1364 1324 1283 1254 1231 1204 1182 1156 1135 1114 1094 1078 1059 1053 1057 1073 1090 1106 1121 1139 1158 1180 1206 1228 1251 1289 1328 1366 1406 1675 1589 1509 1430 1365 1321 1282 1251 1227 1201 1179 1155 1135 1118 1098 1079 1059 1058 1060 1070 1086 1101 1118 1132 1155 1172 1198 1221 1246 1279 1315 1357 1397 1683 1612 1506 1445 1370 1321 1283 1252 1226 1199 1177 1153 1135 1116 1099 1082 1067 1062 1061 1072 1082 1099 1111 1129 1147 1164 1189 1213 1237 1265 1300 1353 1394 1704 1628 1529 1451 1380 1326 1288 1257 1228 1202 1180 1161 1137 1121 1103 1086 1073 1069 1068 1076 1087 1098 1114 1128 1144 1161 1183 1208 1226 1254 1294 1350 1390 1739 1643 1546 1462 1393 1336 1297 1263 1234 1209 1184 1164 1147 1129 1109 1096 1081 1075 1073 1082 1087 1102 1111 1128 1143 1159 1178 1196 1221 1240 1281 1338 1391 1755 1673 1566 1477 1403 1348 1302 1269 1237 1212 1189 1168 1148 1132 1113 1102 1089 1082 1079 1081 1092 1099 1109 1126 1139 1154 1169 1188 1205 1225 1263 1312 1372 1791 1691 1583 1493 1413 1352 1307 1267 1237 1214 1187 1167 1150 1133 1115 1102 1089 1083 1081 1082 1092 1096 1104 1120 1126 1144 1161 1175 1189 1207 1241 1285 1345 1833 1727 1608 1514 1428 1367 1316 1277 1239 1216 1190 1171 1153 1136 1122 1106 1093 1088 1088 1088 1091 1096 1103 1112 1125 1138 1151 1168 1179 1199 1233 1270 1329 1894 1770 1647 1539 1455 1384 1332 1285 1250 1222 1198 1176 1160 1144 1125 1116 1101 1096 1093 1096 1100 1102 1107 1113 1120 1131 1150 1160 1177 1198 1229 1274 1324 1980 1827 1686 1574 1479 1408 1345 1299 1259 1236 1205 1185 1164 1144 1134 1117 1115 1107 1100 1101 1101 1101 1107 1114 1118 1133 1145 1164 1181 1205 1234 1283 1334 2040 1887 1730 1598 1503 1419 1361 1305 1269 1236 1210 1186 1167 1144 1131 1119 1115 1106 1104 1104 1102 1100 1108 1107 1113 1125 1142 1159 1180 1213 1236 1286 1348 2131 1946 1773 1639 1519 1440 1367 1313 1272 1236 1211 1191 1167 1148 1134 1123 1111 1110 1111 1104 1103 1102 1103 1106 1111 1122 1138 1157 1183 1205 1239 1296 1379]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [4095 3216 2414 2078 1836 1632 1478 1288 1147 1067 1027 1038 1032 1071 1115 1163 1210 1229 1208 1190 1139 1087 1079 1090 1132 1237 1349 1450 1531 1597 1702 2079 2903 3678 2847 2322 2024 1803 1611 1450 1278 1142 1057 1052 1042 1037 1061 1112 1157 1197 1213 1221 1183 1145 1110 1083 1105 1151 1254 1344 1458 1498 1544 1735 1892 2513 3114 2592 2201 1957 1753 1589 1430 1267 1144 1078 1053 1032 1038 1061 1098 1149 1182 1202 1201 1187 1146 1111 1103 1122 1180 1269 1364 1431 1474 1522 1578 1858 2184 2745 2389 2134 1897 1737 1575 1414 1270 1141 1082 1063 1036 1040 1056 1106 1136 1174 1196 1192 1180 1153 1126 1128 1153 1198 1279 1354 1420 1457 1480 1578 1700 2015 2540 2303 2022 1859 1697 1540 1404 1272 1147 1100 1071 1024 1050 1063 1097 1133 1170 1187 1188 1174 1162 1142 1142 1161 1211 1290 1349 1399 1433 1466 1521 1651 1873 2340 2170 1968 1801 1659 1524 1388 1268 1173 1116 1065 1043 1050 1071 1100 1136 1167 1183 1180 1177 1164 1157 1165 1199 1239 1289 1354 1378 1442 1431 1506 1594 1769 2241 2078 1892 1763 1627 1494 1397 1275 1190 1139 1081 1064 1062 1079 1109 1140 1157 1176 1183 1177 1176 1163 1178 1205 1250 1298 1341 1382 1428 1427 1473 1552 1666 2142 2008 1847 1709 1595 1482 1379 1288 1191 1153 1104 1079 1079 1099 1110 1137 1155 1171 1181 1171 1178 1181 1187 1221 1253 1298 1333 1368 1391 1415 1456 1510 1607 2044 1949 1775 1675 1563 1455 1378 1281 1204 1163 1116 1098 1088 1109 1117 1131 1154 1162 1177 1172 1176 1185 1200 1227 1260 1297 1325 1346 1384 1409 1442 1485 1549 2009 1863 1724 1632 1535 1439 1362 1286 1223 1169 1138 1121 1109 1112 1119 1131 1140 1151 1171 1172 1172 1192 1204 1226 1263 1284 1310 1332 1355 1392 1427 1462 1539 1900 1807 1697 1585 1500 1423 1354 1286 1232 1188 1151 1138 1121 1130 1125 1135 1144 1148 1168 1167 1173 1187 1206 1230 1248 1285 1306 1329 1347 1371 1413 1454 1504 1882 1760 1646 1564 1474 1408 1351 1291 1237 1206 1174 1140 1143 1125 1130 1136 1144 1146 1157 1159 1169 1188 1208 1222 1250 1275 1299 1316 1330 1364 1391 1447 1487 1815 1717 1628 1531 1458 1407 1353 1302 1256 1214 1181 1157 1152 1133 1135 1131 1140 1141 1144 1155 1170 1187 1200 1228 1242 1271 1289 1307 1332 1350 1392 1437 1479 1785 1692 1587 1512 1445 1394 1331 1304 1257 1218 1190 1171 1142 1140 1136 1125 1123 1129 1139 1142 1157 1169 1188 1211 1240 1254 1282 1290 1310 1338 1379 1420 1475 1754 1651 1569 1479 1421 1380 1337 1295 1265 1227 1195 1170 1154 1143 1134 1126 1118 1123 1122 1136 1151 1165 1181 1207 1230 1244 1265 1289 1304 1329 1360 1420 1441 1725 1646 1550 1466 1415 1372 1339 1296 1265 1229 1198 1182 1161 1140 1126 1117 1112 1111 1108 1125 1139 1163 1178 1196 1219 1247 1254 1283 1299 1318 1362 1407 1443 1709 1621 1540 1466 1403 1368 1330 1303 1276 1234 1209 1187 1171 1152 1133 1119 1108 1099 1110 1115 1139 1160 1175 1194 1220 1234 1253 1279 1286 1317 1359 1394 1436 1692 1613 1530 1455 1403 1363 1335 1299 1266 1243 1207 1195 1161 1147 1142 1111 1096 1098 1100 1116 1135 1151 1173 1190 1213 1235 1252 1269 1284 1310 1348 1400 1422 1690 1596 1520 1444 1397 1354 1325 1294 1262 1244 1207 1191 1171 1154 1171 1107 1098 1094 1095 1106 1128 1145 1164 1187 1203 1222 1243 1261 1284 1300 1350 1386 1419 1685 1594 1516 1436 1393 1358 1316 1293 1268 1237 1215 1193 1161 1147 1179 1111 1088 1088 1091 1104 1118 1145 1160 1176 1199 1218 1239 1257 1271 1301 1340 1385 1413 1687 1601 1529 1440 1389 1346 1322 1294 1261 1241 1213 1188 1172 1150 1153 1104 1093 1087 1089 1105 1122 1137 1156 1174 1197 1218 1241 1256 1276 1295 1343 1378 1401 1689 1603 1527 1460 1400 1354 1328 1290 1268 1245 1219 1196 1171 1152 1129 1113 1095 1091 1095 1111 1121 1141 1154 1172 1189 1216 1232 1253 1274 1298 1339 1384 1411 1693 1609 1533 1452 1392 1351 1316 1283 1264 1234 1210 1189 1172 1146 1134 1115 1093 1093 1090 1102 1115 1135 1155 1165 1188 1199 1224 1247 1266 1293 1326 1364 1402 1701 1638 1532 1475 1397 1352 1318 1282 1256 1234 1208 1189 1170 1149 1128 1117 1100 1090 1087 1107 1115 1128 1142 1162 1176 1189 1220 1232 1255 1280 1311 1363 1393 1740 1659 1538 1482 1410 1360 1319 1294 1262 1233 1212 1196 1173 1152 1133 1120 1105 1101 1102 1107 1116 1134 1142 1157 1171 1191 1209 1231 1245 1269 1311 1367 1407 1758 1661 1577 1483 1422 1363 1321 1290 1269 1243 1216 1196 1181 1161 1142 1128 1114 1106 1103 1115 1122 1132 1139 1157 1169 1187 1206 1214 1237 1262 1294 1353 1395 1792 1690 1587 1502 1429 1380 1333 1299 1266 1239 1224 1199 1185 1162 1143 1131 1120 1113 1111 1113 1121 1130 1143 1156 1166 1181 1199 1208 1223 1241 1285 1323 1377 1810 1721 1592 1522 1434 1382 1332 1291 1271 1242 1212 1198 1180 1160 1143 1132 1116 1110 1108 1110 1117 1122 1132 1145 1155 1168 1186 1191 1205 1222 1261 1301 1357 1854 1750 1632 1535 1447 1387 1342 1295 1267 1243 1226 1192 1176 1163 1145 1128 1120 1116 1114 1116 1115 1124 1122 1136 1148 1161 1171 1188 1192 1216 1245 1291 1331 1914 1794 1665 1558 1480 1404 1363 1305 1278 1250 1220 1206 1187 1168 1150 1142 1125 1119 1118 1119 1121 1123 1131 1129 1142 1155 1174 1176 1197 1213 1248 1291 1330 2019 1848 1712 1596 1494 1430 1371 1314 1290 1256 1237 1211 1189 1168 1159 1146 1143 1133 1124 1118 1120 1124 1133 1139 1138 1155 1166 1180 1193 1224 1251 1301 1340 2072 1904 1748 1624 1517 1443 1383 1330 1283 1257 1225 1215 1192 1163 1156 1139 1142 1124 1129 1131 1119 1122 1124 1125 1134 1145 1159 1181 1191 1234 1252 1303 1350 2155 1979 1796 1646 1537 1454 1386 1333 1287 1256 1227 1206 1194 1163 1154 1144 1133 1123 1123 1122 1123 1114 1123 1125 1126 1139 1153 1167 1202 1219 1251 1311 1391]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="2" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 17]">
+               1920x1080_D50_100
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <illumination index="1" type="char" size="[1 3]">
+               D50
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 32]">
+               [28 38 44 48 54 55 58 57 58 61 59 60 63 65 66 70 73 72 71 72 71 69 66 68 67 63 65 62 61 61 53 42]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 32]">
+               [20 25 25 26 28 29 29 30 30 32 33 33 34 35 35 37 37 35 38 37 37 37 38 38 38 39 38 39 37 38 37 36]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [4095 3267 2490 2140 1854 1692 1518 1330 1175 1090 1056 1055 1036 1078 1136 1168 1212 1226 1214 1186 1134 1074 1081 1093 1136 1239 1360 1477 1551 1632 1745 2102 3013 3799 2959 2394 2064 1835 1667 1489 1312 1171 1081 1061 1044 1046 1064 1117 1161 1186 1212 1205 1181 1141 1090 1076 1098 1147 1262 1373 1471 1530 1576 1766 1921 2580 3219 2649 2256 1976 1815 1626 1461 1295 1163 1081 1059 1034 1029 1053 1091 1136 1172 1183 1187 1172 1134 1094 1088 1113 1175 1252 1366 1434 1487 1524 1606 1881 2256 2835 2480 2150 1942 1758 1588 1438 1296 1164 1096 1059 1035 1034 1046 1097 1131 1156 1175 1176 1157 1130 1118 1111 1135 1193 1272 1359 1429 1473 1498 1582 1734 2054 2597 2362 2062 1890 1732 1569 1433 1285 1166 1098 1089 1024 1040 1051 1086 1119 1146 1167 1168 1159 1136 1127 1127 1154 1201 1277 1346 1413 1449 1471 1552 1675 1932 2449 2201 1996 1848 1694 1543 1411 1295 1181 1122 1064 1039 1041 1064 1083 1117 1145 1152 1160 1150 1141 1130 1142 1174 1226 1278 1355 1391 1452 1458 1524 1611 1808 2296 2138 1953 1803 1652 1517 1411 1292 1199 1141 1083 1058 1053 1058 1092 1111 1142 1150 1159 1150 1141 1147 1159 1184 1229 1283 1346 1389 1427 1440 1491 1561 1724 2225 2032 1896 1731 1629 1492 1398 1296 1207 1152 1093 1077 1064 1088 1091 1113 1138 1139 1151 1142 1145 1149 1164 1201 1227 1281 1334 1372 1404 1423 1468 1541 1642 2091 1979 1819 1708 1575 1479 1395 1291 1214 1170 1110 1089 1076 1086 1096 1112 1129 1132 1140 1141 1146 1159 1171 1201 1238 1280 1319 1357 1382 1422 1452 1492 1598 2033 1919 1764 1659 1555 1465 1359 1304 1219 1180 1129 1117 1099 1093 1105 1106 1117 1128 1136 1133 1143 1159 1173 1206 1247 1272 1301 1339 1366 1396 1454 1476 1580 1957 1860 1722 1602 1515 1434 1357 1293 1226 1181 1142 1115 1103 1102 1106 1107 1112 1122 1134 1136 1139 1157 1186 1206 1232 1264 1302 1317 1358 1376 1429 1464 1550 1919 1818 1680 1580 1495 1408 1356 1282 1234 1187 1154 1120 1114 1111 1103 1106 1107 1116 1128 1123 1137 1157 1174 1200 1229 1263 1288 1316 1329 1378 1400 1443 1526 1879 1784 1663 1547 1481 1401 1347 1291 1243 1208 1164 1135 1129 1105 1112 1107 1103 1110 1109 1123 1131 1152 1176 1197 1226 1248 1280 1301 1337 1353 1397 1462 1510 1823 1719 1612 1522 1444 1392 1326 1293 1242 1199 1161 1144 1123 1116 1103 1087 1096 1089 1104 1112 1123 1135 1153 1189 1211 1239 1263 1287 1316 1330 1383 1421 1493 1825 1691 1598 1506 1427 1370 1327 1280 1245 1204 1180 1150 1127 1117 1101 1093 1078 1087 1089 1094 1116 1132 1152 1171 1203 1227 1252 1274 1301 1325 1379 1431 1475 1747 1685 1585 1488 1415 1365 1321 1278 1235 1211 1175 1149 1134 1109 1095 1094 1073 1071 1070 1097 1106 1124 1149 1170 1187 1219 1242 1269 1294 1311 1356 1415 1481 1754 1669 1549 1475 1411 1361 1316 1272 1250 1209 1183 1149 1131 1116 1100 1081 1076 1057 1071 1078 1103 1124 1148 1167 1187 1212 1230 1267 1281 1307 1370 1409 1480 1748 1643 1547 1463 1401 1343 1309 1274 1234 1215 1172 1168 1133 1109 1099 1073 1065 1055 1057 1078 1097 1115 1138 1154 1190 1202 1233 1256 1279 1313 1361 1414 1436 1745 1631 1533 1457 1393 1349 1306 1271 1239 1211 1179 1150 1131 1119 1117 1073 1055 1050 1056 1071 1079 1112 1126 1153 1173 1198 1223 1249 1264 1302 1370 1394 1449 1717 1621 1521 1445 1387 1333 1292 1257 1230 1198 1177 1157 1125 1108 1119 1073 1053 1043 1044 1061 1085 1101 1126 1142 1173 1187 1213 1237 1278 1311 1365 1395 1430 1713 1636 1535 1443 1387 1338 1297 1263 1233 1208 1176 1158 1131 1113 1100 1062 1055 1043 1049 1066 1082 1103 1123 1147 1164 1188 1220 1239 1261 1312 1367 1390 1435 1730 1637 1532 1445 1382 1339 1294 1262 1239 1206 1180 1152 1129 1110 1089 1081 1057 1047 1046 1067 1085 1101 1116 1138 1157 1184 1211 1239 1267 1303 1349 1389 1416 1722 1641 1538 1445 1394 1332 1294 1256 1231 1204 1178 1156 1135 1112 1091 1067 1055 1054 1055 1059 1077 1091 1116 1132 1159 1173 1202 1224 1262 1287 1326 1365 1424 1750 1652 1542 1466 1391 1336 1296 1254 1232 1202 1176 1147 1132 1115 1096 1078 1059 1050 1053 1067 1075 1091 1105 1126 1149 1164 1197 1219 1246 1281 1304 1371 1420 1751 1682 1559 1484 1406 1348 1293 1267 1229 1199 1180 1159 1137 1114 1090 1081 1066 1062 1062 1067 1078 1091 1109 1121 1142 1162 1184 1214 1232 1263 1303 1351 1410 1775 1682 1569 1489 1418 1340 1308 1273 1242 1218 1184 1152 1144 1121 1101 1088 1069 1065 1062 1065 1081 1094 1106 1120 1144 1158 1177 1195 1231 1235 1283 1341 1412 1797 1720 1597 1492 1424 1365 1314 1269 1241 1217 1184 1166 1142 1121 1102 1089 1075 1077 1062 1072 1080 1085 1097 1117 1129 1158 1171 1186 1211 1222 1265 1325 1386 1876 1727 1605 1529 1427 1375 1313 1275 1243 1215 1184 1168 1144 1120 1101 1094 1075 1066 1072 1067 1077 1086 1095 1116 1117 1143 1158 1176 1192 1207 1232 1283 1369 1871 1753 1655 1531 1449 1382 1332 1281 1249 1212 1185 1165 1137 1129 1116 1096 1084 1075 1071 1075 1080 1085 1091 1103 1112 1131 1158 1163 1183 1201 1231 1280 1334 1941 1820 1674 1555 1478 1405 1342 1289 1253 1218 1201 1164 1158 1135 1117 1099 1088 1081 1080 1082 1081 1088 1096 1108 1117 1126 1146 1162 1175 1197 1225 1276 1341 2019 1870 1718 1596 1493 1423 1362 1303 1260 1236 1194 1174 1152 1135 1117 1106 1098 1098 1083 1091 1087 1089 1098 1108 1109 1124 1147 1167 1178 1206 1230 1277 1354 2107 1928 1756 1617 1531 1433 1370 1321 1268 1242 1208 1190 1158 1135 1127 1107 1107 1091 1091 1091 1089 1086 1099 1100 1109 1118 1141 1158 1188 1208 1240 1287 1356 2156 2010 1811 1662 1550 1463 1385 1331 1284 1244 1221 1182 1166 1152 1119 1126 1094 1100 1096 1096 1098 1098 1096 1115 1108 1119 1151 1162 1187 1210 1238 1306 1419]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [4095 3143 2401 2069 1827 1633 1480 1294 1166 1068 1048 1039 1030 1069 1120 1159 1198 1216 1210 1181 1137 1086 1075 1083 1134 1233 1349 1452 1519 1602 1714 2065 2984 3653 2849 2303 2013 1791 1612 1452 1282 1155 1068 1052 1045 1033 1061 1109 1151 1185 1202 1201 1176 1136 1095 1078 1100 1148 1247 1349 1446 1500 1545 1735 1888 2564 3051 2553 2191 1941 1753 1587 1431 1270 1151 1075 1052 1032 1031 1056 1096 1139 1168 1190 1185 1170 1133 1099 1093 1118 1169 1253 1350 1424 1466 1520 1582 1852 2216 2736 2387 2103 1881 1719 1563 1410 1277 1147 1084 1058 1035 1033 1051 1096 1130 1161 1179 1174 1162 1140 1116 1116 1141 1190 1265 1347 1410 1448 1484 1574 1719 2028 2519 2253 2017 1835 1691 1538 1403 1273 1153 1100 1070 1024 1046 1056 1092 1121 1154 1168 1174 1159 1144 1132 1130 1153 1203 1268 1342 1396 1425 1459 1526 1655 1885 2328 2146 1942 1790 1654 1511 1387 1268 1174 1114 1058 1045 1044 1067 1091 1119 1149 1162 1163 1156 1145 1139 1148 1180 1219 1276 1339 1380 1425 1438 1500 1597 1765 2226 2054 1891 1748 1614 1487 1389 1268 1190 1134 1080 1057 1057 1065 1095 1121 1140 1156 1161 1155 1153 1149 1160 1189 1233 1281 1332 1374 1410 1423 1479 1555 1675 2112 1980 1822 1703 1580 1470 1370 1280 1194 1145 1094 1072 1068 1086 1096 1117 1136 1148 1154 1147 1151 1156 1169 1199 1234 1281 1318 1355 1381 1408 1451 1514 1617 2031 1911 1767 1653 1545 1444 1359 1276 1199 1154 1103 1091 1078 1089 1099 1112 1131 1135 1146 1145 1149 1160 1176 1201 1233 1271 1306 1336 1366 1400 1440 1484 1559 1965 1845 1718 1615 1517 1423 1347 1275 1207 1165 1126 1106 1089 1096 1103 1106 1119 1128 1141 1141 1145 1163 1180 1205 1237 1264 1294 1322 1344 1380 1421 1459 1540 1895 1798 1678 1569 1483 1405 1335 1277 1215 1168 1140 1113 1104 1099 1103 1111 1116 1124 1132 1137 1146 1159 1180 1202 1228 1259 1282 1308 1332 1362 1411 1449 1508 1853 1747 1634 1540 1460 1387 1331 1272 1222 1183 1152 1120 1112 1108 1104 1108 1114 1115 1127 1131 1140 1157 1174 1197 1223 1252 1274 1297 1318 1350 1391 1440 1498 1800 1713 1607 1508 1438 1375 1328 1280 1232 1192 1157 1131 1123 1111 1108 1103 1106 1110 1112 1123 1134 1153 1170 1194 1219 1241 1264 1286 1309 1340 1380 1429 1483 1764 1667 1574 1488 1418 1365 1309 1273 1230 1193 1161 1139 1117 1111 1107 1095 1093 1093 1102 1113 1125 1138 1159 1181 1208 1227 1252 1272 1294 1321 1367 1413 1466 1730 1645 1552 1462 1400 1348 1305 1267 1234 1196 1168 1141 1123 1113 1100 1089 1085 1085 1090 1099 1116 1132 1149 1171 1198 1218 1239 1263 1287 1307 1355 1409 1446 1704 1624 1533 1446 1390 1340 1304 1270 1231 1198 1170 1146 1129 1109 1099 1085 1077 1072 1077 1092 1110 1129 1146 1167 1189 1212 1233 1256 1276 1301 1348 1400 1441 1684 1607 1517 1439 1378 1339 1295 1266 1237 1201 1179 1151 1133 1117 1096 1080 1070 1064 1071 1086 1104 1126 1142 1161 1186 1205 1227 1251 1267 1297 1347 1394 1433 1670 1587 1503 1428 1373 1326 1293 1263 1231 1204 1172 1156 1134 1113 1101 1076 1062 1057 1064 1079 1098 1122 1138 1156 1182 1201 1221 1244 1260 1290 1345 1389 1423 1665 1579 1496 1420 1367 1323 1288 1259 1229 1201 1175 1150 1130 1115 1126 1071 1055 1057 1056 1072 1091 1112 1128 1152 1170 1192 1212 1237 1256 1287 1337 1380 1412 1655 1578 1488 1416 1360 1316 1284 1254 1227 1199 1172 1154 1128 1110 1129 1073 1055 1052 1053 1069 1090 1108 1127 1140 1165 1188 1209 1230 1254 1289 1342 1375 1397 1662 1582 1494 1416 1361 1320 1287 1256 1229 1203 1175 1156 1130 1115 1107 1071 1058 1050 1055 1071 1088 1107 1125 1142 1162 1187 1210 1231 1254 1292 1338 1372 1400 1665 1587 1503 1426 1364 1324 1283 1255 1232 1206 1182 1156 1136 1114 1096 1078 1060 1053 1058 1075 1091 1107 1123 1140 1160 1182 1206 1230 1253 1290 1330 1367 1408 1676 1589 1507 1430 1365 1321 1282 1251 1227 1201 1179 1154 1136 1119 1098 1079 1060 1059 1061 1070 1087 1102 1119 1134 1155 1174 1199 1222 1247 1280 1315 1359 1400 1682 1610 1508 1445 1370 1322 1284 1253 1227 1200 1177 1154 1135 1116 1100 1083 1067 1063 1062 1074 1083 1100 1112 1130 1148 1166 1191 1214 1238 1266 1303 1357 1395 1703 1628 1528 1451 1380 1327 1288 1258 1229 1203 1181 1161 1139 1121 1104 1087 1074 1070 1069 1077 1088 1099 1115 1128 1145 1162 1184 1209 1229 1255 1296 1352 1394 1738 1644 1546 1461 1395 1337 1299 1263 1235 1210 1184 1166 1147 1129 1110 1097 1081 1076 1073 1083 1089 1103 1112 1130 1144 1160 1179 1196 1221 1242 1283 1340 1394 1755 1672 1565 1477 1404 1348 1304 1269 1237 1212 1190 1169 1149 1132 1114 1102 1089 1083 1081 1082 1094 1099 1111 1127 1140 1156 1170 1189 1206 1227 1265 1314 1375 1790 1691 1584 1492 1413 1353 1308 1268 1237 1215 1188 1167 1151 1134 1116 1103 1090 1084 1082 1084 1093 1096 1105 1121 1127 1145 1162 1175 1189 1208 1242 1286 1349 1830 1727 1609 1515 1429 1368 1317 1277 1240 1217 1191 1172 1154 1137 1122 1107 1094 1089 1088 1089 1093 1098 1104 1113 1125 1139 1152 1169 1181 1201 1235 1272 1331 1896 1769 1648 1538 1455 1384 1334 1286 1251 1222 1198 1177 1160 1144 1126 1116 1102 1097 1095 1097 1100 1103 1107 1114 1122 1132 1152 1161 1178 1200 1230 1277 1328 1976 1826 1686 1575 1480 1408 1346 1298 1261 1236 1206 1185 1165 1146 1134 1118 1118 1108 1100 1102 1102 1102 1108 1115 1119 1134 1146 1164 1182 1206 1235 1285 1335 2042 1885 1730 1598 1504 1419 1361 1305 1269 1238 1210 1187 1167 1144 1133 1120 1116 1108 1105 1104 1104 1102 1108 1108 1115 1126 1144 1160 1182 1215 1238 1289 1353 2125 1949 1772 1641 1517 1441 1368 1314 1274 1236 1211 1192 1168 1150 1134 1123 1114 1109 1111 1106 1103 1104 1102 1108 1112 1123 1139 1158 1184 1206 1241 1299 1385]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [4095 3190 2413 2076 1830 1634 1484 1296 1165 1068 1046 1038 1029 1070 1118 1160 1197 1217 1209 1179 1136 1085 1077 1081 1133 1228 1347 1450 1518 1602 1711 2058 2964 3722 2883 2315 2020 1793 1616 1456 1284 1158 1068 1051 1045 1034 1060 1109 1150 1185 1202 1200 1175 1137 1094 1076 1099 1144 1244 1347 1443 1499 1545 1733 1883 2557 3084 2575 2198 1946 1755 1589 1434 1272 1152 1073 1052 1030 1029 1055 1095 1137 1167 1189 1185 1169 1131 1098 1092 1116 1167 1250 1346 1424 1464 1520 1582 1847 2210 2757 2399 2110 1884 1721 1565 1413 1279 1148 1086 1058 1033 1032 1050 1094 1130 1160 1179 1174 1162 1139 1115 1113 1138 1189 1263 1344 1407 1447 1484 1572 1716 2024 2535 2261 2023 1839 1694 1540 1405 1276 1154 1098 1069 1024 1044 1054 1091 1119 1153 1167 1172 1159 1144 1130 1129 1150 1200 1268 1338 1396 1424 1457 1525 1653 1879 2339 2157 1948 1793 1655 1514 1388 1269 1173 1113 1059 1043 1042 1067 1089 1118 1148 1162 1162 1155 1145 1138 1146 1177 1218 1275 1337 1377 1425 1436 1498 1594 1764 2227 2060 1893 1750 1615 1488 1390 1270 1189 1134 1078 1056 1056 1064 1094 1119 1139 1154 1160 1154 1151 1148 1158 1188 1230 1279 1330 1373 1409 1424 1476 1554 1672 2119 1985 1828 1704 1582 1471 1371 1280 1193 1144 1093 1072 1065 1084 1094 1117 1136 1146 1153 1147 1152 1155 1168 1196 1231 1279 1316 1353 1380 1407 1450 1511 1615 2034 1916 1770 1656 1547 1444 1360 1276 1199 1155 1103 1090 1078 1088 1098 1110 1130 1136 1145 1145 1147 1159 1174 1200 1232 1271 1304 1336 1363 1398 1439 1481 1557 1967 1850 1720 1616 1518 1425 1348 1277 1208 1163 1125 1104 1088 1094 1103 1105 1118 1127 1141 1140 1145 1162 1178 1203 1235 1263 1292 1321 1343 1379 1420 1457 1535 1898 1800 1679 1572 1484 1406 1336 1276 1216 1168 1138 1112 1102 1099 1102 1110 1116 1122 1132 1135 1143 1157 1179 1200 1228 1257 1281 1307 1331 1359 1408 1446 1505 1858 1750 1636 1540 1461 1386 1332 1271 1220 1182 1151 1120 1112 1107 1104 1108 1112 1115 1126 1130 1139 1156 1173 1195 1222 1251 1271 1296 1317 1349 1390 1438 1493 1799 1716 1607 1511 1438 1376 1328 1280 1231 1192 1156 1131 1121 1112 1106 1102 1105 1109 1112 1122 1133 1152 1168 1194 1219 1240 1263 1285 1308 1339 1377 1428 1481 1766 1670 1575 1489 1419 1366 1309 1272 1231 1193 1160 1139 1117 1111 1106 1095 1092 1093 1101 1112 1125 1137 1158 1179 1207 1227 1251 1271 1293 1320 1365 1411 1465 1730 1646 1552 1462 1400 1347 1305 1266 1232 1195 1168 1140 1122 1112 1100 1089 1083 1084 1089 1098 1115 1132 1148 1170 1197 1216 1237 1261 1286 1305 1354 1406 1444 1704 1626 1535 1447 1390 1340 1302 1269 1231 1197 1169 1145 1129 1110 1099 1085 1077 1071 1076 1091 1109 1128 1144 1167 1187 1211 1232 1254 1275 1300 1345 1399 1438 1685 1609 1518 1440 1377 1338 1296 1266 1236 1202 1178 1150 1132 1117 1096 1080 1069 1063 1071 1085 1104 1125 1141 1161 1184 1204 1226 1249 1266 1294 1345 1390 1433 1671 1589 1504 1427 1372 1325 1292 1262 1231 1203 1172 1156 1133 1112 1100 1075 1062 1057 1063 1079 1097 1120 1136 1155 1181 1200 1220 1243 1259 1290 1342 1388 1421 1664 1582 1497 1420 1368 1323 1287 1259 1227 1200 1174 1150 1129 1114 1124 1071 1054 1058 1055 1071 1090 1112 1126 1151 1169 1190 1210 1237 1255 1285 1336 1379 1411 1658 1578 1489 1417 1360 1316 1283 1254 1227 1198 1171 1153 1128 1109 1128 1073 1054 1051 1052 1069 1088 1107 1125 1139 1163 1187 1208 1229 1252 1288 1339 1375 1397 1661 1582 1494 1416 1359 1319 1286 1256 1228 1203 1174 1155 1129 1115 1108 1071 1057 1049 1055 1069 1088 1106 1122 1141 1161 1186 1208 1230 1252 1290 1338 1370 1396 1670 1587 1504 1424 1364 1324 1283 1254 1231 1204 1182 1156 1135 1114 1094 1078 1059 1053 1057 1073 1090 1106 1121 1139 1158 1180 1206 1228 1251 1289 1328 1366 1406 1675 1589 1509 1430 1365 1321 1282 1251 1227 1201 1179 1155 1135 1118 1098 1079 1059 1058 1060 1070 1086 1101 1118 1132 1155 1172 1198 1221 1246 1279 1315 1357 1397 1683 1612 1506 1445 1370 1321 1283 1252 1226 1199 1177 1153 1135 1116 1099 1082 1067 1062 1061 1072 1082 1099 1111 1129 1147 1164 1189 1213 1237 1265 1300 1353 1394 1704 1628 1529 1451 1380 1326 1288 1257 1228 1202 1180 1161 1137 1121 1103 1086 1073 1069 1068 1076 1087 1098 1114 1128 1144 1161 1183 1208 1226 1254 1294 1350 1390 1739 1643 1546 1462 1393 1336 1297 1263 1234 1209 1184 1164 1147 1129 1109 1096 1081 1075 1073 1082 1087 1102 1111 1128 1143 1159 1178 1196 1221 1240 1281 1338 1391 1755 1673 1566 1477 1403 1348 1302 1269 1237 1212 1189 1168 1148 1132 1113 1102 1089 1082 1079 1081 1092 1099 1109 1126 1139 1154 1169 1188 1205 1225 1263 1312 1372 1791 1691 1583 1493 1413 1352 1307 1267 1237 1214 1187 1167 1150 1133 1115 1102 1089 1083 1081 1082 1092 1096 1104 1120 1126 1144 1161 1175 1189 1207 1241 1285 1345 1833 1727 1608 1514 1428 1367 1316 1277 1239 1216 1190 1171 1153 1136 1122 1106 1093 1088 1088 1088 1091 1096 1103 1112 1125 1138 1151 1168 1179 1199 1233 1270 1329 1894 1770 1647 1539 1455 1384 1332 1285 1250 1222 1198 1176 1160 1144 1125 1116 1101 1096 1093 1096 1100 1102 1107 1113 1120 1131 1150 1160 1177 1198 1229 1274 1324 1980 1827 1686 1574 1479 1408 1345 1299 1259 1236 1205 1185 1164 1144 1134 1117 1115 1107 1100 1101 1101 1101 1107 1114 1118 1133 1145 1164 1181 1205 1234 1283 1334 2040 1887 1730 1598 1503 1419 1361 1305 1269 1236 1210 1186 1167 1144 1131 1119 1115 1106 1104 1104 1102 1100 1108 1107 1113 1125 1142 1159 1180 1213 1236 1286 1348 2131 1946 1773 1639 1519 1440 1367 1313 1272 1236 1211 1191 1167 1148 1134 1123 1111 1110 1111 1104 1103 1102 1103 1106 1111 1122 1138 1157 1183 1205 1239 1296 1379]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [4095 3216 2414 2078 1836 1632 1478 1288 1147 1067 1027 1038 1032 1071 1115 1163 1210 1229 1208 1190 1139 1087 1079 1090 1132 1237 1349 1450 1531 1597 1702 2079 2903 3678 2847 2322 2024 1803 1611 1450 1278 1142 1057 1052 1042 1037 1061 1112 1157 1197 1213 1221 1183 1145 1110 1083 1105 1151 1254 1344 1458 1498 1544 1735 1892 2513 3114 2592 2201 1957 1753 1589 1430 1267 1144 1078 1053 1032 1038 1061 1098 1149 1182 1202 1201 1187 1146 1111 1103 1122 1180 1269 1364 1431 1474 1522 1578 1858 2184 2745 2389 2134 1897 1737 1575 1414 1270 1141 1082 1063 1036 1040 1056 1106 1136 1174 1196 1192 1180 1153 1126 1128 1153 1198 1279 1354 1420 1457 1480 1578 1700 2015 2540 2303 2022 1859 1697 1540 1404 1272 1147 1100 1071 1024 1050 1063 1097 1133 1170 1187 1188 1174 1162 1142 1142 1161 1211 1290 1349 1399 1433 1466 1521 1651 1873 2340 2170 1968 1801 1659 1524 1388 1268 1173 1116 1065 1043 1050 1071 1100 1136 1167 1183 1180 1177 1164 1157 1165 1199 1239 1289 1354 1378 1442 1431 1506 1594 1769 2241 2078 1892 1763 1627 1494 1397 1275 1190 1139 1081 1064 1062 1079 1109 1140 1157 1176 1183 1177 1176 1163 1178 1205 1250 1298 1341 1382 1428 1427 1473 1552 1666 2142 2008 1847 1709 1595 1482 1379 1288 1191 1153 1104 1079 1079 1099 1110 1137 1155 1171 1181 1171 1178 1181 1187 1221 1253 1298 1333 1368 1391 1415 1456 1510 1607 2044 1949 1775 1675 1563 1455 1378 1281 1204 1163 1116 1098 1088 1109 1117 1131 1154 1162 1177 1172 1176 1185 1200 1227 1260 1297 1325 1346 1384 1409 1442 1485 1549 2009 1863 1724 1632 1535 1439 1362 1286 1223 1169 1138 1121 1109 1112 1119 1131 1140 1151 1171 1172 1172 1192 1204 1226 1263 1284 1310 1332 1355 1392 1427 1462 1539 1900 1807 1697 1585 1500 1423 1354 1286 1232 1188 1151 1138 1121 1130 1125 1135 1144 1148 1168 1167 1173 1187 1206 1230 1248 1285 1306 1329 1347 1371 1413 1454 1504 1882 1760 1646 1564 1474 1408 1351 1291 1237 1206 1174 1140 1143 1125 1130 1136 1144 1146 1157 1159 1169 1188 1208 1222 1250 1275 1299 1316 1330 1364 1391 1447 1487 1815 1717 1628 1531 1458 1407 1353 1302 1256 1214 1181 1157 1152 1133 1135 1131 1140 1141 1144 1155 1170 1187 1200 1228 1242 1271 1289 1307 1332 1350 1392 1437 1479 1785 1692 1587 1512 1445 1394 1331 1304 1257 1218 1190 1171 1142 1140 1136 1125 1123 1129 1139 1142 1157 1169 1188 1211 1240 1254 1282 1290 1310 1338 1379 1420 1475 1754 1651 1569 1479 1421 1380 1337 1295 1265 1227 1195 1170 1154 1143 1134 1126 1118 1123 1122 1136 1151 1165 1181 1207 1230 1244 1265 1289 1304 1329 1360 1420 1441 1725 1646 1550 1466 1415 1372 1339 1296 1265 1229 1198 1182 1161 1140 1126 1117 1112 1111 1108 1125 1139 1163 1178 1196 1219 1247 1254 1283 1299 1318 1362 1407 1443 1709 1621 1540 1466 1403 1368 1330 1303 1276 1234 1209 1187 1171 1152 1133 1119 1108 1099 1110 1115 1139 1160 1175 1194 1220 1234 1253 1279 1286 1317 1359 1394 1436 1692 1613 1530 1455 1403 1363 1335 1299 1266 1243 1207 1195 1161 1147 1142 1111 1096 1098 1100 1116 1135 1151 1173 1190 1213 1235 1252 1269 1284 1310 1348 1400 1422 1690 1596 1520 1444 1397 1354 1325 1294 1262 1244 1207 1191 1171 1154 1171 1107 1098 1094 1095 1106 1128 1145 1164 1187 1203 1222 1243 1261 1284 1300 1350 1386 1419 1685 1594 1516 1436 1393 1358 1316 1293 1268 1237 1215 1193 1161 1147 1179 1111 1088 1088 1091 1104 1118 1145 1160 1176 1199 1218 1239 1257 1271 1301 1340 1385 1413 1687 1601 1529 1440 1389 1346 1322 1294 1261 1241 1213 1188 1172 1150 1153 1104 1093 1087 1089 1105 1122 1137 1156 1174 1197 1218 1241 1256 1276 1295 1343 1378 1401 1689 1603 1527 1460 1400 1354 1328 1290 1268 1245 1219 1196 1171 1152 1129 1113 1095 1091 1095 1111 1121 1141 1154 1172 1189 1216 1232 1253 1274 1298 1339 1384 1411 1693 1609 1533 1452 1392 1351 1316 1283 1264 1234 1210 1189 1172 1146 1134 1115 1093 1093 1090 1102 1115 1135 1155 1165 1188 1199 1224 1247 1266 1293 1326 1364 1402 1701 1638 1532 1475 1397 1352 1318 1282 1256 1234 1208 1189 1170 1149 1128 1117 1100 1090 1087 1107 1115 1128 1142 1162 1176 1189 1220 1232 1255 1280 1311 1363 1393 1740 1659 1538 1482 1410 1360 1319 1294 1262 1233 1212 1196 1173 1152 1133 1120 1105 1101 1102 1107 1116 1134 1142 1157 1171 1191 1209 1231 1245 1269 1311 1367 1407 1758 1661 1577 1483 1422 1363 1321 1290 1269 1243 1216 1196 1181 1161 1142 1128 1114 1106 1103 1115 1122 1132 1139 1157 1169 1187 1206 1214 1237 1262 1294 1353 1395 1792 1690 1587 1502 1429 1380 1333 1299 1266 1239 1224 1199 1185 1162 1143 1131 1120 1113 1111 1113 1121 1130 1143 1156 1166 1181 1199 1208 1223 1241 1285 1323 1377 1810 1721 1592 1522 1434 1382 1332 1291 1271 1242 1212 1198 1180 1160 1143 1132 1116 1110 1108 1110 1117 1122 1132 1145 1155 1168 1186 1191 1205 1222 1261 1301 1357 1854 1750 1632 1535 1447 1387 1342 1295 1267 1243 1226 1192 1176 1163 1145 1128 1120 1116 1114 1116 1115 1124 1122 1136 1148 1161 1171 1188 1192 1216 1245 1291 1331 1914 1794 1665 1558 1480 1404 1363 1305 1278 1250 1220 1206 1187 1168 1150 1142 1125 1119 1118 1119 1121 1123 1131 1129 1142 1155 1174 1176 1197 1213 1248 1291 1330 2019 1848 1712 1596 1494 1430 1371 1314 1290 1256 1237 1211 1189 1168 1159 1146 1143 1133 1124 1118 1120 1124 1133 1139 1138 1155 1166 1180 1193 1224 1251 1301 1340 2072 1904 1748 1624 1517 1443 1383 1330 1283 1257 1225 1215 1192 1163 1156 1139 1142 1124 1129 1131 1119 1122 1124 1125 1134 1145 1159 1181 1191 1234 1252 1303 1350 2155 1979 1796 1646 1537 1454 1386 1333 1287 1256 1227 1206 1194 1163 1154 1144 1133 1123 1123 1122 1123 1114 1123 1125 1126 1139 1153 1167 1202 1219 1251 1311 1391]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="3" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 17]">
+               1920x1080_D65_100
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <illumination index="1" type="char" size="[1 3]">
+               D65
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 32]">
+               [28 38 44 48 54 55 58 57 58 61 59 60 63 65 66 70 73 72 71 72 71 69 66 68 67 63 65 62 61 61 53 42]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 32]">
+               [20 25 25 26 28 29 29 30 30 32 33 33 34 35 35 37 37 35 38 37 37 37 38 38 38 39 38 39 37 38 37 36]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [4095 3267 2490 2140 1854 1692 1518 1330 1175 1090 1056 1055 1036 1078 1136 1168 1212 1226 1214 1186 1134 1074 1081 1093 1136 1239 1360 1477 1551 1632 1745 2102 3013 3799 2959 2394 2064 1835 1667 1489 1312 1171 1081 1061 1044 1046 1064 1117 1161 1186 1212 1205 1181 1141 1090 1076 1098 1147 1262 1373 1471 1530 1576 1766 1921 2580 3219 2649 2256 1976 1815 1626 1461 1295 1163 1081 1059 1034 1029 1053 1091 1136 1172 1183 1187 1172 1134 1094 1088 1113 1175 1252 1366 1434 1487 1524 1606 1881 2256 2835 2480 2150 1942 1758 1588 1438 1296 1164 1096 1059 1035 1034 1046 1097 1131 1156 1175 1176 1157 1130 1118 1111 1135 1193 1272 1359 1429 1473 1498 1582 1734 2054 2597 2362 2062 1890 1732 1569 1433 1285 1166 1098 1089 1024 1040 1051 1086 1119 1146 1167 1168 1159 1136 1127 1127 1154 1201 1277 1346 1413 1449 1471 1552 1675 1932 2449 2201 1996 1848 1694 1543 1411 1295 1181 1122 1064 1039 1041 1064 1083 1117 1145 1152 1160 1150 1141 1130 1142 1174 1226 1278 1355 1391 1452 1458 1524 1611 1808 2296 2138 1953 1803 1652 1517 1411 1292 1199 1141 1083 1058 1053 1058 1092 1111 1142 1150 1159 1150 1141 1147 1159 1184 1229 1283 1346 1389 1427 1440 1491 1561 1724 2225 2032 1896 1731 1629 1492 1398 1296 1207 1152 1093 1077 1064 1088 1091 1113 1138 1139 1151 1142 1145 1149 1164 1201 1227 1281 1334 1372 1404 1423 1468 1541 1642 2091 1979 1819 1708 1575 1479 1395 1291 1214 1170 1110 1089 1076 1086 1096 1112 1129 1132 1140 1141 1146 1159 1171 1201 1238 1280 1319 1357 1382 1422 1452 1492 1598 2033 1919 1764 1659 1555 1465 1359 1304 1219 1180 1129 1117 1099 1093 1105 1106 1117 1128 1136 1133 1143 1159 1173 1206 1247 1272 1301 1339 1366 1396 1454 1476 1580 1957 1860 1722 1602 1515 1434 1357 1293 1226 1181 1142 1115 1103 1102 1106 1107 1112 1122 1134 1136 1139 1157 1186 1206 1232 1264 1302 1317 1358 1376 1429 1464 1550 1919 1818 1680 1580 1495 1408 1356 1282 1234 1187 1154 1120 1114 1111 1103 1106 1107 1116 1128 1123 1137 1157 1174 1200 1229 1263 1288 1316 1329 1378 1400 1443 1526 1879 1784 1663 1547 1481 1401 1347 1291 1243 1208 1164 1135 1129 1105 1112 1107 1103 1110 1109 1123 1131 1152 1176 1197 1226 1248 1280 1301 1337 1353 1397 1462 1510 1823 1719 1612 1522 1444 1392 1326 1293 1242 1199 1161 1144 1123 1116 1103 1087 1096 1089 1104 1112 1123 1135 1153 1189 1211 1239 1263 1287 1316 1330 1383 1421 1493 1825 1691 1598 1506 1427 1370 1327 1280 1245 1204 1180 1150 1127 1117 1101 1093 1078 1087 1089 1094 1116 1132 1152 1171 1203 1227 1252 1274 1301 1325 1379 1431 1475 1747 1685 1585 1488 1415 1365 1321 1278 1235 1211 1175 1149 1134 1109 1095 1094 1073 1071 1070 1097 1106 1124 1149 1170 1187 1219 1242 1269 1294 1311 1356 1415 1481 1754 1669 1549 1475 1411 1361 1316 1272 1250 1209 1183 1149 1131 1116 1100 1081 1076 1057 1071 1078 1103 1124 1148 1167 1187 1212 1230 1267 1281 1307 1370 1409 1480 1748 1643 1547 1463 1401 1343 1309 1274 1234 1215 1172 1168 1133 1109 1099 1073 1065 1055 1057 1078 1097 1115 1138 1154 1190 1202 1233 1256 1279 1313 1361 1414 1436 1745 1631 1533 1457 1393 1349 1306 1271 1239 1211 1179 1150 1131 1119 1117 1073 1055 1050 1056 1071 1079 1112 1126 1153 1173 1198 1223 1249 1264 1302 1370 1394 1449 1717 1621 1521 1445 1387 1333 1292 1257 1230 1198 1177 1157 1125 1108 1119 1073 1053 1043 1044 1061 1085 1101 1126 1142 1173 1187 1213 1237 1278 1311 1365 1395 1430 1713 1636 1535 1443 1387 1338 1297 1263 1233 1208 1176 1158 1131 1113 1100 1062 1055 1043 1049 1066 1082 1103 1123 1147 1164 1188 1220 1239 1261 1312 1367 1390 1435 1730 1637 1532 1445 1382 1339 1294 1262 1239 1206 1180 1152 1129 1110 1089 1081 1057 1047 1046 1067 1085 1101 1116 1138 1157 1184 1211 1239 1267 1303 1349 1389 1416 1722 1641 1538 1445 1394 1332 1294 1256 1231 1204 1178 1156 1135 1112 1091 1067 1055 1054 1055 1059 1077 1091 1116 1132 1159 1173 1202 1224 1262 1287 1326 1365 1424 1750 1652 1542 1466 1391 1336 1296 1254 1232 1202 1176 1147 1132 1115 1096 1078 1059 1050 1053 1067 1075 1091 1105 1126 1149 1164 1197 1219 1246 1281 1304 1371 1420 1751 1682 1559 1484 1406 1348 1293 1267 1229 1199 1180 1159 1137 1114 1090 1081 1066 1062 1062 1067 1078 1091 1109 1121 1142 1162 1184 1214 1232 1263 1303 1351 1410 1775 1682 1569 1489 1418 1340 1308 1273 1242 1218 1184 1152 1144 1121 1101 1088 1069 1065 1062 1065 1081 1094 1106 1120 1144 1158 1177 1195 1231 1235 1283 1341 1412 1797 1720 1597 1492 1424 1365 1314 1269 1241 1217 1184 1166 1142 1121 1102 1089 1075 1077 1062 1072 1080 1085 1097 1117 1129 1158 1171 1186 1211 1222 1265 1325 1386 1876 1727 1605 1529 1427 1375 1313 1275 1243 1215 1184 1168 1144 1120 1101 1094 1075 1066 1072 1067 1077 1086 1095 1116 1117 1143 1158 1176 1192 1207 1232 1283 1369 1871 1753 1655 1531 1449 1382 1332 1281 1249 1212 1185 1165 1137 1129 1116 1096 1084 1075 1071 1075 1080 1085 1091 1103 1112 1131 1158 1163 1183 1201 1231 1280 1334 1941 1820 1674 1555 1478 1405 1342 1289 1253 1218 1201 1164 1158 1135 1117 1099 1088 1081 1080 1082 1081 1088 1096 1108 1117 1126 1146 1162 1175 1197 1225 1276 1341 2019 1870 1718 1596 1493 1423 1362 1303 1260 1236 1194 1174 1152 1135 1117 1106 1098 1098 1083 1091 1087 1089 1098 1108 1109 1124 1147 1167 1178 1206 1230 1277 1354 2107 1928 1756 1617 1531 1433 1370 1321 1268 1242 1208 1190 1158 1135 1127 1107 1107 1091 1091 1091 1089 1086 1099 1100 1109 1118 1141 1158 1188 1208 1240 1287 1356 2156 2010 1811 1662 1550 1463 1385 1331 1284 1244 1221 1182 1166 1152 1119 1126 1094 1100 1096 1096 1098 1098 1096 1115 1108 1119 1151 1162 1187 1210 1238 1306 1419]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [4095 3143 2401 2069 1827 1633 1480 1294 1166 1068 1048 1039 1030 1069 1120 1159 1198 1216 1210 1181 1137 1086 1075 1083 1134 1233 1349 1452 1519 1602 1714 2065 2984 3653 2849 2303 2013 1791 1612 1452 1282 1155 1068 1052 1045 1033 1061 1109 1151 1185 1202 1201 1176 1136 1095 1078 1100 1148 1247 1349 1446 1500 1545 1735 1888 2564 3051 2553 2191 1941 1753 1587 1431 1270 1151 1075 1052 1032 1031 1056 1096 1139 1168 1190 1185 1170 1133 1099 1093 1118 1169 1253 1350 1424 1466 1520 1582 1852 2216 2736 2387 2103 1881 1719 1563 1410 1277 1147 1084 1058 1035 1033 1051 1096 1130 1161 1179 1174 1162 1140 1116 1116 1141 1190 1265 1347 1410 1448 1484 1574 1719 2028 2519 2253 2017 1835 1691 1538 1403 1273 1153 1100 1070 1024 1046 1056 1092 1121 1154 1168 1174 1159 1144 1132 1130 1153 1203 1268 1342 1396 1425 1459 1526 1655 1885 2328 2146 1942 1790 1654 1511 1387 1268 1174 1114 1058 1045 1044 1067 1091 1119 1149 1162 1163 1156 1145 1139 1148 1180 1219 1276 1339 1380 1425 1438 1500 1597 1765 2226 2054 1891 1748 1614 1487 1389 1268 1190 1134 1080 1057 1057 1065 1095 1121 1140 1156 1161 1155 1153 1149 1160 1189 1233 1281 1332 1374 1410 1423 1479 1555 1675 2112 1980 1822 1703 1580 1470 1370 1280 1194 1145 1094 1072 1068 1086 1096 1117 1136 1148 1154 1147 1151 1156 1169 1199 1234 1281 1318 1355 1381 1408 1451 1514 1617 2031 1911 1767 1653 1545 1444 1359 1276 1199 1154 1103 1091 1078 1089 1099 1112 1131 1135 1146 1145 1149 1160 1176 1201 1233 1271 1306 1336 1366 1400 1440 1484 1559 1965 1845 1718 1615 1517 1423 1347 1275 1207 1165 1126 1106 1089 1096 1103 1106 1119 1128 1141 1141 1145 1163 1180 1205 1237 1264 1294 1322 1344 1380 1421 1459 1540 1895 1798 1678 1569 1483 1405 1335 1277 1215 1168 1140 1113 1104 1099 1103 1111 1116 1124 1132 1137 1146 1159 1180 1202 1228 1259 1282 1308 1332 1362 1411 1449 1508 1853 1747 1634 1540 1460 1387 1331 1272 1222 1183 1152 1120 1112 1108 1104 1108 1114 1115 1127 1131 1140 1157 1174 1197 1223 1252 1274 1297 1318 1350 1391 1440 1498 1800 1713 1607 1508 1438 1375 1328 1280 1232 1192 1157 1131 1123 1111 1108 1103 1106 1110 1112 1123 1134 1153 1170 1194 1219 1241 1264 1286 1309 1340 1380 1429 1483 1764 1667 1574 1488 1418 1365 1309 1273 1230 1193 1161 1139 1117 1111 1107 1095 1093 1093 1102 1113 1125 1138 1159 1181 1208 1227 1252 1272 1294 1321 1367 1413 1466 1730 1645 1552 1462 1400 1348 1305 1267 1234 1196 1168 1141 1123 1113 1100 1089 1085 1085 1090 1099 1116 1132 1149 1171 1198 1218 1239 1263 1287 1307 1355 1409 1446 1704 1624 1533 1446 1390 1340 1304 1270 1231 1198 1170 1146 1129 1109 1099 1085 1077 1072 1077 1092 1110 1129 1146 1167 1189 1212 1233 1256 1276 1301 1348 1400 1441 1684 1607 1517 1439 1378 1339 1295 1266 1237 1201 1179 1151 1133 1117 1096 1080 1070 1064 1071 1086 1104 1126 1142 1161 1186 1205 1227 1251 1267 1297 1347 1394 1433 1670 1587 1503 1428 1373 1326 1293 1263 1231 1204 1172 1156 1134 1113 1101 1076 1062 1057 1064 1079 1098 1122 1138 1156 1182 1201 1221 1244 1260 1290 1345 1389 1423 1665 1579 1496 1420 1367 1323 1288 1259 1229 1201 1175 1150 1130 1115 1126 1071 1055 1057 1056 1072 1091 1112 1128 1152 1170 1192 1212 1237 1256 1287 1337 1380 1412 1655 1578 1488 1416 1360 1316 1284 1254 1227 1199 1172 1154 1128 1110 1129 1073 1055 1052 1053 1069 1090 1108 1127 1140 1165 1188 1209 1230 1254 1289 1342 1375 1397 1662 1582 1494 1416 1361 1320 1287 1256 1229 1203 1175 1156 1130 1115 1107 1071 1058 1050 1055 1071 1088 1107 1125 1142 1162 1187 1210 1231 1254 1292 1338 1372 1400 1665 1587 1503 1426 1364 1324 1283 1255 1232 1206 1182 1156 1136 1114 1096 1078 1060 1053 1058 1075 1091 1107 1123 1140 1160 1182 1206 1230 1253 1290 1330 1367 1408 1676 1589 1507 1430 1365 1321 1282 1251 1227 1201 1179 1154 1136 1119 1098 1079 1060 1059 1061 1070 1087 1102 1119 1134 1155 1174 1199 1222 1247 1280 1315 1359 1400 1682 1610 1508 1445 1370 1322 1284 1253 1227 1200 1177 1154 1135 1116 1100 1083 1067 1063 1062 1074 1083 1100 1112 1130 1148 1166 1191 1214 1238 1266 1303 1357 1395 1703 1628 1528 1451 1380 1327 1288 1258 1229 1203 1181 1161 1139 1121 1104 1087 1074 1070 1069 1077 1088 1099 1115 1128 1145 1162 1184 1209 1229 1255 1296 1352 1394 1738 1644 1546 1461 1395 1337 1299 1263 1235 1210 1184 1166 1147 1129 1110 1097 1081 1076 1073 1083 1089 1103 1112 1130 1144 1160 1179 1196 1221 1242 1283 1340 1394 1755 1672 1565 1477 1404 1348 1304 1269 1237 1212 1190 1169 1149 1132 1114 1102 1089 1083 1081 1082 1094 1099 1111 1127 1140 1156 1170 1189 1206 1227 1265 1314 1375 1790 1691 1584 1492 1413 1353 1308 1268 1237 1215 1188 1167 1151 1134 1116 1103 1090 1084 1082 1084 1093 1096 1105 1121 1127 1145 1162 1175 1189 1208 1242 1286 1349 1830 1727 1609 1515 1429 1368 1317 1277 1240 1217 1191 1172 1154 1137 1122 1107 1094 1089 1088 1089 1093 1098 1104 1113 1125 1139 1152 1169 1181 1201 1235 1272 1331 1896 1769 1648 1538 1455 1384 1334 1286 1251 1222 1198 1177 1160 1144 1126 1116 1102 1097 1095 1097 1100 1103 1107 1114 1122 1132 1152 1161 1178 1200 1230 1277 1328 1976 1826 1686 1575 1480 1408 1346 1298 1261 1236 1206 1185 1165 1146 1134 1118 1118 1108 1100 1102 1102 1102 1108 1115 1119 1134 1146 1164 1182 1206 1235 1285 1335 2042 1885 1730 1598 1504 1419 1361 1305 1269 1238 1210 1187 1167 1144 1133 1120 1116 1108 1105 1104 1104 1102 1108 1108 1115 1126 1144 1160 1182 1215 1238 1289 1353 2125 1949 1772 1641 1517 1441 1368 1314 1274 1236 1211 1192 1168 1150 1134 1123 1114 1109 1111 1106 1103 1104 1102 1108 1112 1123 1139 1158 1184 1206 1241 1299 1385]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [4095 3190 2413 2076 1830 1634 1484 1296 1165 1068 1046 1038 1029 1070 1118 1160 1197 1217 1209 1179 1136 1085 1077 1081 1133 1228 1347 1450 1518 1602 1711 2058 2964 3722 2883 2315 2020 1793 1616 1456 1284 1158 1068 1051 1045 1034 1060 1109 1150 1185 1202 1200 1175 1137 1094 1076 1099 1144 1244 1347 1443 1499 1545 1733 1883 2557 3084 2575 2198 1946 1755 1589 1434 1272 1152 1073 1052 1030 1029 1055 1095 1137 1167 1189 1185 1169 1131 1098 1092 1116 1167 1250 1346 1424 1464 1520 1582 1847 2210 2757 2399 2110 1884 1721 1565 1413 1279 1148 1086 1058 1033 1032 1050 1094 1130 1160 1179 1174 1162 1139 1115 1113 1138 1189 1263 1344 1407 1447 1484 1572 1716 2024 2535 2261 2023 1839 1694 1540 1405 1276 1154 1098 1069 1024 1044 1054 1091 1119 1153 1167 1172 1159 1144 1130 1129 1150 1200 1268 1338 1396 1424 1457 1525 1653 1879 2339 2157 1948 1793 1655 1514 1388 1269 1173 1113 1059 1043 1042 1067 1089 1118 1148 1162 1162 1155 1145 1138 1146 1177 1218 1275 1337 1377 1425 1436 1498 1594 1764 2227 2060 1893 1750 1615 1488 1390 1270 1189 1134 1078 1056 1056 1064 1094 1119 1139 1154 1160 1154 1151 1148 1158 1188 1230 1279 1330 1373 1409 1424 1476 1554 1672 2119 1985 1828 1704 1582 1471 1371 1280 1193 1144 1093 1072 1065 1084 1094 1117 1136 1146 1153 1147 1152 1155 1168 1196 1231 1279 1316 1353 1380 1407 1450 1511 1615 2034 1916 1770 1656 1547 1444 1360 1276 1199 1155 1103 1090 1078 1088 1098 1110 1130 1136 1145 1145 1147 1159 1174 1200 1232 1271 1304 1336 1363 1398 1439 1481 1557 1967 1850 1720 1616 1518 1425 1348 1277 1208 1163 1125 1104 1088 1094 1103 1105 1118 1127 1141 1140 1145 1162 1178 1203 1235 1263 1292 1321 1343 1379 1420 1457 1535 1898 1800 1679 1572 1484 1406 1336 1276 1216 1168 1138 1112 1102 1099 1102 1110 1116 1122 1132 1135 1143 1157 1179 1200 1228 1257 1281 1307 1331 1359 1408 1446 1505 1858 1750 1636 1540 1461 1386 1332 1271 1220 1182 1151 1120 1112 1107 1104 1108 1112 1115 1126 1130 1139 1156 1173 1195 1222 1251 1271 1296 1317 1349 1390 1438 1493 1799 1716 1607 1511 1438 1376 1328 1280 1231 1192 1156 1131 1121 1112 1106 1102 1105 1109 1112 1122 1133 1152 1168 1194 1219 1240 1263 1285 1308 1339 1377 1428 1481 1766 1670 1575 1489 1419 1366 1309 1272 1231 1193 1160 1139 1117 1111 1106 1095 1092 1093 1101 1112 1125 1137 1158 1179 1207 1227 1251 1271 1293 1320 1365 1411 1465 1730 1646 1552 1462 1400 1347 1305 1266 1232 1195 1168 1140 1122 1112 1100 1089 1083 1084 1089 1098 1115 1132 1148 1170 1197 1216 1237 1261 1286 1305 1354 1406 1444 1704 1626 1535 1447 1390 1340 1302 1269 1231 1197 1169 1145 1129 1110 1099 1085 1077 1071 1076 1091 1109 1128 1144 1167 1187 1211 1232 1254 1275 1300 1345 1399 1438 1685 1609 1518 1440 1377 1338 1296 1266 1236 1202 1178 1150 1132 1117 1096 1080 1069 1063 1071 1085 1104 1125 1141 1161 1184 1204 1226 1249 1266 1294 1345 1390 1433 1671 1589 1504 1427 1372 1325 1292 1262 1231 1203 1172 1156 1133 1112 1100 1075 1062 1057 1063 1079 1097 1120 1136 1155 1181 1200 1220 1243 1259 1290 1342 1388 1421 1664 1582 1497 1420 1368 1323 1287 1259 1227 1200 1174 1150 1129 1114 1124 1071 1054 1058 1055 1071 1090 1112 1126 1151 1169 1190 1210 1237 1255 1285 1336 1379 1411 1658 1578 1489 1417 1360 1316 1283 1254 1227 1198 1171 1153 1128 1109 1128 1073 1054 1051 1052 1069 1088 1107 1125 1139 1163 1187 1208 1229 1252 1288 1339 1375 1397 1661 1582 1494 1416 1359 1319 1286 1256 1228 1203 1174 1155 1129 1115 1108 1071 1057 1049 1055 1069 1088 1106 1122 1141 1161 1186 1208 1230 1252 1290 1338 1370 1396 1670 1587 1504 1424 1364 1324 1283 1254 1231 1204 1182 1156 1135 1114 1094 1078 1059 1053 1057 1073 1090 1106 1121 1139 1158 1180 1206 1228 1251 1289 1328 1366 1406 1675 1589 1509 1430 1365 1321 1282 1251 1227 1201 1179 1155 1135 1118 1098 1079 1059 1058 1060 1070 1086 1101 1118 1132 1155 1172 1198 1221 1246 1279 1315 1357 1397 1683 1612 1506 1445 1370 1321 1283 1252 1226 1199 1177 1153 1135 1116 1099 1082 1067 1062 1061 1072 1082 1099 1111 1129 1147 1164 1189 1213 1237 1265 1300 1353 1394 1704 1628 1529 1451 1380 1326 1288 1257 1228 1202 1180 1161 1137 1121 1103 1086 1073 1069 1068 1076 1087 1098 1114 1128 1144 1161 1183 1208 1226 1254 1294 1350 1390 1739 1643 1546 1462 1393 1336 1297 1263 1234 1209 1184 1164 1147 1129 1109 1096 1081 1075 1073 1082 1087 1102 1111 1128 1143 1159 1178 1196 1221 1240 1281 1338 1391 1755 1673 1566 1477 1403 1348 1302 1269 1237 1212 1189 1168 1148 1132 1113 1102 1089 1082 1079 1081 1092 1099 1109 1126 1139 1154 1169 1188 1205 1225 1263 1312 1372 1791 1691 1583 1493 1413 1352 1307 1267 1237 1214 1187 1167 1150 1133 1115 1102 1089 1083 1081 1082 1092 1096 1104 1120 1126 1144 1161 1175 1189 1207 1241 1285 1345 1833 1727 1608 1514 1428 1367 1316 1277 1239 1216 1190 1171 1153 1136 1122 1106 1093 1088 1088 1088 1091 1096 1103 1112 1125 1138 1151 1168 1179 1199 1233 1270 1329 1894 1770 1647 1539 1455 1384 1332 1285 1250 1222 1198 1176 1160 1144 1125 1116 1101 1096 1093 1096 1100 1102 1107 1113 1120 1131 1150 1160 1177 1198 1229 1274 1324 1980 1827 1686 1574 1479 1408 1345 1299 1259 1236 1205 1185 1164 1144 1134 1117 1115 1107 1100 1101 1101 1101 1107 1114 1118 1133 1145 1164 1181 1205 1234 1283 1334 2040 1887 1730 1598 1503 1419 1361 1305 1269 1236 1210 1186 1167 1144 1131 1119 1115 1106 1104 1104 1102 1100 1108 1107 1113 1125 1142 1159 1180 1213 1236 1286 1348 2131 1946 1773 1639 1519 1440 1367 1313 1272 1236 1211 1191 1167 1148 1134 1123 1111 1110 1111 1104 1103 1102 1103 1106 1111 1122 1138 1157 1183 1205 1239 1296 1379]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [4095 3216 2414 2078 1836 1632 1478 1288 1147 1067 1027 1038 1032 1071 1115 1163 1210 1229 1208 1190 1139 1087 1079 1090 1132 1237 1349 1450 1531 1597 1702 2079 2903 3678 2847 2322 2024 1803 1611 1450 1278 1142 1057 1052 1042 1037 1061 1112 1157 1197 1213 1221 1183 1145 1110 1083 1105 1151 1254 1344 1458 1498 1544 1735 1892 2513 3114 2592 2201 1957 1753 1589 1430 1267 1144 1078 1053 1032 1038 1061 1098 1149 1182 1202 1201 1187 1146 1111 1103 1122 1180 1269 1364 1431 1474 1522 1578 1858 2184 2745 2389 2134 1897 1737 1575 1414 1270 1141 1082 1063 1036 1040 1056 1106 1136 1174 1196 1192 1180 1153 1126 1128 1153 1198 1279 1354 1420 1457 1480 1578 1700 2015 2540 2303 2022 1859 1697 1540 1404 1272 1147 1100 1071 1024 1050 1063 1097 1133 1170 1187 1188 1174 1162 1142 1142 1161 1211 1290 1349 1399 1433 1466 1521 1651 1873 2340 2170 1968 1801 1659 1524 1388 1268 1173 1116 1065 1043 1050 1071 1100 1136 1167 1183 1180 1177 1164 1157 1165 1199 1239 1289 1354 1378 1442 1431 1506 1594 1769 2241 2078 1892 1763 1627 1494 1397 1275 1190 1139 1081 1064 1062 1079 1109 1140 1157 1176 1183 1177 1176 1163 1178 1205 1250 1298 1341 1382 1428 1427 1473 1552 1666 2142 2008 1847 1709 1595 1482 1379 1288 1191 1153 1104 1079 1079 1099 1110 1137 1155 1171 1181 1171 1178 1181 1187 1221 1253 1298 1333 1368 1391 1415 1456 1510 1607 2044 1949 1775 1675 1563 1455 1378 1281 1204 1163 1116 1098 1088 1109 1117 1131 1154 1162 1177 1172 1176 1185 1200 1227 1260 1297 1325 1346 1384 1409 1442 1485 1549 2009 1863 1724 1632 1535 1439 1362 1286 1223 1169 1138 1121 1109 1112 1119 1131 1140 1151 1171 1172 1172 1192 1204 1226 1263 1284 1310 1332 1355 1392 1427 1462 1539 1900 1807 1697 1585 1500 1423 1354 1286 1232 1188 1151 1138 1121 1130 1125 1135 1144 1148 1168 1167 1173 1187 1206 1230 1248 1285 1306 1329 1347 1371 1413 1454 1504 1882 1760 1646 1564 1474 1408 1351 1291 1237 1206 1174 1140 1143 1125 1130 1136 1144 1146 1157 1159 1169 1188 1208 1222 1250 1275 1299 1316 1330 1364 1391 1447 1487 1815 1717 1628 1531 1458 1407 1353 1302 1256 1214 1181 1157 1152 1133 1135 1131 1140 1141 1144 1155 1170 1187 1200 1228 1242 1271 1289 1307 1332 1350 1392 1437 1479 1785 1692 1587 1512 1445 1394 1331 1304 1257 1218 1190 1171 1142 1140 1136 1125 1123 1129 1139 1142 1157 1169 1188 1211 1240 1254 1282 1290 1310 1338 1379 1420 1475 1754 1651 1569 1479 1421 1380 1337 1295 1265 1227 1195 1170 1154 1143 1134 1126 1118 1123 1122 1136 1151 1165 1181 1207 1230 1244 1265 1289 1304 1329 1360 1420 1441 1725 1646 1550 1466 1415 1372 1339 1296 1265 1229 1198 1182 1161 1140 1126 1117 1112 1111 1108 1125 1139 1163 1178 1196 1219 1247 1254 1283 1299 1318 1362 1407 1443 1709 1621 1540 1466 1403 1368 1330 1303 1276 1234 1209 1187 1171 1152 1133 1119 1108 1099 1110 1115 1139 1160 1175 1194 1220 1234 1253 1279 1286 1317 1359 1394 1436 1692 1613 1530 1455 1403 1363 1335 1299 1266 1243 1207 1195 1161 1147 1142 1111 1096 1098 1100 1116 1135 1151 1173 1190 1213 1235 1252 1269 1284 1310 1348 1400 1422 1690 1596 1520 1444 1397 1354 1325 1294 1262 1244 1207 1191 1171 1154 1171 1107 1098 1094 1095 1106 1128 1145 1164 1187 1203 1222 1243 1261 1284 1300 1350 1386 1419 1685 1594 1516 1436 1393 1358 1316 1293 1268 1237 1215 1193 1161 1147 1179 1111 1088 1088 1091 1104 1118 1145 1160 1176 1199 1218 1239 1257 1271 1301 1340 1385 1413 1687 1601 1529 1440 1389 1346 1322 1294 1261 1241 1213 1188 1172 1150 1153 1104 1093 1087 1089 1105 1122 1137 1156 1174 1197 1218 1241 1256 1276 1295 1343 1378 1401 1689 1603 1527 1460 1400 1354 1328 1290 1268 1245 1219 1196 1171 1152 1129 1113 1095 1091 1095 1111 1121 1141 1154 1172 1189 1216 1232 1253 1274 1298 1339 1384 1411 1693 1609 1533 1452 1392 1351 1316 1283 1264 1234 1210 1189 1172 1146 1134 1115 1093 1093 1090 1102 1115 1135 1155 1165 1188 1199 1224 1247 1266 1293 1326 1364 1402 1701 1638 1532 1475 1397 1352 1318 1282 1256 1234 1208 1189 1170 1149 1128 1117 1100 1090 1087 1107 1115 1128 1142 1162 1176 1189 1220 1232 1255 1280 1311 1363 1393 1740 1659 1538 1482 1410 1360 1319 1294 1262 1233 1212 1196 1173 1152 1133 1120 1105 1101 1102 1107 1116 1134 1142 1157 1171 1191 1209 1231 1245 1269 1311 1367 1407 1758 1661 1577 1483 1422 1363 1321 1290 1269 1243 1216 1196 1181 1161 1142 1128 1114 1106 1103 1115 1122 1132 1139 1157 1169 1187 1206 1214 1237 1262 1294 1353 1395 1792 1690 1587 1502 1429 1380 1333 1299 1266 1239 1224 1199 1185 1162 1143 1131 1120 1113 1111 1113 1121 1130 1143 1156 1166 1181 1199 1208 1223 1241 1285 1323 1377 1810 1721 1592 1522 1434 1382 1332 1291 1271 1242 1212 1198 1180 1160 1143 1132 1116 1110 1108 1110 1117 1122 1132 1145 1155 1168 1186 1191 1205 1222 1261 1301 1357 1854 1750 1632 1535 1447 1387 1342 1295 1267 1243 1226 1192 1176 1163 1145 1128 1120 1116 1114 1116 1115 1124 1122 1136 1148 1161 1171 1188 1192 1216 1245 1291 1331 1914 1794 1665 1558 1480 1404 1363 1305 1278 1250 1220 1206 1187 1168 1150 1142 1125 1119 1118 1119 1121 1123 1131 1129 1142 1155 1174 1176 1197 1213 1248 1291 1330 2019 1848 1712 1596 1494 1430 1371 1314 1290 1256 1237 1211 1189 1168 1159 1146 1143 1133 1124 1118 1120 1124 1133 1139 1138 1155 1166 1180 1193 1224 1251 1301 1340 2072 1904 1748 1624 1517 1443 1383 1330 1283 1257 1225 1215 1192 1163 1156 1139 1142 1124 1129 1131 1119 1122 1124 1125 1134 1145 1159 1181 1191 1234 1252 1303 1350 2155 1979 1796 1646 1537 1454 1386 1333 1287 1256 1227 1206 1194 1163 1154 1144 1133 1123 1123 1122 1123 1114 1123 1125 1126 1139 1153 1167 1202 1219 1251 1311 1391]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="4" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 17]">
+               1920x1080_D75_100
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <illumination index="1" type="char" size="[1 3]">
+               D75
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 32]">
+               [28 38 44 48 54 55 58 57 58 61 59 60 63 65 66 70 73 72 71 72 71 69 66 68 67 63 65 62 61 61 53 42]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 32]">
+               [20 25 25 26 28 29 29 30 30 32 33 33 34 35 35 37 37 35 38 37 37 37 38 38 38 39 38 39 37 38 37 36]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [4095 3267 2490 2140 1854 1692 1518 1330 1175 1090 1056 1055 1036 1078 1136 1168 1212 1226 1214 1186 1134 1074 1081 1093 1136 1239 1360 1477 1551 1632 1745 2102 3013 3799 2959 2394 2064 1835 1667 1489 1312 1171 1081 1061 1044 1046 1064 1117 1161 1186 1212 1205 1181 1141 1090 1076 1098 1147 1262 1373 1471 1530 1576 1766 1921 2580 3219 2649 2256 1976 1815 1626 1461 1295 1163 1081 1059 1034 1029 1053 1091 1136 1172 1183 1187 1172 1134 1094 1088 1113 1175 1252 1366 1434 1487 1524 1606 1881 2256 2835 2480 2150 1942 1758 1588 1438 1296 1164 1096 1059 1035 1034 1046 1097 1131 1156 1175 1176 1157 1130 1118 1111 1135 1193 1272 1359 1429 1473 1498 1582 1734 2054 2597 2362 2062 1890 1732 1569 1433 1285 1166 1098 1089 1024 1040 1051 1086 1119 1146 1167 1168 1159 1136 1127 1127 1154 1201 1277 1346 1413 1449 1471 1552 1675 1932 2449 2201 1996 1848 1694 1543 1411 1295 1181 1122 1064 1039 1041 1064 1083 1117 1145 1152 1160 1150 1141 1130 1142 1174 1226 1278 1355 1391 1452 1458 1524 1611 1808 2296 2138 1953 1803 1652 1517 1411 1292 1199 1141 1083 1058 1053 1058 1092 1111 1142 1150 1159 1150 1141 1147 1159 1184 1229 1283 1346 1389 1427 1440 1491 1561 1724 2225 2032 1896 1731 1629 1492 1398 1296 1207 1152 1093 1077 1064 1088 1091 1113 1138 1139 1151 1142 1145 1149 1164 1201 1227 1281 1334 1372 1404 1423 1468 1541 1642 2091 1979 1819 1708 1575 1479 1395 1291 1214 1170 1110 1089 1076 1086 1096 1112 1129 1132 1140 1141 1146 1159 1171 1201 1238 1280 1319 1357 1382 1422 1452 1492 1598 2033 1919 1764 1659 1555 1465 1359 1304 1219 1180 1129 1117 1099 1093 1105 1106 1117 1128 1136 1133 1143 1159 1173 1206 1247 1272 1301 1339 1366 1396 1454 1476 1580 1957 1860 1722 1602 1515 1434 1357 1293 1226 1181 1142 1115 1103 1102 1106 1107 1112 1122 1134 1136 1139 1157 1186 1206 1232 1264 1302 1317 1358 1376 1429 1464 1550 1919 1818 1680 1580 1495 1408 1356 1282 1234 1187 1154 1120 1114 1111 1103 1106 1107 1116 1128 1123 1137 1157 1174 1200 1229 1263 1288 1316 1329 1378 1400 1443 1526 1879 1784 1663 1547 1481 1401 1347 1291 1243 1208 1164 1135 1129 1105 1112 1107 1103 1110 1109 1123 1131 1152 1176 1197 1226 1248 1280 1301 1337 1353 1397 1462 1510 1823 1719 1612 1522 1444 1392 1326 1293 1242 1199 1161 1144 1123 1116 1103 1087 1096 1089 1104 1112 1123 1135 1153 1189 1211 1239 1263 1287 1316 1330 1383 1421 1493 1825 1691 1598 1506 1427 1370 1327 1280 1245 1204 1180 1150 1127 1117 1101 1093 1078 1087 1089 1094 1116 1132 1152 1171 1203 1227 1252 1274 1301 1325 1379 1431 1475 1747 1685 1585 1488 1415 1365 1321 1278 1235 1211 1175 1149 1134 1109 1095 1094 1073 1071 1070 1097 1106 1124 1149 1170 1187 1219 1242 1269 1294 1311 1356 1415 1481 1754 1669 1549 1475 1411 1361 1316 1272 1250 1209 1183 1149 1131 1116 1100 1081 1076 1057 1071 1078 1103 1124 1148 1167 1187 1212 1230 1267 1281 1307 1370 1409 1480 1748 1643 1547 1463 1401 1343 1309 1274 1234 1215 1172 1168 1133 1109 1099 1073 1065 1055 1057 1078 1097 1115 1138 1154 1190 1202 1233 1256 1279 1313 1361 1414 1436 1745 1631 1533 1457 1393 1349 1306 1271 1239 1211 1179 1150 1131 1119 1117 1073 1055 1050 1056 1071 1079 1112 1126 1153 1173 1198 1223 1249 1264 1302 1370 1394 1449 1717 1621 1521 1445 1387 1333 1292 1257 1230 1198 1177 1157 1125 1108 1119 1073 1053 1043 1044 1061 1085 1101 1126 1142 1173 1187 1213 1237 1278 1311 1365 1395 1430 1713 1636 1535 1443 1387 1338 1297 1263 1233 1208 1176 1158 1131 1113 1100 1062 1055 1043 1049 1066 1082 1103 1123 1147 1164 1188 1220 1239 1261 1312 1367 1390 1435 1730 1637 1532 1445 1382 1339 1294 1262 1239 1206 1180 1152 1129 1110 1089 1081 1057 1047 1046 1067 1085 1101 1116 1138 1157 1184 1211 1239 1267 1303 1349 1389 1416 1722 1641 1538 1445 1394 1332 1294 1256 1231 1204 1178 1156 1135 1112 1091 1067 1055 1054 1055 1059 1077 1091 1116 1132 1159 1173 1202 1224 1262 1287 1326 1365 1424 1750 1652 1542 1466 1391 1336 1296 1254 1232 1202 1176 1147 1132 1115 1096 1078 1059 1050 1053 1067 1075 1091 1105 1126 1149 1164 1197 1219 1246 1281 1304 1371 1420 1751 1682 1559 1484 1406 1348 1293 1267 1229 1199 1180 1159 1137 1114 1090 1081 1066 1062 1062 1067 1078 1091 1109 1121 1142 1162 1184 1214 1232 1263 1303 1351 1410 1775 1682 1569 1489 1418 1340 1308 1273 1242 1218 1184 1152 1144 1121 1101 1088 1069 1065 1062 1065 1081 1094 1106 1120 1144 1158 1177 1195 1231 1235 1283 1341 1412 1797 1720 1597 1492 1424 1365 1314 1269 1241 1217 1184 1166 1142 1121 1102 1089 1075 1077 1062 1072 1080 1085 1097 1117 1129 1158 1171 1186 1211 1222 1265 1325 1386 1876 1727 1605 1529 1427 1375 1313 1275 1243 1215 1184 1168 1144 1120 1101 1094 1075 1066 1072 1067 1077 1086 1095 1116 1117 1143 1158 1176 1192 1207 1232 1283 1369 1871 1753 1655 1531 1449 1382 1332 1281 1249 1212 1185 1165 1137 1129 1116 1096 1084 1075 1071 1075 1080 1085 1091 1103 1112 1131 1158 1163 1183 1201 1231 1280 1334 1941 1820 1674 1555 1478 1405 1342 1289 1253 1218 1201 1164 1158 1135 1117 1099 1088 1081 1080 1082 1081 1088 1096 1108 1117 1126 1146 1162 1175 1197 1225 1276 1341 2019 1870 1718 1596 1493 1423 1362 1303 1260 1236 1194 1174 1152 1135 1117 1106 1098 1098 1083 1091 1087 1089 1098 1108 1109 1124 1147 1167 1178 1206 1230 1277 1354 2107 1928 1756 1617 1531 1433 1370 1321 1268 1242 1208 1190 1158 1135 1127 1107 1107 1091 1091 1091 1089 1086 1099 1100 1109 1118 1141 1158 1188 1208 1240 1287 1356 2156 2010 1811 1662 1550 1463 1385 1331 1284 1244 1221 1182 1166 1152 1119 1126 1094 1100 1096 1096 1098 1098 1096 1115 1108 1119 1151 1162 1187 1210 1238 1306 1419]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [4095 3143 2401 2069 1827 1633 1480 1294 1166 1068 1048 1039 1030 1069 1120 1159 1198 1216 1210 1181 1137 1086 1075 1083 1134 1233 1349 1452 1519 1602 1714 2065 2984 3653 2849 2303 2013 1791 1612 1452 1282 1155 1068 1052 1045 1033 1061 1109 1151 1185 1202 1201 1176 1136 1095 1078 1100 1148 1247 1349 1446 1500 1545 1735 1888 2564 3051 2553 2191 1941 1753 1587 1431 1270 1151 1075 1052 1032 1031 1056 1096 1139 1168 1190 1185 1170 1133 1099 1093 1118 1169 1253 1350 1424 1466 1520 1582 1852 2216 2736 2387 2103 1881 1719 1563 1410 1277 1147 1084 1058 1035 1033 1051 1096 1130 1161 1179 1174 1162 1140 1116 1116 1141 1190 1265 1347 1410 1448 1484 1574 1719 2028 2519 2253 2017 1835 1691 1538 1403 1273 1153 1100 1070 1024 1046 1056 1092 1121 1154 1168 1174 1159 1144 1132 1130 1153 1203 1268 1342 1396 1425 1459 1526 1655 1885 2328 2146 1942 1790 1654 1511 1387 1268 1174 1114 1058 1045 1044 1067 1091 1119 1149 1162 1163 1156 1145 1139 1148 1180 1219 1276 1339 1380 1425 1438 1500 1597 1765 2226 2054 1891 1748 1614 1487 1389 1268 1190 1134 1080 1057 1057 1065 1095 1121 1140 1156 1161 1155 1153 1149 1160 1189 1233 1281 1332 1374 1410 1423 1479 1555 1675 2112 1980 1822 1703 1580 1470 1370 1280 1194 1145 1094 1072 1068 1086 1096 1117 1136 1148 1154 1147 1151 1156 1169 1199 1234 1281 1318 1355 1381 1408 1451 1514 1617 2031 1911 1767 1653 1545 1444 1359 1276 1199 1154 1103 1091 1078 1089 1099 1112 1131 1135 1146 1145 1149 1160 1176 1201 1233 1271 1306 1336 1366 1400 1440 1484 1559 1965 1845 1718 1615 1517 1423 1347 1275 1207 1165 1126 1106 1089 1096 1103 1106 1119 1128 1141 1141 1145 1163 1180 1205 1237 1264 1294 1322 1344 1380 1421 1459 1540 1895 1798 1678 1569 1483 1405 1335 1277 1215 1168 1140 1113 1104 1099 1103 1111 1116 1124 1132 1137 1146 1159 1180 1202 1228 1259 1282 1308 1332 1362 1411 1449 1508 1853 1747 1634 1540 1460 1387 1331 1272 1222 1183 1152 1120 1112 1108 1104 1108 1114 1115 1127 1131 1140 1157 1174 1197 1223 1252 1274 1297 1318 1350 1391 1440 1498 1800 1713 1607 1508 1438 1375 1328 1280 1232 1192 1157 1131 1123 1111 1108 1103 1106 1110 1112 1123 1134 1153 1170 1194 1219 1241 1264 1286 1309 1340 1380 1429 1483 1764 1667 1574 1488 1418 1365 1309 1273 1230 1193 1161 1139 1117 1111 1107 1095 1093 1093 1102 1113 1125 1138 1159 1181 1208 1227 1252 1272 1294 1321 1367 1413 1466 1730 1645 1552 1462 1400 1348 1305 1267 1234 1196 1168 1141 1123 1113 1100 1089 1085 1085 1090 1099 1116 1132 1149 1171 1198 1218 1239 1263 1287 1307 1355 1409 1446 1704 1624 1533 1446 1390 1340 1304 1270 1231 1198 1170 1146 1129 1109 1099 1085 1077 1072 1077 1092 1110 1129 1146 1167 1189 1212 1233 1256 1276 1301 1348 1400 1441 1684 1607 1517 1439 1378 1339 1295 1266 1237 1201 1179 1151 1133 1117 1096 1080 1070 1064 1071 1086 1104 1126 1142 1161 1186 1205 1227 1251 1267 1297 1347 1394 1433 1670 1587 1503 1428 1373 1326 1293 1263 1231 1204 1172 1156 1134 1113 1101 1076 1062 1057 1064 1079 1098 1122 1138 1156 1182 1201 1221 1244 1260 1290 1345 1389 1423 1665 1579 1496 1420 1367 1323 1288 1259 1229 1201 1175 1150 1130 1115 1126 1071 1055 1057 1056 1072 1091 1112 1128 1152 1170 1192 1212 1237 1256 1287 1337 1380 1412 1655 1578 1488 1416 1360 1316 1284 1254 1227 1199 1172 1154 1128 1110 1129 1073 1055 1052 1053 1069 1090 1108 1127 1140 1165 1188 1209 1230 1254 1289 1342 1375 1397 1662 1582 1494 1416 1361 1320 1287 1256 1229 1203 1175 1156 1130 1115 1107 1071 1058 1050 1055 1071 1088 1107 1125 1142 1162 1187 1210 1231 1254 1292 1338 1372 1400 1665 1587 1503 1426 1364 1324 1283 1255 1232 1206 1182 1156 1136 1114 1096 1078 1060 1053 1058 1075 1091 1107 1123 1140 1160 1182 1206 1230 1253 1290 1330 1367 1408 1676 1589 1507 1430 1365 1321 1282 1251 1227 1201 1179 1154 1136 1119 1098 1079 1060 1059 1061 1070 1087 1102 1119 1134 1155 1174 1199 1222 1247 1280 1315 1359 1400 1682 1610 1508 1445 1370 1322 1284 1253 1227 1200 1177 1154 1135 1116 1100 1083 1067 1063 1062 1074 1083 1100 1112 1130 1148 1166 1191 1214 1238 1266 1303 1357 1395 1703 1628 1528 1451 1380 1327 1288 1258 1229 1203 1181 1161 1139 1121 1104 1087 1074 1070 1069 1077 1088 1099 1115 1128 1145 1162 1184 1209 1229 1255 1296 1352 1394 1738 1644 1546 1461 1395 1337 1299 1263 1235 1210 1184 1166 1147 1129 1110 1097 1081 1076 1073 1083 1089 1103 1112 1130 1144 1160 1179 1196 1221 1242 1283 1340 1394 1755 1672 1565 1477 1404 1348 1304 1269 1237 1212 1190 1169 1149 1132 1114 1102 1089 1083 1081 1082 1094 1099 1111 1127 1140 1156 1170 1189 1206 1227 1265 1314 1375 1790 1691 1584 1492 1413 1353 1308 1268 1237 1215 1188 1167 1151 1134 1116 1103 1090 1084 1082 1084 1093 1096 1105 1121 1127 1145 1162 1175 1189 1208 1242 1286 1349 1830 1727 1609 1515 1429 1368 1317 1277 1240 1217 1191 1172 1154 1137 1122 1107 1094 1089 1088 1089 1093 1098 1104 1113 1125 1139 1152 1169 1181 1201 1235 1272 1331 1896 1769 1648 1538 1455 1384 1334 1286 1251 1222 1198 1177 1160 1144 1126 1116 1102 1097 1095 1097 1100 1103 1107 1114 1122 1132 1152 1161 1178 1200 1230 1277 1328 1976 1826 1686 1575 1480 1408 1346 1298 1261 1236 1206 1185 1165 1146 1134 1118 1118 1108 1100 1102 1102 1102 1108 1115 1119 1134 1146 1164 1182 1206 1235 1285 1335 2042 1885 1730 1598 1504 1419 1361 1305 1269 1238 1210 1187 1167 1144 1133 1120 1116 1108 1105 1104 1104 1102 1108 1108 1115 1126 1144 1160 1182 1215 1238 1289 1353 2125 1949 1772 1641 1517 1441 1368 1314 1274 1236 1211 1192 1168 1150 1134 1123 1114 1109 1111 1106 1103 1104 1102 1108 1112 1123 1139 1158 1184 1206 1241 1299 1385]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [4095 3190 2413 2076 1830 1634 1484 1296 1165 1068 1046 1038 1029 1070 1118 1160 1197 1217 1209 1179 1136 1085 1077 1081 1133 1228 1347 1450 1518 1602 1711 2058 2964 3722 2883 2315 2020 1793 1616 1456 1284 1158 1068 1051 1045 1034 1060 1109 1150 1185 1202 1200 1175 1137 1094 1076 1099 1144 1244 1347 1443 1499 1545 1733 1883 2557 3084 2575 2198 1946 1755 1589 1434 1272 1152 1073 1052 1030 1029 1055 1095 1137 1167 1189 1185 1169 1131 1098 1092 1116 1167 1250 1346 1424 1464 1520 1582 1847 2210 2757 2399 2110 1884 1721 1565 1413 1279 1148 1086 1058 1033 1032 1050 1094 1130 1160 1179 1174 1162 1139 1115 1113 1138 1189 1263 1344 1407 1447 1484 1572 1716 2024 2535 2261 2023 1839 1694 1540 1405 1276 1154 1098 1069 1024 1044 1054 1091 1119 1153 1167 1172 1159 1144 1130 1129 1150 1200 1268 1338 1396 1424 1457 1525 1653 1879 2339 2157 1948 1793 1655 1514 1388 1269 1173 1113 1059 1043 1042 1067 1089 1118 1148 1162 1162 1155 1145 1138 1146 1177 1218 1275 1337 1377 1425 1436 1498 1594 1764 2227 2060 1893 1750 1615 1488 1390 1270 1189 1134 1078 1056 1056 1064 1094 1119 1139 1154 1160 1154 1151 1148 1158 1188 1230 1279 1330 1373 1409 1424 1476 1554 1672 2119 1985 1828 1704 1582 1471 1371 1280 1193 1144 1093 1072 1065 1084 1094 1117 1136 1146 1153 1147 1152 1155 1168 1196 1231 1279 1316 1353 1380 1407 1450 1511 1615 2034 1916 1770 1656 1547 1444 1360 1276 1199 1155 1103 1090 1078 1088 1098 1110 1130 1136 1145 1145 1147 1159 1174 1200 1232 1271 1304 1336 1363 1398 1439 1481 1557 1967 1850 1720 1616 1518 1425 1348 1277 1208 1163 1125 1104 1088 1094 1103 1105 1118 1127 1141 1140 1145 1162 1178 1203 1235 1263 1292 1321 1343 1379 1420 1457 1535 1898 1800 1679 1572 1484 1406 1336 1276 1216 1168 1138 1112 1102 1099 1102 1110 1116 1122 1132 1135 1143 1157 1179 1200 1228 1257 1281 1307 1331 1359 1408 1446 1505 1858 1750 1636 1540 1461 1386 1332 1271 1220 1182 1151 1120 1112 1107 1104 1108 1112 1115 1126 1130 1139 1156 1173 1195 1222 1251 1271 1296 1317 1349 1390 1438 1493 1799 1716 1607 1511 1438 1376 1328 1280 1231 1192 1156 1131 1121 1112 1106 1102 1105 1109 1112 1122 1133 1152 1168 1194 1219 1240 1263 1285 1308 1339 1377 1428 1481 1766 1670 1575 1489 1419 1366 1309 1272 1231 1193 1160 1139 1117 1111 1106 1095 1092 1093 1101 1112 1125 1137 1158 1179 1207 1227 1251 1271 1293 1320 1365 1411 1465 1730 1646 1552 1462 1400 1347 1305 1266 1232 1195 1168 1140 1122 1112 1100 1089 1083 1084 1089 1098 1115 1132 1148 1170 1197 1216 1237 1261 1286 1305 1354 1406 1444 1704 1626 1535 1447 1390 1340 1302 1269 1231 1197 1169 1145 1129 1110 1099 1085 1077 1071 1076 1091 1109 1128 1144 1167 1187 1211 1232 1254 1275 1300 1345 1399 1438 1685 1609 1518 1440 1377 1338 1296 1266 1236 1202 1178 1150 1132 1117 1096 1080 1069 1063 1071 1085 1104 1125 1141 1161 1184 1204 1226 1249 1266 1294 1345 1390 1433 1671 1589 1504 1427 1372 1325 1292 1262 1231 1203 1172 1156 1133 1112 1100 1075 1062 1057 1063 1079 1097 1120 1136 1155 1181 1200 1220 1243 1259 1290 1342 1388 1421 1664 1582 1497 1420 1368 1323 1287 1259 1227 1200 1174 1150 1129 1114 1124 1071 1054 1058 1055 1071 1090 1112 1126 1151 1169 1190 1210 1237 1255 1285 1336 1379 1411 1658 1578 1489 1417 1360 1316 1283 1254 1227 1198 1171 1153 1128 1109 1128 1073 1054 1051 1052 1069 1088 1107 1125 1139 1163 1187 1208 1229 1252 1288 1339 1375 1397 1661 1582 1494 1416 1359 1319 1286 1256 1228 1203 1174 1155 1129 1115 1108 1071 1057 1049 1055 1069 1088 1106 1122 1141 1161 1186 1208 1230 1252 1290 1338 1370 1396 1670 1587 1504 1424 1364 1324 1283 1254 1231 1204 1182 1156 1135 1114 1094 1078 1059 1053 1057 1073 1090 1106 1121 1139 1158 1180 1206 1228 1251 1289 1328 1366 1406 1675 1589 1509 1430 1365 1321 1282 1251 1227 1201 1179 1155 1135 1118 1098 1079 1059 1058 1060 1070 1086 1101 1118 1132 1155 1172 1198 1221 1246 1279 1315 1357 1397 1683 1612 1506 1445 1370 1321 1283 1252 1226 1199 1177 1153 1135 1116 1099 1082 1067 1062 1061 1072 1082 1099 1111 1129 1147 1164 1189 1213 1237 1265 1300 1353 1394 1704 1628 1529 1451 1380 1326 1288 1257 1228 1202 1180 1161 1137 1121 1103 1086 1073 1069 1068 1076 1087 1098 1114 1128 1144 1161 1183 1208 1226 1254 1294 1350 1390 1739 1643 1546 1462 1393 1336 1297 1263 1234 1209 1184 1164 1147 1129 1109 1096 1081 1075 1073 1082 1087 1102 1111 1128 1143 1159 1178 1196 1221 1240 1281 1338 1391 1755 1673 1566 1477 1403 1348 1302 1269 1237 1212 1189 1168 1148 1132 1113 1102 1089 1082 1079 1081 1092 1099 1109 1126 1139 1154 1169 1188 1205 1225 1263 1312 1372 1791 1691 1583 1493 1413 1352 1307 1267 1237 1214 1187 1167 1150 1133 1115 1102 1089 1083 1081 1082 1092 1096 1104 1120 1126 1144 1161 1175 1189 1207 1241 1285 1345 1833 1727 1608 1514 1428 1367 1316 1277 1239 1216 1190 1171 1153 1136 1122 1106 1093 1088 1088 1088 1091 1096 1103 1112 1125 1138 1151 1168 1179 1199 1233 1270 1329 1894 1770 1647 1539 1455 1384 1332 1285 1250 1222 1198 1176 1160 1144 1125 1116 1101 1096 1093 1096 1100 1102 1107 1113 1120 1131 1150 1160 1177 1198 1229 1274 1324 1980 1827 1686 1574 1479 1408 1345 1299 1259 1236 1205 1185 1164 1144 1134 1117 1115 1107 1100 1101 1101 1101 1107 1114 1118 1133 1145 1164 1181 1205 1234 1283 1334 2040 1887 1730 1598 1503 1419 1361 1305 1269 1236 1210 1186 1167 1144 1131 1119 1115 1106 1104 1104 1102 1100 1108 1107 1113 1125 1142 1159 1180 1213 1236 1286 1348 2131 1946 1773 1639 1519 1440 1367 1313 1272 1236 1211 1191 1167 1148 1134 1123 1111 1110 1111 1104 1103 1102 1103 1106 1111 1122 1138 1157 1183 1205 1239 1296 1379]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [4095 3216 2414 2078 1836 1632 1478 1288 1147 1067 1027 1038 1032 1071 1115 1163 1210 1229 1208 1190 1139 1087 1079 1090 1132 1237 1349 1450 1531 1597 1702 2079 2903 3678 2847 2322 2024 1803 1611 1450 1278 1142 1057 1052 1042 1037 1061 1112 1157 1197 1213 1221 1183 1145 1110 1083 1105 1151 1254 1344 1458 1498 1544 1735 1892 2513 3114 2592 2201 1957 1753 1589 1430 1267 1144 1078 1053 1032 1038 1061 1098 1149 1182 1202 1201 1187 1146 1111 1103 1122 1180 1269 1364 1431 1474 1522 1578 1858 2184 2745 2389 2134 1897 1737 1575 1414 1270 1141 1082 1063 1036 1040 1056 1106 1136 1174 1196 1192 1180 1153 1126 1128 1153 1198 1279 1354 1420 1457 1480 1578 1700 2015 2540 2303 2022 1859 1697 1540 1404 1272 1147 1100 1071 1024 1050 1063 1097 1133 1170 1187 1188 1174 1162 1142 1142 1161 1211 1290 1349 1399 1433 1466 1521 1651 1873 2340 2170 1968 1801 1659 1524 1388 1268 1173 1116 1065 1043 1050 1071 1100 1136 1167 1183 1180 1177 1164 1157 1165 1199 1239 1289 1354 1378 1442 1431 1506 1594 1769 2241 2078 1892 1763 1627 1494 1397 1275 1190 1139 1081 1064 1062 1079 1109 1140 1157 1176 1183 1177 1176 1163 1178 1205 1250 1298 1341 1382 1428 1427 1473 1552 1666 2142 2008 1847 1709 1595 1482 1379 1288 1191 1153 1104 1079 1079 1099 1110 1137 1155 1171 1181 1171 1178 1181 1187 1221 1253 1298 1333 1368 1391 1415 1456 1510 1607 2044 1949 1775 1675 1563 1455 1378 1281 1204 1163 1116 1098 1088 1109 1117 1131 1154 1162 1177 1172 1176 1185 1200 1227 1260 1297 1325 1346 1384 1409 1442 1485 1549 2009 1863 1724 1632 1535 1439 1362 1286 1223 1169 1138 1121 1109 1112 1119 1131 1140 1151 1171 1172 1172 1192 1204 1226 1263 1284 1310 1332 1355 1392 1427 1462 1539 1900 1807 1697 1585 1500 1423 1354 1286 1232 1188 1151 1138 1121 1130 1125 1135 1144 1148 1168 1167 1173 1187 1206 1230 1248 1285 1306 1329 1347 1371 1413 1454 1504 1882 1760 1646 1564 1474 1408 1351 1291 1237 1206 1174 1140 1143 1125 1130 1136 1144 1146 1157 1159 1169 1188 1208 1222 1250 1275 1299 1316 1330 1364 1391 1447 1487 1815 1717 1628 1531 1458 1407 1353 1302 1256 1214 1181 1157 1152 1133 1135 1131 1140 1141 1144 1155 1170 1187 1200 1228 1242 1271 1289 1307 1332 1350 1392 1437 1479 1785 1692 1587 1512 1445 1394 1331 1304 1257 1218 1190 1171 1142 1140 1136 1125 1123 1129 1139 1142 1157 1169 1188 1211 1240 1254 1282 1290 1310 1338 1379 1420 1475 1754 1651 1569 1479 1421 1380 1337 1295 1265 1227 1195 1170 1154 1143 1134 1126 1118 1123 1122 1136 1151 1165 1181 1207 1230 1244 1265 1289 1304 1329 1360 1420 1441 1725 1646 1550 1466 1415 1372 1339 1296 1265 1229 1198 1182 1161 1140 1126 1117 1112 1111 1108 1125 1139 1163 1178 1196 1219 1247 1254 1283 1299 1318 1362 1407 1443 1709 1621 1540 1466 1403 1368 1330 1303 1276 1234 1209 1187 1171 1152 1133 1119 1108 1099 1110 1115 1139 1160 1175 1194 1220 1234 1253 1279 1286 1317 1359 1394 1436 1692 1613 1530 1455 1403 1363 1335 1299 1266 1243 1207 1195 1161 1147 1142 1111 1096 1098 1100 1116 1135 1151 1173 1190 1213 1235 1252 1269 1284 1310 1348 1400 1422 1690 1596 1520 1444 1397 1354 1325 1294 1262 1244 1207 1191 1171 1154 1171 1107 1098 1094 1095 1106 1128 1145 1164 1187 1203 1222 1243 1261 1284 1300 1350 1386 1419 1685 1594 1516 1436 1393 1358 1316 1293 1268 1237 1215 1193 1161 1147 1179 1111 1088 1088 1091 1104 1118 1145 1160 1176 1199 1218 1239 1257 1271 1301 1340 1385 1413 1687 1601 1529 1440 1389 1346 1322 1294 1261 1241 1213 1188 1172 1150 1153 1104 1093 1087 1089 1105 1122 1137 1156 1174 1197 1218 1241 1256 1276 1295 1343 1378 1401 1689 1603 1527 1460 1400 1354 1328 1290 1268 1245 1219 1196 1171 1152 1129 1113 1095 1091 1095 1111 1121 1141 1154 1172 1189 1216 1232 1253 1274 1298 1339 1384 1411 1693 1609 1533 1452 1392 1351 1316 1283 1264 1234 1210 1189 1172 1146 1134 1115 1093 1093 1090 1102 1115 1135 1155 1165 1188 1199 1224 1247 1266 1293 1326 1364 1402 1701 1638 1532 1475 1397 1352 1318 1282 1256 1234 1208 1189 1170 1149 1128 1117 1100 1090 1087 1107 1115 1128 1142 1162 1176 1189 1220 1232 1255 1280 1311 1363 1393 1740 1659 1538 1482 1410 1360 1319 1294 1262 1233 1212 1196 1173 1152 1133 1120 1105 1101 1102 1107 1116 1134 1142 1157 1171 1191 1209 1231 1245 1269 1311 1367 1407 1758 1661 1577 1483 1422 1363 1321 1290 1269 1243 1216 1196 1181 1161 1142 1128 1114 1106 1103 1115 1122 1132 1139 1157 1169 1187 1206 1214 1237 1262 1294 1353 1395 1792 1690 1587 1502 1429 1380 1333 1299 1266 1239 1224 1199 1185 1162 1143 1131 1120 1113 1111 1113 1121 1130 1143 1156 1166 1181 1199 1208 1223 1241 1285 1323 1377 1810 1721 1592 1522 1434 1382 1332 1291 1271 1242 1212 1198 1180 1160 1143 1132 1116 1110 1108 1110 1117 1122 1132 1145 1155 1168 1186 1191 1205 1222 1261 1301 1357 1854 1750 1632 1535 1447 1387 1342 1295 1267 1243 1226 1192 1176 1163 1145 1128 1120 1116 1114 1116 1115 1124 1122 1136 1148 1161 1171 1188 1192 1216 1245 1291 1331 1914 1794 1665 1558 1480 1404 1363 1305 1278 1250 1220 1206 1187 1168 1150 1142 1125 1119 1118 1119 1121 1123 1131 1129 1142 1155 1174 1176 1197 1213 1248 1291 1330 2019 1848 1712 1596 1494 1430 1371 1314 1290 1256 1237 1211 1189 1168 1159 1146 1143 1133 1124 1118 1120 1124 1133 1139 1138 1155 1166 1180 1193 1224 1251 1301 1340 2072 1904 1748 1624 1517 1443 1383 1330 1283 1257 1225 1215 1192 1163 1156 1139 1142 1124 1129 1131 1119 1122 1124 1125 1134 1145 1159 1181 1191 1234 1252 1303 1350 2155 1979 1796 1646 1537 1454 1386 1333 1287 1256 1227 1206 1194 1163 1154 1144 1133 1123 1123 1122 1123 1114 1123 1125 1126 1139 1153 1167 1202 1219 1251 1311 1391]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="5" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 17]">
+               1920x1080_F11_100
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <illumination index="1" type="char" size="[1 3]">
+               F11
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 32]">
+               [28 38 44 48 54 55 58 57 58 61 59 60 63 65 66 70 73 72 71 72 71 69 66 68 67 63 65 62 61 61 53 42]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 32]">
+               [20 25 25 26 28 29 29 30 30 32 33 33 34 35 35 37 37 35 38 37 37 37 38 38 38 39 38 39 37 38 37 36]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [4095 3267 2490 2140 1854 1692 1518 1330 1175 1090 1056 1055 1036 1078 1136 1168 1212 1226 1214 1186 1134 1074 1081 1093 1136 1239 1360 1477 1551 1632 1745 2102 3013 3799 2959 2394 2064 1835 1667 1489 1312 1171 1081 1061 1044 1046 1064 1117 1161 1186 1212 1205 1181 1141 1090 1076 1098 1147 1262 1373 1471 1530 1576 1766 1921 2580 3219 2649 2256 1976 1815 1626 1461 1295 1163 1081 1059 1034 1029 1053 1091 1136 1172 1183 1187 1172 1134 1094 1088 1113 1175 1252 1366 1434 1487 1524 1606 1881 2256 2835 2480 2150 1942 1758 1588 1438 1296 1164 1096 1059 1035 1034 1046 1097 1131 1156 1175 1176 1157 1130 1118 1111 1135 1193 1272 1359 1429 1473 1498 1582 1734 2054 2597 2362 2062 1890 1732 1569 1433 1285 1166 1098 1089 1024 1040 1051 1086 1119 1146 1167 1168 1159 1136 1127 1127 1154 1201 1277 1346 1413 1449 1471 1552 1675 1932 2449 2201 1996 1848 1694 1543 1411 1295 1181 1122 1064 1039 1041 1064 1083 1117 1145 1152 1160 1150 1141 1130 1142 1174 1226 1278 1355 1391 1452 1458 1524 1611 1808 2296 2138 1953 1803 1652 1517 1411 1292 1199 1141 1083 1058 1053 1058 1092 1111 1142 1150 1159 1150 1141 1147 1159 1184 1229 1283 1346 1389 1427 1440 1491 1561 1724 2225 2032 1896 1731 1629 1492 1398 1296 1207 1152 1093 1077 1064 1088 1091 1113 1138 1139 1151 1142 1145 1149 1164 1201 1227 1281 1334 1372 1404 1423 1468 1541 1642 2091 1979 1819 1708 1575 1479 1395 1291 1214 1170 1110 1089 1076 1086 1096 1112 1129 1132 1140 1141 1146 1159 1171 1201 1238 1280 1319 1357 1382 1422 1452 1492 1598 2033 1919 1764 1659 1555 1465 1359 1304 1219 1180 1129 1117 1099 1093 1105 1106 1117 1128 1136 1133 1143 1159 1173 1206 1247 1272 1301 1339 1366 1396 1454 1476 1580 1957 1860 1722 1602 1515 1434 1357 1293 1226 1181 1142 1115 1103 1102 1106 1107 1112 1122 1134 1136 1139 1157 1186 1206 1232 1264 1302 1317 1358 1376 1429 1464 1550 1919 1818 1680 1580 1495 1408 1356 1282 1234 1187 1154 1120 1114 1111 1103 1106 1107 1116 1128 1123 1137 1157 1174 1200 1229 1263 1288 1316 1329 1378 1400 1443 1526 1879 1784 1663 1547 1481 1401 1347 1291 1243 1208 1164 1135 1129 1105 1112 1107 1103 1110 1109 1123 1131 1152 1176 1197 1226 1248 1280 1301 1337 1353 1397 1462 1510 1823 1719 1612 1522 1444 1392 1326 1293 1242 1199 1161 1144 1123 1116 1103 1087 1096 1089 1104 1112 1123 1135 1153 1189 1211 1239 1263 1287 1316 1330 1383 1421 1493 1825 1691 1598 1506 1427 1370 1327 1280 1245 1204 1180 1150 1127 1117 1101 1093 1078 1087 1089 1094 1116 1132 1152 1171 1203 1227 1252 1274 1301 1325 1379 1431 1475 1747 1685 1585 1488 1415 1365 1321 1278 1235 1211 1175 1149 1134 1109 1095 1094 1073 1071 1070 1097 1106 1124 1149 1170 1187 1219 1242 1269 1294 1311 1356 1415 1481 1754 1669 1549 1475 1411 1361 1316 1272 1250 1209 1183 1149 1131 1116 1100 1081 1076 1057 1071 1078 1103 1124 1148 1167 1187 1212 1230 1267 1281 1307 1370 1409 1480 1748 1643 1547 1463 1401 1343 1309 1274 1234 1215 1172 1168 1133 1109 1099 1073 1065 1055 1057 1078 1097 1115 1138 1154 1190 1202 1233 1256 1279 1313 1361 1414 1436 1745 1631 1533 1457 1393 1349 1306 1271 1239 1211 1179 1150 1131 1119 1117 1073 1055 1050 1056 1071 1079 1112 1126 1153 1173 1198 1223 1249 1264 1302 1370 1394 1449 1717 1621 1521 1445 1387 1333 1292 1257 1230 1198 1177 1157 1125 1108 1119 1073 1053 1043 1044 1061 1085 1101 1126 1142 1173 1187 1213 1237 1278 1311 1365 1395 1430 1713 1636 1535 1443 1387 1338 1297 1263 1233 1208 1176 1158 1131 1113 1100 1062 1055 1043 1049 1066 1082 1103 1123 1147 1164 1188 1220 1239 1261 1312 1367 1390 1435 1730 1637 1532 1445 1382 1339 1294 1262 1239 1206 1180 1152 1129 1110 1089 1081 1057 1047 1046 1067 1085 1101 1116 1138 1157 1184 1211 1239 1267 1303 1349 1389 1416 1722 1641 1538 1445 1394 1332 1294 1256 1231 1204 1178 1156 1135 1112 1091 1067 1055 1054 1055 1059 1077 1091 1116 1132 1159 1173 1202 1224 1262 1287 1326 1365 1424 1750 1652 1542 1466 1391 1336 1296 1254 1232 1202 1176 1147 1132 1115 1096 1078 1059 1050 1053 1067 1075 1091 1105 1126 1149 1164 1197 1219 1246 1281 1304 1371 1420 1751 1682 1559 1484 1406 1348 1293 1267 1229 1199 1180 1159 1137 1114 1090 1081 1066 1062 1062 1067 1078 1091 1109 1121 1142 1162 1184 1214 1232 1263 1303 1351 1410 1775 1682 1569 1489 1418 1340 1308 1273 1242 1218 1184 1152 1144 1121 1101 1088 1069 1065 1062 1065 1081 1094 1106 1120 1144 1158 1177 1195 1231 1235 1283 1341 1412 1797 1720 1597 1492 1424 1365 1314 1269 1241 1217 1184 1166 1142 1121 1102 1089 1075 1077 1062 1072 1080 1085 1097 1117 1129 1158 1171 1186 1211 1222 1265 1325 1386 1876 1727 1605 1529 1427 1375 1313 1275 1243 1215 1184 1168 1144 1120 1101 1094 1075 1066 1072 1067 1077 1086 1095 1116 1117 1143 1158 1176 1192 1207 1232 1283 1369 1871 1753 1655 1531 1449 1382 1332 1281 1249 1212 1185 1165 1137 1129 1116 1096 1084 1075 1071 1075 1080 1085 1091 1103 1112 1131 1158 1163 1183 1201 1231 1280 1334 1941 1820 1674 1555 1478 1405 1342 1289 1253 1218 1201 1164 1158 1135 1117 1099 1088 1081 1080 1082 1081 1088 1096 1108 1117 1126 1146 1162 1175 1197 1225 1276 1341 2019 1870 1718 1596 1493 1423 1362 1303 1260 1236 1194 1174 1152 1135 1117 1106 1098 1098 1083 1091 1087 1089 1098 1108 1109 1124 1147 1167 1178 1206 1230 1277 1354 2107 1928 1756 1617 1531 1433 1370 1321 1268 1242 1208 1190 1158 1135 1127 1107 1107 1091 1091 1091 1089 1086 1099 1100 1109 1118 1141 1158 1188 1208 1240 1287 1356 2156 2010 1811 1662 1550 1463 1385 1331 1284 1244 1221 1182 1166 1152 1119 1126 1094 1100 1096 1096 1098 1098 1096 1115 1108 1119 1151 1162 1187 1210 1238 1306 1419]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [4095 3143 2401 2069 1827 1633 1480 1294 1166 1068 1048 1039 1030 1069 1120 1159 1198 1216 1210 1181 1137 1086 1075 1083 1134 1233 1349 1452 1519 1602 1714 2065 2984 3653 2849 2303 2013 1791 1612 1452 1282 1155 1068 1052 1045 1033 1061 1109 1151 1185 1202 1201 1176 1136 1095 1078 1100 1148 1247 1349 1446 1500 1545 1735 1888 2564 3051 2553 2191 1941 1753 1587 1431 1270 1151 1075 1052 1032 1031 1056 1096 1139 1168 1190 1185 1170 1133 1099 1093 1118 1169 1253 1350 1424 1466 1520 1582 1852 2216 2736 2387 2103 1881 1719 1563 1410 1277 1147 1084 1058 1035 1033 1051 1096 1130 1161 1179 1174 1162 1140 1116 1116 1141 1190 1265 1347 1410 1448 1484 1574 1719 2028 2519 2253 2017 1835 1691 1538 1403 1273 1153 1100 1070 1024 1046 1056 1092 1121 1154 1168 1174 1159 1144 1132 1130 1153 1203 1268 1342 1396 1425 1459 1526 1655 1885 2328 2146 1942 1790 1654 1511 1387 1268 1174 1114 1058 1045 1044 1067 1091 1119 1149 1162 1163 1156 1145 1139 1148 1180 1219 1276 1339 1380 1425 1438 1500 1597 1765 2226 2054 1891 1748 1614 1487 1389 1268 1190 1134 1080 1057 1057 1065 1095 1121 1140 1156 1161 1155 1153 1149 1160 1189 1233 1281 1332 1374 1410 1423 1479 1555 1675 2112 1980 1822 1703 1580 1470 1370 1280 1194 1145 1094 1072 1068 1086 1096 1117 1136 1148 1154 1147 1151 1156 1169 1199 1234 1281 1318 1355 1381 1408 1451 1514 1617 2031 1911 1767 1653 1545 1444 1359 1276 1199 1154 1103 1091 1078 1089 1099 1112 1131 1135 1146 1145 1149 1160 1176 1201 1233 1271 1306 1336 1366 1400 1440 1484 1559 1965 1845 1718 1615 1517 1423 1347 1275 1207 1165 1126 1106 1089 1096 1103 1106 1119 1128 1141 1141 1145 1163 1180 1205 1237 1264 1294 1322 1344 1380 1421 1459 1540 1895 1798 1678 1569 1483 1405 1335 1277 1215 1168 1140 1113 1104 1099 1103 1111 1116 1124 1132 1137 1146 1159 1180 1202 1228 1259 1282 1308 1332 1362 1411 1449 1508 1853 1747 1634 1540 1460 1387 1331 1272 1222 1183 1152 1120 1112 1108 1104 1108 1114 1115 1127 1131 1140 1157 1174 1197 1223 1252 1274 1297 1318 1350 1391 1440 1498 1800 1713 1607 1508 1438 1375 1328 1280 1232 1192 1157 1131 1123 1111 1108 1103 1106 1110 1112 1123 1134 1153 1170 1194 1219 1241 1264 1286 1309 1340 1380 1429 1483 1764 1667 1574 1488 1418 1365 1309 1273 1230 1193 1161 1139 1117 1111 1107 1095 1093 1093 1102 1113 1125 1138 1159 1181 1208 1227 1252 1272 1294 1321 1367 1413 1466 1730 1645 1552 1462 1400 1348 1305 1267 1234 1196 1168 1141 1123 1113 1100 1089 1085 1085 1090 1099 1116 1132 1149 1171 1198 1218 1239 1263 1287 1307 1355 1409 1446 1704 1624 1533 1446 1390 1340 1304 1270 1231 1198 1170 1146 1129 1109 1099 1085 1077 1072 1077 1092 1110 1129 1146 1167 1189 1212 1233 1256 1276 1301 1348 1400 1441 1684 1607 1517 1439 1378 1339 1295 1266 1237 1201 1179 1151 1133 1117 1096 1080 1070 1064 1071 1086 1104 1126 1142 1161 1186 1205 1227 1251 1267 1297 1347 1394 1433 1670 1587 1503 1428 1373 1326 1293 1263 1231 1204 1172 1156 1134 1113 1101 1076 1062 1057 1064 1079 1098 1122 1138 1156 1182 1201 1221 1244 1260 1290 1345 1389 1423 1665 1579 1496 1420 1367 1323 1288 1259 1229 1201 1175 1150 1130 1115 1126 1071 1055 1057 1056 1072 1091 1112 1128 1152 1170 1192 1212 1237 1256 1287 1337 1380 1412 1655 1578 1488 1416 1360 1316 1284 1254 1227 1199 1172 1154 1128 1110 1129 1073 1055 1052 1053 1069 1090 1108 1127 1140 1165 1188 1209 1230 1254 1289 1342 1375 1397 1662 1582 1494 1416 1361 1320 1287 1256 1229 1203 1175 1156 1130 1115 1107 1071 1058 1050 1055 1071 1088 1107 1125 1142 1162 1187 1210 1231 1254 1292 1338 1372 1400 1665 1587 1503 1426 1364 1324 1283 1255 1232 1206 1182 1156 1136 1114 1096 1078 1060 1053 1058 1075 1091 1107 1123 1140 1160 1182 1206 1230 1253 1290 1330 1367 1408 1676 1589 1507 1430 1365 1321 1282 1251 1227 1201 1179 1154 1136 1119 1098 1079 1060 1059 1061 1070 1087 1102 1119 1134 1155 1174 1199 1222 1247 1280 1315 1359 1400 1682 1610 1508 1445 1370 1322 1284 1253 1227 1200 1177 1154 1135 1116 1100 1083 1067 1063 1062 1074 1083 1100 1112 1130 1148 1166 1191 1214 1238 1266 1303 1357 1395 1703 1628 1528 1451 1380 1327 1288 1258 1229 1203 1181 1161 1139 1121 1104 1087 1074 1070 1069 1077 1088 1099 1115 1128 1145 1162 1184 1209 1229 1255 1296 1352 1394 1738 1644 1546 1461 1395 1337 1299 1263 1235 1210 1184 1166 1147 1129 1110 1097 1081 1076 1073 1083 1089 1103 1112 1130 1144 1160 1179 1196 1221 1242 1283 1340 1394 1755 1672 1565 1477 1404 1348 1304 1269 1237 1212 1190 1169 1149 1132 1114 1102 1089 1083 1081 1082 1094 1099 1111 1127 1140 1156 1170 1189 1206 1227 1265 1314 1375 1790 1691 1584 1492 1413 1353 1308 1268 1237 1215 1188 1167 1151 1134 1116 1103 1090 1084 1082 1084 1093 1096 1105 1121 1127 1145 1162 1175 1189 1208 1242 1286 1349 1830 1727 1609 1515 1429 1368 1317 1277 1240 1217 1191 1172 1154 1137 1122 1107 1094 1089 1088 1089 1093 1098 1104 1113 1125 1139 1152 1169 1181 1201 1235 1272 1331 1896 1769 1648 1538 1455 1384 1334 1286 1251 1222 1198 1177 1160 1144 1126 1116 1102 1097 1095 1097 1100 1103 1107 1114 1122 1132 1152 1161 1178 1200 1230 1277 1328 1976 1826 1686 1575 1480 1408 1346 1298 1261 1236 1206 1185 1165 1146 1134 1118 1118 1108 1100 1102 1102 1102 1108 1115 1119 1134 1146 1164 1182 1206 1235 1285 1335 2042 1885 1730 1598 1504 1419 1361 1305 1269 1238 1210 1187 1167 1144 1133 1120 1116 1108 1105 1104 1104 1102 1108 1108 1115 1126 1144 1160 1182 1215 1238 1289 1353 2125 1949 1772 1641 1517 1441 1368 1314 1274 1236 1211 1192 1168 1150 1134 1123 1114 1109 1111 1106 1103 1104 1102 1108 1112 1123 1139 1158 1184 1206 1241 1299 1385]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [4095 3190 2413 2076 1830 1634 1484 1296 1165 1068 1046 1038 1029 1070 1118 1160 1197 1217 1209 1179 1136 1085 1077 1081 1133 1228 1347 1450 1518 1602 1711 2058 2964 3722 2883 2315 2020 1793 1616 1456 1284 1158 1068 1051 1045 1034 1060 1109 1150 1185 1202 1200 1175 1137 1094 1076 1099 1144 1244 1347 1443 1499 1545 1733 1883 2557 3084 2575 2198 1946 1755 1589 1434 1272 1152 1073 1052 1030 1029 1055 1095 1137 1167 1189 1185 1169 1131 1098 1092 1116 1167 1250 1346 1424 1464 1520 1582 1847 2210 2757 2399 2110 1884 1721 1565 1413 1279 1148 1086 1058 1033 1032 1050 1094 1130 1160 1179 1174 1162 1139 1115 1113 1138 1189 1263 1344 1407 1447 1484 1572 1716 2024 2535 2261 2023 1839 1694 1540 1405 1276 1154 1098 1069 1024 1044 1054 1091 1119 1153 1167 1172 1159 1144 1130 1129 1150 1200 1268 1338 1396 1424 1457 1525 1653 1879 2339 2157 1948 1793 1655 1514 1388 1269 1173 1113 1059 1043 1042 1067 1089 1118 1148 1162 1162 1155 1145 1138 1146 1177 1218 1275 1337 1377 1425 1436 1498 1594 1764 2227 2060 1893 1750 1615 1488 1390 1270 1189 1134 1078 1056 1056 1064 1094 1119 1139 1154 1160 1154 1151 1148 1158 1188 1230 1279 1330 1373 1409 1424 1476 1554 1672 2119 1985 1828 1704 1582 1471 1371 1280 1193 1144 1093 1072 1065 1084 1094 1117 1136 1146 1153 1147 1152 1155 1168 1196 1231 1279 1316 1353 1380 1407 1450 1511 1615 2034 1916 1770 1656 1547 1444 1360 1276 1199 1155 1103 1090 1078 1088 1098 1110 1130 1136 1145 1145 1147 1159 1174 1200 1232 1271 1304 1336 1363 1398 1439 1481 1557 1967 1850 1720 1616 1518 1425 1348 1277 1208 1163 1125 1104 1088 1094 1103 1105 1118 1127 1141 1140 1145 1162 1178 1203 1235 1263 1292 1321 1343 1379 1420 1457 1535 1898 1800 1679 1572 1484 1406 1336 1276 1216 1168 1138 1112 1102 1099 1102 1110 1116 1122 1132 1135 1143 1157 1179 1200 1228 1257 1281 1307 1331 1359 1408 1446 1505 1858 1750 1636 1540 1461 1386 1332 1271 1220 1182 1151 1120 1112 1107 1104 1108 1112 1115 1126 1130 1139 1156 1173 1195 1222 1251 1271 1296 1317 1349 1390 1438 1493 1799 1716 1607 1511 1438 1376 1328 1280 1231 1192 1156 1131 1121 1112 1106 1102 1105 1109 1112 1122 1133 1152 1168 1194 1219 1240 1263 1285 1308 1339 1377 1428 1481 1766 1670 1575 1489 1419 1366 1309 1272 1231 1193 1160 1139 1117 1111 1106 1095 1092 1093 1101 1112 1125 1137 1158 1179 1207 1227 1251 1271 1293 1320 1365 1411 1465 1730 1646 1552 1462 1400 1347 1305 1266 1232 1195 1168 1140 1122 1112 1100 1089 1083 1084 1089 1098 1115 1132 1148 1170 1197 1216 1237 1261 1286 1305 1354 1406 1444 1704 1626 1535 1447 1390 1340 1302 1269 1231 1197 1169 1145 1129 1110 1099 1085 1077 1071 1076 1091 1109 1128 1144 1167 1187 1211 1232 1254 1275 1300 1345 1399 1438 1685 1609 1518 1440 1377 1338 1296 1266 1236 1202 1178 1150 1132 1117 1096 1080 1069 1063 1071 1085 1104 1125 1141 1161 1184 1204 1226 1249 1266 1294 1345 1390 1433 1671 1589 1504 1427 1372 1325 1292 1262 1231 1203 1172 1156 1133 1112 1100 1075 1062 1057 1063 1079 1097 1120 1136 1155 1181 1200 1220 1243 1259 1290 1342 1388 1421 1664 1582 1497 1420 1368 1323 1287 1259 1227 1200 1174 1150 1129 1114 1124 1071 1054 1058 1055 1071 1090 1112 1126 1151 1169 1190 1210 1237 1255 1285 1336 1379 1411 1658 1578 1489 1417 1360 1316 1283 1254 1227 1198 1171 1153 1128 1109 1128 1073 1054 1051 1052 1069 1088 1107 1125 1139 1163 1187 1208 1229 1252 1288 1339 1375 1397 1661 1582 1494 1416 1359 1319 1286 1256 1228 1203 1174 1155 1129 1115 1108 1071 1057 1049 1055 1069 1088 1106 1122 1141 1161 1186 1208 1230 1252 1290 1338 1370 1396 1670 1587 1504 1424 1364 1324 1283 1254 1231 1204 1182 1156 1135 1114 1094 1078 1059 1053 1057 1073 1090 1106 1121 1139 1158 1180 1206 1228 1251 1289 1328 1366 1406 1675 1589 1509 1430 1365 1321 1282 1251 1227 1201 1179 1155 1135 1118 1098 1079 1059 1058 1060 1070 1086 1101 1118 1132 1155 1172 1198 1221 1246 1279 1315 1357 1397 1683 1612 1506 1445 1370 1321 1283 1252 1226 1199 1177 1153 1135 1116 1099 1082 1067 1062 1061 1072 1082 1099 1111 1129 1147 1164 1189 1213 1237 1265 1300 1353 1394 1704 1628 1529 1451 1380 1326 1288 1257 1228 1202 1180 1161 1137 1121 1103 1086 1073 1069 1068 1076 1087 1098 1114 1128 1144 1161 1183 1208 1226 1254 1294 1350 1390 1739 1643 1546 1462 1393 1336 1297 1263 1234 1209 1184 1164 1147 1129 1109 1096 1081 1075 1073 1082 1087 1102 1111 1128 1143 1159 1178 1196 1221 1240 1281 1338 1391 1755 1673 1566 1477 1403 1348 1302 1269 1237 1212 1189 1168 1148 1132 1113 1102 1089 1082 1079 1081 1092 1099 1109 1126 1139 1154 1169 1188 1205 1225 1263 1312 1372 1791 1691 1583 1493 1413 1352 1307 1267 1237 1214 1187 1167 1150 1133 1115 1102 1089 1083 1081 1082 1092 1096 1104 1120 1126 1144 1161 1175 1189 1207 1241 1285 1345 1833 1727 1608 1514 1428 1367 1316 1277 1239 1216 1190 1171 1153 1136 1122 1106 1093 1088 1088 1088 1091 1096 1103 1112 1125 1138 1151 1168 1179 1199 1233 1270 1329 1894 1770 1647 1539 1455 1384 1332 1285 1250 1222 1198 1176 1160 1144 1125 1116 1101 1096 1093 1096 1100 1102 1107 1113 1120 1131 1150 1160 1177 1198 1229 1274 1324 1980 1827 1686 1574 1479 1408 1345 1299 1259 1236 1205 1185 1164 1144 1134 1117 1115 1107 1100 1101 1101 1101 1107 1114 1118 1133 1145 1164 1181 1205 1234 1283 1334 2040 1887 1730 1598 1503 1419 1361 1305 1269 1236 1210 1186 1167 1144 1131 1119 1115 1106 1104 1104 1102 1100 1108 1107 1113 1125 1142 1159 1180 1213 1236 1286 1348 2131 1946 1773 1639 1519 1440 1367 1313 1272 1236 1211 1191 1167 1148 1134 1123 1111 1110 1111 1104 1103 1102 1103 1106 1111 1122 1138 1157 1183 1205 1239 1296 1379]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [4095 3216 2414 2078 1836 1632 1478 1288 1147 1067 1027 1038 1032 1071 1115 1163 1210 1229 1208 1190 1139 1087 1079 1090 1132 1237 1349 1450 1531 1597 1702 2079 2903 3678 2847 2322 2024 1803 1611 1450 1278 1142 1057 1052 1042 1037 1061 1112 1157 1197 1213 1221 1183 1145 1110 1083 1105 1151 1254 1344 1458 1498 1544 1735 1892 2513 3114 2592 2201 1957 1753 1589 1430 1267 1144 1078 1053 1032 1038 1061 1098 1149 1182 1202 1201 1187 1146 1111 1103 1122 1180 1269 1364 1431 1474 1522 1578 1858 2184 2745 2389 2134 1897 1737 1575 1414 1270 1141 1082 1063 1036 1040 1056 1106 1136 1174 1196 1192 1180 1153 1126 1128 1153 1198 1279 1354 1420 1457 1480 1578 1700 2015 2540 2303 2022 1859 1697 1540 1404 1272 1147 1100 1071 1024 1050 1063 1097 1133 1170 1187 1188 1174 1162 1142 1142 1161 1211 1290 1349 1399 1433 1466 1521 1651 1873 2340 2170 1968 1801 1659 1524 1388 1268 1173 1116 1065 1043 1050 1071 1100 1136 1167 1183 1180 1177 1164 1157 1165 1199 1239 1289 1354 1378 1442 1431 1506 1594 1769 2241 2078 1892 1763 1627 1494 1397 1275 1190 1139 1081 1064 1062 1079 1109 1140 1157 1176 1183 1177 1176 1163 1178 1205 1250 1298 1341 1382 1428 1427 1473 1552 1666 2142 2008 1847 1709 1595 1482 1379 1288 1191 1153 1104 1079 1079 1099 1110 1137 1155 1171 1181 1171 1178 1181 1187 1221 1253 1298 1333 1368 1391 1415 1456 1510 1607 2044 1949 1775 1675 1563 1455 1378 1281 1204 1163 1116 1098 1088 1109 1117 1131 1154 1162 1177 1172 1176 1185 1200 1227 1260 1297 1325 1346 1384 1409 1442 1485 1549 2009 1863 1724 1632 1535 1439 1362 1286 1223 1169 1138 1121 1109 1112 1119 1131 1140 1151 1171 1172 1172 1192 1204 1226 1263 1284 1310 1332 1355 1392 1427 1462 1539 1900 1807 1697 1585 1500 1423 1354 1286 1232 1188 1151 1138 1121 1130 1125 1135 1144 1148 1168 1167 1173 1187 1206 1230 1248 1285 1306 1329 1347 1371 1413 1454 1504 1882 1760 1646 1564 1474 1408 1351 1291 1237 1206 1174 1140 1143 1125 1130 1136 1144 1146 1157 1159 1169 1188 1208 1222 1250 1275 1299 1316 1330 1364 1391 1447 1487 1815 1717 1628 1531 1458 1407 1353 1302 1256 1214 1181 1157 1152 1133 1135 1131 1140 1141 1144 1155 1170 1187 1200 1228 1242 1271 1289 1307 1332 1350 1392 1437 1479 1785 1692 1587 1512 1445 1394 1331 1304 1257 1218 1190 1171 1142 1140 1136 1125 1123 1129 1139 1142 1157 1169 1188 1211 1240 1254 1282 1290 1310 1338 1379 1420 1475 1754 1651 1569 1479 1421 1380 1337 1295 1265 1227 1195 1170 1154 1143 1134 1126 1118 1123 1122 1136 1151 1165 1181 1207 1230 1244 1265 1289 1304 1329 1360 1420 1441 1725 1646 1550 1466 1415 1372 1339 1296 1265 1229 1198 1182 1161 1140 1126 1117 1112 1111 1108 1125 1139 1163 1178 1196 1219 1247 1254 1283 1299 1318 1362 1407 1443 1709 1621 1540 1466 1403 1368 1330 1303 1276 1234 1209 1187 1171 1152 1133 1119 1108 1099 1110 1115 1139 1160 1175 1194 1220 1234 1253 1279 1286 1317 1359 1394 1436 1692 1613 1530 1455 1403 1363 1335 1299 1266 1243 1207 1195 1161 1147 1142 1111 1096 1098 1100 1116 1135 1151 1173 1190 1213 1235 1252 1269 1284 1310 1348 1400 1422 1690 1596 1520 1444 1397 1354 1325 1294 1262 1244 1207 1191 1171 1154 1171 1107 1098 1094 1095 1106 1128 1145 1164 1187 1203 1222 1243 1261 1284 1300 1350 1386 1419 1685 1594 1516 1436 1393 1358 1316 1293 1268 1237 1215 1193 1161 1147 1179 1111 1088 1088 1091 1104 1118 1145 1160 1176 1199 1218 1239 1257 1271 1301 1340 1385 1413 1687 1601 1529 1440 1389 1346 1322 1294 1261 1241 1213 1188 1172 1150 1153 1104 1093 1087 1089 1105 1122 1137 1156 1174 1197 1218 1241 1256 1276 1295 1343 1378 1401 1689 1603 1527 1460 1400 1354 1328 1290 1268 1245 1219 1196 1171 1152 1129 1113 1095 1091 1095 1111 1121 1141 1154 1172 1189 1216 1232 1253 1274 1298 1339 1384 1411 1693 1609 1533 1452 1392 1351 1316 1283 1264 1234 1210 1189 1172 1146 1134 1115 1093 1093 1090 1102 1115 1135 1155 1165 1188 1199 1224 1247 1266 1293 1326 1364 1402 1701 1638 1532 1475 1397 1352 1318 1282 1256 1234 1208 1189 1170 1149 1128 1117 1100 1090 1087 1107 1115 1128 1142 1162 1176 1189 1220 1232 1255 1280 1311 1363 1393 1740 1659 1538 1482 1410 1360 1319 1294 1262 1233 1212 1196 1173 1152 1133 1120 1105 1101 1102 1107 1116 1134 1142 1157 1171 1191 1209 1231 1245 1269 1311 1367 1407 1758 1661 1577 1483 1422 1363 1321 1290 1269 1243 1216 1196 1181 1161 1142 1128 1114 1106 1103 1115 1122 1132 1139 1157 1169 1187 1206 1214 1237 1262 1294 1353 1395 1792 1690 1587 1502 1429 1380 1333 1299 1266 1239 1224 1199 1185 1162 1143 1131 1120 1113 1111 1113 1121 1130 1143 1156 1166 1181 1199 1208 1223 1241 1285 1323 1377 1810 1721 1592 1522 1434 1382 1332 1291 1271 1242 1212 1198 1180 1160 1143 1132 1116 1110 1108 1110 1117 1122 1132 1145 1155 1168 1186 1191 1205 1222 1261 1301 1357 1854 1750 1632 1535 1447 1387 1342 1295 1267 1243 1226 1192 1176 1163 1145 1128 1120 1116 1114 1116 1115 1124 1122 1136 1148 1161 1171 1188 1192 1216 1245 1291 1331 1914 1794 1665 1558 1480 1404 1363 1305 1278 1250 1220 1206 1187 1168 1150 1142 1125 1119 1118 1119 1121 1123 1131 1129 1142 1155 1174 1176 1197 1213 1248 1291 1330 2019 1848 1712 1596 1494 1430 1371 1314 1290 1256 1237 1211 1189 1168 1159 1146 1143 1133 1124 1118 1120 1124 1133 1139 1138 1155 1166 1180 1193 1224 1251 1301 1340 2072 1904 1748 1624 1517 1443 1383 1330 1283 1257 1225 1215 1192 1163 1156 1139 1142 1124 1129 1131 1119 1122 1124 1125 1134 1145 1159 1181 1191 1234 1252 1303 1350 2155 1979 1796 1646 1537 1454 1386 1333 1287 1256 1227 1206 1194 1163 1154 1144 1133 1123 1123 1122 1123 1114 1123 1125 1126 1139 1153 1167 1202 1219 1251 1311 1391]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="6" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 16]">
+               1920x1080_F2_100
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <illumination index="1" type="char" size="[1 2]">
+               F2
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 32]">
+               [28 38 44 48 54 55 58 57 58 61 59 60 63 65 66 70 73 72 71 72 71 69 66 68 67 63 65 62 61 61 53 42]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 32]">
+               [20 25 25 26 28 29 29 30 30 32 33 33 34 35 35 37 37 35 38 37 37 37 38 38 38 39 38 39 37 38 37 36]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [4095 3267 2490 2140 1854 1692 1518 1330 1175 1090 1056 1055 1036 1078 1136 1168 1212 1226 1214 1186 1134 1074 1081 1093 1136 1239 1360 1477 1551 1632 1745 2102 3013 3799 2959 2394 2064 1835 1667 1489 1312 1171 1081 1061 1044 1046 1064 1117 1161 1186 1212 1205 1181 1141 1090 1076 1098 1147 1262 1373 1471 1530 1576 1766 1921 2580 3219 2649 2256 1976 1815 1626 1461 1295 1163 1081 1059 1034 1029 1053 1091 1136 1172 1183 1187 1172 1134 1094 1088 1113 1175 1252 1366 1434 1487 1524 1606 1881 2256 2835 2480 2150 1942 1758 1588 1438 1296 1164 1096 1059 1035 1034 1046 1097 1131 1156 1175 1176 1157 1130 1118 1111 1135 1193 1272 1359 1429 1473 1498 1582 1734 2054 2597 2362 2062 1890 1732 1569 1433 1285 1166 1098 1089 1024 1040 1051 1086 1119 1146 1167 1168 1159 1136 1127 1127 1154 1201 1277 1346 1413 1449 1471 1552 1675 1932 2449 2201 1996 1848 1694 1543 1411 1295 1181 1122 1064 1039 1041 1064 1083 1117 1145 1152 1160 1150 1141 1130 1142 1174 1226 1278 1355 1391 1452 1458 1524 1611 1808 2296 2138 1953 1803 1652 1517 1411 1292 1199 1141 1083 1058 1053 1058 1092 1111 1142 1150 1159 1150 1141 1147 1159 1184 1229 1283 1346 1389 1427 1440 1491 1561 1724 2225 2032 1896 1731 1629 1492 1398 1296 1207 1152 1093 1077 1064 1088 1091 1113 1138 1139 1151 1142 1145 1149 1164 1201 1227 1281 1334 1372 1404 1423 1468 1541 1642 2091 1979 1819 1708 1575 1479 1395 1291 1214 1170 1110 1089 1076 1086 1096 1112 1129 1132 1140 1141 1146 1159 1171 1201 1238 1280 1319 1357 1382 1422 1452 1492 1598 2033 1919 1764 1659 1555 1465 1359 1304 1219 1180 1129 1117 1099 1093 1105 1106 1117 1128 1136 1133 1143 1159 1173 1206 1247 1272 1301 1339 1366 1396 1454 1476 1580 1957 1860 1722 1602 1515 1434 1357 1293 1226 1181 1142 1115 1103 1102 1106 1107 1112 1122 1134 1136 1139 1157 1186 1206 1232 1264 1302 1317 1358 1376 1429 1464 1550 1919 1818 1680 1580 1495 1408 1356 1282 1234 1187 1154 1120 1114 1111 1103 1106 1107 1116 1128 1123 1137 1157 1174 1200 1229 1263 1288 1316 1329 1378 1400 1443 1526 1879 1784 1663 1547 1481 1401 1347 1291 1243 1208 1164 1135 1129 1105 1112 1107 1103 1110 1109 1123 1131 1152 1176 1197 1226 1248 1280 1301 1337 1353 1397 1462 1510 1823 1719 1612 1522 1444 1392 1326 1293 1242 1199 1161 1144 1123 1116 1103 1087 1096 1089 1104 1112 1123 1135 1153 1189 1211 1239 1263 1287 1316 1330 1383 1421 1493 1825 1691 1598 1506 1427 1370 1327 1280 1245 1204 1180 1150 1127 1117 1101 1093 1078 1087 1089 1094 1116 1132 1152 1171 1203 1227 1252 1274 1301 1325 1379 1431 1475 1747 1685 1585 1488 1415 1365 1321 1278 1235 1211 1175 1149 1134 1109 1095 1094 1073 1071 1070 1097 1106 1124 1149 1170 1187 1219 1242 1269 1294 1311 1356 1415 1481 1754 1669 1549 1475 1411 1361 1316 1272 1250 1209 1183 1149 1131 1116 1100 1081 1076 1057 1071 1078 1103 1124 1148 1167 1187 1212 1230 1267 1281 1307 1370 1409 1480 1748 1643 1547 1463 1401 1343 1309 1274 1234 1215 1172 1168 1133 1109 1099 1073 1065 1055 1057 1078 1097 1115 1138 1154 1190 1202 1233 1256 1279 1313 1361 1414 1436 1745 1631 1533 1457 1393 1349 1306 1271 1239 1211 1179 1150 1131 1119 1117 1073 1055 1050 1056 1071 1079 1112 1126 1153 1173 1198 1223 1249 1264 1302 1370 1394 1449 1717 1621 1521 1445 1387 1333 1292 1257 1230 1198 1177 1157 1125 1108 1119 1073 1053 1043 1044 1061 1085 1101 1126 1142 1173 1187 1213 1237 1278 1311 1365 1395 1430 1713 1636 1535 1443 1387 1338 1297 1263 1233 1208 1176 1158 1131 1113 1100 1062 1055 1043 1049 1066 1082 1103 1123 1147 1164 1188 1220 1239 1261 1312 1367 1390 1435 1730 1637 1532 1445 1382 1339 1294 1262 1239 1206 1180 1152 1129 1110 1089 1081 1057 1047 1046 1067 1085 1101 1116 1138 1157 1184 1211 1239 1267 1303 1349 1389 1416 1722 1641 1538 1445 1394 1332 1294 1256 1231 1204 1178 1156 1135 1112 1091 1067 1055 1054 1055 1059 1077 1091 1116 1132 1159 1173 1202 1224 1262 1287 1326 1365 1424 1750 1652 1542 1466 1391 1336 1296 1254 1232 1202 1176 1147 1132 1115 1096 1078 1059 1050 1053 1067 1075 1091 1105 1126 1149 1164 1197 1219 1246 1281 1304 1371 1420 1751 1682 1559 1484 1406 1348 1293 1267 1229 1199 1180 1159 1137 1114 1090 1081 1066 1062 1062 1067 1078 1091 1109 1121 1142 1162 1184 1214 1232 1263 1303 1351 1410 1775 1682 1569 1489 1418 1340 1308 1273 1242 1218 1184 1152 1144 1121 1101 1088 1069 1065 1062 1065 1081 1094 1106 1120 1144 1158 1177 1195 1231 1235 1283 1341 1412 1797 1720 1597 1492 1424 1365 1314 1269 1241 1217 1184 1166 1142 1121 1102 1089 1075 1077 1062 1072 1080 1085 1097 1117 1129 1158 1171 1186 1211 1222 1265 1325 1386 1876 1727 1605 1529 1427 1375 1313 1275 1243 1215 1184 1168 1144 1120 1101 1094 1075 1066 1072 1067 1077 1086 1095 1116 1117 1143 1158 1176 1192 1207 1232 1283 1369 1871 1753 1655 1531 1449 1382 1332 1281 1249 1212 1185 1165 1137 1129 1116 1096 1084 1075 1071 1075 1080 1085 1091 1103 1112 1131 1158 1163 1183 1201 1231 1280 1334 1941 1820 1674 1555 1478 1405 1342 1289 1253 1218 1201 1164 1158 1135 1117 1099 1088 1081 1080 1082 1081 1088 1096 1108 1117 1126 1146 1162 1175 1197 1225 1276 1341 2019 1870 1718 1596 1493 1423 1362 1303 1260 1236 1194 1174 1152 1135 1117 1106 1098 1098 1083 1091 1087 1089 1098 1108 1109 1124 1147 1167 1178 1206 1230 1277 1354 2107 1928 1756 1617 1531 1433 1370 1321 1268 1242 1208 1190 1158 1135 1127 1107 1107 1091 1091 1091 1089 1086 1099 1100 1109 1118 1141 1158 1188 1208 1240 1287 1356 2156 2010 1811 1662 1550 1463 1385 1331 1284 1244 1221 1182 1166 1152 1119 1126 1094 1100 1096 1096 1098 1098 1096 1115 1108 1119 1151 1162 1187 1210 1238 1306 1419]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [4095 3143 2401 2069 1827 1633 1480 1294 1166 1068 1048 1039 1030 1069 1120 1159 1198 1216 1210 1181 1137 1086 1075 1083 1134 1233 1349 1452 1519 1602 1714 2065 2984 3653 2849 2303 2013 1791 1612 1452 1282 1155 1068 1052 1045 1033 1061 1109 1151 1185 1202 1201 1176 1136 1095 1078 1100 1148 1247 1349 1446 1500 1545 1735 1888 2564 3051 2553 2191 1941 1753 1587 1431 1270 1151 1075 1052 1032 1031 1056 1096 1139 1168 1190 1185 1170 1133 1099 1093 1118 1169 1253 1350 1424 1466 1520 1582 1852 2216 2736 2387 2103 1881 1719 1563 1410 1277 1147 1084 1058 1035 1033 1051 1096 1130 1161 1179 1174 1162 1140 1116 1116 1141 1190 1265 1347 1410 1448 1484 1574 1719 2028 2519 2253 2017 1835 1691 1538 1403 1273 1153 1100 1070 1024 1046 1056 1092 1121 1154 1168 1174 1159 1144 1132 1130 1153 1203 1268 1342 1396 1425 1459 1526 1655 1885 2328 2146 1942 1790 1654 1511 1387 1268 1174 1114 1058 1045 1044 1067 1091 1119 1149 1162 1163 1156 1145 1139 1148 1180 1219 1276 1339 1380 1425 1438 1500 1597 1765 2226 2054 1891 1748 1614 1487 1389 1268 1190 1134 1080 1057 1057 1065 1095 1121 1140 1156 1161 1155 1153 1149 1160 1189 1233 1281 1332 1374 1410 1423 1479 1555 1675 2112 1980 1822 1703 1580 1470 1370 1280 1194 1145 1094 1072 1068 1086 1096 1117 1136 1148 1154 1147 1151 1156 1169 1199 1234 1281 1318 1355 1381 1408 1451 1514 1617 2031 1911 1767 1653 1545 1444 1359 1276 1199 1154 1103 1091 1078 1089 1099 1112 1131 1135 1146 1145 1149 1160 1176 1201 1233 1271 1306 1336 1366 1400 1440 1484 1559 1965 1845 1718 1615 1517 1423 1347 1275 1207 1165 1126 1106 1089 1096 1103 1106 1119 1128 1141 1141 1145 1163 1180 1205 1237 1264 1294 1322 1344 1380 1421 1459 1540 1895 1798 1678 1569 1483 1405 1335 1277 1215 1168 1140 1113 1104 1099 1103 1111 1116 1124 1132 1137 1146 1159 1180 1202 1228 1259 1282 1308 1332 1362 1411 1449 1508 1853 1747 1634 1540 1460 1387 1331 1272 1222 1183 1152 1120 1112 1108 1104 1108 1114 1115 1127 1131 1140 1157 1174 1197 1223 1252 1274 1297 1318 1350 1391 1440 1498 1800 1713 1607 1508 1438 1375 1328 1280 1232 1192 1157 1131 1123 1111 1108 1103 1106 1110 1112 1123 1134 1153 1170 1194 1219 1241 1264 1286 1309 1340 1380 1429 1483 1764 1667 1574 1488 1418 1365 1309 1273 1230 1193 1161 1139 1117 1111 1107 1095 1093 1093 1102 1113 1125 1138 1159 1181 1208 1227 1252 1272 1294 1321 1367 1413 1466 1730 1645 1552 1462 1400 1348 1305 1267 1234 1196 1168 1141 1123 1113 1100 1089 1085 1085 1090 1099 1116 1132 1149 1171 1198 1218 1239 1263 1287 1307 1355 1409 1446 1704 1624 1533 1446 1390 1340 1304 1270 1231 1198 1170 1146 1129 1109 1099 1085 1077 1072 1077 1092 1110 1129 1146 1167 1189 1212 1233 1256 1276 1301 1348 1400 1441 1684 1607 1517 1439 1378 1339 1295 1266 1237 1201 1179 1151 1133 1117 1096 1080 1070 1064 1071 1086 1104 1126 1142 1161 1186 1205 1227 1251 1267 1297 1347 1394 1433 1670 1587 1503 1428 1373 1326 1293 1263 1231 1204 1172 1156 1134 1113 1101 1076 1062 1057 1064 1079 1098 1122 1138 1156 1182 1201 1221 1244 1260 1290 1345 1389 1423 1665 1579 1496 1420 1367 1323 1288 1259 1229 1201 1175 1150 1130 1115 1126 1071 1055 1057 1056 1072 1091 1112 1128 1152 1170 1192 1212 1237 1256 1287 1337 1380 1412 1655 1578 1488 1416 1360 1316 1284 1254 1227 1199 1172 1154 1128 1110 1129 1073 1055 1052 1053 1069 1090 1108 1127 1140 1165 1188 1209 1230 1254 1289 1342 1375 1397 1662 1582 1494 1416 1361 1320 1287 1256 1229 1203 1175 1156 1130 1115 1107 1071 1058 1050 1055 1071 1088 1107 1125 1142 1162 1187 1210 1231 1254 1292 1338 1372 1400 1665 1587 1503 1426 1364 1324 1283 1255 1232 1206 1182 1156 1136 1114 1096 1078 1060 1053 1058 1075 1091 1107 1123 1140 1160 1182 1206 1230 1253 1290 1330 1367 1408 1676 1589 1507 1430 1365 1321 1282 1251 1227 1201 1179 1154 1136 1119 1098 1079 1060 1059 1061 1070 1087 1102 1119 1134 1155 1174 1199 1222 1247 1280 1315 1359 1400 1682 1610 1508 1445 1370 1322 1284 1253 1227 1200 1177 1154 1135 1116 1100 1083 1067 1063 1062 1074 1083 1100 1112 1130 1148 1166 1191 1214 1238 1266 1303 1357 1395 1703 1628 1528 1451 1380 1327 1288 1258 1229 1203 1181 1161 1139 1121 1104 1087 1074 1070 1069 1077 1088 1099 1115 1128 1145 1162 1184 1209 1229 1255 1296 1352 1394 1738 1644 1546 1461 1395 1337 1299 1263 1235 1210 1184 1166 1147 1129 1110 1097 1081 1076 1073 1083 1089 1103 1112 1130 1144 1160 1179 1196 1221 1242 1283 1340 1394 1755 1672 1565 1477 1404 1348 1304 1269 1237 1212 1190 1169 1149 1132 1114 1102 1089 1083 1081 1082 1094 1099 1111 1127 1140 1156 1170 1189 1206 1227 1265 1314 1375 1790 1691 1584 1492 1413 1353 1308 1268 1237 1215 1188 1167 1151 1134 1116 1103 1090 1084 1082 1084 1093 1096 1105 1121 1127 1145 1162 1175 1189 1208 1242 1286 1349 1830 1727 1609 1515 1429 1368 1317 1277 1240 1217 1191 1172 1154 1137 1122 1107 1094 1089 1088 1089 1093 1098 1104 1113 1125 1139 1152 1169 1181 1201 1235 1272 1331 1896 1769 1648 1538 1455 1384 1334 1286 1251 1222 1198 1177 1160 1144 1126 1116 1102 1097 1095 1097 1100 1103 1107 1114 1122 1132 1152 1161 1178 1200 1230 1277 1328 1976 1826 1686 1575 1480 1408 1346 1298 1261 1236 1206 1185 1165 1146 1134 1118 1118 1108 1100 1102 1102 1102 1108 1115 1119 1134 1146 1164 1182 1206 1235 1285 1335 2042 1885 1730 1598 1504 1419 1361 1305 1269 1238 1210 1187 1167 1144 1133 1120 1116 1108 1105 1104 1104 1102 1108 1108 1115 1126 1144 1160 1182 1215 1238 1289 1353 2125 1949 1772 1641 1517 1441 1368 1314 1274 1236 1211 1192 1168 1150 1134 1123 1114 1109 1111 1106 1103 1104 1102 1108 1112 1123 1139 1158 1184 1206 1241 1299 1385]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [4095 3190 2413 2076 1830 1634 1484 1296 1165 1068 1046 1038 1029 1070 1118 1160 1197 1217 1209 1179 1136 1085 1077 1081 1133 1228 1347 1450 1518 1602 1711 2058 2964 3722 2883 2315 2020 1793 1616 1456 1284 1158 1068 1051 1045 1034 1060 1109 1150 1185 1202 1200 1175 1137 1094 1076 1099 1144 1244 1347 1443 1499 1545 1733 1883 2557 3084 2575 2198 1946 1755 1589 1434 1272 1152 1073 1052 1030 1029 1055 1095 1137 1167 1189 1185 1169 1131 1098 1092 1116 1167 1250 1346 1424 1464 1520 1582 1847 2210 2757 2399 2110 1884 1721 1565 1413 1279 1148 1086 1058 1033 1032 1050 1094 1130 1160 1179 1174 1162 1139 1115 1113 1138 1189 1263 1344 1407 1447 1484 1572 1716 2024 2535 2261 2023 1839 1694 1540 1405 1276 1154 1098 1069 1024 1044 1054 1091 1119 1153 1167 1172 1159 1144 1130 1129 1150 1200 1268 1338 1396 1424 1457 1525 1653 1879 2339 2157 1948 1793 1655 1514 1388 1269 1173 1113 1059 1043 1042 1067 1089 1118 1148 1162 1162 1155 1145 1138 1146 1177 1218 1275 1337 1377 1425 1436 1498 1594 1764 2227 2060 1893 1750 1615 1488 1390 1270 1189 1134 1078 1056 1056 1064 1094 1119 1139 1154 1160 1154 1151 1148 1158 1188 1230 1279 1330 1373 1409 1424 1476 1554 1672 2119 1985 1828 1704 1582 1471 1371 1280 1193 1144 1093 1072 1065 1084 1094 1117 1136 1146 1153 1147 1152 1155 1168 1196 1231 1279 1316 1353 1380 1407 1450 1511 1615 2034 1916 1770 1656 1547 1444 1360 1276 1199 1155 1103 1090 1078 1088 1098 1110 1130 1136 1145 1145 1147 1159 1174 1200 1232 1271 1304 1336 1363 1398 1439 1481 1557 1967 1850 1720 1616 1518 1425 1348 1277 1208 1163 1125 1104 1088 1094 1103 1105 1118 1127 1141 1140 1145 1162 1178 1203 1235 1263 1292 1321 1343 1379 1420 1457 1535 1898 1800 1679 1572 1484 1406 1336 1276 1216 1168 1138 1112 1102 1099 1102 1110 1116 1122 1132 1135 1143 1157 1179 1200 1228 1257 1281 1307 1331 1359 1408 1446 1505 1858 1750 1636 1540 1461 1386 1332 1271 1220 1182 1151 1120 1112 1107 1104 1108 1112 1115 1126 1130 1139 1156 1173 1195 1222 1251 1271 1296 1317 1349 1390 1438 1493 1799 1716 1607 1511 1438 1376 1328 1280 1231 1192 1156 1131 1121 1112 1106 1102 1105 1109 1112 1122 1133 1152 1168 1194 1219 1240 1263 1285 1308 1339 1377 1428 1481 1766 1670 1575 1489 1419 1366 1309 1272 1231 1193 1160 1139 1117 1111 1106 1095 1092 1093 1101 1112 1125 1137 1158 1179 1207 1227 1251 1271 1293 1320 1365 1411 1465 1730 1646 1552 1462 1400 1347 1305 1266 1232 1195 1168 1140 1122 1112 1100 1089 1083 1084 1089 1098 1115 1132 1148 1170 1197 1216 1237 1261 1286 1305 1354 1406 1444 1704 1626 1535 1447 1390 1340 1302 1269 1231 1197 1169 1145 1129 1110 1099 1085 1077 1071 1076 1091 1109 1128 1144 1167 1187 1211 1232 1254 1275 1300 1345 1399 1438 1685 1609 1518 1440 1377 1338 1296 1266 1236 1202 1178 1150 1132 1117 1096 1080 1069 1063 1071 1085 1104 1125 1141 1161 1184 1204 1226 1249 1266 1294 1345 1390 1433 1671 1589 1504 1427 1372 1325 1292 1262 1231 1203 1172 1156 1133 1112 1100 1075 1062 1057 1063 1079 1097 1120 1136 1155 1181 1200 1220 1243 1259 1290 1342 1388 1421 1664 1582 1497 1420 1368 1323 1287 1259 1227 1200 1174 1150 1129 1114 1124 1071 1054 1058 1055 1071 1090 1112 1126 1151 1169 1190 1210 1237 1255 1285 1336 1379 1411 1658 1578 1489 1417 1360 1316 1283 1254 1227 1198 1171 1153 1128 1109 1128 1073 1054 1051 1052 1069 1088 1107 1125 1139 1163 1187 1208 1229 1252 1288 1339 1375 1397 1661 1582 1494 1416 1359 1319 1286 1256 1228 1203 1174 1155 1129 1115 1108 1071 1057 1049 1055 1069 1088 1106 1122 1141 1161 1186 1208 1230 1252 1290 1338 1370 1396 1670 1587 1504 1424 1364 1324 1283 1254 1231 1204 1182 1156 1135 1114 1094 1078 1059 1053 1057 1073 1090 1106 1121 1139 1158 1180 1206 1228 1251 1289 1328 1366 1406 1675 1589 1509 1430 1365 1321 1282 1251 1227 1201 1179 1155 1135 1118 1098 1079 1059 1058 1060 1070 1086 1101 1118 1132 1155 1172 1198 1221 1246 1279 1315 1357 1397 1683 1612 1506 1445 1370 1321 1283 1252 1226 1199 1177 1153 1135 1116 1099 1082 1067 1062 1061 1072 1082 1099 1111 1129 1147 1164 1189 1213 1237 1265 1300 1353 1394 1704 1628 1529 1451 1380 1326 1288 1257 1228 1202 1180 1161 1137 1121 1103 1086 1073 1069 1068 1076 1087 1098 1114 1128 1144 1161 1183 1208 1226 1254 1294 1350 1390 1739 1643 1546 1462 1393 1336 1297 1263 1234 1209 1184 1164 1147 1129 1109 1096 1081 1075 1073 1082 1087 1102 1111 1128 1143 1159 1178 1196 1221 1240 1281 1338 1391 1755 1673 1566 1477 1403 1348 1302 1269 1237 1212 1189 1168 1148 1132 1113 1102 1089 1082 1079 1081 1092 1099 1109 1126 1139 1154 1169 1188 1205 1225 1263 1312 1372 1791 1691 1583 1493 1413 1352 1307 1267 1237 1214 1187 1167 1150 1133 1115 1102 1089 1083 1081 1082 1092 1096 1104 1120 1126 1144 1161 1175 1189 1207 1241 1285 1345 1833 1727 1608 1514 1428 1367 1316 1277 1239 1216 1190 1171 1153 1136 1122 1106 1093 1088 1088 1088 1091 1096 1103 1112 1125 1138 1151 1168 1179 1199 1233 1270 1329 1894 1770 1647 1539 1455 1384 1332 1285 1250 1222 1198 1176 1160 1144 1125 1116 1101 1096 1093 1096 1100 1102 1107 1113 1120 1131 1150 1160 1177 1198 1229 1274 1324 1980 1827 1686 1574 1479 1408 1345 1299 1259 1236 1205 1185 1164 1144 1134 1117 1115 1107 1100 1101 1101 1101 1107 1114 1118 1133 1145 1164 1181 1205 1234 1283 1334 2040 1887 1730 1598 1503 1419 1361 1305 1269 1236 1210 1186 1167 1144 1131 1119 1115 1106 1104 1104 1102 1100 1108 1107 1113 1125 1142 1159 1180 1213 1236 1286 1348 2131 1946 1773 1639 1519 1440 1367 1313 1272 1236 1211 1191 1167 1148 1134 1123 1111 1110 1111 1104 1103 1102 1103 1106 1111 1122 1138 1157 1183 1205 1239 1296 1379]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [4095 3216 2414 2078 1836 1632 1478 1288 1147 1067 1027 1038 1032 1071 1115 1163 1210 1229 1208 1190 1139 1087 1079 1090 1132 1237 1349 1450 1531 1597 1702 2079 2903 3678 2847 2322 2024 1803 1611 1450 1278 1142 1057 1052 1042 1037 1061 1112 1157 1197 1213 1221 1183 1145 1110 1083 1105 1151 1254 1344 1458 1498 1544 1735 1892 2513 3114 2592 2201 1957 1753 1589 1430 1267 1144 1078 1053 1032 1038 1061 1098 1149 1182 1202 1201 1187 1146 1111 1103 1122 1180 1269 1364 1431 1474 1522 1578 1858 2184 2745 2389 2134 1897 1737 1575 1414 1270 1141 1082 1063 1036 1040 1056 1106 1136 1174 1196 1192 1180 1153 1126 1128 1153 1198 1279 1354 1420 1457 1480 1578 1700 2015 2540 2303 2022 1859 1697 1540 1404 1272 1147 1100 1071 1024 1050 1063 1097 1133 1170 1187 1188 1174 1162 1142 1142 1161 1211 1290 1349 1399 1433 1466 1521 1651 1873 2340 2170 1968 1801 1659 1524 1388 1268 1173 1116 1065 1043 1050 1071 1100 1136 1167 1183 1180 1177 1164 1157 1165 1199 1239 1289 1354 1378 1442 1431 1506 1594 1769 2241 2078 1892 1763 1627 1494 1397 1275 1190 1139 1081 1064 1062 1079 1109 1140 1157 1176 1183 1177 1176 1163 1178 1205 1250 1298 1341 1382 1428 1427 1473 1552 1666 2142 2008 1847 1709 1595 1482 1379 1288 1191 1153 1104 1079 1079 1099 1110 1137 1155 1171 1181 1171 1178 1181 1187 1221 1253 1298 1333 1368 1391 1415 1456 1510 1607 2044 1949 1775 1675 1563 1455 1378 1281 1204 1163 1116 1098 1088 1109 1117 1131 1154 1162 1177 1172 1176 1185 1200 1227 1260 1297 1325 1346 1384 1409 1442 1485 1549 2009 1863 1724 1632 1535 1439 1362 1286 1223 1169 1138 1121 1109 1112 1119 1131 1140 1151 1171 1172 1172 1192 1204 1226 1263 1284 1310 1332 1355 1392 1427 1462 1539 1900 1807 1697 1585 1500 1423 1354 1286 1232 1188 1151 1138 1121 1130 1125 1135 1144 1148 1168 1167 1173 1187 1206 1230 1248 1285 1306 1329 1347 1371 1413 1454 1504 1882 1760 1646 1564 1474 1408 1351 1291 1237 1206 1174 1140 1143 1125 1130 1136 1144 1146 1157 1159 1169 1188 1208 1222 1250 1275 1299 1316 1330 1364 1391 1447 1487 1815 1717 1628 1531 1458 1407 1353 1302 1256 1214 1181 1157 1152 1133 1135 1131 1140 1141 1144 1155 1170 1187 1200 1228 1242 1271 1289 1307 1332 1350 1392 1437 1479 1785 1692 1587 1512 1445 1394 1331 1304 1257 1218 1190 1171 1142 1140 1136 1125 1123 1129 1139 1142 1157 1169 1188 1211 1240 1254 1282 1290 1310 1338 1379 1420 1475 1754 1651 1569 1479 1421 1380 1337 1295 1265 1227 1195 1170 1154 1143 1134 1126 1118 1123 1122 1136 1151 1165 1181 1207 1230 1244 1265 1289 1304 1329 1360 1420 1441 1725 1646 1550 1466 1415 1372 1339 1296 1265 1229 1198 1182 1161 1140 1126 1117 1112 1111 1108 1125 1139 1163 1178 1196 1219 1247 1254 1283 1299 1318 1362 1407 1443 1709 1621 1540 1466 1403 1368 1330 1303 1276 1234 1209 1187 1171 1152 1133 1119 1108 1099 1110 1115 1139 1160 1175 1194 1220 1234 1253 1279 1286 1317 1359 1394 1436 1692 1613 1530 1455 1403 1363 1335 1299 1266 1243 1207 1195 1161 1147 1142 1111 1096 1098 1100 1116 1135 1151 1173 1190 1213 1235 1252 1269 1284 1310 1348 1400 1422 1690 1596 1520 1444 1397 1354 1325 1294 1262 1244 1207 1191 1171 1154 1171 1107 1098 1094 1095 1106 1128 1145 1164 1187 1203 1222 1243 1261 1284 1300 1350 1386 1419 1685 1594 1516 1436 1393 1358 1316 1293 1268 1237 1215 1193 1161 1147 1179 1111 1088 1088 1091 1104 1118 1145 1160 1176 1199 1218 1239 1257 1271 1301 1340 1385 1413 1687 1601 1529 1440 1389 1346 1322 1294 1261 1241 1213 1188 1172 1150 1153 1104 1093 1087 1089 1105 1122 1137 1156 1174 1197 1218 1241 1256 1276 1295 1343 1378 1401 1689 1603 1527 1460 1400 1354 1328 1290 1268 1245 1219 1196 1171 1152 1129 1113 1095 1091 1095 1111 1121 1141 1154 1172 1189 1216 1232 1253 1274 1298 1339 1384 1411 1693 1609 1533 1452 1392 1351 1316 1283 1264 1234 1210 1189 1172 1146 1134 1115 1093 1093 1090 1102 1115 1135 1155 1165 1188 1199 1224 1247 1266 1293 1326 1364 1402 1701 1638 1532 1475 1397 1352 1318 1282 1256 1234 1208 1189 1170 1149 1128 1117 1100 1090 1087 1107 1115 1128 1142 1162 1176 1189 1220 1232 1255 1280 1311 1363 1393 1740 1659 1538 1482 1410 1360 1319 1294 1262 1233 1212 1196 1173 1152 1133 1120 1105 1101 1102 1107 1116 1134 1142 1157 1171 1191 1209 1231 1245 1269 1311 1367 1407 1758 1661 1577 1483 1422 1363 1321 1290 1269 1243 1216 1196 1181 1161 1142 1128 1114 1106 1103 1115 1122 1132 1139 1157 1169 1187 1206 1214 1237 1262 1294 1353 1395 1792 1690 1587 1502 1429 1380 1333 1299 1266 1239 1224 1199 1185 1162 1143 1131 1120 1113 1111 1113 1121 1130 1143 1156 1166 1181 1199 1208 1223 1241 1285 1323 1377 1810 1721 1592 1522 1434 1382 1332 1291 1271 1242 1212 1198 1180 1160 1143 1132 1116 1110 1108 1110 1117 1122 1132 1145 1155 1168 1186 1191 1205 1222 1261 1301 1357 1854 1750 1632 1535 1447 1387 1342 1295 1267 1243 1226 1192 1176 1163 1145 1128 1120 1116 1114 1116 1115 1124 1122 1136 1148 1161 1171 1188 1192 1216 1245 1291 1331 1914 1794 1665 1558 1480 1404 1363 1305 1278 1250 1220 1206 1187 1168 1150 1142 1125 1119 1118 1119 1121 1123 1131 1129 1142 1155 1174 1176 1197 1213 1248 1291 1330 2019 1848 1712 1596 1494 1430 1371 1314 1290 1256 1237 1211 1189 1168 1159 1146 1143 1133 1124 1118 1120 1124 1133 1139 1138 1155 1166 1180 1193 1224 1251 1301 1340 2072 1904 1748 1624 1517 1443 1383 1330 1283 1257 1225 1215 1192 1163 1156 1139 1142 1124 1129 1131 1119 1122 1124 1125 1134 1145 1159 1181 1191 1234 1252 1303 1350 2155 1979 1796 1646 1537 1454 1386 1333 1287 1256 1227 1206 1194 1163 1154 1144 1133 1123 1123 1122 1123 1114 1123 1125 1126 1139 1153 1167 1202 1219 1251 1311 1391]
+            </LSC_SAMPLES_blue>
+         </cell>
+      </LSC>
+      <CC index="1" type="cell" size="[1 6]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 5]">
+               A_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [2.37686 1 1 1.7026]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="2" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 7]">
+               D50_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [2.37686 1 1 1.7026]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="3" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 7]">
+               D65_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [2.37686 1 1 1.7026]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="4" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 7]">
+               D75_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [2.37686 1 1 1.7026]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="5" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 7]">
+               F11_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [2.37686 1 1 1.7026]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="6" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 6]">
+               F2_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [1.38334 -0.301274 -0.0820702 -0.275786 1.48276 -0.20697 -0.00779169 -0.443414 1.4512]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [2.37686 1 1 1.7026]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+      </CC>
+      <AF index="1" type="struct" size="[1 1]">
+         <tbd index="1" type="double" size="[1 1]">
+            [ -1]
+         </tbd>
+      </AF>
+      <AEC index="1" type="struct" size="[1 1]">
+         <SetPoint index="1" type="double" size="[1 1]">
+            [ 80]
+         </SetPoint>
+         <ClmTolerance index="1" type="double" size="[1 1]">
+            [ 20]
+         </ClmTolerance>
+         <DampOver index="1" type="double" size="[1 1]">
+            [ 0.2]
+         </DampOver>
+         <DampUnder index="1" type="double" size="[1 1]">
+            [ 0.3]
+         </DampUnder>
+         <DampOverVideo index="1" type="double" size="[1 1]">
+            [ 0.7]
+         </DampOverVideo>
+         <DampUnderVideo index="1" type="double" size="[1 1]">
+            [ 0.9]
+         </DampUnderVideo>
+         <ECM index="1" type="cell" size="[1 3]">
+            <cell index="1" type="struct" size="[1 1]">
+               <name index="1" type="char" size="[1 16]">
+                  1920x1080_FPS_15
+               </name>
+               <PrioritySchemes index="1" type="cell" size="[1 3]">
+                  <cell index="1" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        fast
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="2" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 6]">
+                        normal
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="3" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        slow
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+               </PrioritySchemes>
+            </cell>
+            <cell index="2" type="struct" size="[1 1]">
+               <name index="1" type="char" size="[1 16]">
+                  1920x1080_FPS_10
+               </name>
+               <PrioritySchemes index="1" type="cell" size="[1 3]">
+                  <cell index="1" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        fast
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="2" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 6]">
+                        normal
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="3" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        slow
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+               </PrioritySchemes>
+            </cell>
+            <cell index="3" type="struct" size="[1 1]">
+               <name index="1" type="char" size="[1 16]">
+                  1920x1080_FPS_05
+               </name>
+               <PrioritySchemes index="1" type="cell" size="[1 3]">
+                  <cell index="1" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        fast
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="2" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 6]">
+                        normal
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 0.9]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="3" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        slow
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 4]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 0.9]
+                     </SlopeA0>
+                  </cell>
+               </PrioritySchemes>
+            </cell>
+         </ECM>
+         <aFpsMaxGain index="1" type="double" size="[1 1]">
+            [ 8]
+         </aFpsMaxGain>
+      </AEC>
+      <BLS index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 9]">
+               1920x1080
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <blsData index="1" type="double" size="[1 4]">
+               [15 15 15 15]
+            </blsData>
+         </cell>
+      </BLS>
+      <DEGAMMA index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 6]">
+               linear
+            </name>
+            <degamma_dx index="1" type="double" size="[1 16]">
+               [256 512 768 1024 1280 1536 1792 2048 2304 2560 2816 3072 3328 3584 3840 4096]
+            </degamma_dx>
+            <degamma_y index="1" type="double" size="[1 17]">
+               [0 256 512 768 1024 1280 1536 1792 2048 2304 2560 2816 3072 3328 3584 3840 4095]
+            </degamma_y>
+         </cell>
+      </DEGAMMA>
+      <WDR index="1" type="struct" size="[1 1]">
+         <tbd index="1" type="double" size="[1 1]">
+            [ -1]
+         </tbd>
+         <curve1 index="1" type="struct" size="[1 1]">
+            <xval index="1" type="double" size="[1 33]">
+               [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+            </xval>
+            <yval index="1" type="double" size="[1 33]">
+               [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+            </yval>
+         </curve1>
+         <curve2 index="1" type="struct" size="[1 1]">
+            <xval index="1" type="double" size="[1 33]">
+               [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+            </xval>
+            <yval index="1" type="double" size="[1 33]">
+               [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+            </yval>
+         </curve2>
+      </WDR>
+      <CAC index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 9]">
+               1920x1080
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <x_normshift index="1" type="double" size="[1 1]">
+               [ 7]
+            </x_normshift>
+            <x_normfactor index="1" type="double" size="[1 1]">
+               [ 26]
+            </x_normfactor>
+            <y_normshift index="1" type="double" size="[1 1]">
+               [ 7]
+            </y_normshift>
+            <y_normfactor index="1" type="double" size="[1 1]">
+               [ 26]
+            </y_normfactor>
+            <x_offset index="1" type="double" size="[1 1]">
+               [ 0]
+            </x_offset>
+            <y_offset index="1" type="double" size="[1 1]">
+               [ 0]
+            </y_offset>
+            <red_parameters index="1" type="double" size="[1 3]">
+               [3 -19 28]
+            </red_parameters>
+            <blue_parameters index="1" type="double" size="[1 3]">
+               [-6 -18 22]
+            </blue_parameters>
+         </cell>
+      </CAC>
+      <DPF index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 9]">
+               1920x1080
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <NLL_SEGMENTATION index="1" type="double" size="[1 1]">
+               [ 1]
+            </NLL_SEGMENTATION>
+            <nll_coeff_n index="1" type="double" size="[1 17]">
+               [1023 693 481 390 337 274 237 212 193 167 150 136 118 106 96 89 84]
+            </nll_coeff_n>
+            <SigmaGreen index="1" type="double" size="[1 1]">
+               [ 4]
+            </SigmaGreen>
+            <SigmaRedBlue index="1" type="double" size="[1 1]">
+               [ 4]
+            </SigmaRedBlue>
+            <Gradient index="1" type="double" size="[1 1]">
+               [ 0.15]
+            </Gradient>
+            <Offset index="1" type="double" size="[1 1]">
+               [ 0]
+            </Offset>
+            <NlGains index="1" type="double" size="[1 4]">
+               [1 1 1 1]
+            </NlGains>
+         </cell>
+      </DPF>
+      <DPCC index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 9]">
+               1920x1080
+            </name>
+            <resolution index="1" type="char" size="[1 9]">
+               1920x1080
+            </resolution>
+            <register index="1" type="cell" size="[1 23]">
+               <cell index="1" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 13]">
+                     ISP_DPCC_MODE
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0004
+                  </value>
+               </cell>
+               <cell index="2" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_OUT_MODE
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0003
+                  </value>
+               </cell>
+               <cell index="3" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 16]">
+                     ISP_DPCC_SET_USE
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0007
+                  </value>
+               </cell>
+               <cell index="4" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_METHODS_SET1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x1D1D
+                  </value>
+               </cell>
+               <cell index="5" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_METHODS_SET2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0707
+                  </value>
+               </cell>
+               <cell index="6" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_METHODS_SET3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x1F1F
+                  </value>
+               </cell>
+               <cell index="7" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 22]">
+                     ISP_DPCC_LINE_THRESH_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0808
+                  </value>
+               </cell>
+               <cell index="8" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 23]">
+                     ISP_DPCC_LINE_MAD_FAC_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0404
+                  </value>
+               </cell>
+               <cell index="9" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_PG_FAC_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0403
+                  </value>
+               </cell>
+               <cell index="10" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_RND_THRESH_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0A0A
+                  </value>
+               </cell>
+               <cell index="11" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_RG_FAC_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x2020
+                  </value>
+               </cell>
+               <cell index="12" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 22]">
+                     ISP_DPCC_LINE_THRESH_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x100C
+                  </value>
+               </cell>
+               <cell index="13" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 23]">
+                     ISP_DPCC_LINE_MAD_FAC_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x1810
+                  </value>
+               </cell>
+               <cell index="14" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_PG_FAC_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0403
+                  </value>
+               </cell>
+               <cell index="15" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_RND_THRESH_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0808
+                  </value>
+               </cell>
+               <cell index="16" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_RG_FAC_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0808
+                  </value>
+               </cell>
+               <cell index="17" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 22]">
+                     ISP_DPCC_LINE_THRESH_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x2020
+                  </value>
+               </cell>
+               <cell index="18" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 23]">
+                     ISP_DPCC_LINE_MAD_FAC_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0404
+                  </value>
+               </cell>
+               <cell index="19" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_PG_FAC_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0403
+                  </value>
+               </cell>
+               <cell index="20" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_RND_THRESH_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0806
+                  </value>
+               </cell>
+               <cell index="21" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_RG_FAC_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0404
+                  </value>
+               </cell>
+               <cell index="22" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 18]">
+                     ISP_DPCC_RO_LIMITS
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0A0A
+                  </value>
+               </cell>
+               <cell index="23" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_RND_OFFS
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0FFF
+                  </value>
+               </cell>
+            </register>
+         </cell>
+      </DPCC>
+   </sensor>
+   <system type="struct" size="[1 1]">
+      <AFPS index="1" type="struct" size="[1 1]">
+         <aFpsDefault index="1" type="char" size="[1 2]">
+            on
+         </aFpsDefault>
+      </AFPS>
+   </system>
+</matfile>

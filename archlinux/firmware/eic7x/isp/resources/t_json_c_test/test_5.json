@@ -1,0 +1,21 @@
+{
+  "abstractAuto": { "enable": false, "level": 0 },
+  "bayerPattern": 0,
+  "bitWidth": 10,
+  "error": null,
+  "exposures": [
+    { "gain": 1.875, "integrationTime": 0 },
+    { "gain": 1.875, "integrationTime": 0 },
+    { "gain": 1.875, "integrationTime": -8.94411e33 }
+  ],
+  "isDefault": false,
+  "enable": false,
+  "message": "RET_SUCCESS",
+  "mode": 0,
+  "modeHdr": 0,
+  "modeRgbIr": 0,
+  "name": "OS08A20_FPGA",
+  "resolutionIndex": 0,
+  "resolutions": [{ "framesPerSecond": 15, "height": 1080, "width": 1920 }],
+  "testPattern": 64
+}

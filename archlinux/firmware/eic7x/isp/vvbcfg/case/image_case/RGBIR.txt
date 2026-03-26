@@ -1,0 +1,2 @@
+vvbcfg/case/image_case/rgbir/OX05B1S_SFR_50cm_D50_on_590lux_IR_off_Gain_4x_16ms.raw
+vvbcfg/case/image_case/rgbir/D65_1928x1088_0.raw

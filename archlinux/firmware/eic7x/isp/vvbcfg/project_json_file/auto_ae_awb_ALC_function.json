@@ -1,0 +1,22 @@
+{
+    "root": [
+        {
+            "classname": "ALscv2",
+            "enable": true,
+            "damping": 0.5,
+            "interMode": 1,
+            "tables": [
+                {
+                    "hdr": false,
+                    "gains": [ 1, 128, 200, 233, 400 ],
+                    "strength": [ 0, 0.3, 0.5, 0.7, 1.0 ]
+                },
+                {
+                    "hdr": true,
+                    "gains": [ 1, 128, 200, 240, 400 ],
+                    "strength": [ 0, 0.3, 0.5, 0.7, 1.0 ]
+                }
+            ]
+        }
+    ]
+}

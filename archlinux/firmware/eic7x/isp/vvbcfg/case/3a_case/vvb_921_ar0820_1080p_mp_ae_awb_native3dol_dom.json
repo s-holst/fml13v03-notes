@@ -1,0 +1,86 @@
+{
+    "totalInstance": 1,
+    "instanceCfg": [
+    {
+        "hpId": 0,
+        "instanceEnable": 1,
+        "bufferType": "userptr",
+        "inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+        "workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+        "modeInfo":
+        {
+            "portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+        },
+        "streamDuration": 30, "//": "Second",
+
+        "pathCfg":[
+        {
+            "pathName": "MP",
+            "pathEnable": 1,
+            "bufferNumber": 6,
+            "format": "YUV422SP"
+        }
+        ],
+
+        "sensorInfo":
+        {
+            "sensorName": "ar0820",
+            "calibrationName": "AR0820_1080p_RGGB.json",
+            "simulatorName": "vvbcfg/project_json_file/manual_native3dol_ext.json",
+            "modeIndex": 2,
+            "resolutionWidth": 1920,
+            "resolutionHeight": 1080,
+            "illumType": "D50",
+            "fps": 7,	"//": "0: Default"
+        },
+        "cpdInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode; 1: auto mode"
+        },
+        "wdrInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode; 1: auto mode"
+        },
+        "aeInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "wbInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0
+        },
+        "awbInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "3dnrInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 0, "//":"0: manual mode; 1: auto mode"
+		},
+        "ccmInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        }
+    }
+    ]
+}

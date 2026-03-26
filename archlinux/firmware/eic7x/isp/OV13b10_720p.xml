@@ -1,0 +1,1451 @@
+<?xml version="1.0" ?>
+<matfile>
+   <header type="struct" size="[1 1]">
+      <creation_date index="1" type="char" size="[1 11]">
+         28-Aug-2023
+      </creation_date>
+      <creator index="1" type="char" size="[1 3]">
+         VSI
+      </creator>
+      <sensor_name index="1" type="char" size="[1 7]">
+         Sensors
+      </sensor_name>
+      <sample_name index="1" type="char" size="[1 41]">
+         calibration_raw_OV13B10XML_1280x720_33x33
+      </sample_name>
+      <generator_version index="1" type="char" size="[1 6]">
+         v2.1.4
+      </generator_version>
+      <resolution index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 8]">
+               1280x720
+            </name>
+            <id index="1" type="char" size="[1 10]">
+               0x00000001
+            </id>
+            <width index="1" type="double" size="[1 1]">
+               [ 1280]
+            </width>
+            <height index="1" type="double" size="[1 1]">
+               [ 720]
+            </height>
+            <framerate index="1" type="cell" size="[1 3]">
+               <cell index="1" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 6]">
+                     FPS_15
+                  </name>
+                  <fps index="1" type="double" size="[1 1]">
+                     [ 14.9916]
+                  </fps>
+               </cell>
+               <cell index="2" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 6]">
+                     FPS_10
+                  </name>
+                  <fps index="1" type="double" size="[1 1]">
+                     [ 9.9944]
+                  </fps>
+               </cell>
+               <cell index="3" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 6]">
+                     FPS_05
+                  </name>
+                  <fps index="1" type="double" size="[1 1]">
+                     [ 4.9972]
+                  </fps>
+               </cell>
+            </framerate>
+         </cell>
+      </resolution>
+   </header>
+   <sensor type="struct" size="[1 1]">
+      <AWB index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <globals index="1" type="cell" size="[1 1]">
+               <cell index="1" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 8]">
+                     1280x720
+                  </name>
+                  <resolution index="1" type="char" size="[1 8]">
+                     1280x720
+                  </resolution>
+                  <SVDMeanValue index="1" type="double" size="[1 3]">
+                     [0.366349 0.418819 0.21483]
+                  </SVDMeanValue>
+                  <PCAMatrix index="1" type="double" size="[3 2]">
+                     [-0.742309 0.0766499 0.665659 0.340065 -0.812891 0.47283]
+                  </PCAMatrix>
+                  <CenterLine index="1" type="double" size="[1 3]">
+                     [-0.768469 -0.639887 -2.4876]
+                  </CenterLine>
+                  <afRg2 index="1" type="double" size="[1 16]">
+                     [0.941391 1.1652 1.23319 1.29102 1.32432 1.37611 1.43075 1.54091 1.64527 1.76295 1.84774 1.90339 1.9948 2.08193 2.15833 2.25]
+                  </afRg2>
+                  <afMaxDist2 index="1" type="double" size="[1 16]">
+                     [0.218787 0.137395 0.120737 0.124282 0.181537 0.231497 0.271049 0.204821 0.127702 0.0650955 0.0352388 0.0399427 0.0802638 0.168873 0.275827 0.38849]
+                  </afMaxDist2>
+                  <afRg1 index="1" type="double" size="[1 16]">
+                     [0.925003 1.08811 1.2416 1.31799 1.39438 1.47078 1.54717 1.62357 1.69996 1.77635 1.85275 1.92914 2.00554 2.08193 2.15833 2.25]
+                  </afRg1>
+                  <afMaxDist1 index="1" type="double" size="[1 16]">
+                     [-0.0305435 0.0308114 0.0993942 0.135272 0.167646 0.197311 0.222978 0.2432 0.256746 0.260123 0.247407 0.206703 0.130672 0.0311272 -0.075827 -0.18849]
+                  </afMaxDist1>
+                  <afGlobalFade2 index="1" type="double" size="[1 16]">
+                     [0.8 0.898315 0.996629 1.09494 1.19326 1.2936 1.35847 1.3862 1.49197 1.63962 1.78032 1.88146 1.97978 2.07809 2.1764 2.2747]
+                  </afGlobalFade2>
+                  <afGlobalGainDistance2 index="1" type="double" size="[1 16]">
+                     [0.439129 0.381543 0.326811 0.273598 0.223894 0.213127 0.256132 0.365912 0.343951 0.185347 0.0609402 0.0639758 0.139932 0.263705 0.401868 0.54808]
+                  </afGlobalGainDistance2>
+                  <afGlobalFade1 index="1" type="double" size="[1 16]">
+                     [0.8 0.898315 0.996629 1.09494 1.19326 1.29157 1.38989 1.4882 1.58652 1.68483 1.78315 1.88146 1.97978 2.07809 2.1764 2.2747]
+                  </afGlobalFade1>
+                  <afGlobalGainDistance1 index="1" type="double" size="[1 16]">
+                     [-0.0391293 0.0184565 0.0731893 0.126402 0.176106 0.22331 0.26623 0.303425 0.334165 0.354641 0.359751 0.336024 0.260068 0.136295 -0.00186779 -0.14808]
+                  </afGlobalGainDistance1>
+                  <fRgProjIndoorMin index="1" type="double" size="[1 1]">
+                     [ 0.95]
+                  </fRgProjIndoorMin>
+                  <fRgProjMax index="1" type="double" size="[1 1]">
+                     [ 2.2]
+                  </fRgProjMax>
+                  <fRgProjMaxSky index="1" type="double" size="[1 1]">
+                     [ 2.25]
+                  </fRgProjMaxSky>
+                  <fRgProjOutdoorMin index="1" type="double" size="[1 1]">
+                     [ 1.65]
+                  </fRgProjOutdoorMin>
+                  <awb_clip_outdoor index="1" type="char" size="[1 3]">
+                     D50
+                  </awb_clip_outdoor>
+                  <K_Factor index="1" type="double" size="[1 1]">
+                     [ 6.5849]
+                  </K_Factor>
+                  <afFade2 index="1" type="double" size="[1 6]">
+                     [0.75 1.28836 1.77672 2.164 2.6 3.0618]
+                  </afFade2>
+                  <afCbMinRegionMax index="1" type="double" size="[1 6]">
+                     [114 114 105 95 95 90]
+                  </afCbMinRegionMax>
+                  <afCrMinRegionMax index="1" type="double" size="[1 6]">
+                     [83 83 110 120 122 128]
+                  </afCrMinRegionMax>
+                  <afMaxCSumRegionMax index="1" type="double" size="[1 6]">
+                     [28 27 18 16 9 9]
+                  </afMaxCSumRegionMax>
+                  <afCbMinRegionMin index="1" type="double" size="[1 6]">
+                     [123 123 123 123 123 120]
+                  </afCbMinRegionMin>
+                  <afCrMinRegionMin index="1" type="double" size="[1 6]">
+                     [123 123 123 123 123 126]
+                  </afCrMinRegionMin>
+                  <afMaxCSumRegionMin index="1" type="double" size="[1 6]">
+                     [5 5 5 5 5 5]
+                  </afMaxCSumRegionMin>
+                  <RegionSize index="1" type="double" size="[1 1]">
+                     [ 1]
+                  </RegionSize>
+                  <RegionSizeInc index="1" type="double" size="[1 1]">
+                     [ 0.8]
+                  </RegionSizeInc>
+                  <RegionSizeDec index="1" type="double" size="[1 1]">
+                     [ 0.05]
+                  </RegionSizeDec>
+                  <IIR index="1" type="struct" size="[1 1]">
+                     <DampCoefAdd index="1" type="double" size="[1 1]">
+                        [ 0.05]
+                     </DampCoefAdd>
+                     <DampCoefSub index="1" type="double" size="[1 1]">
+                        [ 0.05]
+                     </DampCoefSub>
+                     <DampFilterThreshold index="1" type="double" size="[1 1]">
+                        [ 0.4]
+                     </DampFilterThreshold>
+                     <DampingCoefMin index="1" type="double" size="[1 1]">
+                        [ 0.5]
+                     </DampingCoefMin>
+                     <DampingCoefMax index="1" type="double" size="[1 1]">
+                        [ 0.9]
+                     </DampingCoefMax>
+                     <DampingCoefInit index="1" type="double" size="[1 1]">
+                        [ 0.5]
+                     </DampingCoefInit>
+                     <ExpPriorFilterSizeMax index="1" type="double" size="[1 1]">
+                        [ 50]
+                     </ExpPriorFilterSizeMax>
+                     <ExpPriorFilterSizeMin index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </ExpPriorFilterSizeMin>
+                     <ExpPriorMiddle index="1" type="double" size="[1 1]">
+                        [ 0.5]
+                     </ExpPriorMiddle>
+                  </IIR>
+               </cell>
+            </globals>
+            <illumination index="1" type="cell" size="[1 6]">
+               <cell index="1" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 1]">
+                     A
+                  </name>
+                  <doorType index="1" type="char" size="[1 6]">
+                     Indoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [2412.49 3119.66 3119.66 6010.0246]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 347.4857]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [0.9 0.95]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [-0.0501317 -0.041438]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 8]">
+                           1280x720
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 14]">
+                           1280x720_A_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [1.06864 1 1 1.2432]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 5]">
+                        A_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="2" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 3]">
+                     D50
+                  </name>
+                  <doorType index="1" type="char" size="[1 7]">
+                     Outdoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [426.341 347.391 347.391 2017.6848]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 136.8678]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.11298 -0.057001]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 8]">
+                           1280x720
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 16]">
+                           1280x720_D50_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [1.06864 1 1 1.2432]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 7]">
+                        D50_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="3" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 3]">
+                     D65
+                  </name>
+                  <doorType index="1" type="char" size="[1 7]">
+                     Outdoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [324.004 42.6006 42.6006 1536.8233]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 112.1023]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.164804 -0.043711]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 8]">
+                           1280x720
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 16]">
+                           1280x720_D65_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [1.06864 1 1 1.2432]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 7]">
+                        D65_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="4" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 3]">
+                     D75
+                  </name>
+                  <doorType index="1" type="char" size="[1 7]">
+                     Outdoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [313.776 -50.1802 -50.1802 1401.4587]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 105.2382]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.192479 -0.041438]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 8]">
+                           1280x720
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 16]">
+                           1280x720_D75_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [1.06864 1 1 1.2432]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 7]">
+                        D75_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="5" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 8]">
+                     F2 (CWF)
+                  </name>
+                  <doorType index="1" type="char" size="[1 6]">
+                     Indoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [457.532 -66.9783 -66.9783 1424.4981]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 128.0448]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.0537155 -0.081122]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 8]">
+                           1280x720
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 15]">
+                           1280x720_F2_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [1.06864 1 1 1.2432]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 6]">
+                        F2_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+               <cell index="6" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 10]">
+                     F11 (TL84)
+                  </name>
+                  <doorType index="1" type="char" size="[1 6]">
+                     Indoor
+                  </doorType>
+                  <GMM index="1" type="struct" size="[1 1]">
+                     <invCovMatrix index="1" type="double" size="[2 2]">
+                        [434.527 195.728 195.728 1405.573]
+                     </invCovMatrix>
+                     <GaussianScalingFactor index="1" type="double" size="[1 1]">
+                        [ 120.4173]
+                     </GaussianScalingFactor>
+                     <tau index="1" type="double" size="[1 2]">
+                        [1 1]
+                     </tau>
+                     <GaussianMeanValue index="1" type="double" size="[1 2]">
+                        [0.0441405 -0.065533]
+                     </GaussianMeanValue>
+                  </GMM>
+                  <aLSC index="1" type="cell" size="[1 1]">
+                     <cell index="1" type="struct" size="[1 1]">
+                        <resolution index="1" type="char" size="[1 8]">
+                           1280x720
+                        </resolution>
+                        <LSC_PROFILE_LIST index="1" type="char" size="[1 16]">
+                           1280x720_F11_100
+                        </LSC_PROFILE_LIST>
+                     </cell>
+                  </aLSC>
+                  <manualWB index="1" type="double" size="[1 4]">
+                     [1.06864 1 1 1.2432]
+                  </manualWB>
+                  <manualccMatrix index="1" type="double" size="[3 3]">
+                     [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+                  </manualccMatrix>
+                  <manualccOffsets index="1" type="double" size="[1 3]">
+                     [0 0 0]
+                  </manualccOffsets>
+                  <awbType index="1" type="char" size="[1 4]">
+                     AUTO
+                  </awbType>
+                  <sat_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <sat index="1" type="double" size="[1 4]">
+                        [100 95 90 74]
+                     </sat>
+                  </sat_CT>
+                  <vig_CT index="1" type="struct" size="[1 1]">
+                     <gains index="1" type="double" size="[1 4]">
+                        [1 2 4 8]
+                     </gains>
+                     <vig index="1" type="double" size="[1 4]">
+                        [100 95 90 70]
+                     </vig>
+                  </vig_CT>
+                  <aCC index="1" type="struct" size="[1 1]">
+                     <CC_PROFILE_LIST index="1" type="char" size="[1 7]">
+                        F11_100
+                     </CC_PROFILE_LIST>
+                  </aCC>
+               </cell>
+            </illumination>
+         </cell>
+      </AWB>
+      <LSC index="1" type="cell" size="[1 6]">
+         <cell index="1" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 14]">
+               1280x720_A_100
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <illumination index="1" type="char" size="[1 1]">
+               A
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 16]">
+               [38 37 39 39 39 41 42 39 40 42 42 40 40 41 40 41]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 16]">
+               [22 22 23 23 22 22 23 23 22 23 22 23 22 24 23 21]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [1155 1152 1171 1150 1130 1126 1103 1108 1100 1088 1078 1085 1084 1088 1076 1075 1077 1090 1059 1086 1082 1070 1076 1072 1094 1078 1114 1100 1114 1136 1150 1156 1155 1166 1149 1129 1145 1127 1113 1108 1108 1098 1094 1091 1078 1088 1078 1077 1087 1077 1070 1089 1061 1084 1078 1069 1059 1075 1082 1092 1100 1109 1133 1126 1155 1135 1160 1160 1141 1141 1121 1119 1110 1099 1102 1078 1079 1076 1075 1086 1078 1080 1073 1087 1081 1070 1069 1064 1058 1081 1074 1071 1094 1108 1107 1129 1123 1147 1177 1171 1147 1148 1134 1120 1114 1107 1099 1088 1097 1070 1083 1080 1084 1070 1082 1081 1075 1066 1071 1081 1047 1066 1077 1060 1091 1092 1098 1116 1115 1137 1150 1158 1160 1155 1142 1131 1121 1106 1107 1097 1090 1074 1083 1079 1072 1084 1075 1087 1075 1073 1070 1068 1050 1066 1050 1084 1070 1072 1084 1094 1107 1119 1134 1131 1170 1153 1137 1129 1126 1112 1113 1108 1088 1083 1081 1076 1068 1075 1071 1094 1070 1068 1068 1065 1059 1062 1057 1057 1043 1070 1065 1084 1085 1104 1111 1118 1145 1132 1128 1137 1132 1114 1107 1108 1088 1096 1074 1073 1078 1069 1072 1074 1069 1075 1066 1065 1072 1049 1037 1051 1049 1050 1071 1067 1078 1079 1092 1107 1112 1140 1132 1155 1130 1124 1124 1112 1106 1097 1088 1080 1076 1075 1079 1073 1081 1068 1069 1066 1046 1058 1049 1042 1051 1047 1042 1072 1061 1070 1091 1081 1102 1112 1112 1150 1147 1141 1131 1118 1109 1099 1108 1086 1086 1082 1077 1089 1080 1088 1090 1066 1063 1072 1053 1051 1048 1038 1052 1041 1062 1057 1069 1084 1095 1109 1106 1128 1123 1135 1137 1119 1119 1111 1119 1106 1100 1091 1088 1083 1096 1092 1087 1080 1060 1061 1055 1043 1044 1051 1056 1042 1052 1057 1071 1076 1076 1094 1093 1121 1132 1134 1149 1135 1129 1106 1129 1114 1115 1109 1095 1105 1088 1106 1097 1080 1080 1071 1065 1059 1056 1046 1051 1039 1052 1047 1049 1072 1079 1081 1101 1086 1117 1125 1145 1151 1127 1132 1125 1117 1119 1113 1109 1102 1094 1087 1091 1093 1070 1065 1064 1074 1065 1045 1050 1053 1041 1041 1052 1062 1062 1072 1078 1082 1098 1118 1120 1140 1162 1132 1121 1114 1106 1117 1111 1110 1101 1100 1087 1091 1067 1067 1073 1052 1054 1047 1046 1045 1048 1046 1039 1045 1060 1054 1058 1066 1086 1094 1105 1127 1128 1120 1133 1121 1111 1119 1120 1118 1115 1105 1111 1079 1090 1069 1079 1061 1061 1057 1039 1042 1045 1035 1037 1040 1035 1050 1063 1058 1076 1083 1083 1112 1110 1143 1152 1130 1124 1121 1115 1114 1117 1110 1100 1101 1081 1083 1078 1070 1066 1056 1059 1044 1053 1037 1046 1033 1039 1050 1049 1053 1065 1067 1074 1097 1097 1115 1133 1156 1136 1124 1108 1111 1110 1137 1117 1102 1092 1089 1083 1074 1063 1075 1061 1053 1056 1051 1043 1045 1040 1038 1048 1048 1060 1060 1071 1082 1084 1112 1118 1123 1160 1136 1131 1121 1123 1127 1117 1110 1101 1100 1091 1078 1071 1069 1069 1062 1050 1048 1058 1048 1051 1034 1055 1052 1057 1055 1077 1087 1091 1101 1112 1130 1146 1129 1142 1132 1121 1121 1119 1114 1114 1098 1093 1078 1073 1076 1069 1070 1059 1064 1055 1040 1048 1048 1044 1033 1046 1041 1058 1068 1071 1085 1106 1111 1127 1133 1150 1123 1126 1125 1106 1106 1113 1104 1089 1075 1067 1065 1066 1067 1055 1051 1062 1049 1044 1044 1039 1040 1034 1055 1053 1055 1059 1074 1082 1089 1112 1124 1116 1121 1133 1130 1105 1104 1102 1088 1091 1077 1070 1067 1053 1062 1074 1050 1045 1051 1042 1045 1037 1045 1044 1024 1054 1034 1047 1061 1072 1077 1108 1105 1107 1144 1140 1133 1117 1115 1097 1106 1095 1088 1076 1058 1057 1066 1049 1058 1071 1047 1050 1048 1045 1042 1031 1031 1032 1050 1041 1053 1057 1074 1078 1097 1100 1117 1139 1135 1138 1116 1119 1099 1096 1092 1074 1081 1085 1052 1064 1067 1058 1053 1045 1048 1061 1043 1038 1046 1045 1042 1036 1043 1064 1068 1084 1091 1097 1102 1113 1130 1140 1122 1134 1112 1109 1088 1092 1085 1073 1063 1067 1052 1059 1072 1057 1044 1042 1050 1038 1047 1040 1039 1050 1047 1049 1069 1056 1089 1080 1102 1112 1128 1123 1148 1118 1119 1102 1112 1084 1092 1084 1069 1068 1058 1058 1065 1054 1055 1043 1051 1047 1039 1048 1039 1052 1044 1050 1053 1062 1070 1055 1084 1091 1110 1135 1136 1127 1132 1121 1114 1092 1088 1077 1065 1072 1054 1047 1056 1064 1050 1044 1046 1046 1039 1048 1031 1059 1050 1051 1042 1044 1074 1062 1087 1083 1109 1100 1128 1129 1141 1116 1111 1106 1096 1079 1093 1063 1078 1053 1062 1049 1046 1061 1050 1037 1048 1028 1042 1038 1039 1040 1039 1033 1054 1053 1065 1074 1073 1088 1102 1123 1139 1138 1123 1118 1098 1088 1075 1066 1071 1059 1059 1047 1064 1044 1052 1047 1049 1040 1046 1031 1047 1051 1036 1036 1061 1046 1058 1066 1078 1079 1102 1117 1112 1125 1108 1125 1100 1100 1096 1087 1076 1072 1056 1048 1063 1042 1056 1046 1056 1036 1053 1035 1046 1047 1037 1051 1053 1046 1059 1059 1074 1083 1084 1100 1111 1134 1132 1146 1124 1113 1097 1097 1078 1084 1064 1059 1063 1054 1059 1061 1052 1046 1056 1050 1049 1040 1044 1052 1055 1054 1053 1048 1067 1073 1071 1094 1105 1111 1136 1145 1148 1133 1108 1102 1088 1091 1069 1072 1063 1060 1053 1051 1047 1048 1053 1053 1058 1050 1057 1047 1053 1051 1058 1047 1067 1058 1075 1085 1087 1103 1120 1128 1149 1134 1121 1112 1107 1092 1072 1075 1079 1070 1054 1056 1053 1051 1045 1049 1053 1062 1052 1055 1050 1055 1058 1048 1065 1058 1073 1067 1085 1098 1118 1117 1127 1135 1144 1137 1109 1102 1095 1076 1086 1056 1059 1054 1056 1044 1043 1053 1042 1049 1056 1048 1044 1038 1043 1069 1052 1053 1052 1070 1098 1082 1105 1098 1118 1127 1169 1129 1107 1111 1109 1085 1083 1075 1079 1055 1046 1053 1051 1046 1049 1051 1055 1041 1057 1039 1055 1055 1055 1076 1058 1076 1064 1064 1095 1080 1103 1134 1122 1147]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [1170 1167 1163 1139 1131 1137 1124 1099 1108 1086 1084 1092 1068 1087 1080 1088 1088 1077 1085 1077 1080 1081 1077 1088 1075 1097 1109 1099 1127 1129 1141 1148 1164 1179 1160 1162 1135 1135 1121 1113 1104 1098 1093 1088 1084 1087 1091 1084 1084 1082 1072 1077 1087 1073 1087 1074 1078 1088 1079 1098 1105 1111 1136 1139 1169 1164 1167 1157 1144 1151 1130 1124 1105 1091 1091 1093 1075 1088 1082 1082 1075 1082 1073 1083 1070 1066 1067 1066 1071 1072 1073 1081 1095 1103 1119 1124 1135 1159 1157 1168 1162 1149 1143 1129 1129 1106 1105 1084 1101 1080 1071 1090 1080 1086 1083 1078 1076 1083 1077 1078 1063 1066 1080 1071 1083 1097 1111 1115 1135 1147 1141 1175 1168 1156 1143 1134 1138 1116 1103 1098 1089 1082 1083 1078 1085 1086 1078 1082 1080 1065 1071 1065 1070 1059 1067 1082 1083 1082 1096 1106 1103 1120 1138 1153 1163 1166 1136 1134 1128 1113 1109 1108 1091 1078 1084 1073 1070 1064 1072 1075 1071 1069 1062 1058 1049 1058 1058 1061 1058 1069 1071 1082 1098 1113 1109 1134 1137 1151 1136 1157 1122 1112 1115 1105 1085 1099 1085 1074 1069 1075 1071 1073 1062 1071 1068 1055 1064 1053 1045 1056 1047 1058 1058 1075 1079 1081 1103 1100 1124 1128 1157 1139 1150 1127 1123 1110 1114 1093 1086 1078 1071 1070 1077 1059 1080 1073 1064 1058 1059 1041 1039 1045 1049 1046 1052 1068 1063 1065 1088 1102 1105 1115 1131 1147 1156 1146 1117 1125 1114 1103 1106 1083 1078 1072 1072 1082 1076 1083 1076 1058 1055 1066 1051 1043 1049 1050 1040 1053 1063 1062 1075 1072 1096 1108 1121 1141 1149 1135 1139 1131 1131 1114 1107 1108 1096 1092 1082 1080 1084 1089 1077 1062 1064 1067 1054 1047 1050 1043 1037 1052 1045 1065 1073 1075 1089 1092 1100 1118 1128 1150 1148 1149 1125 1116 1125 1108 1106 1098 1084 1096 1088 1088 1075 1079 1068 1061 1058 1049 1053 1043 1057 1039 1052 1056 1056 1067 1083 1087 1100 1101 1136 1131 1142 1145 1128 1135 1108 1115 1113 1100 1098 1093 1083 1073 1081 1090 1065 1060 1058 1056 1050 1049 1046 1045 1044 1048 1047 1057 1054 1073 1074 1095 1103 1116 1126 1138 1145 1123 1129 1122 1110 1108 1103 1110 1090 1099 1071 1084 1060 1067 1055 1046 1050 1042 1042 1040 1037 1041 1031 1046 1049 1056 1063 1080 1085 1099 1103 1131 1149 1135 1129 1121 1107 1109 1107 1104 1090 1088 1079 1073 1067 1062 1049 1061 1053 1056 1046 1043 1041 1035 1038 1030 1043 1054 1056 1068 1069 1081 1096 1108 1120 1124 1150 1142 1126 1112 1105 1103 1111 1102 1086 1090 1072 1075 1077 1067 1040 1061 1037 1048 1033 1048 1041 1032 1039 1047 1047 1060 1067 1063 1089 1091 1111 1125 1147 1144 1133 1112 1113 1102 1116 1111 1097 1094 1092 1078 1053 1066 1054 1066 1061 1050 1047 1046 1034 1041 1038 1043 1052 1041 1065 1064 1073 1079 1103 1110 1123 1132 1160 1129 1128 1119 1121 1114 1120 1105 1091 1089 1080 1070 1063 1066 1054 1052 1051 1048 1062 1042 1047 1039 1051 1048 1048 1057 1073 1080 1083 1114 1113 1130 1149 1149 1140 1125 1118 1109 1116 1105 1104 1093 1074 1081 1058 1062 1063 1061 1040 1049 1044 1049 1038 1033 1043 1029 1042 1047 1058 1054 1081 1086 1095 1109 1123 1134 1156 1125 1121 1119 1106 1099 1094 1076 1092 1069 1061 1063 1058 1055 1041 1048 1042 1046 1040 1033 1033 1038 1034 1044 1040 1059 1053 1071 1086 1096 1125 1122 1127 1118 1134 1116 1100 1100 1098 1086 1087 1070 1061 1061 1048 1041 1055 1054 1040 1036 1051 1034 1036 1028 1030 1024 1041 1045 1051 1064 1066 1083 1092 1105 1124 1132 1143 1126 1120 1111 1099 1092 1089 1076 1078 1055 1054 1047 1052 1056 1051 1039 1038 1038 1034 1034 1024 1034 1035 1045 1038 1044 1059 1078 1088 1092 1118 1119 1128 1133 1134 1115 1121 1090 1094 1084 1075 1067 1067 1050 1056 1058 1044 1054 1033 1045 1047 1038 1042 1051 1033 1041 1037 1046 1063 1065 1084 1088 1092 1108 1126 1136 1140 1119 1126 1107 1099 1089 1088 1076 1079 1055 1067 1058 1070 1052 1053 1046 1045 1043 1035 1035 1035 1044 1030 1044 1044 1071 1059 1082 1087 1106 1111 1123 1128 1140 1136 1118 1113 1098 1092 1072 1071 1057 1057 1054 1055 1050 1043 1060 1039 1042 1043 1038 1049 1038 1036 1046 1042 1053 1051 1073 1071 1086 1109 1106 1126 1140 1129 1132 1123 1113 1098 1087 1078 1062 1067 1052 1052 1047 1058 1039 1047 1040 1037 1046 1033 1031 1050 1047 1032 1055 1048 1064 1064 1085 1082 1103 1104 1119 1152 1145 1116 1108 1098 1093 1087 1068 1076 1065 1048 1040 1044 1046 1039 1045 1031 1033 1032 1035 1035 1043 1029 1045 1038 1050 1053 1062 1075 1070 1081 1109 1131 1124 1133 1122 1110 1096 1083 1080 1070 1071 1052 1055 1046 1064 1036 1046 1050 1037 1039 1044 1039 1043 1042 1035 1045 1035 1049 1063 1063 1076 1084 1092 1113 1123 1138 1131 1131 1117 1106 1097 1079 1078 1056 1066 1057 1057 1048 1063 1050 1047 1054 1040 1036 1036 1037 1046 1037 1043 1045 1059 1055 1074 1077 1100 1097 1114 1132 1140 1137 1130 1118 1106 1096 1087 1080 1068 1059 1058 1055 1058 1063 1044 1049 1051 1043 1041 1048 1042 1043 1045 1052 1057 1056 1059 1070 1089 1096 1101 1120 1127 1143 1143 1137 1113 1109 1098 1088 1072 1069 1072 1062 1049 1060 1047 1060 1043 1060 1066 1052 1054 1047 1058 1049 1057 1055 1059 1065 1087 1081 1095 1110 1118 1128 1155 1135 1125 1122 1095 1095 1090 1082 1067 1066 1058 1057 1054 1051 1039 1049 1045 1058 1047 1050 1041 1053 1047 1045 1057 1057 1067 1078 1082 1107 1105 1118 1124 1155 1120 1134 1105 1109 1091 1080 1070 1066 1065 1054 1050 1046 1045 1047 1038 1056 1038 1057 1043 1055 1041 1060 1043 1060 1057 1073 1069 1090 1098 1116 1130 1136 1154 1133 1113 1116 1106 1083 1088 1073 1069 1052 1046 1054 1049 1050 1052 1046 1059 1032 1050 1053 1027 1048 1059 1062 1067 1061 1068 1081 1089 1102 1109 1120 1140 1144]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [1200 1192 1173 1184 1151 1131 1141 1115 1131 1105 1093 1102 1099 1103 1105 1093 1107 1111 1093 1097 1101 1115 1107 1103 1107 1113 1126 1131 1150 1162 1164 1186 1204 1193 1188 1178 1157 1156 1131 1132 1119 1125 1106 1098 1102 1107 1092 1095 1090 1096 1091 1089 1091 1098 1102 1091 1100 1101 1118 1127 1137 1151 1151 1172 1189 1200 1191 1172 1169 1156 1146 1137 1126 1115 1114 1105 1108 1093 1093 1103 1102 1099 1088 1110 1088 1082 1089 1088 1084 1092 1106 1111 1122 1131 1145 1147 1175 1173 1209 1180 1174 1167 1153 1155 1135 1132 1121 1111 1108 1091 1099 1098 1101 1095 1098 1100 1094 1090 1089 1090 1082 1085 1102 1088 1108 1118 1128 1134 1149 1169 1166 1214 1184 1171 1158 1159 1139 1129 1131 1119 1099 1105 1091 1102 1092 1097 1093 1092 1099 1093 1078 1093 1089 1082 1082 1098 1103 1102 1121 1130 1131 1145 1169 1166 1189 1171 1166 1160 1146 1139 1120 1126 1105 1104 1092 1096 1083 1090 1079 1090 1092 1085 1081 1074 1066 1079 1066 1071 1079 1090 1092 1099 1117 1137 1128 1146 1169 1182 1178 1156 1146 1126 1135 1116 1108 1112 1101 1089 1084 1087 1071 1088 1076 1076 1076 1061 1075 1071 1067 1059 1067 1063 1097 1089 1100 1107 1116 1143 1151 1152 1178 1152 1163 1144 1143 1124 1119 1114 1108 1085 1083 1096 1088 1077 1092 1082 1076 1076 1068 1060 1059 1062 1068 1060 1069 1087 1077 1094 1099 1118 1124 1135 1162 1160 1181 1149 1147 1129 1125 1109 1124 1101 1094 1078 1081 1087 1094 1087 1089 1071 1074 1077 1063 1056 1067 1059 1063 1065 1088 1082 1094 1104 1109 1131 1139 1152 1171 1148 1149 1141 1137 1131 1127 1106 1105 1089 1103 1085 1094 1086 1076 1078 1074 1073 1071 1058 1075 1051 1062 1066 1065 1077 1093 1081 1103 1119 1123 1135 1155 1162 1152 1156 1143 1134 1130 1124 1111 1115 1102 1106 1096 1088 1097 1089 1071 1079 1075 1071 1062 1058 1062 1065 1057 1073 1071 1080 1100 1099 1113 1117 1140 1147 1171 1162 1150 1136 1130 1115 1113 1120 1109 1111 1097 1084 1100 1087 1083 1076 1072 1068 1056 1059 1059 1057 1057 1050 1063 1073 1076 1093 1083 1113 1124 1123 1154 1162 1152 1142 1137 1135 1114 1114 1114 1113 1097 1105 1089 1078 1078 1071 1061 1063 1056 1063 1051 1050 1051 1049 1056 1062 1067 1068 1089 1089 1095 1112 1131 1139 1156 1146 1130 1137 1119 1119 1115 1111 1108 1083 1097 1081 1084 1064 1069 1072 1056 1053 1047 1053 1049 1053 1045 1044 1053 1070 1071 1065 1085 1094 1119 1116 1144 1156 1148 1153 1133 1124 1124 1100 1130 1109 1095 1094 1082 1087 1065 1058 1054 1066 1062 1058 1046 1052 1043 1047 1049 1055 1068 1061 1087 1085 1104 1102 1125 1135 1143 1148 1147 1123 1129 1120 1112 1119 1112 1092 1097 1081 1071 1076 1077 1061 1058 1054 1044 1054 1050 1049 1057 1054 1059 1054 1078 1074 1081 1098 1111 1118 1140 1152 1162 1139 1130 1122 1118 1118 1116 1115 1097 1090 1086 1076 1079 1078 1061 1068 1046 1063 1059 1052 1052 1048 1052 1052 1068 1068 1085 1090 1096 1127 1126 1140 1154 1143 1140 1135 1109 1124 1116 1110 1098 1090 1087 1082 1068 1071 1064 1060 1049 1051 1058 1053 1043 1048 1043 1048 1046 1055 1069 1074 1079 1115 1102 1137 1134 1152 1152 1142 1118 1117 1111 1098 1097 1093 1082 1070 1064 1072 1071 1068 1049 1051 1049 1051 1044 1041 1038 1039 1037 1047 1056 1066 1064 1088 1087 1106 1130 1125 1143 1143 1133 1129 1108 1107 1094 1083 1086 1076 1073 1064 1048 1045 1054 1057 1043 1047 1046 1045 1052 1027 1039 1041 1046 1050 1062 1072 1081 1099 1100 1130 1132 1140 1149 1130 1119 1104 1096 1095 1078 1085 1084 1055 1053 1058 1055 1056 1048 1041 1038 1040 1035 1034 1035 1037 1034 1044 1042 1060 1069 1072 1085 1105 1117 1131 1142 1142 1132 1124 1109 1098 1103 1094 1073 1064 1069 1063 1050 1066 1044 1057 1041 1045 1048 1043 1042 1042 1039 1032 1056 1048 1068 1069 1085 1092 1110 1120 1129 1148 1131 1130 1127 1117 1104 1089 1092 1080 1074 1058 1053 1069 1060 1051 1057 1046 1038 1051 1032 1035 1042 1041 1050 1047 1049 1066 1070 1084 1100 1109 1127 1144 1145 1137 1128 1113 1118 1097 1086 1084 1076 1072 1059 1055 1045 1057 1049 1044 1047 1039 1037 1042 1045 1052 1043 1045 1059 1049 1058 1071 1074 1091 1104 1123 1130 1153 1137 1132 1114 1100 1093 1081 1081 1060 1062 1050 1042 1058 1052 1043 1051 1032 1046 1029 1029 1028 1051 1046 1043 1046 1056 1062 1073 1089 1094 1097 1106 1127 1150 1122 1126 1109 1108 1088 1078 1067 1063 1058 1051 1044 1038 1038 1046 1033 1046 1024 1040 1041 1027 1045 1029 1040 1042 1043 1067 1057 1080 1073 1089 1110 1130 1129 1142 1116 1096 1110 1086 1079 1069 1065 1048 1051 1048 1059 1041 1046 1049 1035 1045 1031 1035 1035 1044 1034 1046 1042 1052 1059 1077 1078 1094 1102 1115 1130 1132 1104 1124 1114 1096 1093 1072 1069 1053 1062 1055 1053 1037 1063 1043 1038 1045 1038 1039 1031 1044 1033 1055 1041 1046 1066 1049 1071 1084 1090 1103 1114 1139 1159 1149 1118 1116 1099 1087 1091 1071 1068 1052 1061 1047 1052 1056 1047 1039 1044 1037 1046 1044 1044 1039 1049 1044 1051 1051 1061 1073 1077 1095 1102 1125 1136 1135 1134 1132 1104 1092 1095 1076 1070 1070 1066 1050 1053 1057 1047 1050 1043 1050 1054 1046 1058 1038 1046 1048 1048 1052 1060 1068 1075 1080 1095 1109 1120 1131 1147 1154 1117 1112 1095 1085 1081 1073 1049 1063 1043 1044 1036 1035 1043 1038 1043 1052 1035 1045 1043 1041 1048 1049 1059 1054 1066 1065 1091 1085 1098 1122 1131 1156 1117 1127 1097 1092 1091 1073 1066 1067 1049 1043 1047 1041 1039 1043 1039 1042 1039 1047 1041 1041 1039 1056 1049 1045 1056 1060 1077 1090 1092 1094 1118 1126 1156 1123 1117 1108 1104 1068 1076 1067 1054 1050 1048 1044 1037 1038 1034 1030 1042 1047 1037 1037 1040 1042 1042 1064 1067 1063 1055 1088 1072 1091 1099 1124 1124 1157]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [1194 1189 1184 1160 1168 1133 1138 1130 1139 1118 1107 1125 1094 1113 1108 1110 1104 1095 1098 1113 1101 1091 1106 1106 1114 1131 1125 1134 1136 1176 1154 1182 1180 1196 1166 1173 1163 1152 1146 1141 1117 1129 1129 1121 1107 1115 1105 1109 1115 1108 1110 1103 1105 1106 1104 1091 1098 1107 1107 1125 1125 1146 1159 1169 1187 1194 1174 1178 1160 1156 1150 1140 1131 1130 1116 1110 1109 1110 1108 1114 1108 1104 1086 1103 1090 1099 1091 1087 1092 1092 1104 1107 1120 1134 1137 1146 1171 1172 1193 1186 1172 1160 1161 1151 1145 1140 1131 1124 1120 1108 1106 1102 1096 1110 1106 1113 1103 1104 1094 1095 1084 1094 1093 1095 1121 1121 1128 1150 1153 1166 1178 1194 1190 1164 1158 1142 1141 1141 1121 1114 1110 1114 1092 1105 1103 1099 1111 1094 1108 1105 1089 1085 1093 1081 1090 1095 1100 1096 1112 1117 1126 1156 1168 1156 1190 1162 1162 1146 1146 1136 1133 1126 1120 1106 1089 1098 1095 1097 1102 1098 1089 1077 1092 1090 1071 1083 1080 1074 1072 1099 1089 1098 1119 1128 1134 1142 1177 1171 1169 1156 1149 1131 1132 1115 1110 1111 1103 1097 1094 1085 1079 1097 1092 1083 1088 1076 1069 1069 1078 1064 1072 1077 1080 1106 1099 1108 1118 1129 1153 1154 1165 1160 1156 1144 1132 1127 1119 1112 1098 1098 1102 1089 1100 1100 1081 1100 1084 1084 1070 1067 1067 1070 1064 1070 1070 1090 1080 1091 1108 1111 1137 1125 1137 1155 1154 1155 1142 1127 1130 1113 1118 1109 1102 1083 1092 1103 1093 1096 1084 1069 1081 1087 1070 1058 1071 1071 1060 1066 1080 1087 1101 1100 1111 1115 1122 1147 1169 1160 1139 1135 1137 1126 1124 1117 1113 1106 1101 1095 1103 1097 1097 1088 1077 1077 1070 1063 1056 1067 1067 1065 1070 1087 1101 1089 1096 1117 1130 1130 1154 1139 1159 1151 1145 1128 1125 1125 1116 1112 1110 1092 1100 1101 1103 1089 1091 1078 1082 1075 1075 1058 1063 1058 1069 1071 1074 1094 1084 1110 1109 1106 1142 1154 1158 1148 1145 1146 1131 1131 1124 1127 1112 1102 1097 1099 1094 1086 1078 1084 1076 1079 1069 1052 1060 1061 1070 1047 1073 1058 1093 1089 1084 1111 1121 1121 1147 1143 1131 1138 1120 1129 1118 1131 1114 1119 1104 1101 1092 1089 1084 1084 1072 1070 1058 1056 1056 1053 1056 1064 1052 1061 1072 1063 1078 1073 1102 1102 1122 1130 1153 1140 1142 1134 1111 1109 1116 1109 1115 1096 1102 1083 1098 1080 1077 1070 1062 1063 1061 1054 1056 1058 1051 1036 1062 1062 1087 1058 1093 1096 1100 1118 1125 1146 1144 1134 1130 1122 1116 1115 1123 1103 1105 1101 1091 1093 1070 1073 1066 1056 1058 1065 1048 1044 1046 1049 1051 1060 1071 1064 1075 1082 1091 1109 1119 1136 1150 1156 1136 1127 1124 1112 1113 1110 1120 1104 1090 1092 1079 1081 1084 1071 1072 1059 1062 1069 1045 1052 1042 1056 1052 1064 1079 1067 1080 1097 1106 1121 1123 1150 1151 1135 1134 1129 1117 1122 1119 1105 1099 1102 1088 1083 1080 1080 1068 1072 1048 1058 1055 1051 1045 1047 1045 1051 1073 1063 1075 1082 1104 1097 1147 1136 1169 1132 1147 1125 1127 1115 1109 1099 1114 1091 1080 1078 1081 1068 1071 1069 1057 1063 1053 1056 1045 1063 1047 1043 1050 1065 1061 1086 1081 1101 1107 1111 1129 1132 1138 1130 1114 1115 1113 1101 1103 1099 1081 1075 1074 1073 1083 1067 1046 1054 1042 1055 1055 1045 1048 1036 1049 1053 1049 1062 1076 1082 1089 1099 1117 1128 1142 1141 1115 1112 1104 1101 1094 1083 1082 1074 1069 1063 1052 1048 1063 1048 1048 1054 1044 1039 1037 1036 1039 1044 1050 1055 1051 1055 1082 1085 1093 1111 1124 1109 1148 1119 1120 1088 1099 1102 1089 1094 1077 1071 1060 1064 1050 1059 1072 1045 1042 1035 1056 1035 1045 1031 1041 1048 1048 1051 1072 1072 1069 1094 1111 1127 1133 1123 1130 1112 1108 1095 1096 1081 1083 1068 1074 1052 1060 1069 1058 1047 1040 1039 1058 1047 1038 1048 1043 1045 1056 1048 1049 1075 1084 1100 1090 1106 1121 1131 1140 1110 1124 1093 1094 1095 1081 1080 1074 1074 1068 1057 1065 1068 1053 1049 1055 1038 1043 1048 1042 1053 1039 1046 1048 1064 1061 1079 1082 1110 1113 1120 1144 1126 1123 1098 1109 1097 1076 1078 1072 1064 1065 1042 1058 1068 1052 1051 1050 1039 1042 1037 1042 1038 1039 1040 1050 1051 1057 1075 1077 1084 1091 1106 1134 1138 1127 1115 1108 1093 1087 1080 1075 1067 1065 1055 1051 1061 1056 1047 1044 1042 1045 1039 1033 1029 1057 1043 1040 1046 1044 1057 1057 1088 1083 1093 1103 1106 1133 1116 1109 1090 1093 1090 1073 1076 1065 1063 1043 1038 1034 1036 1043 1053 1040 1032 1030 1035 1029 1036 1026 1033 1033 1047 1050 1061 1067 1085 1090 1100 1128 1104 1121 1108 1099 1093 1090 1083 1077 1058 1048 1046 1053 1070 1048 1041 1050 1048 1030 1040 1034 1043 1036 1030 1044 1043 1039 1049 1071 1069 1084 1097 1088 1118 1115 1117 1117 1113 1087 1080 1076 1059 1063 1055 1049 1059 1037 1060 1043 1041 1033 1049 1033 1027 1048 1039 1036 1033 1048 1052 1038 1067 1067 1077 1094 1118 1110 1120 1102 1114 1108 1103 1080 1088 1071 1055 1061 1049 1045 1058 1051 1048 1051 1048 1038 1044 1048 1045 1038 1049 1044 1055 1053 1049 1071 1063 1093 1089 1100 1117 1137 1127 1117 1112 1092 1089 1081 1070 1062 1066 1039 1042 1036 1045 1055 1035 1052 1052 1047 1045 1038 1039 1052 1050 1031 1057 1059 1067 1073 1084 1093 1106 1123 1131 1111 1107 1103 1090 1074 1075 1063 1060 1051 1044 1053 1044 1044 1042 1033 1047 1039 1040 1055 1035 1045 1033 1036 1052 1052 1064 1057 1090 1078 1096 1103 1116 1124 1104 1119 1093 1094 1065 1069 1048 1061 1049 1031 1048 1025 1035 1038 1040 1024 1046 1048 1034 1032 1033 1051 1036 1050 1042 1063 1055 1081 1074 1098 1103 1116 1136 1132 1098 1092 1079 1086 1065 1051 1057 1047 1052 1039 1042 1024 1042 1031 1047 1044 1047 1040 1035 1038 1040 1042 1064 1056 1049 1048 1073 1081 1091 1112 1104 1116]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="2" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 16]">
+               1280x720_D50_100
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <illumination index="1" type="char" size="[1 3]">
+               D50
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 16]">
+               [38 37 39 39 39 41 42 39 40 42 42 40 40 41 40 41]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 16]">
+               [22 22 23 23 22 22 23 23 22 23 22 23 22 24 23 21]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [1155 1152 1171 1150 1130 1126 1103 1108 1100 1088 1078 1085 1084 1088 1076 1075 1077 1090 1059 1086 1082 1070 1076 1072 1094 1078 1114 1100 1114 1136 1150 1156 1155 1166 1149 1129 1145 1127 1113 1108 1108 1098 1094 1091 1078 1088 1078 1077 1087 1077 1070 1089 1061 1084 1078 1069 1059 1075 1082 1092 1100 1109 1133 1126 1155 1135 1160 1160 1141 1141 1121 1119 1110 1099 1102 1078 1079 1076 1075 1086 1078 1080 1073 1087 1081 1070 1069 1064 1058 1081 1074 1071 1094 1108 1107 1129 1123 1147 1177 1171 1147 1148 1134 1120 1114 1107 1099 1088 1097 1070 1083 1080 1084 1070 1082 1081 1075 1066 1071 1081 1047 1066 1077 1060 1091 1092 1098 1116 1115 1137 1150 1158 1160 1155 1142 1131 1121 1106 1107 1097 1090 1074 1083 1079 1072 1084 1075 1087 1075 1073 1070 1068 1050 1066 1050 1084 1070 1072 1084 1094 1107 1119 1134 1131 1170 1153 1137 1129 1126 1112 1113 1108 1088 1083 1081 1076 1068 1075 1071 1094 1070 1068 1068 1065 1059 1062 1057 1057 1043 1070 1065 1084 1085 1104 1111 1118 1145 1132 1128 1137 1132 1114 1107 1108 1088 1096 1074 1073 1078 1069 1072 1074 1069 1075 1066 1065 1072 1049 1037 1051 1049 1050 1071 1067 1078 1079 1092 1107 1112 1140 1132 1155 1130 1124 1124 1112 1106 1097 1088 1080 1076 1075 1079 1073 1081 1068 1069 1066 1046 1058 1049 1042 1051 1047 1042 1072 1061 1070 1091 1081 1102 1112 1112 1150 1147 1141 1131 1118 1109 1099 1108 1086 1086 1082 1077 1089 1080 1088 1090 1066 1063 1072 1053 1051 1048 1038 1052 1041 1062 1057 1069 1084 1095 1109 1106 1128 1123 1135 1137 1119 1119 1111 1119 1106 1100 1091 1088 1083 1096 1092 1087 1080 1060 1061 1055 1043 1044 1051 1056 1042 1052 1057 1071 1076 1076 1094 1093 1121 1132 1134 1149 1135 1129 1106 1129 1114 1115 1109 1095 1105 1088 1106 1097 1080 1080 1071 1065 1059 1056 1046 1051 1039 1052 1047 1049 1072 1079 1081 1101 1086 1117 1125 1145 1151 1127 1132 1125 1117 1119 1113 1109 1102 1094 1087 1091 1093 1070 1065 1064 1074 1065 1045 1050 1053 1041 1041 1052 1062 1062 1072 1078 1082 1098 1118 1120 1140 1162 1132 1121 1114 1106 1117 1111 1110 1101 1100 1087 1091 1067 1067 1073 1052 1054 1047 1046 1045 1048 1046 1039 1045 1060 1054 1058 1066 1086 1094 1105 1127 1128 1120 1133 1121 1111 1119 1120 1118 1115 1105 1111 1079 1090 1069 1079 1061 1061 1057 1039 1042 1045 1035 1037 1040 1035 1050 1063 1058 1076 1083 1083 1112 1110 1143 1152 1130 1124 1121 1115 1114 1117 1110 1100 1101 1081 1083 1078 1070 1066 1056 1059 1044 1053 1037 1046 1033 1039 1050 1049 1053 1065 1067 1074 1097 1097 1115 1133 1156 1136 1124 1108 1111 1110 1137 1117 1102 1092 1089 1083 1074 1063 1075 1061 1053 1056 1051 1043 1045 1040 1038 1048 1048 1060 1060 1071 1082 1084 1112 1118 1123 1160 1136 1131 1121 1123 1127 1117 1110 1101 1100 1091 1078 1071 1069 1069 1062 1050 1048 1058 1048 1051 1034 1055 1052 1057 1055 1077 1087 1091 1101 1112 1130 1146 1129 1142 1132 1121 1121 1119 1114 1114 1098 1093 1078 1073 1076 1069 1070 1059 1064 1055 1040 1048 1048 1044 1033 1046 1041 1058 1068 1071 1085 1106 1111 1127 1133 1150 1123 1126 1125 1106 1106 1113 1104 1089 1075 1067 1065 1066 1067 1055 1051 1062 1049 1044 1044 1039 1040 1034 1055 1053 1055 1059 1074 1082 1089 1112 1124 1116 1121 1133 1130 1105 1104 1102 1088 1091 1077 1070 1067 1053 1062 1074 1050 1045 1051 1042 1045 1037 1045 1044 1024 1054 1034 1047 1061 1072 1077 1108 1105 1107 1144 1140 1133 1117 1115 1097 1106 1095 1088 1076 1058 1057 1066 1049 1058 1071 1047 1050 1048 1045 1042 1031 1031 1032 1050 1041 1053 1057 1074 1078 1097 1100 1117 1139 1135 1138 1116 1119 1099 1096 1092 1074 1081 1085 1052 1064 1067 1058 1053 1045 1048 1061 1043 1038 1046 1045 1042 1036 1043 1064 1068 1084 1091 1097 1102 1113 1130 1140 1122 1134 1112 1109 1088 1092 1085 1073 1063 1067 1052 1059 1072 1057 1044 1042 1050 1038 1047 1040 1039 1050 1047 1049 1069 1056 1089 1080 1102 1112 1128 1123 1148 1118 1119 1102 1112 1084 1092 1084 1069 1068 1058 1058 1065 1054 1055 1043 1051 1047 1039 1048 1039 1052 1044 1050 1053 1062 1070 1055 1084 1091 1110 1135 1136 1127 1132 1121 1114 1092 1088 1077 1065 1072 1054 1047 1056 1064 1050 1044 1046 1046 1039 1048 1031 1059 1050 1051 1042 1044 1074 1062 1087 1083 1109 1100 1128 1129 1141 1116 1111 1106 1096 1079 1093 1063 1078 1053 1062 1049 1046 1061 1050 1037 1048 1028 1042 1038 1039 1040 1039 1033 1054 1053 1065 1074 1073 1088 1102 1123 1139 1138 1123 1118 1098 1088 1075 1066 1071 1059 1059 1047 1064 1044 1052 1047 1049 1040 1046 1031 1047 1051 1036 1036 1061 1046 1058 1066 1078 1079 1102 1117 1112 1125 1108 1125 1100 1100 1096 1087 1076 1072 1056 1048 1063 1042 1056 1046 1056 1036 1053 1035 1046 1047 1037 1051 1053 1046 1059 1059 1074 1083 1084 1100 1111 1134 1132 1146 1124 1113 1097 1097 1078 1084 1064 1059 1063 1054 1059 1061 1052 1046 1056 1050 1049 1040 1044 1052 1055 1054 1053 1048 1067 1073 1071 1094 1105 1111 1136 1145 1148 1133 1108 1102 1088 1091 1069 1072 1063 1060 1053 1051 1047 1048 1053 1053 1058 1050 1057 1047 1053 1051 1058 1047 1067 1058 1075 1085 1087 1103 1120 1128 1149 1134 1121 1112 1107 1092 1072 1075 1079 1070 1054 1056 1053 1051 1045 1049 1053 1062 1052 1055 1050 1055 1058 1048 1065 1058 1073 1067 1085 1098 1118 1117 1127 1135 1144 1137 1109 1102 1095 1076 1086 1056 1059 1054 1056 1044 1043 1053 1042 1049 1056 1048 1044 1038 1043 1069 1052 1053 1052 1070 1098 1082 1105 1098 1118 1127 1169 1129 1107 1111 1109 1085 1083 1075 1079 1055 1046 1053 1051 1046 1049 1051 1055 1041 1057 1039 1055 1055 1055 1076 1058 1076 1064 1064 1095 1080 1103 1134 1122 1147]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [1170 1167 1163 1139 1131 1137 1124 1099 1108 1086 1084 1092 1068 1087 1080 1088 1088 1077 1085 1077 1080 1081 1077 1088 1075 1097 1109 1099 1127 1129 1141 1148 1164 1179 1160 1162 1135 1135 1121 1113 1104 1098 1093 1088 1084 1087 1091 1084 1084 1082 1072 1077 1087 1073 1087 1074 1078 1088 1079 1098 1105 1111 1136 1139 1169 1164 1167 1157 1144 1151 1130 1124 1105 1091 1091 1093 1075 1088 1082 1082 1075 1082 1073 1083 1070 1066 1067 1066 1071 1072 1073 1081 1095 1103 1119 1124 1135 1159 1157 1168 1162 1149 1143 1129 1129 1106 1105 1084 1101 1080 1071 1090 1080 1086 1083 1078 1076 1083 1077 1078 1063 1066 1080 1071 1083 1097 1111 1115 1135 1147 1141 1175 1168 1156 1143 1134 1138 1116 1103 1098 1089 1082 1083 1078 1085 1086 1078 1082 1080 1065 1071 1065 1070 1059 1067 1082 1083 1082 1096 1106 1103 1120 1138 1153 1163 1166 1136 1134 1128 1113 1109 1108 1091 1078 1084 1073 1070 1064 1072 1075 1071 1069 1062 1058 1049 1058 1058 1061 1058 1069 1071 1082 1098 1113 1109 1134 1137 1151 1136 1157 1122 1112 1115 1105 1085 1099 1085 1074 1069 1075 1071 1073 1062 1071 1068 1055 1064 1053 1045 1056 1047 1058 1058 1075 1079 1081 1103 1100 1124 1128 1157 1139 1150 1127 1123 1110 1114 1093 1086 1078 1071 1070 1077 1059 1080 1073 1064 1058 1059 1041 1039 1045 1049 1046 1052 1068 1063 1065 1088 1102 1105 1115 1131 1147 1156 1146 1117 1125 1114 1103 1106 1083 1078 1072 1072 1082 1076 1083 1076 1058 1055 1066 1051 1043 1049 1050 1040 1053 1063 1062 1075 1072 1096 1108 1121 1141 1149 1135 1139 1131 1131 1114 1107 1108 1096 1092 1082 1080 1084 1089 1077 1062 1064 1067 1054 1047 1050 1043 1037 1052 1045 1065 1073 1075 1089 1092 1100 1118 1128 1150 1148 1149 1125 1116 1125 1108 1106 1098 1084 1096 1088 1088 1075 1079 1068 1061 1058 1049 1053 1043 1057 1039 1052 1056 1056 1067 1083 1087 1100 1101 1136 1131 1142 1145 1128 1135 1108 1115 1113 1100 1098 1093 1083 1073 1081 1090 1065 1060 1058 1056 1050 1049 1046 1045 1044 1048 1047 1057 1054 1073 1074 1095 1103 1116 1126 1138 1145 1123 1129 1122 1110 1108 1103 1110 1090 1099 1071 1084 1060 1067 1055 1046 1050 1042 1042 1040 1037 1041 1031 1046 1049 1056 1063 1080 1085 1099 1103 1131 1149 1135 1129 1121 1107 1109 1107 1104 1090 1088 1079 1073 1067 1062 1049 1061 1053 1056 1046 1043 1041 1035 1038 1030 1043 1054 1056 1068 1069 1081 1096 1108 1120 1124 1150 1142 1126 1112 1105 1103 1111 1102 1086 1090 1072 1075 1077 1067 1040 1061 1037 1048 1033 1048 1041 1032 1039 1047 1047 1060 1067 1063 1089 1091 1111 1125 1147 1144 1133 1112 1113 1102 1116 1111 1097 1094 1092 1078 1053 1066 1054 1066 1061 1050 1047 1046 1034 1041 1038 1043 1052 1041 1065 1064 1073 1079 1103 1110 1123 1132 1160 1129 1128 1119 1121 1114 1120 1105 1091 1089 1080 1070 1063 1066 1054 1052 1051 1048 1062 1042 1047 1039 1051 1048 1048 1057 1073 1080 1083 1114 1113 1130 1149 1149 1140 1125 1118 1109 1116 1105 1104 1093 1074 1081 1058 1062 1063 1061 1040 1049 1044 1049 1038 1033 1043 1029 1042 1047 1058 1054 1081 1086 1095 1109 1123 1134 1156 1125 1121 1119 1106 1099 1094 1076 1092 1069 1061 1063 1058 1055 1041 1048 1042 1046 1040 1033 1033 1038 1034 1044 1040 1059 1053 1071 1086 1096 1125 1122 1127 1118 1134 1116 1100 1100 1098 1086 1087 1070 1061 1061 1048 1041 1055 1054 1040 1036 1051 1034 1036 1028 1030 1024 1041 1045 1051 1064 1066 1083 1092 1105 1124 1132 1143 1126 1120 1111 1099 1092 1089 1076 1078 1055 1054 1047 1052 1056 1051 1039 1038 1038 1034 1034 1024 1034 1035 1045 1038 1044 1059 1078 1088 1092 1118 1119 1128 1133 1134 1115 1121 1090 1094 1084 1075 1067 1067 1050 1056 1058 1044 1054 1033 1045 1047 1038 1042 1051 1033 1041 1037 1046 1063 1065 1084 1088 1092 1108 1126 1136 1140 1119 1126 1107 1099 1089 1088 1076 1079 1055 1067 1058 1070 1052 1053 1046 1045 1043 1035 1035 1035 1044 1030 1044 1044 1071 1059 1082 1087 1106 1111 1123 1128 1140 1136 1118 1113 1098 1092 1072 1071 1057 1057 1054 1055 1050 1043 1060 1039 1042 1043 1038 1049 1038 1036 1046 1042 1053 1051 1073 1071 1086 1109 1106 1126 1140 1129 1132 1123 1113 1098 1087 1078 1062 1067 1052 1052 1047 1058 1039 1047 1040 1037 1046 1033 1031 1050 1047 1032 1055 1048 1064 1064 1085 1082 1103 1104 1119 1152 1145 1116 1108 1098 1093 1087 1068 1076 1065 1048 1040 1044 1046 1039 1045 1031 1033 1032 1035 1035 1043 1029 1045 1038 1050 1053 1062 1075 1070 1081 1109 1131 1124 1133 1122 1110 1096 1083 1080 1070 1071 1052 1055 1046 1064 1036 1046 1050 1037 1039 1044 1039 1043 1042 1035 1045 1035 1049 1063 1063 1076 1084 1092 1113 1123 1138 1131 1131 1117 1106 1097 1079 1078 1056 1066 1057 1057 1048 1063 1050 1047 1054 1040 1036 1036 1037 1046 1037 1043 1045 1059 1055 1074 1077 1100 1097 1114 1132 1140 1137 1130 1118 1106 1096 1087 1080 1068 1059 1058 1055 1058 1063 1044 1049 1051 1043 1041 1048 1042 1043 1045 1052 1057 1056 1059 1070 1089 1096 1101 1120 1127 1143 1143 1137 1113 1109 1098 1088 1072 1069 1072 1062 1049 1060 1047 1060 1043 1060 1066 1052 1054 1047 1058 1049 1057 1055 1059 1065 1087 1081 1095 1110 1118 1128 1155 1135 1125 1122 1095 1095 1090 1082 1067 1066 1058 1057 1054 1051 1039 1049 1045 1058 1047 1050 1041 1053 1047 1045 1057 1057 1067 1078 1082 1107 1105 1118 1124 1155 1120 1134 1105 1109 1091 1080 1070 1066 1065 1054 1050 1046 1045 1047 1038 1056 1038 1057 1043 1055 1041 1060 1043 1060 1057 1073 1069 1090 1098 1116 1130 1136 1154 1133 1113 1116 1106 1083 1088 1073 1069 1052 1046 1054 1049 1050 1052 1046 1059 1032 1050 1053 1027 1048 1059 1062 1067 1061 1068 1081 1089 1102 1109 1120 1140 1144]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [1200 1192 1173 1184 1151 1131 1141 1115 1131 1105 1093 1102 1099 1103 1105 1093 1107 1111 1093 1097 1101 1115 1107 1103 1107 1113 1126 1131 1150 1162 1164 1186 1204 1193 1188 1178 1157 1156 1131 1132 1119 1125 1106 1098 1102 1107 1092 1095 1090 1096 1091 1089 1091 1098 1102 1091 1100 1101 1118 1127 1137 1151 1151 1172 1189 1200 1191 1172 1169 1156 1146 1137 1126 1115 1114 1105 1108 1093 1093 1103 1102 1099 1088 1110 1088 1082 1089 1088 1084 1092 1106 1111 1122 1131 1145 1147 1175 1173 1209 1180 1174 1167 1153 1155 1135 1132 1121 1111 1108 1091 1099 1098 1101 1095 1098 1100 1094 1090 1089 1090 1082 1085 1102 1088 1108 1118 1128 1134 1149 1169 1166 1214 1184 1171 1158 1159 1139 1129 1131 1119 1099 1105 1091 1102 1092 1097 1093 1092 1099 1093 1078 1093 1089 1082 1082 1098 1103 1102 1121 1130 1131 1145 1169 1166 1189 1171 1166 1160 1146 1139 1120 1126 1105 1104 1092 1096 1083 1090 1079 1090 1092 1085 1081 1074 1066 1079 1066 1071 1079 1090 1092 1099 1117 1137 1128 1146 1169 1182 1178 1156 1146 1126 1135 1116 1108 1112 1101 1089 1084 1087 1071 1088 1076 1076 1076 1061 1075 1071 1067 1059 1067 1063 1097 1089 1100 1107 1116 1143 1151 1152 1178 1152 1163 1144 1143 1124 1119 1114 1108 1085 1083 1096 1088 1077 1092 1082 1076 1076 1068 1060 1059 1062 1068 1060 1069 1087 1077 1094 1099 1118 1124 1135 1162 1160 1181 1149 1147 1129 1125 1109 1124 1101 1094 1078 1081 1087 1094 1087 1089 1071 1074 1077 1063 1056 1067 1059 1063 1065 1088 1082 1094 1104 1109 1131 1139 1152 1171 1148 1149 1141 1137 1131 1127 1106 1105 1089 1103 1085 1094 1086 1076 1078 1074 1073 1071 1058 1075 1051 1062 1066 1065 1077 1093 1081 1103 1119 1123 1135 1155 1162 1152 1156 1143 1134 1130 1124 1111 1115 1102 1106 1096 1088 1097 1089 1071 1079 1075 1071 1062 1058 1062 1065 1057 1073 1071 1080 1100 1099 1113 1117 1140 1147 1171 1162 1150 1136 1130 1115 1113 1120 1109 1111 1097 1084 1100 1087 1083 1076 1072 1068 1056 1059 1059 1057 1057 1050 1063 1073 1076 1093 1083 1113 1124 1123 1154 1162 1152 1142 1137 1135 1114 1114 1114 1113 1097 1105 1089 1078 1078 1071 1061 1063 1056 1063 1051 1050 1051 1049 1056 1062 1067 1068 1089 1089 1095 1112 1131 1139 1156 1146 1130 1137 1119 1119 1115 1111 1108 1083 1097 1081 1084 1064 1069 1072 1056 1053 1047 1053 1049 1053 1045 1044 1053 1070 1071 1065 1085 1094 1119 1116 1144 1156 1148 1153 1133 1124 1124 1100 1130 1109 1095 1094 1082 1087 1065 1058 1054 1066 1062 1058 1046 1052 1043 1047 1049 1055 1068 1061 1087 1085 1104 1102 1125 1135 1143 1148 1147 1123 1129 1120 1112 1119 1112 1092 1097 1081 1071 1076 1077 1061 1058 1054 1044 1054 1050 1049 1057 1054 1059 1054 1078 1074 1081 1098 1111 1118 1140 1152 1162 1139 1130 1122 1118 1118 1116 1115 1097 1090 1086 1076 1079 1078 1061 1068 1046 1063 1059 1052 1052 1048 1052 1052 1068 1068 1085 1090 1096 1127 1126 1140 1154 1143 1140 1135 1109 1124 1116 1110 1098 1090 1087 1082 1068 1071 1064 1060 1049 1051 1058 1053 1043 1048 1043 1048 1046 1055 1069 1074 1079 1115 1102 1137 1134 1152 1152 1142 1118 1117 1111 1098 1097 1093 1082 1070 1064 1072 1071 1068 1049 1051 1049 1051 1044 1041 1038 1039 1037 1047 1056 1066 1064 1088 1087 1106 1130 1125 1143 1143 1133 1129 1108 1107 1094 1083 1086 1076 1073 1064 1048 1045 1054 1057 1043 1047 1046 1045 1052 1027 1039 1041 1046 1050 1062 1072 1081 1099 1100 1130 1132 1140 1149 1130 1119 1104 1096 1095 1078 1085 1084 1055 1053 1058 1055 1056 1048 1041 1038 1040 1035 1034 1035 1037 1034 1044 1042 1060 1069 1072 1085 1105 1117 1131 1142 1142 1132 1124 1109 1098 1103 1094 1073 1064 1069 1063 1050 1066 1044 1057 1041 1045 1048 1043 1042 1042 1039 1032 1056 1048 1068 1069 1085 1092 1110 1120 1129 1148 1131 1130 1127 1117 1104 1089 1092 1080 1074 1058 1053 1069 1060 1051 1057 1046 1038 1051 1032 1035 1042 1041 1050 1047 1049 1066 1070 1084 1100 1109 1127 1144 1145 1137 1128 1113 1118 1097 1086 1084 1076 1072 1059 1055 1045 1057 1049 1044 1047 1039 1037 1042 1045 1052 1043 1045 1059 1049 1058 1071 1074 1091 1104 1123 1130 1153 1137 1132 1114 1100 1093 1081 1081 1060 1062 1050 1042 1058 1052 1043 1051 1032 1046 1029 1029 1028 1051 1046 1043 1046 1056 1062 1073 1089 1094 1097 1106 1127 1150 1122 1126 1109 1108 1088 1078 1067 1063 1058 1051 1044 1038 1038 1046 1033 1046 1024 1040 1041 1027 1045 1029 1040 1042 1043 1067 1057 1080 1073 1089 1110 1130 1129 1142 1116 1096 1110 1086 1079 1069 1065 1048 1051 1048 1059 1041 1046 1049 1035 1045 1031 1035 1035 1044 1034 1046 1042 1052 1059 1077 1078 1094 1102 1115 1130 1132 1104 1124 1114 1096 1093 1072 1069 1053 1062 1055 1053 1037 1063 1043 1038 1045 1038 1039 1031 1044 1033 1055 1041 1046 1066 1049 1071 1084 1090 1103 1114 1139 1159 1149 1118 1116 1099 1087 1091 1071 1068 1052 1061 1047 1052 1056 1047 1039 1044 1037 1046 1044 1044 1039 1049 1044 1051 1051 1061 1073 1077 1095 1102 1125 1136 1135 1134 1132 1104 1092 1095 1076 1070 1070 1066 1050 1053 1057 1047 1050 1043 1050 1054 1046 1058 1038 1046 1048 1048 1052 1060 1068 1075 1080 1095 1109 1120 1131 1147 1154 1117 1112 1095 1085 1081 1073 1049 1063 1043 1044 1036 1035 1043 1038 1043 1052 1035 1045 1043 1041 1048 1049 1059 1054 1066 1065 1091 1085 1098 1122 1131 1156 1117 1127 1097 1092 1091 1073 1066 1067 1049 1043 1047 1041 1039 1043 1039 1042 1039 1047 1041 1041 1039 1056 1049 1045 1056 1060 1077 1090 1092 1094 1118 1126 1156 1123 1117 1108 1104 1068 1076 1067 1054 1050 1048 1044 1037 1038 1034 1030 1042 1047 1037 1037 1040 1042 1042 1064 1067 1063 1055 1088 1072 1091 1099 1124 1124 1157]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [1194 1189 1184 1160 1168 1133 1138 1130 1139 1118 1107 1125 1094 1113 1108 1110 1104 1095 1098 1113 1101 1091 1106 1106 1114 1131 1125 1134 1136 1176 1154 1182 1180 1196 1166 1173 1163 1152 1146 1141 1117 1129 1129 1121 1107 1115 1105 1109 1115 1108 1110 1103 1105 1106 1104 1091 1098 1107 1107 1125 1125 1146 1159 1169 1187 1194 1174 1178 1160 1156 1150 1140 1131 1130 1116 1110 1109 1110 1108 1114 1108 1104 1086 1103 1090 1099 1091 1087 1092 1092 1104 1107 1120 1134 1137 1146 1171 1172 1193 1186 1172 1160 1161 1151 1145 1140 1131 1124 1120 1108 1106 1102 1096 1110 1106 1113 1103 1104 1094 1095 1084 1094 1093 1095 1121 1121 1128 1150 1153 1166 1178 1194 1190 1164 1158 1142 1141 1141 1121 1114 1110 1114 1092 1105 1103 1099 1111 1094 1108 1105 1089 1085 1093 1081 1090 1095 1100 1096 1112 1117 1126 1156 1168 1156 1190 1162 1162 1146 1146 1136 1133 1126 1120 1106 1089 1098 1095 1097 1102 1098 1089 1077 1092 1090 1071 1083 1080 1074 1072 1099 1089 1098 1119 1128 1134 1142 1177 1171 1169 1156 1149 1131 1132 1115 1110 1111 1103 1097 1094 1085 1079 1097 1092 1083 1088 1076 1069 1069 1078 1064 1072 1077 1080 1106 1099 1108 1118 1129 1153 1154 1165 1160 1156 1144 1132 1127 1119 1112 1098 1098 1102 1089 1100 1100 1081 1100 1084 1084 1070 1067 1067 1070 1064 1070 1070 1090 1080 1091 1108 1111 1137 1125 1137 1155 1154 1155 1142 1127 1130 1113 1118 1109 1102 1083 1092 1103 1093 1096 1084 1069 1081 1087 1070 1058 1071 1071 1060 1066 1080 1087 1101 1100 1111 1115 1122 1147 1169 1160 1139 1135 1137 1126 1124 1117 1113 1106 1101 1095 1103 1097 1097 1088 1077 1077 1070 1063 1056 1067 1067 1065 1070 1087 1101 1089 1096 1117 1130 1130 1154 1139 1159 1151 1145 1128 1125 1125 1116 1112 1110 1092 1100 1101 1103 1089 1091 1078 1082 1075 1075 1058 1063 1058 1069 1071 1074 1094 1084 1110 1109 1106 1142 1154 1158 1148 1145 1146 1131 1131 1124 1127 1112 1102 1097 1099 1094 1086 1078 1084 1076 1079 1069 1052 1060 1061 1070 1047 1073 1058 1093 1089 1084 1111 1121 1121 1147 1143 1131 1138 1120 1129 1118 1131 1114 1119 1104 1101 1092 1089 1084 1084 1072 1070 1058 1056 1056 1053 1056 1064 1052 1061 1072 1063 1078 1073 1102 1102 1122 1130 1153 1140 1142 1134 1111 1109 1116 1109 1115 1096 1102 1083 1098 1080 1077 1070 1062 1063 1061 1054 1056 1058 1051 1036 1062 1062 1087 1058 1093 1096 1100 1118 1125 1146 1144 1134 1130 1122 1116 1115 1123 1103 1105 1101 1091 1093 1070 1073 1066 1056 1058 1065 1048 1044 1046 1049 1051 1060 1071 1064 1075 1082 1091 1109 1119 1136 1150 1156 1136 1127 1124 1112 1113 1110 1120 1104 1090 1092 1079 1081 1084 1071 1072 1059 1062 1069 1045 1052 1042 1056 1052 1064 1079 1067 1080 1097 1106 1121 1123 1150 1151 1135 1134 1129 1117 1122 1119 1105 1099 1102 1088 1083 1080 1080 1068 1072 1048 1058 1055 1051 1045 1047 1045 1051 1073 1063 1075 1082 1104 1097 1147 1136 1169 1132 1147 1125 1127 1115 1109 1099 1114 1091 1080 1078 1081 1068 1071 1069 1057 1063 1053 1056 1045 1063 1047 1043 1050 1065 1061 1086 1081 1101 1107 1111 1129 1132 1138 1130 1114 1115 1113 1101 1103 1099 1081 1075 1074 1073 1083 1067 1046 1054 1042 1055 1055 1045 1048 1036 1049 1053 1049 1062 1076 1082 1089 1099 1117 1128 1142 1141 1115 1112 1104 1101 1094 1083 1082 1074 1069 1063 1052 1048 1063 1048 1048 1054 1044 1039 1037 1036 1039 1044 1050 1055 1051 1055 1082 1085 1093 1111 1124 1109 1148 1119 1120 1088 1099 1102 1089 1094 1077 1071 1060 1064 1050 1059 1072 1045 1042 1035 1056 1035 1045 1031 1041 1048 1048 1051 1072 1072 1069 1094 1111 1127 1133 1123 1130 1112 1108 1095 1096 1081 1083 1068 1074 1052 1060 1069 1058 1047 1040 1039 1058 1047 1038 1048 1043 1045 1056 1048 1049 1075 1084 1100 1090 1106 1121 1131 1140 1110 1124 1093 1094 1095 1081 1080 1074 1074 1068 1057 1065 1068 1053 1049 1055 1038 1043 1048 1042 1053 1039 1046 1048 1064 1061 1079 1082 1110 1113 1120 1144 1126 1123 1098 1109 1097 1076 1078 1072 1064 1065 1042 1058 1068 1052 1051 1050 1039 1042 1037 1042 1038 1039 1040 1050 1051 1057 1075 1077 1084 1091 1106 1134 1138 1127 1115 1108 1093 1087 1080 1075 1067 1065 1055 1051 1061 1056 1047 1044 1042 1045 1039 1033 1029 1057 1043 1040 1046 1044 1057 1057 1088 1083 1093 1103 1106 1133 1116 1109 1090 1093 1090 1073 1076 1065 1063 1043 1038 1034 1036 1043 1053 1040 1032 1030 1035 1029 1036 1026 1033 1033 1047 1050 1061 1067 1085 1090 1100 1128 1104 1121 1108 1099 1093 1090 1083 1077 1058 1048 1046 1053 1070 1048 1041 1050 1048 1030 1040 1034 1043 1036 1030 1044 1043 1039 1049 1071 1069 1084 1097 1088 1118 1115 1117 1117 1113 1087 1080 1076 1059 1063 1055 1049 1059 1037 1060 1043 1041 1033 1049 1033 1027 1048 1039 1036 1033 1048 1052 1038 1067 1067 1077 1094 1118 1110 1120 1102 1114 1108 1103 1080 1088 1071 1055 1061 1049 1045 1058 1051 1048 1051 1048 1038 1044 1048 1045 1038 1049 1044 1055 1053 1049 1071 1063 1093 1089 1100 1117 1137 1127 1117 1112 1092 1089 1081 1070 1062 1066 1039 1042 1036 1045 1055 1035 1052 1052 1047 1045 1038 1039 1052 1050 1031 1057 1059 1067 1073 1084 1093 1106 1123 1131 1111 1107 1103 1090 1074 1075 1063 1060 1051 1044 1053 1044 1044 1042 1033 1047 1039 1040 1055 1035 1045 1033 1036 1052 1052 1064 1057 1090 1078 1096 1103 1116 1124 1104 1119 1093 1094 1065 1069 1048 1061 1049 1031 1048 1025 1035 1038 1040 1024 1046 1048 1034 1032 1033 1051 1036 1050 1042 1063 1055 1081 1074 1098 1103 1116 1136 1132 1098 1092 1079 1086 1065 1051 1057 1047 1052 1039 1042 1024 1042 1031 1047 1044 1047 1040 1035 1038 1040 1042 1064 1056 1049 1048 1073 1081 1091 1112 1104 1116]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="3" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 16]">
+               1280x720_D65_100
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <illumination index="1" type="char" size="[1 3]">
+               D65
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 16]">
+               [38 37 39 39 39 41 42 39 40 42 42 40 40 41 40 41]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 16]">
+               [22 22 23 23 22 22 23 23 22 23 22 23 22 24 23 21]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [1155 1152 1171 1150 1130 1126 1103 1108 1100 1088 1078 1085 1084 1088 1076 1075 1077 1090 1059 1086 1082 1070 1076 1072 1094 1078 1114 1100 1114 1136 1150 1156 1155 1166 1149 1129 1145 1127 1113 1108 1108 1098 1094 1091 1078 1088 1078 1077 1087 1077 1070 1089 1061 1084 1078 1069 1059 1075 1082 1092 1100 1109 1133 1126 1155 1135 1160 1160 1141 1141 1121 1119 1110 1099 1102 1078 1079 1076 1075 1086 1078 1080 1073 1087 1081 1070 1069 1064 1058 1081 1074 1071 1094 1108 1107 1129 1123 1147 1177 1171 1147 1148 1134 1120 1114 1107 1099 1088 1097 1070 1083 1080 1084 1070 1082 1081 1075 1066 1071 1081 1047 1066 1077 1060 1091 1092 1098 1116 1115 1137 1150 1158 1160 1155 1142 1131 1121 1106 1107 1097 1090 1074 1083 1079 1072 1084 1075 1087 1075 1073 1070 1068 1050 1066 1050 1084 1070 1072 1084 1094 1107 1119 1134 1131 1170 1153 1137 1129 1126 1112 1113 1108 1088 1083 1081 1076 1068 1075 1071 1094 1070 1068 1068 1065 1059 1062 1057 1057 1043 1070 1065 1084 1085 1104 1111 1118 1145 1132 1128 1137 1132 1114 1107 1108 1088 1096 1074 1073 1078 1069 1072 1074 1069 1075 1066 1065 1072 1049 1037 1051 1049 1050 1071 1067 1078 1079 1092 1107 1112 1140 1132 1155 1130 1124 1124 1112 1106 1097 1088 1080 1076 1075 1079 1073 1081 1068 1069 1066 1046 1058 1049 1042 1051 1047 1042 1072 1061 1070 1091 1081 1102 1112 1112 1150 1147 1141 1131 1118 1109 1099 1108 1086 1086 1082 1077 1089 1080 1088 1090 1066 1063 1072 1053 1051 1048 1038 1052 1041 1062 1057 1069 1084 1095 1109 1106 1128 1123 1135 1137 1119 1119 1111 1119 1106 1100 1091 1088 1083 1096 1092 1087 1080 1060 1061 1055 1043 1044 1051 1056 1042 1052 1057 1071 1076 1076 1094 1093 1121 1132 1134 1149 1135 1129 1106 1129 1114 1115 1109 1095 1105 1088 1106 1097 1080 1080 1071 1065 1059 1056 1046 1051 1039 1052 1047 1049 1072 1079 1081 1101 1086 1117 1125 1145 1151 1127 1132 1125 1117 1119 1113 1109 1102 1094 1087 1091 1093 1070 1065 1064 1074 1065 1045 1050 1053 1041 1041 1052 1062 1062 1072 1078 1082 1098 1118 1120 1140 1162 1132 1121 1114 1106 1117 1111 1110 1101 1100 1087 1091 1067 1067 1073 1052 1054 1047 1046 1045 1048 1046 1039 1045 1060 1054 1058 1066 1086 1094 1105 1127 1128 1120 1133 1121 1111 1119 1120 1118 1115 1105 1111 1079 1090 1069 1079 1061 1061 1057 1039 1042 1045 1035 1037 1040 1035 1050 1063 1058 1076 1083 1083 1112 1110 1143 1152 1130 1124 1121 1115 1114 1117 1110 1100 1101 1081 1083 1078 1070 1066 1056 1059 1044 1053 1037 1046 1033 1039 1050 1049 1053 1065 1067 1074 1097 1097 1115 1133 1156 1136 1124 1108 1111 1110 1137 1117 1102 1092 1089 1083 1074 1063 1075 1061 1053 1056 1051 1043 1045 1040 1038 1048 1048 1060 1060 1071 1082 1084 1112 1118 1123 1160 1136 1131 1121 1123 1127 1117 1110 1101 1100 1091 1078 1071 1069 1069 1062 1050 1048 1058 1048 1051 1034 1055 1052 1057 1055 1077 1087 1091 1101 1112 1130 1146 1129 1142 1132 1121 1121 1119 1114 1114 1098 1093 1078 1073 1076 1069 1070 1059 1064 1055 1040 1048 1048 1044 1033 1046 1041 1058 1068 1071 1085 1106 1111 1127 1133 1150 1123 1126 1125 1106 1106 1113 1104 1089 1075 1067 1065 1066 1067 1055 1051 1062 1049 1044 1044 1039 1040 1034 1055 1053 1055 1059 1074 1082 1089 1112 1124 1116 1121 1133 1130 1105 1104 1102 1088 1091 1077 1070 1067 1053 1062 1074 1050 1045 1051 1042 1045 1037 1045 1044 1024 1054 1034 1047 1061 1072 1077 1108 1105 1107 1144 1140 1133 1117 1115 1097 1106 1095 1088 1076 1058 1057 1066 1049 1058 1071 1047 1050 1048 1045 1042 1031 1031 1032 1050 1041 1053 1057 1074 1078 1097 1100 1117 1139 1135 1138 1116 1119 1099 1096 1092 1074 1081 1085 1052 1064 1067 1058 1053 1045 1048 1061 1043 1038 1046 1045 1042 1036 1043 1064 1068 1084 1091 1097 1102 1113 1130 1140 1122 1134 1112 1109 1088 1092 1085 1073 1063 1067 1052 1059 1072 1057 1044 1042 1050 1038 1047 1040 1039 1050 1047 1049 1069 1056 1089 1080 1102 1112 1128 1123 1148 1118 1119 1102 1112 1084 1092 1084 1069 1068 1058 1058 1065 1054 1055 1043 1051 1047 1039 1048 1039 1052 1044 1050 1053 1062 1070 1055 1084 1091 1110 1135 1136 1127 1132 1121 1114 1092 1088 1077 1065 1072 1054 1047 1056 1064 1050 1044 1046 1046 1039 1048 1031 1059 1050 1051 1042 1044 1074 1062 1087 1083 1109 1100 1128 1129 1141 1116 1111 1106 1096 1079 1093 1063 1078 1053 1062 1049 1046 1061 1050 1037 1048 1028 1042 1038 1039 1040 1039 1033 1054 1053 1065 1074 1073 1088 1102 1123 1139 1138 1123 1118 1098 1088 1075 1066 1071 1059 1059 1047 1064 1044 1052 1047 1049 1040 1046 1031 1047 1051 1036 1036 1061 1046 1058 1066 1078 1079 1102 1117 1112 1125 1108 1125 1100 1100 1096 1087 1076 1072 1056 1048 1063 1042 1056 1046 1056 1036 1053 1035 1046 1047 1037 1051 1053 1046 1059 1059 1074 1083 1084 1100 1111 1134 1132 1146 1124 1113 1097 1097 1078 1084 1064 1059 1063 1054 1059 1061 1052 1046 1056 1050 1049 1040 1044 1052 1055 1054 1053 1048 1067 1073 1071 1094 1105 1111 1136 1145 1148 1133 1108 1102 1088 1091 1069 1072 1063 1060 1053 1051 1047 1048 1053 1053 1058 1050 1057 1047 1053 1051 1058 1047 1067 1058 1075 1085 1087 1103 1120 1128 1149 1134 1121 1112 1107 1092 1072 1075 1079 1070 1054 1056 1053 1051 1045 1049 1053 1062 1052 1055 1050 1055 1058 1048 1065 1058 1073 1067 1085 1098 1118 1117 1127 1135 1144 1137 1109 1102 1095 1076 1086 1056 1059 1054 1056 1044 1043 1053 1042 1049 1056 1048 1044 1038 1043 1069 1052 1053 1052 1070 1098 1082 1105 1098 1118 1127 1169 1129 1107 1111 1109 1085 1083 1075 1079 1055 1046 1053 1051 1046 1049 1051 1055 1041 1057 1039 1055 1055 1055 1076 1058 1076 1064 1064 1095 1080 1103 1134 1122 1147]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [1170 1167 1163 1139 1131 1137 1124 1099 1108 1086 1084 1092 1068 1087 1080 1088 1088 1077 1085 1077 1080 1081 1077 1088 1075 1097 1109 1099 1127 1129 1141 1148 1164 1179 1160 1162 1135 1135 1121 1113 1104 1098 1093 1088 1084 1087 1091 1084 1084 1082 1072 1077 1087 1073 1087 1074 1078 1088 1079 1098 1105 1111 1136 1139 1169 1164 1167 1157 1144 1151 1130 1124 1105 1091 1091 1093 1075 1088 1082 1082 1075 1082 1073 1083 1070 1066 1067 1066 1071 1072 1073 1081 1095 1103 1119 1124 1135 1159 1157 1168 1162 1149 1143 1129 1129 1106 1105 1084 1101 1080 1071 1090 1080 1086 1083 1078 1076 1083 1077 1078 1063 1066 1080 1071 1083 1097 1111 1115 1135 1147 1141 1175 1168 1156 1143 1134 1138 1116 1103 1098 1089 1082 1083 1078 1085 1086 1078 1082 1080 1065 1071 1065 1070 1059 1067 1082 1083 1082 1096 1106 1103 1120 1138 1153 1163 1166 1136 1134 1128 1113 1109 1108 1091 1078 1084 1073 1070 1064 1072 1075 1071 1069 1062 1058 1049 1058 1058 1061 1058 1069 1071 1082 1098 1113 1109 1134 1137 1151 1136 1157 1122 1112 1115 1105 1085 1099 1085 1074 1069 1075 1071 1073 1062 1071 1068 1055 1064 1053 1045 1056 1047 1058 1058 1075 1079 1081 1103 1100 1124 1128 1157 1139 1150 1127 1123 1110 1114 1093 1086 1078 1071 1070 1077 1059 1080 1073 1064 1058 1059 1041 1039 1045 1049 1046 1052 1068 1063 1065 1088 1102 1105 1115 1131 1147 1156 1146 1117 1125 1114 1103 1106 1083 1078 1072 1072 1082 1076 1083 1076 1058 1055 1066 1051 1043 1049 1050 1040 1053 1063 1062 1075 1072 1096 1108 1121 1141 1149 1135 1139 1131 1131 1114 1107 1108 1096 1092 1082 1080 1084 1089 1077 1062 1064 1067 1054 1047 1050 1043 1037 1052 1045 1065 1073 1075 1089 1092 1100 1118 1128 1150 1148 1149 1125 1116 1125 1108 1106 1098 1084 1096 1088 1088 1075 1079 1068 1061 1058 1049 1053 1043 1057 1039 1052 1056 1056 1067 1083 1087 1100 1101 1136 1131 1142 1145 1128 1135 1108 1115 1113 1100 1098 1093 1083 1073 1081 1090 1065 1060 1058 1056 1050 1049 1046 1045 1044 1048 1047 1057 1054 1073 1074 1095 1103 1116 1126 1138 1145 1123 1129 1122 1110 1108 1103 1110 1090 1099 1071 1084 1060 1067 1055 1046 1050 1042 1042 1040 1037 1041 1031 1046 1049 1056 1063 1080 1085 1099 1103 1131 1149 1135 1129 1121 1107 1109 1107 1104 1090 1088 1079 1073 1067 1062 1049 1061 1053 1056 1046 1043 1041 1035 1038 1030 1043 1054 1056 1068 1069 1081 1096 1108 1120 1124 1150 1142 1126 1112 1105 1103 1111 1102 1086 1090 1072 1075 1077 1067 1040 1061 1037 1048 1033 1048 1041 1032 1039 1047 1047 1060 1067 1063 1089 1091 1111 1125 1147 1144 1133 1112 1113 1102 1116 1111 1097 1094 1092 1078 1053 1066 1054 1066 1061 1050 1047 1046 1034 1041 1038 1043 1052 1041 1065 1064 1073 1079 1103 1110 1123 1132 1160 1129 1128 1119 1121 1114 1120 1105 1091 1089 1080 1070 1063 1066 1054 1052 1051 1048 1062 1042 1047 1039 1051 1048 1048 1057 1073 1080 1083 1114 1113 1130 1149 1149 1140 1125 1118 1109 1116 1105 1104 1093 1074 1081 1058 1062 1063 1061 1040 1049 1044 1049 1038 1033 1043 1029 1042 1047 1058 1054 1081 1086 1095 1109 1123 1134 1156 1125 1121 1119 1106 1099 1094 1076 1092 1069 1061 1063 1058 1055 1041 1048 1042 1046 1040 1033 1033 1038 1034 1044 1040 1059 1053 1071 1086 1096 1125 1122 1127 1118 1134 1116 1100 1100 1098 1086 1087 1070 1061 1061 1048 1041 1055 1054 1040 1036 1051 1034 1036 1028 1030 1024 1041 1045 1051 1064 1066 1083 1092 1105 1124 1132 1143 1126 1120 1111 1099 1092 1089 1076 1078 1055 1054 1047 1052 1056 1051 1039 1038 1038 1034 1034 1024 1034 1035 1045 1038 1044 1059 1078 1088 1092 1118 1119 1128 1133 1134 1115 1121 1090 1094 1084 1075 1067 1067 1050 1056 1058 1044 1054 1033 1045 1047 1038 1042 1051 1033 1041 1037 1046 1063 1065 1084 1088 1092 1108 1126 1136 1140 1119 1126 1107 1099 1089 1088 1076 1079 1055 1067 1058 1070 1052 1053 1046 1045 1043 1035 1035 1035 1044 1030 1044 1044 1071 1059 1082 1087 1106 1111 1123 1128 1140 1136 1118 1113 1098 1092 1072 1071 1057 1057 1054 1055 1050 1043 1060 1039 1042 1043 1038 1049 1038 1036 1046 1042 1053 1051 1073 1071 1086 1109 1106 1126 1140 1129 1132 1123 1113 1098 1087 1078 1062 1067 1052 1052 1047 1058 1039 1047 1040 1037 1046 1033 1031 1050 1047 1032 1055 1048 1064 1064 1085 1082 1103 1104 1119 1152 1145 1116 1108 1098 1093 1087 1068 1076 1065 1048 1040 1044 1046 1039 1045 1031 1033 1032 1035 1035 1043 1029 1045 1038 1050 1053 1062 1075 1070 1081 1109 1131 1124 1133 1122 1110 1096 1083 1080 1070 1071 1052 1055 1046 1064 1036 1046 1050 1037 1039 1044 1039 1043 1042 1035 1045 1035 1049 1063 1063 1076 1084 1092 1113 1123 1138 1131 1131 1117 1106 1097 1079 1078 1056 1066 1057 1057 1048 1063 1050 1047 1054 1040 1036 1036 1037 1046 1037 1043 1045 1059 1055 1074 1077 1100 1097 1114 1132 1140 1137 1130 1118 1106 1096 1087 1080 1068 1059 1058 1055 1058 1063 1044 1049 1051 1043 1041 1048 1042 1043 1045 1052 1057 1056 1059 1070 1089 1096 1101 1120 1127 1143 1143 1137 1113 1109 1098 1088 1072 1069 1072 1062 1049 1060 1047 1060 1043 1060 1066 1052 1054 1047 1058 1049 1057 1055 1059 1065 1087 1081 1095 1110 1118 1128 1155 1135 1125 1122 1095 1095 1090 1082 1067 1066 1058 1057 1054 1051 1039 1049 1045 1058 1047 1050 1041 1053 1047 1045 1057 1057 1067 1078 1082 1107 1105 1118 1124 1155 1120 1134 1105 1109 1091 1080 1070 1066 1065 1054 1050 1046 1045 1047 1038 1056 1038 1057 1043 1055 1041 1060 1043 1060 1057 1073 1069 1090 1098 1116 1130 1136 1154 1133 1113 1116 1106 1083 1088 1073 1069 1052 1046 1054 1049 1050 1052 1046 1059 1032 1050 1053 1027 1048 1059 1062 1067 1061 1068 1081 1089 1102 1109 1120 1140 1144]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [1200 1192 1173 1184 1151 1131 1141 1115 1131 1105 1093 1102 1099 1103 1105 1093 1107 1111 1093 1097 1101 1115 1107 1103 1107 1113 1126 1131 1150 1162 1164 1186 1204 1193 1188 1178 1157 1156 1131 1132 1119 1125 1106 1098 1102 1107 1092 1095 1090 1096 1091 1089 1091 1098 1102 1091 1100 1101 1118 1127 1137 1151 1151 1172 1189 1200 1191 1172 1169 1156 1146 1137 1126 1115 1114 1105 1108 1093 1093 1103 1102 1099 1088 1110 1088 1082 1089 1088 1084 1092 1106 1111 1122 1131 1145 1147 1175 1173 1209 1180 1174 1167 1153 1155 1135 1132 1121 1111 1108 1091 1099 1098 1101 1095 1098 1100 1094 1090 1089 1090 1082 1085 1102 1088 1108 1118 1128 1134 1149 1169 1166 1214 1184 1171 1158 1159 1139 1129 1131 1119 1099 1105 1091 1102 1092 1097 1093 1092 1099 1093 1078 1093 1089 1082 1082 1098 1103 1102 1121 1130 1131 1145 1169 1166 1189 1171 1166 1160 1146 1139 1120 1126 1105 1104 1092 1096 1083 1090 1079 1090 1092 1085 1081 1074 1066 1079 1066 1071 1079 1090 1092 1099 1117 1137 1128 1146 1169 1182 1178 1156 1146 1126 1135 1116 1108 1112 1101 1089 1084 1087 1071 1088 1076 1076 1076 1061 1075 1071 1067 1059 1067 1063 1097 1089 1100 1107 1116 1143 1151 1152 1178 1152 1163 1144 1143 1124 1119 1114 1108 1085 1083 1096 1088 1077 1092 1082 1076 1076 1068 1060 1059 1062 1068 1060 1069 1087 1077 1094 1099 1118 1124 1135 1162 1160 1181 1149 1147 1129 1125 1109 1124 1101 1094 1078 1081 1087 1094 1087 1089 1071 1074 1077 1063 1056 1067 1059 1063 1065 1088 1082 1094 1104 1109 1131 1139 1152 1171 1148 1149 1141 1137 1131 1127 1106 1105 1089 1103 1085 1094 1086 1076 1078 1074 1073 1071 1058 1075 1051 1062 1066 1065 1077 1093 1081 1103 1119 1123 1135 1155 1162 1152 1156 1143 1134 1130 1124 1111 1115 1102 1106 1096 1088 1097 1089 1071 1079 1075 1071 1062 1058 1062 1065 1057 1073 1071 1080 1100 1099 1113 1117 1140 1147 1171 1162 1150 1136 1130 1115 1113 1120 1109 1111 1097 1084 1100 1087 1083 1076 1072 1068 1056 1059 1059 1057 1057 1050 1063 1073 1076 1093 1083 1113 1124 1123 1154 1162 1152 1142 1137 1135 1114 1114 1114 1113 1097 1105 1089 1078 1078 1071 1061 1063 1056 1063 1051 1050 1051 1049 1056 1062 1067 1068 1089 1089 1095 1112 1131 1139 1156 1146 1130 1137 1119 1119 1115 1111 1108 1083 1097 1081 1084 1064 1069 1072 1056 1053 1047 1053 1049 1053 1045 1044 1053 1070 1071 1065 1085 1094 1119 1116 1144 1156 1148 1153 1133 1124 1124 1100 1130 1109 1095 1094 1082 1087 1065 1058 1054 1066 1062 1058 1046 1052 1043 1047 1049 1055 1068 1061 1087 1085 1104 1102 1125 1135 1143 1148 1147 1123 1129 1120 1112 1119 1112 1092 1097 1081 1071 1076 1077 1061 1058 1054 1044 1054 1050 1049 1057 1054 1059 1054 1078 1074 1081 1098 1111 1118 1140 1152 1162 1139 1130 1122 1118 1118 1116 1115 1097 1090 1086 1076 1079 1078 1061 1068 1046 1063 1059 1052 1052 1048 1052 1052 1068 1068 1085 1090 1096 1127 1126 1140 1154 1143 1140 1135 1109 1124 1116 1110 1098 1090 1087 1082 1068 1071 1064 1060 1049 1051 1058 1053 1043 1048 1043 1048 1046 1055 1069 1074 1079 1115 1102 1137 1134 1152 1152 1142 1118 1117 1111 1098 1097 1093 1082 1070 1064 1072 1071 1068 1049 1051 1049 1051 1044 1041 1038 1039 1037 1047 1056 1066 1064 1088 1087 1106 1130 1125 1143 1143 1133 1129 1108 1107 1094 1083 1086 1076 1073 1064 1048 1045 1054 1057 1043 1047 1046 1045 1052 1027 1039 1041 1046 1050 1062 1072 1081 1099 1100 1130 1132 1140 1149 1130 1119 1104 1096 1095 1078 1085 1084 1055 1053 1058 1055 1056 1048 1041 1038 1040 1035 1034 1035 1037 1034 1044 1042 1060 1069 1072 1085 1105 1117 1131 1142 1142 1132 1124 1109 1098 1103 1094 1073 1064 1069 1063 1050 1066 1044 1057 1041 1045 1048 1043 1042 1042 1039 1032 1056 1048 1068 1069 1085 1092 1110 1120 1129 1148 1131 1130 1127 1117 1104 1089 1092 1080 1074 1058 1053 1069 1060 1051 1057 1046 1038 1051 1032 1035 1042 1041 1050 1047 1049 1066 1070 1084 1100 1109 1127 1144 1145 1137 1128 1113 1118 1097 1086 1084 1076 1072 1059 1055 1045 1057 1049 1044 1047 1039 1037 1042 1045 1052 1043 1045 1059 1049 1058 1071 1074 1091 1104 1123 1130 1153 1137 1132 1114 1100 1093 1081 1081 1060 1062 1050 1042 1058 1052 1043 1051 1032 1046 1029 1029 1028 1051 1046 1043 1046 1056 1062 1073 1089 1094 1097 1106 1127 1150 1122 1126 1109 1108 1088 1078 1067 1063 1058 1051 1044 1038 1038 1046 1033 1046 1024 1040 1041 1027 1045 1029 1040 1042 1043 1067 1057 1080 1073 1089 1110 1130 1129 1142 1116 1096 1110 1086 1079 1069 1065 1048 1051 1048 1059 1041 1046 1049 1035 1045 1031 1035 1035 1044 1034 1046 1042 1052 1059 1077 1078 1094 1102 1115 1130 1132 1104 1124 1114 1096 1093 1072 1069 1053 1062 1055 1053 1037 1063 1043 1038 1045 1038 1039 1031 1044 1033 1055 1041 1046 1066 1049 1071 1084 1090 1103 1114 1139 1159 1149 1118 1116 1099 1087 1091 1071 1068 1052 1061 1047 1052 1056 1047 1039 1044 1037 1046 1044 1044 1039 1049 1044 1051 1051 1061 1073 1077 1095 1102 1125 1136 1135 1134 1132 1104 1092 1095 1076 1070 1070 1066 1050 1053 1057 1047 1050 1043 1050 1054 1046 1058 1038 1046 1048 1048 1052 1060 1068 1075 1080 1095 1109 1120 1131 1147 1154 1117 1112 1095 1085 1081 1073 1049 1063 1043 1044 1036 1035 1043 1038 1043 1052 1035 1045 1043 1041 1048 1049 1059 1054 1066 1065 1091 1085 1098 1122 1131 1156 1117 1127 1097 1092 1091 1073 1066 1067 1049 1043 1047 1041 1039 1043 1039 1042 1039 1047 1041 1041 1039 1056 1049 1045 1056 1060 1077 1090 1092 1094 1118 1126 1156 1123 1117 1108 1104 1068 1076 1067 1054 1050 1048 1044 1037 1038 1034 1030 1042 1047 1037 1037 1040 1042 1042 1064 1067 1063 1055 1088 1072 1091 1099 1124 1124 1157]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [1194 1189 1184 1160 1168 1133 1138 1130 1139 1118 1107 1125 1094 1113 1108 1110 1104 1095 1098 1113 1101 1091 1106 1106 1114 1131 1125 1134 1136 1176 1154 1182 1180 1196 1166 1173 1163 1152 1146 1141 1117 1129 1129 1121 1107 1115 1105 1109 1115 1108 1110 1103 1105 1106 1104 1091 1098 1107 1107 1125 1125 1146 1159 1169 1187 1194 1174 1178 1160 1156 1150 1140 1131 1130 1116 1110 1109 1110 1108 1114 1108 1104 1086 1103 1090 1099 1091 1087 1092 1092 1104 1107 1120 1134 1137 1146 1171 1172 1193 1186 1172 1160 1161 1151 1145 1140 1131 1124 1120 1108 1106 1102 1096 1110 1106 1113 1103 1104 1094 1095 1084 1094 1093 1095 1121 1121 1128 1150 1153 1166 1178 1194 1190 1164 1158 1142 1141 1141 1121 1114 1110 1114 1092 1105 1103 1099 1111 1094 1108 1105 1089 1085 1093 1081 1090 1095 1100 1096 1112 1117 1126 1156 1168 1156 1190 1162 1162 1146 1146 1136 1133 1126 1120 1106 1089 1098 1095 1097 1102 1098 1089 1077 1092 1090 1071 1083 1080 1074 1072 1099 1089 1098 1119 1128 1134 1142 1177 1171 1169 1156 1149 1131 1132 1115 1110 1111 1103 1097 1094 1085 1079 1097 1092 1083 1088 1076 1069 1069 1078 1064 1072 1077 1080 1106 1099 1108 1118 1129 1153 1154 1165 1160 1156 1144 1132 1127 1119 1112 1098 1098 1102 1089 1100 1100 1081 1100 1084 1084 1070 1067 1067 1070 1064 1070 1070 1090 1080 1091 1108 1111 1137 1125 1137 1155 1154 1155 1142 1127 1130 1113 1118 1109 1102 1083 1092 1103 1093 1096 1084 1069 1081 1087 1070 1058 1071 1071 1060 1066 1080 1087 1101 1100 1111 1115 1122 1147 1169 1160 1139 1135 1137 1126 1124 1117 1113 1106 1101 1095 1103 1097 1097 1088 1077 1077 1070 1063 1056 1067 1067 1065 1070 1087 1101 1089 1096 1117 1130 1130 1154 1139 1159 1151 1145 1128 1125 1125 1116 1112 1110 1092 1100 1101 1103 1089 1091 1078 1082 1075 1075 1058 1063 1058 1069 1071 1074 1094 1084 1110 1109 1106 1142 1154 1158 1148 1145 1146 1131 1131 1124 1127 1112 1102 1097 1099 1094 1086 1078 1084 1076 1079 1069 1052 1060 1061 1070 1047 1073 1058 1093 1089 1084 1111 1121 1121 1147 1143 1131 1138 1120 1129 1118 1131 1114 1119 1104 1101 1092 1089 1084 1084 1072 1070 1058 1056 1056 1053 1056 1064 1052 1061 1072 1063 1078 1073 1102 1102 1122 1130 1153 1140 1142 1134 1111 1109 1116 1109 1115 1096 1102 1083 1098 1080 1077 1070 1062 1063 1061 1054 1056 1058 1051 1036 1062 1062 1087 1058 1093 1096 1100 1118 1125 1146 1144 1134 1130 1122 1116 1115 1123 1103 1105 1101 1091 1093 1070 1073 1066 1056 1058 1065 1048 1044 1046 1049 1051 1060 1071 1064 1075 1082 1091 1109 1119 1136 1150 1156 1136 1127 1124 1112 1113 1110 1120 1104 1090 1092 1079 1081 1084 1071 1072 1059 1062 1069 1045 1052 1042 1056 1052 1064 1079 1067 1080 1097 1106 1121 1123 1150 1151 1135 1134 1129 1117 1122 1119 1105 1099 1102 1088 1083 1080 1080 1068 1072 1048 1058 1055 1051 1045 1047 1045 1051 1073 1063 1075 1082 1104 1097 1147 1136 1169 1132 1147 1125 1127 1115 1109 1099 1114 1091 1080 1078 1081 1068 1071 1069 1057 1063 1053 1056 1045 1063 1047 1043 1050 1065 1061 1086 1081 1101 1107 1111 1129 1132 1138 1130 1114 1115 1113 1101 1103 1099 1081 1075 1074 1073 1083 1067 1046 1054 1042 1055 1055 1045 1048 1036 1049 1053 1049 1062 1076 1082 1089 1099 1117 1128 1142 1141 1115 1112 1104 1101 1094 1083 1082 1074 1069 1063 1052 1048 1063 1048 1048 1054 1044 1039 1037 1036 1039 1044 1050 1055 1051 1055 1082 1085 1093 1111 1124 1109 1148 1119 1120 1088 1099 1102 1089 1094 1077 1071 1060 1064 1050 1059 1072 1045 1042 1035 1056 1035 1045 1031 1041 1048 1048 1051 1072 1072 1069 1094 1111 1127 1133 1123 1130 1112 1108 1095 1096 1081 1083 1068 1074 1052 1060 1069 1058 1047 1040 1039 1058 1047 1038 1048 1043 1045 1056 1048 1049 1075 1084 1100 1090 1106 1121 1131 1140 1110 1124 1093 1094 1095 1081 1080 1074 1074 1068 1057 1065 1068 1053 1049 1055 1038 1043 1048 1042 1053 1039 1046 1048 1064 1061 1079 1082 1110 1113 1120 1144 1126 1123 1098 1109 1097 1076 1078 1072 1064 1065 1042 1058 1068 1052 1051 1050 1039 1042 1037 1042 1038 1039 1040 1050 1051 1057 1075 1077 1084 1091 1106 1134 1138 1127 1115 1108 1093 1087 1080 1075 1067 1065 1055 1051 1061 1056 1047 1044 1042 1045 1039 1033 1029 1057 1043 1040 1046 1044 1057 1057 1088 1083 1093 1103 1106 1133 1116 1109 1090 1093 1090 1073 1076 1065 1063 1043 1038 1034 1036 1043 1053 1040 1032 1030 1035 1029 1036 1026 1033 1033 1047 1050 1061 1067 1085 1090 1100 1128 1104 1121 1108 1099 1093 1090 1083 1077 1058 1048 1046 1053 1070 1048 1041 1050 1048 1030 1040 1034 1043 1036 1030 1044 1043 1039 1049 1071 1069 1084 1097 1088 1118 1115 1117 1117 1113 1087 1080 1076 1059 1063 1055 1049 1059 1037 1060 1043 1041 1033 1049 1033 1027 1048 1039 1036 1033 1048 1052 1038 1067 1067 1077 1094 1118 1110 1120 1102 1114 1108 1103 1080 1088 1071 1055 1061 1049 1045 1058 1051 1048 1051 1048 1038 1044 1048 1045 1038 1049 1044 1055 1053 1049 1071 1063 1093 1089 1100 1117 1137 1127 1117 1112 1092 1089 1081 1070 1062 1066 1039 1042 1036 1045 1055 1035 1052 1052 1047 1045 1038 1039 1052 1050 1031 1057 1059 1067 1073 1084 1093 1106 1123 1131 1111 1107 1103 1090 1074 1075 1063 1060 1051 1044 1053 1044 1044 1042 1033 1047 1039 1040 1055 1035 1045 1033 1036 1052 1052 1064 1057 1090 1078 1096 1103 1116 1124 1104 1119 1093 1094 1065 1069 1048 1061 1049 1031 1048 1025 1035 1038 1040 1024 1046 1048 1034 1032 1033 1051 1036 1050 1042 1063 1055 1081 1074 1098 1103 1116 1136 1132 1098 1092 1079 1086 1065 1051 1057 1047 1052 1039 1042 1024 1042 1031 1047 1044 1047 1040 1035 1038 1040 1042 1064 1056 1049 1048 1073 1081 1091 1112 1104 1116]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="4" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 16]">
+               1280x720_D75_100
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <illumination index="1" type="char" size="[1 3]">
+               D75
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 16]">
+               [38 37 39 39 39 41 42 39 40 42 42 40 40 41 40 41]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 16]">
+               [22 22 23 23 22 22 23 23 22 23 22 23 22 24 23 21]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [1155 1152 1171 1150 1130 1126 1103 1108 1100 1088 1078 1085 1084 1088 1076 1075 1077 1090 1059 1086 1082 1070 1076 1072 1094 1078 1114 1100 1114 1136 1150 1156 1155 1166 1149 1129 1145 1127 1113 1108 1108 1098 1094 1091 1078 1088 1078 1077 1087 1077 1070 1089 1061 1084 1078 1069 1059 1075 1082 1092 1100 1109 1133 1126 1155 1135 1160 1160 1141 1141 1121 1119 1110 1099 1102 1078 1079 1076 1075 1086 1078 1080 1073 1087 1081 1070 1069 1064 1058 1081 1074 1071 1094 1108 1107 1129 1123 1147 1177 1171 1147 1148 1134 1120 1114 1107 1099 1088 1097 1070 1083 1080 1084 1070 1082 1081 1075 1066 1071 1081 1047 1066 1077 1060 1091 1092 1098 1116 1115 1137 1150 1158 1160 1155 1142 1131 1121 1106 1107 1097 1090 1074 1083 1079 1072 1084 1075 1087 1075 1073 1070 1068 1050 1066 1050 1084 1070 1072 1084 1094 1107 1119 1134 1131 1170 1153 1137 1129 1126 1112 1113 1108 1088 1083 1081 1076 1068 1075 1071 1094 1070 1068 1068 1065 1059 1062 1057 1057 1043 1070 1065 1084 1085 1104 1111 1118 1145 1132 1128 1137 1132 1114 1107 1108 1088 1096 1074 1073 1078 1069 1072 1074 1069 1075 1066 1065 1072 1049 1037 1051 1049 1050 1071 1067 1078 1079 1092 1107 1112 1140 1132 1155 1130 1124 1124 1112 1106 1097 1088 1080 1076 1075 1079 1073 1081 1068 1069 1066 1046 1058 1049 1042 1051 1047 1042 1072 1061 1070 1091 1081 1102 1112 1112 1150 1147 1141 1131 1118 1109 1099 1108 1086 1086 1082 1077 1089 1080 1088 1090 1066 1063 1072 1053 1051 1048 1038 1052 1041 1062 1057 1069 1084 1095 1109 1106 1128 1123 1135 1137 1119 1119 1111 1119 1106 1100 1091 1088 1083 1096 1092 1087 1080 1060 1061 1055 1043 1044 1051 1056 1042 1052 1057 1071 1076 1076 1094 1093 1121 1132 1134 1149 1135 1129 1106 1129 1114 1115 1109 1095 1105 1088 1106 1097 1080 1080 1071 1065 1059 1056 1046 1051 1039 1052 1047 1049 1072 1079 1081 1101 1086 1117 1125 1145 1151 1127 1132 1125 1117 1119 1113 1109 1102 1094 1087 1091 1093 1070 1065 1064 1074 1065 1045 1050 1053 1041 1041 1052 1062 1062 1072 1078 1082 1098 1118 1120 1140 1162 1132 1121 1114 1106 1117 1111 1110 1101 1100 1087 1091 1067 1067 1073 1052 1054 1047 1046 1045 1048 1046 1039 1045 1060 1054 1058 1066 1086 1094 1105 1127 1128 1120 1133 1121 1111 1119 1120 1118 1115 1105 1111 1079 1090 1069 1079 1061 1061 1057 1039 1042 1045 1035 1037 1040 1035 1050 1063 1058 1076 1083 1083 1112 1110 1143 1152 1130 1124 1121 1115 1114 1117 1110 1100 1101 1081 1083 1078 1070 1066 1056 1059 1044 1053 1037 1046 1033 1039 1050 1049 1053 1065 1067 1074 1097 1097 1115 1133 1156 1136 1124 1108 1111 1110 1137 1117 1102 1092 1089 1083 1074 1063 1075 1061 1053 1056 1051 1043 1045 1040 1038 1048 1048 1060 1060 1071 1082 1084 1112 1118 1123 1160 1136 1131 1121 1123 1127 1117 1110 1101 1100 1091 1078 1071 1069 1069 1062 1050 1048 1058 1048 1051 1034 1055 1052 1057 1055 1077 1087 1091 1101 1112 1130 1146 1129 1142 1132 1121 1121 1119 1114 1114 1098 1093 1078 1073 1076 1069 1070 1059 1064 1055 1040 1048 1048 1044 1033 1046 1041 1058 1068 1071 1085 1106 1111 1127 1133 1150 1123 1126 1125 1106 1106 1113 1104 1089 1075 1067 1065 1066 1067 1055 1051 1062 1049 1044 1044 1039 1040 1034 1055 1053 1055 1059 1074 1082 1089 1112 1124 1116 1121 1133 1130 1105 1104 1102 1088 1091 1077 1070 1067 1053 1062 1074 1050 1045 1051 1042 1045 1037 1045 1044 1024 1054 1034 1047 1061 1072 1077 1108 1105 1107 1144 1140 1133 1117 1115 1097 1106 1095 1088 1076 1058 1057 1066 1049 1058 1071 1047 1050 1048 1045 1042 1031 1031 1032 1050 1041 1053 1057 1074 1078 1097 1100 1117 1139 1135 1138 1116 1119 1099 1096 1092 1074 1081 1085 1052 1064 1067 1058 1053 1045 1048 1061 1043 1038 1046 1045 1042 1036 1043 1064 1068 1084 1091 1097 1102 1113 1130 1140 1122 1134 1112 1109 1088 1092 1085 1073 1063 1067 1052 1059 1072 1057 1044 1042 1050 1038 1047 1040 1039 1050 1047 1049 1069 1056 1089 1080 1102 1112 1128 1123 1148 1118 1119 1102 1112 1084 1092 1084 1069 1068 1058 1058 1065 1054 1055 1043 1051 1047 1039 1048 1039 1052 1044 1050 1053 1062 1070 1055 1084 1091 1110 1135 1136 1127 1132 1121 1114 1092 1088 1077 1065 1072 1054 1047 1056 1064 1050 1044 1046 1046 1039 1048 1031 1059 1050 1051 1042 1044 1074 1062 1087 1083 1109 1100 1128 1129 1141 1116 1111 1106 1096 1079 1093 1063 1078 1053 1062 1049 1046 1061 1050 1037 1048 1028 1042 1038 1039 1040 1039 1033 1054 1053 1065 1074 1073 1088 1102 1123 1139 1138 1123 1118 1098 1088 1075 1066 1071 1059 1059 1047 1064 1044 1052 1047 1049 1040 1046 1031 1047 1051 1036 1036 1061 1046 1058 1066 1078 1079 1102 1117 1112 1125 1108 1125 1100 1100 1096 1087 1076 1072 1056 1048 1063 1042 1056 1046 1056 1036 1053 1035 1046 1047 1037 1051 1053 1046 1059 1059 1074 1083 1084 1100 1111 1134 1132 1146 1124 1113 1097 1097 1078 1084 1064 1059 1063 1054 1059 1061 1052 1046 1056 1050 1049 1040 1044 1052 1055 1054 1053 1048 1067 1073 1071 1094 1105 1111 1136 1145 1148 1133 1108 1102 1088 1091 1069 1072 1063 1060 1053 1051 1047 1048 1053 1053 1058 1050 1057 1047 1053 1051 1058 1047 1067 1058 1075 1085 1087 1103 1120 1128 1149 1134 1121 1112 1107 1092 1072 1075 1079 1070 1054 1056 1053 1051 1045 1049 1053 1062 1052 1055 1050 1055 1058 1048 1065 1058 1073 1067 1085 1098 1118 1117 1127 1135 1144 1137 1109 1102 1095 1076 1086 1056 1059 1054 1056 1044 1043 1053 1042 1049 1056 1048 1044 1038 1043 1069 1052 1053 1052 1070 1098 1082 1105 1098 1118 1127 1169 1129 1107 1111 1109 1085 1083 1075 1079 1055 1046 1053 1051 1046 1049 1051 1055 1041 1057 1039 1055 1055 1055 1076 1058 1076 1064 1064 1095 1080 1103 1134 1122 1147]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [1170 1167 1163 1139 1131 1137 1124 1099 1108 1086 1084 1092 1068 1087 1080 1088 1088 1077 1085 1077 1080 1081 1077 1088 1075 1097 1109 1099 1127 1129 1141 1148 1164 1179 1160 1162 1135 1135 1121 1113 1104 1098 1093 1088 1084 1087 1091 1084 1084 1082 1072 1077 1087 1073 1087 1074 1078 1088 1079 1098 1105 1111 1136 1139 1169 1164 1167 1157 1144 1151 1130 1124 1105 1091 1091 1093 1075 1088 1082 1082 1075 1082 1073 1083 1070 1066 1067 1066 1071 1072 1073 1081 1095 1103 1119 1124 1135 1159 1157 1168 1162 1149 1143 1129 1129 1106 1105 1084 1101 1080 1071 1090 1080 1086 1083 1078 1076 1083 1077 1078 1063 1066 1080 1071 1083 1097 1111 1115 1135 1147 1141 1175 1168 1156 1143 1134 1138 1116 1103 1098 1089 1082 1083 1078 1085 1086 1078 1082 1080 1065 1071 1065 1070 1059 1067 1082 1083 1082 1096 1106 1103 1120 1138 1153 1163 1166 1136 1134 1128 1113 1109 1108 1091 1078 1084 1073 1070 1064 1072 1075 1071 1069 1062 1058 1049 1058 1058 1061 1058 1069 1071 1082 1098 1113 1109 1134 1137 1151 1136 1157 1122 1112 1115 1105 1085 1099 1085 1074 1069 1075 1071 1073 1062 1071 1068 1055 1064 1053 1045 1056 1047 1058 1058 1075 1079 1081 1103 1100 1124 1128 1157 1139 1150 1127 1123 1110 1114 1093 1086 1078 1071 1070 1077 1059 1080 1073 1064 1058 1059 1041 1039 1045 1049 1046 1052 1068 1063 1065 1088 1102 1105 1115 1131 1147 1156 1146 1117 1125 1114 1103 1106 1083 1078 1072 1072 1082 1076 1083 1076 1058 1055 1066 1051 1043 1049 1050 1040 1053 1063 1062 1075 1072 1096 1108 1121 1141 1149 1135 1139 1131 1131 1114 1107 1108 1096 1092 1082 1080 1084 1089 1077 1062 1064 1067 1054 1047 1050 1043 1037 1052 1045 1065 1073 1075 1089 1092 1100 1118 1128 1150 1148 1149 1125 1116 1125 1108 1106 1098 1084 1096 1088 1088 1075 1079 1068 1061 1058 1049 1053 1043 1057 1039 1052 1056 1056 1067 1083 1087 1100 1101 1136 1131 1142 1145 1128 1135 1108 1115 1113 1100 1098 1093 1083 1073 1081 1090 1065 1060 1058 1056 1050 1049 1046 1045 1044 1048 1047 1057 1054 1073 1074 1095 1103 1116 1126 1138 1145 1123 1129 1122 1110 1108 1103 1110 1090 1099 1071 1084 1060 1067 1055 1046 1050 1042 1042 1040 1037 1041 1031 1046 1049 1056 1063 1080 1085 1099 1103 1131 1149 1135 1129 1121 1107 1109 1107 1104 1090 1088 1079 1073 1067 1062 1049 1061 1053 1056 1046 1043 1041 1035 1038 1030 1043 1054 1056 1068 1069 1081 1096 1108 1120 1124 1150 1142 1126 1112 1105 1103 1111 1102 1086 1090 1072 1075 1077 1067 1040 1061 1037 1048 1033 1048 1041 1032 1039 1047 1047 1060 1067 1063 1089 1091 1111 1125 1147 1144 1133 1112 1113 1102 1116 1111 1097 1094 1092 1078 1053 1066 1054 1066 1061 1050 1047 1046 1034 1041 1038 1043 1052 1041 1065 1064 1073 1079 1103 1110 1123 1132 1160 1129 1128 1119 1121 1114 1120 1105 1091 1089 1080 1070 1063 1066 1054 1052 1051 1048 1062 1042 1047 1039 1051 1048 1048 1057 1073 1080 1083 1114 1113 1130 1149 1149 1140 1125 1118 1109 1116 1105 1104 1093 1074 1081 1058 1062 1063 1061 1040 1049 1044 1049 1038 1033 1043 1029 1042 1047 1058 1054 1081 1086 1095 1109 1123 1134 1156 1125 1121 1119 1106 1099 1094 1076 1092 1069 1061 1063 1058 1055 1041 1048 1042 1046 1040 1033 1033 1038 1034 1044 1040 1059 1053 1071 1086 1096 1125 1122 1127 1118 1134 1116 1100 1100 1098 1086 1087 1070 1061 1061 1048 1041 1055 1054 1040 1036 1051 1034 1036 1028 1030 1024 1041 1045 1051 1064 1066 1083 1092 1105 1124 1132 1143 1126 1120 1111 1099 1092 1089 1076 1078 1055 1054 1047 1052 1056 1051 1039 1038 1038 1034 1034 1024 1034 1035 1045 1038 1044 1059 1078 1088 1092 1118 1119 1128 1133 1134 1115 1121 1090 1094 1084 1075 1067 1067 1050 1056 1058 1044 1054 1033 1045 1047 1038 1042 1051 1033 1041 1037 1046 1063 1065 1084 1088 1092 1108 1126 1136 1140 1119 1126 1107 1099 1089 1088 1076 1079 1055 1067 1058 1070 1052 1053 1046 1045 1043 1035 1035 1035 1044 1030 1044 1044 1071 1059 1082 1087 1106 1111 1123 1128 1140 1136 1118 1113 1098 1092 1072 1071 1057 1057 1054 1055 1050 1043 1060 1039 1042 1043 1038 1049 1038 1036 1046 1042 1053 1051 1073 1071 1086 1109 1106 1126 1140 1129 1132 1123 1113 1098 1087 1078 1062 1067 1052 1052 1047 1058 1039 1047 1040 1037 1046 1033 1031 1050 1047 1032 1055 1048 1064 1064 1085 1082 1103 1104 1119 1152 1145 1116 1108 1098 1093 1087 1068 1076 1065 1048 1040 1044 1046 1039 1045 1031 1033 1032 1035 1035 1043 1029 1045 1038 1050 1053 1062 1075 1070 1081 1109 1131 1124 1133 1122 1110 1096 1083 1080 1070 1071 1052 1055 1046 1064 1036 1046 1050 1037 1039 1044 1039 1043 1042 1035 1045 1035 1049 1063 1063 1076 1084 1092 1113 1123 1138 1131 1131 1117 1106 1097 1079 1078 1056 1066 1057 1057 1048 1063 1050 1047 1054 1040 1036 1036 1037 1046 1037 1043 1045 1059 1055 1074 1077 1100 1097 1114 1132 1140 1137 1130 1118 1106 1096 1087 1080 1068 1059 1058 1055 1058 1063 1044 1049 1051 1043 1041 1048 1042 1043 1045 1052 1057 1056 1059 1070 1089 1096 1101 1120 1127 1143 1143 1137 1113 1109 1098 1088 1072 1069 1072 1062 1049 1060 1047 1060 1043 1060 1066 1052 1054 1047 1058 1049 1057 1055 1059 1065 1087 1081 1095 1110 1118 1128 1155 1135 1125 1122 1095 1095 1090 1082 1067 1066 1058 1057 1054 1051 1039 1049 1045 1058 1047 1050 1041 1053 1047 1045 1057 1057 1067 1078 1082 1107 1105 1118 1124 1155 1120 1134 1105 1109 1091 1080 1070 1066 1065 1054 1050 1046 1045 1047 1038 1056 1038 1057 1043 1055 1041 1060 1043 1060 1057 1073 1069 1090 1098 1116 1130 1136 1154 1133 1113 1116 1106 1083 1088 1073 1069 1052 1046 1054 1049 1050 1052 1046 1059 1032 1050 1053 1027 1048 1059 1062 1067 1061 1068 1081 1089 1102 1109 1120 1140 1144]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [1200 1192 1173 1184 1151 1131 1141 1115 1131 1105 1093 1102 1099 1103 1105 1093 1107 1111 1093 1097 1101 1115 1107 1103 1107 1113 1126 1131 1150 1162 1164 1186 1204 1193 1188 1178 1157 1156 1131 1132 1119 1125 1106 1098 1102 1107 1092 1095 1090 1096 1091 1089 1091 1098 1102 1091 1100 1101 1118 1127 1137 1151 1151 1172 1189 1200 1191 1172 1169 1156 1146 1137 1126 1115 1114 1105 1108 1093 1093 1103 1102 1099 1088 1110 1088 1082 1089 1088 1084 1092 1106 1111 1122 1131 1145 1147 1175 1173 1209 1180 1174 1167 1153 1155 1135 1132 1121 1111 1108 1091 1099 1098 1101 1095 1098 1100 1094 1090 1089 1090 1082 1085 1102 1088 1108 1118 1128 1134 1149 1169 1166 1214 1184 1171 1158 1159 1139 1129 1131 1119 1099 1105 1091 1102 1092 1097 1093 1092 1099 1093 1078 1093 1089 1082 1082 1098 1103 1102 1121 1130 1131 1145 1169 1166 1189 1171 1166 1160 1146 1139 1120 1126 1105 1104 1092 1096 1083 1090 1079 1090 1092 1085 1081 1074 1066 1079 1066 1071 1079 1090 1092 1099 1117 1137 1128 1146 1169 1182 1178 1156 1146 1126 1135 1116 1108 1112 1101 1089 1084 1087 1071 1088 1076 1076 1076 1061 1075 1071 1067 1059 1067 1063 1097 1089 1100 1107 1116 1143 1151 1152 1178 1152 1163 1144 1143 1124 1119 1114 1108 1085 1083 1096 1088 1077 1092 1082 1076 1076 1068 1060 1059 1062 1068 1060 1069 1087 1077 1094 1099 1118 1124 1135 1162 1160 1181 1149 1147 1129 1125 1109 1124 1101 1094 1078 1081 1087 1094 1087 1089 1071 1074 1077 1063 1056 1067 1059 1063 1065 1088 1082 1094 1104 1109 1131 1139 1152 1171 1148 1149 1141 1137 1131 1127 1106 1105 1089 1103 1085 1094 1086 1076 1078 1074 1073 1071 1058 1075 1051 1062 1066 1065 1077 1093 1081 1103 1119 1123 1135 1155 1162 1152 1156 1143 1134 1130 1124 1111 1115 1102 1106 1096 1088 1097 1089 1071 1079 1075 1071 1062 1058 1062 1065 1057 1073 1071 1080 1100 1099 1113 1117 1140 1147 1171 1162 1150 1136 1130 1115 1113 1120 1109 1111 1097 1084 1100 1087 1083 1076 1072 1068 1056 1059 1059 1057 1057 1050 1063 1073 1076 1093 1083 1113 1124 1123 1154 1162 1152 1142 1137 1135 1114 1114 1114 1113 1097 1105 1089 1078 1078 1071 1061 1063 1056 1063 1051 1050 1051 1049 1056 1062 1067 1068 1089 1089 1095 1112 1131 1139 1156 1146 1130 1137 1119 1119 1115 1111 1108 1083 1097 1081 1084 1064 1069 1072 1056 1053 1047 1053 1049 1053 1045 1044 1053 1070 1071 1065 1085 1094 1119 1116 1144 1156 1148 1153 1133 1124 1124 1100 1130 1109 1095 1094 1082 1087 1065 1058 1054 1066 1062 1058 1046 1052 1043 1047 1049 1055 1068 1061 1087 1085 1104 1102 1125 1135 1143 1148 1147 1123 1129 1120 1112 1119 1112 1092 1097 1081 1071 1076 1077 1061 1058 1054 1044 1054 1050 1049 1057 1054 1059 1054 1078 1074 1081 1098 1111 1118 1140 1152 1162 1139 1130 1122 1118 1118 1116 1115 1097 1090 1086 1076 1079 1078 1061 1068 1046 1063 1059 1052 1052 1048 1052 1052 1068 1068 1085 1090 1096 1127 1126 1140 1154 1143 1140 1135 1109 1124 1116 1110 1098 1090 1087 1082 1068 1071 1064 1060 1049 1051 1058 1053 1043 1048 1043 1048 1046 1055 1069 1074 1079 1115 1102 1137 1134 1152 1152 1142 1118 1117 1111 1098 1097 1093 1082 1070 1064 1072 1071 1068 1049 1051 1049 1051 1044 1041 1038 1039 1037 1047 1056 1066 1064 1088 1087 1106 1130 1125 1143 1143 1133 1129 1108 1107 1094 1083 1086 1076 1073 1064 1048 1045 1054 1057 1043 1047 1046 1045 1052 1027 1039 1041 1046 1050 1062 1072 1081 1099 1100 1130 1132 1140 1149 1130 1119 1104 1096 1095 1078 1085 1084 1055 1053 1058 1055 1056 1048 1041 1038 1040 1035 1034 1035 1037 1034 1044 1042 1060 1069 1072 1085 1105 1117 1131 1142 1142 1132 1124 1109 1098 1103 1094 1073 1064 1069 1063 1050 1066 1044 1057 1041 1045 1048 1043 1042 1042 1039 1032 1056 1048 1068 1069 1085 1092 1110 1120 1129 1148 1131 1130 1127 1117 1104 1089 1092 1080 1074 1058 1053 1069 1060 1051 1057 1046 1038 1051 1032 1035 1042 1041 1050 1047 1049 1066 1070 1084 1100 1109 1127 1144 1145 1137 1128 1113 1118 1097 1086 1084 1076 1072 1059 1055 1045 1057 1049 1044 1047 1039 1037 1042 1045 1052 1043 1045 1059 1049 1058 1071 1074 1091 1104 1123 1130 1153 1137 1132 1114 1100 1093 1081 1081 1060 1062 1050 1042 1058 1052 1043 1051 1032 1046 1029 1029 1028 1051 1046 1043 1046 1056 1062 1073 1089 1094 1097 1106 1127 1150 1122 1126 1109 1108 1088 1078 1067 1063 1058 1051 1044 1038 1038 1046 1033 1046 1024 1040 1041 1027 1045 1029 1040 1042 1043 1067 1057 1080 1073 1089 1110 1130 1129 1142 1116 1096 1110 1086 1079 1069 1065 1048 1051 1048 1059 1041 1046 1049 1035 1045 1031 1035 1035 1044 1034 1046 1042 1052 1059 1077 1078 1094 1102 1115 1130 1132 1104 1124 1114 1096 1093 1072 1069 1053 1062 1055 1053 1037 1063 1043 1038 1045 1038 1039 1031 1044 1033 1055 1041 1046 1066 1049 1071 1084 1090 1103 1114 1139 1159 1149 1118 1116 1099 1087 1091 1071 1068 1052 1061 1047 1052 1056 1047 1039 1044 1037 1046 1044 1044 1039 1049 1044 1051 1051 1061 1073 1077 1095 1102 1125 1136 1135 1134 1132 1104 1092 1095 1076 1070 1070 1066 1050 1053 1057 1047 1050 1043 1050 1054 1046 1058 1038 1046 1048 1048 1052 1060 1068 1075 1080 1095 1109 1120 1131 1147 1154 1117 1112 1095 1085 1081 1073 1049 1063 1043 1044 1036 1035 1043 1038 1043 1052 1035 1045 1043 1041 1048 1049 1059 1054 1066 1065 1091 1085 1098 1122 1131 1156 1117 1127 1097 1092 1091 1073 1066 1067 1049 1043 1047 1041 1039 1043 1039 1042 1039 1047 1041 1041 1039 1056 1049 1045 1056 1060 1077 1090 1092 1094 1118 1126 1156 1123 1117 1108 1104 1068 1076 1067 1054 1050 1048 1044 1037 1038 1034 1030 1042 1047 1037 1037 1040 1042 1042 1064 1067 1063 1055 1088 1072 1091 1099 1124 1124 1157]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [1194 1189 1184 1160 1168 1133 1138 1130 1139 1118 1107 1125 1094 1113 1108 1110 1104 1095 1098 1113 1101 1091 1106 1106 1114 1131 1125 1134 1136 1176 1154 1182 1180 1196 1166 1173 1163 1152 1146 1141 1117 1129 1129 1121 1107 1115 1105 1109 1115 1108 1110 1103 1105 1106 1104 1091 1098 1107 1107 1125 1125 1146 1159 1169 1187 1194 1174 1178 1160 1156 1150 1140 1131 1130 1116 1110 1109 1110 1108 1114 1108 1104 1086 1103 1090 1099 1091 1087 1092 1092 1104 1107 1120 1134 1137 1146 1171 1172 1193 1186 1172 1160 1161 1151 1145 1140 1131 1124 1120 1108 1106 1102 1096 1110 1106 1113 1103 1104 1094 1095 1084 1094 1093 1095 1121 1121 1128 1150 1153 1166 1178 1194 1190 1164 1158 1142 1141 1141 1121 1114 1110 1114 1092 1105 1103 1099 1111 1094 1108 1105 1089 1085 1093 1081 1090 1095 1100 1096 1112 1117 1126 1156 1168 1156 1190 1162 1162 1146 1146 1136 1133 1126 1120 1106 1089 1098 1095 1097 1102 1098 1089 1077 1092 1090 1071 1083 1080 1074 1072 1099 1089 1098 1119 1128 1134 1142 1177 1171 1169 1156 1149 1131 1132 1115 1110 1111 1103 1097 1094 1085 1079 1097 1092 1083 1088 1076 1069 1069 1078 1064 1072 1077 1080 1106 1099 1108 1118 1129 1153 1154 1165 1160 1156 1144 1132 1127 1119 1112 1098 1098 1102 1089 1100 1100 1081 1100 1084 1084 1070 1067 1067 1070 1064 1070 1070 1090 1080 1091 1108 1111 1137 1125 1137 1155 1154 1155 1142 1127 1130 1113 1118 1109 1102 1083 1092 1103 1093 1096 1084 1069 1081 1087 1070 1058 1071 1071 1060 1066 1080 1087 1101 1100 1111 1115 1122 1147 1169 1160 1139 1135 1137 1126 1124 1117 1113 1106 1101 1095 1103 1097 1097 1088 1077 1077 1070 1063 1056 1067 1067 1065 1070 1087 1101 1089 1096 1117 1130 1130 1154 1139 1159 1151 1145 1128 1125 1125 1116 1112 1110 1092 1100 1101 1103 1089 1091 1078 1082 1075 1075 1058 1063 1058 1069 1071 1074 1094 1084 1110 1109 1106 1142 1154 1158 1148 1145 1146 1131 1131 1124 1127 1112 1102 1097 1099 1094 1086 1078 1084 1076 1079 1069 1052 1060 1061 1070 1047 1073 1058 1093 1089 1084 1111 1121 1121 1147 1143 1131 1138 1120 1129 1118 1131 1114 1119 1104 1101 1092 1089 1084 1084 1072 1070 1058 1056 1056 1053 1056 1064 1052 1061 1072 1063 1078 1073 1102 1102 1122 1130 1153 1140 1142 1134 1111 1109 1116 1109 1115 1096 1102 1083 1098 1080 1077 1070 1062 1063 1061 1054 1056 1058 1051 1036 1062 1062 1087 1058 1093 1096 1100 1118 1125 1146 1144 1134 1130 1122 1116 1115 1123 1103 1105 1101 1091 1093 1070 1073 1066 1056 1058 1065 1048 1044 1046 1049 1051 1060 1071 1064 1075 1082 1091 1109 1119 1136 1150 1156 1136 1127 1124 1112 1113 1110 1120 1104 1090 1092 1079 1081 1084 1071 1072 1059 1062 1069 1045 1052 1042 1056 1052 1064 1079 1067 1080 1097 1106 1121 1123 1150 1151 1135 1134 1129 1117 1122 1119 1105 1099 1102 1088 1083 1080 1080 1068 1072 1048 1058 1055 1051 1045 1047 1045 1051 1073 1063 1075 1082 1104 1097 1147 1136 1169 1132 1147 1125 1127 1115 1109 1099 1114 1091 1080 1078 1081 1068 1071 1069 1057 1063 1053 1056 1045 1063 1047 1043 1050 1065 1061 1086 1081 1101 1107 1111 1129 1132 1138 1130 1114 1115 1113 1101 1103 1099 1081 1075 1074 1073 1083 1067 1046 1054 1042 1055 1055 1045 1048 1036 1049 1053 1049 1062 1076 1082 1089 1099 1117 1128 1142 1141 1115 1112 1104 1101 1094 1083 1082 1074 1069 1063 1052 1048 1063 1048 1048 1054 1044 1039 1037 1036 1039 1044 1050 1055 1051 1055 1082 1085 1093 1111 1124 1109 1148 1119 1120 1088 1099 1102 1089 1094 1077 1071 1060 1064 1050 1059 1072 1045 1042 1035 1056 1035 1045 1031 1041 1048 1048 1051 1072 1072 1069 1094 1111 1127 1133 1123 1130 1112 1108 1095 1096 1081 1083 1068 1074 1052 1060 1069 1058 1047 1040 1039 1058 1047 1038 1048 1043 1045 1056 1048 1049 1075 1084 1100 1090 1106 1121 1131 1140 1110 1124 1093 1094 1095 1081 1080 1074 1074 1068 1057 1065 1068 1053 1049 1055 1038 1043 1048 1042 1053 1039 1046 1048 1064 1061 1079 1082 1110 1113 1120 1144 1126 1123 1098 1109 1097 1076 1078 1072 1064 1065 1042 1058 1068 1052 1051 1050 1039 1042 1037 1042 1038 1039 1040 1050 1051 1057 1075 1077 1084 1091 1106 1134 1138 1127 1115 1108 1093 1087 1080 1075 1067 1065 1055 1051 1061 1056 1047 1044 1042 1045 1039 1033 1029 1057 1043 1040 1046 1044 1057 1057 1088 1083 1093 1103 1106 1133 1116 1109 1090 1093 1090 1073 1076 1065 1063 1043 1038 1034 1036 1043 1053 1040 1032 1030 1035 1029 1036 1026 1033 1033 1047 1050 1061 1067 1085 1090 1100 1128 1104 1121 1108 1099 1093 1090 1083 1077 1058 1048 1046 1053 1070 1048 1041 1050 1048 1030 1040 1034 1043 1036 1030 1044 1043 1039 1049 1071 1069 1084 1097 1088 1118 1115 1117 1117 1113 1087 1080 1076 1059 1063 1055 1049 1059 1037 1060 1043 1041 1033 1049 1033 1027 1048 1039 1036 1033 1048 1052 1038 1067 1067 1077 1094 1118 1110 1120 1102 1114 1108 1103 1080 1088 1071 1055 1061 1049 1045 1058 1051 1048 1051 1048 1038 1044 1048 1045 1038 1049 1044 1055 1053 1049 1071 1063 1093 1089 1100 1117 1137 1127 1117 1112 1092 1089 1081 1070 1062 1066 1039 1042 1036 1045 1055 1035 1052 1052 1047 1045 1038 1039 1052 1050 1031 1057 1059 1067 1073 1084 1093 1106 1123 1131 1111 1107 1103 1090 1074 1075 1063 1060 1051 1044 1053 1044 1044 1042 1033 1047 1039 1040 1055 1035 1045 1033 1036 1052 1052 1064 1057 1090 1078 1096 1103 1116 1124 1104 1119 1093 1094 1065 1069 1048 1061 1049 1031 1048 1025 1035 1038 1040 1024 1046 1048 1034 1032 1033 1051 1036 1050 1042 1063 1055 1081 1074 1098 1103 1116 1136 1132 1098 1092 1079 1086 1065 1051 1057 1047 1052 1039 1042 1024 1042 1031 1047 1044 1047 1040 1035 1038 1040 1042 1064 1056 1049 1048 1073 1081 1091 1112 1104 1116]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="5" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 16]">
+               1280x720_F11_100
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <illumination index="1" type="char" size="[1 3]">
+               F11
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 16]">
+               [38 37 39 39 39 41 42 39 40 42 42 40 40 41 40 41]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 16]">
+               [22 22 23 23 22 22 23 23 22 23 22 23 22 24 23 21]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [1155 1152 1171 1150 1130 1126 1103 1108 1100 1088 1078 1085 1084 1088 1076 1075 1077 1090 1059 1086 1082 1070 1076 1072 1094 1078 1114 1100 1114 1136 1150 1156 1155 1166 1149 1129 1145 1127 1113 1108 1108 1098 1094 1091 1078 1088 1078 1077 1087 1077 1070 1089 1061 1084 1078 1069 1059 1075 1082 1092 1100 1109 1133 1126 1155 1135 1160 1160 1141 1141 1121 1119 1110 1099 1102 1078 1079 1076 1075 1086 1078 1080 1073 1087 1081 1070 1069 1064 1058 1081 1074 1071 1094 1108 1107 1129 1123 1147 1177 1171 1147 1148 1134 1120 1114 1107 1099 1088 1097 1070 1083 1080 1084 1070 1082 1081 1075 1066 1071 1081 1047 1066 1077 1060 1091 1092 1098 1116 1115 1137 1150 1158 1160 1155 1142 1131 1121 1106 1107 1097 1090 1074 1083 1079 1072 1084 1075 1087 1075 1073 1070 1068 1050 1066 1050 1084 1070 1072 1084 1094 1107 1119 1134 1131 1170 1153 1137 1129 1126 1112 1113 1108 1088 1083 1081 1076 1068 1075 1071 1094 1070 1068 1068 1065 1059 1062 1057 1057 1043 1070 1065 1084 1085 1104 1111 1118 1145 1132 1128 1137 1132 1114 1107 1108 1088 1096 1074 1073 1078 1069 1072 1074 1069 1075 1066 1065 1072 1049 1037 1051 1049 1050 1071 1067 1078 1079 1092 1107 1112 1140 1132 1155 1130 1124 1124 1112 1106 1097 1088 1080 1076 1075 1079 1073 1081 1068 1069 1066 1046 1058 1049 1042 1051 1047 1042 1072 1061 1070 1091 1081 1102 1112 1112 1150 1147 1141 1131 1118 1109 1099 1108 1086 1086 1082 1077 1089 1080 1088 1090 1066 1063 1072 1053 1051 1048 1038 1052 1041 1062 1057 1069 1084 1095 1109 1106 1128 1123 1135 1137 1119 1119 1111 1119 1106 1100 1091 1088 1083 1096 1092 1087 1080 1060 1061 1055 1043 1044 1051 1056 1042 1052 1057 1071 1076 1076 1094 1093 1121 1132 1134 1149 1135 1129 1106 1129 1114 1115 1109 1095 1105 1088 1106 1097 1080 1080 1071 1065 1059 1056 1046 1051 1039 1052 1047 1049 1072 1079 1081 1101 1086 1117 1125 1145 1151 1127 1132 1125 1117 1119 1113 1109 1102 1094 1087 1091 1093 1070 1065 1064 1074 1065 1045 1050 1053 1041 1041 1052 1062 1062 1072 1078 1082 1098 1118 1120 1140 1162 1132 1121 1114 1106 1117 1111 1110 1101 1100 1087 1091 1067 1067 1073 1052 1054 1047 1046 1045 1048 1046 1039 1045 1060 1054 1058 1066 1086 1094 1105 1127 1128 1120 1133 1121 1111 1119 1120 1118 1115 1105 1111 1079 1090 1069 1079 1061 1061 1057 1039 1042 1045 1035 1037 1040 1035 1050 1063 1058 1076 1083 1083 1112 1110 1143 1152 1130 1124 1121 1115 1114 1117 1110 1100 1101 1081 1083 1078 1070 1066 1056 1059 1044 1053 1037 1046 1033 1039 1050 1049 1053 1065 1067 1074 1097 1097 1115 1133 1156 1136 1124 1108 1111 1110 1137 1117 1102 1092 1089 1083 1074 1063 1075 1061 1053 1056 1051 1043 1045 1040 1038 1048 1048 1060 1060 1071 1082 1084 1112 1118 1123 1160 1136 1131 1121 1123 1127 1117 1110 1101 1100 1091 1078 1071 1069 1069 1062 1050 1048 1058 1048 1051 1034 1055 1052 1057 1055 1077 1087 1091 1101 1112 1130 1146 1129 1142 1132 1121 1121 1119 1114 1114 1098 1093 1078 1073 1076 1069 1070 1059 1064 1055 1040 1048 1048 1044 1033 1046 1041 1058 1068 1071 1085 1106 1111 1127 1133 1150 1123 1126 1125 1106 1106 1113 1104 1089 1075 1067 1065 1066 1067 1055 1051 1062 1049 1044 1044 1039 1040 1034 1055 1053 1055 1059 1074 1082 1089 1112 1124 1116 1121 1133 1130 1105 1104 1102 1088 1091 1077 1070 1067 1053 1062 1074 1050 1045 1051 1042 1045 1037 1045 1044 1024 1054 1034 1047 1061 1072 1077 1108 1105 1107 1144 1140 1133 1117 1115 1097 1106 1095 1088 1076 1058 1057 1066 1049 1058 1071 1047 1050 1048 1045 1042 1031 1031 1032 1050 1041 1053 1057 1074 1078 1097 1100 1117 1139 1135 1138 1116 1119 1099 1096 1092 1074 1081 1085 1052 1064 1067 1058 1053 1045 1048 1061 1043 1038 1046 1045 1042 1036 1043 1064 1068 1084 1091 1097 1102 1113 1130 1140 1122 1134 1112 1109 1088 1092 1085 1073 1063 1067 1052 1059 1072 1057 1044 1042 1050 1038 1047 1040 1039 1050 1047 1049 1069 1056 1089 1080 1102 1112 1128 1123 1148 1118 1119 1102 1112 1084 1092 1084 1069 1068 1058 1058 1065 1054 1055 1043 1051 1047 1039 1048 1039 1052 1044 1050 1053 1062 1070 1055 1084 1091 1110 1135 1136 1127 1132 1121 1114 1092 1088 1077 1065 1072 1054 1047 1056 1064 1050 1044 1046 1046 1039 1048 1031 1059 1050 1051 1042 1044 1074 1062 1087 1083 1109 1100 1128 1129 1141 1116 1111 1106 1096 1079 1093 1063 1078 1053 1062 1049 1046 1061 1050 1037 1048 1028 1042 1038 1039 1040 1039 1033 1054 1053 1065 1074 1073 1088 1102 1123 1139 1138 1123 1118 1098 1088 1075 1066 1071 1059 1059 1047 1064 1044 1052 1047 1049 1040 1046 1031 1047 1051 1036 1036 1061 1046 1058 1066 1078 1079 1102 1117 1112 1125 1108 1125 1100 1100 1096 1087 1076 1072 1056 1048 1063 1042 1056 1046 1056 1036 1053 1035 1046 1047 1037 1051 1053 1046 1059 1059 1074 1083 1084 1100 1111 1134 1132 1146 1124 1113 1097 1097 1078 1084 1064 1059 1063 1054 1059 1061 1052 1046 1056 1050 1049 1040 1044 1052 1055 1054 1053 1048 1067 1073 1071 1094 1105 1111 1136 1145 1148 1133 1108 1102 1088 1091 1069 1072 1063 1060 1053 1051 1047 1048 1053 1053 1058 1050 1057 1047 1053 1051 1058 1047 1067 1058 1075 1085 1087 1103 1120 1128 1149 1134 1121 1112 1107 1092 1072 1075 1079 1070 1054 1056 1053 1051 1045 1049 1053 1062 1052 1055 1050 1055 1058 1048 1065 1058 1073 1067 1085 1098 1118 1117 1127 1135 1144 1137 1109 1102 1095 1076 1086 1056 1059 1054 1056 1044 1043 1053 1042 1049 1056 1048 1044 1038 1043 1069 1052 1053 1052 1070 1098 1082 1105 1098 1118 1127 1169 1129 1107 1111 1109 1085 1083 1075 1079 1055 1046 1053 1051 1046 1049 1051 1055 1041 1057 1039 1055 1055 1055 1076 1058 1076 1064 1064 1095 1080 1103 1134 1122 1147]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [1170 1167 1163 1139 1131 1137 1124 1099 1108 1086 1084 1092 1068 1087 1080 1088 1088 1077 1085 1077 1080 1081 1077 1088 1075 1097 1109 1099 1127 1129 1141 1148 1164 1179 1160 1162 1135 1135 1121 1113 1104 1098 1093 1088 1084 1087 1091 1084 1084 1082 1072 1077 1087 1073 1087 1074 1078 1088 1079 1098 1105 1111 1136 1139 1169 1164 1167 1157 1144 1151 1130 1124 1105 1091 1091 1093 1075 1088 1082 1082 1075 1082 1073 1083 1070 1066 1067 1066 1071 1072 1073 1081 1095 1103 1119 1124 1135 1159 1157 1168 1162 1149 1143 1129 1129 1106 1105 1084 1101 1080 1071 1090 1080 1086 1083 1078 1076 1083 1077 1078 1063 1066 1080 1071 1083 1097 1111 1115 1135 1147 1141 1175 1168 1156 1143 1134 1138 1116 1103 1098 1089 1082 1083 1078 1085 1086 1078 1082 1080 1065 1071 1065 1070 1059 1067 1082 1083 1082 1096 1106 1103 1120 1138 1153 1163 1166 1136 1134 1128 1113 1109 1108 1091 1078 1084 1073 1070 1064 1072 1075 1071 1069 1062 1058 1049 1058 1058 1061 1058 1069 1071 1082 1098 1113 1109 1134 1137 1151 1136 1157 1122 1112 1115 1105 1085 1099 1085 1074 1069 1075 1071 1073 1062 1071 1068 1055 1064 1053 1045 1056 1047 1058 1058 1075 1079 1081 1103 1100 1124 1128 1157 1139 1150 1127 1123 1110 1114 1093 1086 1078 1071 1070 1077 1059 1080 1073 1064 1058 1059 1041 1039 1045 1049 1046 1052 1068 1063 1065 1088 1102 1105 1115 1131 1147 1156 1146 1117 1125 1114 1103 1106 1083 1078 1072 1072 1082 1076 1083 1076 1058 1055 1066 1051 1043 1049 1050 1040 1053 1063 1062 1075 1072 1096 1108 1121 1141 1149 1135 1139 1131 1131 1114 1107 1108 1096 1092 1082 1080 1084 1089 1077 1062 1064 1067 1054 1047 1050 1043 1037 1052 1045 1065 1073 1075 1089 1092 1100 1118 1128 1150 1148 1149 1125 1116 1125 1108 1106 1098 1084 1096 1088 1088 1075 1079 1068 1061 1058 1049 1053 1043 1057 1039 1052 1056 1056 1067 1083 1087 1100 1101 1136 1131 1142 1145 1128 1135 1108 1115 1113 1100 1098 1093 1083 1073 1081 1090 1065 1060 1058 1056 1050 1049 1046 1045 1044 1048 1047 1057 1054 1073 1074 1095 1103 1116 1126 1138 1145 1123 1129 1122 1110 1108 1103 1110 1090 1099 1071 1084 1060 1067 1055 1046 1050 1042 1042 1040 1037 1041 1031 1046 1049 1056 1063 1080 1085 1099 1103 1131 1149 1135 1129 1121 1107 1109 1107 1104 1090 1088 1079 1073 1067 1062 1049 1061 1053 1056 1046 1043 1041 1035 1038 1030 1043 1054 1056 1068 1069 1081 1096 1108 1120 1124 1150 1142 1126 1112 1105 1103 1111 1102 1086 1090 1072 1075 1077 1067 1040 1061 1037 1048 1033 1048 1041 1032 1039 1047 1047 1060 1067 1063 1089 1091 1111 1125 1147 1144 1133 1112 1113 1102 1116 1111 1097 1094 1092 1078 1053 1066 1054 1066 1061 1050 1047 1046 1034 1041 1038 1043 1052 1041 1065 1064 1073 1079 1103 1110 1123 1132 1160 1129 1128 1119 1121 1114 1120 1105 1091 1089 1080 1070 1063 1066 1054 1052 1051 1048 1062 1042 1047 1039 1051 1048 1048 1057 1073 1080 1083 1114 1113 1130 1149 1149 1140 1125 1118 1109 1116 1105 1104 1093 1074 1081 1058 1062 1063 1061 1040 1049 1044 1049 1038 1033 1043 1029 1042 1047 1058 1054 1081 1086 1095 1109 1123 1134 1156 1125 1121 1119 1106 1099 1094 1076 1092 1069 1061 1063 1058 1055 1041 1048 1042 1046 1040 1033 1033 1038 1034 1044 1040 1059 1053 1071 1086 1096 1125 1122 1127 1118 1134 1116 1100 1100 1098 1086 1087 1070 1061 1061 1048 1041 1055 1054 1040 1036 1051 1034 1036 1028 1030 1024 1041 1045 1051 1064 1066 1083 1092 1105 1124 1132 1143 1126 1120 1111 1099 1092 1089 1076 1078 1055 1054 1047 1052 1056 1051 1039 1038 1038 1034 1034 1024 1034 1035 1045 1038 1044 1059 1078 1088 1092 1118 1119 1128 1133 1134 1115 1121 1090 1094 1084 1075 1067 1067 1050 1056 1058 1044 1054 1033 1045 1047 1038 1042 1051 1033 1041 1037 1046 1063 1065 1084 1088 1092 1108 1126 1136 1140 1119 1126 1107 1099 1089 1088 1076 1079 1055 1067 1058 1070 1052 1053 1046 1045 1043 1035 1035 1035 1044 1030 1044 1044 1071 1059 1082 1087 1106 1111 1123 1128 1140 1136 1118 1113 1098 1092 1072 1071 1057 1057 1054 1055 1050 1043 1060 1039 1042 1043 1038 1049 1038 1036 1046 1042 1053 1051 1073 1071 1086 1109 1106 1126 1140 1129 1132 1123 1113 1098 1087 1078 1062 1067 1052 1052 1047 1058 1039 1047 1040 1037 1046 1033 1031 1050 1047 1032 1055 1048 1064 1064 1085 1082 1103 1104 1119 1152 1145 1116 1108 1098 1093 1087 1068 1076 1065 1048 1040 1044 1046 1039 1045 1031 1033 1032 1035 1035 1043 1029 1045 1038 1050 1053 1062 1075 1070 1081 1109 1131 1124 1133 1122 1110 1096 1083 1080 1070 1071 1052 1055 1046 1064 1036 1046 1050 1037 1039 1044 1039 1043 1042 1035 1045 1035 1049 1063 1063 1076 1084 1092 1113 1123 1138 1131 1131 1117 1106 1097 1079 1078 1056 1066 1057 1057 1048 1063 1050 1047 1054 1040 1036 1036 1037 1046 1037 1043 1045 1059 1055 1074 1077 1100 1097 1114 1132 1140 1137 1130 1118 1106 1096 1087 1080 1068 1059 1058 1055 1058 1063 1044 1049 1051 1043 1041 1048 1042 1043 1045 1052 1057 1056 1059 1070 1089 1096 1101 1120 1127 1143 1143 1137 1113 1109 1098 1088 1072 1069 1072 1062 1049 1060 1047 1060 1043 1060 1066 1052 1054 1047 1058 1049 1057 1055 1059 1065 1087 1081 1095 1110 1118 1128 1155 1135 1125 1122 1095 1095 1090 1082 1067 1066 1058 1057 1054 1051 1039 1049 1045 1058 1047 1050 1041 1053 1047 1045 1057 1057 1067 1078 1082 1107 1105 1118 1124 1155 1120 1134 1105 1109 1091 1080 1070 1066 1065 1054 1050 1046 1045 1047 1038 1056 1038 1057 1043 1055 1041 1060 1043 1060 1057 1073 1069 1090 1098 1116 1130 1136 1154 1133 1113 1116 1106 1083 1088 1073 1069 1052 1046 1054 1049 1050 1052 1046 1059 1032 1050 1053 1027 1048 1059 1062 1067 1061 1068 1081 1089 1102 1109 1120 1140 1144]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [1200 1192 1173 1184 1151 1131 1141 1115 1131 1105 1093 1102 1099 1103 1105 1093 1107 1111 1093 1097 1101 1115 1107 1103 1107 1113 1126 1131 1150 1162 1164 1186 1204 1193 1188 1178 1157 1156 1131 1132 1119 1125 1106 1098 1102 1107 1092 1095 1090 1096 1091 1089 1091 1098 1102 1091 1100 1101 1118 1127 1137 1151 1151 1172 1189 1200 1191 1172 1169 1156 1146 1137 1126 1115 1114 1105 1108 1093 1093 1103 1102 1099 1088 1110 1088 1082 1089 1088 1084 1092 1106 1111 1122 1131 1145 1147 1175 1173 1209 1180 1174 1167 1153 1155 1135 1132 1121 1111 1108 1091 1099 1098 1101 1095 1098 1100 1094 1090 1089 1090 1082 1085 1102 1088 1108 1118 1128 1134 1149 1169 1166 1214 1184 1171 1158 1159 1139 1129 1131 1119 1099 1105 1091 1102 1092 1097 1093 1092 1099 1093 1078 1093 1089 1082 1082 1098 1103 1102 1121 1130 1131 1145 1169 1166 1189 1171 1166 1160 1146 1139 1120 1126 1105 1104 1092 1096 1083 1090 1079 1090 1092 1085 1081 1074 1066 1079 1066 1071 1079 1090 1092 1099 1117 1137 1128 1146 1169 1182 1178 1156 1146 1126 1135 1116 1108 1112 1101 1089 1084 1087 1071 1088 1076 1076 1076 1061 1075 1071 1067 1059 1067 1063 1097 1089 1100 1107 1116 1143 1151 1152 1178 1152 1163 1144 1143 1124 1119 1114 1108 1085 1083 1096 1088 1077 1092 1082 1076 1076 1068 1060 1059 1062 1068 1060 1069 1087 1077 1094 1099 1118 1124 1135 1162 1160 1181 1149 1147 1129 1125 1109 1124 1101 1094 1078 1081 1087 1094 1087 1089 1071 1074 1077 1063 1056 1067 1059 1063 1065 1088 1082 1094 1104 1109 1131 1139 1152 1171 1148 1149 1141 1137 1131 1127 1106 1105 1089 1103 1085 1094 1086 1076 1078 1074 1073 1071 1058 1075 1051 1062 1066 1065 1077 1093 1081 1103 1119 1123 1135 1155 1162 1152 1156 1143 1134 1130 1124 1111 1115 1102 1106 1096 1088 1097 1089 1071 1079 1075 1071 1062 1058 1062 1065 1057 1073 1071 1080 1100 1099 1113 1117 1140 1147 1171 1162 1150 1136 1130 1115 1113 1120 1109 1111 1097 1084 1100 1087 1083 1076 1072 1068 1056 1059 1059 1057 1057 1050 1063 1073 1076 1093 1083 1113 1124 1123 1154 1162 1152 1142 1137 1135 1114 1114 1114 1113 1097 1105 1089 1078 1078 1071 1061 1063 1056 1063 1051 1050 1051 1049 1056 1062 1067 1068 1089 1089 1095 1112 1131 1139 1156 1146 1130 1137 1119 1119 1115 1111 1108 1083 1097 1081 1084 1064 1069 1072 1056 1053 1047 1053 1049 1053 1045 1044 1053 1070 1071 1065 1085 1094 1119 1116 1144 1156 1148 1153 1133 1124 1124 1100 1130 1109 1095 1094 1082 1087 1065 1058 1054 1066 1062 1058 1046 1052 1043 1047 1049 1055 1068 1061 1087 1085 1104 1102 1125 1135 1143 1148 1147 1123 1129 1120 1112 1119 1112 1092 1097 1081 1071 1076 1077 1061 1058 1054 1044 1054 1050 1049 1057 1054 1059 1054 1078 1074 1081 1098 1111 1118 1140 1152 1162 1139 1130 1122 1118 1118 1116 1115 1097 1090 1086 1076 1079 1078 1061 1068 1046 1063 1059 1052 1052 1048 1052 1052 1068 1068 1085 1090 1096 1127 1126 1140 1154 1143 1140 1135 1109 1124 1116 1110 1098 1090 1087 1082 1068 1071 1064 1060 1049 1051 1058 1053 1043 1048 1043 1048 1046 1055 1069 1074 1079 1115 1102 1137 1134 1152 1152 1142 1118 1117 1111 1098 1097 1093 1082 1070 1064 1072 1071 1068 1049 1051 1049 1051 1044 1041 1038 1039 1037 1047 1056 1066 1064 1088 1087 1106 1130 1125 1143 1143 1133 1129 1108 1107 1094 1083 1086 1076 1073 1064 1048 1045 1054 1057 1043 1047 1046 1045 1052 1027 1039 1041 1046 1050 1062 1072 1081 1099 1100 1130 1132 1140 1149 1130 1119 1104 1096 1095 1078 1085 1084 1055 1053 1058 1055 1056 1048 1041 1038 1040 1035 1034 1035 1037 1034 1044 1042 1060 1069 1072 1085 1105 1117 1131 1142 1142 1132 1124 1109 1098 1103 1094 1073 1064 1069 1063 1050 1066 1044 1057 1041 1045 1048 1043 1042 1042 1039 1032 1056 1048 1068 1069 1085 1092 1110 1120 1129 1148 1131 1130 1127 1117 1104 1089 1092 1080 1074 1058 1053 1069 1060 1051 1057 1046 1038 1051 1032 1035 1042 1041 1050 1047 1049 1066 1070 1084 1100 1109 1127 1144 1145 1137 1128 1113 1118 1097 1086 1084 1076 1072 1059 1055 1045 1057 1049 1044 1047 1039 1037 1042 1045 1052 1043 1045 1059 1049 1058 1071 1074 1091 1104 1123 1130 1153 1137 1132 1114 1100 1093 1081 1081 1060 1062 1050 1042 1058 1052 1043 1051 1032 1046 1029 1029 1028 1051 1046 1043 1046 1056 1062 1073 1089 1094 1097 1106 1127 1150 1122 1126 1109 1108 1088 1078 1067 1063 1058 1051 1044 1038 1038 1046 1033 1046 1024 1040 1041 1027 1045 1029 1040 1042 1043 1067 1057 1080 1073 1089 1110 1130 1129 1142 1116 1096 1110 1086 1079 1069 1065 1048 1051 1048 1059 1041 1046 1049 1035 1045 1031 1035 1035 1044 1034 1046 1042 1052 1059 1077 1078 1094 1102 1115 1130 1132 1104 1124 1114 1096 1093 1072 1069 1053 1062 1055 1053 1037 1063 1043 1038 1045 1038 1039 1031 1044 1033 1055 1041 1046 1066 1049 1071 1084 1090 1103 1114 1139 1159 1149 1118 1116 1099 1087 1091 1071 1068 1052 1061 1047 1052 1056 1047 1039 1044 1037 1046 1044 1044 1039 1049 1044 1051 1051 1061 1073 1077 1095 1102 1125 1136 1135 1134 1132 1104 1092 1095 1076 1070 1070 1066 1050 1053 1057 1047 1050 1043 1050 1054 1046 1058 1038 1046 1048 1048 1052 1060 1068 1075 1080 1095 1109 1120 1131 1147 1154 1117 1112 1095 1085 1081 1073 1049 1063 1043 1044 1036 1035 1043 1038 1043 1052 1035 1045 1043 1041 1048 1049 1059 1054 1066 1065 1091 1085 1098 1122 1131 1156 1117 1127 1097 1092 1091 1073 1066 1067 1049 1043 1047 1041 1039 1043 1039 1042 1039 1047 1041 1041 1039 1056 1049 1045 1056 1060 1077 1090 1092 1094 1118 1126 1156 1123 1117 1108 1104 1068 1076 1067 1054 1050 1048 1044 1037 1038 1034 1030 1042 1047 1037 1037 1040 1042 1042 1064 1067 1063 1055 1088 1072 1091 1099 1124 1124 1157]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [1194 1189 1184 1160 1168 1133 1138 1130 1139 1118 1107 1125 1094 1113 1108 1110 1104 1095 1098 1113 1101 1091 1106 1106 1114 1131 1125 1134 1136 1176 1154 1182 1180 1196 1166 1173 1163 1152 1146 1141 1117 1129 1129 1121 1107 1115 1105 1109 1115 1108 1110 1103 1105 1106 1104 1091 1098 1107 1107 1125 1125 1146 1159 1169 1187 1194 1174 1178 1160 1156 1150 1140 1131 1130 1116 1110 1109 1110 1108 1114 1108 1104 1086 1103 1090 1099 1091 1087 1092 1092 1104 1107 1120 1134 1137 1146 1171 1172 1193 1186 1172 1160 1161 1151 1145 1140 1131 1124 1120 1108 1106 1102 1096 1110 1106 1113 1103 1104 1094 1095 1084 1094 1093 1095 1121 1121 1128 1150 1153 1166 1178 1194 1190 1164 1158 1142 1141 1141 1121 1114 1110 1114 1092 1105 1103 1099 1111 1094 1108 1105 1089 1085 1093 1081 1090 1095 1100 1096 1112 1117 1126 1156 1168 1156 1190 1162 1162 1146 1146 1136 1133 1126 1120 1106 1089 1098 1095 1097 1102 1098 1089 1077 1092 1090 1071 1083 1080 1074 1072 1099 1089 1098 1119 1128 1134 1142 1177 1171 1169 1156 1149 1131 1132 1115 1110 1111 1103 1097 1094 1085 1079 1097 1092 1083 1088 1076 1069 1069 1078 1064 1072 1077 1080 1106 1099 1108 1118 1129 1153 1154 1165 1160 1156 1144 1132 1127 1119 1112 1098 1098 1102 1089 1100 1100 1081 1100 1084 1084 1070 1067 1067 1070 1064 1070 1070 1090 1080 1091 1108 1111 1137 1125 1137 1155 1154 1155 1142 1127 1130 1113 1118 1109 1102 1083 1092 1103 1093 1096 1084 1069 1081 1087 1070 1058 1071 1071 1060 1066 1080 1087 1101 1100 1111 1115 1122 1147 1169 1160 1139 1135 1137 1126 1124 1117 1113 1106 1101 1095 1103 1097 1097 1088 1077 1077 1070 1063 1056 1067 1067 1065 1070 1087 1101 1089 1096 1117 1130 1130 1154 1139 1159 1151 1145 1128 1125 1125 1116 1112 1110 1092 1100 1101 1103 1089 1091 1078 1082 1075 1075 1058 1063 1058 1069 1071 1074 1094 1084 1110 1109 1106 1142 1154 1158 1148 1145 1146 1131 1131 1124 1127 1112 1102 1097 1099 1094 1086 1078 1084 1076 1079 1069 1052 1060 1061 1070 1047 1073 1058 1093 1089 1084 1111 1121 1121 1147 1143 1131 1138 1120 1129 1118 1131 1114 1119 1104 1101 1092 1089 1084 1084 1072 1070 1058 1056 1056 1053 1056 1064 1052 1061 1072 1063 1078 1073 1102 1102 1122 1130 1153 1140 1142 1134 1111 1109 1116 1109 1115 1096 1102 1083 1098 1080 1077 1070 1062 1063 1061 1054 1056 1058 1051 1036 1062 1062 1087 1058 1093 1096 1100 1118 1125 1146 1144 1134 1130 1122 1116 1115 1123 1103 1105 1101 1091 1093 1070 1073 1066 1056 1058 1065 1048 1044 1046 1049 1051 1060 1071 1064 1075 1082 1091 1109 1119 1136 1150 1156 1136 1127 1124 1112 1113 1110 1120 1104 1090 1092 1079 1081 1084 1071 1072 1059 1062 1069 1045 1052 1042 1056 1052 1064 1079 1067 1080 1097 1106 1121 1123 1150 1151 1135 1134 1129 1117 1122 1119 1105 1099 1102 1088 1083 1080 1080 1068 1072 1048 1058 1055 1051 1045 1047 1045 1051 1073 1063 1075 1082 1104 1097 1147 1136 1169 1132 1147 1125 1127 1115 1109 1099 1114 1091 1080 1078 1081 1068 1071 1069 1057 1063 1053 1056 1045 1063 1047 1043 1050 1065 1061 1086 1081 1101 1107 1111 1129 1132 1138 1130 1114 1115 1113 1101 1103 1099 1081 1075 1074 1073 1083 1067 1046 1054 1042 1055 1055 1045 1048 1036 1049 1053 1049 1062 1076 1082 1089 1099 1117 1128 1142 1141 1115 1112 1104 1101 1094 1083 1082 1074 1069 1063 1052 1048 1063 1048 1048 1054 1044 1039 1037 1036 1039 1044 1050 1055 1051 1055 1082 1085 1093 1111 1124 1109 1148 1119 1120 1088 1099 1102 1089 1094 1077 1071 1060 1064 1050 1059 1072 1045 1042 1035 1056 1035 1045 1031 1041 1048 1048 1051 1072 1072 1069 1094 1111 1127 1133 1123 1130 1112 1108 1095 1096 1081 1083 1068 1074 1052 1060 1069 1058 1047 1040 1039 1058 1047 1038 1048 1043 1045 1056 1048 1049 1075 1084 1100 1090 1106 1121 1131 1140 1110 1124 1093 1094 1095 1081 1080 1074 1074 1068 1057 1065 1068 1053 1049 1055 1038 1043 1048 1042 1053 1039 1046 1048 1064 1061 1079 1082 1110 1113 1120 1144 1126 1123 1098 1109 1097 1076 1078 1072 1064 1065 1042 1058 1068 1052 1051 1050 1039 1042 1037 1042 1038 1039 1040 1050 1051 1057 1075 1077 1084 1091 1106 1134 1138 1127 1115 1108 1093 1087 1080 1075 1067 1065 1055 1051 1061 1056 1047 1044 1042 1045 1039 1033 1029 1057 1043 1040 1046 1044 1057 1057 1088 1083 1093 1103 1106 1133 1116 1109 1090 1093 1090 1073 1076 1065 1063 1043 1038 1034 1036 1043 1053 1040 1032 1030 1035 1029 1036 1026 1033 1033 1047 1050 1061 1067 1085 1090 1100 1128 1104 1121 1108 1099 1093 1090 1083 1077 1058 1048 1046 1053 1070 1048 1041 1050 1048 1030 1040 1034 1043 1036 1030 1044 1043 1039 1049 1071 1069 1084 1097 1088 1118 1115 1117 1117 1113 1087 1080 1076 1059 1063 1055 1049 1059 1037 1060 1043 1041 1033 1049 1033 1027 1048 1039 1036 1033 1048 1052 1038 1067 1067 1077 1094 1118 1110 1120 1102 1114 1108 1103 1080 1088 1071 1055 1061 1049 1045 1058 1051 1048 1051 1048 1038 1044 1048 1045 1038 1049 1044 1055 1053 1049 1071 1063 1093 1089 1100 1117 1137 1127 1117 1112 1092 1089 1081 1070 1062 1066 1039 1042 1036 1045 1055 1035 1052 1052 1047 1045 1038 1039 1052 1050 1031 1057 1059 1067 1073 1084 1093 1106 1123 1131 1111 1107 1103 1090 1074 1075 1063 1060 1051 1044 1053 1044 1044 1042 1033 1047 1039 1040 1055 1035 1045 1033 1036 1052 1052 1064 1057 1090 1078 1096 1103 1116 1124 1104 1119 1093 1094 1065 1069 1048 1061 1049 1031 1048 1025 1035 1038 1040 1024 1046 1048 1034 1032 1033 1051 1036 1050 1042 1063 1055 1081 1074 1098 1103 1116 1136 1132 1098 1092 1079 1086 1065 1051 1057 1047 1052 1039 1042 1024 1042 1031 1047 1044 1047 1040 1035 1038 1040 1042 1064 1056 1049 1048 1073 1081 1091 1112 1104 1116]
+            </LSC_SAMPLES_blue>
+         </cell>
+         <cell index="6" type="struct" size="[1 1]">
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+            <name index="1" type="char" size="[1 15]">
+               1280x720_F2_100
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <illumination index="1" type="char" size="[1 2]">
+               F2
+            </illumination>
+            <LSC_sectors index="1" type="double" size="[1 1]">
+               [ 32]
+            </LSC_sectors>
+            <LSC_No index="1" type="double" size="[1 1]">
+               [ 10]
+            </LSC_No>
+            <LSC_Xo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Xo>
+            <LSC_Yo index="1" type="double" size="[1 1]">
+               [ 15]
+            </LSC_Yo>
+            <LSC_SECT_SIZE_X index="1" type="double" size="[1 16]">
+               [38 37 39 39 39 41 42 39 40 42 42 40 40 41 40 41]
+            </LSC_SECT_SIZE_X>
+            <LSC_SECT_SIZE_Y index="1" type="double" size="[1 16]">
+               [22 22 23 23 22 22 23 23 22 23 22 23 22 24 23 21]
+            </LSC_SECT_SIZE_Y>
+            <vignetting index="1" type="double" size="[1 1]">
+               [ 100]
+            </vignetting>
+            <LSC_SAMPLES_red index="1" type="double" size="[33 33]">
+               [1155 1152 1171 1150 1130 1126 1103 1108 1100 1088 1078 1085 1084 1088 1076 1075 1077 1090 1059 1086 1082 1070 1076 1072 1094 1078 1114 1100 1114 1136 1150 1156 1155 1166 1149 1129 1145 1127 1113 1108 1108 1098 1094 1091 1078 1088 1078 1077 1087 1077 1070 1089 1061 1084 1078 1069 1059 1075 1082 1092 1100 1109 1133 1126 1155 1135 1160 1160 1141 1141 1121 1119 1110 1099 1102 1078 1079 1076 1075 1086 1078 1080 1073 1087 1081 1070 1069 1064 1058 1081 1074 1071 1094 1108 1107 1129 1123 1147 1177 1171 1147 1148 1134 1120 1114 1107 1099 1088 1097 1070 1083 1080 1084 1070 1082 1081 1075 1066 1071 1081 1047 1066 1077 1060 1091 1092 1098 1116 1115 1137 1150 1158 1160 1155 1142 1131 1121 1106 1107 1097 1090 1074 1083 1079 1072 1084 1075 1087 1075 1073 1070 1068 1050 1066 1050 1084 1070 1072 1084 1094 1107 1119 1134 1131 1170 1153 1137 1129 1126 1112 1113 1108 1088 1083 1081 1076 1068 1075 1071 1094 1070 1068 1068 1065 1059 1062 1057 1057 1043 1070 1065 1084 1085 1104 1111 1118 1145 1132 1128 1137 1132 1114 1107 1108 1088 1096 1074 1073 1078 1069 1072 1074 1069 1075 1066 1065 1072 1049 1037 1051 1049 1050 1071 1067 1078 1079 1092 1107 1112 1140 1132 1155 1130 1124 1124 1112 1106 1097 1088 1080 1076 1075 1079 1073 1081 1068 1069 1066 1046 1058 1049 1042 1051 1047 1042 1072 1061 1070 1091 1081 1102 1112 1112 1150 1147 1141 1131 1118 1109 1099 1108 1086 1086 1082 1077 1089 1080 1088 1090 1066 1063 1072 1053 1051 1048 1038 1052 1041 1062 1057 1069 1084 1095 1109 1106 1128 1123 1135 1137 1119 1119 1111 1119 1106 1100 1091 1088 1083 1096 1092 1087 1080 1060 1061 1055 1043 1044 1051 1056 1042 1052 1057 1071 1076 1076 1094 1093 1121 1132 1134 1149 1135 1129 1106 1129 1114 1115 1109 1095 1105 1088 1106 1097 1080 1080 1071 1065 1059 1056 1046 1051 1039 1052 1047 1049 1072 1079 1081 1101 1086 1117 1125 1145 1151 1127 1132 1125 1117 1119 1113 1109 1102 1094 1087 1091 1093 1070 1065 1064 1074 1065 1045 1050 1053 1041 1041 1052 1062 1062 1072 1078 1082 1098 1118 1120 1140 1162 1132 1121 1114 1106 1117 1111 1110 1101 1100 1087 1091 1067 1067 1073 1052 1054 1047 1046 1045 1048 1046 1039 1045 1060 1054 1058 1066 1086 1094 1105 1127 1128 1120 1133 1121 1111 1119 1120 1118 1115 1105 1111 1079 1090 1069 1079 1061 1061 1057 1039 1042 1045 1035 1037 1040 1035 1050 1063 1058 1076 1083 1083 1112 1110 1143 1152 1130 1124 1121 1115 1114 1117 1110 1100 1101 1081 1083 1078 1070 1066 1056 1059 1044 1053 1037 1046 1033 1039 1050 1049 1053 1065 1067 1074 1097 1097 1115 1133 1156 1136 1124 1108 1111 1110 1137 1117 1102 1092 1089 1083 1074 1063 1075 1061 1053 1056 1051 1043 1045 1040 1038 1048 1048 1060 1060 1071 1082 1084 1112 1118 1123 1160 1136 1131 1121 1123 1127 1117 1110 1101 1100 1091 1078 1071 1069 1069 1062 1050 1048 1058 1048 1051 1034 1055 1052 1057 1055 1077 1087 1091 1101 1112 1130 1146 1129 1142 1132 1121 1121 1119 1114 1114 1098 1093 1078 1073 1076 1069 1070 1059 1064 1055 1040 1048 1048 1044 1033 1046 1041 1058 1068 1071 1085 1106 1111 1127 1133 1150 1123 1126 1125 1106 1106 1113 1104 1089 1075 1067 1065 1066 1067 1055 1051 1062 1049 1044 1044 1039 1040 1034 1055 1053 1055 1059 1074 1082 1089 1112 1124 1116 1121 1133 1130 1105 1104 1102 1088 1091 1077 1070 1067 1053 1062 1074 1050 1045 1051 1042 1045 1037 1045 1044 1024 1054 1034 1047 1061 1072 1077 1108 1105 1107 1144 1140 1133 1117 1115 1097 1106 1095 1088 1076 1058 1057 1066 1049 1058 1071 1047 1050 1048 1045 1042 1031 1031 1032 1050 1041 1053 1057 1074 1078 1097 1100 1117 1139 1135 1138 1116 1119 1099 1096 1092 1074 1081 1085 1052 1064 1067 1058 1053 1045 1048 1061 1043 1038 1046 1045 1042 1036 1043 1064 1068 1084 1091 1097 1102 1113 1130 1140 1122 1134 1112 1109 1088 1092 1085 1073 1063 1067 1052 1059 1072 1057 1044 1042 1050 1038 1047 1040 1039 1050 1047 1049 1069 1056 1089 1080 1102 1112 1128 1123 1148 1118 1119 1102 1112 1084 1092 1084 1069 1068 1058 1058 1065 1054 1055 1043 1051 1047 1039 1048 1039 1052 1044 1050 1053 1062 1070 1055 1084 1091 1110 1135 1136 1127 1132 1121 1114 1092 1088 1077 1065 1072 1054 1047 1056 1064 1050 1044 1046 1046 1039 1048 1031 1059 1050 1051 1042 1044 1074 1062 1087 1083 1109 1100 1128 1129 1141 1116 1111 1106 1096 1079 1093 1063 1078 1053 1062 1049 1046 1061 1050 1037 1048 1028 1042 1038 1039 1040 1039 1033 1054 1053 1065 1074 1073 1088 1102 1123 1139 1138 1123 1118 1098 1088 1075 1066 1071 1059 1059 1047 1064 1044 1052 1047 1049 1040 1046 1031 1047 1051 1036 1036 1061 1046 1058 1066 1078 1079 1102 1117 1112 1125 1108 1125 1100 1100 1096 1087 1076 1072 1056 1048 1063 1042 1056 1046 1056 1036 1053 1035 1046 1047 1037 1051 1053 1046 1059 1059 1074 1083 1084 1100 1111 1134 1132 1146 1124 1113 1097 1097 1078 1084 1064 1059 1063 1054 1059 1061 1052 1046 1056 1050 1049 1040 1044 1052 1055 1054 1053 1048 1067 1073 1071 1094 1105 1111 1136 1145 1148 1133 1108 1102 1088 1091 1069 1072 1063 1060 1053 1051 1047 1048 1053 1053 1058 1050 1057 1047 1053 1051 1058 1047 1067 1058 1075 1085 1087 1103 1120 1128 1149 1134 1121 1112 1107 1092 1072 1075 1079 1070 1054 1056 1053 1051 1045 1049 1053 1062 1052 1055 1050 1055 1058 1048 1065 1058 1073 1067 1085 1098 1118 1117 1127 1135 1144 1137 1109 1102 1095 1076 1086 1056 1059 1054 1056 1044 1043 1053 1042 1049 1056 1048 1044 1038 1043 1069 1052 1053 1052 1070 1098 1082 1105 1098 1118 1127 1169 1129 1107 1111 1109 1085 1083 1075 1079 1055 1046 1053 1051 1046 1049 1051 1055 1041 1057 1039 1055 1055 1055 1076 1058 1076 1064 1064 1095 1080 1103 1134 1122 1147]
+            </LSC_SAMPLES_red>
+            <LSC_SAMPLES_greenR index="1" type="double" size="[33 33]">
+               [1170 1167 1163 1139 1131 1137 1124 1099 1108 1086 1084 1092 1068 1087 1080 1088 1088 1077 1085 1077 1080 1081 1077 1088 1075 1097 1109 1099 1127 1129 1141 1148 1164 1179 1160 1162 1135 1135 1121 1113 1104 1098 1093 1088 1084 1087 1091 1084 1084 1082 1072 1077 1087 1073 1087 1074 1078 1088 1079 1098 1105 1111 1136 1139 1169 1164 1167 1157 1144 1151 1130 1124 1105 1091 1091 1093 1075 1088 1082 1082 1075 1082 1073 1083 1070 1066 1067 1066 1071 1072 1073 1081 1095 1103 1119 1124 1135 1159 1157 1168 1162 1149 1143 1129 1129 1106 1105 1084 1101 1080 1071 1090 1080 1086 1083 1078 1076 1083 1077 1078 1063 1066 1080 1071 1083 1097 1111 1115 1135 1147 1141 1175 1168 1156 1143 1134 1138 1116 1103 1098 1089 1082 1083 1078 1085 1086 1078 1082 1080 1065 1071 1065 1070 1059 1067 1082 1083 1082 1096 1106 1103 1120 1138 1153 1163 1166 1136 1134 1128 1113 1109 1108 1091 1078 1084 1073 1070 1064 1072 1075 1071 1069 1062 1058 1049 1058 1058 1061 1058 1069 1071 1082 1098 1113 1109 1134 1137 1151 1136 1157 1122 1112 1115 1105 1085 1099 1085 1074 1069 1075 1071 1073 1062 1071 1068 1055 1064 1053 1045 1056 1047 1058 1058 1075 1079 1081 1103 1100 1124 1128 1157 1139 1150 1127 1123 1110 1114 1093 1086 1078 1071 1070 1077 1059 1080 1073 1064 1058 1059 1041 1039 1045 1049 1046 1052 1068 1063 1065 1088 1102 1105 1115 1131 1147 1156 1146 1117 1125 1114 1103 1106 1083 1078 1072 1072 1082 1076 1083 1076 1058 1055 1066 1051 1043 1049 1050 1040 1053 1063 1062 1075 1072 1096 1108 1121 1141 1149 1135 1139 1131 1131 1114 1107 1108 1096 1092 1082 1080 1084 1089 1077 1062 1064 1067 1054 1047 1050 1043 1037 1052 1045 1065 1073 1075 1089 1092 1100 1118 1128 1150 1148 1149 1125 1116 1125 1108 1106 1098 1084 1096 1088 1088 1075 1079 1068 1061 1058 1049 1053 1043 1057 1039 1052 1056 1056 1067 1083 1087 1100 1101 1136 1131 1142 1145 1128 1135 1108 1115 1113 1100 1098 1093 1083 1073 1081 1090 1065 1060 1058 1056 1050 1049 1046 1045 1044 1048 1047 1057 1054 1073 1074 1095 1103 1116 1126 1138 1145 1123 1129 1122 1110 1108 1103 1110 1090 1099 1071 1084 1060 1067 1055 1046 1050 1042 1042 1040 1037 1041 1031 1046 1049 1056 1063 1080 1085 1099 1103 1131 1149 1135 1129 1121 1107 1109 1107 1104 1090 1088 1079 1073 1067 1062 1049 1061 1053 1056 1046 1043 1041 1035 1038 1030 1043 1054 1056 1068 1069 1081 1096 1108 1120 1124 1150 1142 1126 1112 1105 1103 1111 1102 1086 1090 1072 1075 1077 1067 1040 1061 1037 1048 1033 1048 1041 1032 1039 1047 1047 1060 1067 1063 1089 1091 1111 1125 1147 1144 1133 1112 1113 1102 1116 1111 1097 1094 1092 1078 1053 1066 1054 1066 1061 1050 1047 1046 1034 1041 1038 1043 1052 1041 1065 1064 1073 1079 1103 1110 1123 1132 1160 1129 1128 1119 1121 1114 1120 1105 1091 1089 1080 1070 1063 1066 1054 1052 1051 1048 1062 1042 1047 1039 1051 1048 1048 1057 1073 1080 1083 1114 1113 1130 1149 1149 1140 1125 1118 1109 1116 1105 1104 1093 1074 1081 1058 1062 1063 1061 1040 1049 1044 1049 1038 1033 1043 1029 1042 1047 1058 1054 1081 1086 1095 1109 1123 1134 1156 1125 1121 1119 1106 1099 1094 1076 1092 1069 1061 1063 1058 1055 1041 1048 1042 1046 1040 1033 1033 1038 1034 1044 1040 1059 1053 1071 1086 1096 1125 1122 1127 1118 1134 1116 1100 1100 1098 1086 1087 1070 1061 1061 1048 1041 1055 1054 1040 1036 1051 1034 1036 1028 1030 1024 1041 1045 1051 1064 1066 1083 1092 1105 1124 1132 1143 1126 1120 1111 1099 1092 1089 1076 1078 1055 1054 1047 1052 1056 1051 1039 1038 1038 1034 1034 1024 1034 1035 1045 1038 1044 1059 1078 1088 1092 1118 1119 1128 1133 1134 1115 1121 1090 1094 1084 1075 1067 1067 1050 1056 1058 1044 1054 1033 1045 1047 1038 1042 1051 1033 1041 1037 1046 1063 1065 1084 1088 1092 1108 1126 1136 1140 1119 1126 1107 1099 1089 1088 1076 1079 1055 1067 1058 1070 1052 1053 1046 1045 1043 1035 1035 1035 1044 1030 1044 1044 1071 1059 1082 1087 1106 1111 1123 1128 1140 1136 1118 1113 1098 1092 1072 1071 1057 1057 1054 1055 1050 1043 1060 1039 1042 1043 1038 1049 1038 1036 1046 1042 1053 1051 1073 1071 1086 1109 1106 1126 1140 1129 1132 1123 1113 1098 1087 1078 1062 1067 1052 1052 1047 1058 1039 1047 1040 1037 1046 1033 1031 1050 1047 1032 1055 1048 1064 1064 1085 1082 1103 1104 1119 1152 1145 1116 1108 1098 1093 1087 1068 1076 1065 1048 1040 1044 1046 1039 1045 1031 1033 1032 1035 1035 1043 1029 1045 1038 1050 1053 1062 1075 1070 1081 1109 1131 1124 1133 1122 1110 1096 1083 1080 1070 1071 1052 1055 1046 1064 1036 1046 1050 1037 1039 1044 1039 1043 1042 1035 1045 1035 1049 1063 1063 1076 1084 1092 1113 1123 1138 1131 1131 1117 1106 1097 1079 1078 1056 1066 1057 1057 1048 1063 1050 1047 1054 1040 1036 1036 1037 1046 1037 1043 1045 1059 1055 1074 1077 1100 1097 1114 1132 1140 1137 1130 1118 1106 1096 1087 1080 1068 1059 1058 1055 1058 1063 1044 1049 1051 1043 1041 1048 1042 1043 1045 1052 1057 1056 1059 1070 1089 1096 1101 1120 1127 1143 1143 1137 1113 1109 1098 1088 1072 1069 1072 1062 1049 1060 1047 1060 1043 1060 1066 1052 1054 1047 1058 1049 1057 1055 1059 1065 1087 1081 1095 1110 1118 1128 1155 1135 1125 1122 1095 1095 1090 1082 1067 1066 1058 1057 1054 1051 1039 1049 1045 1058 1047 1050 1041 1053 1047 1045 1057 1057 1067 1078 1082 1107 1105 1118 1124 1155 1120 1134 1105 1109 1091 1080 1070 1066 1065 1054 1050 1046 1045 1047 1038 1056 1038 1057 1043 1055 1041 1060 1043 1060 1057 1073 1069 1090 1098 1116 1130 1136 1154 1133 1113 1116 1106 1083 1088 1073 1069 1052 1046 1054 1049 1050 1052 1046 1059 1032 1050 1053 1027 1048 1059 1062 1067 1061 1068 1081 1089 1102 1109 1120 1140 1144]
+            </LSC_SAMPLES_greenR>
+            <LSC_SAMPLES_greenB index="1" type="double" size="[33 33]">
+               [1200 1192 1173 1184 1151 1131 1141 1115 1131 1105 1093 1102 1099 1103 1105 1093 1107 1111 1093 1097 1101 1115 1107 1103 1107 1113 1126 1131 1150 1162 1164 1186 1204 1193 1188 1178 1157 1156 1131 1132 1119 1125 1106 1098 1102 1107 1092 1095 1090 1096 1091 1089 1091 1098 1102 1091 1100 1101 1118 1127 1137 1151 1151 1172 1189 1200 1191 1172 1169 1156 1146 1137 1126 1115 1114 1105 1108 1093 1093 1103 1102 1099 1088 1110 1088 1082 1089 1088 1084 1092 1106 1111 1122 1131 1145 1147 1175 1173 1209 1180 1174 1167 1153 1155 1135 1132 1121 1111 1108 1091 1099 1098 1101 1095 1098 1100 1094 1090 1089 1090 1082 1085 1102 1088 1108 1118 1128 1134 1149 1169 1166 1214 1184 1171 1158 1159 1139 1129 1131 1119 1099 1105 1091 1102 1092 1097 1093 1092 1099 1093 1078 1093 1089 1082 1082 1098 1103 1102 1121 1130 1131 1145 1169 1166 1189 1171 1166 1160 1146 1139 1120 1126 1105 1104 1092 1096 1083 1090 1079 1090 1092 1085 1081 1074 1066 1079 1066 1071 1079 1090 1092 1099 1117 1137 1128 1146 1169 1182 1178 1156 1146 1126 1135 1116 1108 1112 1101 1089 1084 1087 1071 1088 1076 1076 1076 1061 1075 1071 1067 1059 1067 1063 1097 1089 1100 1107 1116 1143 1151 1152 1178 1152 1163 1144 1143 1124 1119 1114 1108 1085 1083 1096 1088 1077 1092 1082 1076 1076 1068 1060 1059 1062 1068 1060 1069 1087 1077 1094 1099 1118 1124 1135 1162 1160 1181 1149 1147 1129 1125 1109 1124 1101 1094 1078 1081 1087 1094 1087 1089 1071 1074 1077 1063 1056 1067 1059 1063 1065 1088 1082 1094 1104 1109 1131 1139 1152 1171 1148 1149 1141 1137 1131 1127 1106 1105 1089 1103 1085 1094 1086 1076 1078 1074 1073 1071 1058 1075 1051 1062 1066 1065 1077 1093 1081 1103 1119 1123 1135 1155 1162 1152 1156 1143 1134 1130 1124 1111 1115 1102 1106 1096 1088 1097 1089 1071 1079 1075 1071 1062 1058 1062 1065 1057 1073 1071 1080 1100 1099 1113 1117 1140 1147 1171 1162 1150 1136 1130 1115 1113 1120 1109 1111 1097 1084 1100 1087 1083 1076 1072 1068 1056 1059 1059 1057 1057 1050 1063 1073 1076 1093 1083 1113 1124 1123 1154 1162 1152 1142 1137 1135 1114 1114 1114 1113 1097 1105 1089 1078 1078 1071 1061 1063 1056 1063 1051 1050 1051 1049 1056 1062 1067 1068 1089 1089 1095 1112 1131 1139 1156 1146 1130 1137 1119 1119 1115 1111 1108 1083 1097 1081 1084 1064 1069 1072 1056 1053 1047 1053 1049 1053 1045 1044 1053 1070 1071 1065 1085 1094 1119 1116 1144 1156 1148 1153 1133 1124 1124 1100 1130 1109 1095 1094 1082 1087 1065 1058 1054 1066 1062 1058 1046 1052 1043 1047 1049 1055 1068 1061 1087 1085 1104 1102 1125 1135 1143 1148 1147 1123 1129 1120 1112 1119 1112 1092 1097 1081 1071 1076 1077 1061 1058 1054 1044 1054 1050 1049 1057 1054 1059 1054 1078 1074 1081 1098 1111 1118 1140 1152 1162 1139 1130 1122 1118 1118 1116 1115 1097 1090 1086 1076 1079 1078 1061 1068 1046 1063 1059 1052 1052 1048 1052 1052 1068 1068 1085 1090 1096 1127 1126 1140 1154 1143 1140 1135 1109 1124 1116 1110 1098 1090 1087 1082 1068 1071 1064 1060 1049 1051 1058 1053 1043 1048 1043 1048 1046 1055 1069 1074 1079 1115 1102 1137 1134 1152 1152 1142 1118 1117 1111 1098 1097 1093 1082 1070 1064 1072 1071 1068 1049 1051 1049 1051 1044 1041 1038 1039 1037 1047 1056 1066 1064 1088 1087 1106 1130 1125 1143 1143 1133 1129 1108 1107 1094 1083 1086 1076 1073 1064 1048 1045 1054 1057 1043 1047 1046 1045 1052 1027 1039 1041 1046 1050 1062 1072 1081 1099 1100 1130 1132 1140 1149 1130 1119 1104 1096 1095 1078 1085 1084 1055 1053 1058 1055 1056 1048 1041 1038 1040 1035 1034 1035 1037 1034 1044 1042 1060 1069 1072 1085 1105 1117 1131 1142 1142 1132 1124 1109 1098 1103 1094 1073 1064 1069 1063 1050 1066 1044 1057 1041 1045 1048 1043 1042 1042 1039 1032 1056 1048 1068 1069 1085 1092 1110 1120 1129 1148 1131 1130 1127 1117 1104 1089 1092 1080 1074 1058 1053 1069 1060 1051 1057 1046 1038 1051 1032 1035 1042 1041 1050 1047 1049 1066 1070 1084 1100 1109 1127 1144 1145 1137 1128 1113 1118 1097 1086 1084 1076 1072 1059 1055 1045 1057 1049 1044 1047 1039 1037 1042 1045 1052 1043 1045 1059 1049 1058 1071 1074 1091 1104 1123 1130 1153 1137 1132 1114 1100 1093 1081 1081 1060 1062 1050 1042 1058 1052 1043 1051 1032 1046 1029 1029 1028 1051 1046 1043 1046 1056 1062 1073 1089 1094 1097 1106 1127 1150 1122 1126 1109 1108 1088 1078 1067 1063 1058 1051 1044 1038 1038 1046 1033 1046 1024 1040 1041 1027 1045 1029 1040 1042 1043 1067 1057 1080 1073 1089 1110 1130 1129 1142 1116 1096 1110 1086 1079 1069 1065 1048 1051 1048 1059 1041 1046 1049 1035 1045 1031 1035 1035 1044 1034 1046 1042 1052 1059 1077 1078 1094 1102 1115 1130 1132 1104 1124 1114 1096 1093 1072 1069 1053 1062 1055 1053 1037 1063 1043 1038 1045 1038 1039 1031 1044 1033 1055 1041 1046 1066 1049 1071 1084 1090 1103 1114 1139 1159 1149 1118 1116 1099 1087 1091 1071 1068 1052 1061 1047 1052 1056 1047 1039 1044 1037 1046 1044 1044 1039 1049 1044 1051 1051 1061 1073 1077 1095 1102 1125 1136 1135 1134 1132 1104 1092 1095 1076 1070 1070 1066 1050 1053 1057 1047 1050 1043 1050 1054 1046 1058 1038 1046 1048 1048 1052 1060 1068 1075 1080 1095 1109 1120 1131 1147 1154 1117 1112 1095 1085 1081 1073 1049 1063 1043 1044 1036 1035 1043 1038 1043 1052 1035 1045 1043 1041 1048 1049 1059 1054 1066 1065 1091 1085 1098 1122 1131 1156 1117 1127 1097 1092 1091 1073 1066 1067 1049 1043 1047 1041 1039 1043 1039 1042 1039 1047 1041 1041 1039 1056 1049 1045 1056 1060 1077 1090 1092 1094 1118 1126 1156 1123 1117 1108 1104 1068 1076 1067 1054 1050 1048 1044 1037 1038 1034 1030 1042 1047 1037 1037 1040 1042 1042 1064 1067 1063 1055 1088 1072 1091 1099 1124 1124 1157]
+            </LSC_SAMPLES_greenB>
+            <LSC_SAMPLES_blue index="1" type="double" size="[33 33]">
+               [1194 1189 1184 1160 1168 1133 1138 1130 1139 1118 1107 1125 1094 1113 1108 1110 1104 1095 1098 1113 1101 1091 1106 1106 1114 1131 1125 1134 1136 1176 1154 1182 1180 1196 1166 1173 1163 1152 1146 1141 1117 1129 1129 1121 1107 1115 1105 1109 1115 1108 1110 1103 1105 1106 1104 1091 1098 1107 1107 1125 1125 1146 1159 1169 1187 1194 1174 1178 1160 1156 1150 1140 1131 1130 1116 1110 1109 1110 1108 1114 1108 1104 1086 1103 1090 1099 1091 1087 1092 1092 1104 1107 1120 1134 1137 1146 1171 1172 1193 1186 1172 1160 1161 1151 1145 1140 1131 1124 1120 1108 1106 1102 1096 1110 1106 1113 1103 1104 1094 1095 1084 1094 1093 1095 1121 1121 1128 1150 1153 1166 1178 1194 1190 1164 1158 1142 1141 1141 1121 1114 1110 1114 1092 1105 1103 1099 1111 1094 1108 1105 1089 1085 1093 1081 1090 1095 1100 1096 1112 1117 1126 1156 1168 1156 1190 1162 1162 1146 1146 1136 1133 1126 1120 1106 1089 1098 1095 1097 1102 1098 1089 1077 1092 1090 1071 1083 1080 1074 1072 1099 1089 1098 1119 1128 1134 1142 1177 1171 1169 1156 1149 1131 1132 1115 1110 1111 1103 1097 1094 1085 1079 1097 1092 1083 1088 1076 1069 1069 1078 1064 1072 1077 1080 1106 1099 1108 1118 1129 1153 1154 1165 1160 1156 1144 1132 1127 1119 1112 1098 1098 1102 1089 1100 1100 1081 1100 1084 1084 1070 1067 1067 1070 1064 1070 1070 1090 1080 1091 1108 1111 1137 1125 1137 1155 1154 1155 1142 1127 1130 1113 1118 1109 1102 1083 1092 1103 1093 1096 1084 1069 1081 1087 1070 1058 1071 1071 1060 1066 1080 1087 1101 1100 1111 1115 1122 1147 1169 1160 1139 1135 1137 1126 1124 1117 1113 1106 1101 1095 1103 1097 1097 1088 1077 1077 1070 1063 1056 1067 1067 1065 1070 1087 1101 1089 1096 1117 1130 1130 1154 1139 1159 1151 1145 1128 1125 1125 1116 1112 1110 1092 1100 1101 1103 1089 1091 1078 1082 1075 1075 1058 1063 1058 1069 1071 1074 1094 1084 1110 1109 1106 1142 1154 1158 1148 1145 1146 1131 1131 1124 1127 1112 1102 1097 1099 1094 1086 1078 1084 1076 1079 1069 1052 1060 1061 1070 1047 1073 1058 1093 1089 1084 1111 1121 1121 1147 1143 1131 1138 1120 1129 1118 1131 1114 1119 1104 1101 1092 1089 1084 1084 1072 1070 1058 1056 1056 1053 1056 1064 1052 1061 1072 1063 1078 1073 1102 1102 1122 1130 1153 1140 1142 1134 1111 1109 1116 1109 1115 1096 1102 1083 1098 1080 1077 1070 1062 1063 1061 1054 1056 1058 1051 1036 1062 1062 1087 1058 1093 1096 1100 1118 1125 1146 1144 1134 1130 1122 1116 1115 1123 1103 1105 1101 1091 1093 1070 1073 1066 1056 1058 1065 1048 1044 1046 1049 1051 1060 1071 1064 1075 1082 1091 1109 1119 1136 1150 1156 1136 1127 1124 1112 1113 1110 1120 1104 1090 1092 1079 1081 1084 1071 1072 1059 1062 1069 1045 1052 1042 1056 1052 1064 1079 1067 1080 1097 1106 1121 1123 1150 1151 1135 1134 1129 1117 1122 1119 1105 1099 1102 1088 1083 1080 1080 1068 1072 1048 1058 1055 1051 1045 1047 1045 1051 1073 1063 1075 1082 1104 1097 1147 1136 1169 1132 1147 1125 1127 1115 1109 1099 1114 1091 1080 1078 1081 1068 1071 1069 1057 1063 1053 1056 1045 1063 1047 1043 1050 1065 1061 1086 1081 1101 1107 1111 1129 1132 1138 1130 1114 1115 1113 1101 1103 1099 1081 1075 1074 1073 1083 1067 1046 1054 1042 1055 1055 1045 1048 1036 1049 1053 1049 1062 1076 1082 1089 1099 1117 1128 1142 1141 1115 1112 1104 1101 1094 1083 1082 1074 1069 1063 1052 1048 1063 1048 1048 1054 1044 1039 1037 1036 1039 1044 1050 1055 1051 1055 1082 1085 1093 1111 1124 1109 1148 1119 1120 1088 1099 1102 1089 1094 1077 1071 1060 1064 1050 1059 1072 1045 1042 1035 1056 1035 1045 1031 1041 1048 1048 1051 1072 1072 1069 1094 1111 1127 1133 1123 1130 1112 1108 1095 1096 1081 1083 1068 1074 1052 1060 1069 1058 1047 1040 1039 1058 1047 1038 1048 1043 1045 1056 1048 1049 1075 1084 1100 1090 1106 1121 1131 1140 1110 1124 1093 1094 1095 1081 1080 1074 1074 1068 1057 1065 1068 1053 1049 1055 1038 1043 1048 1042 1053 1039 1046 1048 1064 1061 1079 1082 1110 1113 1120 1144 1126 1123 1098 1109 1097 1076 1078 1072 1064 1065 1042 1058 1068 1052 1051 1050 1039 1042 1037 1042 1038 1039 1040 1050 1051 1057 1075 1077 1084 1091 1106 1134 1138 1127 1115 1108 1093 1087 1080 1075 1067 1065 1055 1051 1061 1056 1047 1044 1042 1045 1039 1033 1029 1057 1043 1040 1046 1044 1057 1057 1088 1083 1093 1103 1106 1133 1116 1109 1090 1093 1090 1073 1076 1065 1063 1043 1038 1034 1036 1043 1053 1040 1032 1030 1035 1029 1036 1026 1033 1033 1047 1050 1061 1067 1085 1090 1100 1128 1104 1121 1108 1099 1093 1090 1083 1077 1058 1048 1046 1053 1070 1048 1041 1050 1048 1030 1040 1034 1043 1036 1030 1044 1043 1039 1049 1071 1069 1084 1097 1088 1118 1115 1117 1117 1113 1087 1080 1076 1059 1063 1055 1049 1059 1037 1060 1043 1041 1033 1049 1033 1027 1048 1039 1036 1033 1048 1052 1038 1067 1067 1077 1094 1118 1110 1120 1102 1114 1108 1103 1080 1088 1071 1055 1061 1049 1045 1058 1051 1048 1051 1048 1038 1044 1048 1045 1038 1049 1044 1055 1053 1049 1071 1063 1093 1089 1100 1117 1137 1127 1117 1112 1092 1089 1081 1070 1062 1066 1039 1042 1036 1045 1055 1035 1052 1052 1047 1045 1038 1039 1052 1050 1031 1057 1059 1067 1073 1084 1093 1106 1123 1131 1111 1107 1103 1090 1074 1075 1063 1060 1051 1044 1053 1044 1044 1042 1033 1047 1039 1040 1055 1035 1045 1033 1036 1052 1052 1064 1057 1090 1078 1096 1103 1116 1124 1104 1119 1093 1094 1065 1069 1048 1061 1049 1031 1048 1025 1035 1038 1040 1024 1046 1048 1034 1032 1033 1051 1036 1050 1042 1063 1055 1081 1074 1098 1103 1116 1136 1132 1098 1092 1079 1086 1065 1051 1057 1047 1052 1039 1042 1024 1042 1031 1047 1044 1047 1040 1035 1038 1040 1042 1064 1056 1049 1048 1073 1081 1091 1112 1104 1116]
+            </LSC_SAMPLES_blue>
+         </cell>
+      </LSC>
+      <CC index="1" type="cell" size="[1 6]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 5]">
+               A_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [1.06864 1 1 1.2432]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="2" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 7]">
+               D50_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [1.06864 1 1 1.2432]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="3" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 7]">
+               D65_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [1.06864 1 1 1.2432]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="4" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 7]">
+               D75_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [1.06864 1 1 1.2432]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="5" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 7]">
+               F11_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [1.06864 1 1 1.2432]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+         <cell index="6" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 6]">
+               F2_100
+            </name>
+            <saturation index="1" type="double" size="[1 1]">
+               [ 100]
+            </saturation>
+            <ccMatrix index="1" type="double" size="[3 3]">
+               [3.31643 0.678668 -2.9951 -0.893207 3.17306 -1.27986 -1.30556 -1.51477 3.8203]
+            </ccMatrix>
+            <ccOffsets index="1" type="double" size="[1 3]">
+               [0 0 0]
+            </ccOffsets>
+            <wb index="1" type="double" size="[1 4]">
+               [1.06864 1 1 1.2432]
+            </wb>
+            <SensorGains index="1" type="double" size="[1 1]">
+               [ 100]
+            </SensorGains>
+         </cell>
+      </CC>
+      <AF index="1" type="struct" size="[1 1]">
+         <tbd index="1" type="double" size="[1 1]">
+            [ -1]
+         </tbd>
+      </AF>
+      <AEC index="1" type="struct" size="[1 1]">
+         <SetPoint index="1" type="double" size="[1 1]">
+            [ 80]
+         </SetPoint>
+         <ClmTolerance index="1" type="double" size="[1 1]">
+            [ 20]
+         </ClmTolerance>
+         <DampOver index="1" type="double" size="[1 1]">
+            [ 0.2]
+         </DampOver>
+         <DampUnder index="1" type="double" size="[1 1]">
+            [ 0.3]
+         </DampUnder>
+         <DampOverVideo index="1" type="double" size="[1 1]">
+            [ 0.7]
+         </DampOverVideo>
+         <DampUnderVideo index="1" type="double" size="[1 1]">
+            [ 0.9]
+         </DampUnderVideo>
+         <ECM index="1" type="cell" size="[1 3]">
+            <cell index="1" type="struct" size="[1 1]">
+               <name index="1" type="char" size="[1 15]">
+                  1280x720_FPS_15
+               </name>
+               <PrioritySchemes index="1" type="cell" size="[1 3]">
+                  <cell index="1" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        fast
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="2" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 6]">
+                        normal
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="3" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        slow
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+               </PrioritySchemes>
+            </cell>
+            <cell index="2" type="struct" size="[1 1]">
+               <name index="1" type="char" size="[1 15]">
+                  1280x720_FPS_10
+               </name>
+               <PrioritySchemes index="1" type="cell" size="[1 3]">
+                  <cell index="1" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        fast
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="2" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 6]">
+                        normal
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="3" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        slow
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+               </PrioritySchemes>
+            </cell>
+            <cell index="3" type="struct" size="[1 1]">
+               <name index="1" type="char" size="[1 15]">
+                  1280x720_FPS_05
+               </name>
+               <PrioritySchemes index="1" type="cell" size="[1 3]">
+                  <cell index="1" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        fast
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 1]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="2" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 6]">
+                        normal
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 2]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 0.9]
+                     </SlopeA0>
+                  </cell>
+                  <cell index="3" type="struct" size="[1 1]">
+                     <name index="1" type="char" size="[1 4]">
+                        slow
+                     </name>
+                     <OffsetT0Fac index="1" type="double" size="[1 1]">
+                        [ 4]
+                     </OffsetT0Fac>
+                     <SlopeA0 index="1" type="double" size="[1 1]">
+                        [ 0.9]
+                     </SlopeA0>
+                  </cell>
+               </PrioritySchemes>
+            </cell>
+         </ECM>
+         <aFpsMaxGain index="1" type="double" size="[1 1]">
+            [ 8]
+         </aFpsMaxGain>
+      </AEC>
+      <BLS index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 8]">
+               1280x720
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <blsData index="1" type="double" size="[1 4]">
+               [256 256 256 256]
+            </blsData>
+         </cell>
+      </BLS>
+      <DEGAMMA index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 6]">
+               linear
+            </name>
+            <degamma_dx index="1" type="double" size="[1 16]">
+               [256 512 768 1024 1280 1536 1792 2048 2304 2560 2816 3072 3328 3584 3840 4096]
+            </degamma_dx>
+            <degamma_y index="1" type="double" size="[1 17]">
+               [0 256 512 768 1024 1280 1536 1792 2048 2304 2560 2816 3072 3328 3584 3840 4095]
+            </degamma_y>
+         </cell>
+      </DEGAMMA>
+      <WDR index="1" type="struct" size="[1 1]">
+         <tbd index="1" type="double" size="[1 1]">
+            [ -1]
+         </tbd>
+         <curve1 index="1" type="struct" size="[1 1]">
+            <xval index="1" type="double" size="[1 33]">
+               [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+            </xval>
+            <yval index="1" type="double" size="[1 33]">
+               [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+            </yval>
+         </curve1>
+         <curve2 index="1" type="struct" size="[1 1]">
+            <xval index="1" type="double" size="[1 33]">
+               [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+            </xval>
+            <yval index="1" type="double" size="[1 33]">
+               [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1]
+            </yval>
+         </curve2>
+      </WDR>
+      <CAC index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 8]">
+               1280x720
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <x_normshift index="1" type="double" size="[1 1]">
+               [ 7]
+            </x_normshift>
+            <x_normfactor index="1" type="double" size="[1 1]">
+               [ 26]
+            </x_normfactor>
+            <y_normshift index="1" type="double" size="[1 1]">
+               [ 7]
+            </y_normshift>
+            <y_normfactor index="1" type="double" size="[1 1]">
+               [ 26]
+            </y_normfactor>
+            <x_offset index="1" type="double" size="[1 1]">
+               [ 0]
+            </x_offset>
+            <y_offset index="1" type="double" size="[1 1]">
+               [ 0]
+            </y_offset>
+            <red_parameters index="1" type="double" size="[1 3]">
+               [3 -19 28]
+            </red_parameters>
+            <blue_parameters index="1" type="double" size="[1 3]">
+               [-6 -18 22]
+            </blue_parameters>
+         </cell>
+      </CAC>
+      <DPF index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 8]">
+               1280x720
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <NLL_SEGMENTATION index="1" type="double" size="[1 1]">
+               [ 1]
+            </NLL_SEGMENTATION>
+            <nll_coeff_n index="1" type="double" size="[1 17]">
+               [1023 693 481 390 337 274 237 212 193 167 150 136 118 106 96 89 84]
+            </nll_coeff_n>
+            <SigmaGreen index="1" type="double" size="[1 1]">
+               [ 4]
+            </SigmaGreen>
+            <SigmaRedBlue index="1" type="double" size="[1 1]">
+               [ 4]
+            </SigmaRedBlue>
+            <Gradient index="1" type="double" size="[1 1]">
+               [ 0.15]
+            </Gradient>
+            <Offset index="1" type="double" size="[1 1]">
+               [ 0]
+            </Offset>
+            <NlGains index="1" type="double" size="[1 4]">
+               [1 1 1 1]
+            </NlGains>
+         </cell>
+      </DPF>
+      <DPCC index="1" type="cell" size="[1 1]">
+         <cell index="1" type="struct" size="[1 1]">
+            <name index="1" type="char" size="[1 8]">
+               1280x720
+            </name>
+            <resolution index="1" type="char" size="[1 8]">
+               1280x720
+            </resolution>
+            <register index="1" type="cell" size="[1 23]">
+               <cell index="1" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 13]">
+                     ISP_DPCC_MODE
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0004
+                  </value>
+               </cell>
+               <cell index="2" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_OUT_MODE
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0003
+                  </value>
+               </cell>
+               <cell index="3" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 16]">
+                     ISP_DPCC_SET_USE
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0007
+                  </value>
+               </cell>
+               <cell index="4" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_METHODS_SET1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x1D1D
+                  </value>
+               </cell>
+               <cell index="5" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_METHODS_SET2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0707
+                  </value>
+               </cell>
+               <cell index="6" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_METHODS_SET3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x1F1F
+                  </value>
+               </cell>
+               <cell index="7" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 22]">
+                     ISP_DPCC_LINE_THRESH_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0808
+                  </value>
+               </cell>
+               <cell index="8" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 23]">
+                     ISP_DPCC_LINE_MAD_FAC_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0404
+                  </value>
+               </cell>
+               <cell index="9" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_PG_FAC_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0403
+                  </value>
+               </cell>
+               <cell index="10" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_RND_THRESH_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0A0A
+                  </value>
+               </cell>
+               <cell index="11" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_RG_FAC_1
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x2020
+                  </value>
+               </cell>
+               <cell index="12" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 22]">
+                     ISP_DPCC_LINE_THRESH_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x100C
+                  </value>
+               </cell>
+               <cell index="13" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 23]">
+                     ISP_DPCC_LINE_MAD_FAC_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x1810
+                  </value>
+               </cell>
+               <cell index="14" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_PG_FAC_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0403
+                  </value>
+               </cell>
+               <cell index="15" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_RND_THRESH_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0808
+                  </value>
+               </cell>
+               <cell index="16" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_RG_FAC_2
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0808
+                  </value>
+               </cell>
+               <cell index="17" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 22]">
+                     ISP_DPCC_LINE_THRESH_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x2020
+                  </value>
+               </cell>
+               <cell index="18" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 23]">
+                     ISP_DPCC_LINE_MAD_FAC_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0404
+                  </value>
+               </cell>
+               <cell index="19" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_PG_FAC_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0403
+                  </value>
+               </cell>
+               <cell index="20" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 21]">
+                     ISP_DPCC_RND_THRESH_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0806
+                  </value>
+               </cell>
+               <cell index="21" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_RG_FAC_3
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0404
+                  </value>
+               </cell>
+               <cell index="22" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 18]">
+                     ISP_DPCC_RO_LIMITS
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0A0A
+                  </value>
+               </cell>
+               <cell index="23" type="struct" size="[1 1]">
+                  <name index="1" type="char" size="[1 17]">
+                     ISP_DPCC_RND_OFFS
+                  </name>
+                  <value index="1" type="char" size="[1 6]">
+                     0x0FFF
+                  </value>
+               </cell>
+            </register>
+         </cell>
+      </DPCC>
+   </sensor>
+   <system type="struct" size="[1 1]">
+      <AFPS index="1" type="struct" size="[1 1]">
+         <aFpsDefault index="1" type="char" size="[1 2]">
+            on
+         </aFpsDefault>
+      </AFPS>
+   </system>
+</matfile>

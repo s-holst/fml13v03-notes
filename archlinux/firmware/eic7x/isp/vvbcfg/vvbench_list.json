@@ -1,0 +1,12 @@
+{
+
+"config": {
+	"caseLoop": 1,
+	"caseInterval": 1,
+	"alignMask": 4096
+},
+"caseLists": [
+   "submodule_case/vvb_100_sensor0_imx327_1080p_mp_pipeline_linear_preview_dom.json"
+]
+
+}

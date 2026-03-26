@@ -1,0 +1,109 @@
+{
+	"totalInstance": 2,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "User",      "//": "Invalid, Sensor, Image, User, Max",
+		"inputInfo":
+		{
+			"loopCnt" : 1,
+			"frameNum": 60,
+			"PicName"  : "vvbcfg/case/image_case/picture_case_s0.txt",
+			"width"    : 1920,
+			"height"   : 1080,
+			"format"   : "RAW16",
+			"layout"   : "BGGR",
+			"calibrationName": "OS08a20.json"
+		},
+		"workMode": 2,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,            "//": "1:CAMDEV_MCM_PORT_0, 2:CAMDEV_MCM_PORT_1, ...",
+			"mcmOp": 1,             "//": "1:CAMDEV_MCM_OP_SW, 2:CAMDEV_MCM_OP_HW"
+		},
+		"streamDuration": 0, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"format": "YUV422SP"
+		},
+		{
+			"pathName": "READ",
+			"pathEnable": 1,
+			"bufferNumber":4,
+			"format": "RAW16"
+		}
+		],
+
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+		"awbInfo":
+		{
+			"enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode only"
+		}
+	},
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "User",      "//": "Invalid, Sensor, Image, User, Max",
+		"inputInfo":
+		{
+			"loopCnt" : 1,
+			"frameNum": 60,
+			"PicName"  : "vvbcfg/case/image_case/picture_case_s1.txt",
+			"width"    : 1920,
+			"height"   : 1080,
+			"format"   : "RAW16",
+			"layout"   : "BGGR",
+			"calibrationName": "OS08a20.json"
+		},
+		"workMode": 2,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 2,            "//": "1:CAMDEV_MCM_PORT_0, 2:CAMDEV_MCM_PORT_1, ...",
+			"mcmOp": 1,             "//": "1:CAMDEV_MCM_OP_SW, 2:CAMDEV_MCM_OP_HW"
+		},
+		"streamDuration": 0, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"format": "YUV422SP"
+		},
+		{
+			"pathName": "READ",
+			"pathEnable": 1,
+			"bufferNumber":4,
+			"format": "RAW16"
+		}
+		],
+
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+		"awbInfo":
+		{
+			"enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode only"
+		}
+	}
+	]
+}

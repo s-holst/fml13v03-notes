@@ -1,0 +1,24 @@
+{
+    "root" : [
+        {
+            "classname" : "Awbv2",
+            "enable" : true,
+            "illuorder" : "A, D50, D65, D75, TL84, F12, CWF",
+            "indoor" : [1, 1, 1, 1, 1, 1, 1],
+            "outdoor" : [1, 1, 1, 1, 1, 1, 1],
+            "transition" : [1, 1, 1, 1, 1, 1, 1],
+            "overExposureWeight" : [0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.8, 0.6, 0.4, 0.2],
+            "avg" : 0.01
+        },
+        {
+            "classname" : "CcWhitePixels",
+            "enable" : 1,
+            "damping" : 0.5
+        },
+        {
+            "classname" : "LscWhitePixels",
+            "enable" : 1,
+            "damping" : 0.5
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+	"swSimuCfg": 
+	{
+		"enable": 1,
+		"SwSimuCaselist": "vvbcfg/case/load_image_case/cfg/load_image_case_lists.txt",
+		"caseName": "load_image_case/cfg/load_image_rdma_single_frame_dom.json"
+	},
+	"alignMask": 4096
+}

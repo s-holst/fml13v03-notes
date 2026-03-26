@@ -1,0 +1,150 @@
+{
+    "totalInstance": 1,
+    "instanceCfg": [
+    {
+        "hpId": 0,
+        "instanceEnable": 1,
+        "bufferType": "userptr",
+        "inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+        "workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+        "modeInfo":
+        {
+            "portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+        },
+        "streamDuration": 10, "//": "Second",
+
+        "pathCfg":[
+        {
+            "pathName": "MP",
+            "pathEnable": 1,
+            "bufferNumber": 6,
+            "format": "YUV422SP"
+        }
+        ],
+
+        "sensorInfo":
+        {
+            "sensorName": "os08a20",
+            "calibrationName": "OS08a20.json",
+            "modeIndex": 0,
+            "resolutionWidth": 1920,
+            "resolutionHeight": 1080,
+            "fps": 10
+        },
+        "2dnrInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "3dnrInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "aeInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1
+        },
+        "awbInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1
+        },
+        "blsInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "ccmInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode only"
+        },
+        "cpdInfo":
+        {
+            "enable": 0,
+            "useCfg": 0,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "cprocInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "dmscInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "dpccInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "dpfInfo":
+        {
+            "enable": 0,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "eeInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "gcInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "geInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "hdrInfo":
+        {
+            "enable": 0,
+            "useCfg": 0,
+            "mode": 0, "//":"0: manual mode"
+        },
+        "lscInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        },
+        "wbInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "wdrInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 1, "//":"0: manual mode; 1: auto mode"
+        }
+    }
+    ]
+}

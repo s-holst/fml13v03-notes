@@ -1,0 +1,53 @@
+{
+	"totalInstance": 1,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "Tpg",      "//": "Invalid, Sensor, Image, Tpg, Max",
+		"workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+		},
+		"streamDuration": 3, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"format": "YUV422SP"
+		}
+		],
+
+		"tpgInfo":
+		{
+    		"enable": 1,
+			"useCfg": 1,
+			"imageType": 1,     "//": "0:3X3_Color_block 1:Color_bar 2:gray_bar 3:Grid  4:Random",
+			"bayerPattern": 1,  "//": "0:RGGB 1:GRBG 2:GBRG 3:BGGR",
+			"colorDepth": 0,    "//": "0:8bit 1:10bit 2:12bit",
+			"resolution": 0,    "//": "0:1080p 1:720p 2:4k",
+			"pixleGap": 640,
+	 		"lineGap": 360,
+			"gapStandard": 240,
+			"randomSeed": 2863311530,
+			"frameNum": 0
+		},
+        "wbInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        }
+	}
+	]
+}

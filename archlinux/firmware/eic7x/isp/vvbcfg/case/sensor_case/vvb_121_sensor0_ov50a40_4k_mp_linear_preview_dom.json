@@ -1,0 +1,37 @@
+{
+	"totalInstance": 1,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+		"workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+		},
+		"streamDuration": 10, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"format": "YUV422SP"
+		}
+		],
+
+		"sensorInfo":
+		{
+			"sensorName": "ov50a40",
+			"calibrationName": "OV50a40_4k.json",
+			"modeIndex": 1,
+			"resolutionWidth": 3840,
+			"resolutionHeight": 2160,
+			"illumType": "D50",
+			"fps": 4,	"//": "0: Default"
+		}
+	}
+	]
+}

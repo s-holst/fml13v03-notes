@@ -1,0 +1,70 @@
+{
+	"totalInstance": 1,
+	"instanceCfg": [
+	{
+		"hpId": 0,
+		"instanceEnable": 1,
+		"bufferType": "userptr",
+		"inputType": "Sensor",      "//": "Invalid, Sensor, Image, Tpg, Max",
+		"workMode": 1,       "//": "1:Stream_mode  2:Mcm_mode  3:Rdma_mode",
+		"modeInfo":
+		{
+			"portId": 1,     "//": "1: CAMDEV_PORT_0, ..., 4: CAMDEV_PORT_3"
+		},
+		"streamDuration": 30, "//": "Second",
+
+		"pathCfg":[
+		{
+			"pathName": "MP",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"pathWidth": 1920,
+			"pathHeight": 1080,
+			"format": "YUV422SP"
+		},
+		{
+			"pathName": "RAW",
+			"pathEnable": 1,
+			"bufferNumber": 6,
+			"pathWidth": 1920,
+			"pathHeight": 1080,
+			"format": "RAW8"
+		}
+		],
+
+		"dgInfo":
+        {
+            "enable": 1,
+            "useCfg": 1,
+            "mode": 0, "//":"0: manual mode only"
+        },
+        "sensorInfo":
+		{
+			"sensorName": "ov2778",
+			"calibrationName": "OV2778_1080p_17x17.json",
+			"simulatorName": "vvbcfg/project_json_file/manual_rgbir_ext.json",
+			"modeIndex": 0,
+			"resolutionWidth": 1920,
+			"resolutionHeight": 1080,
+			"fps": 10
+		},
+		"wbInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 0
+		},
+		"rgbirInfo":
+		{
+			"enable": 1,
+			"useCfg": 1,
+			"mode": 0
+		},
+		"rgbirIrControl":
+		{
+			"irRawOutEnable": 1, "//": "0: irRawOutDisable, 1: irRawOutEnable",
+			"sp1IrSelect": 0,    "//": "0: RGBIR_MUX_SELF1_RESIZE, 1: RGBIR_MUX_IR"
+		}
+	}
+	]
+}

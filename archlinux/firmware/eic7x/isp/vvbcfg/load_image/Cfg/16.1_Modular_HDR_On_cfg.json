@@ -1,0 +1,221 @@
+{
+    "ARCH" : "ISP8000_V2107",
+    "root" : [
+        {
+            "driver" : [
+                {
+                    "class": "CHdrv2",
+                    "base_frame": 0,
+                    "bls_out": [0, 0, 0, 0],
+                    "bypass": false,
+                    "bypass_select": 0,
+                    "color_weight": [254, 1, 0],
+                    "enable": true,
+                    "extend_bit": [-1, -1],
+                    "ratio": [4, 4],
+                    "sensor_type": 9,
+                    "stitching_mode": 0,
+                    "trans_range": [
+                      [0.20000000298023224, 0.80000001192092896],
+                      [0.94999998807907104, 0.99000000953674316 ],
+                      [0.0, 0.28444480895996094],
+                      [0.0, 0.15000000596046448],
+                      [0.85, 0.95],
+                      [0, 0.1]
+                    ]
+                },
+                {
+                    "class" : "Bls",
+                    "bls": [240, 240, 240, 240]
+                },
+                {
+                    "class" : "CGreenEqu",
+                    "enable" : true,
+                    "threshold" : 100
+                },
+                {
+                    "class" : "CManualWb",
+                    "enable" : true,
+                    "gain" : [ 2.2236560115814209, 1.0625, 1.0625, 2.0361560115814209 ]
+                },
+                {
+                    "ccmatrix" : [ 1.1601560115814209, -0.21875, 0.058593999594449997, -0.2070309966802597, 1.4375, -0.2304690033197403, -0.035156000405550003, -0.2148440033197403, 1.25 ],
+                    "ccoffset" : [ 0.0, 0.0, 0.0 ],
+                    "class" : "CCcm",
+                    "enable" : true
+                },
+                {
+                    "class" : "CDgain",
+                    "digital_gain_b" : 1.0,
+                    "digital_gain_gb" : 1.0,
+                    "digital_gain_gr" : 1.0,
+                    "digital_gain_r" : 1.0,
+                    "enable" : false
+                },
+                {
+                    "class" : "CCpdv1",
+                    "enable" : true,
+                    "expand_enable" : false
+                },
+                {
+                    "class" : "CGamma64",
+                    "curve" : [ 155, 212, 255, 290, 321, 349, 374, 398, 419, 440, 460, 478, 496, 513, 529, 545, 560, 575, 589, 603, 617, 630, 643, 655, 667, 679, 691, 703, 714, 725, 736, 747, 757, 767, 778, 788, 798, 807, 817, 826, 836, 845, 854, 863, 872, 881, 889, 898, 906, 915, 923, 931, 939, 947, 955, 963, 971, 978, 986, 994, 1001, 1008, 1016, 1023 ],
+                    "enable" : true,
+                    "standard" : 0,
+                    "standard_val" : 2.2000000000000002
+                },
+                {
+                    "bypass" : false,
+                    "class" : "CDpcc",
+                    "enable" : true,
+                    "line_mad_fac" : [ [ 4, 24, 4 ], [ 4, 16, 4 ] ],
+                    "line_thresh" : [ [ 8, 16, 32 ], [ 8, 12, 32 ] ],
+                    "methods_set" : [ 7453, 1799, 7967 ],
+                    "out_mode" : 3,
+                    "pg_fac" : [ [ 8, 8, 10 ], [ 6, 6, 10 ] ],
+                    "rg_fac" : [ [ 32, 8, 4 ], [ 32, 8, 4 ] ],
+                    "rnd_offs" : [ [ 3, 3, 3 ], [ 3, 3, 3 ] ],
+                    "rnd_thresh" : [ [ 10, 8, 8 ], [ 10, 8, 6 ] ],
+                    "ro_limits" : [ [ 2, 3, 2 ], [ 2, 3, 2 ] ],
+                    "set_use" : 7
+                },
+                {
+                    "class" : "CDpf",
+                    "div" : 0.0,
+                    "enable" : false,
+                    "gain" : 2.0,
+                    "gradient" : 2.0,
+                    "min" : 2.5,
+                    "noise_curve" : [ 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092, 4092 ],
+                    "offset" : 1.0,
+                    "sigma_g" : 1.0,
+                    "sigma_rb" : 1.0
+                },
+                {
+                    "class": "CWdrv4",
+                    "contrast": 400,
+                    "enable": false,
+                    "entropy": [
+                      0, 0, 0, 2, 3, 6, 11, 22, 39, 67, 111, 177, 227, 266, 321, 355, 377,
+                      355, 221, 0
+                    ],
+                    "entropy_base": 200,
+                    "entropy_slope": 700,
+                    "flat_strength": 8,
+                    "flat_thr": 1,
+                    "gamma_down": [
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 9, 16, 36, 64, 136, 256, 576,
+                      1023
+                    ],
+                    "gamma_pre": [
+                      0, 31514, 36815, 42173, 47646, 53350, 59514, 66602, 75530, 88145,
+                      108135, 142869, 175428, 207095, 269144, 330303, 442139, 571475,
+                      810472, 1048575
+                    ],
+                    "gamma_up": [
+                      0, 1024, 34837, 56737, 82912, 116814, 162079, 223337, 306767,
+                      420749, 576707, 735048, 745499, 755950, 776852, 797754, 839557,
+                      881361, 964968, 1048575
+                    ],
+                    "global_strength": 0,
+                    "high_strength": 90,
+                    "low_strength": 16,
+                    "strength": 128
+                },
+                {
+                    "bright" : -4,
+                    "class" : "CCproc",
+                    "yuvRange": 2,
+                    "contrast" : 1.0,
+                    "enable" : true,
+                    "hue" : 0.0,
+                    "saturation" : 1.0
+                },
+                {
+                    "ca_curve" : [ 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024, 1024 ],
+                    "ca_mode" : 1,
+                    "class" : "CEEv1",
+                    "curve_en" : true,
+                    "dci_curve" : [ 0, 4, 11, 19, 27, 37, 47, 57, 68, 80, 91, 103, 116, 129, 142, 155, 169, 182, 197, 211, 226, 240, 255, 271, 286, 302, 317, 333, 350, 366, 382, 399, 416, 433, 450, 467, 485, 502, 520, 538, 556, 574, 592, 611, 629, 648, 667, 686, 705, 724, 743, 763, 782, 802, 822, 841, 861, 881, 902, 922, 942, 963, 983, 1004, 1024 ],
+                    "enable" : true,
+                    "ca_en": true,
+                    "dci_en": true,
+                    "ee_edge_gain" : 2000,
+                    "ee_src_strength" : 1,
+                    "ee_strength" : 128,
+                    "ee_uv_gain" : 0,
+                    "ee_y_down_gain" : 5000,
+                    "ee_y_up_gain" : 3000
+                },
+                {
+                    "a_blue" : 0.0,
+                    "a_red" : 0.0,
+                    "b_blue" : 0.0,
+                    "b_red" : 0.0,
+                    "c_blue" : 0.0,
+                    "c_red" : 0.0,
+                    "cac_enable" : false,
+                    "center_h_offs" : 0.0,
+                    "center_v_offs" : 0.0,
+                    "class" : "CDmscv2",
+                    "demoire_edge_r1" : 250,
+                    "demoire_edge_r2" : 0,
+                    "demoire_edge_t1" : 256,
+                    "demoire_edge_t2_shift" : 4,
+                    "demosaic_enable" : true,
+                    "demosaic_thr" : 4,
+                    "dmsc_demoire_area_thr" : 32,
+                    "dmsc_demoire_enable" : false,
+                    "dmsc_demoire_r1" : 0,
+                    "dmsc_demoire_r2" : 256,
+                    "dmsc_demoire_sat_shrink" : 8,
+                    "dmsc_demoire_t1" : 255,
+                    "dmsc_demoire_t2_shift" : 0,
+                    "dmsc_denoise_strength" : 0,
+                    "dmsc_depurple_cbcr_mode" : 3,
+                    "dmsc_depurple_enable" : true,
+                    "dmsc_depurple_sat_shrink" : 8,
+                    "dmsc_depurple_thr" : 20,
+                    "dmsc_dir_thr_max" : 0,
+                    "dmsc_dir_thr_min" : 0,
+                    "dmsc_sharpen_clip_black" : 200,
+                    "dmsc_sharpen_clip_white" : 200,
+                    "dmsc_sharpen_enable" : true,
+                    "dmsc_sharpen_factor_black" : 120,
+                    "dmsc_sharpen_factor_white" : 120,
+                    "dmsc_sharpen_line_enable" : false,
+                    "dmsc_sharpen_line_r1" : 0,
+                    "dmsc_sharpen_line_r2" : 0,
+                    "dmsc_sharpen_line_strength" : 8,
+                    "dmsc_sharpen_line_thr" : 24,
+                    "dmsc_sharpen_line_thr_shift1" : 3,
+                    "dmsc_sharpen_r1" : 0,
+                    "dmsc_sharpen_r2" : 128,
+                    "dmsc_sharpen_r3" : 256,
+                    "dmsc_sharpen_size" : 8,
+                    "dmsc_sharpen_t1" : 16,
+                    "dmsc_sharpen_t2_shift" : 4,
+                    "dmsc_sharpen_t3" : 64,
+                    "dmsc_sharpen_t4_shift" : 4,
+                    "dmsc_skin_cb_thr_max" : 0,
+                    "dmsc_skin_cb_thr_min" : 0,
+                    "dmsc_skin_cr_thr_max" : 0,
+                    "dmsc_skin_cr_thr_min" : 0,
+                    "dmsc_skin_enable" : false,
+                    "dmsc_skin_y_thr_max" : 0,
+                    "dmsc_skin_y_thr_min" : 0
+                } ],
+            "enable" : true,
+			"nr_reloc" : true,
+            "input" :
+            {
+                "bayer_pattern" : "GBRG",
+                "bit" : 12,
+                "frames" : 2,
+                "height" : 1080,
+                "path" : [ "vvbcfg/load_image/Raw/1.6_HDR/1.6.2_HDR/L_%d.raw", "vvbcfg/load_image/Raw/1.6_HDR/1.6.2_HDR/S_%d.raw", "vvbcfg/load_image/Raw/1.6_HDR/1.6.2_HDR/S_%d.raw" ],
+                "start_frame" : 0,
+                "width" : 1920
+            }
+        } ]
+}
