@@ -12,11 +12,13 @@ scp npu_trace.c $TARGET:
 ssh $TARGET gcc -shared -fPIC -ldl -Werror -o npu_trace.so npu_trace.c
 if [ "$?" != "0" ]; then
     exit $?
+fi
 
 scp npu_test.c $TARGET:
 ssh $TARGET gcc -O0 -g npu_test.c -o npu_test
 if [ "$?" != "0" ]; then
     exit $?
+fi
 
 mkdir -p nogit
 output=nogit/npu_trace-npu_test-`date "+%Y-%m-%d-%H-%M-%S"`.txt

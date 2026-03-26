@@ -215,3 +215,4 @@ firmware/*_serdes_*.bin
 firmware/*_u84_*.bin
 firmware/*pmix.bin
 firmware/*lpcpu.bin
+kernel/linux-*

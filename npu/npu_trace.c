@@ -46,6 +46,9 @@
 #include <sys/mman.h>
 #include <sys/epoll.h>
 #include <sys/eventfd.h>
+#include <poll.h>
+#include <signal.h>
+#include <time.h>
 
 
 #define OP_PRINT_LIMIT 16
@@ -1076,11 +1079,103 @@ int dup3(int oldfd, int newfd, int flags) {
     return rval;
 }
 
+int (*original_epoll_create)(int);
+int epoll_create(int size) {
+    if (!original_epoll_create) original_epoll_create = dlsym(RTLD_NEXT, "epoll_create");
+    int rval = original_epoll_create(size);
+    tid_printf("epoll_create( %d ) --> %s%d\n", size, FD_STR(rval));
+    return rval;
+}
+
 int (*original_epoll_create1)(int);
 int epoll_create1(int flags) {
     if (!original_epoll_create1) original_epoll_create1 = dlsym(RTLD_NEXT, "epoll_create1");
     int rval = original_epoll_create1(flags);
     tid_printf("epoll_create1( 0x%x ) --> %s%d\n", flags, FD_STR(rval));
+    return rval;
+}
+
+int (*original_epoll_ctl)(int, int, int, struct epoll_event *);
+int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event) {
+    if (!original_epoll_ctl) original_epoll_ctl = dlsym(RTLD_NEXT, "epoll_ctl");
+    const char *op_str = (op == EPOLL_CTL_ADD) ? "ADD" :
+                         (op == EPOLL_CTL_MOD) ? "MOD" :
+                         (op == EPOLL_CTL_DEL) ? "DEL" : "?";
+    char fname[PATH_MAX];
+    get_path_from_fd(fd, fname, sizeof(fname));
+    if (event)
+        tid_printf("epoll_ctl( fd_%d , %s , fd_%d (%s) , events=0x%x )\n",
+                   epfd, op_str, fd, fname, event->events);
+    else
+        tid_printf("epoll_ctl( fd_%d , %s , fd_%d (%s) , NULL )\n",
+                   epfd, op_str, fd, fname);
+    int rval = original_epoll_ctl(epfd, op, fd, event);
+    tid_printf("    --> %d\n", rval);
+    return rval;
+}
+
+int (*original_epoll_wait)(int, struct epoll_event *, int, int);
+int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout) {
+    if (!original_epoll_wait) original_epoll_wait = dlsym(RTLD_NEXT, "epoll_wait");
+    tid_printf("epoll_wait( fd_%d , maxevents=%d , timeout=%d )\n", epfd, maxevents, timeout);
+    int rval = original_epoll_wait(epfd, events, maxevents, timeout);
+    tid_printf("    --> %d", rval);
+    for (int i = 0; i < rval; i++)
+        printf(" [fd_%d ev=0x%x]", (int)events[i].data.fd, events[i].events);
+    printf("\n");
+    return rval;
+}
+
+int (*original_epoll_pwait)(int, struct epoll_event *, int, int, const sigset_t *);
+int epoll_pwait(int epfd, struct epoll_event *events, int maxevents, int timeout, const sigset_t *sigmask) {
+    if (!original_epoll_pwait) original_epoll_pwait = dlsym(RTLD_NEXT, "epoll_pwait");
+    tid_printf("epoll_pwait( fd_%d , maxevents=%d , timeout=%d )\n", epfd, maxevents, timeout);
+    int rval = original_epoll_pwait(epfd, events, maxevents, timeout, sigmask);
+    tid_printf("    --> %d", rval);
+    for (int i = 0; i < rval; i++)
+        printf(" [fd_%d ev=0x%x]", (int)events[i].data.fd, events[i].events);
+    printf("\n");
+    return rval;
+}
+
+int (*original_poll)(struct pollfd *, nfds_t, int);
+int poll(struct pollfd *fds, nfds_t nfds, int timeout) {
+    if (!original_poll) original_poll = dlsym(RTLD_NEXT, "poll");
+    tid_printf("poll( nfds=%lu timeout=%d", (unsigned long)nfds, timeout);
+    for (nfds_t i = 0; i < nfds; i++) {
+        char fname[PATH_MAX];
+        get_path_from_fd(fds[i].fd, fname, sizeof(fname));
+        printf(" [fd_%d (%s) ev=0x%x]", fds[i].fd, fname, fds[i].events);
+    }
+    printf(" )\n");
+    int rval = original_poll(fds, nfds, timeout);
+    tid_printf("    --> %d", rval);
+    for (nfds_t i = 0; i < nfds && rval > 0; i++) {
+        if (fds[i].revents)
+            printf(" [fd_%d rev=0x%x]", fds[i].fd, fds[i].revents);
+    }
+    printf("\n");
+    return rval;
+}
+
+int (*original_ppoll)(struct pollfd *, nfds_t, const struct timespec *, const sigset_t *);
+int ppoll(struct pollfd *fds, nfds_t nfds, const struct timespec *tmo, const sigset_t *sigmask) {
+    if (!original_ppoll) original_ppoll = dlsym(RTLD_NEXT, "ppoll");
+    tid_printf("ppoll( nfds=%lu timeout=%s", (unsigned long)nfds,
+               tmo ? "set" : "NULL");
+    for (nfds_t i = 0; i < nfds; i++) {
+        char fname[PATH_MAX];
+        get_path_from_fd(fds[i].fd, fname, sizeof(fname));
+        printf(" [fd_%d (%s) ev=0x%x]", fds[i].fd, fname, fds[i].events);
+    }
+    printf(" )\n");
+    int rval = original_ppoll(fds, nfds, tmo, sigmask);
+    tid_printf("    --> %d", rval);
+    for (nfds_t i = 0; i < nfds && rval > 0; i++) {
+        if (fds[i].revents)
+            printf(" [fd_%d rev=0x%x]", fds[i].fd, fds[i].revents);
+    }
+    printf("\n");
     return rval;
 }
 
