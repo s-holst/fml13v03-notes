@@ -3,7 +3,7 @@
 /vmlinuz
 /dtb
 /initrd
-/archriscv-latest.tar.zst
+/archriscv*
 /fml13v03_linux
 /busybox
 /tmp

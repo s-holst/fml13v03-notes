@@ -14,7 +14,7 @@ all: disk.img
 # Default user/password: root/archriscv
 
 archriscv-latest.tar.zst:
-	wget https://archriscv.felixc.at/images/archriscv-latest.tar.zst
+	curl -O https://archriscv.felixc.at/images/archriscv-latest.tar.zst
 
 fml13v03_linux:
 	git clone -b fml13v03-6.6.92 https://github.com/DC-DeepComputing/fml13v03_linux.git
@@ -56,3 +56,6 @@ root.ext4: archriscv-latest.tar.zst modules
 
 disk.img: boot.ext4 root.ext4
 	./scripts/make_disk_img.sh
+
+enter:
+	sudo SYSTEMD_NSPAWN_TMPFS_TMP=0 systemd-nspawn -D ./archriscv -a -U --setenv=LD_PRELOAD=/fix_tty.so
