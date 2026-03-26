@@ -21,9 +21,13 @@ fml13v03_linux:
 
 vmlinuz: fml13v03_linux
 	make -C fml13v03_linux fml13v03_defconfig
-	sed -i 's/# CONFIG_SECURITY_LANDLOCK is not set/CONFIG_SECURITY_LANDLOCK=y/' fml13v03_linux/.config
-	sed -i 's/# CONFIG_SECURITY_YAMA is not set/CONFIG_SECURITY_YAMA=y/' fml13v03_linux/.config
-	#sed -i 's/# CONFIG_SECURITY_LOCKDOWN_LSM is not set/CONFIG_SECURITY_LOCKDOWN_LSM=y/' fml13v03_linux/.config
+	#sed -i 's/# CONFIG_SECURITY_LANDLOCK is not set/CONFIG_SECURITY_LANDLOCK=y/' fml13v03_linux/.config
+	#sed -i 's/# CONFIG_SECURITY_YAMA is not set/CONFIG_SECURITY_YAMA=y/' fml13v03_linux/.config
+	sed -i 's/CONFIG_VIDEO_ESWIN_VDEC=m/CONFIG_VIDEO_ESWIN_VDEC=y/' fml13v03_linux/.config
+	sed -i 's/CONFIG_VIDEO_ESWIN_VENC=m/CONFIG_VIDEO_ESWIN_VENC=y/' fml13v03_linux/.config
+	sed -i 's/CONFIG_VIDEO_ESWIN_HAE=m/CONFIG_VIDEO_ESWIN_HAE=y/' fml13v03_linux/.config
+	sed -i 's/CONFIG_VIDEO_ESWIN_DEWARP=m/CONFIG_VIDEO_ESWIN_DEWARP=y/' fml13v03_linux/.config
+	sed -i 's/CONFIG_VIDEO_ESWIN_MEDIA_EXT_DRIVER=m/CONFIG_VIDEO_ESWIN_MEDIA_EXT_DRIVER=y/' fml13v03_linux/.config
 	make -C fml13v03_linux oldconfig
 	make -C fml13v03_linux -j ${NPROC}
 	cp -a fml13v03_linux/arch/riscv/boot/Image.gz vmlinuz
@@ -33,8 +37,9 @@ dtb: vmlinuz
 
 modules: vmlinuz
 	mkdir -p modules/usr
-	INSTALL_MOD_PATH=../modules make -C fml13v03_linux modules_install
-	INSTALL_HDR_PATH=../modules/usr make -C fml13v03_linux headers_install
+	INSTALL_MOD_PATH=../modules make -C ${LINUX} modules_install
+	make -C ${LINUX} headers_install
+	rsync -mrl --include='*/' --include='*\.h' --exclude='*' ${LINUX}/usr/include modules/usr
 
 busybox:
 	git clone https://git.busybox.net/busybox
