@@ -8,7 +8,7 @@ Prerequisites:
 
 A simple `make` will:
 - download an [arch linux root fs tar](https://archriscv.felixc.at/images/)
-- cross-compile the [linux kernel for fml13v03](https://github.com/DC-DeepComputing/fml13v03_linux.git)
+- cross-compile a [linux kernel for fml13v03](https://github.com/s-holst/linux-stable/tree/fml-2025.12)
 - cross-compile busybox and create a minimal initrd
 - does some light configuration on the root fs
 - create bare-bones 2GB bootable `disc.img`
@@ -365,8 +365,3 @@ warning on headphone disconnect:
 [  482.533901] ---[ end trace 0000000000000000 ]---
 [  543.903918] ------------[ cut here ]------------
 ```
-
-
-Official [linux kernel for fml13v03](https://github.com/DC-DeepComputing/fml13v03_linux.git) is not the one used in Ubuntu-AI image.
-
-The NPU does not work correctly (WIP).

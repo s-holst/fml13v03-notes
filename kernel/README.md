@@ -134,7 +134,9 @@ Minor modifications to `power/cros-sbs-battery.c` (PM_SLEEP fix), `drivers/hwmon
 # Ubuntu-AI Linux Kernel `vmlinuz-6.6.92-eic7x-2025.07`
 
 `/proc/kallsyms` don't match with the fml13v03-6.6.92 branch of [fml13v03_linux](https://github.com/DC-DeepComputing/fml13v03_linux.git).
-It may include some code from [eswin's linux-stable](https://github.com/eswincomputing/linux-stable).
+The shipped binary kernel / modules may include some code from [eswin's linux-stable](https://github.com/eswincomputing/linux-stable) or other patches to make them work with the shipped (older) essdk.
+The NPU does not work correctly with the kernel published on github and the essdk shipped with ubuntu the image (as of 2026/4/1). Did not test newer essdk versions (e.g. 1.11.0) with fml13v03-6.6.92 branch.
+
 These trees have some shared history. Forensic analysis:
 
 ## Shared history (pre-June 2025)

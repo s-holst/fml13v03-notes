@@ -4,10 +4,9 @@ export BOOT_SIZE=256M
 export ROOT_SIZE=2048M
 export BOOT_UUID=44b7cb94-f58c-4ba6-bfa4-7d2dce09a3a5
 export ROOT_UUID=80a5a8e9-c744-491a-93c1-4f4194fd690a
-export LINUX=fml13v03_linux
 export ARCH=riscv
 export CROSS_COMPILE=riscv64-linux-gnu-
-export NPROC=6
+export NPROC=12
 
 all: disk.img
 
@@ -16,30 +15,28 @@ all: disk.img
 archriscv-latest.tar.zst:
 	curl -O https://archriscv.felixc.at/images/archriscv-latest.tar.zst
 
-fml13v03_linux:
-	git clone -b fml13v03-6.6.92 https://github.com/DC-DeepComputing/fml13v03_linux.git
+linux:
+	git clone -b fml-2025.12 https://github.com/s-holst/linux-stable.git linux
 
-vmlinuz: fml13v03_linux
-	make -C fml13v03_linux fml13v03_defconfig
-	#sed -i 's/# CONFIG_SECURITY_LANDLOCK is not set/CONFIG_SECURITY_LANDLOCK=y/' fml13v03_linux/.config
-	#sed -i 's/# CONFIG_SECURITY_YAMA is not set/CONFIG_SECURITY_YAMA=y/' fml13v03_linux/.config
-	sed -i 's/CONFIG_VIDEO_ESWIN_VDEC=m/CONFIG_VIDEO_ESWIN_VDEC=y/' fml13v03_linux/.config
-	sed -i 's/CONFIG_VIDEO_ESWIN_VENC=m/CONFIG_VIDEO_ESWIN_VENC=y/' fml13v03_linux/.config
-	sed -i 's/CONFIG_VIDEO_ESWIN_HAE=m/CONFIG_VIDEO_ESWIN_HAE=y/' fml13v03_linux/.config
-	sed -i 's/CONFIG_VIDEO_ESWIN_DEWARP=m/CONFIG_VIDEO_ESWIN_DEWARP=y/' fml13v03_linux/.config
-	sed -i 's/CONFIG_VIDEO_ESWIN_MEDIA_EXT_DRIVER=m/CONFIG_VIDEO_ESWIN_MEDIA_EXT_DRIVER=y/' fml13v03_linux/.config
-	make -C fml13v03_linux oldconfig
-	make -C fml13v03_linux -j ${NPROC}
-	cp -a fml13v03_linux/arch/riscv/boot/Image.gz vmlinuz
+vmlinuz: linux
+	make -C linux fml13v03_defconfig
+	#sed -i 's/# CONFIG_SECURITY_LANDLOCK is not set/CONFIG_SECURITY_LANDLOCK=y/' linux/.config
+	#sed -i 's/# CONFIG_SECURITY_YAMA is not set/CONFIG_SECURITY_YAMA=y/' linux/.config
+	#make -C linux oldconfig
+	make -C linux -j ${NPROC}
+	cp -a linux/arch/riscv/boot/Image.gz vmlinuz
 
 dtb: vmlinuz
-	cp -a fml13v03_linux/arch/riscv/boot/dts/eswin/eic7702-deepcomputing-fml13v03.dtb dtb
+	cp -a linux/arch/riscv/boot/dts/eswin/eic7702-deepcomputing-fml13v03.dtb dtb
 
 modules: vmlinuz
-	mkdir -p modules/usr
-	INSTALL_MOD_PATH=../modules make -C ${LINUX} modules_install
-	make -C ${LINUX} headers_install
-	rsync -mrl --include='*/' --include='*\.h' --exclude='*' ${LINUX}/usr/include modules/usr
+	mkdir -p modules
+	INSTALL_MOD_PATH=../modules make -C linux modules_install
+	make -C linux headers_install
+
+headers: vmlinuz
+	mkdir -p headers/usr
+	rsync -mrl --include='*/' --include='*\.h' --exclude='*' linux/usr/include headers/usr
 
 busybox:
 	git clone https://git.busybox.net/busybox
@@ -50,7 +47,8 @@ busybox/busybox: busybox
 	sed -i 's/CONFIG_TC=./CONFIG_TC=n/' busybox/.config
 	make -C busybox -j ${NPROC}
 
-initrd: busybox/busybox
+# need linux for lpcpu firmware
+initrd: busybox/busybox linux
 	./scripts/make_initrd_bb.sh
 
 boot.ext4: vmlinuz dtb initrd

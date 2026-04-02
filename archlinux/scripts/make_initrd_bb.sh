@@ -11,6 +11,10 @@ mkdir -p {bin,sbin,dev,etc,home,mnt,proc,sys,usr,tmp}
 mkdir -p usr/{bin,sbin}
 mkdir -p proc/sys/kernel
 
+# as LPCPU support is built into the kernel, firmware needs to be in initrd
+mkdir -p lib/firmware/eic7x
+cp ../linux/vendor/eswin/firmware/eic7702_lpcpu_npu_fw_die* lib/firmware/eic7x
+
 cd dev
 sudo mknod sda b 8 0 
 sudo mknod console c 5 1
