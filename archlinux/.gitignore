@@ -4,8 +4,9 @@
 /dtb
 /initrd
 /archriscv*
-/fml13v03_linux
+/linux
 /busybox
 /tmp
 /modules
 /headers
+/.*.lck
